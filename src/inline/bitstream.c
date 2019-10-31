@@ -102,6 +102,8 @@ The following assumptions and restrictions apply:
 
 #include <limits.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "zfp.h"
 
 #ifndef inline_
   #define inline_
@@ -141,6 +143,8 @@ struct bitstream {
 static word
 stream_read_word(bitstream* s)
 {
+  //jwang
+  //FuncName;
   word w = *s->ptr++;
 #ifdef BIT_STREAM_STRIDED
   if (!((s->ptr - s->begin) & s->mask))
@@ -153,6 +157,8 @@ stream_read_word(bitstream* s)
 static void
 stream_write_word(bitstream* s, word value)
 {
+  //jwang
+  //FuncName;
   *s->ptr++ = value;
 #ifdef BIT_STREAM_STRIDED
   if (!((s->ptr - s->begin) & s->mask))
@@ -166,6 +172,8 @@ stream_write_word(bitstream* s, word value)
 inline_ void*
 stream_data(const bitstream* s)
 {
+  //jwang
+  FuncName;
   return s->begin;
 }
 
@@ -173,6 +181,8 @@ stream_data(const bitstream* s)
 inline_ size_t
 stream_size(const bitstream* s)
 {
+  //jwang
+  FuncName;
   return sizeof(word) * (s->ptr - s->begin);
 }
 
@@ -180,6 +190,8 @@ stream_size(const bitstream* s)
 inline_ size_t
 stream_capacity(const bitstream* s)
 {
+  //jwang
+  FuncName;
   return sizeof(word) * (s->end - s->begin);
 }
 
@@ -187,6 +199,8 @@ stream_capacity(const bitstream* s)
 inline_ size_t
 stream_stride_block(const bitstream* s)
 {
+  //jwang
+  FuncName;
 #ifdef BIT_STREAM_STRIDED
   return s->mask + 1;
 #else
@@ -199,6 +213,8 @@ stream_stride_block(const bitstream* s)
 inline_ ptrdiff_t
 stream_stride_delta(const bitstream* s)
 {
+  //jwang
+  FuncName;
 #ifdef BIT_STREAM_STRIDED
   return s->delta / (s->mask + 1);
 #else
@@ -211,6 +227,8 @@ stream_stride_delta(const bitstream* s)
 inline_ uint
 stream_read_bit(bitstream* s)
 {
+  //jwang
+  //FuncName;
   uint bit;
   if (!s->bits) {
     s->buffer = stream_read_word(s);
@@ -226,6 +244,8 @@ stream_read_bit(bitstream* s)
 inline_ uint
 stream_write_bit(bitstream* s, uint bit)
 {
+  //jwang
+  //FuncName;
   s->buffer += (word)bit << s->bits;
   if (++s->bits == wsize) {
     stream_write_word(s, s->buffer);
@@ -239,6 +259,8 @@ stream_write_bit(bitstream* s, uint bit)
 inline_ uint64
 stream_read_bits(bitstream* s, uint n)
 {
+  //jwang
+  //FuncName;
   uint64 value = s->buffer;
   if (s->bits < n) {
     /* keep fetching wsize bits until enough bits are buffered */
@@ -274,6 +296,8 @@ stream_read_bits(bitstream* s, uint n)
 inline_ uint64
 stream_write_bits(bitstream* s, uint64 value, uint n)
 {
+  //jwang
+  //FuncName;
   /* append bit string to buffer */
   s->buffer += (word)(value << s->bits);
   s->bits += n;
@@ -302,6 +326,8 @@ stream_write_bits(bitstream* s, uint64 value, uint n)
 inline_ size_t
 stream_rtell(const bitstream* s)
 {
+  //jwang
+  FuncName;
   return wsize * (s->ptr - s->begin) - s->bits;
 }
 
@@ -309,6 +335,8 @@ stream_rtell(const bitstream* s)
 inline_ size_t
 stream_wtell(const bitstream* s)
 {
+  //jwang
+  FuncName;
   return wsize * (s->ptr - s->begin) + s->bits;
 }
 
@@ -316,6 +344,8 @@ stream_wtell(const bitstream* s)
 inline_ void
 stream_rewind(bitstream* s)
 {
+  //jwang
+  FuncName;
   s->ptr = s->begin;
   s->buffer = 0;
   s->bits = 0;
@@ -325,6 +355,8 @@ stream_rewind(bitstream* s)
 inline_ void
 stream_rseek(bitstream* s, size_t offset)
 {
+  //jwang
+  FuncName;
   uint n = offset % wsize;
   s->ptr = s->begin + offset / wsize;
   if (n) {
@@ -341,6 +373,8 @@ stream_rseek(bitstream* s, size_t offset)
 inline_ void
 stream_wseek(bitstream* s, size_t offset)
 {
+  //jwang
+  FuncName;
   uint n = offset % wsize;
   s->ptr = s->begin + offset / wsize;
   if (n) {
@@ -359,6 +393,8 @@ stream_wseek(bitstream* s, size_t offset)
 inline_ void
 stream_skip(bitstream* s, uint n)
 {
+  //jwang
+  FuncName;
   stream_rseek(s, stream_rtell(s) + n);
 }
 
@@ -366,6 +402,8 @@ stream_skip(bitstream* s, uint n)
 inline_ void
 stream_pad(bitstream* s, uint n)
 {
+  //jwang
+  FuncName;
   for (s->bits += n; s->bits >= wsize; s->bits -= wsize) {
     stream_write_word(s, s->buffer);
     s->buffer = 0;
@@ -376,6 +414,8 @@ stream_pad(bitstream* s, uint n)
 inline_ size_t
 stream_align(bitstream* s)
 {
+  //jwang
+  FuncName;
   uint bits = s->bits;
   if (bits)
     stream_skip(s, bits);
@@ -386,6 +426,8 @@ stream_align(bitstream* s)
 inline_ size_t
 stream_flush(bitstream* s)
 {
+  //jwang
+  FuncName;
   uint bits = (wsize - s->bits) % wsize;
   if (bits)
     stream_pad(s, bits);
@@ -396,6 +438,8 @@ stream_flush(bitstream* s)
 inline_ void
 stream_copy(bitstream* dst, bitstream* src, size_t n)
 {
+  //jwang
+  FuncName;
   while (n > wsize) {
     word w = (word)stream_read_bits(src, wsize);
     stream_write_bits(dst, w, wsize);
@@ -412,6 +456,8 @@ stream_copy(bitstream* dst, bitstream* src, size_t n)
 inline_ int
 stream_set_stride(bitstream* s, size_t block, ptrdiff_t delta)
 {
+  //jwang
+  FuncName;
   /* ensure block size is a power of two */
   if (block & (block - 1))
     return 0;
@@ -425,6 +471,8 @@ stream_set_stride(bitstream* s, size_t block, ptrdiff_t delta)
 inline_ bitstream*
 stream_open(void* buffer, size_t bytes)
 {
+  //jwang
+  FuncName;
   bitstream* s = (bitstream*)malloc(sizeof(bitstream));
   if (s) {
     s->begin = (word*)buffer;
@@ -441,6 +489,8 @@ stream_open(void* buffer, size_t bytes)
 inline_ void
 stream_close(bitstream* s)
 {
+  //jwang
+  FuncName;
   free(s);
 }
 
@@ -448,6 +498,8 @@ stream_close(bitstream* s)
 inline_ bitstream*
 stream_clone(const bitstream* s)
 {
+  //jwang
+  FuncName;
   bitstream* c = (bitstream*)malloc(sizeof(bitstream));
   if (c)
     *c = *s;

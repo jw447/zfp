@@ -17,6 +17,8 @@ export_ const char* const zfp_version_string = "zfp version " ZFP_VERSION_STRING
 static uint
 type_precision(zfp_type type)
 {
+  //jwang
+  FuncName;
   switch (type) {
     case zfp_type_int32:
       return CHAR_BIT * (uint)sizeof(int32);
@@ -34,6 +36,8 @@ type_precision(zfp_type type)
 static int
 is_reversible(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return zfp->minexp < ZFP_MIN_EXP;
 }
 
@@ -218,6 +222,8 @@ zfp_field_size(const zfp_field* field, uint* size)
 int
 zfp_field_stride(const zfp_field* field, int* stride)
 {
+  //jwang
+  FuncName;
   if (stride)
     switch (zfp_field_dimensionality(field)) {
       case 4:
@@ -239,6 +245,8 @@ zfp_field_stride(const zfp_field* field, int* stride)
 uint64
 zfp_field_metadata(const zfp_field* field)
 {
+  //jwang
+  FuncName;
   uint64 meta = 0;
   /* 48 bits for dimensions */
   switch (zfp_field_dimensionality(field)) {
@@ -306,6 +314,8 @@ zfp_field_set_type(zfp_field* field, zfp_type type)
 void
 zfp_field_set_size_1d(zfp_field* field, uint n)
 {
+  //jwang
+  FuncName;
   field->nx = n;
   field->ny = 0;
   field->nz = 0;
@@ -315,6 +325,8 @@ zfp_field_set_size_1d(zfp_field* field, uint n)
 void
 zfp_field_set_size_2d(zfp_field* field, uint nx, uint ny)
 {
+  //jwang
+  FuncName;
   field->nx = nx;
   field->ny = ny;
   field->nz = 0;
@@ -324,6 +336,8 @@ zfp_field_set_size_2d(zfp_field* field, uint nx, uint ny)
 void
 zfp_field_set_size_3d(zfp_field* field, uint nx, uint ny, uint nz)
 {
+  //jwang
+  FuncName;
   field->nx = nx;
   field->ny = ny;
   field->nz = nz;
@@ -333,6 +347,8 @@ zfp_field_set_size_3d(zfp_field* field, uint nx, uint ny, uint nz)
 void
 zfp_field_set_size_4d(zfp_field* field, uint nx, uint ny, uint nz, uint nw)
 {
+  //jwang
+  FuncName;
   field->nx = nx;
   field->ny = ny;
   field->nz = nz;
@@ -342,6 +358,8 @@ zfp_field_set_size_4d(zfp_field* field, uint nx, uint ny, uint nz, uint nw)
 void
 zfp_field_set_stride_1d(zfp_field* field, int sx)
 {
+  //jwang
+  FuncName;
   field->sx = sx;
   field->sy = 0;
   field->sz = 0;
@@ -351,6 +369,8 @@ zfp_field_set_stride_1d(zfp_field* field, int sx)
 void
 zfp_field_set_stride_2d(zfp_field* field, int sx, int sy)
 {
+  //jwang
+  FuncName;
   field->sx = sx;
   field->sy = sy;
   field->sz = 0;
@@ -360,6 +380,8 @@ zfp_field_set_stride_2d(zfp_field* field, int sx, int sy)
 void
 zfp_field_set_stride_3d(zfp_field* field, int sx, int sy, int sz)
 {
+  //jwang
+  FuncName;
   field->sx = sx;
   field->sy = sy;
   field->sz = sz;
@@ -369,6 +391,8 @@ zfp_field_set_stride_3d(zfp_field* field, int sx, int sy, int sz)
 void
 zfp_field_set_stride_4d(zfp_field* field, int sx, int sy, int sz, int sw)
 {
+  //jwang
+  FuncName;
   field->sx = sx;
   field->sy = sy;
   field->sz = sz;
@@ -378,6 +402,8 @@ zfp_field_set_stride_4d(zfp_field* field, int sx, int sy, int sz, int sw)
 int
 zfp_field_set_metadata(zfp_field* field, uint64 meta)
 {
+  //jwang
+  FuncName;
   uint64 dims;
   /* ensure value is in range */
   if (meta >> ZFP_META_BITS)
@@ -420,6 +446,8 @@ zfp_field_set_metadata(zfp_field* field, uint64 meta)
 zfp_stream*
 zfp_stream_open(bitstream* stream)
 {
+  //jwang
+  FuncName;
   zfp_stream* zfp = (zfp_stream*)malloc(sizeof(zfp_stream));
   if (zfp) {
     zfp->stream = stream;
@@ -441,12 +469,16 @@ zfp_stream_close(zfp_stream* zfp)
 bitstream*
 zfp_stream_bit_stream(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return zfp->stream;
 }
 
 zfp_mode
 zfp_stream_compression_mode(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   if (zfp->minbits > zfp->maxbits || !(0 < zfp->maxprec && zfp->maxprec <= 64))
     return zfp_mode_null;
 
@@ -491,6 +523,8 @@ zfp_stream_compression_mode(const zfp_stream* zfp)
 uint64
 zfp_stream_mode(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   uint64 mode = 0;
   uint minbits;
   uint maxbits;
@@ -549,6 +583,8 @@ zfp_stream_mode(const zfp_stream* zfp)
 void
 zfp_stream_params(const zfp_stream* zfp, uint* minbits, uint* maxbits, uint* maxprec, int* minexp)
 {
+  //jwang
+  FuncName;
   if (minbits)
     *minbits = zfp->minbits;
   if (maxbits)
@@ -562,12 +598,16 @@ zfp_stream_params(const zfp_stream* zfp, uint* minbits, uint* maxbits, uint* max
 size_t
 zfp_stream_compressed_size(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return stream_size(zfp->stream);
 }
 
 size_t
 zfp_stream_maximum_size(const zfp_stream* zfp, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   uint dims = zfp_field_dimensionality(field);
   uint mx = (MAX(field->nx, 1u) + 3) / 4;
   uint my = (MAX(field->ny, 1u) + 3) / 4;
@@ -604,12 +644,16 @@ zfp_stream_maximum_size(const zfp_stream* zfp, const zfp_field* field)
 void
 zfp_stream_set_bit_stream(zfp_stream* zfp, bitstream* stream)
 {
+  //jwang
+  FuncName;
   zfp->stream = stream;
 }
 
 void
 zfp_stream_set_reversible(zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   zfp->minbits = ZFP_MIN_BITS;
   zfp->maxbits = ZFP_MAX_BITS;
   zfp->maxprec = ZFP_MAX_PREC;
@@ -619,6 +663,8 @@ zfp_stream_set_reversible(zfp_stream* zfp)
 double
 zfp_stream_set_rate(zfp_stream* zfp, double rate, zfp_type type, uint dims, int wra)
 {
+  //jwang
+  FuncName;
   uint n = 1u << (2 * dims);
   uint bits = (uint)floor(n * rate + 0.5);
   switch (type) {
@@ -646,6 +692,8 @@ zfp_stream_set_rate(zfp_stream* zfp, double rate, zfp_type type, uint dims, int 
 uint
 zfp_stream_set_precision(zfp_stream* zfp, uint precision)
 {
+  //jwang
+  FuncName;
   zfp->minbits = ZFP_MIN_BITS;
   zfp->maxbits = ZFP_MAX_BITS;
   zfp->maxprec = precision ? MIN(precision, ZFP_MAX_PREC) : ZFP_MAX_PREC;
@@ -656,6 +704,8 @@ zfp_stream_set_precision(zfp_stream* zfp, uint precision)
 double
 zfp_stream_set_accuracy(zfp_stream* zfp, double tolerance)
 {
+  //jwang
+  FuncName;
   int emin = ZFP_MIN_EXP;
   if (tolerance > 0) {
     /* tolerance = x * 2^emin, with 0.5 <= x < 1 */
@@ -673,6 +723,8 @@ zfp_stream_set_accuracy(zfp_stream* zfp, double tolerance)
 zfp_mode
 zfp_stream_set_mode(zfp_stream* zfp, uint64 mode)
 {
+  //jwang
+  FuncName;
   uint minbits, maxbits, maxprec;
   int minexp;
 
@@ -723,6 +775,8 @@ zfp_stream_set_mode(zfp_stream* zfp, uint64 mode)
 int
 zfp_stream_set_params(zfp_stream* zfp, uint minbits, uint maxbits, uint maxprec, int minexp)
 {
+  //jwang
+  FuncName;
   if (minbits > maxbits || !(0 < maxprec && maxprec <= 64))
     return 0;
   zfp->minbits = minbits;
@@ -735,18 +789,24 @@ zfp_stream_set_params(zfp_stream* zfp, uint minbits, uint maxbits, uint maxprec,
 size_t
 zfp_stream_flush(zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return stream_flush(zfp->stream);
 }
 
 size_t
 zfp_stream_align(zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return stream_align(zfp->stream);
 }
 
 void
 zfp_stream_rewind(zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   stream_rewind(zfp->stream);
 }
 
@@ -755,24 +815,32 @@ zfp_stream_rewind(zfp_stream* zfp)
 zfp_exec_policy
 zfp_stream_execution(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return zfp->exec.policy;
 }
 
 uint
 zfp_stream_omp_threads(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return zfp->exec.params.omp.threads;
 }
 
 uint
 zfp_stream_omp_chunk_size(const zfp_stream* zfp)
 {
+  //jwang
+  FuncName;
   return zfp->exec.params.omp.chunk_size;
 }
 
 int
 zfp_stream_set_execution(zfp_stream* zfp, zfp_exec_policy policy)
 {
+  //jwang
+  FuncName;
   switch (policy) {
     case zfp_exec_serial:
       break;
@@ -800,6 +868,8 @@ zfp_stream_set_execution(zfp_stream* zfp, zfp_exec_policy policy)
 int
 zfp_stream_set_omp_threads(zfp_stream* zfp, uint threads)
 {
+  //jwang
+  FuncName;
   if (!zfp_stream_set_execution(zfp, zfp_exec_omp))
     return 0;
   zfp->exec.params.omp.threads = threads;
@@ -809,6 +879,8 @@ zfp_stream_set_omp_threads(zfp_stream* zfp, uint threads)
 int
 zfp_stream_set_omp_chunk_size(zfp_stream* zfp, uint chunk_size)
 {
+  //jwang
+  FuncName;
   if (!zfp_stream_set_execution(zfp, zfp_exec_omp))
     return 0;
   zfp->exec.params.omp.chunk_size = chunk_size;
@@ -820,6 +892,8 @@ zfp_stream_set_omp_chunk_size(zfp_stream* zfp, uint chunk_size)
 void
 zfp_promote_int8_to_int32(int32* oblock, const int8* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--)
     *oblock++ = (int32)*iblock++ << 23;
@@ -828,6 +902,8 @@ zfp_promote_int8_to_int32(int32* oblock, const int8* iblock, uint dims)
 void
 zfp_promote_uint8_to_int32(int32* oblock, const uint8* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--)
     *oblock++ = ((int32)*iblock++ - 0x80) << 23;
@@ -836,6 +912,8 @@ zfp_promote_uint8_to_int32(int32* oblock, const uint8* iblock, uint dims)
 void
 zfp_promote_int16_to_int32(int32* oblock, const int16* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--)
     *oblock++ = (int32)*iblock++ << 15;
@@ -844,6 +922,8 @@ zfp_promote_int16_to_int32(int32* oblock, const int16* iblock, uint dims)
 void
 zfp_promote_uint16_to_int32(int32* oblock, const uint16* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--)
     *oblock++ = ((int32)*iblock++ - 0x8000) << 15;
@@ -852,6 +932,8 @@ zfp_promote_uint16_to_int32(int32* oblock, const uint16* iblock, uint dims)
 void
 zfp_demote_int32_to_int8(int8* oblock, const int32* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--) {
     int32 i = *iblock++ >> 23;
@@ -862,6 +944,8 @@ zfp_demote_int32_to_int8(int8* oblock, const int32* iblock, uint dims)
 void
 zfp_demote_int32_to_uint8(uint8* oblock, const int32* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--) {
     int32 i = (*iblock++ >> 23) + 0x80;
@@ -872,6 +956,8 @@ zfp_demote_int32_to_uint8(uint8* oblock, const int32* iblock, uint dims)
 void
 zfp_demote_int32_to_int16(int16* oblock, const int32* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--) {
     int32 i = *iblock++ >> 15;
@@ -882,6 +968,8 @@ zfp_demote_int32_to_int16(int16* oblock, const int32* iblock, uint dims)
 void
 zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims)
 {
+  //jwang
+  FuncName;
   uint count = 1u << (2 * dims);
   while (count--) {
     int32 i = (*iblock++ >> 15) + 0x8000;
@@ -894,6 +982,8 @@ zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims)
 size_t
 zfp_compress(zfp_stream* zfp, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   /* function table [execution][strided][dimensionality][scalar type] */
   void (*ftable[3][2][4][4])(zfp_stream*, const zfp_field*) = {
     /* serial */
@@ -938,6 +1028,9 @@ zfp_compress(zfp_stream* zfp, const zfp_field* field)
   uint strided = zfp_field_stride(field, NULL);
   uint dims = zfp_field_dimensionality(field);
   uint type = field->type;
+  //jwang
+  printf("exec=%u\nstrided=%u\ndims=%u\ntype=%u\n", exec, strided, dims, type);
+
   void (*compress)(zfp_stream*, const zfp_field*);
 
   switch (type) {
@@ -958,13 +1051,18 @@ zfp_compress(zfp_stream* zfp, const zfp_field* field)
   /* compress field and align bit stream on word boundary */
   compress(zfp, field);
   stream_flush(zfp->stream);
-
-  return stream_size(zfp->stream);
+  
+  //jwang
+  int outputsize = stream_size(zfp->stream);
+  printf("outputsize = %d\n", outputsize);
+  return outputsize;
 }
 
 size_t
 zfp_decompress(zfp_stream* zfp, zfp_field* field)
 {
+  //jwang
+  FuncName;
   /* function table [execution][strided][dimensionality][scalar type] */
   void (*ftable[3][2][4][4])(zfp_stream*, zfp_field*) = {
     /* serial */
@@ -1025,6 +1123,8 @@ zfp_decompress(zfp_stream* zfp, zfp_field* field)
 size_t
 zfp_write_header(zfp_stream* zfp, const zfp_field* field, uint mask)
 {
+  //jwang
+  FuncName;
   size_t bits = 0;
   uint64 meta = 0;
 
@@ -1062,6 +1162,8 @@ zfp_write_header(zfp_stream* zfp, const zfp_field* field, uint mask)
 size_t
 zfp_read_header(zfp_stream* zfp, zfp_field* field, uint mask)
 {
+  //jwang
+  FuncName;
   size_t bits = 0;
   if (mask & ZFP_HEADER_MAGIC) {
     if (stream_read_bits(zfp->stream, 8) != 'z' ||

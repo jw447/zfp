@@ -4,4 +4,4 @@ set -e
 
 set -x
 
-make
+make ZFP_WITH_OPENMP=1

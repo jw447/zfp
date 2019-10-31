@@ -30,6 +30,8 @@ The 7 major tasks to be accomplished are:
 static void
 print_error(const void* fin, const void* fout, zfp_type type, size_t n)
 {
+  //jwang
+  FuncName;
   const int32* i32i = (const int32*)fin;
   const int64* i64i = (const int64*)fin;
   const float* f32i = (const float*)fin;
@@ -46,6 +48,8 @@ print_error(const void* fin, const void* fout, zfp_type type, size_t n)
   double psnr = 0;
   size_t i;
 
+  fmin = 0;
+  fmax = 0;
   for (i = 0; i < n; i++) {
     double d, val;
     switch (type) {
@@ -72,16 +76,27 @@ print_error(const void* fin, const void* fout, zfp_type type, size_t n)
     erms += d * d;
     fmin = MIN(fmin, val);
     fmax = MAX(fmax, val);
+    //jwang
+    //if(fmax < val)
+    //	    fmax = val;
+    //if(fmin > val)
+    //	    fmin = val;
   }
   erms = sqrt(erms / n);
   ermsn = erms / (fmax - fmin);
-  psnr = 20 * log10((fmax - fmin) / (2 * erms));
-  fprintf(stderr, " rmse=%.4g nrmse=%.4g maxe=%.4g psnr=%.2f", erms, ermsn, emax, psnr);
+  //jwang
+  //psnr = 20 * log10((fmax - fmin) / (2 * erms));
+  printf("dmax=%.10f,dmin=%.10f\n",fmax,fmin);
+  printf("rmse=%.10f\n",erms);
+  psnr = 20 * log10((fmax - fmin) / erms);
+  printf("rmse=%.4g nrmse=%.4g maxe=%.4g psnr=%.2f\n", erms, ermsn, emax, psnr);
 }
 
 static void
 usage()
 {
+  //jwang
+  FuncName;
   fprintf(stderr, "%s\n", zfp_version_string);
   fprintf(stderr, "Usage: zfp <options>\n");
   fprintf(stderr, "General options:\n");
@@ -133,6 +148,8 @@ usage()
 
 int main(int argc, char* argv[])
 {
+  //jwang
+  FuncName;
   /* default settings */
   zfp_type type = zfp_type_none;
   size_t typesize = 0;
@@ -616,11 +633,11 @@ int main(int argc, char* argv[])
   /* print compression and error statistics */
   if (!quiet) {
     const char* type_name[] = { "int32", "int64", "float", "double" };
-    fprintf(stderr, "type=%s nx=%u ny=%u nz=%u nw=%u", type_name[type - zfp_type_int32], nx, ny, nz, nw);
-    fprintf(stderr, " raw=%lu zfp=%lu ratio=%.3g rate=%.4g", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
+    printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
+    printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
     if (stats)
       print_error(fi, fo, type, count);
-    fprintf(stderr, "\n");
+    //fprintf(stderr, "\n");
   }
 
   /* free allocated storage */

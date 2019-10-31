@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 #SPHINXBUILD   = /usr/bin/python2.7 -msphinx
-SPHINXBUILD   = /opt/local/bin/python2.7 -msphinx
+SPHINXBUILD   = /home/jon/anaconda3/bin/python -msphinx
 SPHINXPROJ    = zfp
 SOURCEDIR     = source
 BUILDDIR      = build

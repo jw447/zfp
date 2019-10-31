@@ -1,7 +1,11 @@
+#include "zfp.h"
+
 /* compress 1d contiguous array */
 static void
 _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
   uint mx = nx & ~3u;
@@ -18,6 +22,8 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   const Scalar* data = field->data;
   uint nx = field->nx;
   int sx = field->sx ? field->sx : 1;
@@ -37,6 +43,8 @@ _t2(compress_strided, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided, Scalar, 2)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
   uint ny = field->ny;
@@ -59,6 +67,8 @@ _t2(compress_strided, Scalar, 2)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided, Scalar, 3)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
   uint ny = field->ny;
@@ -84,6 +94,8 @@ _t2(compress_strided, Scalar, 3)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided, Scalar, 4)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   const Scalar* data = field->data;
   uint nx = field->nx;
   uint ny = field->ny;

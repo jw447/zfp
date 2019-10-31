@@ -1,9 +1,13 @@
 #ifdef _OPENMP
 
+#include "zfp.h"
+
 /* compress 1d contiguous array in parallel */
 static void
 _t2(compress_omp, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   /* array metadata */
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
@@ -51,6 +55,8 @@ _t2(compress_omp, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided_omp, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   /* array metadata */
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
@@ -99,6 +105,8 @@ _t2(compress_strided_omp, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided_omp, Scalar, 2)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   /* array metadata */
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
@@ -154,6 +162,8 @@ _t2(compress_strided_omp, Scalar, 2)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided_omp, Scalar, 3)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   /* array metadata */
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
@@ -213,6 +223,8 @@ _t2(compress_strided_omp, Scalar, 3)(zfp_stream* stream, const zfp_field* field)
 static void
 _t2(compress_strided_omp, Scalar, 4)(zfp_stream* stream, const zfp_field* field)
 {
+  //jwang
+  FuncName;
   /* array metadata */
   const Scalar* data = field->data;
   uint nx = field->nx;
