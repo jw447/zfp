@@ -87,7 +87,7 @@ print_error(const void* fin, const void* fout, zfp_type type, size_t n)
   //jwang
   //psnr = 20 * log10((fmax - fmin) / (2 * erms));
   double range = fmax - fmin;
-  printf("dmax=%.10f,dmin=%.10f\n,range=",fmax,fmin,range);
+  printf("dmax=%.10f,dmin=%.10f,range=%.10f\n",fmax,fmin,range);
   printf("rmse=%.10f\n",erms);
   psnr = 20 * log10((fmax - fmin) / erms);
   printf("rmse=%.4g nrmse=%.4g maxe=%.4g psnr=%.2f\n", erms, ermsn, emax, psnr);
