@@ -1,3 +1,4 @@
+#include <zfp.h>
 /* private functions ------------------------------------------------------- */
 
 /* gather 4-value block from strided array */
@@ -23,6 +24,8 @@ _t2(gather_partial, Scalar, 1)(Scalar* q, const Scalar* p, uint nx, int sx)
 static void
 _t2(fwd_xform, Int, 1)(Int* p)
 {
+  //jwang
+  //FuncName;
   /* transform along x */
   _t1(fwd_lift, Int)(p, 1);
 }
@@ -44,6 +47,7 @@ _t2(zfp_encode_block_strided, Scalar, 1)(zfp_stream* stream, const Scalar* p, in
 uint
 _t2(zfp_encode_partial_block_strided, Scalar, 1)(zfp_stream* stream, const Scalar* p, uint nx, int sx)
 {
+  FuncName;
   /* gather block from strided array */
   cache_align_(Scalar fblock[4]);
   _t2(gather_partial, Scalar, 1)(fblock, p, nx, sx);

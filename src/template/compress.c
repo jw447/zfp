@@ -11,11 +11,28 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   uint mx = nx & ~3u;
   uint x;
 
+  BfCost = 0;
+  BiCost = 0;
+  mCost = 0;
+  XformCost = 0;
+  OrderCost = 0;
+  uintCost = 0;
+  zCost = 0;
+  eCost = 0;
+  count_emb=0;
+  count_xou=0;
+  
+  gettimeofday(&NBCostS, NULL);
   /* compress array one block of 4 values at a time */
+  //printf("mx=%d\n", mx); // mx is data length
   for (x = 0; x < mx; x += 4, data += 4)
     _t2(zfp_encode_block, Scalar, 1)(stream, data);
   if (x < nx)
     _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
+  gettimeofday(&NBCostE, NULL);
+  NBCost = ((NBCostE.tv_sec*1000000+NBCostE.tv_usec)-(NBCostS.tv_sec*1000000+NBCostS.tv_usec))/1000000.0;
+
+  printf("count_emb=%u, count_xou=%u\n", count_emb, count_xou);
 }
 
 /* compress 1d strided array */
@@ -29,6 +46,7 @@ _t2(compress_strided, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   int sx = field->sx ? field->sx : 1;
   uint x;
 
+  //gettimeofday(&StriCostS, NULL);
   /* compress array one block of 4 values at a time */
   for (x = 0; x < nx; x += 4) {
     const Scalar* p = data + sx * (ptrdiff_t)x;
@@ -37,6 +55,8 @@ _t2(compress_strided, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
     else
       _t2(zfp_encode_block_strided, Scalar, 1)(stream, p, sx);
   }
+  //gettimeofday(&StriCostE, NULL);
+  //StriCost = ((StriCostE.tv_sec*1000000+StriCostE.tv_usec)-(StriCostS.tv_sec*1000000+StriCostS.tv_usec))/1000000.0;
 }
 
 /* compress 2d strided array */

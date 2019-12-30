@@ -1,4 +1,5 @@
 #include <limits.h>
+#include <zfp.h>
 
 static void _t2(fwd_xform, Int, DIMS)(Int* p);
 
@@ -30,6 +31,9 @@ _t1(pad_block, Scalar)(Scalar* p, uint n, uint s)
 static void
 _t1(fwd_lift, Int)(Int* p, uint s)
 {
+  //jwang
+  //FuncName;
+
   Int x, y, z, w;
   x = *p; p += s;
   y = *p; p += s;
@@ -66,6 +70,8 @@ _t1(int2uint, Int)(Int x)
 static void
 _t1(fwd_order, Int)(UInt* ublock, const Int* iblock, const uchar* perm, uint n)
 {
+  //jwang
+  //FuncName;
   do
     *ublock++ = _t1(int2uint, Int)(iblock[*perm++]);
   while (--n);
@@ -75,6 +81,8 @@ _t1(fwd_order, Int)(UInt* ublock, const Int* iblock, const uchar* perm, uint n)
 static uint
 _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, const UInt* restrict_ data, uint size)
 {
+  //jwang
+  FuncName;
   /* make a copy of bit stream to avoid aliasing */
   bitstream s = *stream;
   uint intprec = CHAR_BIT * (uint)sizeof(UInt);
@@ -83,8 +91,16 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   uint i, k, m, n;
   uint64 x;
 
+  //jwang
+  printf("intprec=%u, maxbits=%u, maxprec=%u, size=%u\n", intprec, maxbits, maxprec, size);
+  printf("NumBP=%d\n", intprec - kmin);
+  //uint count=0;
+
+  count_xou++;
+  gettimeofday(&uintCostS, NULL);
   /* encode one bit plane at a time from MSB to LSB */
   for (k = intprec, n = 0; bits && k-- > kmin;) {
+    //TODO
     /* step 1: extract bit plane #k to x */
     x = 0;
     for (i = 0; i < size; i++)
@@ -96,10 +112,13 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
     /* step 3: unary run-length encode remainder of bit plane */
     for (; n < size && bits && (bits--, stream_write_bit(&s, !!x)); x >>= 1, n++)
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
-        ;
+        //count++;
+	;
   }
-
+  gettimeofday(&uintCostE, NULL);
+  uintCost += ((uintCostE.tv_sec*1000000+uintCostE.tv_usec)-(uintCostS.tv_sec*1000000+uintCostS.tv_usec))/1000000.0;
   *stream = s;
+  //printf("count=%u\n", count);
   return maxbits - bits;
 }
 
@@ -107,6 +126,8 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
 static uint
 _t1(encode_many_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, const UInt* restrict_ data, uint size)
 {
+  //jwang
+  FuncName;
   /* make a copy of bit stream to avoid aliasing */
   bitstream s = *stream;
   uint intprec = CHAR_BIT * (uint)sizeof(UInt);
@@ -139,12 +160,23 @@ _t1(encode_many_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxp
 static uint
 _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int maxprec, Int* iblock)
 {
+  //jwang
+  FuncName;
+
   int bits;
   cache_align_(UInt ublock[BLOCK_SIZE]);
-  /* perform decorrelating transform */
+
+  //printf("/* perform decorrelating transform */\n");
+  gettimeofday(&XformCostS, NULL);
   _t2(fwd_xform, Int, DIMS)(iblock);
-  /* reorder signed coefficients and convert to unsigned integer */
+  gettimeofday(&XformCostE, NULL);
+
+
+  //printf("/* reorder signed coefficients and convert to unsigned integer */\n");
+  gettimeofday(&OrderCostS, NULL);
   _t1(fwd_order, Int)(ublock, iblock, PERM, BLOCK_SIZE);
+  gettimeofday(&OrderCostE, NULL);
+
   /* encode integer coefficients */
   if (BLOCK_SIZE <= 64)
     bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
@@ -155,5 +187,8 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
     stream_pad(stream, minbits - bits);
     bits = minbits;
   }
+  XformCost += ((XformCostE.tv_sec*1000000+XformCostE.tv_usec)-(XformCostS.tv_sec*1000000+XformCostS.tv_usec))/1000000.0; 
+  OrderCost += ((OrderCostE.tv_sec*1000000+OrderCostE.tv_usec)-(OrderCostS.tv_sec*1000000+OrderCostS.tv_usec))/1000000.0;
+
   return bits;
 }

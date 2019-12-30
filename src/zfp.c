@@ -5,6 +5,7 @@
 #include "zfp.h"
 #include "zfp/macros.h"
 #include "template/template.h"
+#include <sys/time.h>
 
 /* public data ------------------------------------------------------------- */
 
@@ -694,10 +695,12 @@ zfp_stream_set_precision(zfp_stream* zfp, uint precision)
 {
   //jwang
   FuncName;
+  
   zfp->minbits = ZFP_MIN_BITS;
   zfp->maxbits = ZFP_MAX_BITS;
   zfp->maxprec = precision ? MIN(precision, ZFP_MAX_PREC) : ZFP_MAX_PREC;
   zfp->minexp = ZFP_MIN_EXP;
+  printf("precision=%u, minbits=%u, maxbits=%u,  maxprec=%u,  minexp=%d\n", precision, zfp->minbits, zfp->maxbits, zfp->maxprec, zfp->minexp);
   return zfp->maxprec;
 }
 
@@ -1029,7 +1032,7 @@ zfp_compress(zfp_stream* zfp, const zfp_field* field)
   uint dims = zfp_field_dimensionality(field);
   uint type = field->type;
   //jwang
-  printf("exec=%u\nstrided=%u\ndims=%u\ntype=%u\n", exec, strided, dims, type);
+  //printf("exec=%u\nstrided=%u\ndims=%u\ntype=%u\n", exec, strided, dims, type);
 
   void (*compress)(zfp_stream*, const zfp_field*);
 
@@ -1049,12 +1052,16 @@ zfp_compress(zfp_stream* zfp, const zfp_field* field)
     return 0;
 
   /* compress field and align bit stream on word boundary */
-  compress(zfp, field);
+  //jwang
+  gettimeofday(&compCostS, NULL);
+  compress(zfp, field); // jwang - compress_double_1
+  gettimeofday(&compCostE, NULL);
+  compCost = ((compCostE.tv_sec*1000000+compCostE.tv_usec)-(compCostS.tv_sec*1000000+compCostS.tv_usec))/1000000.0;
   stream_flush(zfp->stream);
   
   //jwang
   int outputsize = stream_size(zfp->stream);
-  printf("outputsize = %d\n", outputsize);
+  //printf("outputsize=%d\n", outputsize);
   return outputsize;
 }
 

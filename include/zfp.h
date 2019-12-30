@@ -64,7 +64,7 @@
 #include "zfp/types.h"
 #include "zfp/system.h"
 #include "bitstream.h"
-
+#include <sys/time.h>
 /* macros ------------------------------------------------------------------ */
 
 /* stringification */
@@ -753,7 +753,56 @@ void zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims);
 }
 #endif
 
+//#define FuncName printf("func: %s at file: %s\n", __func__, __FILE__)
+#define FuncName
+struct timeval totalCostS;
+struct timeval totalCostE;
+double totalCost;
+
+struct timeval compCostS;
+struct timeval compCostE;
+double compCost;
+
+struct timeval NBCostS;
+struct timeval NBCostE;
+double NBCost;
+
+struct timeval BfCostS;
+struct timeval BfCostE;
+double BfCost;
+
+struct timeval BiCostS;
+struct timeval BiCostE;
+double BiCost;
+
+struct timeval mCostS;
+struct timeval mCostE;
+double mCost;
+
+struct timeval zCostS;
+struct timeval zCostE;
+double zCost;
+
+struct timeval eCostS;
+struct timeval eCostE;
+double eCost;
+
+struct timeval XformCostS;
+struct timeval XformCostE;
+double XformCost;
+
+struct timeval OrderCostS;
+struct timeval OrderCostE;
+double OrderCost;
+
+struct timeval uintCostS;
+struct timeval uintCostE;
+double uintCost;
+
+uint count_emb;
+uint count_xou;
+
 #endif
 
-#define FuncName printf("func: %s at file: %s\n", __func__, __FILE__)
+
 

@@ -43,13 +43,13 @@ print_error(const void* fin, const void* fout, zfp_type type, size_t n)
   double fmin = +DBL_MAX;
   double fmax = -DBL_MAX;
   double erms = 0;
-  double ermsn = 0;
+  //double ermsn = 0;
   double emax = 0;
-  double psnr = 0;
+  //double psnr = 0;
   size_t i;
 
-  fmin = 0;
-  fmax = 0;
+  //double fmin = 0;
+  //double fmax = 0;
   for (i = 0; i < n; i++) {
     double d, val;
     switch (type) {
@@ -80,17 +80,18 @@ print_error(const void* fin, const void* fout, zfp_type type, size_t n)
     //if(fmax < val)
     //	    fmax = val;
     //if(fmin > val)
-    //	    fmin = val;
+    //    fmin = val;
+    //printf("%.10f\n",val);
   }
-  erms = sqrt(erms / n);
-  ermsn = erms / (fmax - fmin);
+  //erms = sqrt(erms / n);
+  //ermsn = erms / (fmax - fmin);
   //jwang
   //psnr = 20 * log10((fmax - fmin) / (2 * erms));
-  double range = fmax - fmin;
-  printf("dmax=%.10f,dmin=%.10f,range=%.10f\n",fmax,fmin,range);
-  printf("rmse=%.10f\n",erms);
-  psnr = 20 * log10((fmax - fmin) / erms);
-  printf("rmse=%.4g nrmse=%.4g maxe=%.4g psnr=%.2f\n", erms, ermsn, emax, psnr);
+  //double range = fmax - fmin;
+  //printf("rmse=%.10f\n",erms);
+  //psnr = 20 * log10((fmax - fmin) / erms);
+  //printf("dmax=%.10f, dmin=%.10f, range=%.10f, psnr=%.10f\n",fmax,fmin,range,psnr);
+  //printf("rmse=%.4g nrmse=%.4g maxe=%.4g psnr=%.2f\n", erms, ermsn, emax, psnr);
 }
 
 static void
@@ -543,7 +544,22 @@ int main(int argc, char* argv[])
     }
 
     /* compress data */
+    //jwang
+    gettimeofday(&totalCostS, NULL);
     zfpsize = zfp_compress(zfp, field);
+    gettimeofday(&totalCostE, NULL);
+    totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+    //printf("totalCost=%f\n", totalCost);
+    //printf("compCost=%f\n", compCost);
+    //printf("NBCost=%f\n", NBCost);
+    //printf("BfCost=%f\n", BfCost);
+    //printf("eCost=%f\n", eCost);
+    //printf("mCost=%f\n", mCost);
+    //printf("BiCost=%f\n", BiCost);
+    //printf("zCost=%f\n", zCost);
+    printf("XformCost=%f\n", XformCost);
+    printf("OrderCost=%f\n", OrderCost);
+    printf("uintCost=%f\n", uintCost);
     if (zfpsize == 0) {
       fprintf(stderr, "compression failed\n");
       return EXIT_FAILURE;
@@ -634,11 +650,10 @@ int main(int argc, char* argv[])
   /* print compression and error statistics */
   if (!quiet) {
     const char* type_name[] = { "int32", "int64", "float", "double" };
-    printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
-    printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
+    //printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
+    //printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
     if (stats)
       print_error(fi, fo, type, count);
-    //fprintf(stderr, "\n");
   }
 
   /* free allocated storage */

@@ -54,10 +54,17 @@ _t1(fwd_cast, Scalar)(Int* iblock, const Scalar* fblock, uint n, int emax)
 static uint
 _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
 {
+  //jwang
+  FuncName;
   uint bits = 1;
   /* compute maximum exponent */
+  gettimeofday(&eCostS, NULL);
   int emax = _t1(exponent_block, Scalar)(fblock, BLOCK_SIZE);
   int maxprec = precision(emax, zfp->maxprec, zfp->minexp, DIMS);
+  gettimeofday(&eCostE, NULL);
+  eCost += ((eCostE.tv_sec*1000000+eCostE.tv_usec)-(eCostS.tv_sec*1000000+eCostS.tv_usec))/1000000.0;
+  
+  printf("emax=%d, maxprec=%d, zfp->maxprec=%d, zfp->minexp=%d, zfp->minbits=%d, zfp->maxbits=%d\n", emax, maxprec, zfp->maxprec, zfp->minexp, zfp->minbits, zfp->maxbits);
   uint e = maxprec ? emax + EBIAS : 0;
   /* encode block only if biased exponent is nonzero */
   if (e) {
@@ -66,15 +73,28 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
     bits += EBITS;
     stream_write_bits(zfp->stream, 2 * e + 1, bits);
     /* perform forward block-floating-point transform */
-    _t1(fwd_cast, Scalar)(iblock, fblock, BLOCK_SIZE, emax);
+    
+    count_emb++;
+    gettimeofday(&mCostS, NULL);
+    _t1(fwd_cast, Scalar)(iblock, fblock, BLOCK_SIZE, emax); // get mantisa.
+    gettimeofday(&mCostE, NULL);
+    mCost += ((mCostE.tv_sec*1000000+mCostE.tv_usec)-(mCostS.tv_sec*1000000+mCostS.tv_usec))/1000000.0;
+    //
     /* encode integer block */
+    gettimeofday(&BiCostS, NULL);
     bits += _t2(encode_block, Int, DIMS)(zfp->stream, zfp->minbits - bits, zfp->maxbits - bits, maxprec, iblock);
+    gettimeofday(&BiCostE, NULL);
+    BiCost += ((BiCostE.tv_sec*1000000+BiCostE.tv_usec)-(BiCostS.tv_sec*1000000+BiCostS.tv_usec))/1000000.0;
   }
+  
   else {
     /* write single zero-bit to indicate that all values are zero */
     stream_write_bit(zfp->stream, 0);
     if (zfp->minbits > bits) {
+      gettimeofday(&zCostS, NULL);
       stream_pad(zfp->stream, zfp->minbits - bits);
+      gettimeofday(&zCostE, NULL);
+      zCost += ((zCostE.tv_sec*1000000+zCostE.tv_usec)-(zCostS.tv_sec*1000000+zCostS.tv_usec))/1000000.0;
       bits = zfp->minbits;
     }
   }
@@ -87,5 +107,6 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
 uint
 _t2(zfp_encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
 {
+  //jwang
   return REVERSIBLE(zfp) ? _t2(rev_encode_block, Scalar, DIMS)(zfp, fblock) : _t2(encode_block, Scalar, DIMS)(zfp, fblock);
 }
