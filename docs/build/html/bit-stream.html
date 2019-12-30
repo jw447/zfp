@@ -1,0 +1,369 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Bit Stream API &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Compressed Arrays" href="arrays.html" />
+    <link rel="prev" title="Low-Level C API" href="low-level-api.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arrays.html" title="Compressed Arrays"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="low-level-api.html" title="Low-Level C API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bit-stream-api">
+<span id="bs-api"></span><h1>Bit Stream API<a class="headerlink" href="#bit-stream-api" title="Permalink to this headline">¶</a></h1>
+<p>zfp relies on low-level functions for bit stream I/O, e.g., for
+reading/writing single bits or groups of bits.  zfp’s bit streams
+support random access (with some caveats) and, optionally, strided
+access.  The functions read from and write to main memory allocated
+by the user.  Buffer overruns are for performance reasons not guarded
+against.</p>
+<p>From an implementation standpoint, bit streams are read from and written
+to memory in increments of <em>words</em> of bits.  The constant power-of-two
+word size is configured at <a class="reference internal" href="installation.html#config"><span class="std std-ref">compile time</span></a>, and is limited
+to 8, 16, 32, or 64 bits.</p>
+<p>The bit stream API is publicly exposed and may be used to write additional
+information such as metadata into the zfp compressed stream and to
+manipulate whole or partial bit streams.  Moreover, we envision releasing
+the bit stream functions as a separate library in the future that may be
+used, for example, in other compressors.</p>
+<p>Stream readers and writers are synchronized by making corresponding calls.
+For each write call, there is a corresponding read call.  This ensures
+that reader and writer agree on the position within the stream and the
+number of bits buffered, if any.  The API below reflects this duality.</p>
+<p>A bit stream is either in read or write mode, or either, if rewound to
+the beginning.  When in read mode, only read calls should be made,
+and similarly for write mode.</p>
+<div class="section" id="strided-streams">
+<span id="bs-strides"></span><h2>Strided Streams<a class="headerlink" href="#strided-streams" title="Permalink to this headline">¶</a></h2>
+<p>Bit streams may be strided by sequentially reading/writing a few words at
+a time and then skipping over some user-specified number of words.  This
+allows, for instance, zfp to interleave the first few bits of all
+compressed blocks in order to support progressive access.  To enable
+strided access, which does carry a small performance penalty, the
+macro <a class="reference internal" href="installation.html#c.BIT_STREAM_STRIDED" title="BIT_STREAM_STRIDED"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_STRIDED</span></code></a> must be defined during compilation.</p>
+<p>Strides are specified in terms of a <em>block size</em>—a power-of-two number
+of contiguous words—and a <em>delta</em>, which specifies how many words to
+advance the stream by to get to the next contiguous block.  These bit
+stream blocks are entirely independent of the 4<sup>d</sup> blocks used for
+compression in zfp.  Setting <em>delta</em> to zero ensures a non-strided,
+sequential layout.</p>
+</div>
+<div class="section" id="macros">
+<span id="bs-macros"></span><h2>Macros<a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h2>
+<p>Two compile-time macros are used to influence the behavior:
+<a class="reference internal" href="installation.html#c.BIT_STREAM_WORD_TYPE" title="BIT_STREAM_WORD_TYPE"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_WORD_TYPE</span></code></a> and <a class="reference internal" href="installation.html#c.BIT_STREAM_STRIDED" title="BIT_STREAM_STRIDED"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_STRIDED</span></code></a>.
+These are documented in the <a class="reference internal" href="installation.html#installation"><span class="std std-ref">installation</span></a>
+section.</p>
+</div>
+<div class="section" id="types">
+<span id="bs-types"></span><h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="c.word">
+<code class="descname">word</code><a class="headerlink" href="#c.word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bits are buffered and read/written in units of words.  By default, the
+bit stream word type is 64 bits, but may be set to 8, 16, or 32 bits
+by setting the macro <a class="reference internal" href="installation.html#c.BIT_STREAM_WORD_TYPE" title="BIT_STREAM_WORD_TYPE"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_WORD_TYPE</span></code></a> to <code class="xref c c-type docutils literal"><span class="pre">uint8</span></code>,
+<code class="xref c c-type docutils literal"><span class="pre">uint16</span></code>, or <code class="xref c c-type docutils literal"><span class="pre">uint32</span></code>, respectively.  Larger words
+tend to give higher throughput, while 8-bit words are needed to ensure
+endian independence (see FAQ <a class="reference internal" href="faq.html#q-portability"><span class="std std-ref">#11</span></a>).</p>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.bitstream">
+<code class="descname">bitstream</code><a class="headerlink" href="#c.bitstream" title="Permalink to this definition">¶</a></dt>
+<dd><p>The bit stream struct maintains all the state associated with a bit
+stream.  This struct is passed to all bit stream functions.  Its members
+should not be accessed directly.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">bitstream</span> <span class="p">{</span>
+  <span class="n">uint</span> <span class="n">bits</span><span class="p">;</span>       <span class="o">//</span> <span class="n">number</span> <span class="n">of</span> <span class="n">buffered</span> <span class="n">bits</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">bits</span> <span class="o">&lt;</span> <span class="n">word</span> <span class="n">size</span><span class="p">)</span>
+  <span class="n">word</span> <span class="n">buffer</span><span class="p">;</span>     <span class="o">//</span> <span class="n">buffer</span> <span class="k">for</span> <span class="n">incoming</span><span class="o">/</span><span class="n">outgoing</span> <span class="n">bits</span> <span class="p">(</span><span class="n">buffer</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">^</span><span class="n">bits</span><span class="p">)</span>
+  <span class="n">word</span><span class="o">*</span> <span class="n">ptr</span><span class="p">;</span>       <span class="o">//</span> <span class="n">pointer</span> <span class="n">to</span> <span class="nb">next</span> <span class="n">word</span> <span class="n">to</span> <span class="n">be</span> <span class="n">read</span><span class="o">/</span><span class="n">written</span>
+  <span class="n">word</span><span class="o">*</span> <span class="n">begin</span><span class="p">;</span>     <span class="o">//</span> <span class="n">beginning</span> <span class="n">of</span> <span class="n">stream</span>
+  <span class="n">word</span><span class="o">*</span> <span class="n">end</span><span class="p">;</span>       <span class="o">//</span> <span class="n">end</span> <span class="n">of</span> <span class="n">stream</span> <span class="p">(</span><span class="n">currently</span> <span class="n">unused</span><span class="p">)</span>
+  <span class="n">size_t</span> <span class="n">mask</span><span class="p">;</span>     <span class="o">//</span> <span class="n">one</span> <span class="n">less</span> <span class="n">the</span> <span class="n">block</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">number</span> <span class="n">of</span> <span class="n">words</span> <span class="p">(</span><span class="k">if</span> <span class="n">BIT_STREAM_STRIDED</span><span class="p">)</span>
+  <span class="n">ptrdiff_t</span> <span class="n">delta</span><span class="p">;</span> <span class="o">//</span> <span class="n">number</span> <span class="n">of</span> <span class="n">words</span> <span class="n">between</span> <span class="n">consecutive</span> <span class="n">blocks</span> <span class="p">(</span><span class="k">if</span> <span class="n">BIT_STREAM_STRIDED</span><span class="p">)</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<span id="bs-data"></span><h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="var">
+<dt id="c.stream_word_bits">
+const size_t <code class="descname">stream_word_bits</code><a class="headerlink" href="#c.stream_word_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of bits in a word.  The size of a flushed bit stream will be
+a multiple of this number of bits.  See <a class="reference internal" href="installation.html#c.BIT_STREAM_WORD_TYPE" title="BIT_STREAM_WORD_TYPE"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_WORD_TYPE</span></code></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="functions">
+<span id="bs-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="c.stream_open">
+<a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>* <code class="descname">stream_open</code><span class="sig-paren">(</span>void*<em>&nbsp;buffer</em>, size_t<em>&nbsp;bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocate a <a class="reference internal" href="#c.bitstream" title="bitstream"><code class="xref c c-type docutils literal"><span class="pre">bitstream</span></code></a> struct and associate it with the memory
+buffer allocated by the caller.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_close">
+void <code class="descname">stream_close</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the bit stream and deallocate <em>stream</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_clone">
+<a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>* <code class="descname">stream_clone</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy of <em>stream</em> that points to the same memory buffer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_data">
+void* <code class="descname">stream_data</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return pointer to the beginning of bit stream <em>stream</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_size">
+size_t <code class="descname">stream_size</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return position of stream pointer in number of bytes, which equals the
+end of stream if no seeks have been made.  Note that additional bits
+may be buffered and not reported unless the stream has been flushed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_capacity">
+size_t <code class="descname">stream_capacity</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return byte size of memory buffer associated with <em>stream</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_read_bit">
+uint <code class="descname">stream_read_bit</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_read_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a single bit from <em>stream</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_write_bit">
+uint <code class="descname">stream_write_bit</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;bit</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_write_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write single <em>bit</em> to <em>stream</em>.  <em>bit</em> must be one of 0 or 1.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_read_bits">
+uint64 <code class="descname">stream_read_bits</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_read_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read and return 0 ≤ <em>n</em> ≤ 64 bits from <em>stream</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_write_bits">
+uint64 <code class="descname">stream_write_bits</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, uint64<em>&nbsp;value</em>, uint<em>&nbsp;n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_write_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write 0 ≤ <em>n</em> ≤ 64 low bits of <em>value</em> to <em>stream</em>.  Return any
+remaining bits from <em>value</em>, i.e., <em>value</em> &gt;&gt; <em>n</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_rtell">
+size_t <code class="descname">stream_rtell</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_rtell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bit offset to next bit to be read.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_wtell">
+size_t <code class="descname">stream_wtell</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_wtell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bit offset to next bit to be written.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_rewind">
+void <code class="descname">stream_rewind</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_rewind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rewind stream to beginning of memory buffer.  Following this call, the
+stream may either be read or written.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_rseek">
+void <code class="descname">stream_rseek</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, size_t<em>&nbsp;offset</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_rseek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position stream for reading at given bit offset.  This places the
+stream in read mode.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_wseek">
+void <code class="descname">stream_wseek</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, size_t<em>&nbsp;offset</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_wseek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position stream for writing at given bit offset.  This places the
+stream in write mode.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_skip">
+void <code class="descname">stream_skip</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_skip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skip over the next <em>n</em> bits, i.e., without reading them.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_pad">
+void <code class="descname">stream_pad</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append <em>n</em> zero-bits to <em>stream</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_align">
+size_t <code class="descname">stream_align</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_align" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align stream on next word boundary by skipping bits.  No skipping is
+done if the stream is already word aligned.  Return the number of
+skipped bits, if any.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_flush">
+size_t <code class="descname">stream_flush</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write out any remaining buffered bits.  When one or more bits are
+buffered, append zero-bits to the stream to align it on a word boundary.
+Return the number of bits of padding, if any.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_copy">
+void <code class="descname">stream_copy</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;dst</em>, <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;src</em>, size_t<em>&nbsp;n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy <em>n</em> bits from <em>src</em> to <em>dst</em>, advancing both bit streams.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_stride_block">
+size_t <code class="descname">stream_stride_block</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_stride_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return stream block size in number of words.  The block size is always
+one word unless strided streams are enabled.  See <a class="reference internal" href="#bs-strides"><span class="std std-ref">Strided Streams</span></a>
+for more information.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_stride_delta">
+ptrdiff_t <code class="descname">stream_stride_delta</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_stride_delta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return stream delta in number of words between blocks.  See
+<a class="reference internal" href="#bs-strides"><span class="std std-ref">Strided Streams</span></a> for more information.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.stream_set_stride">
+int <code class="descname">stream_set_stride</code><span class="sig-paren">(</span><a class="reference internal" href="#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em>, size_t<em>&nbsp;block</em>, ptrdiff_t<em>&nbsp;delta</em><span class="sig-paren">)</span><a class="headerlink" href="#c.stream_set_stride" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set block size, <em>block</em>, in number of words and spacing, <em>delta</em>, in number
+of blocks for strided access.  Requires <a class="reference internal" href="installation.html#c.BIT_STREAM_STRIDED" title="BIT_STREAM_STRIDED"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_STRIDED</span></code></a>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bit Stream API</a><ul>
+<li><a class="reference internal" href="#strided-streams">Strided Streams</a></li>
+<li><a class="reference internal" href="#macros">Macros</a></li>
+<li><a class="reference internal" href="#types">Types</a></li>
+<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="low-level-api.html"
+                        title="previous chapter">Low-Level C API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="arrays.html"
+                        title="next chapter">Compressed Arrays</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arrays.html" title="Compressed Arrays"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="low-level-api.html" title="Low-Level C API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

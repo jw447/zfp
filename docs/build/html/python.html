@@ -1,0 +1,271 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Python Bindings &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fortran Bindings" href="zforp.html" />
+    <link rel="prev" title="Compressed Arrays" href="arrays.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="zforp.html" title="Fortran Bindings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="arrays.html" title="Compressed Arrays"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-zfpy"></span><div class="section" id="python-bindings">
+<span id="zfpy"></span><h1>Python Bindings<a class="headerlink" href="#python-bindings" title="Permalink to this headline">¶</a></h1>
+<p>zfp 0.5.5 adds zfPy: Python bindings that allow compressing
+and decompressing <a class="reference external" href="https://www.numpy.org">NumPy</a> integer and
+floating-point arrays.  The zfPy implementation is based on
+<a class="reference external" href="https://cython.org">Cython</a> and requires both NumPy and Cython
+to be installed.  Currently, zfPy supports only serial execution.</p>
+<p>The zfPy API is limited to two functions, for compression and
+decompression, which are described below.</p>
+<div class="section" id="compression">
+<h2>Compression<a class="headerlink" href="#compression" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="zfpy.compress_numpy">
+<code class="descclassname">zfpy.</code><code class="descname">compress_numpy</code><span class="sig-paren">(</span><em>arr</em>, <em>tolerance = -1</em>, <em>rate = -1</em>, <em>precision = -1</em>, <em>write_header = True</em><span class="sig-paren">)</span><a class="headerlink" href="#zfpy.compress_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compress NumPy array, <em>arr</em>, and return a compressed byte stream.  The
+non-expert <a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression mode</span></a> is selected by setting one of
+<em>tolerance</em>, <em>rate</em>, or <em>precision</em>.  If none of these arguments is
+specified, then <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible mode</span></a> is used.  By
+default, a header that encodes array shape and scalar type as well as
+compression parameters is prepended, which can be omitted by setting
+<em>write_header</em> to <em>False</em>.  If this function fails for any reason, an
+exception is thrown.</p>
+</dd></dl>
+
+<p>zfPy compression currently requires a NumPy array
+(<a class="reference external" href="https://www.numpy.org/devdocs/reference/arrays.ndarray.html">ndarray</a>)
+populated with the data to be compressed.  The array metadata (i.e.,
+shape, strides, and scalar type) are used to automatically populate the
+<a class="reference internal" href="high-level-api.html#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> structure passed to <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a>.  By default,
+all that is required to be passed to the compression function is the
+NumPy array; this will result in a stream that includes a header and is
+losslessly compressed using the <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible mode</span></a>.
+For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zfpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">compressed_data</span> <span class="o">=</span> <span class="n">zfpy</span><span class="o">.</span><span class="n">compress_numpy</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+<span class="n">decompressed_array</span> <span class="o">=</span> <span class="n">zfpy</span><span class="o">.</span><span class="n">decompress_numpy</span><span class="p">(</span><span class="n">compressed_data</span><span class="p">)</span>
+
+<span class="c1"># confirm lossless compression/decompression</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_equal</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="n">decompressed_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using the fixed-accuracy, fixed-rate, or fixed-precision modes simply requires
+setting one of the <em>tolerance</em>, <em>rate</em>, or <em>precision</em> arguments, respectively.
+For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">compressed_data</span> <span class="o">=</span> <span class="n">zfpy</span><span class="o">.</span><span class="n">compress_numpy</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+<span class="n">decompressed_array</span> <span class="o">=</span> <span class="n">zfpy</span><span class="o">.</span><span class="n">decompress_numpy</span><span class="p">(</span><span class="n">compressed_data</span><span class="p">)</span>
+
+<span class="c1"># Note the change from &quot;equal&quot; to &quot;allclose&quot; due to the lossy compression</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="n">decompressed_array</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since NumPy arrays are C-ordered by default (i.e., the rightmost index
+varies fastest) and <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a> assumes Fortran ordering
+(i.e., the leftmost index varies fastest), <a class="reference internal" href="#zfpy.compress_numpy" title="zfpy.compress_numpy"><code class="xref py py-func docutils literal"><span class="pre">compress_numpy()</span></code></a>
+automatically reverses the order of dimensions and strides in order to
+improve the expected memory access pattern during compression.
+The <a class="reference internal" href="#zfpy.decompress_numpy" title="zfpy.decompress_numpy"><code class="xref py py-func docutils literal"><span class="pre">decompress_numpy()</span></code></a> function also reverses the order of
+dimensions and strides, and therefore decompression will restore the
+shape of the original array.  Note, however, that the zfp stream does
+not encode the memory layout of the original NumPy array, and therefore
+layout information like strides, contiguity, and C vs. Fortran order
+may not be preserved.  Nevertheless, zfPy correctly compresses NumPy
+arrays with any memory layout, including Fortran ordering and non-contiguous
+storage.</p>
+<p>Byte streams produced by <a class="reference internal" href="#zfpy.compress_numpy" title="zfpy.compress_numpy"><code class="xref py py-func docutils literal"><span class="pre">compress_numpy()</span></code></a> can be decompressed
+by the <a class="reference internal" href="zfpcmd.html#zfpcmd"><span class="std std-ref">zfp command-line tool</span></a>.  In general, they cannot
+be <a class="reference internal" href="arrays.html#serialization"><span class="std std-ref">deserialized</span></a> as compressed arrays, however.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#zfpy.decompress_numpy" title="zfpy.decompress_numpy"><code class="xref py py-func docutils literal"><span class="pre">decompress_numpy()</span></code></a> requires a header to decompress properly, so do
+not set <em>write_header</em> = <em>False</em> during compression if you intend to
+decompress the stream with zfPy.</p>
+</div>
+</div>
+<div class="section" id="decompression">
+<h2>Decompression<a class="headerlink" href="#decompression" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="zfpy.decompress_numpy">
+<code class="descclassname">zfpy.</code><code class="descname">decompress_numpy</code><span class="sig-paren">(</span><em>compressed_data</em><span class="sig-paren">)</span><a class="headerlink" href="#zfpy.decompress_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decompress a byte stream, <em>compressed_data</em>, produced by
+<a class="reference internal" href="#zfpy.compress_numpy" title="zfpy.compress_numpy"><code class="xref py py-func docutils literal"><span class="pre">compress_numpy()</span></code></a> (with header enabled) and return the
+decompressed NumPy array.  This function throws on exception upon error.</p>
+</dd></dl>
+
+<p><a class="reference internal" href="#zfpy.decompress_numpy" title="zfpy.decompress_numpy"><code class="xref py py-func docutils literal"><span class="pre">decompress_numpy()</span></code></a> consumes a compressed stream that includes a
+header and produces a NumPy array with metadata populated based on the
+contents of the header.  Stride information is not stored in the zfp
+header, so <a class="reference internal" href="#zfpy.decompress_numpy" title="zfpy.decompress_numpy"><code class="xref py py-func docutils literal"><span class="pre">decompress_numpy()</span></code></a> assumes that the array was compressed
+with the first (leftmost) dimension varying fastest (typically referred to as
+Fortran-ordering).  The returned NumPy array is in C-ordering (the default
+for NumPy arrays), so the shape of the returned array is reversed from
+the shape information stored in the embedded header.  For example, if the
+header declares the array to be of shape (<em>nx</em>, <em>ny</em>, <em>nz</em>) = (2, 4, 8),
+then the returned NumPy array will have a shape of (8, 4, 2).
+Since the <a class="reference internal" href="#zfpy.compress_numpy" title="zfpy.compress_numpy"><code class="xref py py-func docutils literal"><span class="pre">compress_numpy()</span></code></a> function also reverses the order of
+dimensions, arrays both compressed and decompressed with zfPy will have
+compatible shape.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Decompressing a stream without a header requires using the
+internal <a class="reference internal" href="#zfpy._decompress" title="zfpy._decompress"><code class="xref py py-func docutils literal"><span class="pre">_decompress()</span></code></a> Python function (or the
+<a class="reference internal" href="high-level-api.html#hl-api"><span class="std std-ref">C API</span></a>).</p>
+</div>
+<dl class="function">
+<dt id="zfpy._decompress">
+<code class="descclassname">zfpy.</code><code class="descname">_decompress</code><span class="sig-paren">(</span><em>compressed_data</em>, <em>ztype</em>, <em>shape</em>, <em>out = None</em>, <em>tolerance = -1</em>, <em>rate = -1</em>, <em>precision = -1</em><span class="sig-paren">)</span><a class="headerlink" href="#zfpy._decompress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decompress a headerless compressed stream (if a header is present in
+the stream, it will be incorrectly interpreted as compressed data).
+<em>ztype</em> specifies the array scalar type while <em>shape</em> specifies the array
+dimensions; both must be known by the caller.  The compression mode is
+selected by specifying one (or none) of <em>tolerance</em>, <em>rate</em>, and
+<em>precision</em>, as in <a class="reference internal" href="#zfpy.compress_numpy" title="zfpy.compress_numpy"><code class="xref py py-func docutils literal"><span class="pre">compress_numpy()</span></code></a>, and also must be known
+by the caller.  If <em>out = None</em>, a new NumPy array is allocated.  Otherwise,
+<em>out</em> specifies the NumPy array or memory buffer to decompress into.
+Regardless, the decompressed NumPy array is returned unless an error occurs,
+in which case an exception is thrown.</p>
+</dd></dl>
+
+<p>In <a class="reference internal" href="#zfpy._decompress" title="zfpy._decompress"><code class="xref py py-func docutils literal"><span class="pre">_decompress()</span></code></a>, <em>ztype</em> is one of the zfp supported scalar types
+(see <a class="reference internal" href="high-level-api.html#c.zfp_type" title="zfp_type"><code class="xref c c-type docutils literal"><span class="pre">zfp_type</span></code></a>), which are available in zfPy as</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">type_int32</span> <span class="o">=</span> <span class="n">zfp_type_int32</span>
+<span class="n">type_int64</span> <span class="o">=</span> <span class="n">zfp_type_int64</span>
+<span class="n">type_float</span> <span class="o">=</span> <span class="n">zfp_type_float</span>
+<span class="n">type_double</span> <span class="o">=</span> <span class="n">zfp_type_double</span>
+</pre></div>
+</div>
+<p>These can be manually specified (e.g., <code class="code docutils literal"><span class="pre">zfpy.type_int32</span></code>) or generated
+from a NumPy <em>dtype</em> (e.g., <code class="code docutils literal"><span class="pre">zfpy.dtype_to_ztype(array.dtype)</span></code>).</p>
+<p>If <em>out</em> is specified, the data is decompressed into the <em>out</em> buffer.
+<em>out</em> can be a NumPy array or a pointer to memory large enough to hold the
+decompressed data.  Regardless of the type of <em>out</em> and whether it is provided,
+<a class="reference internal" href="#zfpy._decompress" title="zfpy._decompress"><code class="xref py py-func docutils literal"><span class="pre">_decompress()</span></code></a> always returns a NumPy array.  If <em>out</em> is not
+provided, then the array is allocated for the user.  If <em>out</em> is provided,
+then the returned NumPy array is just a pointer to or wrapper around the
+user-supplied <em>out</em>.  If <em>out</em> is a NumPy array, then its shape and scalar
+type must match the required arguments <em>shape</em> and <em>ztype</em>.  To avoid this
+constraint check, use <code class="code docutils literal"><span class="pre">out</span> <span class="pre">=</span> <span class="pre">ndarray.data</span></code> rather than
+<code class="code docutils literal"><span class="pre">out</span> <span class="pre">=</span> <span class="pre">ndarray</span></code> when calling <a class="reference internal" href="#zfpy._decompress" title="zfpy._decompress"><code class="xref py py-func docutils literal"><span class="pre">_decompress()</span></code></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><a class="reference internal" href="#zfpy._decompress" title="zfpy._decompress"><code class="xref py py-func docutils literal"><span class="pre">_decompress()</span></code></a> is an “experimental” function currently used
+internally for testing.  It does allow decompression of streams without
+headers, but providing too small of an output buffer or incorrectly
+specifying the shape or strides can result in segmentation faults.
+Use with care.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Python Bindings</a><ul>
+<li><a class="reference internal" href="#compression">Compression</a></li>
+<li><a class="reference internal" href="#decompression">Decompression</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="arrays.html"
+                        title="previous chapter">Compressed Arrays</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="zforp.html"
+                        title="next chapter">Fortran Bindings</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="zforp.html" title="Fortran Bindings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="arrays.html" title="Compressed Arrays"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

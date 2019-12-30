@@ -1,0 +1,784 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Low-Level C API &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bit Stream API" href="bit-stream.html" />
+    <link rel="prev" title="High-Level C API" href="high-level-api.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bit-stream.html" title="Bit Stream API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="high-level-api.html" title="High-Level C API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="low-level-c-api">
+<span id="ll-api"></span><h1>Low-Level C API<a class="headerlink" href="#low-level-c-api" title="Permalink to this headline">¶</a></h1>
+<p>The low-level C API provides functionality for compressing individual
+<em>d</em>-dimensional blocks of up to 4<sup>d</sup> values.  If a block is not
+complete, i.e., contains fewer than 4<sup>d</sup> values, then zfp’s partial
+block support should be favored over padding the block with, say, zeros
+or other fill values.  The blocks (de)compressed need not be contiguous
+and can be gathered from or scattered to a larger array by setting
+appropriate strides.</p>
+<p>The following topics are available:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#ll-stream"><span class="std std-ref">Stream Manipulation</span></a></li>
+<li><a class="reference internal" href="#ll-encoder"><span class="std std-ref">Encoder</span></a><ul>
+<li><a class="reference internal" href="#ll-1d-encoder"><span class="std std-ref">1D Data</span></a></li>
+<li><a class="reference internal" href="#ll-2d-encoder"><span class="std std-ref">2D Data</span></a></li>
+<li><a class="reference internal" href="#ll-3d-encoder"><span class="std std-ref">3D Data</span></a></li>
+<li><a class="reference internal" href="#ll-4d-encoder"><span class="std std-ref">4D Data</span></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ll-decoder"><span class="std std-ref">Decoder</span></a><ul>
+<li><a class="reference internal" href="#ll-1d-decoder"><span class="std std-ref">1D Data</span></a></li>
+<li><a class="reference internal" href="#ll-2d-decoder"><span class="std std-ref">2D Data</span></a></li>
+<li><a class="reference internal" href="#ll-3d-decoder"><span class="std std-ref">3D Data</span></a></li>
+<li><a class="reference internal" href="#ll-4d-decoder"><span class="std std-ref">4D Data</span></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ll-utilities"><span class="std std-ref">Utility Functions</span></a></li>
+</ul>
+<div class="section" id="stream-manipulation">
+<span id="ll-stream"></span><h2>Stream Manipulation<a class="headerlink" href="#stream-manipulation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="c.zfp_stream_flush">
+size_t <code class="descname">zfp_stream_flush</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flush bit stream to write out any buffered bits.  This function must be
+must be called after the last encode call.  The bit stream is aligned on
+a stream word boundary following this call.  The number of zero-bits
+written, if any, is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_align">
+size_t <code class="descname">zfp_stream_align</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_align" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align bit stream on next word boundary.  This function is analogous to
+<a class="reference internal" href="#c.zfp_stream_flush" title="zfp_stream_flush"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_flush()</span></code></a>, but for decoding.  That is, wherever the
+encoder flushes the stream, the decoder should align it to ensure
+synchronization between encoder and decoder.  The number of bits skipped,
+if any, is returned.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="encoder">
+<span id="ll-encoder"></span><h2>Encoder<a class="headerlink" href="#encoder" title="Permalink to this headline">¶</a></h2>
+<p>A function is available for encoding whole or partial blocks of each scalar
+type and dimensionality.  These functions return the number of bits of
+compressed storage for the block being encoded, or zero upon failure.</p>
+<div class="section" id="d-data">
+<span id="ll-1d-encoder"></span><h3>1D Data<a class="headerlink" href="#d-data" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_encode_block_int32_1">
+uint <code class="descname">zfp_encode_block_int32_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int32_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_int64_1">
+uint <code class="descname">zfp_encode_block_int64_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int64_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_float_1">
+uint <code class="descname">zfp_encode_block_float_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_float_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_double_1">
+uint <code class="descname">zfp_encode_block_double_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_double_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 1D contiguous block of 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int32_1">
+uint <code class="descname">zfp_encode_block_strided_int32_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int32_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int64_1">
+uint <code class="descname">zfp_encode_block_strided_int64_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int64_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_float_1">
+uint <code class="descname">zfp_encode_block_strided_float_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_float_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_double_1">
+uint <code class="descname">zfp_encode_block_strided_double_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_double_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 1D complete block from strided array with stride <em>sx</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int32_1">
+uint <code class="descname">zfp_encode_partial_block_strided_int32_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int32_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int64_1">
+uint <code class="descname">zfp_encode_partial_block_strided_int64_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int64_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_float_1">
+uint <code class="descname">zfp_encode_partial_block_strided_float_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_float_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_double_1">
+uint <code class="descname">zfp_encode_partial_block_strided_double_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_double_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 1D partial block of size <em>nx</em> from strided array with stride <em>sx</em>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ll-2d-encoder">
+<span id="id1"></span><h3>2D Data<a class="headerlink" href="#ll-2d-encoder" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_encode_block_int32_2">
+uint <code class="descname">zfp_encode_block_int32_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int32_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_int64_2">
+uint <code class="descname">zfp_encode_block_int64_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int64_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_float_2">
+uint <code class="descname">zfp_encode_block_float_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_float_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_double_2">
+uint <code class="descname">zfp_encode_block_double_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_double_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 2D contiguous block of 4 × 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int32_2">
+uint <code class="descname">zfp_encode_block_strided_int32_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int32_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int64_2">
+uint <code class="descname">zfp_encode_block_strided_int64_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int64_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_float_2">
+uint <code class="descname">zfp_encode_block_strided_float_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_float_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_double_2">
+uint <code class="descname">zfp_encode_block_strided_double_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_double_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 2D complete block from strided array with strides <em>sx</em> and <em>sy</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int32_2">
+uint <code class="descname">zfp_encode_partial_block_strided_int32_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int32_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int64_2">
+uint <code class="descname">zfp_encode_partial_block_strided_int64_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int64_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_float_2">
+uint <code class="descname">zfp_encode_partial_block_strided_float_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_float_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_double_2">
+uint <code class="descname">zfp_encode_partial_block_strided_double_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_double_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 2D partial block of size <em>nx</em> × <em>ny</em> from strided array with
+strides <em>sx</em> and <em>sy</em>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ll-3d-encoder">
+<span id="id2"></span><h3>3D Data<a class="headerlink" href="#ll-3d-encoder" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_encode_block_int32_3">
+uint <code class="descname">zfp_encode_block_int32_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int32_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_int64_3">
+uint <code class="descname">zfp_encode_block_int64_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int64_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_float_3">
+uint <code class="descname">zfp_encode_block_float_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_float_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_double_3">
+uint <code class="descname">zfp_encode_block_double_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_double_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 3D contiguous block of 4 × 4 × 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int32_3">
+uint <code class="descname">zfp_encode_block_strided_int32_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int32_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int64_3">
+uint <code class="descname">zfp_encode_block_strided_int64_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int64_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_float_3">
+uint <code class="descname">zfp_encode_block_strided_float_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_float_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_double_3">
+uint <code class="descname">zfp_encode_block_strided_double_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_double_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 3D complete block from strided array with strides <em>sx</em>, <em>sy</em>, and
+<em>sz</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int32_3">
+uint <code class="descname">zfp_encode_partial_block_strided_int32_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int32_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int64_3">
+uint <code class="descname">zfp_encode_partial_block_strided_int64_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int64_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_float_3">
+uint <code class="descname">zfp_encode_partial_block_strided_float_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_float_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_double_3">
+uint <code class="descname">zfp_encode_partial_block_strided_double_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_double_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 3D partial block of size <em>nx</em> × <em>ny</em> × <em>nz</em> from strided
+array with strides <em>sx</em>, <em>sy</em>, and <em>sz</em>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ll-4d-encoder">
+<span id="id3"></span><h3>4D Data<a class="headerlink" href="#ll-4d-encoder" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_encode_block_int32_4">
+uint <code class="descname">zfp_encode_block_int32_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int32_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_int64_4">
+uint <code class="descname">zfp_encode_block_int64_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_int64_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_float_4">
+uint <code class="descname">zfp_encode_block_float_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_float_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_double_4">
+uint <code class="descname">zfp_encode_block_double_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_double_4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 4D contiguous block of 4 × 4 × 4 × 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int32_4">
+uint <code class="descname">zfp_encode_block_strided_int32_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int32_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_int64_4">
+uint <code class="descname">zfp_encode_block_strided_int64_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_int64_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_float_4">
+uint <code class="descname">zfp_encode_block_strided_float_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_float_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_block_strided_double_4">
+uint <code class="descname">zfp_encode_block_strided_double_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_block_strided_double_4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 4D complete block from strided array with strides <em>sx</em>, <em>sy</em>, <em>sz</em>, and
+<em>sw</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int32_4">
+uint <code class="descname">zfp_encode_partial_block_strided_int32_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int32_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_int64_4">
+uint <code class="descname">zfp_encode_partial_block_strided_int64_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_int64_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_float_4">
+uint <code class="descname">zfp_encode_partial_block_strided_float_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_float_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_encode_partial_block_strided_double_4">
+uint <code class="descname">zfp_encode_partial_block_strided_double_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_encode_partial_block_strided_double_4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode 4D partial block of size <em>nx</em> × <em>ny</em> × <em>nz</em> × <em>nw</em>
+from strided array with strides <em>sx</em>, <em>sy</em>, <em>sz</em>, and <em>sw</em>.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="decoder">
+<span id="ll-decoder"></span><h2>Decoder<a class="headerlink" href="#decoder" title="Permalink to this headline">¶</a></h2>
+<p>Each function below decompresses a single block and returns the number of bits
+of compressed storage consumed.  See corresponding encoder functions above for
+further details.</p>
+<div class="section" id="ll-1d-decoder">
+<span id="id4"></span><h3>1D Data<a class="headerlink" href="#ll-1d-decoder" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_decode_block_int32_1">
+uint <code class="descname">zfp_decode_block_int32_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int32_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_int64_1">
+uint <code class="descname">zfp_decode_block_int64_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int64_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_float_1">
+uint <code class="descname">zfp_decode_block_float_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_float_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_double_1">
+uint <code class="descname">zfp_decode_block_double_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_double_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 1D contiguous block of 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int32_1">
+uint <code class="descname">zfp_decode_block_strided_int32_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int32_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int64_1">
+uint <code class="descname">zfp_decode_block_strided_int64_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int64_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_float_1">
+uint <code class="descname">zfp_decode_block_strided_float_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_float_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_double_1">
+uint <code class="descname">zfp_decode_block_strided_double_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_double_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 1D complete block to strided array with stride <em>sx</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int32_1">
+uint <code class="descname">zfp_decode_partial_block_strided_int32_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int32_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int64_1">
+uint <code class="descname">zfp_decode_partial_block_strided_int64_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int64_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_float_1">
+uint <code class="descname">zfp_decode_partial_block_strided_float_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_float_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_double_1">
+uint <code class="descname">zfp_decode_partial_block_strided_double_1</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_double_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 1D partial block of size <em>nx</em> to strided array with stride <em>sx</em>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ll-2d-decoder">
+<span id="id5"></span><h3>2D Data<a class="headerlink" href="#ll-2d-decoder" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_decode_block_int32_2">
+uint <code class="descname">zfp_decode_block_int32_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int32_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_int64_2">
+uint <code class="descname">zfp_decode_block_int64_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int64_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_float_2">
+uint <code class="descname">zfp_decode_block_float_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_float_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_double_2">
+uint <code class="descname">zfp_decode_block_double_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_double_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 2D contiguous block of 4 × 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int32_2">
+uint <code class="descname">zfp_decode_block_strided_int32_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int32_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int64_2">
+uint <code class="descname">zfp_decode_block_strided_int64_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int64_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_float_2">
+uint <code class="descname">zfp_decode_block_strided_float_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_float_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_double_2">
+uint <code class="descname">zfp_decode_block_strided_double_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_double_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 2D complete block to strided array with strides <em>sx</em> and <em>sy</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int32_2">
+uint <code class="descname">zfp_decode_partial_block_strided_int32_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int32_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int64_2">
+uint <code class="descname">zfp_decode_partial_block_strided_int64_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int64_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_float_2">
+uint <code class="descname">zfp_decode_partial_block_strided_float_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_float_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_double_2">
+uint <code class="descname">zfp_decode_partial_block_strided_double_2</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_double_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 2D partial block of size <em>nx</em> × <em>ny</em> to strided array with
+strides <em>sx</em> and <em>sy</em>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ll-3d-decoder">
+<span id="id6"></span><h3>3D Data<a class="headerlink" href="#ll-3d-decoder" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_decode_block_int32_3">
+uint <code class="descname">zfp_decode_block_int32_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int32_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_int64_3">
+uint <code class="descname">zfp_decode_block_int64_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int64_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_float_3">
+uint <code class="descname">zfp_decode_block_float_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_float_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_double_3">
+uint <code class="descname">zfp_decode_block_double_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_double_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 3D contiguous block of 4 × 4 × 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int32_3">
+uint <code class="descname">zfp_decode_block_strided_int32_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int32_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int64_3">
+uint <code class="descname">zfp_decode_block_strided_int64_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int64_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_float_3">
+uint <code class="descname">zfp_decode_block_strided_float_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_float_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_double_3">
+uint <code class="descname">zfp_decode_block_strided_double_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_double_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 3D complete block to strided array with strides <em>sx</em>, <em>sy</em>, and <em>sz</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int32_3">
+uint <code class="descname">zfp_decode_partial_block_strided_int32_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int32_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int64_3">
+uint <code class="descname">zfp_decode_partial_block_strided_int64_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int64_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_float_3">
+uint <code class="descname">zfp_decode_partial_block_strided_float_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_float_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_double_3">
+uint <code class="descname">zfp_decode_partial_block_strided_double_3</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_double_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 3D partial block of size <em>nx</em> × <em>ny</em> × <em>nz</em> to strided
+array with strides <em>sx</em>, <em>sy</em>, and <em>sz</em>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ll-4d-decoder">
+<span id="id7"></span><h3>4D Data<a class="headerlink" href="#ll-4d-decoder" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_decode_block_int32_4">
+uint <code class="descname">zfp_decode_block_int32_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int32_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_int64_4">
+uint <code class="descname">zfp_decode_block_int64_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_int64_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_float_4">
+uint <code class="descname">zfp_decode_block_float_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_float_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_double_4">
+uint <code class="descname">zfp_decode_block_double_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;block</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_double_4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 4D contiguous block of 4 × 4 × 4 × 4 values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int32_4">
+uint <code class="descname">zfp_decode_block_strided_int32_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int32_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_int64_4">
+uint <code class="descname">zfp_decode_block_strided_int64_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_int64_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_float_4">
+uint <code class="descname">zfp_decode_block_strided_float_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_float_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_block_strided_double_4">
+uint <code class="descname">zfp_decode_block_strided_double_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_block_strided_double_4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 4D complete block to strided array with strides <em>sx</em>, <em>sy</em>, <em>sz</em>, and <em>sw</em>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int32_4">
+uint <code class="descname">zfp_decode_partial_block_strided_int32_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int32*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int32_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_int64_4">
+uint <code class="descname">zfp_decode_partial_block_strided_int64_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, int64*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_int64_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_float_4">
+uint <code class="descname">zfp_decode_partial_block_strided_float_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, float*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_float_4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decode_partial_block_strided_double_4">
+uint <code class="descname">zfp_decode_partial_block_strided_double_4</code><span class="sig-paren">(</span><a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double*<em>&nbsp;p</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decode_partial_block_strided_double_4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode 4D partial block of size <em>nx</em> × <em>ny</em> × <em>nz</em> × <em>nw</em>
+to strided array with strides <em>sx</em>, <em>sy</em>, <em>sz</em>, and <em>sw</em>.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="utility-functions">
+<span id="ll-utilities"></span><h2>Utility Functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline">¶</a></h2>
+<p>These functions convert 8- and 16-bit signed and unsigned integer data to
+(by promoting) and from (by demoting) 32-bit integers that can be
+(de)compressed by zfp’s <code class="code docutils literal"><span class="pre">int32</span></code> functions.  These conversion functions
+are preferred over simple casting since they eliminate the redundant leading
+zeros that would otherwise have to be compressed, and they apply the
+appropriate bias for unsigned integer data.</p>
+<dl class="function">
+<dt id="c.zfp_promote_int8_to_int32">
+void <code class="descname">zfp_promote_int8_to_int32</code><span class="sig-paren">(</span>int32*<em>&nbsp;oblock</em>, const int8*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_promote_int8_to_int32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_promote_uint8_to_int32">
+void <code class="descname">zfp_promote_uint8_to_int32</code><span class="sig-paren">(</span>int32*<em>&nbsp;oblock</em>, const uint8*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_promote_uint8_to_int32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_promote_int16_to_int32">
+void <code class="descname">zfp_promote_int16_to_int32</code><span class="sig-paren">(</span>int32*<em>&nbsp;oblock</em>, const int16*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_promote_int16_to_int32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_promote_uint16_to_int32">
+void <code class="descname">zfp_promote_uint16_to_int32</code><span class="sig-paren">(</span>int32*<em>&nbsp;oblock</em>, const uint16*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_promote_uint16_to_int32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert <em>dims</em>-dimensional contiguous block to 32-bit integer type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_demote_int32_to_int8">
+void <code class="descname">zfp_demote_int32_to_int8</code><span class="sig-paren">(</span>int8*<em>&nbsp;oblock</em>, const int32*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_demote_int32_to_int8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_demote_int32_to_uint8">
+void <code class="descname">zfp_demote_int32_to_uint8</code><span class="sig-paren">(</span>uint8*<em>&nbsp;oblock</em>, const int32*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_demote_int32_to_uint8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_demote_int32_to_int16">
+void <code class="descname">zfp_demote_int32_to_int16</code><span class="sig-paren">(</span>int16*<em>&nbsp;oblock</em>, const int32*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_demote_int32_to_int16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_demote_int32_to_uint16">
+void <code class="descname">zfp_demote_int32_to_uint16</code><span class="sig-paren">(</span>uint16*<em>&nbsp;oblock</em>, const int32*<em>&nbsp;iblock</em>, uint<em>&nbsp;dims</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_demote_int32_to_uint16" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert <em>dims</em>-dimensional contiguous block from 32-bit integer type.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Low-Level C API</a><ul>
+<li><a class="reference internal" href="#stream-manipulation">Stream Manipulation</a></li>
+<li><a class="reference internal" href="#encoder">Encoder</a><ul>
+<li><a class="reference internal" href="#d-data">1D Data</a></li>
+<li><a class="reference internal" href="#ll-2d-encoder">2D Data</a></li>
+<li><a class="reference internal" href="#ll-3d-encoder">3D Data</a></li>
+<li><a class="reference internal" href="#ll-4d-encoder">4D Data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#decoder">Decoder</a><ul>
+<li><a class="reference internal" href="#ll-1d-decoder">1D Data</a></li>
+<li><a class="reference internal" href="#ll-2d-decoder">2D Data</a></li>
+<li><a class="reference internal" href="#ll-3d-decoder">3D Data</a></li>
+<li><a class="reference internal" href="#ll-4d-decoder">4D Data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="high-level-api.html"
+                        title="previous chapter">High-Level C API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="bit-stream.html"
+                        title="next chapter">Bit Stream API</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bit-stream.html" title="Bit Stream API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="high-level-api.html" title="High-Level C API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

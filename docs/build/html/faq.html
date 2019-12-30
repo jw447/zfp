@@ -1,0 +1,874 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FAQ &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Troubleshooting" href="issues.html" />
+    <link rel="prev" title="Regression Tests" href="testing.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="issues.html" title="Troubleshooting"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="testing.html" title="Regression Tests"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p>The following is a list of answers to frequently asked questions.  For
+questions not answered here or elsewhere in the documentation, please
+e-mail <a class="reference external" href="mailto:pl&#37;&#52;&#48;llnl&#46;gov">Peter Lindstrom</a>.</p>
+<p>Questions answered in this FAQ:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="#q-vfields"><span class="std std-ref">Can zfp compress vector fields?</span></a></li>
+<li><a class="reference internal" href="#q-array2d"><span class="std std-ref">Should I declare a 2D array as zfp::array1d a(nx * ny, rate)?</span></a></li>
+<li><a class="reference internal" href="#q-read"><span class="std std-ref">How can I initialize a zfp compressed array from disk?</span></a></li>
+<li><a class="reference internal" href="#q-matrix"><span class="std std-ref">Can I use zfp to represent dense linear algebra matrices?</span></a></li>
+<li><a class="reference internal" href="#q-structured"><span class="std std-ref">Can zfp compress logically regular but geometrically irregular data?</span></a></li>
+<li><a class="reference internal" href="#q-valid"><span class="std std-ref">Does zfp handle infinities, NaNs,and subnormal floating-point numbers?</span></a></li>
+<li><a class="reference internal" href="#q-missing"><span class="std std-ref">Can zfp handle data with some missing values?</span></a></li>
+<li><a class="reference internal" href="#q-integer"><span class="std std-ref">Can I use zfp to store integer data?</span></a></li>
+<li><a class="reference internal" href="#q-int32"><span class="std std-ref">Can I compress 32-bit integers using zfp?</span></a></li>
+<li><a class="reference internal" href="#q-overrun"><span class="std std-ref">Why does zfp corrupt memory if my allocated buffer is too small?</span></a></li>
+<li><a class="reference internal" href="#q-portability"><span class="std std-ref">Are zfp compressed streams portable across platforms?</span></a></li>
+<li><a class="reference internal" href="#q-granularity"><span class="std std-ref">How can I achieve finer rate granularity?</span></a></li>
+<li><a class="reference internal" href="#q-progressive"><span class="std std-ref">Can I generate progressive zfp streams?</span></a></li>
+<li><a class="reference internal" href="#q-init"><span class="std std-ref">How do I initialize the decompressor?</span></a></li>
+<li><a class="reference internal" href="#q-same"><span class="std std-ref">Must I use the same parameters during compression and decompression?</span></a></li>
+<li><a class="reference internal" href="#q-strides"><span class="std std-ref">Do strides have to match during compression and decompression?</span></a></li>
+<li><a class="reference internal" href="#q-tolerance"><span class="std std-ref">Why does zfp sometimes not respect my error tolerance?</span></a></li>
+<li><a class="reference internal" href="#q-rate"><span class="std std-ref">Why is the actual rate sometimes not what I requested?</span></a></li>
+<li><a class="reference internal" href="#q-inplace"><span class="std std-ref">Can zfp perform compression in place?</span></a></li>
+<li><a class="reference internal" href="#q-relerr"><span class="std std-ref">How should I set the precision to bound the relative error?</span></a></li>
+<li><a class="reference internal" href="#q-lossless"><span class="std std-ref">Does zfp support lossless compression?</span></a></li>
+<li><a class="reference internal" href="#q-abserr"><span class="std std-ref">Why is my actual, measured error so much smaller than the tolerance?</span></a></li>
+<li><a class="reference internal" href="#q-parallel"><span class="std std-ref">Are parallel compressed streams identical to serial streams?</span></a></li>
+<li><a class="reference internal" href="#q-thread-safety"><span class="std std-ref">Are zfp arrays and other data structures thread-safe?</span></a></li>
+<li><a class="reference internal" href="#q-omp-perf"><span class="std std-ref">Why does parallel compression performance not match my expectations?</span></a></li>
+<li><a class="reference internal" href="#q-1d-speed"><span class="std std-ref">Why are compressed arrays so slow?</span></a></li>
+<li><a class="reference internal" href="#q-ref-count"><span class="std std-ref">Do compressed arrays use reference counting?</span></a></li>
+</ol>
+</div></blockquote>
+<hr class="docutils" />
+<p id="q-vfields">Q1: <em>Can zfp compress vector fields?</em></p>
+<p>I have a 2D vector field</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="n">velocity</span><span class="p">[</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>of dimensions <em>nx</em> × <em>ny</em>.  Can I use a 3D zfp array to store this as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">array3d</span> <span class="n">velocity</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">rate</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A: Although this could be done, zfp assumes that consecutive values are
+related.  The two velocity components (<em>vx</em>, <em>vy</em>) are almost suredly
+independent and would not be correlated.  This will severely hurt the
+compression rate or quality.  Instead, consider storing <em>vx</em> and <em>vy</em> as
+two separate 2D scalar arrays:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">array2d</span> <span class="n">vx</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">rate</span><span class="p">);</span>
+<span class="n">array2d</span> <span class="n">vy</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">rate</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or as</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">array2d</span> <span class="n">velocity</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">array2d</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">rate</span><span class="p">),</span> <span class="n">array2d</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">rate</span><span class="p">)};</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="q-array2d">Q2: <em>Should I declare a 2D array as zfp::array1d a(nx * ny, rate)?</em></p>
+<p>I have a 2D scalar field of dimensions <em>nx</em> × <em>ny</em> that I allocate as</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">double</span><span class="p">[</span><span class="n">nx</span> <span class="o">*</span> <span class="n">ny</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>and index as</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">y</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Should I use a corresponding zfp array</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">array1d</span> <span class="n">a</span><span class="p">(</span><span class="n">nx</span> <span class="o">*</span> <span class="n">ny</span><span class="p">,</span> <span class="n">rate</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>to store my data in compressed form?</p>
+<p>A: Although this is certainly possible, if the scalar field exhibits
+coherence in both spatial dimensions, then far better results can be
+achieved by using a 2D array:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">array2d</span> <span class="n">a</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">rate</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Although both compressed arrays can be indexed as above, the 2D array can
+exploit smoothness in both dimensions and improve the quality dramatically
+for the same rate.</p>
+<p>Since zfp 0.5.2, proxy pointers are also available that act much like
+the flat <code class="code docutils literal"><span class="pre">double*</span></code>.</p>
+<hr class="docutils" />
+<p id="q-read">Q3: <em>How can I initialize a zfp compressed array from disk?</em></p>
+<p>I have a large, uncompressed, 3D data set:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="n">a</span><span class="p">[</span><span class="n">nz</span><span class="p">][</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>stored on disk that I would like to read into a compressed array.  This data
+set will not fit in memory uncompressed.  What is the best way of doing this?</p>
+<p>A: Using a zfp array:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">array3d</span> <span class="n">a</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">rate</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>the most straightforward (but perhaps not best) way is to read one
+floating-point value at a time and copy it into the array:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">uint</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">nz</span><span class="p">;</span> <span class="n">z</span><span class="o">++</span><span class="p">)</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">uint</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">ny</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">uint</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">nx</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">double</span> <span class="n">f</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="p">;</span>
+      <span class="k">else</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">handle</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">error</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Note, however, that if the array cache is not large enough, then this may
+compress blocks before they have been completely filled.  Therefore it is
+recommended that the cache holds at least one complete layer of blocks,
+i.e., (<em>nx</em> / 4) × (<em>ny</em> / 4) blocks in the example above.</p>
+<p>To avoid inadvertent evictions of partially initialized blocks, it is better
+to buffer four layers of <em>nx</em> × <em>ny</em> values each at a time, when
+practical, and to completely initialize one block after another, which is
+facilitated using zfp’s iterators:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span><span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">double</span><span class="p">[</span><span class="n">nx</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="mi">4</span><span class="p">];</span>
+<span class="nb">int</span> <span class="n">zmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">zfp</span><span class="p">::</span><span class="n">array3d</span><span class="p">::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">a</span><span class="o">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">i</span><span class="p">();</span>
+  <span class="nb">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">j</span><span class="p">();</span>
+  <span class="nb">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">k</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">zmin</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">read</span> <span class="n">another</span> <span class="n">layer</span> <span class="n">of</span> <span class="n">blocks</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fread</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">buffer</span><span class="p">),</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span> <span class="o">!=</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">//</span> <span class="n">handle</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">error</span>
+    <span class="p">}</span>
+    <span class="n">zmin</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">nx</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">ny</span> <span class="o">*</span> <span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">zmin</span><span class="p">))];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Iterators have been available since zfp 0.5.2.</p>
+<hr class="docutils" />
+<p id="q-matrix">Q4: <em>Can I use zfp to represent dense linear algebra matrices?</em></p>
+<p>A: Yes, but your mileage may vary.  Dense matrices, unlike smooth scalar
+fields, rarely exhibit correlation between adjacent rows and columns.  Thus,
+the quality or compression ratio may suffer.</p>
+<hr class="docutils" />
+<p id="q-structured">Q5: <em>Can zfp compress logically regular but geometrically irregular data?</em></p>
+<p>My data is logically structured but irregularly sampled, e.g., it is
+rectilinear, curvilinear, or Lagrangian, or uses an irregular spacing of
+quadrature points.  Can I still use zfp to compress it?</p>
+<p>A: Yes, as long as the data is (or can be) represented as a logical
+multidimensional array, though your mileage may vary.  zfp has been designed
+for uniformly sampled data, and compression will in general suffer the more
+irregular the sampling is.</p>
+<hr class="docutils" />
+<p id="q-valid">Q6: <em>Does zfp handle infinities, NaNs,and subnormal floating-point numbers?</em></p>
+<p>A: Yes, but only in <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible mode</span></a>.</p>
+<p>zfp’s lossy compression modes currently support only finite
+floating-point values.  If a block contains a NaN or an infinity, undefined
+behavior is invoked due to the C math function <code class="xref c c-func docutils literal"><span class="pre">frexp()</span></code> being
+undefined for non-numbers.  Subnormal numbers are, however, handled correctly.</p>
+<hr class="docutils" />
+<p id="q-missing">Q7: <em>Can zfp handle data with some missing values?</em></p>
+<p>My data has some missing values that are flagged by very large numbers, e.g.
+1e30.  Is that OK?</p>
+<p>A: Although all finite numbers are “correctly” handled, such large sentinel
+values are likely to pollute nearby values, because all values within a block
+are expressed with respect to a common largest exponent.  The presence of
+very large values may result in complete loss of precision of nearby, valid
+numbers.  Currently no solution to this problem is available, but future
+versions of zfp will likely support a bit mask to tag values that should be
+excluded from compression.</p>
+<hr class="docutils" />
+<p id="q-integer">Q8: <em>Can I use zfp to store integer data?</em></p>
+<p>Can I use zfp to store integer data such as 8-bit quantized images or 16-bit
+digital elevation models?</p>
+<p>A: Yes (as of version 0.4.0), but the data has to be promoted to 32-bit signed
+integers first.  This should be done one block at a time using an appropriate
+<code class="xref c c-func docutils literal"><span class="pre">zfp_promote_*_to_int32()</span></code> function call (see <code class="file docutils literal"><span class="pre">zfp.h</span></code>).  Future
+versions of zfp may provide a high-level interface that automatically
+performs promotion and demotion.</p>
+<p>Note that the promotion functions shift the low-precision integers into the
+most significant bits of 31-bit (not 32-bit) integers and also convert unsigned
+to signed integers.  Do use these functions rather than simply casting 8-bit
+integers to 32 bits to avoid wasting compressed bits to encode leading zeros.
+Moreover, in fixed-precision mode, set the precision relative to the precision
+of the (unpromoted) source data.</p>
+<p>As of version 0.5.1, integer data is supported both by the low-level API and
+high-level calls <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a> and <a class="reference internal" href="high-level-api.html#c.zfp_decompress" title="zfp_decompress"><code class="xref c c-func docutils literal"><span class="pre">zfp_decompress()</span></code></a>.</p>
+<hr class="docutils" />
+<p id="q-int32">Q9: <em>Can I compress 32-bit integers using zfp?</em></p>
+<p>I have some 32-bit integer data.  Can I compress it using zfp’s 32-bit
+integer support?</p>
+<p>A: Yes, this can safely be done in <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible mode</span></a>.</p>
+<p>In other (lossy) modes, the answer depends.
+zfp compression of 32-bit and 64-bit integers requires that each
+integer <em>f</em> have magnitude |<em>f</em>| &lt; 2<sup>30</sup> and
+|<em>f</em>| &lt; 2<sup>62</sup>, respectively.  To handle signed integers that
+span the entire range −2<sup>31</sup> ≤ x &lt; 2<sup>31</sup>, or
+unsigned integers 0 ≤ <em>x</em> &lt; 2<sup>32</sup>, the data has to be promoted to
+64 bits first.</p>
+<p>As with floating-point data, the integers should ideally represent a
+quantized continuous function rather than, say, categorical data or set of
+indices.  Depending on compression settings and data range, the integers may
+or may not be losslessly compressed.  If fixed-precision mode is used, the
+integers may be stored at less precision than requested.
+See <a class="reference internal" href="#q-lossless"><span class="std std-ref">Q21</span></a> for more details on precision and lossless
+compression.</p>
+<hr class="docutils" />
+<p id="q-overrun">Q10: <em>Why does zfp corrupt memory if my allocated buffer is too small?</em></p>
+<p>Why does zfp corrupt memory rather than return an error code if not enough
+memory is allocated for the compressed data?</p>
+<p>A: This is for performance reasons.  zfp was primarily designed for fast
+random access to fixed-rate compressed arrays, where checking for buffer
+overruns is unnecessary.  Adding a test for every compressed byte output
+would significantly compromise performance.</p>
+<p>One way around this problem (when not in fixed-rate mode) is to use the
+<code class="xref c c-data docutils literal"><span class="pre">maxbits</span></code> parameter in conjunction with the maximum precision or
+maximum absolute error parameters to limit the size of compressed blocks.
+Finally, the function <a class="reference internal" href="high-level-api.html#c.zfp_stream_maximum_size" title="zfp_stream_maximum_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_maximum_size()</span></code></a> returns a conservative
+buffer size that is guaranteed to be large enough to hold the compressed data
+and the optional header.</p>
+<hr class="docutils" />
+<p id="q-portability"><span id="index-0"></span>Q11: <em>Are zfp compressed streams portable across platforms?</em></p>
+<p>Are zfp compressed streams portable across platforms?  Are there, for
+example, endianness issues?</p>
+<p>A: Yes, zfp can write portable compressed streams.  To ensure portability
+across different endian platforms, the bit stream must however be written
+in increments of single bytes on big endian processors (e.g., PowerPC, SPARC),
+which is achieved by compiling zfp with an 8-bit (single-byte) word size:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">DBIT_STREAM_WORD_TYPE</span><span class="o">=</span><span class="n">uint8</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="installation.html#c.BIT_STREAM_WORD_TYPE" title="BIT_STREAM_WORD_TYPE"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_WORD_TYPE</span></code></a>.  Note that on little endian processors
+(e.g., Intel x86-64 and AMD64), the word size does not affect the bit stream
+produced, and thus the default word size may be used.  By default, zfp uses
+a word size of 64 bits, which results in the coarsest rate granularity but
+fastest (de)compression.  If cross-platform portability is not needed, then
+the maximum word size is recommended (but see also <a class="reference internal" href="#q-granularity"><span class="std std-ref">Q12</span></a>).</p>
+<p>When using 8-bit words, zfp produces a compressed stream that is byte order
+independent, i.e., the exact same compressed sequence of bytes is generated
+on little and big endian platforms.  When decompressing such streams,
+floating-point and integer values are recovered in the native byte order of
+the machine performing decompression.  The decompressed values can be used
+immediately without the need for byte swapping and without having to worry
+about the byte order of the computer that generated the compressed stream.</p>
+<p>Finally, zfp assumes that the floating-point format conforms to IEEE 754.
+Issues may arise on architectures that do not support IEEE floating point.</p>
+<hr class="docutils" />
+<p id="q-granularity">Q12: <em>How can I achieve finer rate granularity?</em></p>
+<p>A: For <em>d</em>-dimensional arrays, zfp supports a rate granularity of 8 / 4<sup>d</sup>
+bits, i.e., the rate can be specified in increments of a fraction of a bit for
+2D and 3D arrays.  Such fine rate selection is always available for sequential
+compression (e.g., when calling <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a>).</p>
+<p>Unlike in sequential compression, zfp’s compressed arrays require random
+access writes, which are supported only at the granularity of whole words.
+By default, a word is 64 bits, which gives a rate granularity of
+64 / 4<sup>d</sup> in <em>d</em> dimensions, i.e., 16 bits in 1D, 4 bits in 2D, and 1 bit
+in 3D.</p>
+<p>To achieve finer granularity, recompile zfp with a smaller (but as large as
+possible) stream word size, e.g.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">DBIT_STREAM_WORD_TYPE</span><span class="o">=</span><span class="n">uint8</span>
+</pre></div>
+</div>
+<p>gives the finest possible granularity, but at the expense of (de)compression
+speed.  See <a class="reference internal" href="installation.html#c.BIT_STREAM_WORD_TYPE" title="BIT_STREAM_WORD_TYPE"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_WORD_TYPE</span></code></a>.</p>
+<hr class="docutils" />
+<p id="q-progressive">Q13: <em>Can I generate progressive zfp streams?</em></p>
+<p>A: Yes, but it requires some coding effort.  There is currently no high-level
+support for progressive zfp streams.  To implement progressive fixed-rate
+streams, the fixed-length bit streams should be interleaved among the blocks
+that make up an array.  For instance, if a 3D array uses 1024 bits per block,
+then those 1024 bits could be broken down into, say, 16 pieces of 64 bits
+each, resulting in 16 discrete quality settings.  By storing the blocks
+interleaved such that the first 64 bits of all blocks are contiguous,
+followed by the next 64 bits of all blocks, etc., one can achieve progressive
+decompression by setting the <a class="reference internal" href="modes.html#c.zfp_stream.maxbits" title="zfp_stream.maxbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxbits</span></code></a> parameter (see
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_params" title="zfp_stream_set_params"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_params()</span></code></a>) to the number of bits per block received so
+far.</p>
+<p>To enable interleaving of blocks, zfp must first be compiled with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">DBIT_STREAM_STRIDED</span>
+</pre></div>
+</div>
+<p>to enable strided bit stream access.  In the example above, if the stream
+word size is 64 bits and there are <em>n</em> blocks, then:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">stream_set_stride</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>implies that after every <em>m</em> 64-bit words have been decoded, the bit stream
+is advanced by <em>m</em> × <em>n</em> words to the next set of m 64-bit words
+associated with the block.</p>
+<hr class="docutils" />
+<p id="q-init">Q14: <em>How do I initialize the decompressor?</em></p>
+<p>A: The <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> and <a class="reference internal" href="high-level-api.html#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> objects usually need to
+be initialized with the same values as they had during compression (but see
+<a class="reference internal" href="#q-same"><span class="std std-ref">Q15</span></a> for exceptions).
+These objects hold the compression mode and parameters, and field data like
+the scalar type and dimensions.  By default, these parameters are not stored
+with the compressed stream (the “codestream”) and prior to zfp 0.5.0 had to
+be maintained separately by the application.</p>
+<p>Since version 0.5.0, functions exist for reading and writing a 12- to 19-byte
+header that encodes compression and field parameters.  For applications that
+wish to embed only the compression parameters, e.g., when the field dimensions
+are already known, there are separate functions that encode and decode this
+information independently.</p>
+<hr class="docutils" />
+<p id="q-same">Q15: <em>Must I use the same parameters during compression and decompression?</em></p>
+<p>A: Not necessarily.  When decompressing one block at a time, it is possible
+to use more tightly constrained <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> parameters during
+decompression than were used during compression.  For instance, one may use a
+larger <a class="reference internal" href="modes.html#c.zfp_stream.minbits" title="zfp_stream.minbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minbits</span></code></a>, smaller <a class="reference internal" href="modes.html#c.zfp_stream.maxbits" title="zfp_stream.maxbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxbits</span></code></a>,
+smaller <a class="reference internal" href="modes.html#c.zfp_stream.maxprec" title="zfp_stream.maxprec"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxprec</span></code></a>, or larger <a class="reference internal" href="modes.html#c.zfp_stream.minexp" title="zfp_stream.minexp"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minexp</span></code></a>
+during decompression to process fewer compressed bits than are stored, and to
+decompress the array more quickly at a lower precision.  This may be useful
+in situations where the precision and accuracy requirements are not known a
+priori, thus forcing conservative settings during compression, or when the
+compressed stream is used for multiple purposes.  For instance, visualization
+usually has less stringent precision requirements than quantitative data
+analysis.  This feature of decompressing to a lower precision is particularly
+useful when the stream is stored progressively (see <a class="reference internal" href="#q-progressive"><span class="std std-ref">Q13</span></a>).</p>
+<p>Note that one may not use less constrained parameters during decompression,
+e.g., one cannot ask for more than <a class="reference internal" href="modes.html#c.zfp_stream.maxprec" title="zfp_stream.maxprec"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxprec</span></code></a> bits of
+precision when decompressing.  Furthermore, the parameters must agree between
+compression and decompression when calling the high-level API function
+<a class="reference internal" href="high-level-api.html#c.zfp_decompress" title="zfp_decompress"><code class="xref c c-func docutils literal"><span class="pre">zfp_decompress()</span></code></a>.</p>
+<p>Currently float arrays have a different compressed representation from
+compressed double arrays due to differences in exponent width.  It is not
+possible to compress a double array and then decompress (demote) the result
+to floats, for instance.  Future versions of the zfp codec may use a unified
+representation that does allow this.</p>
+<hr class="docutils" />
+<p id="q-strides">Q16: <em>Do strides have to match during compression and decompression?</em></p>
+<p>A: No.  For instance, a 2D vector field:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="ow">in</span><span class="p">[</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>could be compressed as two scalar fields with strides <em>sx</em> = 2,
+<em>sy</em> = 2 × <em>nx</em>, and with pointers <code class="code docutils literal"><span class="pre">&amp;in[0][0][0]</span></code> and
+<code class="code docutils literal"><span class="pre">&amp;in[0][0][1]</span></code> to the first value of each scalar field.  These two
+scalar fields can later be decompressed as non-interleaved fields:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">out</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>using strides <em>sx</em> = 1, <em>sy</em> = <em>nx</em> and pointers <code class="code docutils literal"><span class="pre">&amp;out[0][0][0]</span></code>
+and <code class="code docutils literal"><span class="pre">&amp;out[1][0][0]</span></code>.</p>
+<hr class="docutils" />
+<p id="q-tolerance">Q17: <em>Why does zfp sometimes not respect my error tolerance?</em></p>
+<p>A: First, zfp does not support
+<a class="reference internal" href="modes.html#mode-fixed-accuracy"><span class="std std-ref">fixed-accuracy mode</span></a> for integer data and
+will ignore any tolerance requested via <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_accuracy" title="zfp_stream_set_accuracy"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_accuracy()</span></code></a>
+or associated <a class="reference internal" href="modes.html#mode-expert"><span class="std std-ref">expert mode</span></a> parameter settings.</p>
+<p>For floating-point data, zfp does not store each scalar value independently
+but represents a group of values (4, 16, 64, or 256 values, depending on
+dimensionality) as linear combinations like averages by evaluating arithmetic
+expressions.  Just like in uncompressed IEEE floating-point arithmetic, both
+representation error and roundoff error in the least significant bit(s) often
+occur.</p>
+<p>To illustrate this, consider compressing the following 1D array of four
+floats:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="mf">1e-3</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>using the zfp command-line tool:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">zfp</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">4</span> <span class="o">-</span><span class="n">a</span> <span class="mi">0</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">dat</span> <span class="o">-</span><span class="n">o</span> <span class="n">output</span><span class="o">.</span><span class="n">dat</span>
+</pre></div>
+</div>
+<p>In spite of an error tolerance of zero, the reconstructed values are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">g</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">,</span> <span class="mf">9.999998e-03</span><span class="p">,</span> <span class="mf">9.999946e-04</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>with a (computed) maximum error of 5.472e-9.  Because f[3] = 1e-3 can only
+be approximately represented in radix-2 floating-point, the actual error
+is even smaller: 5.424e-9.  This reconstruction error is primarily due to
+zfp’s block-floating-point representation, which expresses the four values
+in a block relative to a single, common binary exponent.  Such exponent
+alignment occurs also in regular IEEE floating-point operations like addition.
+For instance,:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>should of course result in <code class="code docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">f[3]</span> <span class="pre">=</span> <span class="pre">1e-3</span></code>, but due to exponent
+alignment a few of the least significant bits of f[3] are lost in the
+addition, giving a result of <code class="code docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1.0000467e-3</span></code> and a roundoff error
+of 4.668e-8.  Similarly,:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="nb">sum</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>should return <code class="code docutils literal"><span class="pre">sum</span> <span class="pre">=</span> <span class="pre">1.111</span></code>, but is computed as 1.1110000610.  Moreover,
+the value 1.111 cannot even be represented exactly in (radix-2) floating-point;
+the closest float is 1.1109999.  Thus the computed error:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">error</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">-</span> <span class="mf">1.111</span><span class="n">f</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>which itself has some roundoff error, is 1.192e-7.</p>
+<p><em>Phew</em>!  Note how the error introduced by zfp (5.472e-9) is in fact one to
+two orders of magnitude smaller than the roundoff errors (4.668e-8 and
+1.192e-7) introduced by IEEE floating-point in these computations.  This lower
+error is in part due to zfp’s use of 30-bit significands compared to IEEE’s
+24-bit single-precision significands.  Note that data sets with a large dynamic
+range, e.g., where adjacent values differ a lot in magnitude, are more
+susceptible to representation errors.</p>
+<p>The moral of the story is that error tolerances smaller than machine epsilon
+(relative to the data range) cannot always be satisfied by zfp.  Nor are such
+tolerances necessarily meaningful for representing floating-point data that
+originated in floating-point arithmetic expressions, since accumulated
+roundoff errors are likely to swamp compression errors.  Because such roundoff
+errors occur frequently in floating-point arithmetic, insisting on lossless
+compression on the grounds of accuracy is tenuous at best.</p>
+<hr class="docutils" />
+<p id="q-rate">Q18: <em>Why is the actual rate sometimes not what I requested?</em></p>
+<p>A: In principle, zfp allows specifying the size of a compressed block in
+increments of single bits, thus allowing very fine-grained tuning of the
+bit rate.  There are, however, cases when the desired rate does not exactly
+agree with the effective rate, and users are encouraged to check the return
+value of <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_rate" title="zfp_stream_set_rate"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_rate()</span></code></a>, which gives the actual rate.</p>
+<p>There are several reasons why the requested rate may not be honored.  First,
+the rate is specified in bits/value, while zfp always represents a block
+of 4<sup>d</sup> values in <em>d</em> dimensions, i.e., using
+<em>N</em> = 4<sup>d</sup> × <em>rate</em> bits.  <em>N</em> must be an integer number of bits,
+which constrains the actual rate to be a multiple of 1 / 4<sup>d</sup>.  The actual
+rate is computed by rounding 4<sup>d</sup> times the desired rate.</p>
+<p>Second, if the array dimensions are not multiples of four, then zfp pads the
+dimensions to the next higher multiple of four.  Thus, the total number of
+bits for a 2D array of dimensions <em>nx</em> × <em>ny</em> is computed in terms of
+the number of blocks <em>bx</em> × <em>by</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bitsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">bx</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">by</span><span class="p">)</span> <span class="o">*</span> <span class="n">rate</span>
+</pre></div>
+</div>
+<p>where <em>nx</em> ≤ 4 × bx &lt; <em>nx</em> + 4 and
+<em>ny</em> ≤ 4 × <em>by</em> &lt; <em>ny</em> + 4.  When amortizing bitsize over the
+<em>nx</em> × <em>ny</em> values, a slightly higher rate than requested may result.</p>
+<p>Third, to support updating compressed blocks, as is needed by zfp’s
+compressed array classes, the user may request write random access to the
+fixed-rate stream.  To support this, each block must be aligned on a stream
+word boundary (see <a class="reference internal" href="#q-granularity"><span class="std std-ref">Q12</span></a>), and therefore the rate when
+write random access is requested must be a multiple of <em>wordsize</em> / 4<sup>d</sup>
+bits.  By default <em>wordsize</em> = 64 bits.</p>
+<p>Fourth, for floating-point data, each block must hold at least the common
+exponent and one additional bit, which places a lower bound on the rate.</p>
+<p>Finally, the user may optionally include a header with each array.  Although
+the header is small, it must be accounted for in the rate.  The function
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_maximum_size" title="zfp_stream_maximum_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_maximum_size()</span></code></a> conservatively includes space for a header,
+for instance.</p>
+<hr class="docutils" />
+<p id="q-inplace">Q19: <em>Can zfp perform compression in place?</em></p>
+<p>A: Because the compressed data tends to be far smaller than the uncompressed
+data, it is natural to ask if the compressed stream can overwrite the
+uncompressed array to avoid having to allocate separate storage for the
+compressed stream.  zfp does allow for the possibility of such in-place
+compression, but with several caveats and restrictions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>A bitstream must be created whose buffer points to the beginning of
+uncompressed (and to be compressed) storage.</li>
+<li>The array must be compressed using zfp’s low-level API.  In particular,
+the data must already be partitioned and organized into contiguous blocks
+so that all values of a block can be pulled out once and then replaced
+with the corresponding shorter compressed representation.</li>
+<li>No one compressed block can occupy more space than its corresponding
+uncompressed block so that the not-yet compressed data is not overwritten.
+This is usually easily accomplished in fixed-rate mode, although the
+expert interface also allows guarding against this in all modes using the
+<a class="reference internal" href="modes.html#c.zfp_stream.maxbits" title="zfp_stream.maxbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxbits</span></code></a> parameter.  This parameter should be set to
+<code class="code docutils literal"><span class="pre">maxbits</span> <span class="pre">=</span> <span class="pre">4^d</span> <span class="pre">*</span> <span class="pre">8</span> <span class="pre">*</span> <span class="pre">sizeof(type)</span></code>, where <em>d</em> is the array
+dimensionality (1, 2, or 3) and where <em>type</em> is the scalar type of the
+uncompressed data.</li>
+<li>No header information may be stored in the compressed stream.</li>
+</ol>
+</div></blockquote>
+<p>In-place decompression can also be achieved, but in addition to the above
+constraints requires even more care:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>The data must be decompressed in reverse block order, so that the last
+block is decompressed first to the end of the block array.  This requires
+the user to maintain a pointer to uncompressed storage and to seek via
+<a class="reference internal" href="bit-stream.html#c.stream_rseek" title="stream_rseek"><code class="xref c c-func docutils literal"><span class="pre">stream_rseek()</span></code></a> to the proper location in the compressed stream
+where the block is stored.</li>
+<li>The space allocated to the compressed stream must be large enough to
+also hold the uncompressed data.</li>
+</ol>
+</div></blockquote>
+<p>An <a class="reference internal" href="examples.html#ex-inplace"><span class="std std-ref">example</span></a> is provided that shows how in-place compression
+can be done.</p>
+<hr class="docutils" />
+<p id="q-relerr">Q20: <em>How should I set the precision to bound the relative error?</em></p>
+<p>A: In general, zfp cannot bound the point-wise relative error due to its
+use of a block-floating-point representation, in which all values within a
+block are represented in relation to a single common exponent.  For a high
+enough dynamic range within a block there may simply not be enough precision
+available to guard against loss.  For instance, a block containing the values
+2<sup>0</sup> = 1 and 2<sup>-n</sup> would require a precision of <em>n</em> + 3 bits to
+represent losslessly, and zfp uses at most 64-bit integers to represent
+values.  Thus, if <em>n</em> ≥ 62, then 2<sup>-n</sup> is replaced with 0, which
+is a 100% relative error.  Note that such loss also occurs when, for instance,
+2<sup>0</sup> and 2<sup>-n</sup> are added using floating-point arithmetic (see
+also <a class="reference internal" href="#q-tolerance"><span class="std std-ref">Q17</span></a>).</p>
+<p>It is, however, possible to bound the error relative to the largest (in
+magnitude) value, <em>fmax</em>, within a block, which if the magnitude of values
+does not change too rapidly may serve as a reasonable proxy for point-wise
+relative errors.</p>
+<p>One might then ask if using zfp’s fixed-precision mode with <em>p</em> bits of
+precision ensures that the block-wise relative error is at most
+2<sup>-p</sup> × <em>fmax</em>.  This is, unfortunately, not the case, because
+the requested precision, <em>p</em>, is ensured only for the transform coefficients.
+During the inverse transform of these quantized coefficients the quantization
+error may amplify.  That being said, it is possible to derive a bound on the
+error in terms of <em>p</em> that would allow choosing an appropriate precision.
+Such a bound is derived below.</p>
+<p>Let</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">emax</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">fmax</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>be the largest base-2 exponent within a block.  For transform coefficient
+precision, <em>p</em>, one can show that the maximum absolute error, <em>err</em>, is
+bounded by:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">err</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">emax</span> <span class="o">/</span> <span class="mi">2</span><span class="o">^</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">fmax</span> <span class="o">/</span> <span class="mi">2</span><span class="o">^</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here <em>k</em>(<em>d</em>) is a constant that depends on the data dimensionality <em>d</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">k</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>so that in 1D, 2D, 3D, and 4D we have:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">k</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">125</span>
+<span class="n">k</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1125</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">k</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="mi">16876</span><span class="o">/</span><span class="mi">16</span>
+</pre></div>
+</div>
+<p>Thus, to guarantee <em>n</em> bits of accuracy in the decompressed data, we need
+to choose a higher precision, <em>p</em>, for the transform coefficients:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">ceil</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">k</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>so that</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">7</span>
+<span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">9</span>
+<span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">11</span>
+</pre></div>
+</div>
+<p>This <em>p</em> value should be used in the call to
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_precision" title="zfp_stream_set_precision"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_precision()</span></code></a>.</p>
+<p>Note, again, that some values in the block may have leading zeros when
+expressed relative to 2<sup>emax</sup>, and these leading zeros are counted
+toward the <em>n</em>-bit precision.  Using decimal to illustrate this, suppose
+we used 4-digit precision for a 1D block containing these four values:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">1.41421e+1</span> <span class="o">~</span> <span class="o">-</span><span class="mf">1.414e+1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1414</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="o">+</span><span class="mf">2.71828e-1</span> <span class="o">~</span> <span class="o">+</span><span class="mf">0.027e+1</span> <span class="o">=</span>   <span class="o">+</span><span class="mi">27</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="o">+</span><span class="mf">3.14159e-6</span> <span class="o">~</span> <span class="o">+</span><span class="mf">0.000e+1</span> <span class="o">=</span>     <span class="mi">0</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="o">+</span><span class="mf">1.00000e+0</span> <span class="o">~</span> <span class="o">+</span><span class="mf">0.100e+1</span> <span class="o">=</span>  <span class="o">+</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>with the values in the middle column aligned to the common base-10 exponent
++1, and with the values on the right expressed as scaled integers.  These
+are all represented using four digits of precision, but some of those digits
+are leading zeros.</p>
+<hr class="docutils" />
+<p id="q-lossless">Q21: <em>Does zfp support lossless compression?</em></p>
+<p>A: Yes.  As of zfp 0.5.5, bit-for-bit lossless compression is
+supported via the <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible compression mode</span></a>.
+This mode supports both integer and floating-point data.</p>
+<p>In addition, it is sometimes possible to ensure lossless compression using
+zfp’s fixed-precision and fixed-accuracy modes.  For integer data, zfp
+can with few exceptions ensure lossless compression in
+<a class="reference internal" href="modes.html#mode-fixed-precision"><span class="std std-ref">fixed-precision mode</span></a>.
+For a given <em>n</em>-bit integer type (<em>n</em> = 32 or <em>n</em> = 64), consider compressing
+<em>p</em>-bit signed integer data, with the sign bit counting toward the precision.
+In other words, there are exactly 2<sup>p</sup> possible signed integers.  If
+the integers are unsigned, then subtract 2<sup>p-1</sup> first so that they
+range from −2<sup>p-1</sup> to 2<sup>p-1</sup> - 1.</p>
+<p>Lossless integer compression in fixed-precision mode is achieved by first
+promoting the <em>p</em>-bit integers to <em>n</em> - 1 bits (see <a class="reference internal" href="#q-integer"><span class="std std-ref">Q8</span></a>)
+such that all integer values fall in
+[−2<sup>30</sup>, +2<sup>30</sup>), when <em>n</em> = 32, or in
+[−2<sup>62</sup>, +2<sup>62</sup>), when <em>n</em> = 64.  In other words, the
+<em>p</em>-bit integers first need to be shifted left by <em>n</em> - <em>p</em> - 1 bits.  After
+promotion, the data should be compressed in zfp’s fixed-precision mode using:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>bits of precision to ensure no loss, where <em>d</em> is the data dimensionality
+(1 ≤ d ≤ 4).  Consequently, the <em>p</em>-bit data can be losslessly
+compressed as long as <em>p</em> ≤ <em>n</em> - 4 × <em>d</em> - 1.  The table below
+lists the maximum precision <em>p</em> that can be losslessly compressed using 32-
+and 64-bit integer types.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="44%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">d</th>
+<th class="head">n=32</th>
+<th class="head">n=64</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>27</td>
+<td>59</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>23</td>
+<td>55</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>19</td>
+<td>51</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>15</td>
+<td>47</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Although lossless compression is possible as long as the precision constraint
+is met, the precision needed to guarantee no loss is generally much higher
+than the precision intrinsic in the uncompressed data.  Therefore, we
+recommend using the <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible mode</span></a> when lossless
+compression is desired.</p>
+<p>The minimum precision, <em>q</em>, given above is often larger than what
+is necessary in practice.  There are worst-case inputs that do require such
+large <em>q</em> values, but they are quite rare.</p>
+<p>The reason for expanded precision, i.e., why <em>q</em> &gt; <em>p</em>, is that zfp’s
+decorrelating transform computes averages of integers, and this transform is
+applied <em>d</em> times in <em>d</em> dimensions.  Each average of two <em>p</em>-bit numbers
+requires <em>p</em> + 1 bits to avoid loss, and each transform can be thought of
+involving up to four such averaging operations.</p>
+<p>For floating-point data, fully lossless compression with zfp usually
+requires <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible mode</span></a>, as the other compression
+modes are unlikely to guarantee bit-for-bit exact reconstructions.  However,
+if the dynamic range is low or varies slowly such that values
+within a 4<sup>d</sup> block have the same or similar exponent, then the
+precision gained by discarding the 8 or 11 bits of the common floating-point
+exponents can offset the precision lost in the decorrelating transform.  For
+instance, if all values in a block have the same exponent, then lossless
+compression is obtained using
+<em>q</em> = 26 + 4 × <em>d</em> ≤ 32 bits of precision for single-precision data
+and <em>q</em> = 55 + 4 × <em>d</em> ≤ 64 bits of precision for double-precision
+data.  Of course, the constraint imposed by the available integer precision
+<em>n</em> implies that lossless compression of such data is possible only in 1D for
+single-precision data and only in 1D and 2D for double-precision data.
+Finally, to preserve special values such as negative zero, plus and minues
+infinity, and NaNs, reversible mode is needed.</p>
+<hr class="docutils" />
+<p id="q-abserr">Q22: <em>Why is my actual, measured error so much smaller than the tolerance?</em></p>
+<p>A: For two reasons.  The way zfp bounds the absolute error in
+<a class="reference internal" href="modes.html#mode-fixed-accuracy"><span class="std std-ref">fixed-accuracy mode</span></a> is by keeping all transform
+coefficient bits whose place value exceeds the tolerance while discarding the
+less significant bits.  Each such bit has a place value that is a power of
+two, and therefore the tolerance must first be rounded down to the next
+smaller power of two, which itself will introduce some slack.  This possibly
+lower, effective tolerance is returned by the
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_accuracy" title="zfp_stream_set_accuracy"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_accuracy()</span></code></a> call.</p>
+<p>Second, the quantized coefficients are then put through an inverse transform.
+This linear transform will combine signed quantization errors that, in the
+worst case, may cause them to add up and increase the error, even though the
+average (RMS) error remains the same, i.e., some errors cancel while others
+compound.  For <em>d</em>-dimensional data, <em>d</em> such inverse transforms are applied,
+with the possibility of errors cascading across transforms.  To account for
+the worst possible case, zfp has to conservatively lower its internal error
+tolerance further, once for each of the <em>d</em> transform passes.</p>
+<p>Unless the data is highly oscillatory or noisy, the error is not likely to
+be magnified much, leaving an observed error in the decompressed data that
+is much lower than the prescribed tolerance.  In practice, the observed
+maximum error tends to be about 4-8 times lower than the error tolerance
+for 3D data, while the difference is smaller for 2D and 1D data.</p>
+<p>We recommend experimenting with tolerances and evaluating what error levels
+are appropriate for each application, e.g., by starting with a low,
+conservative tolerance and successively doubling it.  The distribution of
+errors produced by zfp is approximately Gaussian, so even if the maximum
+error may seem large at an individual grid point, most errors tend to be
+much smaller and tightly clustered around zero.</p>
+<hr class="docutils" />
+<p id="q-parallel">Q23: <em>Are parallel compressed streams identical to serial streams?</em></p>
+<p>A: Yes, it matters not what execution policy is used; the final compressed
+stream produced by <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a> depends only on the uncompressed
+data and compression settings.</p>
+<p>To support future parallel decompression, in particular variable-rate
+streams, it will be necessary to also store an index of where (at what
+bit offset) each compressed block is stored in the stream.  Extensions to the
+current zfp format are being considered to support parallel decompression.</p>
+<p>Regardless, the execution policy and parameters such as number of threads
+do not need to be the same for compression and decompression.</p>
+<hr class="docutils" />
+<p id="q-thread-safety">Q24: <em>Are zfp’s compressed arrays and other data structures thread-safe?</em></p>
+<p>A: Yes, compressed arrays can be made thread-safe; no, data structures
+like <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> and <a class="reference internal" href="bit-stream.html#c.bitstream" title="bitstream"><code class="xref c c-type docutils literal"><span class="pre">bitstream</span></code></a> are not necessarily
+thread-safe.  As of zfp 0.5.4, thread-safe read and write access
+to compressed arrays is provided through the use of
+<a class="reference internal" href="arrays.html#private-immutable-view"><span class="std std-ref">private views</span></a>, although these come with
+certain restrictions and requirements such as the need for the user to
+enforce cache coherence.  Please see the documentation on
+<a class="reference internal" href="arrays.html#views"><span class="std std-ref">views</span></a> for further details.</p>
+<p>As far as C objects, zfp’s parallel OpenMP compressor assigns one
+<a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> per thread, each of which uses its own private
+<a class="reference internal" href="bit-stream.html#c.bitstream" title="bitstream"><code class="xref c c-type docutils literal"><span class="pre">bitstream</span></code></a>.  Users who wish to make parallel calls to zfp’s
+<a class="reference internal" href="low-level-api.html#ll-api"><span class="std std-ref">low-level functions</span></a> are advised to consult the source
+files <code class="file docutils literal"><span class="pre">ompcompress.c</span></code> and <code class="file docutils literal"><span class="pre">parallel.c</span></code>.</p>
+<p>Finally, the zfp API is thread-safe as long as multiple threads do not
+simultaneously call API functions and pass the same <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a>
+or <a class="reference internal" href="bit-stream.html#c.bitstream" title="bitstream"><code class="xref c c-type docutils literal"><span class="pre">bitstream</span></code></a> object.</p>
+<hr class="docutils" />
+<p id="q-omp-perf">Q25: <em>Why does parallel compression performance not match my expectations?</em></p>
+<p>A: zfp partitions arrays into chunks and assigns each chunk to an OpenMP
+thread.  A chunk is a sequence of consecutive <em>d</em>-dimensional blocks, each
+composed of 4<sup>d</sup> values.  If there are fewer chunks than threads, then
+full processor utilization will not be achieved.</p>
+<p>The number of chunks is by default set to the number of threads, but can
+be modified by the user via <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_chunk_size" title="zfp_stream_set_omp_chunk_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_chunk_size()</span></code></a>.
+One reason for using more chunks than threads is to provide for better
+load balance.  If compression ratios vary significantly across the array,
+then threads that process easy-to-compress blocks may finish well ahead
+of threads in charge of difficult-to-compress blocks.  By breaking chunks
+into smaller units, OpenMP is given the opportunity to balance the load
+better (though the effect of using smaller chunks depends on OpenMP
+thread scheduling).  If chunks are too small, however, then the overhead
+of allocating and initializing chunks and assigning threads to them may
+dominate.  Experimentation with chunk size may improve performance, though
+chunks ought to be at least several hundred blocks each.</p>
+<p>In variable-rate mode, compressed chunk sizes are not known ahead of time.
+Therefore the compressed chunks must be concatenated into a single stream
+following compression.  This task is performed sequentially on a single
+thread, and will inevitably limit parallel efficiency.</p>
+<p>Other reasons for poor parallel performance include compressing arrays
+that are too small to offset the overhead of thread creation and
+synchronization.  Arrays should ideally consist of thousands of blocks
+to offset the overhead of setting up parallel compression.</p>
+<hr class="docutils" />
+<p id="q-1d-speed">Q26: <em>Why are compressed arrays so slow?</em></p>
+<p>A: This is likely due to the use of a very small cache.  Prior to zfp
+0.5.5, all arrays used two ‘layers’ of blocks as default cache
+size, which is reasonable for 2D and higher-dimensional arrays (as long
+as they are not too ‘skinny’).  In 1D, however, this implies that the
+cache holds only two blocks, which is likely to cause excessive thrashing.</p>
+<p>As of version 0.5.5, the default cache size is roughly proportional
+to the square root of the total number of array elements, regardless of
+array dimensionality.  While this tends to reduce thrashing, we suggest
+experimenting with larger cache sizes of at least a few kilobytes to ensure
+acceptable performance.</p>
+<p>Note that compressed arrays constructed with the
+<a class="reference internal" href="arrays.html#array-ctor-default"><span class="std std-ref">default constructor</span></a> will
+have an initial cache size of only one block.  Therefore, users should call
+<a class="reference internal" href="arrays.html#_CPPv2N3zfp5array14set_cache_sizeE6size_t" title="zfp::array::set_cache_size"><code class="xref cpp cpp-func docutils literal"><span class="pre">array::set_cache_size()</span></code></a> after <a class="reference internal" href="arrays.html#array-resize"><span class="std std-ref">resizing</span></a>
+such arrays to ensure a large enough cache.</p>
+<p>Depending on factors such as rate, cache size, array access pattern,
+array access primitive (e.g., indices vs. iterators), and arithmetic
+intensity, we usually observe an application slow-down of 1-10x when
+switching from uncompressed to compressed arrays.</p>
+<hr class="docutils" />
+<p id="q-ref-count">Q27: <em>Do compressed arrays use reference counting?</em></p>
+<p>A: It is possible to reference compressed  array elements via proxy
+<a class="reference internal" href="arrays.html#references"><span class="std std-ref">references</span></a> and <a class="reference internal" href="arrays.html#pointers"><span class="std std-ref">pointers</span></a>, through
+<a class="reference internal" href="arrays.html#iterators"><span class="std std-ref">iterators</span></a>, and through <a class="reference internal" href="arrays.html#views"><span class="std std-ref">views</span></a>.  Such
+indirect references are valid only during the lifetime of the underlying
+array.  No reference counting and garbage collection is used to keep the
+array alive if there are external references to it.  Such references
+become invalid once the array is destructed, and dereferencing them will
+likely lead to segmentation faults.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="testing.html"
+                        title="previous chapter">Regression Tests</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="issues.html"
+                        title="next chapter">Troubleshooting</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="issues.html" title="Troubleshooting"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="testing.html" title="Regression Tests"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

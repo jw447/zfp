@@ -1,0 +1,1439 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fortran Bindings &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Python Bindings" href="python.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="python.html" title="Python Bindings"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fortran-bindings">
+<span id="zforp"></span><span id="index-0"></span><h1>Fortran Bindings<a class="headerlink" href="#fortran-bindings" title="Permalink to this headline">¶</a></h1>
+<p>zfp 0.5.5 adds zFORp: a Fortran API providing wrappers around
+the <a class="reference internal" href="high-level-api.html#hl-api"><span class="std std-ref">high-level C API</span></a>. Wrappers for
+<a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">compressed arrays</span></a> will arrive in a future release.
+The zFORp implementation is based on the standard <code class="code docutils literal"><span class="pre">iso_c_binding</span></code>
+module available since Fortran 2003.</p>
+<p>Every high-level C API function can be called from a Fortran wrapper function.
+C structs are wrapped as Fortran derived types, each containing a single C
+pointer to the C struct in memory. The wrapper functions accept and return
+these Fortran types, so users should never need to touch the C pointers.
+In addition to the high-level C API, two essential functions from the
+<a class="reference internal" href="bit-stream.html#bs-api"><span class="std std-ref">bit stream API</span></a> for opening and closing bit streams are
+available.</p>
+<p>See example code <code class="file docutils literal"><span class="pre">tests/fortran/testFortran.f</span></code> (on the GitHub
+<a class="reference external" href="https://github.com/LLNL/zfp/tree/develop">develop branch</a>)
+for how the Fortran API is used to compress and decompress data.</p>
+<div class="section" id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="f/_/zFORp_bitstream">
+<em class="property">type  </em><code class="descname">zFORp_bitstream</code><a class="headerlink" href="#f/_/zFORp_bitstream" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type fields:</th><td class="field-body"><ul class="first last simple">
+<li><code class="descname">% </code><code class="descname">object</code><em> [</em><em>c_ptr</em><em>]</em> :: A C pointer to the instance of <a class="reference internal" href="bit-stream.html#c.bitstream" title="bitstream"><code class="xref c c-type docutils literal"><span class="pre">bitstream</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="type">
+<dt id="f/_/zFORp_stream">
+<em class="property">type  </em><code class="descname">zFORp_stream</code><a class="headerlink" href="#f/_/zFORp_stream" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type fields:</th><td class="field-body"><ul class="first last simple">
+<li><code class="descname">% </code><code class="descname">object</code><em> [</em><em>c_ptr</em><em>]</em> :: A C pointer to the instance of <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="type">
+<dt id="f/_/zFORp_field">
+<em class="property">type  </em><code class="descname">zFORp_field</code><a class="headerlink" href="#f/_/zFORp_field" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type fields:</th><td class="field-body"><ul class="first last simple">
+<li><code class="descname">% </code><code class="descname">object</code><em> [</em><em>c_ptr</em><em>]</em> :: A C pointer to the instance of <a class="reference internal" href="high-level-api.html#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enumerations">
+<h3>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="zforp-type"></span><dl class="variable">
+<dt>
+<code class="descname">integer zFORp_type_none</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_type_int32</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_type_int64</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_type_float</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_type_double</code></dt>
+<dd><p>Enums wrapping <a class="reference internal" href="high-level-api.html#c.zfp_type" title="zfp_type"><code class="xref c c-type docutils literal"><span class="pre">zfp_type</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="zforp-mode"></span><dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_null</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_expert</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_fixed_rate</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_fixed_precision</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_fixed_accuracy</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_reversible</code></dt>
+<dd><p>Enums wrapping <a class="reference internal" href="high-level-api.html#c.zfp_mode" title="zfp_mode"><code class="xref c c-type docutils literal"><span class="pre">zfp_mode</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="zforp-exec"></span><dl class="variable">
+<dt>
+<code class="descname">integer zFORp_exec_serial</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_exec_omp</code></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_exec_cuda</code></dt>
+<dd><p>Enums wrapping <a class="reference internal" href="high-level-api.html#c.zfp_exec_policy" title="zfp_exec_policy"><code class="xref c c-type docutils literal"><span class="pre">zfp_exec_policy</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="non-enum-constants">
+<h3>Non-Enum Constants<a class="headerlink" href="#non-enum-constants" title="Permalink to this headline">¶</a></h3>
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_version_major</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_VERSION_MAJOR" title="ZFP_VERSION_MAJOR"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_VERSION_MAJOR</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_version_minor</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_VERSION_MINOR" title="ZFP_VERSION_MINOR"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_VERSION_MINOR</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_version_patch</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_VERSION_PATCH" title="ZFP_VERSION_PATCH"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_VERSION_PATCH</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_codec_version</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.zfp_codec_version" title="zfp_codec_version"><code class="xref c c-data docutils literal"><span class="pre">zfp_codec_version</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_library_version</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.zfp_library_version" title="zfp_library_version"><code class="xref c c-data docutils literal"><span class="pre">zfp_library_version</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">character(len=36) zFORp_version_string</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.zfp_version_string" title="zfp_version_string"><code class="xref c c-data docutils literal"><span class="pre">zfp_version_string</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_min_bits</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MIN_BITS" title="ZFP_MIN_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MIN_BITS</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_max_bits</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MAX_BITS" title="ZFP_MAX_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MAX_BITS</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_max_prec</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MAX_PREC" title="ZFP_MAX_PREC"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MAX_PREC</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_min_exp</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MIN_EXP" title="ZFP_MIN_EXP"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MIN_EXP</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="zforp-header"></span><dl class="variable">
+<dt>
+<code class="descname">integer zFORp_header_magic</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_HEADER_MAGIC" title="ZFP_HEADER_MAGIC"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_MAGIC</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_header_meta</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_HEADER_META" title="ZFP_HEADER_META"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_META</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_header_mode</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_HEADER_MODE" title="ZFP_HEADER_MODE"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_MODE</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_header_full</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_HEADER_FULL" title="ZFP_HEADER_FULL"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_FULL</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_meta_null</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_META_NULL" title="ZFP_META_NULL"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_META_NULL</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_magic_bits</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MAGIC_BITS" title="ZFP_MAGIC_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MAGIC_BITS</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_meta_bits</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_META_BITS" title="ZFP_META_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_META_BITS</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_short_bits</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MODE_SHORT_BITS" title="ZFP_MODE_SHORT_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MODE_SHORT_BITS</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_long_bits</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MODE_LONG_BITS" title="ZFP_MODE_LONG_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MODE_LONG_BITS</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_header_max_bits</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_HEADER_MAX_BITS" title="ZFP_HEADER_MAX_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_MAX_BITS</span></code></a></p>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<code class="descname">integer zFORp_mode_short_max</code></dt>
+<dd><p>Wraps <a class="reference internal" href="high-level-api.html#c.ZFP_MODE_SHORT_MAX" title="ZFP_MODE_SHORT_MAX"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MODE_SHORT_MAX</span></code></a></p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="functions-and-subroutines">
+<h2>Functions and Subroutines<a class="headerlink" href="#functions-and-subroutines" title="Permalink to this headline">¶</a></h2>
+<p>Each of the functions included here wraps a corresponding C function.  Please
+consult the C documentation for detailed descriptions of the functions, their
+parameters, and their return values.</p>
+<div class="section" id="bit-stream">
+<h3>Bit Stream<a class="headerlink" href="#bit-stream" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="f/_/zFORp_bitstream_stream_open">
+<em class="property">function  </em><code class="descname">zFORp_bitstream_stream_open</code><span class="sig-paren">(</span><em>buffer</em>, <em>bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_bitstream_stream_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="bit-stream.html#c.stream_open" title="stream_open"><code class="xref c c-func docutils literal"><span class="pre">stream_open()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>buffer</strong><em> [</em><em>c_ptr</em><em>,</em><em>in</em><em>]</em> :: Memory buffer</li>
+<li><strong>bytes</strong><em> [</em><em>integer (kind=8)</em><em>,</em><em>in</em><em>]</em> :: Buffer size in bytes</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>bs</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_bitstream" title="f/_/zFORp_bitstream"><em>zFORp_bitstream</em></a><em>]</em> :: Bit stream</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_bitstream_stream_close">
+<em class="property">subroutine  </em><code class="descname">zFORp_bitstream_stream_close</code><span class="sig-paren">(</span><em>bs</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_bitstream_stream_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="bit-stream.html#c.stream_close" title="stream_close"><code class="xref c c-func docutils literal"><span class="pre">stream_close()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bs</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_bitstream" title="f/_/zFORp_bitstream"><em>zFORp_bitstream</em></a><em>,</em><em>inout</em><em>]</em> :: Bit stream</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="utility-functions">
+<h3>Utility Functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="f/_/zFORp_type_size">
+<em class="property">function  </em><code class="descname">zFORp_type_size</code><span class="sig-paren">(</span><em>scalar_type</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_type_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_type_size" title="zfp_type_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_type_size()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scalar_type</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>type_size</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Size of described <a class="reference internal" href="high-level-api.html#c.zfp_type" title="zfp_type"><code class="xref c c-type docutils literal"><span class="pre">zfp_type</span></code></a>, in bytes, from C-language perspective</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="compressed-stream">
+<h3>Compressed Stream<a class="headerlink" href="#compressed-stream" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="f/_/zFORp_stream_open">
+<em class="property">function  </em><code class="descname">zFORp_stream_open</code><span class="sig-paren">(</span><em>bs</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_open" title="zfp_stream_open"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_open()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bs</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_bitstream" title="f/_/zFORp_bitstream"><em>zFORp_bitstream</em></a><em>,</em><em>in</em><em>]</em> :: Bit stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>]</em> :: Newly allocated compressed stream</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_stream_close">
+<em class="property">subroutine  </em><code class="descname">zFORp_stream_close</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_close" title="zfp_stream_close"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_close()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>inout</em><em>]</em> :: Compressed stream</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_bit_stream">
+<em class="property">function  </em><code class="descname">zFORp_stream_bit_stream</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_bit_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_bit_stream" title="zfp_stream_bit_stream"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_bit_stream()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>bs</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_bitstream" title="f/_/zFORp_bitstream"><em>zFORp_bitstream</em></a><em>]</em> :: Bit stream</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_compression_mode">
+<em class="property">function  </em><code class="descname">zFORp_stream_compression_mode</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_compression_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_compression_mode" title="zfp_stream_compression_mode"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_compression_mode()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>mode</strong><em> [</em><em>integer</em><em>]</em> :: <a class="reference internal" href="#zforp-mode"><span class="std std-ref">zFORp_mode</span></a> enum</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_mode">
+<em class="property">function  </em><code class="descname">zFORp_stream_mode</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_mode" title="zfp_stream_mode"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_mode()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>mode</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: 64-bit encoded mode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_stream_params">
+<em class="property">subroutine  </em><code class="descname">zFORp_stream_params</code><span class="sig-paren">(</span><em>stream</em>, <em>minbits</em>, <em>maxbits</em>, <em>maxprec</em>, <em>minexp</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_params" title="zfp_stream_params"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_params()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>minbits</strong><em> [</em><em>integer</em><em>,</em><em>inout</em><em>]</em> :: Minimum number of bits per block</li>
+<li><strong>maxbits</strong><em> [</em><em>integer</em><em>,</em><em>inout</em><em>]</em> :: Maximum number of bits per block</li>
+<li><strong>maxprec</strong><em> [</em><em>integer</em><em>,</em><em>inout</em><em>]</em> :: Maximum precision</li>
+<li><strong>minexp</strong><em> [</em><em>integer</em><em>,</em><em>inout</em><em>]</em> :: Minimum bit plane number encoded</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_compressed_size">
+<em class="property">function  </em><code class="descname">zFORp_stream_compressed_size</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_compressed_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_compressed_size" title="zfp_stream_compressed_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_compressed_size()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>compressed_size</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Compressed size in bytes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_maximum_size">
+<em class="property">function  </em><code class="descname">zFORp_stream_maximum_size</code><span class="sig-paren">(</span><em>stream</em>, <em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_maximum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_maximum_size" title="zfp_stream_maximum_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_maximum_size()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>max_size</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Maximum possible compressed size in bytes</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_stream_set_bit_stream">
+<em class="property">subroutine  </em><code class="descname">zFORp_stream_set_bit_stream</code><span class="sig-paren">(</span><em>stream</em>, <em>bs</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_bit_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_bit_stream" title="zfp_stream_set_bit_stream"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_bit_stream()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>bs</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_bitstream" title="f/_/zFORp_bitstream"><em>zFORp_bitstream</em></a><em>,</em><em>in</em><em>]</em> :: Bit stream</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_stream_rewind">
+<em class="property">subroutine  </em><code class="descname">zFORp_stream_rewind</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_rewind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_rewind" title="zfp_stream_rewind"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_rewind()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="compression-parameters">
+<h3>Compression Parameters<a class="headerlink" href="#compression-parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="subroutine">
+<dt id="f/_/zFORp_stream_set_reversible">
+<em class="property">subroutine  </em><code class="descname">zFORp_stream_set_reversible</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_reversible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_reversible" title="zfp_stream_set_reversible"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_reversible()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_rate">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_rate</code><span class="sig-paren">(</span><em>stream</em>, <em>rate</em>, <em>scalar_type</em>, <em>dims</em>, <em>wra</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_rate" title="zfp_stream_set_rate"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_rate()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>rate</strong><em> [</em><em>real</em><em>,</em><em>in</em><em>]</em> :: Desired rate</li>
+<li><strong>scalar_type</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum</li>
+<li><strong>dims</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of dimensions</li>
+<li><strong>wra</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Use write random access?</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>rate_result</strong><em> [</em><em>real</em><em>]</em> :: Actual set rate in bits/scalar</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_precision">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_precision</code><span class="sig-paren">(</span><em>stream</em>, <em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_precision" title="zfp_stream_set_precision"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_precision()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>prec</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Desired precision</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>prec_result</strong><em> [</em><em>integer</em><em>]</em> :: Actual set precision</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_accuracy">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_accuracy</code><span class="sig-paren">(</span><em>stream</em>, <em>tolerance</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_accuracy" title="zfp_stream_set_accuracy"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_accuracy()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>tolerance</strong><em> [</em><em>real (kind=8)</em><em>,</em><em>in</em><em>]</em> :: Desired error tolerance</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>tol_result</strong><em> [</em><em>real (kind=8)</em><em>]</em> :: Actual set tolerance</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_mode">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_mode</code><span class="sig-paren">(</span><em>stream</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_mode" title="zfp_stream_set_mode"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_mode()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>mode</strong><em> [</em><em>integer (kind=8)</em><em>,</em><em>in</em><em>]</em> :: Compact encoding of compression parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>mode_result</strong><em> [</em><em>integer</em><em>]</em> :: Newly set <a class="reference internal" href="#zforp-mode"><span class="std std-ref">zFORp_mode</span></a> enum</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_params">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_params</code><span class="sig-paren">(</span><em>stream</em>, <em>minbits</em>, <em>maxbits</em>, <em>maxprec</em>, <em>minexp</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_params" title="zfp_stream_set_params"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_params()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>minbits</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Minimum number of bits per block</li>
+<li><strong>maxbits</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Maximum number of bits per block</li>
+<li><strong>maxprec</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Maximum precision</li>
+<li><strong>minexp</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Minimum bit plane number encoded</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>is_success</strong><em> [</em><em>integer</em><em>]</em> :: Indicate whether parameters were successfully set (1) or not (0)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="execution-policy">
+<h3>Execution Policy<a class="headerlink" href="#execution-policy" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="f/_/zFORp_stream_execution">
+<em class="property">function  </em><code class="descname">zFORp_stream_execution</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_execution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_execution" title="zfp_stream_execution"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_execution()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>execution_policy</strong><em> [</em><em>integer</em><em>]</em> :: <a class="reference internal" href="#zforp-exec"><span class="std std-ref">zFORp_exec</span></a> enum indicating active execution policy</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_omp_threads">
+<em class="property">function  </em><code class="descname">zFORp_stream_omp_threads</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_omp_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_omp_threads" title="zfp_stream_omp_threads"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_omp_threads()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>thread_count</strong><em> [</em><em>integer</em><em>]</em> :: Number of OpenMP threads to use upon execution</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_omp_chunk_size">
+<em class="property">function  </em><code class="descname">zFORp_stream_omp_chunk_size</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_omp_chunk_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_omp_chunk_size" title="zfp_stream_omp_chunk_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_omp_chunk_size()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>chunk_size_blocks</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Specified chunk size, in blocks</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_execution">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_execution</code><span class="sig-paren">(</span><em>stream</em>, <em>execution_policy</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_execution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_execution" title="zfp_stream_set_execution"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_execution()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>execution_policy</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-exec"><span class="std std-ref">zFORp_exec</span></a> enum indicating desired execution policy</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>is_success</strong><em> [</em><em>integer</em><em>]</em> :: Indicate whether execution policy was successfully set (1) or not (0)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_omp_threads">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_omp_threads</code><span class="sig-paren">(</span><em>stream</em>, <em>thread_count</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_omp_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_threads" title="zfp_stream_set_omp_threads"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_threads()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>thread_count</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Desired number of OpenMP threads</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>is_success</strong><em> [</em><em>integer</em><em>]</em> :: Indicate whether number of threads was successfully set (1) or not (0)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_stream_set_omp_chunk_size">
+<em class="property">function  </em><code class="descname">zFORp_stream_set_omp_chunk_size</code><span class="sig-paren">(</span><em>stream</em>, <em>chunk_size</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_stream_set_omp_chunk_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_chunk_size" title="zfp_stream_set_omp_chunk_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_chunk_size()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>chunk_size</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Desired chunk size, in blocks</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>is_success</strong><em> [</em><em>integer</em><em>]</em> :: Indicate whether chunk size was successfully set (1) or not (0)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="array-metadata">
+<h3>Array Metadata<a class="headerlink" href="#array-metadata" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="f/_/zFORp_field_alloc">
+<em class="property">function  </em><code class="descname">zFORp_field_alloc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_alloc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_alloc" title="zfp_field_alloc"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_alloc()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>]</em> :: Newly allocated field</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_1d">
+<em class="property">function  </em><code class="descname">zFORp_field_1d</code><span class="sig-paren">(</span><em>uncompressed_ptr</em>, <em>scalar_type</em>, <em>nx</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_1d" title="zfp_field_1d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_1d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uncompressed_ptr</strong><em> [</em><em>c_ptr</em><em>,</em><em>in</em><em>]</em> :: Pointer to uncompressed data</li>
+<li><strong>scalar_type</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum describing uncompressed scalar type</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>]</em> :: Newly allocated field</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_2d">
+<em class="property">function  </em><code class="descname">zFORp_field_2d</code><span class="sig-paren">(</span><em>uncompressed_ptr</em>, <em>scalar_type</em>, <em>nx</em>, <em>ny</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_2d" title="zfp_field_2d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_2d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uncompressed_ptr</strong><em> [</em><em>c_ptr</em><em>,</em><em>in</em><em>]</em> :: Pointer to uncompressed data</li>
+<li><strong>scalar_type</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum describing uncompressed scalar type</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>x</em> dimension</li>
+<li><strong>ny</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>y</em> dimension</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>]</em> :: Newly allocated field</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_3d">
+<em class="property">function  </em><code class="descname">zFORp_field_3d</code><span class="sig-paren">(</span><em>uncompressed_ptr</em>, <em>scalar_type</em>, <em>nx</em>, <em>ny</em>, <em>nz</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_3d" title="zfp_field_3d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_3d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uncompressed_ptr</strong><em> [</em><em>c_ptr</em><em>,</em><em>in</em><em>]</em> :: Pointer to uncompressed data</li>
+<li><strong>scalar_type</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum describing uncompressed scalar type</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>x</em> dimension</li>
+<li><strong>ny</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>y</em> dimension</li>
+<li><strong>nz</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>z</em> dimension</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>]</em> :: Newly allocated field</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_4d">
+<em class="property">function  </em><code class="descname">zFORp_field_4d</code><span class="sig-paren">(</span><em>uncompressed_ptr</em>, <em>scalar_type</em>, <em>nx</em>, <em>ny</em>, <em>nz</em>, <em>nw</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_4d" title="zfp_field_4d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_4d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uncompressed_ptr</strong><em> [</em><em>c_ptr</em><em>,</em><em>in</em><em>]</em> :: Pointer to uncompressed data</li>
+<li><strong>scalar_type</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum describing uncompressed scalar type</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>x</em> dimension</li>
+<li><strong>ny</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>y</em> dimension</li>
+<li><strong>nz</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>z</em> dimension</li>
+<li><strong>nw</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>w</em> dimension</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>]</em> :: Newly allocated field</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_free">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_free</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_free" title="zfp_field_free"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_free()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>inout</em><em>]</em> :: Field metadata</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_pointer">
+<em class="property">function  </em><code class="descname">zFORp_field_pointer</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_pointer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_pointer" title="zfp_field_pointer"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_pointer()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>arr_ptr</strong><em> [</em><em>c_ptr</em><em>]</em> :: Pointer to raw (uncompressed/decompressed) array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_scalar_type">
+<em class="property">function  </em><code class="descname">zFORp_field_scalar_type</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_scalar_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_type" title="zfp_field_type"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_type()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>scalar_type</strong><em> [</em><em>integer</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum describing uncompressed scalar type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_precision">
+<em class="property">function  </em><code class="descname">zFORp_field_precision</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_precision" title="zfp_field_precision"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_precision()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>prec</strong><em> [</em><em>integer</em><em>]</em> :: Scalar type precision in number of bits</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_dimensionality">
+<em class="property">function  </em><code class="descname">zFORp_field_dimensionality</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_dimensionality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_dimensionality" title="zfp_field_dimensionality"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_dimensionality()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>dims</strong><em> [</em><em>integer</em><em>]</em> :: Dimensionality of array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_size">
+<em class="property">function  </em><code class="descname">zFORp_field_size</code><span class="sig-paren">(</span><em>field</em>, <em>size_arr</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_size" title="zfp_field_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_size()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>size_arr</strong><em> [</em><em>integer,dimension(4),target</em><em>,</em><em>inout</em><em>]</em> :: Integer array to write field dimensions into</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>total_size</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Total number of array elements</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_stride">
+<em class="property">function  </em><code class="descname">zFORp_field_stride</code><span class="sig-paren">(</span><em>field</em>, <em>stride_arr</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_stride" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_stride" title="zfp_field_stride"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_stride()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>stride_arr</strong><em> [</em><em>integer,dimension(4),target</em><em>,</em><em>inout</em><em>]</em> :: Integer array to write strides into</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>is_strided</strong><em> [</em><em>integer</em><em>]</em> :: Indicate whether field is strided (1) or not (0)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_metadata">
+<em class="property">function  </em><code class="descname">zFORp_field_metadata</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_metadata" title="zfp_field_metadata"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_metadata()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><strong>encoded_metadata</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Compact encoding of metadata</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_pointer">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_pointer</code><span class="sig-paren">(</span><em>field</em>, <em>arr_ptr</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_pointer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_pointer" title="zfp_field_set_pointer"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_pointer()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>arr_ptr</strong><em> [</em><em>c_ptr</em><em>,</em><em>in</em><em>]</em> :: Pointer to beginning of uncompressed array</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_set_type">
+<em class="property">function  </em><code class="descname">zFORp_field_set_type</code><span class="sig-paren">(</span><em>field</em>, <em>scalar_type</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_type" title="zfp_field_set_type"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_type()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>scalar_type</strong><em> [</em><em>integer</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum indicating desired scalar type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>type_result</strong><em> [</em><em>integer</em><em>]</em> :: <a class="reference internal" href="#zforp-type"><span class="std std-ref">zFORp_type</span></a> enum indicating actual scalar type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_size_1d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_size_1d</code><span class="sig-paren">(</span><em>field</em>, <em>nx</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_size_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_size_1d" title="zfp_field_set_size_1d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_size_1d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_size_2d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_size_2d</code><span class="sig-paren">(</span><em>field</em>, <em>nx</em>, <em>ny</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_size_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_size_2d" title="zfp_field_set_size_2d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_size_2d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>x</em> dimension</li>
+<li><strong>ny</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>y</em> dimension</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_size_3d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_size_3d</code><span class="sig-paren">(</span><em>field</em>, <em>nx</em>, <em>ny</em>, <em>nz</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_size_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_size_3d" title="zfp_field_set_size_3d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_size_3d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>x</em> dimension</li>
+<li><strong>ny</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>y</em> dimension</li>
+<li><strong>nz</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>z</em> dimension</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_size_4d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_size_4d</code><span class="sig-paren">(</span><em>field</em>, <em>nx</em>, <em>ny</em>, <em>nz</em>, <em>nw</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_size_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_size_4d" title="zfp_field_set_size_4d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_size_4d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>nx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>x</em> dimension</li>
+<li><strong>ny</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>y</em> dimension</li>
+<li><strong>nz</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>z</em> dimension</li>
+<li><strong>nw</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of array elements in <em>w</em> dimension</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_stride_1d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_stride_1d</code><span class="sig-paren">(</span><em>field</em>, <em>sx</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_stride_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_stride_1d" title="zfp_field_set_stride_1d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_stride_1d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>sx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in number of scalars</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_stride_2d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_stride_2d</code><span class="sig-paren">(</span><em>field</em>, <em>sx</em>, <em>sy</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_stride_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_stride_2d" title="zfp_field_set_stride_2d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_stride_2d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>sx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>x</em> dimension</li>
+<li><strong>sy</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>y</em> dimension</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_stride_3d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_stride_3d</code><span class="sig-paren">(</span><em>field</em>, <em>sx</em>, <em>sy</em>, <em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_stride_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_stride_3d" title="zfp_field_set_stride_3d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_stride_3d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>sx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>x</em> dimension</li>
+<li><strong>sy</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>y</em> dimension</li>
+<li><strong>sz</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>z</em> dimension</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/_/zFORp_field_set_stride_4d">
+<em class="property">subroutine  </em><code class="descname">zFORp_field_set_stride_4d</code><span class="sig-paren">(</span><em>field</em>, <em>sx</em>, <em>sy</em>, <em>sz</em>, <em>sw</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_stride_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_stride_4d" title="zfp_field_set_stride_4d"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_stride_4d()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>sx</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>x</em> dimension</li>
+<li><strong>sy</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>y</em> dimension</li>
+<li><strong>sz</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>z</em> dimension</li>
+<li><strong>sw</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Stride in <em>w</em> dimension</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_field_set_metadata">
+<em class="property">function  </em><code class="descname">zFORp_field_set_metadata</code><span class="sig-paren">(</span><em>field</em>, <em>encoded_metadata</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_field_set_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_field_set_metadata" title="zfp_field_set_metadata"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_set_metadata()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>encoded_metadata</strong><em> [</em><em>integer (kind=8)</em><em>,</em><em>in</em><em>]</em> :: Compact encoding of metadata</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>is_success</strong><em> [</em><em>integer</em><em>]</em> :: Indicate whether metadata was successfully set (1) or not (0)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="compression-and-decompression">
+<h3>Compression and Decompression<a class="headerlink" href="#compression-and-decompression" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="f/_/zFORp_compress">
+<em class="property">function  </em><code class="descname">zFORp_compress</code><span class="sig-paren">(</span><em>stream</em>, <em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_compress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>bitstream_offset_bytes</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Bit stream offset after compression, in bytes, or zero on failure</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_decompress">
+<em class="property">function  </em><code class="descname">zFORp_decompress</code><span class="sig-paren">(</span><em>stream</em>, <em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_decompress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_decompress" title="zfp_decompress"><code class="xref c c-func docutils literal"><span class="pre">zfp_decompress()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>bitstream_offset_bytes</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Bit stream offset after decompression, in bytes, or zero on failure</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_write_header">
+<em class="property">function  </em><code class="descname">zFORp_write_header</code><span class="sig-paren">(</span><em>stream</em>, <em>field</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_write_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_write_header" title="zfp_write_header"><code class="xref c c-func docutils literal"><span class="pre">zfp_write_header()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>mask</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-header"><span class="std std-ref">Bit mask</span></a> indicating which parts of header to write</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>num_bits_written</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Number of header bits written or zero on failure</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="f/_/zFORp_read_header">
+<em class="property">function  </em><code class="descname">zFORp_read_header</code><span class="sig-paren">(</span><em>stream</em>, <em>field</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#f/_/zFORp_read_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for <a class="reference internal" href="high-level-api.html#c.zfp_read_header" title="zfp_read_header"><code class="xref c c-func docutils literal"><span class="pre">zfp_read_header()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stream</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_stream" title="f/_/zFORp_stream"><em>zFORp_stream</em></a><em>,</em><em>in</em><em>]</em> :: Compressed stream</li>
+<li><strong>field</strong><em> [</em><a class="reference internal" href="#f/_/zFORp_field" title="f/_/zFORp_field"><em>zFORp_field</em></a><em>,</em><em>in</em><em>]</em> :: Field metadata</li>
+<li><strong>mask</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: <a class="reference internal" href="#zforp-header"><span class="std std-ref">Bit mask</span></a> indicating which parts of header to read</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><strong>num_bits_read</strong><em> [</em><em>integer (kind=8)</em><em>]</em> :: Number of header bits read or zero on failure</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Fortran Bindings</a><ul>
+<li><a class="reference internal" href="#types">Types</a></li>
+<li><a class="reference internal" href="#constants">Constants</a><ul>
+<li><a class="reference internal" href="#enumerations">Enumerations</a></li>
+<li><a class="reference internal" href="#non-enum-constants">Non-Enum Constants</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functions-and-subroutines">Functions and Subroutines</a><ul>
+<li><a class="reference internal" href="#bit-stream">Bit Stream</a></li>
+<li><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
+<li><a class="reference internal" href="#compressed-stream">Compressed Stream</a></li>
+<li><a class="reference internal" href="#compression-parameters">Compression Parameters</a></li>
+<li><a class="reference internal" href="#execution-policy">Execution Policy</a></li>
+<li><a class="reference internal" href="#array-metadata">Array Metadata</a></li>
+<li><a class="reference internal" href="#compression-and-decompression">Compression and Decompression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="python.html"
+                        title="previous chapter">Python Bindings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tutorial.html"
+                        title="next chapter">Tutorial</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="python.html" title="Python Bindings"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

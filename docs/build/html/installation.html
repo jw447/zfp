@@ -1,0 +1,495 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Algorithm" href="algorithm.html" />
+    <link rel="prev" title="License" href="license.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="algorithm.html" title="Algorithm"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>zfp consists of four distinct parts: a compression library written in C,
+a set of C++ header files that implement compressed arrays and corresponding
+C wrappers, optional Python and Fortran bindings, and a set of C and C++
+examples and utilities.  The main compression codec is written in C and
+should conform to both the ISO C89 and C99 standards.  The C++ array classes
+are implemented entirely in header files and can be included as is, but since
+they call the compression library, applications must link with <code class="file docutils literal"><span class="pre">libzfp</span></code>.</p>
+<p>zfp is preferably built using <a class="reference external" href="https://cmake.org">CMake</a>, although the
+core library can also be built using GNU make on Linux, macOS, and MinGW.
+zfp has successfully been built and tested using these compilers:</p>
+<ul class="simple">
+<li>gcc versions 4.4.7, 4.7.3, 4.8.5, 4.9.4, 5.5.0, 6.1.0, 6.4.0, 7.1.0, 7.3.0, 8.1.0</li>
+<li>icc versions 14.0.3, 15.0.6, 16.0.4, 17.0.2, 18.0.2, 19.0.3</li>
+<li>clang versions 3.9.1, 4.0.0, 5.0.0, 6.0.0</li>
+<li>MinGW version 5.3.0</li>
+<li>Visual Studio versions 14 (2015), 15 (2017)</li>
+</ul>
+<p>zfp conforms to various language standards, including C89, C99, C++98,
+C++11, and C++14.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">zfp requires 64-bit compiler and operating system support.</p>
+</div>
+<div class="section" id="cmake-builds">
+<span id="id2"></span><h2>CMake Builds<a class="headerlink" href="#cmake-builds" title="Permalink to this headline">¶</a></h2>
+<p>To build zfp using <a class="reference external" href="https://cmake.org">CMake</a> on Linux or macOS, start
+a Unix shell and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">zfp</span><span class="o">-</span><span class="mf">0.5</span><span class="o">.</span><span class="mi">5</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">cmake</span> <span class="o">..</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<p>To also build the examples, replace the cmake line with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DBUILD_EXAMPLES</span><span class="o">=</span><span class="n">ON</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>By default, CMake builds will attempt to locate and use
+<a class="reference external" href="http://www.openmp.org">OpenMP</a>.  To disable OpenMP, type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DZFP_WITH_OPENMP</span><span class="o">=</span><span class="n">OFF</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>To build zfp using Visual Studio on Windows, start a DOS shell
+and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">zfp</span><span class="o">-</span><span class="mf">0.5</span><span class="o">.</span><span class="mi">5</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">cmake</span> <span class="o">..</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span>
+</pre></div>
+</div>
+<p>This builds zfp in release mode.  Replace ‘Release’ with ‘Debug’ to
+build zfp in debug mode.  See the instructions for Linux on how to
+change the cmake line to also build the example programs.</p>
+</div>
+<div class="section" id="gnu-builds">
+<span id="id4"></span><h2>GNU Builds<a class="headerlink" href="#gnu-builds" title="Permalink to this headline">¶</a></h2>
+<p>To build zfp using <a class="reference external" href="https://gcc.gnu.org">gcc</a> without
+<a class="reference external" href="http://www.openmp.org">OpenMP</a>, type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">zfp</span><span class="o">-</span><span class="mf">0.5</span><span class="o">.</span><span class="mi">5</span>
+<span class="n">gmake</span>
+</pre></div>
+</div>
+<p>This builds <code class="file docutils literal"><span class="pre">libzfp</span></code> as a static library as well as the zfp
+command-line utility.  To enable OpenMP parallel compression, type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="n">ZFP_WITH_OPENMP</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">GNU builds expose only limited functionality of zfp.  For instance,
+CUDA and Python support are not included.  For full functionality,
+build zfp using CMake.</p>
+</div>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>To test that zfp is working properly, type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ctest</span>
+</pre></div>
+</div>
+<p>or using GNU make:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>If the GNU build or regression tests fail, it is possible that some of
+the macros in the file <code class="file docutils literal"><span class="pre">Config</span></code> have to be adjusted.  Also, the tests
+may fail due to minute differences in the computed floating-point fields
+being compressed, which will be indicated by checksum errors.  If most
+tests succeed and the failures result in byte sizes and error values
+reasonably close to the expected values, then it is likely that the
+compressor is working correctly.</p>
+</div>
+<div class="section" id="build-targets">
+<span id="targets"></span><span id="index-0"></span><h2>Build Targets<a class="headerlink" href="#build-targets" title="Permalink to this headline">¶</a></h2>
+<p>To specify which components to build, set the macros below to
+<code class="code docutils literal"><span class="pre">ON</span></code> (CMake) or <code class="code docutils literal"><span class="pre">1</span></code> (GNU make), e.g.,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DBUILD_UTILITIES</span><span class="o">=</span><span class="n">OFF</span> <span class="o">-</span><span class="n">DBUILD_EXAMPLES</span><span class="o">=</span><span class="n">ON</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>or using GNU make</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="n">BUILD_UTILITIES</span><span class="o">=</span><span class="mi">0</span> <span class="n">BUILD_EXAMPLES</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Regardless of the settings below, <code class="file docutils literal"><span class="pre">libzfp</span></code> will always be built.</p>
+<dl class="macro">
+<dt id="c.BUILD_ALL">
+<code class="descname">BUILD_ALL</code><a class="headerlink" href="#c.BUILD_ALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build all subdirectories; enable all options (except
+<a class="reference internal" href="#c.BUILD_SHARED_LIBS" title="BUILD_SHARED_LIBS"><code class="xref c c-macro docutils literal"><span class="pre">BUILD_SHARED_LIBS</span></code></a>).
+Default: off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BUILD_CFP">
+<code class="descname">BUILD_CFP</code><a class="headerlink" href="#c.BUILD_CFP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build <code class="file docutils literal"><span class="pre">libcfp</span></code> for C bindings to compressed arrays.
+Default: off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BUILD_ZFPY">
+<code class="descname">BUILD_ZFPY</code><a class="headerlink" href="#c.BUILD_ZFPY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build zfPy for Python bindings to the C API.</p>
+<p>CMake will attempt to automatically detect the Python installation to use.
+If CMake finds multiple Python installations, it will use the newest one.
+To specify a specific Python installation to use, set
+<a class="reference internal" href="#c.PYTHON_LIBRARY" title="PYTHON_LIBRARY"><code class="xref c c-macro docutils literal"><span class="pre">PYTHON_LIBRARY</span></code></a> and <a class="reference internal" href="#c.PYTHON_INCLUDE_DIR" title="PYTHON_INCLUDE_DIR"><code class="xref c c-macro docutils literal"><span class="pre">PYTHON_INCLUDE_DIR</span></code></a> on the
+cmake line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DBUILD_ZFPY</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">DPYTHON_LIBRARY</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libpython2</span><span class="o">.</span><span class="mf">7.</span><span class="n">so</span> <span class="o">-</span><span class="n">DPYTHON_INCLUDE_DIR</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>CMake default: off.
+GNU make default: off and ignored.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BUILD_ZFORP">
+<code class="descname">BUILD_ZFORP</code><a class="headerlink" href="#c.BUILD_ZFORP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build <code class="file docutils literal"><span class="pre">libzFORp</span></code> for Fortran bindings to the C API.  Requires Fortran
+standard 2003 or later.  GNU make users may specify the Fortran compiler
+to use via</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmake</span> <span class="n">BUILD_ZFORP</span><span class="o">=</span><span class="mi">1</span> <span class="n">FC</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">fortran</span><span class="o">-</span><span class="n">compiler</span>
+</pre></div>
+</div>
+<p>Default: off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BUILD_UTILITIES">
+<code class="descname">BUILD_UTILITIES</code><a class="headerlink" href="#c.BUILD_UTILITIES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build <strong class="program">zfp</strong> command-line utility for compressing binary files.
+Default: on.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BUILD_EXAMPLES">
+<code class="descname">BUILD_EXAMPLES</code><a class="headerlink" href="#c.BUILD_EXAMPLES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build code examples.
+Default: off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BUILD_TESTING">
+<code class="descname">BUILD_TESTING</code><a class="headerlink" href="#c.BUILD_TESTING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build <strong class="program">testzfp</strong> and (when on the GitHub
+<a class="reference external" href="https://github.com/LLNL/zfp/tree/develop">develop branch</a>) unit tests.
+Default: on.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BUILD_SHARED_LIBS">
+<code class="descname">BUILD_SHARED_LIBS</code><a class="headerlink" href="#c.BUILD_SHARED_LIBS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build shared objects (<code class="file docutils literal"><span class="pre">.so</span></code>, <code class="file docutils literal"><span class="pre">.dylib</span></code>, or <code class="file docutils literal"><span class="pre">.dll</span></code> files).
+On macOS, the <code class="code docutils literal"><span class="pre">SOFLAGS</span></code> line in the <code class="file docutils literal"><span class="pre">Config</span></code> file may have
+to be uncommented when building with GNU make.
+CMake default: on.
+GNU make default: off.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="configuration">
+<span id="config"></span><span id="index-1"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The behavior of zfp can be configured at compile time via a set of macros
+in the same manner that <a class="reference internal" href="#targets"><span class="std std-ref">build targets</span></a> are specified, e.g.,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DZFP_WITH_OPENMP</span><span class="o">=</span><span class="n">OFF</span> <span class="o">..</span>
+</pre></div>
+</div>
+<dl class="macro">
+<dt id="c.ZFP_INT64">
+<code class="descname">ZFP_INT64</code><a class="headerlink" href="#c.ZFP_INT64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_INT64_SUFFIX">
+<code class="descname">ZFP_INT64_SUFFIX</code><a class="headerlink" href="#c.ZFP_INT64_SUFFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_UINT64">
+<code class="descname">ZFP_UINT64</code><a class="headerlink" href="#c.ZFP_UINT64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_UINT64_SUFFIX">
+<code class="descname">ZFP_UINT64_SUFFIX</code><a class="headerlink" href="#c.ZFP_UINT64_SUFFIX" title="Permalink to this definition">¶</a></dt>
+<dd><p>64-bit signed and unsigned integer types and their literal suffixes.
+Platforms on which <code class="code docutils literal"><span class="pre">long</span> <span class="pre">int</span></code> is 32 bits wide may require
+<code class="code docutils literal"><span class="pre">long</span> <span class="pre">long</span> <span class="pre">int</span></code> as type and <code class="code docutils literal"><span class="pre">ll</span></code> as suffix.  These macros
+are relevant <strong>only</strong> when compiling in C89 mode.  When compiling in
+C99 mode, integer types are taken from <code class="file docutils literal"><span class="pre">stdint.h</span></code>.
+Defaults: <code class="code docutils literal"><span class="pre">long</span> <span class="pre">int</span></code>, <code class="code docutils literal"><span class="pre">l</span></code>, <code class="code docutils literal"><span class="pre">unsigned</span> <span class="pre">long</span> <span class="pre">int</span></code>, and
+<code class="code docutils literal"><span class="pre">ul</span></code>, respectively.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_WITH_OPENMP">
+<code class="descname">ZFP_WITH_OPENMP</code><a class="headerlink" href="#c.ZFP_WITH_OPENMP" title="Permalink to this definition">¶</a></dt>
+<dd><p>CMake and GNU make macro for enabling or disabling OpenMP support.  CMake
+builds will by default enable OpenMP when available.  Set this macro to
+0 or OFF to disable OpenMP support.  For GNU builds, OpenMP is disabled by
+default.  Set this macro to 1 or ON to enable OpenMP support.  See also
+OMPFLAGS in <code class="file docutils literal"><span class="pre">Config</span></code> in case the compiler does not recognize
+<code class="code docutils literal"><span class="pre">-fopenmp</span></code>.  NOTE: clang currently does not support OpenMP on macOS.
+CMake default: on.
+GNU make default: off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_WITH_CUDA">
+<code class="descname">ZFP_WITH_CUDA</code><a class="headerlink" href="#c.ZFP_WITH_CUDA" title="Permalink to this definition">¶</a></dt>
+<dd><p>CMake macro for enabling or disabling CUDA support for
+GPU compression and decompression.  When enabled, CUDA and a compatible
+host compiler must be installed.  For a full list of compatible compilers,
+please consult the
+<a class="reference external" href="https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/">NVIDIA documentation</a>.
+If a CUDA installation is in the user’s path, it will be
+automatically found by CMake.  Alternatively, the CUDA binary directory
+can be specified using the <span class="target" id="index-2"></span><code class="xref std std-envvar docutils literal"><span class="pre">CUDA_BIN_DIR</span></code> environment variable.
+CMake default: off.
+GNU make default: off and ignored.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_WITH_ALIGNED_ALLOC">
+<code class="descname">ZFP_WITH_ALIGNED_ALLOC</code><a class="headerlink" href="#c.ZFP_WITH_ALIGNED_ALLOC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use aligned memory allocation in an attempt to align compressed blocks
+on hardware cache lines.
+Default: undefined/off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_WITH_CACHE_TWOWAY">
+<code class="descname">ZFP_WITH_CACHE_TWOWAY</code><a class="headerlink" href="#c.ZFP_WITH_CACHE_TWOWAY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a two-way skew-associative rather than direct-mapped cache.  This
+incurs some overhead that may be offset by better cache utilization.
+Default: undefined/off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_WITH_CACHE_FAST_HASH">
+<code class="descname">ZFP_WITH_CACHE_FAST_HASH</code><a class="headerlink" href="#c.ZFP_WITH_CACHE_FAST_HASH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a simpler hash function for cache line lookup.  This is faster but may
+lead to more collisions.
+Default: undefined/off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_WITH_CACHE_PROFILE">
+<code class="descname">ZFP_WITH_CACHE_PROFILE</code><a class="headerlink" href="#c.ZFP_WITH_CACHE_PROFILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable cache profiling to gather and print statistics on cache hit and miss
+rates.
+Default: undefined/off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BIT_STREAM_WORD_TYPE">
+<code class="descname">BIT_STREAM_WORD_TYPE</code><a class="headerlink" href="#c.BIT_STREAM_WORD_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned integer type used for buffering bits.  Wider types tend to give
+higher performance at the expense of lower bit rate granularity.  For
+portability of compressed files between little and big endian platforms,
+<a class="reference internal" href="#c.BIT_STREAM_WORD_TYPE" title="BIT_STREAM_WORD_TYPE"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_WORD_TYPE</span></code></a> should be set to <code class="xref c c-type docutils literal"><span class="pre">uint8</span></code>.
+Default: <code class="xref c c-type docutils literal"><span class="pre">uint64</span></code>.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_BIT_STREAM_WORD_SIZE">
+<code class="descname">ZFP_BIT_STREAM_WORD_SIZE</code><a class="headerlink" href="#c.ZFP_BIT_STREAM_WORD_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd><p>CMake macro for indirectly setting <a class="reference internal" href="#c.BIT_STREAM_WORD_TYPE" title="BIT_STREAM_WORD_TYPE"><code class="xref c c-macro docutils literal"><span class="pre">BIT_STREAM_WORD_TYPE</span></code></a>.  Valid
+values are 8, 16, 32, 64.
+Default: 64.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.BIT_STREAM_STRIDED">
+<code class="descname">BIT_STREAM_STRIDED</code><a class="headerlink" href="#c.BIT_STREAM_STRIDED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable support for strided bit streams that allow for non-contiguous memory
+layouts, e.g., to enable progressive access.
+Default: undefined/off.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.CFP_NAMESPACE">
+<code class="descname">CFP_NAMESPACE</code><a class="headerlink" href="#c.CFP_NAMESPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Macro for renaming the outermost cfp namespace, e.g., to avoid name
+clashes.
+Default: <code class="code docutils literal"><span class="pre">cfp</span></code>.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.PYTHON_LIBRARY">
+<code class="descname">PYTHON_LIBRARY</code><a class="headerlink" href="#c.PYTHON_LIBRARY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the Python library, e.g., <code class="file docutils literal"><span class="pre">/usr/lib/libpython2.7.so</span></code>.
+CMake default: undefined/off.
+GNU make default: off and ignored.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.PYTHON_INCLUDE_DIR">
+<code class="descname">PYTHON_INCLUDE_DIR</code><a class="headerlink" href="#c.PYTHON_INCLUDE_DIR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the Python include directory, e.g., <code class="file docutils literal"><span class="pre">/usr/include/python2.7</span></code>.
+CMake default: undefined/off.
+GNU make default: off and ignored.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>The core zfp library and compressed arrays require only a C89 and C++98
+compiler.  The optional components have additional dependencies, as outlined
+in the sections below.</p>
+<div class="section" id="id6">
+<h3>CMake<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>CMake builds require version 3.1 or later on Linux and macOS and version
+3.4 or later on Windows.  CMake is available <a class="reference external" href="https://cmake.org">here</a>.</p>
+</div>
+<div class="section" id="cuda">
+<h3>CUDA<a class="headerlink" href="#cuda" title="Permalink to this headline">¶</a></h3>
+<p>CUDA support requires CMake and a compatible host compiler (see
+<a class="reference internal" href="#c.ZFP_WITH_CUDA" title="ZFP_WITH_CUDA"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_WITH_CUDA</span></code></a>).</p>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>The optional Python bindings require CMake and the following minimum
+versions:</p>
+<ul class="simple">
+<li>Python: Python 2.7 &amp; Python 3.5</li>
+<li>Cython: 0.22</li>
+<li>NumPy: 1.8.0</li>
+</ul>
+<p>The necessary dependencies can be installed using <code class="docutils literal"><span class="pre">pip</span></code> and the zfp
+<code class="file docutils literal"><span class="pre">requirements.txt</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>pip install -r $ZFP_ROOT/python/requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="fortran">
+<h3>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">¶</a></h3>
+<p>The optional Fortran bindings require a Fortran 2003 compiler.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#cmake-builds">CMake Builds</a></li>
+<li><a class="reference internal" href="#gnu-builds">GNU Builds</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+<li><a class="reference internal" href="#build-targets">Build Targets</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li><a class="reference internal" href="#id6">CMake</a></li>
+<li><a class="reference internal" href="#cuda">CUDA</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#fortran">Fortran</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="previous chapter">License</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="algorithm.html"
+                        title="next chapter">Algorithm</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="algorithm.html" title="Algorithm"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

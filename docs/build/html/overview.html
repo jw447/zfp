@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Overview &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="overview">
+<span id="id1"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>zfp is a compressor for integer and floating-point data stored in
+multidimensional arrays.  The compressor is primarily <em>lossy</em>, meaning
+that the numerical values are usually only approximately represented,
+though the user may specify error tolerances to limit the amount of loss.
+Fully <a class="reference internal" href="faq.html#q-lossless"><span class="std std-ref">lossless compression</span></a>, where values are
+represented exactly, is also possible.</p>
+<p>The zfp software primarily consists of three components: a C library
+for compressing whole arrays (or smaller pieces of arrays); C++ classes
+that implement random-accessible compressed arrays; and a command-line
+compression tool and other code examples.  Additional language bindings
+are also available for the first two components.</p>
+<p>zfp has also been incorporated into several independently developed
+plugins for interfacing zfp with popular I/O libraries and visualization
+tools such as
+<a class="reference external" href="https://www.olcf.ornl.gov/center-projects/adios/">ADIOS</a>,
+<a class="reference external" href="https://www.hdfgroup.org/solutions/hdf5/">HDF5</a>,
+<a class="reference external" href="https://software.intel.com/en-us/intel-ipp">Intel IPP</a>,
+<a class="reference external" href="https://topology-tool-kit.github.io">TTK</a>, and
+<a class="reference external" href="http://m.vtk.org">VTK-m</a>.</p>
+<p>The typical user will interact with zfp via one or more of those
+components, specifically</p>
+<ul class="simple">
+<li>Via the <a class="reference internal" href="high-level-api.html#hl-api"><span class="std std-ref">C API</span></a> when doing I/O in an application or
+otherwise performing data (de)compression online.  High-speed,
+parallel compression is supported via OpenMP and CUDA.</li>
+<li>Via zfp’s in-memory <a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">compressed-array classes</span></a> when
+performing computations on very large arrays that demand random access to
+array elements, e.g., in visualization, data analysis, or even in numerical
+simulation.  These classes can often substitute C/C++ arrays and STL
+vectors in applications with minimal code changes.</li>
+<li>Via the zfp <a class="reference internal" href="zfpcmd.html#zfpcmd"><span class="std std-ref">command-line tool</span></a> when compressing
+binary files offline.</li>
+<li>Via one of the I/O libraries or visualization tools that support zfp,
+e.g.,<ul>
+<li><a class="reference external" href="https://github.com/suchyta1/AtoZ">ADIOS plugin</a></li>
+<li><a class="reference external" href="https://github.com/LLNL/H5Z-ZFP">HDF5 plugin</a></li>
+<li><a class="reference external" href="https://software.intel.com/en-us/ipp-dev-reference-zfp-compression-functions">Intel IPP plugin</a></li>
+<li><a class="reference external" href="https://topology-tool-kit.github.io/installation.html">TTK plugin</a></li>
+<li><a class="reference external" href="https://gitlab.kitware.com/vtk/vtk/tree/master/ThirdParty/zfp">VTK plugin</a></li>
+<li><a class="reference external" href="http://m.vtk.org/documentation/namespacevtkm_1_1worklet_1_1zfp.html">VTK-m plugin</a></li>
+</ul>
+</li>
+</ul>
+<p>In all cases, it is important to know how to use zfp’s
+<a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression modes</span></a> as well as what the
+<a class="reference internal" href="limitations.html#limitations"><span class="std std-ref">limitations</span></a> of zfp are.  Although it is not critical
+to understand the
+<a class="reference internal" href="algorithm.html#algorithm"><span class="std std-ref">compression algorithm</span></a> itself, having some familiarity with
+its major components may help understand what to expect and how zfp’s
+parameters influence the result.</p>
+<p>zfp compresses <em>d</em>-dimensional (1D, 2D, 3D, and 4D) arrays of integer or
+floating-point values by partitioning the array into cubical blocks of 4<sup>d</sup>
+values, i.e., 4, 16, 64, or 256 values for 1D, 2D, 3D, and 4D arrays,
+respectively.  Each such block is (de)compressed independently into a fixed-
+or variable-length bit string, and these bit strings are concatenated into a
+single stream of bits.</p>
+<p>zfp usually truncates each bit string to a fixed number of bits to meet
+a storage budget or to some variable length needed to meet a given error
+tolerance, as dictated by the compressibility of the data.
+The bit string representing any given block may be truncated at any point and
+still yield a valid approximation.  The early bits are most important; later
+bits progressively refine the approximation, similar to how the last few bits
+in a floating-point number have less significance than the first several bits
+and can often be discarded (zeroed) with limited impact on accuracy.</p>
+<p>The next several sections cover information on the zfp algorithm and its
+parameters; the C API; the compressed array classes; the Python and Fortran
+APIs; examples of how to perform compression and work with the classes; how
+to use the binary file compressor; and code examples that further illustrate
+how to use zfp.  The documentation concludes with frequently asked questions
+and troubleshooting, as well as current limitations and future development
+directions.</p>
+<p>For questions not answered here, please contact
+<a class="reference external" href="mailto:pl&#37;&#52;&#48;llnl&#46;gov">Peter Lindstrom</a>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="next chapter">License</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

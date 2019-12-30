@@ -1,0 +1,215 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>zfp 0.5.5 documentation &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="zfp-release-documentation">
+<h1>zfp 0.5.5 documentation<a class="headerlink" href="#zfp-release-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#cmake-builds">CMake Builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#gnu-builds">GNU Builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#build-targets">Build Targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm.html">Algorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithm.html#lossy-compression">Lossy Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithm.html#lossless-compression">Lossless Compression</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">Compression Modes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modes.html#expert-mode">Expert Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modes.html#fixed-rate-mode">Fixed-Rate Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modes.html#fixed-precision-mode">Fixed-Precision Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modes.html#fixed-accuracy-mode">Fixed-Accuracy Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modes.html#reversible-mode">Reversible Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="execution.html">Parallel Execution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#execution-policies">Execution Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#execution-parameters">Execution Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#fixed-vs-variable-rate-compression">Fixed- vs. Variable-Rate Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#using-openmp">Using OpenMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#using-cuda">Using CUDA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#setting-the-execution-policy">Setting the Execution Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#parallel-compression">Parallel Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html#parallel-decompression">Parallel Decompression</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="high-level-api.html">High-Level C API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="high-level-api.html#macros">Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high-level-api.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high-level-api.html#constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high-level-api.html#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="low-level-api.html">Low-Level C API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="low-level-api.html#stream-manipulation">Stream Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="low-level-api.html#encoder">Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="low-level-api.html#decoder">Decoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="low-level-api.html#utility-functions">Utility Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bit-stream.html">Bit Stream API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bit-stream.html#strided-streams">Strided Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit-stream.html#macros">Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit-stream.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit-stream.html#constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit-stream.html#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">Compressed Arrays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#array-classes">Array Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#serialization">Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#pointers">Pointers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#iterators">Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#views">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#c-bindings">C bindings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Bindings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#compression">Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#decompression">Decompression</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zforp.html">Fortran Bindings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zforp.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zforp.html#constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zforp.html#functions-and-subroutines">Functions and Subroutines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#high-level-c-interface">High-Level C Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#low-level-c-interface">Low-Level C Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#compressed-c-arrays">Compressed C++ Arrays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zfpcmd.html">File Compressor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zfpcmd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Code Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#simple-compressor">Simple Compressor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#diffusion-solver">Diffusion Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#speed-benchmark">Speed Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#pgm-image-compression">PGM Image Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#in-place-compression">In-place Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#iterators">Iterators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Regression Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directions.html">Future Directions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Release Notes</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="next chapter">Introduction</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

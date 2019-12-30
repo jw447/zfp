@@ -1,0 +1,911 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>High-Level C API &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Low-Level C API" href="low-level-api.html" />
+    <link rel="prev" title="Parallel Execution" href="execution.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="low-level-api.html" title="Low-Level C API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="execution.html" title="Parallel Execution"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="high-level-c-api">
+<span id="hl-api"></span><h1>High-Level C API<a class="headerlink" href="#high-level-c-api" title="Permalink to this headline">¶</a></h1>
+<p>The C API is broken down into a <a class="reference internal" href="#hl-api"><span class="std std-ref">high-level API</span></a>,
+which handles compression of entire arrays, and a
+<a class="reference internal" href="low-level-api.html#ll-api"><span class="std std-ref">low-level-api</span></a> for processing individual blocks
+and managing the underlying bit stream.</p>
+<p>The high-level API should be the API of choice for applications that
+compress and decompress entire arrays.  A <a class="reference internal" href="low-level-api.html#ll-api"><span class="std std-ref">low-level API</span></a>
+exists for processing individual, possibly partial blocks as well as
+reduced-precision integer data less than 32 bits wide.</p>
+<p>The following sections are available:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#hl-macros"><span class="std std-ref">Macros</span></a></li>
+<li><a class="reference internal" href="#hl-types"><span class="std std-ref">Types</span></a></li>
+<li><a class="reference internal" href="#hl-data"><span class="std std-ref">Constants</span></a></li>
+<li><a class="reference internal" href="#hl-functions"><span class="std std-ref">Functions</span></a><ul>
+<li><a class="reference internal" href="#hl-func-bitstream"><span class="std std-ref">Compressed Stream</span></a></li>
+<li><a class="reference internal" href="#hl-func-stream"><span class="std std-ref">Compression Parameters</span></a></li>
+<li><a class="reference internal" href="#hl-func-field"><span class="std std-ref">Execution Policy</span></a></li>
+<li><a class="reference internal" href="#hl-func-codec"><span class="std std-ref">Compression and Decompression</span></a></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="macros">
+<span id="hl-macros"></span><h2>Macros<a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h2>
+<dl class="macro">
+<dt id="c.ZFP_VERSION_MAJOR">
+<code class="descname">ZFP_VERSION_MAJOR</code><a class="headerlink" href="#c.ZFP_VERSION_MAJOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_VERSION_MINOR">
+<code class="descname">ZFP_VERSION_MINOR</code><a class="headerlink" href="#c.ZFP_VERSION_MINOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_VERSION_PATCH">
+<code class="descname">ZFP_VERSION_PATCH</code><a class="headerlink" href="#c.ZFP_VERSION_PATCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_VERSION">
+<code class="descname">ZFP_VERSION</code><a class="headerlink" href="#c.ZFP_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_VERSION_STRING">
+<code class="descname">ZFP_VERSION_STRING</code><a class="headerlink" href="#c.ZFP_VERSION_STRING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Macros identifying the zfp library version.  <a class="reference internal" href="#c.ZFP_VERSION" title="ZFP_VERSION"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_VERSION</span></code></a> is
+a single integer constructed from the previous three macros.
+<a class="reference internal" href="#c.ZFP_VERSION_STRING" title="ZFP_VERSION_STRING"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_VERSION_STRING</span></code></a> is a string literal.  See also
+<a class="reference internal" href="#c.zfp_library_version" title="zfp_library_version"><code class="xref c c-data docutils literal"><span class="pre">zfp_library_version</span></code></a> and <a class="reference internal" href="#c.zfp_version_string" title="zfp_version_string"><code class="xref c c-data docutils literal"><span class="pre">zfp_version_string</span></code></a>.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_CODEC">
+<code class="descname">ZFP_CODEC</code><a class="headerlink" href="#c.ZFP_CODEC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Macro identifying the version of the compression CODEC.  See also
+<a class="reference internal" href="#c.zfp_codec_version" title="zfp_codec_version"><code class="xref c c-data docutils literal"><span class="pre">zfp_codec_version</span></code></a>.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MIN_BITS">
+<code class="descname">ZFP_MIN_BITS</code><a class="headerlink" href="#c.ZFP_MIN_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MAX_BITS">
+<code class="descname">ZFP_MAX_BITS</code><a class="headerlink" href="#c.ZFP_MAX_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MAX_PREC">
+<code class="descname">ZFP_MAX_PREC</code><a class="headerlink" href="#c.ZFP_MAX_PREC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MIN_EXP">
+<code class="descname">ZFP_MIN_EXP</code><a class="headerlink" href="#c.ZFP_MIN_EXP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default compression parameter settings that impose no constraints.
+The largest possible compressed block size, corresponding to 3D blocks
+of doubles, is given by <a class="reference internal" href="#c.ZFP_MAX_BITS" title="ZFP_MAX_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MAX_BITS</span></code></a>.  See also
+<a class="reference internal" href="#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a>.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_META_NULL">
+<code class="descname">ZFP_META_NULL</code><a class="headerlink" href="#c.ZFP_META_NULL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Null representation of the 52-bit encoding of field metadata.  This value
+is returned by <a class="reference internal" href="#c.zfp_field_metadata" title="zfp_field_metadata"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_metadata()</span></code></a> when the field metadata cannot
+be encoded in 64 bits, such as when the array dimensions are too large
+(see <a class="reference internal" href="limitations.html#limitations"><span class="std std-ref">Limitations</span></a>).  In addition to signaling error, this value
+is guaranteed not to represent valid metadata.</p>
+</dd></dl>
+
+<span class="target" id="header-macros"></span><dl class="macro">
+<dt id="c.ZFP_HEADER_MAGIC">
+<code class="descname">ZFP_HEADER_MAGIC</code><a class="headerlink" href="#c.ZFP_HEADER_MAGIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_HEADER_META">
+<code class="descname">ZFP_HEADER_META</code><a class="headerlink" href="#c.ZFP_HEADER_META" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_HEADER_MODE">
+<code class="descname">ZFP_HEADER_MODE</code><a class="headerlink" href="#c.ZFP_HEADER_MODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_HEADER_FULL">
+<code class="descname">ZFP_HEADER_FULL</code><a class="headerlink" href="#c.ZFP_HEADER_FULL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bit masks for specifying which portions of a header to output (if any).
+These constants should be bitwise ORed together.  Use
+<a class="reference internal" href="#c.ZFP_HEADER_FULL" title="ZFP_HEADER_FULL"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_FULL</span></code></a> to output all header information available.
+The compressor and decompressor must agree on which parts of the header
+to read/write.</p>
+<p><a class="reference internal" href="#c.ZFP_HEADER_META" title="ZFP_HEADER_META"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_META</span></code></a> in essence encodes the information stored in
+the <a class="reference internal" href="#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> struct, while <a class="reference internal" href="#c.ZFP_HEADER_MODE" title="ZFP_HEADER_MODE"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_HEADER_MODE</span></code></a> encodes
+the compression parameters stored in the <a class="reference internal" href="#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> struct.
+The magic, which includes the CODEC version, can be used to uniquely
+identify the stream as a zfp stream.</p>
+<p>See <a class="reference internal" href="#c.zfp_read_header" title="zfp_read_header"><code class="xref c c-func docutils literal"><span class="pre">zfp_read_header()</span></code></a> and <a class="reference internal" href="#c.zfp_write_header" title="zfp_write_header"><code class="xref c c-func docutils literal"><span class="pre">zfp_write_header()</span></code></a> for
+how to read and write header information.</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MAGIC_BITS">
+<code class="descname">ZFP_MAGIC_BITS</code><a class="headerlink" href="#c.ZFP_MAGIC_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_META_BITS">
+<code class="descname">ZFP_META_BITS</code><a class="headerlink" href="#c.ZFP_META_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MODE_SHORT_BITS">
+<code class="descname">ZFP_MODE_SHORT_BITS</code><a class="headerlink" href="#c.ZFP_MODE_SHORT_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MODE_LONG_BITS">
+<code class="descname">ZFP_MODE_LONG_BITS</code><a class="headerlink" href="#c.ZFP_MODE_LONG_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_HEADER_MAX_BITS">
+<code class="descname">ZFP_HEADER_MAX_BITS</code><a class="headerlink" href="#c.ZFP_HEADER_MAX_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ZFP_MODE_SHORT_MAX">
+<code class="descname">ZFP_MODE_SHORT_MAX</code><a class="headerlink" href="#c.ZFP_MODE_SHORT_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of bits used by each portion of the header.  These macros are
+primarily informational and should not be accessed by the user through
+the high-level API.  For most common compression parameter settings,
+only <a class="reference internal" href="#c.ZFP_MODE_SHORT_BITS" title="ZFP_MODE_SHORT_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MODE_SHORT_BITS</span></code></a> bits of header information are stored
+to encode the mode (see <a class="reference internal" href="#c.zfp_stream_mode" title="zfp_stream_mode"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_mode()</span></code></a>).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="types">
+<span id="hl-types"></span><h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="c.zfp_stream">
+<code class="descname">zfp_stream</code><a class="headerlink" href="#c.zfp_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> struct encapsulates all information about the
+compressed stream for a single block or a collection of blocks that
+represent an array.  See the section on <a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression modes</span></a>
+for a description of the members of this struct.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+  <span class="n">uint</span> <span class="n">minbits</span><span class="p">;</span>       <span class="o">//</span> <span class="n">minimum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">to</span> <span class="n">store</span> <span class="n">per</span> <span class="n">block</span>
+  <span class="n">uint</span> <span class="n">maxbits</span><span class="p">;</span>       <span class="o">//</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">to</span> <span class="n">store</span> <span class="n">per</span> <span class="n">block</span>
+  <span class="n">uint</span> <span class="n">maxprec</span><span class="p">;</span>       <span class="o">//</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bit</span> <span class="n">planes</span> <span class="n">to</span> <span class="n">store</span>
+  <span class="nb">int</span> <span class="n">minexp</span><span class="p">;</span>         <span class="o">//</span> <span class="n">minimum</span> <span class="n">floating</span> <span class="n">point</span> <span class="n">bit</span> <span class="n">plane</span> <span class="n">number</span> <span class="n">to</span> <span class="n">store</span>
+  <span class="n">bitstream</span><span class="o">*</span> <span class="n">stream</span><span class="p">;</span>  <span class="o">//</span> <span class="n">compressed</span> <span class="n">bit</span> <span class="n">stream</span>
+  <span class="n">zfp_execution</span> <span class="n">exec</span><span class="p">;</span> <span class="o">//</span> <span class="n">execution</span> <span class="n">policy</span> <span class="ow">and</span> <span class="n">parameters</span>
+<span class="p">}</span> <span class="n">zfp_stream</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.zfp_execution">
+<code class="descname">zfp_execution</code><a class="headerlink" href="#c.zfp_execution" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> also stores information about how to execute
+compression, e.g., sequentially or in parallel.  The execution is determined
+by the policy and any policy-specific parameters such as number of
+threads.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+  <span class="n">zfp_exec_policy</span> <span class="n">policy</span><span class="p">;</span> <span class="o">//</span> <span class="n">execution</span> <span class="n">policy</span> <span class="p">(</span><span class="n">serial</span><span class="p">,</span> <span class="n">omp</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+  <span class="n">zfp_exec_params</span> <span class="n">params</span><span class="p">;</span> <span class="o">//</span> <span class="n">execution</span> <span class="n">parameters</span>
+<span class="p">}</span> <span class="n">zfp_execution</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.zfp_exec_policy">
+<code class="descname">zfp_exec_policy</code><a class="headerlink" href="#c.zfp_exec_policy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Currently three execution policies are available: serial, OpenMP parallel,
+and CUDA parallel.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">enum</span> <span class="p">{</span>
+  <span class="n">zfp_exec_serial</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">//</span> <span class="n">serial</span> <span class="n">execution</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
+  <span class="n">zfp_exec_omp</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">//</span> <span class="n">OpenMP</span> <span class="n">multi</span><span class="o">-</span><span class="n">threaded</span> <span class="n">execution</span>
+  <span class="n">zfp_exec_cuda</span>   <span class="o">=</span> <span class="mi">2</span>  <span class="o">//</span> <span class="n">CUDA</span> <span class="n">parallel</span> <span class="n">execution</span>
+<span class="p">}</span> <span class="n">zfp_exec_policy</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.zfp_exec_params">
+<code class="descname">zfp_exec_params</code><a class="headerlink" href="#c.zfp_exec_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execution parameters are shared among policies in a union.  Currently
+the only parameters available are for OpenMP.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">union</span> <span class="p">{</span>
+  <span class="n">zfp_exec_params_omp</span> <span class="n">omp</span><span class="p">;</span> <span class="o">//</span> <span class="n">OpenMP</span> <span class="n">parameters</span>
+<span class="p">}</span> <span class="n">zfp_exec_params</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.zfp_exec_params_omp">
+<code class="descname">zfp_exec_params_omp</code><a class="headerlink" href="#c.zfp_exec_params_omp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execution parameters for OpenMP parallel compression.  These are
+initialized to default values.  When nonzero, they indicate the number
+of threads to request for parallel compression and the number of 1D
+blocks to assign to each thread when compressing 1D arrays.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+  <span class="n">uint</span> <span class="n">threads</span><span class="p">;</span>    <span class="o">//</span> <span class="n">number</span> <span class="n">of</span> <span class="n">requested</span> <span class="n">threads</span>
+  <span class="n">uint</span> <span class="n">chunk_size</span><span class="p">;</span> <span class="o">//</span> <span class="n">number</span> <span class="n">of</span> <span class="n">blocks</span> <span class="n">per</span> <span class="n">chunk</span> <span class="p">(</span><span class="mi">1</span><span class="n">D</span> <span class="n">only</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">zfp_exec_params_omp</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.zfp_mode">
+<code class="descname">zfp_mode</code><a class="headerlink" href="#c.zfp_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerates the compression modes.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">enum</span> <span class="p">{</span>
+  <span class="n">zfp_mode_null</span>            <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">//</span> <span class="n">an</span> <span class="n">invalid</span> <span class="n">configuration</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">4</span> <span class="n">params</span>
+  <span class="n">zfp_mode_expert</span>          <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">//</span> <span class="n">expert</span> <span class="n">mode</span> <span class="p">(</span><span class="mi">4</span> <span class="n">params</span> <span class="nb">set</span> <span class="n">manually</span><span class="p">)</span>
+  <span class="n">zfp_mode_fixed_rate</span>      <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="o">//</span> <span class="n">fixed</span> <span class="n">rate</span> <span class="n">mode</span>
+  <span class="n">zfp_mode_fixed_precision</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="o">//</span> <span class="n">fixed</span> <span class="n">precision</span> <span class="n">mode</span>
+  <span class="n">zfp_mode_fixed_accuracy</span>  <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="o">//</span> <span class="n">fixed</span> <span class="n">accuracy</span> <span class="n">mode</span>
+  <span class="n">zfp_mode_reversible</span>      <span class="o">=</span> <span class="mi">5</span>  <span class="o">//</span> <span class="n">reversible</span> <span class="p">(</span><span class="n">lossless</span><span class="p">)</span> <span class="n">mode</span>
+<span class="p">}</span> <span class="n">zfp_mode</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.zfp_type">
+<code class="descname">zfp_type</code><a class="headerlink" href="#c.zfp_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerates the scalar types supported by the compressor, and is used to
+describe the uncompressed array.  The compressor and decompressor must use
+the same <a class="reference internal" href="#c.zfp_type" title="zfp_type"><code class="xref c c-type docutils literal"><span class="pre">zfp_type</span></code></a>, e.g., one cannot compress doubles and decompress
+to floats or integers.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">enum</span> <span class="p">{</span>
+  <span class="n">zfp_type_none</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">//</span> <span class="n">unspecified</span> <span class="nb">type</span>
+  <span class="n">zfp_type_int32</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">//</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="n">signed</span> <span class="n">integer</span>
+  <span class="n">zfp_type_int64</span>  <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="o">//</span> <span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="n">signed</span> <span class="n">integer</span>
+  <span class="n">zfp_type_float</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="o">//</span> <span class="n">single</span> <span class="n">precision</span> <span class="n">floating</span> <span class="n">point</span>
+  <span class="n">zfp_type_double</span> <span class="o">=</span> <span class="mi">4</span>  <span class="o">//</span> <span class="n">double</span> <span class="n">precision</span> <span class="n">floating</span> <span class="n">point</span>
+<span class="p">}</span> <span class="n">zfp_type</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="index-0"></span><dl class="type">
+<dt id="c.zfp_field">
+<code class="descname">zfp_field</code><a class="headerlink" href="#c.zfp_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>The uncompressed array is described by the <a class="reference internal" href="#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> struct, which
+encodes the array’s scalar type, dimensions, and memory layout.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+  <span class="n">zfp_type</span> <span class="nb">type</span><span class="p">;</span>       <span class="o">//</span> <span class="n">scalar</span> <span class="nb">type</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">int32</span><span class="p">,</span> <span class="n">double</span><span class="p">)</span>
+  <span class="n">uint</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">nw</span><span class="p">;</span> <span class="o">//</span> <span class="n">sizes</span> <span class="p">(</span><span class="n">zero</span> <span class="k">for</span> <span class="n">unused</span> <span class="n">dimensions</span><span class="p">)</span>
+  <span class="nb">int</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">sw</span><span class="p">;</span>  <span class="o">//</span> <span class="n">strides</span> <span class="p">(</span><span class="n">zero</span> <span class="k">for</span> <span class="n">contiguous</span> <span class="n">array</span> <span class="n">a</span><span class="p">[</span><span class="n">nw</span><span class="p">][</span><span class="n">nz</span><span class="p">][</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">])</span>
+  <span class="n">void</span><span class="o">*</span> <span class="n">data</span><span class="p">;</span>          <span class="o">//</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">array</span> <span class="n">data</span>
+<span class="p">}</span> <span class="n">zfp_field</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>For example, a static multidimensional C array declared as</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="n">array</span><span class="p">[</span><span class="n">n1</span><span class="p">][</span><span class="n">n2</span><span class="p">][</span><span class="n">n3</span><span class="p">][</span><span class="n">n4</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>would be described by a <a class="reference internal" href="#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> with members</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">type</span> <span class="o">=</span> <span class="n">zfp_type_double</span><span class="p">;</span>
+<span class="n">nx</span> <span class="o">=</span> <span class="n">n4</span><span class="p">;</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">n3</span><span class="p">;</span> <span class="n">nz</span> <span class="o">=</span> <span class="n">n2</span><span class="p">;</span> <span class="n">nw</span> <span class="o">=</span> <span class="n">n1</span><span class="p">;</span>
+<span class="n">sx</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">sy</span> <span class="o">=</span> <span class="n">n4</span><span class="p">;</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">n3</span> <span class="o">*</span> <span class="n">n4</span><span class="p">;</span> <span class="n">sw</span> <span class="o">=</span> <span class="n">n2</span> <span class="o">*</span> <span class="n">n3</span> <span class="o">*</span> <span class="n">n4</span><span class="p">;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>The strides, when nonzero, specify how the array is laid out in memory.
+Strides can be used in case multiple fields are stored interleaved via
+“array of struct” (AoS) rather than “struct of array” (SoA) storage,
+or if the dimensions should be transposed during (de)compression.
+Given 4D array indices (<em>x</em>, <em>y</em>, <em>z</em>, <em>w</em>), the corresponding array
+element is stored at</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">sx</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">sy</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">sz</span> <span class="o">+</span> <span class="n">w</span> <span class="o">*</span> <span class="n">sw</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where <code class="code docutils literal"><span class="pre">data</span></code> is a pointer to the first array element.</p>
+</dd></dl>
+
+<span class="target" id="indexing"></span><div class="admonition warning" id="index-1">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is paramount that the field dimensions, <em>nx</em>, <em>ny</em>, <em>nz</em>, and <em>nw</em>,
+and strides, <em>sx</em>, <em>sy</em>, <em>sz</em>, and <em>sw</em>, be correctly mapped to how the
+uncompressed array is laid out in memory.  Although compression will
+still succeed if array dimensions are accidentally transposed, compression
+ratio and/or accuracy may suffer greatly.  Since the leftmost index, <em>x</em>,
+is assumed to vary fastest, zfp can be thought of as assuming
+Fortran ordering.  For C ordered arrays, the user should transpose
+the dimensions or specify strides to properly describe the memory layout.
+See this <a class="reference internal" href="issues.html#p-dimensions"><span class="std std-ref">discussion</span></a> for further details.</p>
+</div>
+</div>
+<div class="section" id="constants">
+<span id="hl-data"></span><h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="var">
+<dt id="c.zfp_codec_version">
+const uint <code class="descname">zfp_codec_version</code><a class="headerlink" href="#c.zfp_codec_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The version of the compression CODEC implemented by this version of the zfp
+library.  The library can decompress files generated by the same CODEC only.
+To ensure that the <code class="file docutils literal"><span class="pre">zfp.h</span></code> header matches the binary library linked to,
+<a class="reference internal" href="#c.zfp_codec_version" title="zfp_codec_version"><code class="xref c c-data docutils literal"><span class="pre">zfp_codec_version</span></code></a> should match <a class="reference internal" href="#c.ZFP_CODEC" title="ZFP_CODEC"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_CODEC</span></code></a>.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.zfp_library_version">
+const uint <code class="descname">zfp_library_version</code><a class="headerlink" href="#c.zfp_library_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The library version.  The binary library and headers are compatible if
+<a class="reference internal" href="#c.zfp_library_version" title="zfp_library_version"><code class="xref c c-data docutils literal"><span class="pre">zfp_library_version</span></code></a> matches <a class="reference internal" href="#c.ZFP_VERSION" title="ZFP_VERSION"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_VERSION</span></code></a>.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.zfp_version_string">
+const char* const <code class="descname">zfp_version_string</code><a class="headerlink" href="#c.zfp_version_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>A constant string representing the zfp library version and release date.
+One can search for this string in executables and libraries that use zfp
+to determine which version of the library the application was compiled
+against.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="functions">
+<span id="hl-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="c.zfp_type_size">
+size_t <code class="descname">zfp_type_size</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a><em>&nbsp;type</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_type_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return byte size of the given scalar type, e.g.,
+<code class="code docutils literal"><span class="pre">zfp_type_size(zfp_type_float)</span> <span class="pre">=</span> <span class="pre">4</span></code>.</p>
+</dd></dl>
+
+<div class="section" id="compressed-stream">
+<span id="hl-func-bitstream"></span><h3>Compressed Stream<a class="headerlink" href="#compressed-stream" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_stream_open">
+<a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>* <code class="descname">zfp_stream_open</code><span class="sig-paren">(</span><a class="reference internal" href="bit-stream.html#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocate compressed stream and associate it with bit stream for reading
+and writing bits to/from memory.  <em>stream</em> may be <code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code> and
+attached later via <a class="reference internal" href="#c.zfp_stream_set_bit_stream" title="zfp_stream_set_bit_stream"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_bit_stream()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_close">
+void <code class="descname">zfp_stream_close</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close and deallocate compressed stream.  This does not affect the
+attached bit stream.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_bit_stream">
+<a class="reference internal" href="bit-stream.html#c.bitstream" title="bitstream">bitstream</a>* <code class="descname">zfp_stream_bit_stream</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_bit_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bit stream associated with compressed stream.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_compression_mode">
+<a class="reference internal" href="#c.zfp_mode" title="zfp_mode">zfp_mode</a> <code class="descname">zfp_stream_compression_mode</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_compression_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return compression mode associated with compression parameters. Return
+<code class="code docutils literal"><span class="pre">zfp_mode_null</span></code> when compression parameters are invalid.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_mode">
+uint64 <code class="descname">zfp_stream_mode</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return compact encoding of compression parameters.  If the return value
+is no larger than <a class="reference internal" href="#c.ZFP_MODE_SHORT_MAX" title="ZFP_MODE_SHORT_MAX"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MODE_SHORT_MAX</span></code></a>, then the least significant
+<a class="reference internal" href="#c.ZFP_MODE_SHORT_BITS" title="ZFP_MODE_SHORT_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MODE_SHORT_BITS</span></code></a> (12 in the current version) suffice to
+encode the parameters.  Otherwise all 64 bits are needed, and the low
+<a class="reference internal" href="#c.ZFP_MODE_SHORT_BITS" title="ZFP_MODE_SHORT_BITS"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_MODE_SHORT_BITS</span></code></a> bits will be all ones.  Thus, this
+variable-length encoding can be used to economically encode and decode
+the compression parameters, which is especially important if the parameters
+are to vary spatially over small regions.  Such spatially adaptive coding
+would have to be implemented via the low-level API.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_params">
+void <code class="descname">zfp_stream_params</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, uint*<em>&nbsp;minbits</em>, uint*<em>&nbsp;maxbits</em>, uint*<em>&nbsp;maxprec</em>, int*<em>&nbsp;minexp</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query <a class="reference internal" href="modes.html#mode-expert"><span class="std std-ref">compression parameters</span></a>.  For any parameter not
+needed, pass <code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code> for the corresponding pointer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_compressed_size">
+size_t <code class="descname">zfp_stream_compressed_size</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_compressed_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of bytes of compressed storage.  This function returns the
+current byte offset within the bit stream from the beginning of the
+bit stream memory buffer.  To ensure all buffered compressed data has
+been output call <a class="reference internal" href="low-level-api.html#c.zfp_stream_flush" title="zfp_stream_flush"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_flush()</span></code></a> first.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_maximum_size">
+size_t <code class="descname">zfp_stream_maximum_size</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_maximum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conservative estimate of the compressed byte size for the compression
+parameters stored in <em>stream</em> and the array whose scalar type and dimensions
+are given by <em>field</em>.  This function may be used to determine how large a
+memory buffer to allocate to safely hold the entire compressed array.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_bit_stream">
+void <code class="descname">zfp_stream_set_bit_stream</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, <a class="reference internal" href="bit-stream.html#c.bitstream" title="bitstream">bitstream</a>*<em>&nbsp;bs</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_bit_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate bit stream with compressed stream.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_rewind">
+void <code class="descname">zfp_stream_rewind</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_rewind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rewind bit stream to beginning for compression or decompression.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="compression-parameters">
+<span id="hl-func-stream"></span><h3>Compression Parameters<a class="headerlink" href="#compression-parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_stream_set_reversible">
+void <code class="descname">zfp_stream_set_reversible</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_reversible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible</span></a> (lossless) compression.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_rate">
+double <code class="descname">zfp_stream_set_rate</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double<em>&nbsp;rate</em>, <a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a><em>&nbsp;type</em>, uint<em>&nbsp;dims</em>, int<em>&nbsp;wra</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set <em>rate</em> for <a class="reference internal" href="modes.html#mode-fixed-rate"><span class="std std-ref">fixed-rate mode</span></a> in compressed bits
+per value.  The target scalar <em>type</em> and array <em>dimensionality</em> are needed
+to correctly translate the rate to the number of bits per block.  The
+parameter <em>wra</em> should be nonzero if random access writes of blocks into
+the compressed bit stream is needed, for example for implementing zfp’s
+<a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">compressed arrays</span></a>.  This requires blocks to be aligned on
+<a class="reference internal" href="faq.html#q-portability"><span class="std std-ref">bit stream word</span></a> boundaries, and therefore constrains
+the rate.  The closest supported rate is returned, which may differ from
+the desired rate.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_precision">
+uint <code class="descname">zfp_stream_set_precision</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;precision</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set <em>precision</em> for <a class="reference internal" href="modes.html#mode-fixed-precision"><span class="std std-ref">fixed-precision mode</span></a>.
+The precision specifies how many uncompressed bits per value to store,
+and indirectly governs the relative error.  The actual precision is
+returned, e.g., in case the desired precision is out of range.  To
+preserve a certain floating-point mantissa or integer precision in the
+decompressed data, see <a class="reference internal" href="faq.html#q-lossless"><span class="std std-ref">FAQ #21</span></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_accuracy">
+double <code class="descname">zfp_stream_set_accuracy</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, double<em>&nbsp;tolerance</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set absolute error <em>tolerance</em> for
+<a class="reference internal" href="modes.html#mode-fixed-accuracy"><span class="std std-ref">fixed-accuracy mode</span></a>.  The tolerance ensures
+that values in the decompressed array differ from the input array by no
+more than this tolerance (in all but exceptional circumstances; see
+<a class="reference internal" href="faq.html#q-tolerance"><span class="std std-ref">FAQ #17</span></a>).  This compression mode should be used only
+with floating-point (not integer) data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_mode">
+<a class="reference internal" href="#c.zfp_mode" title="zfp_mode">zfp_mode</a> <code class="descname">zfp_stream_set_mode</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, uint64<em>&nbsp;mode</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all compression parameters from compact integer representation.
+See <a class="reference internal" href="#c.zfp_stream_mode" title="zfp_stream_mode"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_mode()</span></code></a> for how to encode the parameters.  Return
+the mode associated with the newly-set compression parameters.  If the
+decoded compression parameters are invalid, they are not set and the
+function returns <code class="code docutils literal"><span class="pre">zfp_mode_null</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_params">
+int <code class="descname">zfp_stream_set_params</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;minbits</em>, uint<em>&nbsp;maxbits</em>, uint<em>&nbsp;maxprec</em>, int<em>&nbsp;minexp</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all compression parameters directly.  See the section on
+<a class="reference internal" href="modes.html#mode-expert"><span class="std std-ref">expert mode</span></a> for a discussion of the parameters.
+The return value is nonzero upon success.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="execution-policy">
+<span id="hl-func-field"></span><h3>Execution Policy<a class="headerlink" href="#execution-policy" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_stream_execution">
+<a class="reference internal" href="#c.zfp_exec_policy" title="zfp_exec_policy">zfp_exec_policy</a> <code class="descname">zfp_stream_execution</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_execution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current execution policy.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_omp_threads">
+uint <code class="descname">zfp_stream_omp_threads</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_omp_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of OpenMP threads to request for compression.
+See <a class="reference internal" href="#c.zfp_stream_set_omp_threads" title="zfp_stream_set_omp_threads"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_threads()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_omp_chunk_size">
+uint <code class="descname">zfp_stream_omp_chunk_size</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_omp_chunk_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of blocks to compress together per OpenMP thread.
+See <a class="reference internal" href="#c.zfp_stream_set_omp_chunk_size" title="zfp_stream_set_omp_chunk_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_chunk_size()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_execution">
+int <code class="descname">zfp_stream_set_execution</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, <a class="reference internal" href="#c.zfp_exec_policy" title="zfp_exec_policy">zfp_exec_policy</a><em>&nbsp;policy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_execution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set execution policy.  If different from the previous policy, initialize
+the execution parameters to their default values.  Nonzero is returned if
+the execution policy is supported.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_omp_threads">
+int <code class="descname">zfp_stream_set_omp_threads</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;threads</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_omp_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of OpenMP threads to use during compression.  If <em>threads</em>
+is zero, then the number of threads is given by the value of the OpenMP
+<em>nthreads-var</em> internal control variable when <a class="reference internal" href="#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a> is
+called (usually the maximum number available).  This function also sets
+the execution policy to OpenMP.  Upon success, nonzero is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_stream_set_omp_chunk_size">
+int <code class="descname">zfp_stream_set_omp_chunk_size</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, uint<em>&nbsp;chunk_size</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_stream_set_omp_chunk_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of consecutive blocks to compress together per OpenMP thread.
+If zero, use one chunk per thread.  This function also sets the execution
+policy to OpenMP.  Upon success, nonzero is returned.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="array-metadata">
+<h3>Array Metadata<a class="headerlink" href="#array-metadata" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_field_alloc">
+<a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>* <code class="descname">zfp_field_alloc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_alloc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocates and returns a default initialized <a class="reference internal" href="#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> struct.
+The caller must free this struct using <a class="reference internal" href="#c.zfp_field_free" title="zfp_field_free"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_free()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_1d">
+<a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>* <code class="descname">zfp_field_1d</code><span class="sig-paren">(</span>void*<em>&nbsp;pointer</em>, <a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a><em>&nbsp;type</em>, uint<em>&nbsp;nx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocate and return a field struct that describes an existing 1D array,
+<code class="code docutils literal"><span class="pre">a[nx]</span></code>, of <em>nx</em> uncompressed scalars of given <em>type</em> stored at
+<em>pointer</em>, which may be <code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code> and specified later.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_2d">
+<a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>* <code class="descname">zfp_field_2d</code><span class="sig-paren">(</span>void*<em>&nbsp;pointer</em>, <a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a><em>&nbsp;type</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocate and return a field struct that describes an existing 2D array,
+<code class="code docutils literal"><span class="pre">a[ny][nx]</span></code>, of <em>nx</em> × <em>ny</em> uncompressed scalars of given
+<em>type</em> stored at <em>pointer</em>, which may be <code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code> and specified
+later.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_3d">
+<a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>* <code class="descname">zfp_field_3d</code><span class="sig-paren">(</span>void*<em>&nbsp;pointer</em>, <a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a><em>&nbsp;type</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocate and return a field struct that describes an existing 3D array,
+<code class="code docutils literal"><span class="pre">a[nz][ny][nx]</span></code>, of <em>nx</em> × <em>ny</em> × <em>nz</em> uncompressed
+scalars of given <em>type</em> stored at <em>pointer</em>, which may be <code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code>
+and specified later.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_4d">
+<a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>* <code class="descname">zfp_field_4d</code><span class="sig-paren">(</span>void*<em>&nbsp;pointer</em>, <a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a><em>&nbsp;type</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocate and return a field struct that describes an existing 4D array,
+<code class="code docutils literal"><span class="pre">a[nw][nz][ny][nx]</span></code>, of <em>nx</em> × <em>ny</em> × <em>nz</em> × <em>nw</em>
+uncompressed scalars of given <em>type</em> stored at <em>pointer</em>, which may be
+<code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code> and specified later.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_free">
+void <code class="descname">zfp_field_free</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free <a class="reference internal" href="#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> struct previously allocated by one of the functions
+above.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_pointer">
+void* <code class="descname">zfp_field_pointer</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_pointer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return pointer to the first scalar in the array.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_type">
+<a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a> <code class="descname">zfp_field_type</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return array scalar type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_precision">
+uint <code class="descname">zfp_field_precision</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return scalar precision in number of bits, e.g., 32 for
+<code class="code docutils literal"><span class="pre">zfp_type_float</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_dimensionality">
+uint <code class="descname">zfp_field_dimensionality</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_dimensionality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return array dimensionality (1, 2, 3, or 4).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_size">
+size_t <code class="descname">zfp_field_size</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint*<em>&nbsp;size</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return total number of scalars stored in the array, e.g.,
+<em>nx</em> × <em>ny</em> × <em>nz</em> for a 3D array.  If <em>size</em> is not
+<code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code>, then store the number of scalars for each dimension,
+e.g., <code class="code docutils literal"><span class="pre">size[0]</span> <span class="pre">=</span> <span class="pre">nx;</span> <span class="pre">size[1]</span> <span class="pre">=</span> <span class="pre">ny;</span> <span class="pre">size[2]</span> <span class="pre">=</span> <span class="pre">nz</span></code> for a 3D array.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_stride">
+int <code class="descname">zfp_field_stride</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, int*<em>&nbsp;stride</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_stride" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return zero if the array is stored contiguously as <code class="code docutils literal"><span class="pre">a[nx]</span></code>,
+<code class="code docutils literal"><span class="pre">a[ny][nx]</span></code>, <code class="code docutils literal"><span class="pre">a[nz][ny][nx]</span></code>, or <code class="code docutils literal"><span class="pre">a[nw][nz][ny][nx]</span></code>
+depending on dimensionality.  Return nonzero if the array is strided
+and laid out differently in memory.
+If <em>stride</em> is not <code class="xref c c-macro docutils literal"><span class="pre">NULL</span></code>, then store the stride for each
+dimension, e.g., <code class="code docutils literal"><span class="pre">stride[0]</span> <span class="pre">=</span> <span class="pre">sx;</span> <span class="pre">stride[1]</span> <span class="pre">=</span> <span class="pre">sy;</span> <span class="pre">stride[2]</span> <span class="pre">=</span> <span class="pre">sz</span></code>
+for a 3D array.  See <a class="reference internal" href="#c.zfp_field" title="zfp_field"><code class="xref c c-type docutils literal"><span class="pre">zfp_field</span></code></a> for more information on strides.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_metadata">
+uint64 <code class="descname">zfp_field_metadata</code><span class="sig-paren">(</span>const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return 52-bit compact encoding of the scalar type and array dimensions.
+This function returns <a class="reference internal" href="#c.ZFP_META_NULL" title="ZFP_META_NULL"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_META_NULL</span></code></a> on failure, e.g., if the
+array dimensions are <a class="reference internal" href="limitations.html#limitations"><span class="std std-ref">too large</span></a> to be encoded in 52
+bits.</p>
+</dd></dl>
+
+<span class="target" id="zfp-field-set"></span><dl class="function">
+<dt id="c.zfp_field_set_pointer">
+void <code class="descname">zfp_field_set_pointer</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, void*<em>&nbsp;pointer</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_pointer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set pointer to first scalar in the array.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_type">
+<a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a> <code class="descname">zfp_field_set_type</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, <a class="reference internal" href="#c.zfp_type" title="zfp_type">zfp_type</a><em>&nbsp;type</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set array scalar type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_size_1d">
+void <code class="descname">zfp_field_set_size_1d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint<em>&nbsp;nx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_size_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify dimensions of 1D array <code class="code docutils literal"><span class="pre">a[nx]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_size_2d">
+void <code class="descname">zfp_field_set_size_2d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_size_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify dimensions of 2D array <code class="code docutils literal"><span class="pre">a[ny][nx]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_size_3d">
+void <code class="descname">zfp_field_set_size_3d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_size_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify dimensions of 3D array <code class="code docutils literal"><span class="pre">a[nz][ny][nx]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_size_4d">
+void <code class="descname">zfp_field_set_size_4d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint<em>&nbsp;nx</em>, uint<em>&nbsp;ny</em>, uint<em>&nbsp;nz</em>, uint<em>&nbsp;nw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_size_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify dimensions of 4D array <code class="code docutils literal"><span class="pre">a[nw][nz][ny][nx]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_stride_1d">
+void <code class="descname">zfp_field_set_stride_1d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, int<em>&nbsp;sx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_stride_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify stride for 1D array: <code class="code docutils literal"><span class="pre">sx</span> <span class="pre">=</span> <span class="pre">&amp;a[1]</span> <span class="pre">-</span> <span class="pre">&amp;a[0]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_stride_2d">
+void <code class="descname">zfp_field_set_stride_2d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_stride_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify strides for 2D array:
+<code class="code docutils literal"><span class="pre">sx</span> <span class="pre">=</span> <span class="pre">&amp;a[0][1]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0];</span> <span class="pre">sy</span> <span class="pre">=</span> <span class="pre">&amp;a[1][0]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_stride_3d">
+void <code class="descname">zfp_field_set_stride_3d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_stride_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify strides for 3D array:
+<code class="code docutils literal"><span class="pre">sx</span> <span class="pre">=</span> <span class="pre">&amp;a[0][0][1]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0][0];</span> <span class="pre">sy</span> <span class="pre">=</span> <span class="pre">&amp;a[0][1][0]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0][0];</span> <span class="pre">sz</span> <span class="pre">=</span> <span class="pre">&amp;a[1][0][0]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0][0]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_stride_4d">
+void <code class="descname">zfp_field_set_stride_4d</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, int<em>&nbsp;sx</em>, int<em>&nbsp;sy</em>, int<em>&nbsp;sz</em>, int<em>&nbsp;sw</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_stride_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify strides for 4D array:
+<code class="code docutils literal"><span class="pre">sx</span> <span class="pre">=</span> <span class="pre">&amp;a[0][0][0][1]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0][0][0];</span>
+<span class="pre">sy</span> <span class="pre">=</span> <span class="pre">&amp;a[0][0][1][0]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0][0][0];</span>
+<span class="pre">sz</span> <span class="pre">=</span> <span class="pre">&amp;a[0][1][0][0]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0][0][0];</span>
+<span class="pre">sw</span> <span class="pre">=</span> <span class="pre">&amp;a[1][0][0][0]</span> <span class="pre">-</span> <span class="pre">&amp;a[0][0][0][0]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_field_set_metadata">
+int <code class="descname">zfp_field_set_metadata</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint64<em>&nbsp;meta</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_field_set_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify array scalar type and dimensions from compact 52-bit representation.
+Return nonzero upon success.  See <a class="reference internal" href="#c.zfp_field_metadata" title="zfp_field_metadata"><code class="xref c c-func docutils literal"><span class="pre">zfp_field_metadata()</span></code></a> for how to
+encode <em>meta</em>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="compression-and-decompression">
+<span id="hl-func-codec"></span><h3>Compression and Decompression<a class="headerlink" href="#compression-and-decompression" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.zfp_compress">
+size_t <code class="descname">zfp_compress</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_compress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compress the whole array described by <em>field</em> using parameters given by
+<em>stream</em> and then flush the stream to emit any buffered bits and align the
+stream on a word boundary.  The number of bytes of compressed storage
+is returned, if the stream were rewound before compression, and otherwise the
+current byte offset within the bit stream.  Zero is returned if compression
+failed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_decompress">
+size_t <code class="descname">zfp_decompress</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_decompress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decompress from <em>stream</em> to array described by <em>field</em> and align the stream
+on the next word boundary.  Upon success, the nonzero return value is the
+same as would be returned by a corresponding <a class="reference internal" href="#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a> call,
+i.e., the current byte offset or the number of compressed bytes consumed.
+Zero is returned if decompression failed.</p>
+</dd></dl>
+
+<span class="target" id="zfp-header"></span><dl class="function">
+<dt id="c.zfp_write_header">
+size_t <code class="descname">zfp_write_header</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, const <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint<em>&nbsp;mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_write_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an optional variable-length header to the stream that encodes
+compression parameters, array metadata, etc.  The header information written
+is determined by the bit <em>mask</em> (see <a class="reference internal" href="#c.ZFP_HEADER_MAGIC" title="ZFP_HEADER_MAGIC"><code class="xref c c-macro docutils literal"><span class="pre">macros</span></code></a>).
+The return value is the number of bits written, or zero upon failure.
+Unlike in <a class="reference internal" href="#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a>, no word alignment is enforced.  See the
+<a class="reference internal" href="limitations.html#limitations"><span class="std std-ref">limitations</span></a> section for limits on the maximum array
+size supported by the header.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.zfp_read_header">
+size_t <code class="descname">zfp_read_header</code><span class="sig-paren">(</span><a class="reference internal" href="#c.zfp_stream" title="zfp_stream">zfp_stream</a>*<em>&nbsp;stream</em>, <a class="reference internal" href="#c.zfp_field" title="zfp_field">zfp_field</a>*<em>&nbsp;field</em>, uint<em>&nbsp;mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.zfp_read_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read header if one was previously written using <a class="reference internal" href="#c.zfp_write_header" title="zfp_write_header"><code class="xref c c-func docutils literal"><span class="pre">zfp_write_header()</span></code></a>.
+The return value is the number of bits read, or zero upon failure.  The
+caller must ensure that the bit <em>mask</em> agrees between header read and
+write calls.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">High-Level C API</a><ul>
+<li><a class="reference internal" href="#macros">Macros</a></li>
+<li><a class="reference internal" href="#types">Types</a></li>
+<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#functions">Functions</a><ul>
+<li><a class="reference internal" href="#compressed-stream">Compressed Stream</a></li>
+<li><a class="reference internal" href="#compression-parameters">Compression Parameters</a></li>
+<li><a class="reference internal" href="#execution-policy">Execution Policy</a></li>
+<li><a class="reference internal" href="#array-metadata">Array Metadata</a></li>
+<li><a class="reference internal" href="#compression-and-decompression">Compression and Decompression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="execution.html"
+                        title="previous chapter">Parallel Execution</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="low-level-api.html"
+                        title="next chapter">Low-Level C API</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="low-level-api.html" title="Low-Level C API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="execution.html" title="Parallel Execution"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

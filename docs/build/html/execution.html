@@ -1,0 +1,416 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Parallel Execution &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="High-Level C API" href="high-level-api.html" />
+    <link rel="prev" title="Compression Modes" href="modes.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="high-level-api.html" title="High-Level C API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="modes.html" title="Compression Modes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parallel-execution">
+<span id="execution"></span><span id="index-0"></span><h1>Parallel Execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">¶</a></h1>
+<p>As of zfp 0.5.3, parallel compression (but not decompression) is
+supported on multicore processors via <a class="reference external" href="http://www.openmp.org">OpenMP</a>
+threads.
+zfp 0.5.4 adds <a class="reference external" href="https://developer.nvidia.com/about-cuda">CUDA</a>
+support for fixed-rate compression and decompression on the GPU.</p>
+<p>Since zfp partitions arrays into small independent blocks, a
+large amount of data parallelism is inherent in the compression scheme that
+can be exploited.  In principle, concurrency is limited only by the number
+of blocks that make up an array, though in practice each thread is
+responsible for compressing a <em>chunk</em> of several contiguous blocks.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">zfp parallel compression is confined to shared memory on a single
+compute node or GPU.  No effort is made to coordinate compression across
+distributed memory on networked compute nodes, although zfp’s fine-grained
+partitioning of arrays should facilitate distributed parallel compression.</p>
+</div>
+<p>This section describes the zfp parallel compression algorithm and explains
+how to configure <code class="file docutils literal"><span class="pre">libzfp</span></code> and enable parallel compression at run time via
+its <a class="reference internal" href="high-level-api.html#hl-api"><span class="std std-ref">high-level C API</span></a>.  Parallel compression is not supported
+via the <a class="reference internal" href="low-level-api.html#ll-api"><span class="std std-ref">low-level API</span></a>.</p>
+<div class="section" id="execution-policies">
+<h2>Execution Policies<a class="headerlink" href="#execution-policies" title="Permalink to this headline">¶</a></h2>
+<p>zfp supports multiple <em>execution policies</em>, which dictate how (e.g.,
+sequentially, in parallel) and where (e.g., on the CPU or GPU) arrays are
+compressed.  Currently three execution policies are available:
+<code class="docutils literal"><span class="pre">serial</span></code>, <code class="docutils literal"><span class="pre">omp</span></code>, and <code class="docutils literal"><span class="pre">cuda</span></code>.  The default mode is
+<code class="docutils literal"><span class="pre">serial</span></code>, which ensures sequential compression on a single thread.
+The <code class="docutils literal"><span class="pre">omp</span></code> and <code class="docutils literal"><span class="pre">cuda</span></code> execution policies allow for data-parallel
+compression on multiple threads.</p>
+<p>The execution policy is set by <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_execution" title="zfp_stream_set_execution"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_execution()</span></code></a> and
+pertains to a particular <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a>.  Hence, each stream
+(and array) may use a policy suitable for that stream.  For instance,
+very small arrays are likely best compressed in serial, while parallel
+compression is best reserved for very large arrays that can take the
+most advantage of concurrent execution.</p>
+<p>As outlined in FAQ <a class="reference internal" href="faq.html#q-parallel"><span class="std std-ref">#23</span></a>, the final compressed stream
+is independent of execution policy.</p>
+</div>
+<div class="section" id="execution-parameters">
+<h2>Execution Parameters<a class="headerlink" href="#execution-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Each execution policy allows tailoring the execution via its associated
+<em>execution parameters</em>.  Examples include number of threads, chunk size,
+scheduling, etc.  The <code class="docutils literal"><span class="pre">serial</span></code> and <code class="docutils literal"><span class="pre">cuda</span></code> policies have no
+parameters.  The subsections below discuss the <code class="docutils literal"><span class="pre">omp</span></code> parameters.</p>
+<p>Whenever the execution policy is changed via
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_execution" title="zfp_stream_set_execution"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_execution()</span></code></a>, its parameters (if any) are initialized
+to their defaults, overwriting any prior setting.</p>
+<div class="section" id="openmp-thread-count">
+<h3>OpenMP Thread Count<a class="headerlink" href="#openmp-thread-count" title="Permalink to this headline">¶</a></h3>
+<p>By default, the number of threads to use is given by the current setting
+of the OpenMP internal control variable <em>nthreads-var</em>.  Unless the
+calling thread has explicitly requested a thread count via the OpenMP
+API, this control variable usually defaults to the number of threads
+supported by the hardware (e.g., the number of available cores).</p>
+<p>To set the number of requested threads to be used by zfp, which may
+differ from the thread count of encapsulating or surrounding OpenMP
+parallel regions, call <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_threads" title="zfp_stream_set_omp_threads"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_threads()</span></code></a>.</p>
+<p>The user is advised to call the zfp API functions to modify OpenMP
+behavior rather than make direct OpenMP calls.  For instance, use
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_threads" title="zfp_stream_set_omp_threads"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_threads()</span></code></a> rather than
+<code class="code docutils literal"><span class="pre">omp_set_num_threads()</span></code>.  To indicate that the current OpenMP
+settings should be used, for instance as determined by the global
+OpenMP environment variable <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal"><span class="pre">OMP_NUM_THREADS</span></code>, pass a thread
+count of zero (the default setting) to <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_threads" title="zfp_stream_set_omp_threads"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_threads()</span></code></a>.</p>
+<p>Note that zfp does not modify <em>nthreads-var</em> or other control variables
+but uses a <code class="code docutils literal"><span class="pre">num_threads</span></code> clause on the OpenMP <code class="code docutils literal"><span class="pre">#pragma</span></code> line.
+Hence, no OpenMP state is changed and any subsequent OpenMP code is not
+impacted by zfp’s parallel compression.</p>
+</div>
+<div class="section" id="openmp-chunk-size">
+<span id="chunks"></span><span id="index-2"></span><h3>OpenMP Chunk Size<a class="headerlink" href="#openmp-chunk-size" title="Permalink to this headline">¶</a></h3>
+<p>The <em>d</em>-dimensional array is partitioned into <em>chunks</em>, with each chunk
+representing a contiguous sequence of <a class="reference internal" href="algorithm.html#algorithm"><span class="std std-ref">blocks</span></a> of 4<sup>d</sup>
+array elements each.  Chunks represent the unit of parallel work assigned
+to a thread.  By default, the array is partitioned so that each thread
+processes one chunk.  However, the user may override this behavior by
+setting the chunk size (in number of zfp blocks) via
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_chunk_size" title="zfp_stream_set_omp_chunk_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_chunk_size()</span></code></a>.  See FAQ <a class="reference internal" href="faq.html#q-omp-perf"><span class="std std-ref">#25</span></a>
+for a discussion of chunk sizes and parallel performance.</p>
+</div>
+<div class="section" id="openmp-scheduling">
+<h3>OpenMP Scheduling<a class="headerlink" href="#openmp-scheduling" title="Permalink to this headline">¶</a></h3>
+<p>zfp does not specify how to schedule chunk processing.  The schedule
+used is given by the OpenMP <em>def-sched-var</em> internal control variable.
+If load balance is poor, it may be improved by using smaller chunks,
+which may or may not impact performance depending on the OpenMP schedule
+in use.  Future versions of zfp may allow specifying how threads are
+mapped to chunks, whether to use static or dynamic scheduling, etc.</p>
+</div>
+</div>
+<div class="section" id="fixed-vs-variable-rate-compression">
+<span id="exec-mode"></span><h2>Fixed- vs. Variable-Rate Compression<a class="headerlink" href="#fixed-vs-variable-rate-compression" title="Permalink to this headline">¶</a></h2>
+<p>Following partitioning into chunks, zfp assigns each chunk to a thread.
+If there are more chunks than threads supported, chunks are processed in
+unspecified order.</p>
+<p>In <a class="reference internal" href="modes.html#modes"><span class="std std-ref">variable-rate mode</span></a>, there is no way to predict the exact
+number of bits that each chunk compresses to.  Therefore, zfp allocates
+a temporary memory buffer for each chunk.  Once all chunks have been
+compressed, they are concatenated into a single bit stream in serial,
+after which the temporary buffers are deallocated.</p>
+<p>In <a class="reference internal" href="modes.html#mode-fixed-rate"><span class="std std-ref">fixed-rate mode</span></a>, the final location of each
+chunk’s bit stream is known ahead of time, and zfp may not have to
+allocate temporary buffers.  However, if the chunks are not aligned on
+<a class="reference internal" href="bit-stream.html#bs-api"><span class="std std-ref">word boundaries</span></a>, then race conditions may occur.  In other
+words, for chunk size <em>C</em>, rate <em>R</em>, and word size <em>W</em>, the rate and chunk
+size must be such that <em>C</em> × 4<sup>d</sup> × <em>R</em> is a multiple of <em>W</em>
+to avoid temporary buffers.  Since <em>W</em> is a small power of two no larger
+than 64, this is usually an easy requirement to satisfy.</p>
+<p>When chunks are whole multiples of the word size, no temporary buffers
+are allocated and the threads write compressed data directly to the
+target buffer.
+The CUDA implementation uses atomics to avoid race conditions, and therefore
+does not need temporary buffers, regardless of chunk alignment.</p>
+</div>
+<div class="section" id="using-openmp">
+<h2>Using OpenMP<a class="headerlink" href="#using-openmp" title="Permalink to this headline">¶</a></h2>
+<p>In order to use OpenMP compression, zfp must be built with OpenMP
+support.  If built with CMake, OpenMP support is automatically enabled when
+available.  To manually disable OpenMP support, see the
+<a class="reference internal" href="installation.html#c.ZFP_WITH_OPENMP" title="ZFP_WITH_OPENMP"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_WITH_OPENMP</span></code></a> macro.</p>
+<p>To avoid compilation errors on systems with spotty OpenMP support
+(e.g., macOS), OpenMP is by default disabled in GNU builds.  To enable
+OpenMP, see <a class="reference internal" href="installation.html#gnu-builds"><span class="std std-ref">GNU Builds</span></a> and the <a class="reference internal" href="installation.html#c.ZFP_WITH_OPENMP" title="ZFP_WITH_OPENMP"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_WITH_OPENMP</span></code></a> macro.</p>
+</div>
+<div class="section" id="using-cuda">
+<h2>Using CUDA<a class="headerlink" href="#using-cuda" title="Permalink to this headline">¶</a></h2>
+<p>CUDA support is by default disabled.  Enabling it requires an installation
+of CUDA and a compatible host compiler.  Furthermore, the
+<a class="reference internal" href="installation.html#c.ZFP_WITH_CUDA" title="ZFP_WITH_CUDA"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_WITH_CUDA</span></code></a> macro must be set and zfp must be built with
+CMake.  See <a class="reference internal" href="installation.html#c.ZFP_WITH_CUDA" title="ZFP_WITH_CUDA"><code class="xref c c-macro docutils literal"><span class="pre">ZFP_WITH_CUDA</span></code></a> for further details.</p>
+<div class="section" id="device-memory-management">
+<h3>Device Memory Management<a class="headerlink" href="#device-memory-management" title="Permalink to this headline">¶</a></h3>
+<p>The CUDA version of zfp supports both host and device memory.  If device
+memory is allocated for fields or compressed streams, this is automatically
+detected and handled in a consistent manner.  For example, with compression,
+if host memory pointers are provided for both the field and compressed
+stream, then device memory will transparently be allocated and the uncompressed
+data will be copied to the GPU.  Once compression completes, the compressed
+stream is copied back to the host and device memory is deallocated.  If both
+pointers are device pointers, then no copies are made.  Additionally, any
+combination of mixing host and device pointers is supported.</p>
+</div>
+<div class="section" id="additional-requirements">
+<h3>Additional Requirements<a class="headerlink" href="#additional-requirements" title="Permalink to this headline">¶</a></h3>
+<p>The CUDA implementation supports strided fields.  However, when the field
+is stored in host memory, it must occupy contiguous storage, i.e., with
+no unused memory addresses between the minimum and maximum address spanned
+by the field.  This requirement avoids having to copy and allocate more
+temporary memory than needed to hold the array if it were not strided.
+Note that the strides can still be arbitrary as long as they serve only to
+permute the array elements.  Moreover, this restriction applies only to the
+CUDA execution policy and the case where the uncompressed field resides on
+the host.</p>
+</div>
+</div>
+<div class="section" id="setting-the-execution-policy">
+<h2>Setting the Execution Policy<a class="headerlink" href="#setting-the-execution-policy" title="Permalink to this headline">¶</a></h2>
+<p>Enabling parallel compression at run time is often as simple as
+calling <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_execution" title="zfp_stream_set_execution"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_execution()</span></code></a></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">zfp_stream_set_execution</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">zfp_exec_omp</span><span class="p">))</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">use</span> <span class="n">OpenMP</span> <span class="n">parallel</span> <span class="n">compression</span>
+  <span class="o">...</span>
+  <span class="n">zfpsize</span> <span class="o">=</span> <span class="n">zfp_compress</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">field</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>before calling <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a>.  Replacing <code class="code docutils literal"><span class="pre">zfp_exec_omp</span></code>
+with <code class="code docutils literal"><span class="pre">zfp_exec_cuda</span></code> enables CUDA execution.  If OpenMP or CUDA is
+disabled or not supported, then the return value of functions setting these
+execution policies and parameters will indicate failure.  Execution
+parameters are optional and may be set using the functions discussed above.</p>
+<p>The source code for the <strong class="program">zfp</strong> command-line tool includes further examples
+on how to set the execution policy.  To use parallel compression and
+decompression in this tool, see the <a class="reference internal" href="zfpcmd.html#cmdoption-x"><code class="xref std std-option docutils literal"><span class="pre">-x</span></code></a> command-line option.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As of zfp 0.5.4, the execution policy refers to both
+compression and decompression.  The OpenMP implementation does not
+yet support decompression, and hence <a class="reference internal" href="high-level-api.html#c.zfp_decompress" title="zfp_decompress"><code class="xref c c-func docutils literal"><span class="pre">zfp_decompress()</span></code></a> will
+fail if the execution policy is not reset to <code class="code docutils literal"><span class="pre">zfp_exec_serial</span></code>
+before calling the decompressor.  Similarly, the CUDA implementation
+supports only fixed-rate mode and will fail if other compression modes
+are specified.</p>
+</div>
+<p>The following table summarizes which execution policies are supported
+with which <a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression modes</span></a>:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="31%" />
+<col width="15%" />
+<col width="15%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">(de)compression mode</th>
+<th class="head">serial</th>
+<th class="head">OpenMP</th>
+<th class="head">CUDA</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td rowspan="4">compression</td>
+<td>fixed rate</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="row-odd"><td>fixed precision</td>
+<td>x</td>
+<td>x</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>fixed accuracy</td>
+<td>x</td>
+<td>x</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>reversible</td>
+<td>x</td>
+<td>x</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td rowspan="4">decompression</td>
+<td>fixed rate</td>
+<td>x</td>
+<td>&#160;</td>
+<td>x</td>
+</tr>
+<tr class="row-odd"><td>fixed precision</td>
+<td>x</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>fixed accuracy</td>
+<td>x</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>reversible</td>
+<td>x</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a> and <a class="reference internal" href="high-level-api.html#c.zfp_decompress" title="zfp_decompress"><code class="xref c c-func docutils literal"><span class="pre">zfp_decompress()</span></code></a> both return zero if the
+current execution policy is not supported for the requested compression
+mode.</p>
+</div>
+<div class="section" id="parallel-compression">
+<h2>Parallel Compression<a class="headerlink" href="#parallel-compression" title="Permalink to this headline">¶</a></h2>
+<p>Once the execution policy and parameters have been selected, compression
+is executed by calling <a class="reference internal" href="high-level-api.html#c.zfp_compress" title="zfp_compress"><code class="xref c c-func docutils literal"><span class="pre">zfp_compress()</span></code></a> from a single thread.  This
+function in turn inspects the execution policy given by the
+<a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> argument and dispatches the appropriate function
+for executing compression.</p>
+</div>
+<div class="section" id="parallel-decompression">
+<h2>Parallel Decompression<a class="headerlink" href="#parallel-decompression" title="Permalink to this headline">¶</a></h2>
+<p>Parallel decompression is in principle possible using the same strategy
+as used for compression.  However, in zfp’s
+<a class="reference internal" href="modes.html#modes"><span class="std std-ref">variable-rate modes</span></a>, the compressed blocks do not occupy
+fixed storage, and therefore the decompressor needs to be instructed
+where each compressed block resides in the bit stream to enable
+parallel decompression.  Because the zfp bit stream does not currently
+store such information, variable-rate parallel decompression is not yet
+supported.</p>
+<p>The CUDA implementation supports fixed-rate decompression.  OpenMP
+fixed-rate decompression will be added in the near future.</p>
+<p>Future versions of zfp will allow efficient encoding of block sizes and/or
+offsets to allow each thread to quickly locate the blocks it is responsible
+for decompressing, which will allow for variable-rate compression and
+decompression.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Parallel Execution</a><ul>
+<li><a class="reference internal" href="#execution-policies">Execution Policies</a></li>
+<li><a class="reference internal" href="#execution-parameters">Execution Parameters</a><ul>
+<li><a class="reference internal" href="#openmp-thread-count">OpenMP Thread Count</a></li>
+<li><a class="reference internal" href="#openmp-chunk-size">OpenMP Chunk Size</a></li>
+<li><a class="reference internal" href="#openmp-scheduling">OpenMP Scheduling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fixed-vs-variable-rate-compression">Fixed- vs. Variable-Rate Compression</a></li>
+<li><a class="reference internal" href="#using-openmp">Using OpenMP</a></li>
+<li><a class="reference internal" href="#using-cuda">Using CUDA</a><ul>
+<li><a class="reference internal" href="#device-memory-management">Device Memory Management</a></li>
+<li><a class="reference internal" href="#additional-requirements">Additional Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-the-execution-policy">Setting the Execution Policy</a></li>
+<li><a class="reference internal" href="#parallel-compression">Parallel Compression</a></li>
+<li><a class="reference internal" href="#parallel-decompression">Parallel Decompression</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modes.html"
+                        title="previous chapter">Compression Modes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="high-level-api.html"
+                        title="next chapter">High-Level C API</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="high-level-api.html" title="High-Level C API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="modes.html" title="Compression Modes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

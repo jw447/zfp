@@ -1,0 +1,439 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Troubleshooting &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Limitations" href="limitations.html" />
+    <link rel="prev" title="FAQ" href="faq.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="limitations.html" title="Limitations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="faq.html" title="FAQ"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="troubleshooting">
+<span id="issues"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>This section is intended for troubleshooting problems with zfp, in case
+any arise, and primarily focuses on how to correctly make use of zfp.  If
+the decompressed data looks nothing like the original data, or if the
+compression ratios obtained seem not so impressive, then it is very likely
+that array dimensions or compression parameters have not been set correctly,
+in which case this troubleshooting guide could help.</p>
+<p>The problems addressed in this section include:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="#p-dimensionality"><span class="std std-ref">Is the data dimensionality correct?</span></a></li>
+<li><a class="reference internal" href="#p-agree"><span class="std std-ref">Do the compressor and decompressor agree on the dimensionality?</span></a></li>
+<li><a class="reference internal" href="#p-smooth"><span class="std std-ref">Have the “smooth” dimensions been identified?</span></a></li>
+<li><a class="reference internal" href="#p-dimensions"><span class="std std-ref">Are the array dimensions correct?</span></a></li>
+<li><a class="reference internal" href="#p-large"><span class="std std-ref">Are the array dimensions large enough?</span></a></li>
+<li><a class="reference internal" href="#p-structured"><span class="std std-ref">Is the data logically structured?</span></a></li>
+<li><a class="reference internal" href="#p-embedded"><span class="std std-ref">Is the data set embedded in a regular grid?</span></a></li>
+<li><a class="reference internal" href="#p-binary"><span class="std std-ref">Is the data provided to the zfp executable a raw binary array?</span></a></li>
+<li><a class="reference internal" href="#p-endian"><span class="std std-ref">Is the byte order correct?</span></a></li>
+<li><a class="reference internal" href="#p-float-precision"><span class="std std-ref">Is the floating-point precision correct?</span></a></li>
+<li><a class="reference internal" href="#p-int-precision"><span class="std std-ref">Is the integer precision correct?</span></a></li>
+<li><a class="reference internal" href="#p-binary"><span class="std std-ref">Is the data provided to the zfp executable a raw binary array?</span></a></li>
+<li><a class="reference internal" href="#p-mode"><span class="std std-ref">Has the appropriate compression mode been set?</span></a></li>
+</ol>
+</div></blockquote>
+<hr class="docutils" />
+<p id="p-dimensionality">P1: <em>Is the data dimensionality correct?</em></p>
+<p>This is one of the most common problems.  First, make sure that zfp is given
+the correct dimensionality of the data.  For instance, an audio stream is a
+1D array, an image is a 2D array, and a volume grid is a 3D array, and a
+time-varying volume is a 4D array.  Sometimes a data set is a discrete
+collection of lower-dimensional objects.  For instance, a stack of unrelated
+images (of the same size) could be represented in C as a 3D array:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">imstack</span><span class="p">[</span><span class="n">count</span><span class="p">][</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>but since in this case the images are unrelated, no correlation would be
+expected along the third dimension—the underlying dimensionality of the data
+is here two.  In this case, the images could be compressed one at a time, or
+they could be compressed together by treating the array dimensions as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">imstack</span><span class="p">[</span><span class="n">count</span> <span class="o">*</span> <span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that zfp partitions <em>d</em>-dimensional arrays into blocks of 4<sup>d</sup>
+values.  If <em>ny</em> above is not a multiple of four, then some blocks of 4 × 4
+pixels will contain pixels from different images, which could hurt compression
+and/or quality.  Still, this way of creating a single image by stacking multiple
+images is far preferable over linearizing each image into a 1D signal, and
+then compressing the images as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">imstack</span><span class="p">[</span><span class="n">count</span><span class="p">][</span><span class="n">ny</span> <span class="o">*</span> <span class="n">nx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This loses the correlation along the <em>y</em> dimension and further introduces
+discontinuities unless <em>nx</em> is a multiple of four.</p>
+<p>Similarly to the example above, a 2D vector field</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vfield</span><span class="p">[</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>could be declared as a 3D array, but the <em>x</em>- and <em>y</em>-components of the
+2D vectors are likely entirely unrelated.  In this case, each component
+needs to be compressed independently, either by rearranging the data
+as two scalar fields:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vfield</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>or by using strides (see also <a class="reference internal" href="faq.html#q-vfields"><span class="std std-ref">FAQ #1</span></a>).  Note that in all
+these cases zfp will still compress the data, but if the dimensionality is
+not correct then the compression ratio will suffer.</p>
+<hr class="docutils" />
+<p id="p-agree">P2: <em>Do the compressor and decompressor agree on the dimensionality?</em></p>
+<p>Consider compressing a 3D array:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>with <em>nx</em> = 100, <em>ny</em> = 1, <em>nz</em> = 1, then decompressing the result to a 1D
+array:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="n">b</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>with <em>nx</em> = 100.  Although the arrays <em>a</em> and <em>b</em> occupy the same amount of
+memory and are in C laid out similarly, these arrays are not equivalent to
+zfp because their dimensionalities differ.  zfp uses different CODECs
+to (de)compress 1D, 2D, 3D, and 4D arrays, and the 1D decompressor expects a
+compressed bit stream that corresponds to a 1D array.</p>
+<p>What happens in practice in this case is that the array <em>a</em> is compressed
+using zfp’s 3D CODEC, which first pads the array to</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="n">padded</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>When this array is correctly decompressed using the 3D CODEC, the padded
+values are generated but discarded.  zfp’s 1D decompressor, on the other
+hand, expects 100 values, not 100 × 4 × 4 = 1600 values, and
+therefore likely returns garbage.</p>
+<hr class="docutils" />
+<p id="p-smooth">P3: <em>Have the “smooth” dimensions been identified?</em></p>
+<p>Closely related to <a class="reference internal" href="#p-dimensionality"><span class="std std-ref">P1</span></a> above, some fields simply do
+not vary smoothly along all dimensions, and zfp can do a good job
+compressing only those dimensions that exhibit some coherence.  For instance,
+consider a table of stock prices indexed by date and stock:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">price</span><span class="p">[</span><span class="n">stocks</span><span class="p">][</span><span class="n">dates</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>One could be tempted to compress this as a 2D array, but there is likely
+little to no correlation in prices between different stocks.  Each such
+time series should be compressed independently as a 1D signal.</p>
+<p>What about time-varying images like a video sequence?  In this case, it is
+likely that there is correlation over time, and that the value of a single
+pixel varies smoothly in time.  It is also likely that each image exhibits
+smoothness along its two spatial dimensions.  So this can be treated as a
+single, 3D data set.</p>
+<p>How about time-varying volumes, such as</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">field</span><span class="p">[</span><span class="n">nt</span><span class="p">][</span><span class="n">nz</span><span class="p">][</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>As of version 0.5.4, zfp supports compression of 4D arrays.  Since
+all dimensions in this example are likely to be correlated, the 4D array
+can be compressed directly.  Alternatively, the data could be organized by
+the three “smoothest” dimensions and compressed as a 3D array.  Given the
+organization above, the array could be treated as 3D:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">field</span><span class="p">[</span><span class="n">nt</span> <span class="o">*</span> <span class="n">nz</span><span class="p">][</span><span class="n">ny</span><span class="p">][</span><span class="n">nx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Again, do <strong>not</strong> compress this as a 3D array with the <em>innermost</em>
+dimensions unfolded:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">field</span><span class="p">[</span><span class="n">nt</span><span class="p">][</span><span class="n">nz</span><span class="p">][</span><span class="n">ny</span> <span class="o">*</span> <span class="n">nx</span><span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="p-dimensions">P4: <em>Are the array dimensions correct?</em></p>
+<p>This is another common problem that seems obvious, but often the dimensions
+are accidentally transposed.  Assuming that the smooth dimensions have been
+identified, it is important that the dimensions are listed in the correct
+order.  For instance, if the data (in C notation) is organized as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">field</span><span class="p">[</span><span class="n">d1</span><span class="p">][</span><span class="n">d2</span><span class="p">][</span><span class="n">d3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>then the data is organized in memory (or on disk) with the d3 dimension varying
+fastest, and hence <em>nx</em> = <em>d3</em>, <em>ny</em> = <em>d2</em>, <em>nz</em> = <em>d1</em> using the zfp naming
+conventions for the dimensions, e.g., the <a class="reference internal" href="zfpcmd.html#zfpcmd"><span class="std std-ref">zfp executable</span></a> should
+be invoked with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">zfp</span> <span class="o">-</span><span class="mi">3</span> <span class="n">d3</span> <span class="n">d2</span> <span class="n">d1</span>
+</pre></div>
+</div>
+<p>in this case.  Things will go horribly wrong if zfp in this case is called
+with <em>nx</em> = <em>d1</em>, <em>ny</em> = <em>d2</em>, <em>nz</em> = <em>d3</em>.  The entire data set will still
+compress and decompress, but compression ratio and quality will likely suffer
+greatly.</p>
+<hr class="docutils" />
+<p id="p-large">P5: <em>Are the array dimensions large enough?</em></p>
+<p>zfp partitions <em>d</em>-dimensional data sets into blocks of 4<sup>d</sup> values, e.g.,
+in 3D a block consists of 4 × 4 × 4 values.  If the dimensions are not
+multiples of four, then zfp will “pad” the array to the next larger multiple
+of four.  Such padding can hurt compression.  In particular, if one or more of
+the array dimensions are small, then the overhead of such padding could be
+significant.</p>
+<p>Consider compressing a collection of 1000 small 3D arrays:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">field</span><span class="p">[</span><span class="mi">1000</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="mi">14</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>zfp would first logically pad this to a larger array:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">field</span><span class="p">[</span><span class="mi">1000</span><span class="p">][</span><span class="mi">8</span><span class="p">][</span><span class="mi">16</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which is (8 × 16 × 4) / (5 × 14 × 2) ~ 3.66 times
+larger.  Although such padding often compresses well, this still represents
+a significant overhead.</p>
+<p>If a large array has been partitioned into smaller pieces, it may be best to
+reassemble the larger array.  Or, when possible, ensure that the sub-arrays
+have dimensions that are multiples of four.</p>
+<hr class="docutils" />
+<p id="p-structured">P6: <em>Is the data logically structured?</em></p>
+<p>zfp was designed for logically structured data, i.e., Cartesian grids.  It
+works much like an image compressor does, which assumes that the data set is a
+structured array of pixels, and it assumes that values vary reasonably smoothly
+on average, just like natural images tend to contain large regions of uniform
+color or smooth color gradients, like a blue sky, smoothly varying skin tones
+of a human’s face, etc.  Many data sets are not represented on a regular grid.
+For instance, an array of particle <em>xyz</em> positions:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">points</span><span class="p">[</span><span class="n">count</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>is a 2D array, but does not vary smoothly in either dimension.  Furthermore,
+such unstructured data sets need not be organized in any particular order;
+the particles could be listed in any arbitrary order.  One could attempt to
+sort the particles, for example by the <em>x</em> coordinate, to promote smoothness,
+but this would still leave the other two dimensions non-smooth.</p>
+<p>Sometimes the underlying dimensions are not even known, and only the total
+number of floating-point values is known.  For example, suppose we only knew
+that the data set contained <em>n</em> = <em>count</em> × 3 values.  One might be
+tempted to compress this using zfp’s 1-dimensional compressor, but once
+again this would not work well.  Such abuse of zfp is much akin to trying
+to compress an image using an audio compressor like mp3, or like compressing
+an <em>n</em>-sample piece of music as an <em>n</em>-by-one sized image using an image
+compressor like JPEG.  The results would likely not be very good.</p>
+<p>Some data sets are logically structured but geometrically irregular.  Examples
+include fields stored on Lagrangian meshes that have been warped, or on
+spectral element grids, which use a non-uniform grid spacing.  zfp assumes
+that the data has been regularly sampled in each dimension, and the more the
+geometry of the sampling deviates from uniform, the worse compression gets.
+Note that rectilinear grids with different but uniform grid spacing in each
+dimension are fine.  If your application uses very non-uniform sampling, then
+resampling onto a uniform grid (if possible) may be advisable.</p>
+<p>Other data sets are “block structured” and consist of piecewise structured
+grids that are “glued” together.  Rather than treating such data as
+unstructured 1D streams, consider partitioning the data set into independent
+(possibly overlapping) regular grids.</p>
+<hr class="docutils" />
+<p id="p-embedded">P7: <em>Is the data set embedded in a regular grid?</em></p>
+<p>Some applications represent irregular geometry on a Cartesian grid, and leave
+portions of the domain unspecified.  Consider, for instance, sampling the
+density of the Earth onto a Cartesian grid.  Here the density for grid points
+outside the Earth is unspecified.</p>
+<p>In this case, zfp does best by initializing the “background field” to all
+zeros.  In zfp’s <a class="reference internal" href="modes.html#mode-fixed-accuracy"><span class="std std-ref">fixed-accuracy mode</span></a>, any
+“empty” block that consists of all zeros is represented using a single bit,
+and therefore the overhead of representing empty space can be kept low.</p>
+<hr class="docutils" />
+<p id="p-invalid">P8: <em>Have fill values, NaNs, and infinities been removed?</em></p>
+<p>It is common to signal unspecified values using what is commonly called a
+“fill value,” which is a special constant value that tends to be far out of
+range of normal values.  For instance, in climate modeling the ocean
+temperature over land is meaningless, and it is common to use a very large
+temperature value such as 1e30 to signal that the temperature is undefined
+for such grid points.</p>
+<p>Very large fill values do not play well with zfp, because they both introduce
+artificial discontinuities and pollute nearby values by expressing them all
+with respect to the common largest exponent within their block.  Assuming
+a fill value of 1e30, the value pi in the same block would be represented as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">0.00000000000000000000000000000314159</span><span class="o">...</span> <span class="o">*</span> <span class="mf">1e30</span>
+</pre></div>
+</div>
+<p>Given finite precision, the small fraction would likely be replaced with zero,
+resulting in complete loss of the actual value being stored.</p>
+<p>Other applications use NaNs (special not-a-number values) or infinities as
+fill values.  These are even more problematic, because they do not have a
+defined exponent.  zfp relies on the C function <code class="xref c c-func docutils literal"><span class="pre">frexp()</span></code> to compute
+the exponent of the largest (in magnitude) value within a block, but produces
+unspecified behavior if that value is not finite.</p>
+<p>zfp currently has no independent mechanism for handling fill values.  Ideally
+such special values would be signalled separately, e.g., using a bit mask,
+and then replaced with zeros to ensure that they both compress well and do
+not pollute actual data.</p>
+<hr class="docutils" />
+<p id="p-endian">P9: <em>Is the byte order correct?</em></p>
+<p>zfp generally works with the native byte order (e.g., little or big endian)
+of the machine it is compiled on.  One needs only be concerned with byte order
+when reading raw, binary data into the zfp executable, when exchanging
+compressed files across platforms, and when varying the bit stream word size
+on big endian machines (not common).  For instance, to compress a binary
+double-precision floating-point file stored in big endian byte order on a
+little endian machine, byte swapping must first be done.  For example, on
+Linux and macOS, 8-byte doubles can be byte swapped using:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">objcopy</span> <span class="o">-</span><span class="n">I</span> <span class="n">binary</span> <span class="o">-</span><span class="n">O</span> <span class="n">binary</span> <span class="o">--</span><span class="n">reverse</span><span class="o">-</span><span class="nb">bytes</span><span class="o">=</span><span class="mi">8</span> <span class="n">big</span><span class="o">.</span><span class="n">bin</span> <span class="n">little</span><span class="o">.</span><span class="n">bin</span>
+</pre></div>
+</div>
+<p>See also FAQ <a class="reference internal" href="faq.html#q-portability"><span class="std std-ref">#11</span></a> for more discussion of byte order.</p>
+<hr class="docutils" />
+<p id="p-float-precision">P10: <em>Is the floating-point precision correct?</em></p>
+<p>Another obvious problem: Please make sure that zfp is told whether the data
+to compress is an array of single- (32-bit) or double-precision (64-bit)
+values, e.g., by specifying the <a class="reference internal" href="zfpcmd.html#cmdoption-f"><code class="xref std std-option docutils literal"><span class="pre">-f</span></code></a> or <a class="reference internal" href="zfpcmd.html#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">-d</span></code></a> options to the
+<strong class="program">zfp</strong> executable or by passing the appropriate <a class="reference internal" href="high-level-api.html#c.zfp_type" title="zfp_type"><code class="xref c c-type docutils literal"><span class="pre">zfp_type</span></code></a>
+to the C functions.</p>
+<hr class="docutils" />
+<p id="p-int-precision">P11: <em>Is the integer precision correct?</em></p>
+<p>zfp currently supports compression of 31- or 63-bit signed integers.  Shorter
+integers (e.g., bytes, shorts) can be compressed but must first be promoted
+to one of the longer types.  This should always be done using zfp’s functions
+for <a class="reference internal" href="low-level-api.html#ll-utilities"><span class="std std-ref">promotion and demotion</span></a>, which both perform bit
+shifting and biasing to handle both signed and unsigned types.  It is not
+sufficient to simply cast short integers to longer integers.  See also FAQs
+<a class="reference internal" href="faq.html#q-integer"><span class="std std-ref">#8</span></a> and <a class="reference internal" href="faq.html#q-int32"><span class="std std-ref">#9</span></a>.</p>
+<hr class="docutils" />
+<p id="p-binary">P12: <em>Is the data provided to the zfp executable a raw binary array?</em></p>
+<p>zfp expects that the input file is a raw binary array of integers or
+floating-point values in the IEEE format, e.g., written to file using
+<code class="xref c c-func docutils literal"><span class="pre">fwrite()</span></code>.  Do not hand zfp a text file containing ASCII
+floating-point numbers.  Strip the file of any header information.
+Languages like Fortran tend to store with the array its size.  No such
+metadata may be embedded in the file.</p>
+<hr class="docutils" />
+<p id="p-mode">P13: <em>Has the appropriate compression mode been set?</em></p>
+<p>zfp provides three different lossy
+<a class="reference internal" href="modes.html#modes"><span class="std std-ref">modes of compression</span></a> that trade storage and accuracy,
+plus one <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">lossless mode</span></a>.  In
+fixed-rate mode, the user specifies the exact number of bits (often in
+increments of a fraction of a bit) of compressed storage per value (but see
+FAQ <a class="reference internal" href="faq.html#q-rate"><span class="std std-ref">#18</span></a> for caveats).  From the user’s perspective, this
+seems a very desirable feature, since it provides for a direct mechanism for
+specifying how much storage to use.  However, there is often a large quality
+penalty associated with the fixed-rate mode, because each block of 4<sup>d</sup>
+values is allocated the same number of bits.  In practice, the information
+content over the data set varies significantly, which means that
+easy-to-compress regions are assigned too many bits, while too few bits are
+available to faithfully represent the more challenging-to-compress regions.
+Although one of the unique features of zfp, its fixed-rate mode should
+primarily be used only when random access to the data is needed.</p>
+<p>zfp also provides a fixed-precision mode, where the user specifies how many
+uncompressed significant bits to use to represent the floating-point fraction.
+This precision may not be exactly what people might normally think of.  For
+instance, the C float type is commonly referred to as 32-bit precision.
+However, the sign bit and exponent account for nine of those bits and do
+not contribute to the number of significant bits of precision.  Furthermore,
+for normal numbers, IEEE uses a hidden implicit one bit, so most float values
+actually have 24 bits of precision.  Furthermore, zfp uses a
+block-floating-point representation with a single exponent per block,
+which may cause some small values to have several leading zero bits and
+therefore less precision than requested.  Thus, the effective precision
+returned by zfp in its fixed-precision mode may in fact vary.  In practice,
+the precision requested is only an upper bound, though typically at least one
+value within a block has the requested precision.</p>
+<p>zfp supports a fixed-accuracy mode, which except in rare
+circumstances (see FAQ <a class="reference internal" href="faq.html#q-tolerance"><span class="std std-ref">#17</span></a>) ensures that the absolute
+error is bounded, i.e., the difference between any decompressed and original
+value is at most the tolerance specified by the user (but usually several
+times smaller).  Whenever possible, we recommend using this compression mode,
+which depending on how easy the data is to compress results in the smallest
+compressed stream that respects the error tolerance.</p>
+<p>As of zfp 0.5.5, reversible (lossless) compression is available.
+The amount of lossless reduction of floating-point data is usually quite
+limited, however, especially for double-precision data.  Unless a bit-for-bit
+exact reconstruction is needed, we strongly advocate the use of lossy
+compression.</p>
+<p>Finally, there is also an expert mode that allows the user to combine the
+constraints of fixed rate, precision, and accuracy.  See the section on
+<a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression modes</span></a> for more details.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="faq.html"
+                        title="previous chapter">FAQ</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="limitations.html"
+                        title="next chapter">Limitations</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="limitations.html" title="Limitations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="faq.html" title="FAQ"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

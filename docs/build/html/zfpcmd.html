@@ -1,0 +1,414 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File Compressor &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code Examples" href="examples.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Code Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-compressor">
+<span id="zfpcmd"></span><h1>File Compressor<a class="headerlink" href="#file-compressor" title="Permalink to this headline">¶</a></h1>
+<p>The <strong class="program">zfp</strong> executable in the <code class="file docutils literal"><span class="pre">bin</span></code> directory is primarily
+intended for evaluating the rate-distortion (compression ratio and quality)
+provided by the compressor, but since version 0.5.0 also allows reading and
+writing compressed data sets.  <strong class="program">zfp</strong> takes as input a raw, binary
+array of floats, doubles, or integers in native byte order and optionally
+outputs a compressed or reconstructed array obtained after lossy compression
+followed by decompression.  Various statistics on compression ratio and
+error are also displayed.</p>
+<p>The uncompressed input and output files should be a flattened, contiguous
+sequence of scalars without any header information, generated for instance
+by</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">double</span><span class="o">*</span> <span class="n">data</span> <span class="o">=</span> <span class="n">new</span> <span class="n">double</span><span class="p">[</span><span class="n">nx</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">nz</span><span class="p">];</span>
+<span class="o">//</span> <span class="n">populate</span> <span class="n">data</span>
+<span class="n">FILE</span><span class="o">*</span> <span class="n">file</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s2">&quot;data.bin&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">);</span>
+<span class="n">fwrite</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">),</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">nz</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
+<span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong class="program">zfp</strong> requires a set of command-line options, the most important
+being the <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> option that specifies that the input is uncompressed.
+When present, <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> tells <strong class="program">zfp</strong> to read an uncompressed input
+file and compress it to memory.  If desired, the compressed stream can be
+written to an output file using <a class="reference internal" href="#cmdoption-z"><code class="xref std std-option docutils literal"><span class="pre">-z</span></code></a>.  When <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> is absent,
+on the other hand, <a class="reference internal" href="#cmdoption-z"><code class="xref std std-option docutils literal"><span class="pre">-z</span></code></a> names the compressed input (not output) file,
+which is then decompressed.  In either case, <a class="reference internal" href="#cmdoption-o"><code class="xref std std-option docutils literal"><span class="pre">-o</span></code></a> can be used to
+output the reconstructed array resulting from lossy compression and
+decompression.</p>
+<p>So, to compress a file, use <code class="code docutils literal"><span class="pre">-i</span> <span class="pre">file.in</span> <span class="pre">-z</span> <span class="pre">file.zfp</span></code>.  To later
+decompress the file, use <code class="code docutils literal"><span class="pre">-z</span> <span class="pre">file.zfp</span> <span class="pre">-o</span> <span class="pre">file.out</span></code>.  A single dash
+“-” can be used in place of a file name to denote standard input or output.</p>
+<p>When reading uncompressed input, the scalar type must be specified using
+<a class="reference internal" href="#cmdoption-f"><code class="xref std std-option docutils literal"><span class="pre">-f</span></code></a> (float) or <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">-d</span></code></a> (double), or using <a class="reference internal" href="#cmdoption-t"><code class="xref std std-option docutils literal"><span class="pre">-t</span></code></a>
+for integer-valued data.  In addition, the array dimensions must be specified
+using <a class="reference internal" href="#cmdoption-1"><code class="xref std std-option docutils literal"><span class="pre">-1</span></code></a> (for 1D arrays), <a class="reference internal" href="#cmdoption-2"><code class="xref std std-option docutils literal"><span class="pre">-2</span></code></a> (for 2D arrays),
+<a class="reference internal" href="#cmdoption-3"><code class="xref std std-option docutils literal"><span class="pre">-3</span></code></a> (for 3D arrays), or <a class="reference internal" href="#cmdoption-4"><code class="xref std std-option docutils literal"><span class="pre">-4</span></code></a> (for 4D arrays).
+For multidimensional arrays, <em>x</em> varies faster than <em>y</em>, which in turn
+varies faster than <em>z</em>, and so on.  That is, a 4D input file corresponding
+to a flattened C array <code class="code docutils literal"><span class="pre">a[nw][nz][ny][nx]</span></code> is specified as
+<code class="code docutils literal"><span class="pre">-4</span> <span class="pre">nx</span> <span class="pre">ny</span> <span class="pre">nz</span> <span class="pre">nw</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that <code class="code docutils literal"><span class="pre">-2</span> <span class="pre">nx</span> <span class="pre">ny</span></code> is not equivalent to <code class="code docutils literal"><span class="pre">-3</span> <span class="pre">nx</span> <span class="pre">ny</span> <span class="pre">1</span></code>, even
+though the same number of values are compressed.  One invokes the 2D codec,
+while the other uses the 3D codec, which in this example has to pad the
+input to an <em>nx</em> × <em>ny</em> × 4 array since arrays are partitioned
+into blocks of dimensions 4<sup>d</sup>.  Such padding usually negatively impacts
+compression.</p>
+</div>
+<p>In addition to ensuring correct dimensionality, the order of dimensions
+also matters.  For instance, <code class="code docutils literal"><span class="pre">-2</span> <span class="pre">nx</span> <span class="pre">ny</span></code> is not equivalent to
+<code class="code docutils literal"><span class="pre">-2</span> <span class="pre">ny</span> <span class="pre">nx</span></code>, i.e., with the dimensions transposed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In multidimensional arrays, the order in which dimensions are specified
+is important.  In zfp, the memory layout convention is such that <em>x</em>
+varies faster than <em>y</em>, which varies faster than <em>z</em>, and hence <em>x</em> should
+map to the innermost (rightmost) array dimension in a C array and to the
+leftmost dimension in a Fortran array.  Getting the order of dimensions
+right is crucial for good compression and accuracy.  See the discussion of
+<a class="reference internal" href="high-level-api.html#indexing"><span class="std std-ref">dimensions and strides</span></a> for further information.</p>
+</div>
+<p>Using <a class="reference internal" href="#cmdoption-h"><code class="xref std std-option docutils literal"><span class="pre">-h</span></code></a>, the array dimensions and type are stored in a header of
+the compressed stream so that they do not have to be specified on the command
+line during decompression.  The header also stores compression parameters,
+which are described below.  The compressor and decompressor must agree on
+whether headers are used, and it is up to the user to enforce this.</p>
+<p><strong class="program">zfp</strong> accepts several options for specifying how the data is to be
+compressed.  The most general of these, the <a class="reference internal" href="#cmdoption-c"><code class="xref std std-option docutils literal"><span class="pre">-c</span></code></a> option, takes four
+constraint parameters that together can be used to achieve various effects.
+These constraints are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">minbits</span><span class="p">:</span> <span class="n">the</span> <span class="n">minimum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">a</span> <span class="n">block</span>
+<span class="n">maxbits</span><span class="p">:</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">a</span> <span class="n">block</span>
+<span class="n">maxprec</span><span class="p">:</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bit</span> <span class="n">planes</span> <span class="n">encoded</span>
+<span class="n">minexp</span><span class="p">:</span>  <span class="n">the</span> <span class="n">smallest</span> <span class="n">bit</span> <span class="n">plane</span> <span class="n">number</span> <span class="n">encoded</span>
+</pre></div>
+</div>
+<p>These parameters are discussed in detail in the section on
+<a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression modes</span></a>.  Options <a class="reference internal" href="#cmdoption-r"><code class="xref std std-option docutils literal"><span class="pre">-r</span></code></a>, <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">-p</span></code></a>,
+and <a class="reference internal" href="#cmdoption-a"><code class="xref std std-option docutils literal"><span class="pre">-a</span></code></a> provide a simpler interface to setting all of the above
+parameters by invoking
+<a class="reference internal" href="modes.html#mode-fixed-rate"><span class="std std-ref">fixed-rate</span></a> (<a class="reference internal" href="#cmdoption-r"><code class="xref std std-option docutils literal"><span class="pre">-r</span></code></a>),
+<a class="reference internal" href="modes.html#mode-fixed-precision"><span class="std std-ref">-precision</span></a> (<a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">-p</span></code></a>), and
+<a class="reference internal" href="modes.html#mode-fixed-accuracy"><span class="std std-ref">-accuracy</span></a> (<a class="reference internal" href="#cmdoption-a"><code class="xref std std-option docutils literal"><span class="pre">-a</span></code></a>) mode.
+<a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">Reversible mode</span></a> for lossless compression is
+specified using <a class="reference internal" href="#id1"><code class="xref std std-option docutils literal"><span class="pre">-R</span></code></a>.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Below is a description of each command-line option accepted by <strong class="program">zfp</strong>.</p>
+<div class="section" id="general-options">
+<h3>General options<a class="headerlink" href="#general-options" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-h">
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read/write array and compression parameters from/to compressed header.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-q">
+<code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode; suppress diagnostic output.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-s">
+<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate and print the following error statistics:</p>
+<ul class="simple">
+<li>rmse: The root mean square error.</li>
+<li>nrmse: The root mean square error normalized to the range.</li>
+<li>maxe: The maximum absolute pointwise error.</li>
+<li>psnr: The peak signal to noise ratio in decibels.</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="input-and-output">
+<h3>Input and output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-i">
+<code class="descname">-i</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of uncompressed binary input file.  Use “-” for standard input.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-o">
+<code class="descname">-o</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-o" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of decompressed binary output file.  Use “-” for standard output.
+May be used with either <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a>, <a class="reference internal" href="#cmdoption-z"><code class="xref std std-option docutils literal"><span class="pre">-z</span></code></a>, or both.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-z">
+<code class="descname">-z</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of compressed input (without <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a>) or output file (with
+<a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a>).  Use “-” for standard input or output.</p>
+</dd></dl>
+
+<p>When <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> is specified, data is read from the corresponding
+uncompressed file, compressed, and written to the compressed file
+specified by <a class="reference internal" href="#cmdoption-z"><code class="xref std std-option docutils literal"><span class="pre">-z</span></code></a> (when present).  Without <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a>,
+compressed data is read from the file specified by <a class="reference internal" href="#cmdoption-z"><code class="xref std std-option docutils literal"><span class="pre">-z</span></code></a>
+and decompressed.  In either case, the reconstructed data can be
+written to the file specified by <a class="reference internal" href="#cmdoption-o"><code class="xref std std-option docutils literal"><span class="pre">-o</span></code></a>.</p>
+</div>
+<div class="section" id="array-type-and-dimensions">
+<h3>Array type and dimensions<a class="headerlink" href="#array-type-and-dimensions" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-f">
+<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single precision (float type).  Shorthand for <code class="code docutils literal"><span class="pre">-t</span> <span class="pre">f32</span></code>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-d">
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double precision (double type).  Shorthand for <code class="code docutils literal"><span class="pre">-t</span> <span class="pre">f64</span></code>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-t">
+<code class="descname">-t</code><code class="descclassname"> &lt;type&gt;</code><a class="headerlink" href="#cmdoption-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify scalar type as one of i32, i64, f32, f64 for 32- or 64-bit
+integer or floating scalar type.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-1">
+<code class="descname">-1</code><code class="descclassname"> &lt;nx&gt;</code><a class="headerlink" href="#cmdoption-1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimensions of 1D C array <code class="code docutils literal"><span class="pre">a[nx]</span></code>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-2">
+<code class="descname">-2</code><code class="descclassname"> &lt;nx&gt; &lt;ny&gt;</code><a class="headerlink" href="#cmdoption-2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimensions of 2D C array <code class="code docutils literal"><span class="pre">a[ny][nx]</span></code>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-3">
+<code class="descname">-3</code><code class="descclassname"> &lt;nx&gt; &lt;ny&gt; &lt;nz&gt;</code><a class="headerlink" href="#cmdoption-3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimensions of 3D C array <code class="code docutils literal"><span class="pre">a[nz][ny][nx]</span></code>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-4">
+<code class="descname">-4</code><code class="descclassname"> &lt;nx&gt; &lt;ny&gt; &lt;nz&gt; &lt;nw&gt;</code><a class="headerlink" href="#cmdoption-4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimensions of 4D C array <code class="code docutils literal"><span class="pre">a[nw][nz][ny][nx]</span></code>.</p>
+</dd></dl>
+
+<p>When <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> is used, the scalar type and array dimensions must be
+specified.  One of <a class="reference internal" href="#cmdoption-f"><code class="xref std std-option docutils literal"><span class="pre">-f</span></code></a>, <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">-d</span></code></a>, or <a class="reference internal" href="#cmdoption-t"><code class="xref std std-option docutils literal"><span class="pre">-t</span></code></a> specifies
+the input scalar type.  <a class="reference internal" href="#cmdoption-1"><code class="xref std std-option docutils literal"><span class="pre">-1</span></code></a>, <a class="reference internal" href="#cmdoption-2"><code class="xref std std-option docutils literal"><span class="pre">-2</span></code></a>, <a class="reference internal" href="#cmdoption-3"><code class="xref std std-option docutils literal"><span class="pre">-3</span></code></a>, or
+<a class="reference internal" href="#cmdoption-4"><code class="xref std std-option docutils literal"><span class="pre">-4</span></code></a> specifies the array dimensions.  The same parameters must
+be given when decompressing data (without <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a>), unless a header
+was stored using <a class="reference internal" href="#cmdoption-h"><code class="xref std std-option docutils literal"><span class="pre">-h</span></code></a> during compression.</p>
+</div>
+<div class="section" id="compression-parameters">
+<h3>Compression parameters<a class="headerlink" href="#compression-parameters" title="Permalink to this headline">¶</a></h3>
+<p>One of the following <a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression modes</span></a> must be selected.</p>
+<dl class="option">
+<dt id="cmdoption-r">
+<code class="descname">-r</code><code class="descclassname"> &lt;rate&gt;</code><a class="headerlink" href="#cmdoption-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify fixed rate in terms of number of compressed bits per
+integer or floating-point value.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-p">
+<code class="descname">-p</code><code class="descclassname"> &lt;precision&gt;</code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify fixed precision in terms of number of uncompressed bits per
+value.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-a">
+<code class="descname">-a</code><code class="descclassname"> &lt;tolerance&gt;</code><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify fixed accuracy in terms of absolute error tolerance.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="id1">
+<code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reversible (lossless) mode.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-c">
+<code class="descname">-c</code><code class="descclassname"> &lt;minbits&gt; &lt;maxbits&gt; &lt;maxprec&gt; &lt;minexp&gt;</code><a class="headerlink" href="#cmdoption-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify expert mode parameters.</p>
+</dd></dl>
+
+<p>When <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> is used, the compression parameters must be specified.
+The same parameters must be given when decompressing data (without
+<a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a>), unless a header was stored using <a class="reference internal" href="#cmdoption-h"><code class="xref std std-option docutils literal"><span class="pre">-h</span></code></a> when
+compressing.  See the section on <a class="reference internal" href="modes.html#modes"><span class="std std-ref">compression modes</span></a> for a
+discussion of these parameters.</p>
+</div>
+<div class="section" id="execution-parameters">
+<h3>Execution parameters<a class="headerlink" href="#execution-parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-x">
+<code class="descname">-x</code><code class="descclassname"> &lt;policy&gt;</code><a class="headerlink" href="#cmdoption-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify execution policy and parameters.  The default policy is
+<code class="code docutils literal"><span class="pre">-x</span> <span class="pre">serial</span></code> for sequential execution.  To enable OpenMP parallel
+compression, use the <code class="code docutils literal"><span class="pre">omp</span></code> policy.  Without parameters,
+<code class="code docutils literal"><span class="pre">-x</span> <span class="pre">omp</span></code> selects OpenMP with default settings, which typically
+implies maximum concurrency available.  Use <code class="code docutils literal"><span class="pre">-x</span> <span class="pre">omp=threads</span></code> to
+request a specific number of threads (see also
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_threads" title="zfp_stream_set_omp_threads"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_threads()</span></code></a>).  A thread count of zero is
+ignored and results in the default number of threads.  Use
+<code class="code docutils literal"><span class="pre">-x</span> <span class="pre">omp=threads,chunk_size</span></code> to specify the chunk size in number
+of blocks (see also <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_omp_chunk_size" title="zfp_stream_set_omp_chunk_size"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_omp_chunk_size()</span></code></a>).  A
+chunk size of zero is ignored and results in the default size.
+Use <code class="code docutils literal"><span class="pre">-x</span> <span class="pre">cuda</span></code> to for parallel CUDA compression and decompression.</p>
+</dd></dl>
+
+<p>As of 0.5.4, the execution policy applies to both compression
+and decompression.  If the execution policy is not supported for
+decompression, then zfp will attempt to fall back on serial
+decompression.  This is done only when both compression and decompression
+are performed as part of a single execution, e.g., when specifying both
+<a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">-i</span></code></a> and <a class="reference internal" href="#cmdoption-o"><code class="xref std std-option docutils literal"><span class="pre">-o</span></code></a>.</p>
+</div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><code class="code docutils literal"><span class="pre">-i</span> <span class="pre">file</span></code> : read uncompressed file and compress to memory</li>
+<li><code class="code docutils literal"><span class="pre">-z</span> <span class="pre">file</span></code> : read compressed file and decompress to memory</li>
+<li><code class="code docutils literal"><span class="pre">-i</span> <span class="pre">ifile</span> <span class="pre">-z</span> <span class="pre">zfile</span></code> : read uncompressed ifile, write compressed zfile</li>
+<li><code class="code docutils literal"><span class="pre">-z</span> <span class="pre">zfile</span> <span class="pre">-o</span> <span class="pre">ofile</span></code> : read compressed zfile, write decompressed ofile</li>
+<li><code class="code docutils literal"><span class="pre">-i</span> <span class="pre">ifile</span> <span class="pre">-o</span> <span class="pre">ofile</span></code> : read ifile, compress, decompress, write ofile</li>
+<li><code class="code docutils literal"><span class="pre">-i</span> <span class="pre">file</span> <span class="pre">-s</span></code> : read uncompressed file, compress to memory, print stats</li>
+<li><code class="code docutils literal"><span class="pre">-i</span> <span class="pre">-</span> <span class="pre">-o</span> <span class="pre">-</span> <span class="pre">-s</span></code> : read stdin, compress, decompress, write stdout, print stats</li>
+<li><code class="code docutils literal"><span class="pre">-f</span> <span class="pre">-3</span> <span class="pre">100</span> <span class="pre">100</span> <span class="pre">100</span> <span class="pre">-r</span> <span class="pre">16</span></code> : 2x fixed-rate compression of 100 × 100 × 100 floats</li>
+<li><code class="code docutils literal"><span class="pre">-d</span> <span class="pre">-1</span> <span class="pre">1000000</span> <span class="pre">-r</span> <span class="pre">32</span></code> : 2x fixed-rate compression of 1,000,000 doubles</li>
+<li><code class="code docutils literal"><span class="pre">-d</span> <span class="pre">-2</span> <span class="pre">1000</span> <span class="pre">1000</span> <span class="pre">-p</span> <span class="pre">32</span></code> : 32-bit precision compression of 1000 × 1000 doubles</li>
+<li><code class="code docutils literal"><span class="pre">-d</span> <span class="pre">-1</span> <span class="pre">1000000</span> <span class="pre">-a</span> <span class="pre">1e-9</span></code> : compression of 1,000,000 doubles with &lt; 10<sup>-9</sup> max error</li>
+<li><code class="code docutils literal"><span class="pre">-d</span> <span class="pre">-1</span> <span class="pre">1000000</span> <span class="pre">-c</span> <span class="pre">64</span> <span class="pre">64</span> <span class="pre">0</span> <span class="pre">-1074</span></code> : 4x fixed-rate compression of 1,000,000 doubles</li>
+<li><code class="code docutils literal"><span class="pre">-x</span> <span class="pre">omp=16,256</span></code> : parallel compression with 16 threads, 256-block chunks</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">File Compressor</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#general-options">General options</a></li>
+<li><a class="reference internal" href="#input-and-output">Input and output</a></li>
+<li><a class="reference internal" href="#array-type-and-dimensions">Array type and dimensions</a></li>
+<li><a class="reference internal" href="#compression-parameters">Compression parameters</a></li>
+<li><a class="reference internal" href="#execution-parameters">Execution parameters</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tutorial.html"
+                        title="previous chapter">Tutorial</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="examples.html"
+                        title="next chapter">Code Examples</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Code Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

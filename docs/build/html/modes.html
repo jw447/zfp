@@ -1,0 +1,340 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Compression Modes &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parallel Execution" href="execution.html" />
+    <link rel="prev" title="Algorithm" href="algorithm.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="execution.html" title="Parallel Execution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="algorithm.html" title="Algorithm"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="compression-modes">
+<span id="modes"></span><span id="index-0"></span><h1>Compression Modes<a class="headerlink" href="#compression-modes" title="Permalink to this headline">¶</a></h1>
+<p>zfp accepts one or more parameters for specifying how the data is to be
+compressed to meet various constraints on accuracy or size.  At a high
+level, there are five different compression modes that are mutually
+exclusive:
+<a class="reference internal" href="#mode-expert"><span class="std std-ref">expert</span></a>,
+<a class="reference internal" href="#mode-fixed-rate"><span class="std std-ref">fixed-rate</span></a>,
+<a class="reference internal" href="#mode-fixed-precision"><span class="std std-ref">fixed-precision</span></a>,
+<a class="reference internal" href="#mode-fixed-accuracy"><span class="std std-ref">fixed-accuracy</span></a>, and
+<a class="reference internal" href="#mode-reversible"><span class="std std-ref">reversible</span></a> mode.
+The user has to select one of these modes and its corresponding parameters.
+In streaming I/O applications, the
+<a class="reference internal" href="#mode-fixed-accuracy"><span class="std std-ref">fixed-accuracy mode</span></a> is preferred, as
+it provides the highest quality (in the absolute error sense) per bit of
+compressed storage.</p>
+<p>The <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> struct encapsulates the compression parameters and
+other information about the compressed stream.  Its members should not be
+manipulated directly.  Instead, use the access functions (see the
+<a class="reference internal" href="high-level-api.html#hl-api"><span class="std std-ref">C API</span></a> section) for setting and querying them.  One can
+verify the active compression mode on a <a class="reference internal" href="high-level-api.html#c.zfp_stream" title="zfp_stream"><code class="xref c c-type docutils literal"><span class="pre">zfp_stream</span></code></a> through
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_compression_mode" title="zfp_stream_compression_mode"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_compression_mode()</span></code></a>.  The members that govern the
+compression parameters are described below.</p>
+<span class="target" id="mode-expert"></span><div class="section" id="expert-mode">
+<span id="index-1"></span><h2>Expert Mode<a class="headerlink" href="#expert-mode" title="Permalink to this headline">¶</a></h2>
+<p>The most general mode is the ‘expert mode,’ which takes four integer
+parameters.  Although most users will not directly select this mode,
+we discuss it first since the other modes can be expressed in terms of
+setting expert mode parameters.</p>
+<p>The four parameters denote constraints that are applied to each block
+in the <a class="reference internal" href="algorithm.html#algorithm-lossy"><span class="std std-ref">compression algorithm</span></a>.
+Compression is terminated as soon as one of these constraints is not met,
+which has the effect of truncating the compressed bit stream that encodes
+the block.  The four constraints are as follows:</p>
+<dl class="member">
+<dt id="c.zfp_stream.minbits">
+uint <code class="descname">zfp_stream.minbits</code><a class="headerlink" href="#c.zfp_stream.minbits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum number of compressed bits used to represent a block.  Usually
+this parameter equals one bit, unless each and every block is to be stored
+using a fixed number of bits to facilitate random access, in which case it
+should be set to the same value as <a class="reference internal" href="#c.zfp_stream.maxbits" title="zfp_stream.maxbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxbits</span></code></a>.</p>
+</dd></dl>
+
+<dl class="member">
+<dt id="c.zfp_stream.maxbits">
+uint <code class="descname">zfp_stream.maxbits</code><a class="headerlink" href="#c.zfp_stream.maxbits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum number of bits used to represent a block.  This parameter
+sets a hard upper bound on compressed block size, and governs the rate
+in <a class="reference internal" href="#mode-fixed-rate"><span class="std std-ref">fixed-rate mode</span></a>.  It may also be used as an
+upper storage limit to guard against buffer overruns in combination with
+the accuracy constraints given by <a class="reference internal" href="#c.zfp_stream.maxprec" title="zfp_stream.maxprec"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxprec</span></code></a> and
+<a class="reference internal" href="#c.zfp_stream.minexp" title="zfp_stream.minexp"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minexp</span></code></a>.</p>
+</dd></dl>
+
+<dl class="member">
+<dt id="c.zfp_stream.maxprec">
+uint <code class="descname">zfp_stream.maxprec</code><a class="headerlink" href="#c.zfp_stream.maxprec" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum number of bit planes encoded.  This parameter governs the number
+of most significant uncompressed bits encoded per transform coefficient.
+It does not directly correspond to the number of uncompressed mantissa bits
+for the floating-point or integer values being compressed, but is closely
+<a class="reference internal" href="faq.html#q-relerr"><span class="std std-ref">related</span></a>.  This is the parameter that specifies the
+precision in <a class="reference internal" href="#mode-fixed-precision"><span class="std std-ref">fixed-precision mode</span></a>, and it
+provides a mechanism for controlling the <em>relative error</em>.  Note that this
+parameter selects how many bits planes to encode regardless of the magnitude
+of the common floating-point exponent within the block.</p>
+</dd></dl>
+
+<dl class="member">
+<dt id="c.zfp_stream.minexp">
+int <code class="descname">zfp_stream.minexp</code><a class="headerlink" href="#c.zfp_stream.minexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>The smallest absolute bit plane number encoded (applies to floating-point
+data only; this parameter is ignored for integer data).  The place value of
+each transform coefficient bit depends on the common floating-point exponent,
+<em>e</em>, that scales the integer coefficients.  If the most significant
+coefficient bit has place value 2<sup>e</sup>, then the number of bit planes
+encoded is (one plus) the difference between <em>e</em> and
+<a class="reference internal" href="#c.zfp_stream.minexp" title="zfp_stream.minexp"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minexp</span></code></a>.  As an analogy, consider representing
+currency in decimal.  Setting <a class="reference internal" href="#c.zfp_stream.minexp" title="zfp_stream.minexp"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minexp</span></code></a> to -2 would,
+if generalized to base 10, ensure that amounts are represented to cent
+accuracy, i.e., in units of 10<sup>-2</sup> = $0.01.  This parameter governs
+the <em>absolute error</em> in <a class="reference internal" href="#mode-fixed-accuracy"><span class="std std-ref">fixed-accuracy mode</span></a>.
+Note that to achieve a certain accuracy in the decompressed values, the
+<a class="reference internal" href="#c.zfp_stream.minexp" title="zfp_stream.minexp"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minexp</span></code></a> value has to be conservatively lowered since
+zfp’s inverse transform may magnify the error (see also
+<a class="reference internal" href="faq.html#q-relerr"><span class="std std-ref">FAQs #20-22</span></a>).</p>
+</dd></dl>
+
+<p>Care must be taken to allow all constraints to be met, as encoding
+terminates as soon as a single constraint is violated (except
+<a class="reference internal" href="#c.zfp_stream.minbits" title="zfp_stream.minbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minbits</span></code></a>, which is satisfied at the end of encoding by
+padding zeros).</p>
+<p>As mentioned above, other combinations of constraints can be used.
+For example, to ensure that the compressed stream is not larger than
+the uncompressed one, or that it fits within the amount of memory
+allocated, one may in conjunction with other constraints set</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">maxbits</span> <span class="o">=</span> <span class="mi">4</span><span class="o">^</span><span class="n">d</span> <span class="o">*</span> <span class="n">CHAR_BIT</span> <span class="o">*</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">Type</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where Type is either float or double.  The <code class="docutils literal"><span class="pre">minbits</span></code> parameter is useful
+only in fixed-rate mode; when <code class="docutils literal"><span class="pre">minbits</span></code> = <code class="docutils literal"><span class="pre">maxbits</span></code>, zero-bits are
+padded to blocks that compress to fewer than <code class="docutils literal"><span class="pre">maxbits</span></code> bits.</p>
+<p>The effects of the above four parameters are best explained in terms of the
+three main compression modes supported by zfp, described below.</p>
+<span class="target" id="mode-fixed-rate"></span></div>
+<div class="section" id="fixed-rate-mode">
+<span id="index-2"></span><h2>Fixed-Rate Mode<a class="headerlink" href="#fixed-rate-mode" title="Permalink to this headline">¶</a></h2>
+<p>In fixed-rate mode, each <em>d</em>-dimensional compressed block of 4<sup>d</sup> values
+is stored using a fixed number of bits given by the parameter
+<a class="reference internal" href="#c.zfp_stream.maxbits" title="zfp_stream.maxbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxbits</span></code></a>.  This number of compressed bits per
+<em>block</em> is amortized over the 4<sup>d</sup> values to give a <em>rate</em> in
+bits per <em>value</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rate</span> <span class="o">=</span> <span class="n">maxbits</span> <span class="o">/</span> <span class="mi">4</span><span class="o">^</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>This rate is specified in the <a class="reference internal" href="zfpcmd.html#zfpcmd"><span class="std std-ref">zfp executable</span></a> via the
+<a class="reference internal" href="zfpcmd.html#cmdoption-r"><code class="xref std std-option docutils literal"><span class="pre">-r</span></code></a> option, and programmatically via <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_rate" title="zfp_stream_set_rate"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_rate()</span></code></a>,
+as a floating-point value.  Fixed-rate mode can also be achieved via the
+expert mode interface by setting</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">minbits</span> <span class="o">=</span> <span class="n">maxbits</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">d</span><span class="p">))</span> <span class="o">*</span> <span class="n">rate</span>
+<span class="n">maxprec</span> <span class="o">=</span> <span class="n">ZFP_MAX_PREC</span>
+<span class="n">minexp</span> <span class="o">=</span> <span class="n">ZFP_MIN_EXP</span>
+</pre></div>
+</div>
+<p>Note that each block stores a bit to indicate whether the block is empty,
+plus a common exponent.  Hence <a class="reference internal" href="#c.zfp_stream.maxbits" title="zfp_stream.maxbits"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxbits</span></code></a> must be at
+least 9 for single precision and 12 for double precision.</p>
+<p>Fixed-rate mode is needed to support random access to blocks, and also is
+the mode used in the implementation of zfp’s
+<a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">compressed arrays</span></a>.  Fixed-rate mode also ensures a
+predictable memory/storage footprint, but usually results in far worse
+accuracy per bit than the variable-rate fixed-precision and fixed-accuracy
+modes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use fixed-rate mode only if you have to bound the compressed size
+or need random access to blocks.</p>
+</div>
+<span class="target" id="mode-fixed-precision"></span></div>
+<div class="section" id="fixed-precision-mode">
+<span id="index-3"></span><h2>Fixed-Precision Mode<a class="headerlink" href="#fixed-precision-mode" title="Permalink to this headline">¶</a></h2>
+<p>In fixed-precision mode, the number of bits used to encode a block may
+vary, but the number of bit planes (i.e., the precision) encoded for the
+transform coefficients is fixed.  To achieve the desired precision,
+use option <a class="reference internal" href="zfpcmd.html#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">-p</span></code></a> with the <a class="reference internal" href="zfpcmd.html#zfpcmd"><span class="std std-ref">zfp executable</span></a> or call
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_precision" title="zfp_stream_set_precision"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_precision()</span></code></a>.  In expert mode, fixed precision is
+achieved by specifying the precision in <a class="reference internal" href="#c.zfp_stream.maxprec" title="zfp_stream.maxprec"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.maxprec</span></code></a>
+and fully relaxing the size constraints, i.e.,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">minbits</span> <span class="o">=</span> <span class="n">ZFP_MIN_BITS</span>
+<span class="n">maxbits</span> <span class="o">=</span> <span class="n">ZFP_MAX_BITS</span>
+<span class="n">maxprec</span> <span class="o">=</span> <span class="n">precision</span>
+<span class="n">minexp</span> <span class="o">=</span> <span class="n">ZFP_MIN_EXP</span>
+</pre></div>
+</div>
+<p>Fixed-precision mode is preferable when relative rather than absolute
+errors matter.</p>
+<span class="target" id="mode-fixed-accuracy"></span></div>
+<div class="section" id="fixed-accuracy-mode">
+<span id="index-4"></span><h2>Fixed-Accuracy Mode<a class="headerlink" href="#fixed-accuracy-mode" title="Permalink to this headline">¶</a></h2>
+<p>In fixed-accuracy mode, all transform coefficient bit planes up to a
+minimum bit plane number are encoded.  (The actual minimum bit plane
+is not necessarily <a class="reference internal" href="#c.zfp_stream.minexp" title="zfp_stream.minexp"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minexp</span></code></a>, but depends on the
+dimensionality, <em>d</em>, of the data.  The reason for this is that the inverse
+transform incurs range expansion, and the amount of expansion depends on
+the number of dimensions.)  Thus, <a class="reference internal" href="#c.zfp_stream.minexp" title="zfp_stream.minexp"><code class="xref c c-member docutils literal"><span class="pre">zfp_stream.minexp</span></code></a> should
+be interpreted as the base-2 logarithm of an absolute error tolerance.
+In other words, given an uncompressed value, <em>f</em>, and a reconstructed
+value, <em>g</em>, the absolute difference | <em>f</em> − <em>g</em> | is at most
+2<sup>minexp</sup>.
+(Note that it is not possible to guarantee error tolerances smaller than
+machine epsilon relative to the largest value within a block.)  This error
+tolerance is not always tight (especially for 3D and 4D arrays), but can
+conservatively be set so that even for worst-case inputs the error
+tolerance is respected.  To achieve fixed accuracy to within ‘tolerance’,
+use option <a class="reference internal" href="zfpcmd.html#cmdoption-a"><code class="xref std std-option docutils literal"><span class="pre">-a</span></code></a> with the <a class="reference internal" href="zfpcmd.html#zfpcmd"><span class="std std-ref">zfp executable</span></a> or call
+<a class="reference internal" href="high-level-api.html#c.zfp_stream_set_accuracy" title="zfp_stream_set_accuracy"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_accuracy()</span></code></a>.  The corresponding expert mode
+parameters are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">minbits</span> <span class="o">=</span> <span class="n">ZFP_MIN_BITS</span>
+<span class="n">maxbits</span> <span class="o">=</span> <span class="n">ZFP_MAX_BITS</span>
+<span class="n">maxprec</span> <span class="o">=</span> <span class="n">ZFP_MAX_PREC</span>
+<span class="n">minexp</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">tolerance</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>As in fixed-precision mode, the number of bits used per block is not
+fixed but is dictated by the data.  Use <em>tolerance</em> = 0 to achieve
+near-lossless compression (see <a class="reference internal" href="#mode-reversible"><span class="std std-ref">Reversible Mode</span></a> for guaranteed
+lossless compression).  Fixed-accuracy mode gives the highest quality
+(in terms of absolute error) for a given compression rate, and is
+preferable when random access is not needed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Fixed-accuracy mode is available for floating-point (not integer) data
+only.</p>
+</div>
+</div>
+<div class="section" id="reversible-mode">
+<span id="mode-reversible"></span><span id="index-5"></span><h2>Reversible Mode<a class="headerlink" href="#reversible-mode" title="Permalink to this headline">¶</a></h2>
+<p>As of zfp 0.5.5, reversible (lossless) compression is supported.
+As with the other compression modes, each block is compressed and decompressed
+independently, but reversible mode uses a different compression algorithm
+that ensures a bit-for-bit identical reconstruction of integer and
+floating-point data.  For IEEE-754 floating-point data, reversible mode
+preserves special values such as subnormals, infinities, NaNs, and
+positive and negative zero.</p>
+<p>The expert mode parameters corresponding to reversible mode are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">minbits</span> <span class="o">=</span> <span class="n">ZFP_MIN_BITS</span>
+<span class="n">maxbits</span> <span class="o">=</span> <span class="n">ZFP_MAX_BITS</span>
+<span class="n">maxprec</span> <span class="o">=</span> <span class="n">ZFP_MAX_PREC</span>
+<span class="n">minexp</span> <span class="o">&lt;</span> <span class="n">ZFP_MIN_EXP</span>
+</pre></div>
+</div>
+<p>Reversible mode is enabled via <a class="reference internal" href="high-level-api.html#c.zfp_stream_set_reversible" title="zfp_stream_set_reversible"><code class="xref c c-func docutils literal"><span class="pre">zfp_stream_set_reversible()</span></code></a> and through
+the <a class="reference internal" href="zfpcmd.html#id1"><code class="xref std std-option docutils literal"><span class="pre">-R</span></code></a> command-line option in the <a class="reference internal" href="zfpcmd.html#zfpcmd"><span class="std std-ref">zfp executable</span></a>.
+It is supported by both the low- and high-level interfaces and by the serial
+and OpenMP execution policies, but it is not yet implemented in CUDA.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Compression Modes</a><ul>
+<li><a class="reference internal" href="#expert-mode">Expert Mode</a></li>
+<li><a class="reference internal" href="#fixed-rate-mode">Fixed-Rate Mode</a></li>
+<li><a class="reference internal" href="#fixed-precision-mode">Fixed-Precision Mode</a></li>
+<li><a class="reference internal" href="#fixed-accuracy-mode">Fixed-Accuracy Mode</a></li>
+<li><a class="reference internal" href="#reversible-mode">Reversible Mode</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="algorithm.html"
+                        title="previous chapter">Algorithm</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="execution.html"
+                        title="next chapter">Parallel Execution</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="execution.html" title="Parallel Execution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="algorithm.html" title="Algorithm"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

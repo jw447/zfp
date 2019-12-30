@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Future Directions &#8212; zfp 0.5.5 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributors" href="contributors.html" />
+    <link rel="prev" title="Limitations" href="limitations.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contributors.html" title="Contributors"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="limitations.html" title="Limitations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="future-directions">
+<span id="directions"></span><h1>Future Directions<a class="headerlink" href="#future-directions" title="Permalink to this headline">¶</a></h1>
+<p>zfp is actively being developed and plans have been made to add a number of
+important features, including:</p>
+<ul class="simple">
+<li><strong>Tagging of missing values</strong>.  zfp currently assumes that arrays are
+dense, i.e., each array element stores a valid numerical value.  In many
+science applications this is not the case.  For instance, in climate
+modeling, ocean temperature is not defined over land.  In other
+applications, the domain is not rectangular but irregular and embedded in a
+rectangular array.  Such examples of sparse arrays demand a mechanism to tag
+values as missing or indeterminate.  Current solutions often rely on tagging
+missing values as NaNs or special, often very large sentinel values outside
+the normal range, which can lead to poor compression and complete loss of
+accuracy in nearby valid values.  See <a class="reference internal" href="faq.html#q-missing"><span class="std std-ref">FAQ #7</span></a>.</li>
+<li><strong>Support for NaNs and infinities</strong>.  Similar to missing values, some
+applications store special IEEE floating-point values that are supported
+by zfp only in <a class="reference internal" href="modes.html#mode-reversible"><span class="std std-ref">reversible mode</span></a>.
+In fact, for all lossy compression modes, the presence of such values will
+currently result in undefined behavior and loss of data for all values
+within a block that contains non-finite values.</li>
+<li><strong>Support for more general data types</strong>.  zfp currently does not
+directly support half and quad precision floating point.  Nor is there
+support for 8- and 16-bit integers.  With the emergence of new number
+representations like <em>posits</em> and <em>bfloat16</em>, we envision the need for
+a more general interface and a single unified zfp representation that
+would allow for <em>conversion</em> between zfp and <em>any</em> number representation.
+We are working on developing an uncompressed interchange format that acts
+like an intermediary between zfp and other number formats.  This format
+decouples the zfp compression pipeline from the external number type and
+allows new number formats to be supported via user-defined conversion
+functions to and from the common interchange format.</li>
+<li><strong>Progressive decompression</strong>.  Streaming large data sets from remote
+storage for visualization can be time consuming, even when the data is
+compressed.  Progressive streaming allows the data to be reconstructed
+at reduced precision over the entire domain, with quality increasing
+progressively as more data arrives.  The low-level bit stream interface
+already supports progressive access by interleaving bits across blocks
+(see <a class="reference internal" href="faq.html#q-progressive"><span class="std std-ref">FAQ #13</span></a>), but zfp lacks a high-level API
+for generating and accessing progressive streams.</li>
+<li><strong>Parallel compression</strong>.  zfp’s data partitioning into blocks invites
+opportunities for data parallelism on multithreaded platforms by dividing
+the blocks among threads.  An OpenMP implementation of parallel
+compression is available that produces compressed streams that
+are identical to serially compressed streams.  However, parallel
+decompression is not yet supported.  zfp also supports compression and
+decompression on the GPU via CUDA.  However, only fixed-rate mode is
+so far supported.</li>
+<li><strong>Variable-rate arrays</strong>.  zfp currently supports only fixed-rate
+compressed arrays, which wastes bits in smooth regions with little
+information content while too few bits may be allocated to accurately
+preserve sharp features such as shocks and material interfaces, which
+tend to drive the physics in numerical simulations.  Two candidate
+solutions have been identified for read-only and read-write access
+to variable-rate arrays with very modest storage overhead.  These
+arrays will support both fixed precision and accuracy.</li>
+<li><strong>Array operations</strong>.  zfp’s compressed arrays currently support basic
+indexing and initialization, but lack array-wise operations such as
+arithmetic, reductions, etc.  Some such operations can exploit the
+higher precision (than IEEE-754) supported by zfp, as well as accelerated
+blockwise computations that need not fully decompress and convert the
+zfp representation to IEEE-754.</li>
+<li><strong>Language bindings</strong>.  The main compression codec is written in C89 to
+facilitate calls from other languages.  zfp’s compressed arrays, on
+the other hand, are written in C++.  zfp 0.5.4 and 0.5.5
+add C wrappers around compressed arrays and Fortran and Python bindings to
+the high-level C API.  Work is planned to provide additional language
+bindings for C, C++, Fortran, and Python to expose the majority of zfp’s
+capabilities through all of these programming languages.</li>
+</ul>
+<p>Please contact <a class="reference external" href="mailto:pl&#37;&#52;&#48;llnl&#46;gov">Peter Lindstrom</a> with requests for
+features not listed above.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="limitations.html"
+                        title="previous chapter">Limitations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contributors.html"
+                        title="next chapter">Contributors</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contributors.html" title="Contributors"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="limitations.html" title="Limitations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">zfp 0.5.5 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2019, LLNL-CODE-663824.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>
