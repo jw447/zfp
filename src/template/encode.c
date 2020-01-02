@@ -92,8 +92,8 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   uint64 x;
 
   //jwang
-  printf("intprec=%u, maxbits=%u, maxprec=%u, size=%u\n", intprec, maxbits, maxprec, size);
-  printf("NumBP=%d\n", intprec - kmin);
+  //printf("intprec=%u, maxbits=%u, maxprec=%u, size=%u\n", intprec, maxbits, maxprec, size);
+  //printf("NumBP=%d\n", intprec - kmin);
   //uint count=0;
 
   count_xou++;

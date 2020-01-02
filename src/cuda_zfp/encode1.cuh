@@ -42,6 +42,7 @@ cudaEncode1(const uint maxbits,
            const uint padded_dim,
            const uint tot_blocks)
 {
+  //printf("cudaEncode1\n");
 
   typedef unsigned long long int ull;
   typedef long long int ll;
@@ -109,6 +110,7 @@ size_t encode1launch(uint dim,
   // cuda block size
   //
   int block_pad = 0; 
+  //printf("zfp_blocks=%d\n", zfp_blocks); // number of blocks
   if(zfp_blocks % cuda_block_size != 0)
   {
     block_pad = cuda_block_size - zfp_blocks % cuda_block_size; 
@@ -130,8 +132,8 @@ size_t encode1launch(uint dim,
 
   cudaEventRecord(start);
 #endif
-
-	cudaEncode1<Scalar> << <grid_size, block_size>> >
+  
+  cudaEncode1<Scalar> << <grid_size, block_size>> >
     (maxbits,
      d_data,
      stream,
@@ -147,10 +149,11 @@ size_t encode1launch(uint dim,
 
   float miliseconds = 0.f;
   cudaEventElapsedTime(&miliseconds, start, stop);
+  //printf("dim=%d\n", dim); // dim is data length
   float seconds = miliseconds / 1000.f;
   float gb = (float(dim) * float(sizeof(Scalar))) / (1024.f * 1024.f * 1024.f);
   float rate = gb / seconds;
-  printf("Encode elapsed time: %.5f (s)\n", seconds);
+  printf("Encode(kernel) elapsed time: %.5f (s)\n", seconds);
   printf("# encode1 rate: %.2f (GB / sec) %d\n", rate, maxbits);
 #endif
   return stream_bytes;
@@ -166,6 +169,8 @@ size_t encode1(int dim,
                Word *stream,
                const int maxbits)
 {
+  //jwang
+  printf("encode1\n");
   return encode1launch<Scalar>(dim, sx, d_data, stream, maxbits);
 }
 

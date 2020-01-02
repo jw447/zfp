@@ -101,7 +101,7 @@ bool is_contigous(const uint dims[3], const int3 &stride, long long int &offset)
 template<typename T>
 size_t encode(uint dims[3], int3 stride, int bits_per_block, T *d_data, Word *d_stream)
 {
-
+  printf("encode\n");
   int d = 0;
   size_t len = 1;
   for(int i = 0; i < 3; ++i)
@@ -216,7 +216,21 @@ Word *setup_device_stream(zfp_stream *stream,const zfp_field *field)
   // TODO: we we have a real stream we can just ask it how big it is
   size_t max_size = zfp_stream_maximum_size(stream, field);
   cudaMalloc(&d_stream, max_size);
+
+  cudaEvent_t start, stop;
+  cudaEventCreate(&start);
+  cudaEventCreate(&stop);
+  cudaEventRecord(start);
   cudaMemcpy(d_stream, stream->stream->begin, max_size, cudaMemcpyHostToDevice);
+  cudaEventRecord(stop);
+  cudaEventSynchronize(stop);
+  cudaStreamSynchronize(0);
+
+  float miliseconds = 0.f;
+  cudaEventElapsedTime(&miliseconds, start, stop);
+  float seconds = miliseconds / 1000.f;
+  printf("time for memcpy=%f\n", seconds);
+  printf("cudaMemcpyHostToDevice2\n");
   return d_stream;
 }
 
@@ -282,7 +296,20 @@ void *setup_device_field(const zfp_field *field, const int3 &stride, long long i
     size_t field_bytes = type_size * field_size;
     cudaMalloc(&d_data, field_bytes);
 
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+    cudaEventRecord(start);
     cudaMemcpy(d_data, host_ptr, field_bytes, cudaMemcpyHostToDevice);
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    cudaStreamSynchronize(0);
+
+    float miliseconds = 0.f;
+    cudaEventElapsedTime(&miliseconds, start, stop);
+    float seconds = miliseconds / 1000.f;
+    printf("time for memcpy=%f\n", seconds);
+    printf("cudaMemcpyHostToDevice1\n");
   }
   return offset_void(field->type, d_data, -offset);
 }
@@ -301,6 +328,7 @@ void cleanup_device_ptr(void *orig_ptr, void *d_ptr, size_t bytes, long long int
   if(bytes > 0)
   {
     cudaMemcpy(h_offset_ptr, d_offset_ptr, bytes, cudaMemcpyDeviceToHost);
+    printf("cudaMemcpyDeviceToHost1\n");
   }
 
   cudaFree(d_offset_ptr);
@@ -311,6 +339,9 @@ void cleanup_device_ptr(void *orig_ptr, void *d_ptr, size_t bytes, long long int
 size_t
 cuda_compress(zfp_stream *stream, const zfp_field *field)
 {
+  //jwang
+  printf("cuda_compress\n");
+  //gettimeofday(&cuda_start1, NULL);
   uint dims[3];
   dims[0] = field->nx;
   dims[1] = field->ny;
@@ -332,7 +363,8 @@ cuda_compress(zfp_stream *stream, const zfp_field *field)
   }
 
   Word *d_stream = internal::setup_device_stream(stream, field);
-
+  //gettimeofday(&cuda_start2, NULL);
+  
   if(field->type == zfp_type_float)
   {
     float* data = (float*) d_data;
@@ -353,6 +385,7 @@ cuda_compress(zfp_stream *stream, const zfp_field *field)
     long long int * data = (long long int*) d_data;
     stream_bytes = internal::encode<long long int>(dims, stride, (int)stream->maxbits, data, d_stream);
   }
+  //gettimeofday(&cuda_start3, NULL);
 
   internal::cleanup_device_ptr(stream->stream->begin, d_stream, stream_bytes, 0, field->type);
   internal::cleanup_device_ptr(field->data, d_data, 0, offset, field->type);
@@ -363,7 +396,7 @@ cuda_compress(zfp_stream *stream, const zfp_field *field)
   stream->stream->bits = wsize;
   // set stream pointer to end of stream
   stream->stream->ptr = stream->stream->begin + compressed_size;
-
+  //gettimeofday(&cuda_start4, NULL);
   return stream_bytes;
 }
   

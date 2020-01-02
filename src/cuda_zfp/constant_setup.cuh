@@ -29,6 +29,7 @@ public:
   {
     ErrorCheck ec;
     cudaMemcpyToSymbol(c_perm_1, perm_1, sizeof(unsigned char) * 4, 0); 
+    // std::cout << static_cast <const unsigned int> (perm_1[1]);
     ec.chk("setupConst: c_perm_1");
   }
 };

@@ -64,7 +64,7 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
   gettimeofday(&eCostE, NULL);
   eCost += ((eCostE.tv_sec*1000000+eCostE.tv_usec)-(eCostS.tv_sec*1000000+eCostS.tv_usec))/1000000.0;
   
-  printf("emax=%d, maxprec=%d, zfp->maxprec=%d, zfp->minexp=%d, zfp->minbits=%d, zfp->maxbits=%d\n", emax, maxprec, zfp->maxprec, zfp->minexp, zfp->minbits, zfp->maxbits);
+  //printf("emax=%d, maxprec=%d, zfp->maxprec=%d, zfp->minexp=%d, zfp->minbits=%d, zfp->maxbits=%d\n", emax, maxprec, zfp->maxprec, zfp->minexp, zfp->minbits, zfp->maxbits);
   uint e = maxprec ? emax + EBIAS : 0;
   /* encode block only if biased exponent is nonzero */
   if (e) {
