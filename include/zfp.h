@@ -802,6 +802,18 @@ double uintCost;
 uint count_emb;
 uint count_xou;
 
+struct timeval cuda_start1S;
+struct timeval cuda_start1E;
+double cuda1;
+
+struct timeval cuda_start2S;
+struct timeval cuda_start2E;
+double cuda2;
+
+struct timeval cuda_start3S;
+struct timeval cuda_start3E;
+double cuda3;
+
 #endif
 
 

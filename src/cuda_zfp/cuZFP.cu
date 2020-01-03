@@ -341,7 +341,7 @@ cuda_compress(zfp_stream *stream, const zfp_field *field)
 {
   //jwang
   printf("cuda_compress\n");
-  //gettimeofday(&cuda_start1, NULL);
+  gettimeofday(&cuda_start1S, NULL);
   uint dims[3];
   dims[0] = field->nx;
   dims[1] = field->ny;
@@ -363,7 +363,9 @@ cuda_compress(zfp_stream *stream, const zfp_field *field)
   }
 
   Word *d_stream = internal::setup_device_stream(stream, field);
-  //gettimeofday(&cuda_start2, NULL);
+
+  gettimeofday(&cuda_start1E, NULL);
+  gettimeofday(&cuda_start2S, NULL);
   
   if(field->type == zfp_type_float)
   {
@@ -385,7 +387,9 @@ cuda_compress(zfp_stream *stream, const zfp_field *field)
     long long int * data = (long long int*) d_data;
     stream_bytes = internal::encode<long long int>(dims, stride, (int)stream->maxbits, data, d_stream);
   }
-  //gettimeofday(&cuda_start3, NULL);
+
+  gettimeofday(&cuda_start2E, NULL);
+  gettimeofday(&cuda_start3S, NULL);
 
   internal::cleanup_device_ptr(stream->stream->begin, d_stream, stream_bytes, 0, field->type);
   internal::cleanup_device_ptr(field->data, d_data, 0, offset, field->type);
@@ -396,9 +400,16 @@ cuda_compress(zfp_stream *stream, const zfp_field *field)
   stream->stream->bits = wsize;
   // set stream pointer to end of stream
   stream->stream->ptr = stream->stream->begin + compressed_size;
-  //gettimeofday(&cuda_start4, NULL);
+  gettimeofday(&cuda_start3E, NULL);
+  
+  cuda1 = ((cuda_start1E.tv_sec*1000000+cuda_start1E.tv_usec)-(cuda_start1S.tv_sec*1000000+cuda_start1S.tv_usec))/1000000.0;
+  cuda2 = ((cuda_start2E.tv_sec*1000000+cuda_start2E.tv_usec)-(cuda_start2S.tv_sec*1000000+cuda_start2S.tv_usec))/1000000.0;
+  cuda3 = ((cuda_start3E.tv_sec*1000000+cuda_start3E.tv_usec)-(cuda_start3S.tv_sec*1000000+cuda_start3S.tv_usec))/1000000.0;
+
   return stream_bytes;
 }
+
+
   
 void 
 cuda_decompress(zfp_stream *stream, zfp_field *field)

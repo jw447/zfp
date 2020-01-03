@@ -289,19 +289,25 @@ void inline __device__ encode_block(BlockWriter<BlockSize> &stream,
                                     int maxprec,
                                     Int *iblock)
 {
+  // transform cost
   transform<BlockSize> tform;
   tform.fwd_xform(iblock);
+  // 
 
   typedef typename zfp_traits<Int>::UInt UInt;
   UInt ublock[BlockSize]; 
-  fwd_order<Int, UInt, BlockSize>(ublock, iblock);
 
+  // reordering cost
+  fwd_order<Int, UInt, BlockSize>(ublock, iblock);
+  //
+  
   uint intprec = CHAR_BIT * (uint)sizeof(UInt);
   uint kmin = intprec > maxprec ? intprec - maxprec : 0;
   uint bits = maxbits;
   uint i, k, m, n;
   uint64 x;
 
+  // embedded cost
   for (k = intprec, n = 0; bits && k-- > kmin;) {
     /* step 1: extract bit plane #k to x */
     x = 0;
@@ -323,6 +329,7 @@ void inline __device__ encode_block(BlockWriter<BlockSize> &stream,
       }
     }
   }
+  //
   
 }
 

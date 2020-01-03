@@ -10,7 +10,7 @@ _t2(compress_cuda, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   FuncName;
   if(zfp_stream_compression_mode(stream) == zfp_mode_fixed_rate)
   { 
-    cuda_compress(stream, field);   
+    cuda_compress(stream, field);  // 
   }
 }
 

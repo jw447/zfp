@@ -551,14 +551,18 @@ int main(int argc, char* argv[])
     totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
     printf("totalCost=%f\n", totalCost);
     printf("compCost=%f\n", compCost);
-    printf("NBCost=%f\n", NBCost);
-    printf("eCost=%f\n", eCost);
-    printf("mCost=%f\n", mCost);
-    printf("BiCost=%f\n", BiCost);
-    printf("zCost=%f\n", zCost);
-    printf("XformCost=%f\n", XformCost);
-    printf("OrderCost=%f\n", OrderCost);
-    printf("uintCost=%f\n", uintCost);
+    printf("cuda1=%f\n", cuda1);
+    printf("cuda2=%f\n", cuda2);
+    printf("cuda3=%f\n", cuda3);
+
+    //printf("NBCost=%f\n", NBCost);
+    //printf("eCost=%f\n", eCost);
+    //printf("mCost=%f\n", mCost);
+    //printf("BiCost=%f\n", BiCost);
+    //printf("zCost=%f\n", zCost);
+    //printf("XformCost=%f\n", XformCost);
+    //printf("OrderCost=%f\n", OrderCost);
+    //printf("uintCost=%f\n", uintCost);
     if (zfpsize == 0) {
       fprintf(stderr, "compression failed\n");
       return EXIT_FAILURE;
