@@ -332,6 +332,7 @@ void inline __device__ zfp_encode_block(Scalar *fblock,
                                         const uint block_idx,
                                         Word *stream)
 {
+  //jwang
   BlockWriter<BlockSize> block_writer(stream, maxbits, block_idx);
   int emax = max_exponent<Scalar, BlockSize>(fblock);
   int maxprec = precision(emax, get_precision<Scalar>(), get_min_exp<Scalar>());
