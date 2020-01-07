@@ -814,6 +814,63 @@ struct timeval cuda_start3S;
 struct timeval cuda_start3E;
 double cuda3;
 
+struct timeval cuda_start10S;
+struct timeval cuda_start10E;
+double cuda10;
+
+struct timeval cuda_start100S;
+struct timeval cuda_start100E;
+double cuda100;
+
+struct timeval cuda_start101S;
+struct timeval cuda_start101E;
+double cuda101;
+
+struct timeval cuda_start11S;
+struct timeval cuda_start11E;
+double cuda11;
+
+struct timeval cuda_start110S;
+struct timeval cuda_start110E;
+double cuda110;
+
+struct timeval cuda_start111S;
+struct timeval cuda_start111E;
+double cuda111;
+
+struct timeval cuda_start20S;
+struct timeval cuda_start20E;
+double cuda20;
+
+struct timeval cuda_start21S;
+struct timeval cuda_start21E;
+double cuda21;
+
+struct timeval cuda_start210S;
+struct timeval cuda_start210E;
+double cuda210;
+
+float seconds;
+float kernel_t; // avg for all threads. should memcpy from device func.
+float BiCost_t; // ...
+float mCost_t;
+float zCost_t;
+float eCost_t;
+float XformCost_t;
+float OrderCost_t;
+float uintCost_t; // ...
+
+struct timeval cuda_start30S;
+struct timeval cuda_start30E;
+double cuda30;
+
+struct timeval cuda_start31S;
+struct timeval cuda_start31E;
+double cuda31;
+
+struct timeval cuda_start32S;
+struct timeval cuda_start32E;
+double cuda32;
 #endif
 
 

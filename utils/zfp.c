@@ -551,10 +551,25 @@ int main(int argc, char* argv[])
     totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
     printf("totalCost=%f\n", totalCost);
     printf("compCost=%f\n", compCost);
-    printf("cuda1=%f\n", cuda1);
-    printf("cuda2=%f\n", cuda2);
-    printf("cuda3=%f\n", cuda3);
 
+    // cuda
+    printf("cuda_Setup=%f\n", cuda1);
+    printf("cuda_setup_device_field=%f\n", cuda10);
+    printf("cudu_gpu_ptr=%f\n", cuda100);
+    printf("cuda_cudamcpy=%f\n", cuda101);
+    printf("cuda_setup_device_stream=%f\n", cuda11);
+    printf("cudu_gpu_ptr=%f\n", cuda110);
+    printf("cuda_cudamcpy=%f\n", cuda111);
+    printf("cuda_Encode=%f\n", cuda2);
+    printf("cuda_setup1d=%f\n", cuda20);
+    printf("cuda_encode1d=%f\n", cuda21); // kernel run time
+    printf("cuda_pre_kernel=%f\n", cuda210);
+    printf("cuda_kernel=%f\n", seconds);
+    printf("cuda_Cleanup=%f\n", cuda3);
+    printf("cudu_gpu_ptr=%f\n", cuda30);
+    printf("cuda_cudamcpy=%f\n", cuda31);
+    printf("cuda_cudafree=%f\n", cuda32);
+    // serial
     //printf("NBCost=%f\n", NBCost);
     //printf("eCost=%f\n", eCost);
     //printf("mCost=%f\n", mCost);

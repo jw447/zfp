@@ -7,6 +7,8 @@
 #include "type_info.cuh"
 
 #include <iostream>
+#include <stdio.h>
+#include <math.h>
 #define ZFP_1D_BLOCK_SIZE 4 
 
 namespace cuZFP
@@ -42,8 +44,8 @@ cudaEncode1(const uint maxbits,
            const uint padded_dim,
            const uint tot_blocks)
 {
-  //printf("cudaEncode1\n");
-
+  printf("cudaEncode1\n");
+  //clock_t start_time = clock();
   typedef unsigned long long int ull;
   typedef long long int ll;
   const ull blockId = blockIdx.x +
@@ -86,7 +88,8 @@ cudaEncode1(const uint maxbits,
   }
 
   zfp_encode_block<Scalar, ZFP_1D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
-
+  //clock_t end_time = clock();
+  //*runtime = (int)(end_time - start_time);
 }
 //
 // Launch the encode kernel
@@ -150,7 +153,7 @@ size_t encode1launch(uint dim,
   float miliseconds = 0.f;
   cudaEventElapsedTime(&miliseconds, start, stop);
   //printf("dim=%d\n", dim); // dim is data length
-  float seconds = miliseconds / 1000.f;
+  seconds = miliseconds / 1000.f;
   float gb = (float(dim) * float(sizeof(Scalar))) / (1024.f * 1024.f * 1024.f);
   float rate = gb / seconds;
   printf("Encode(kernel) elapsed time: %.5f (s)\n", seconds);
@@ -170,7 +173,7 @@ size_t encode1(int dim,
                const int maxbits)
 {
   //jwang
-  printf("encode1\n");
+  //printf("encode1\n");
   return encode1launch<Scalar>(dim, sx, d_data, stream, maxbits);
 }
 
