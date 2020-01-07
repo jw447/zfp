@@ -42,10 +42,11 @@ cudaEncode1(const uint maxbits,
            const uint dim,
            const int sx,
            const uint padded_dim,
-           const uint tot_blocks)
+           const uint tot_blocks,
+           int* clock_kernel)
 {
-  printf("cudaEncode1\n");
-  //clock_t start_time = clock();
+  clock_t start_time = clock();
+
   typedef unsigned long long int ull;
   typedef long long int ll;
   const ull blockId = blockIdx.x +
@@ -88,8 +89,9 @@ cudaEncode1(const uint maxbits,
   }
 
   zfp_encode_block<Scalar, ZFP_1D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
-  //clock_t end_time = clock();
-  //*runtime = (int)(end_time - start_time);
+  clock_t end_time = clock();
+  //clock_kernel[block_idx % 128] = (int)(end_time - start_time);
+  printf("cycle=%d\n", (int)(end_time - start_time));
 }
 //
 // Launch the encode kernel
@@ -101,7 +103,7 @@ size_t encode1launch(uint dim,
                      Word *stream,
                      const int maxbits)
 {
-  const int cuda_block_size = 128;
+  const int cuda_block_size = 1;
   dim3 block_size = dim3(cuda_block_size, 1, 1);
 
   uint zfp_pad(dim); 
@@ -128,11 +130,15 @@ size_t encode1launch(uint dim,
   // ensure we have zeros
   cudaMemset(stream, 0, stream_bytes);
 
+  //jwang
+  cudaMallocManaged(&clock_kernel, cuda_block_size*sizeof(int));
+  for (int i = 0; i < cuda_block_size; i++) {
+    clock_kernel[i] = 0;
+  }
 #ifdef CUDA_ZFP_RATE_PRINT
   cudaEvent_t start, stop;
   cudaEventCreate(&start);
   cudaEventCreate(&stop);
-
   cudaEventRecord(start);
 #endif
   
@@ -143,7 +149,8 @@ size_t encode1launch(uint dim,
      dim,
      sx,
      zfp_pad,
-     zfp_blocks);
+     zfp_blocks,
+     clock_kernel);
 
 #ifdef CUDA_ZFP_RATE_PRINT
   cudaEventRecord(stop);
@@ -154,10 +161,23 @@ size_t encode1launch(uint dim,
   cudaEventElapsedTime(&miliseconds, start, stop);
   //printf("dim=%d\n", dim); // dim is data length
   seconds = miliseconds / 1000.f;
-  float gb = (float(dim) * float(sizeof(Scalar))) / (1024.f * 1024.f * 1024.f);
-  float rate = gb / seconds;
-  printf("Encode(kernel) elapsed time: %.5f (s)\n", seconds);
-  printf("# encode1 rate: %.2f (GB / sec) %d\n", rate, maxbits);
+  //float gb = (float(dim) * float(sizeof(Scalar))) / (1024.f * 1024.f * 1024.f);
+  //float rate = gb / seconds;
+  //printf("Encode(kernel) elapsed time: %.5f (s)\n", seconds);
+  //printf("# encode1 rate: %.2f (GB / sec) %d\n", rate, maxbits);
+  printf("clock_kernel[0]=%d\n",clock_kernel[0]);
+  printf("clock_kernel[1]=%d\n",clock_kernel[1]);
+  printf("clock_kernel[2]=%d\n",clock_kernel[2]);
+  printf("clock_kernel[125]=%d\n",clock_kernel[125]);
+  printf("clock_kernel[126]=%d\n",clock_kernel[126]);
+  printf("clock_kernel[127]=%d\n",clock_kernel[127]); 
+  
+ int max_clock=0;
+ for(int i = 0; i < cuda_block_size; i++){
+    if(clock_kernel[i] > max_clock)
+        max_clock = clock_kernel[i];
+ }
+ printf("max_clock=%d\n", max_clock);
 #endif
   return stream_bytes;
 }
