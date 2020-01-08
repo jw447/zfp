@@ -35,15 +35,14 @@ void gather1(Scalar* q, const Scalar* p, int sx)
 
 template<class Scalar>
 __global__
-void 
-cudaEncode1(const uint maxbits,
+void cudaEncode1(const uint maxbits,
            const Scalar* scalars,
            Word *stream,
            const uint dim,
            const int sx,
            const uint padded_dim,
            const uint tot_blocks,
-           int* clock_kernel)
+           int* d_kernel_clock) 
 {
   clock_t start_time = clock();
 
@@ -89,9 +88,11 @@ cudaEncode1(const uint maxbits,
   }
 
   zfp_encode_block<Scalar, ZFP_1D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
+  //printf("Hello from block %d, thread %d\n", blockIdx.x, threadIdx.x);
   clock_t end_time = clock();
-  //clock_kernel[block_idx % 128] = (int)(end_time - start_time);
-  printf("cycle=%d\n", (int)(end_time - start_time));
+  if(block_idx == 0){
+    *d_kernel_clock = (int)(end_time - start_time);
+  }
 }
 //
 // Launch the encode kernel
@@ -103,7 +104,7 @@ size_t encode1launch(uint dim,
                      Word *stream,
                      const int maxbits)
 {
-  const int cuda_block_size = 1;
+  const int cuda_block_size = 128;
   dim3 block_size = dim3(cuda_block_size, 1, 1);
 
   uint zfp_pad(dim); 
@@ -130,11 +131,12 @@ size_t encode1launch(uint dim,
   // ensure we have zeros
   cudaMemset(stream, 0, stream_bytes);
 
+  //cudaDeviceProp prop;
+  //int result = cudaGetDeviceProperties(&prop, 0);
+  //printf("gpu freq = %d khz\n", prop.clockRate);
   //jwang
-  cudaMallocManaged(&clock_kernel, cuda_block_size*sizeof(int));
-  for (int i = 0; i < cuda_block_size; i++) {
-    clock_kernel[i] = 0;
-  }
+  cudaMalloc(&d_kernel_clock, sizeof(int));
+  cudaMemset(d_kernel_clock, 0, sizeof(int));
 #ifdef CUDA_ZFP_RATE_PRINT
   cudaEvent_t start, stop;
   cudaEventCreate(&start);
@@ -142,7 +144,8 @@ size_t encode1launch(uint dim,
   cudaEventRecord(start);
 #endif
   
-  cudaEncode1<Scalar> << <grid_size, block_size>> >
+  //cudaEncode1<Scalar> << <grid_size, block_size>> >
+  cudaEncode1<Scalar><<<1,1>>>
     (maxbits,
      d_data,
      stream,
@@ -150,34 +153,20 @@ size_t encode1launch(uint dim,
      sx,
      zfp_pad,
      zfp_blocks,
-     clock_kernel);
+     d_kernel_clock);
+   
 
 #ifdef CUDA_ZFP_RATE_PRINT
   cudaEventRecord(stop);
   cudaEventSynchronize(stop);
-  cudaStreamSynchronize(0);
 
   float miliseconds = 0.f;
   cudaEventElapsedTime(&miliseconds, start, stop);
-  //printf("dim=%d\n", dim); // dim is data length
   seconds = miliseconds / 1000.f;
-  //float gb = (float(dim) * float(sizeof(Scalar))) / (1024.f * 1024.f * 1024.f);
-  //float rate = gb / seconds;
-  //printf("Encode(kernel) elapsed time: %.5f (s)\n", seconds);
-  //printf("# encode1 rate: %.2f (GB / sec) %d\n", rate, maxbits);
-  printf("clock_kernel[0]=%d\n",clock_kernel[0]);
-  printf("clock_kernel[1]=%d\n",clock_kernel[1]);
-  printf("clock_kernel[2]=%d\n",clock_kernel[2]);
-  printf("clock_kernel[125]=%d\n",clock_kernel[125]);
-  printf("clock_kernel[126]=%d\n",clock_kernel[126]);
-  printf("clock_kernel[127]=%d\n",clock_kernel[127]); 
+  cudaMemcpy(&h_kernel_clock, d_kernel_clock, sizeof(int), cudaMemcpyDeviceToHost);
   
- int max_clock=0;
- for(int i = 0; i < cuda_block_size; i++){
-    if(clock_kernel[i] > max_clock)
-        max_clock = clock_kernel[i];
- }
- printf("max_clock=%d\n", max_clock);
+  cudaFree(d_kernel_clock);
+
 #endif
   return stream_bytes;
 }

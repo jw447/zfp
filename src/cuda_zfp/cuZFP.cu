@@ -228,7 +228,7 @@ Word *setup_device_stream(zfp_stream *stream,const zfp_field *field)
 
   printf("max_size=%u\n", max_size);
   gettimeofday(&cuda_start111S, NULL);
-  cudaMalloc(&d_stream, max_size); // max size = 
+  cudaMalloc(&d_stream, max_size); // zfp buffer size. 
   cudaMemcpy(d_stream, stream->stream->begin, max_size, cudaMemcpyHostToDevice);
   gettimeofday(&cuda_start111E, NULL);
   cuda111 = ((cuda_start111E.tv_sec*1000000+cuda_start111E.tv_usec)-(cuda_start111S.tv_sec*1000000+cuda_start111S.tv_usec))/1000000.0; 

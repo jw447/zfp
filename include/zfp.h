@@ -851,7 +851,9 @@ struct timeval cuda_start210E;
 double cuda210;
 
 float seconds;
-int *clock_kernel;
+int *d_kernel_clock;
+int h_kernel_clock;
+
 float kernel_t; // avg for all threads. should memcpy from device func.
 float BiCost_t; // ...
 float mCost_t;

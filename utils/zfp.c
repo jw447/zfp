@@ -565,7 +565,7 @@ int main(int argc, char* argv[])
     printf("cuda_encode1d=%f\n", cuda21); // kernel run time
     printf("cuda_pre_kernel=%f\n", cuda210);
     printf("cuda_kernel=%f\n", seconds);
-    printf("clock_kernel[0]=%d\n", clock_kernel[0]);
+    printf("kernel_cycle=%d\n", h_kernel_clock);
     printf("cuda_Cleanup=%f\n", cuda3);
     printf("cudu_gpu_ptr=%f\n", cuda30);
     printf("cuda_cudamcpy=%f\n", cuda31);
