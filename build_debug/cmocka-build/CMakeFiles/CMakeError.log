@@ -1,0 +1,19 @@
+Determining if the include file io.h exists failed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_e4453/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_e4453.dir/build.make CMakeFiles/cmTC_e4453.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e4453.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_e4453.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:16: fatal error: io.h: No such file or directory
+ #include <io.h>
+                ^
+compilation terminated.
+gmake[4]: *** [CMakeFiles/cmTC_e4453.dir/CheckIncludeFile.c.o] Error 1
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [cmTC_e4453/fast] Error 2
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libzfpChecksumsLib.so -o ../../lib64/libzfpChecksumsLib.so CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.o 

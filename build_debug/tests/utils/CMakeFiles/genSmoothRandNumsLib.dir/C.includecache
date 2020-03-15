@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/zfp/types.h
+stdint.h
+-
+inttypes.h
+-
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/fixedpoint96.h
+include/zfp/types.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/include/zfp/types.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/genSmoothRandNums.c
+stdlib.h
+-
+string.h
+-
+math.h
+-
+genSmoothRandNums.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/genSmoothRandNums.h
+fixedpoint96.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/fixedpoint96.h
+rand64.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/rand64.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/genSmoothRandNums.h
+include/zfp/types.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/include/zfp/types.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/rand64.h
+include/zfp/types.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/include/zfp/types.h
+

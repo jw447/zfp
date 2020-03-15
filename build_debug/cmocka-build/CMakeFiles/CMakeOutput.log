@@ -1,0 +1,979 @@
+The system is: Linux - 4.14.0-115.8.1.el7a.ppc64le - ppc64le
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/3.15.2/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_3da9b/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_3da9b.dir/build.make CMakeFiles/cmTC_3da9b.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3da9b.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3da9b.dir/testCCompiler.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_3da9b
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3da9b.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3da9b.dir/testCCompiler.c.o  -o cmTC_3da9b 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ceef3/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_ceef3.dir/build.make CMakeFiles/cmTC_ceef3.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+Target: ppc64le-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/cloog-install --enable-gnu-indirect-function --enable-secureplt --with-long-double-128 --enable-targets=powerpcle-linux --disable-multilib --with-cpu-64=power8 --with-tune-64=power8 --build=ppc64le-redhat-linux
+Thread model: posix
+gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=power8' '-mcpu=power8'
+ /usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/cc1 -quiet -v -D__unix__ -D__gnu_linux__ -D__linux__ -Dunix -D__unix -Dlinux -D__linux -Asystem=linux -Asystem=unix -Asystem=posix /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CMakeCCompilerABI.c -msecure-plt -quiet -dumpbase CMakeCCompilerABI.c -mtune=power8 -mcpu=power8 -auxbase-strip CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccMFND6S.s
+GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-36) (ppc64le-redhat-linux)
+	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-36), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../ppc64le-redhat-linux/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /sw/summit/cuda/9.2.148/include
+ /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/include
+ /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include
+ /usr/local/include
+ /usr/include
+End of search list.
+GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-36) (ppc64le-redhat-linux)
+	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-36), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: ea5bfae5b62e94bb6bd4c89ea8cf0d97
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=power8' '-mcpu=power8'
+ as -v -a64 -mpower8 -many -mlittle -o CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o /tmp/ccMFND6S.s
+GNU assembler version 2.27 (ppc64le-redhat-linux) using BFD version version 2.27-34.base.el7
+COMPILER_PATH=/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=power8' '-mcpu=power8'
+Linking C executable cmTC_ceef3
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ceef3.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o  -o cmTC_ceef3 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/lto-wrapper
+Target: ppc64le-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/cloog-install --enable-gnu-indirect-function --enable-secureplt --with-long-double-128 --enable-targets=powerpcle-linux --disable-multilib --with-cpu-64=power8 --with-tune-64=power8 --build=ppc64le-redhat-linux
+Thread model: posix
+gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ceef3' '-mtune=power8' '-mcpu=power8'
+ /usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/collect2 --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -V -m elf64lppc -export-dynamic -dynamic-linker /lib64/ld64.so.2 -o cmTC_ceef3 /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/crtbegin.o -L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5 -L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib -L/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib -L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../.. CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crtn.o
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/sw/summit/cuda/9.2.148/include]
+    add: [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/include]
+    add: [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include]
+    add: [/usr/local/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/sw/summit/cuda/9.2.148/include] ==> [/sw/summit/cuda/9.2.148/include]
+  collapse include dir [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/include] ==> [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/include]
+  collapse include dir [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include] ==> [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/sw/summit/cuda/9.2.148/include;/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/include;/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include;/usr/local/include;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_ceef3/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_ceef3.dir/build.make CMakeFiles/cmTC_ceef3.dir/build]
+  ignore line: [gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [Target: ppc64le-redhat-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/cloog-install --enable-gnu-indirect-function --enable-secureplt --with-long-double-128 --enable-targets=powerpcle-linux --disable-multilib --with-cpu-64=power8 --with-tune-64=power8 --build=ppc64le-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=power8' '-mcpu=power8']
+  ignore line: [ /usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/cc1 -quiet -v -D__unix__ -D__gnu_linux__ -D__linux__ -Dunix -D__unix -Dlinux -D__linux -Asystem=linux -Asystem=unix -Asystem=posix /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CMakeCCompilerABI.c -msecure-plt -quiet -dumpbase CMakeCCompilerABI.c -mtune=power8 -mcpu=power8 -auxbase-strip CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccMFND6S.s]
+  ignore line: [GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-36) (ppc64le-redhat-linux)]
+  ignore line: [	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-36), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../ppc64le-redhat-linux/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /sw/summit/cuda/9.2.148/include]
+  ignore line: [ /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/include]
+  ignore line: [ /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-36) (ppc64le-redhat-linux)]
+  ignore line: [	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-36), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: ea5bfae5b62e94bb6bd4c89ea8cf0d97]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=power8' '-mcpu=power8']
+  ignore line: [ as -v -a64 -mpower8 -many -mlittle -o CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o /tmp/ccMFND6S.s]
+  ignore line: [GNU assembler version 2.27 (ppc64le-redhat-linux) using BFD version version 2.27-34.base.el7]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=power8' '-mcpu=power8']
+  ignore line: [Linking C executable cmTC_ceef3]
+  ignore line: [/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ceef3.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o  -o cmTC_ceef3 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/lto-wrapper]
+  ignore line: [Target: ppc64le-redhat-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-ppc64le-redhat-linux/cloog-install --enable-gnu-indirect-function --enable-secureplt --with-long-double-128 --enable-targets=powerpcle-linux --disable-multilib --with-cpu-64=power8 --with-tune-64=power8 --build=ppc64le-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/:/usr/libexec/gcc/ppc64le-redhat-linux/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib/:/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib/:/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ceef3' '-mtune=power8' '-mcpu=power8']
+  link line: [ /usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/collect2 --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -V -m elf64lppc -export-dynamic -dynamic-linker /lib64/ld64.so.2 -o cmTC_ceef3 /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/crtbegin.o -L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5 -L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib -L/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib -L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../.. CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/ppc64le-redhat-linux/4.8.5/collect2] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-V] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf64lppc] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ceef3] ==> ignore
+    arg [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5] ==> dir [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5]
+    arg [-L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64] ==> dir [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib] ==> dir [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib]
+    arg [-L/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib] ==> dir [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib]
+    arg [-L/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../..] ==> dir [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../..]
+    arg [CMakeFiles/cmTC_ceef3.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5] ==> [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5]
+  collapse library dir [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib] ==> [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib]
+  collapse library dir [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib] ==> [/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib]
+  collapse library dir [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/ppc64le-redhat-linux/4.8.5;/usr/lib64;/lib64;/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/darshan-runtime-3.1.7-csygoqyym3m3ysoaperhxlhoiluvpa2u/lib;/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/spectrum-mpi-10.3.0.1-20190611-g24w6rwq36lzj6wck6ovykp3dr54fka6/lib;/usr/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test WITH_FPIC succeeded with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5cc26/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_5cc26.dir/build.make CMakeFiles/cmTC_5cc26.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5cc26.dir/src.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -DWITH_FPIC   -fPIC -o CMakeFiles/cmTC_5cc26.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5cc26
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5cc26.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -DWITH_FPIC    -rdynamic CMakeFiles/cmTC_5cc26.dir/src.c.o  -o cmTC_5cc26 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test WITH_STACK_PROTECTOR succeeded with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_131aa/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_131aa.dir/build.make CMakeFiles/cmTC_131aa.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_131aa.dir/src.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -DWITH_STACK_PROTECTOR   -fstack-protector -o CMakeFiles/cmTC_131aa.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c: In function 'main':
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c:1:27: warning: unused parameter 'argv' [-Wunused-parameter]
+ int main(int argc, char **argv) { char buffer[256]; return buffer[argc]=0;}
+                           ^
+Linking C executable cmTC_131aa
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_131aa.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -DWITH_STACK_PROTECTOR    -rdynamic CMakeFiles/cmTC_131aa.dir/src.c.o  -o cmTC_131aa 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(int argc, char **argv) { char buffer[256]; return buffer[argc]=0;}
+Performing C SOURCE FILE Test WITH_VISIBILITY_HIDDEN succeeded with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_30deb/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_30deb.dir/build.make CMakeFiles/cmTC_30deb.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_30deb.dir/src.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DWITH_VISIBILITY_HIDDEN   -fvisibility=hidden -o CMakeFiles/cmTC_30deb.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_30deb
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30deb.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DWITH_VISIBILITY_HIDDEN    -rdynamic CMakeFiles/cmTC_30deb.dir/src.c.o  -o cmTC_30deb 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the include file assert.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_eacb0/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_eacb0.dir/build.make CMakeFiles/cmTC_eacb0.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eacb0.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_eacb0.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_eacb0
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eacb0.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_eacb0.dir/CheckIncludeFile.c.o  -o cmTC_eacb0 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_79463/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_79463.dir/build.make CMakeFiles/cmTC_79463.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_79463.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_79463.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_79463
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79463.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_79463.dir/CheckIncludeFile.c.o  -o cmTC_79463 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file malloc.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fe7ea/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_fe7ea.dir/build.make CMakeFiles/cmTC_fe7ea.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe7ea.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_fe7ea.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_fe7ea
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe7ea.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_fe7ea.dir/CheckIncludeFile.c.o  -o cmTC_fe7ea 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5080b/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_5080b.dir/build.make CMakeFiles/cmTC_5080b.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5080b.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_5080b.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_5080b
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5080b.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_5080b.dir/CheckIncludeFile.c.o  -o cmTC_5080b 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file setjmp.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6fa9d/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_6fa9d.dir/build.make CMakeFiles/cmTC_6fa9d.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6fa9d.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_6fa9d.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6fa9d
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fa9d.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_6fa9d.dir/CheckIncludeFile.c.o  -o cmTC_6fa9d 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file signal.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_621d1/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_621d1.dir/build.make CMakeFiles/cmTC_621d1.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_621d1.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_621d1.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_621d1
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_621d1.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_621d1.dir/CheckIncludeFile.c.o  -o cmTC_621d1 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f1d22/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_f1d22.dir/build.make CMakeFiles/cmTC_f1d22.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1d22.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_f1d22.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f1d22
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1d22.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_f1d22.dir/CheckIncludeFile.c.o  -o cmTC_f1d22 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fedf8/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_fedf8.dir/build.make CMakeFiles/cmTC_fedf8.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fedf8.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_fedf8.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_fedf8
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fedf8.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_fedf8.dir/CheckIncludeFile.c.o  -o cmTC_fedf8 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4eac6/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_4eac6.dir/build.make CMakeFiles/cmTC_4eac6.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4eac6.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_4eac6.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4eac6
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4eac6.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_4eac6.dir/CheckIncludeFile.c.o  -o cmTC_4eac6 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdio.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_2b39d/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_2b39d.dir/build.make CMakeFiles/cmTC_2b39d.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b39d.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_2b39d.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2b39d
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b39d.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_2b39d.dir/CheckIncludeFile.c.o  -o cmTC_2b39d 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_dc904/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_dc904.dir/build.make CMakeFiles/cmTC_dc904.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dc904.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_dc904.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_dc904
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc904.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_dc904.dir/CheckIncludeFile.c.o  -o cmTC_dc904 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c8549/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_c8549.dir/build.make CMakeFiles/cmTC_c8549.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c8549.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_c8549.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c8549
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8549.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_c8549.dir/CheckIncludeFile.c.o  -o cmTC_c8549 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c0456/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_c0456.dir/build.make CMakeFiles/cmTC_c0456.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c0456.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_c0456.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c0456
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0456.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_c0456.dir/CheckIncludeFile.c.o  -o cmTC_c0456 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/stat.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_935a7/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_935a7.dir/build.make CMakeFiles/cmTC_935a7.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_935a7.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_935a7.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_935a7
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_935a7.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_935a7.dir/CheckIncludeFile.c.o  -o cmTC_935a7 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_090fb/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_090fb.dir/build.make CMakeFiles/cmTC_090fb.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_090fb.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_090fb.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_090fb
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_090fb.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_090fb.dir/CheckIncludeFile.c.o  -o cmTC_090fb 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file time.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_58bd3/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_58bd3.dir/build.make CMakeFiles/cmTC_58bd3.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58bd3.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_58bd3.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_58bd3
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58bd3.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_58bd3.dir/CheckIncludeFile.c.o  -o cmTC_58bd3 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file unistd.h exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a5121/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_a5121.dir/build.make CMakeFiles/cmTC_a5121.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a5121.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_a5121.dir/CheckIncludeFile.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a5121
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a5121.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_a5121.dir/CheckIncludeFile.c.o  -o cmTC_a5121 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_STRUCT_TIMESPEC succeeded with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_53ec9/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_53ec9.dir/build.make CMakeFiles/cmTC_53ec9.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53ec9.dir/src.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_STRUCT_TIMESPEC   -o CMakeFiles/cmTC_53ec9.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_53ec9
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53ec9.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_STRUCT_TIMESPEC    -rdynamic CMakeFiles/cmTC_53ec9.dir/src.c.o  -o cmTC_53ec9 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <time.h>
+
+int main()
+{
+  (void)sizeof(((struct timespec *)0)->tv_sec);
+  return 0;
+}
+
+Determining if the function calloc exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_11cb9/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_11cb9.dir/build.make CMakeFiles/cmTC_11cb9.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_11cb9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=calloc   -o CMakeFiles/cmTC_11cb9.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'calloc' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_11cb9
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11cb9.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=calloc    -rdynamic CMakeFiles/cmTC_11cb9.dir/CheckFunctionExists.c.o  -o cmTC_11cb9 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function exit exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_57859/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_57859.dir/build.make CMakeFiles/cmTC_57859.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_57859.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=exit   -o CMakeFiles/cmTC_57859.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'exit' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_57859
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57859.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=exit    -rdynamic CMakeFiles/cmTC_57859.dir/CheckFunctionExists.c.o  -o cmTC_57859 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function fprintf exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a8e06/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_a8e06.dir/build.make CMakeFiles/cmTC_a8e06.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a8e06.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=fprintf   -o CMakeFiles/cmTC_a8e06.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'fprintf' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_a8e06
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8e06.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=fprintf    -rdynamic CMakeFiles/cmTC_a8e06.dir/CheckFunctionExists.c.o  -o cmTC_a8e06 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function free exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5865a/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_5865a.dir/build.make CMakeFiles/cmTC_5865a.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5865a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=free   -o CMakeFiles/cmTC_5865a.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'free' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_5865a
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5865a.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=free    -rdynamic CMakeFiles/cmTC_5865a.dir/CheckFunctionExists.c.o  -o cmTC_5865a 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function longjmp exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_bb3c8/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_bb3c8.dir/build.make CMakeFiles/cmTC_bb3c8.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bb3c8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=longjmp   -o CMakeFiles/cmTC_bb3c8.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bb3c8
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb3c8.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=longjmp    -rdynamic CMakeFiles/cmTC_bb3c8.dir/CheckFunctionExists.c.o  -o cmTC_bb3c8 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function siglongjmp exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_81ba7/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_81ba7.dir/build.make CMakeFiles/cmTC_81ba7.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_81ba7.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=siglongjmp   -o CMakeFiles/cmTC_81ba7.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_81ba7
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81ba7.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=siglongjmp    -rdynamic CMakeFiles/cmTC_81ba7.dir/CheckFunctionExists.c.o  -o cmTC_81ba7 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function malloc exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_444bd/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_444bd.dir/build.make CMakeFiles/cmTC_444bd.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_444bd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=malloc   -o CMakeFiles/cmTC_444bd.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'malloc' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_444bd
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_444bd.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=malloc    -rdynamic CMakeFiles/cmTC_444bd.dir/CheckFunctionExists.c.o  -o cmTC_444bd 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function memcpy exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8f5c7/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_8f5c7.dir/build.make CMakeFiles/cmTC_8f5c7.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8f5c7.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memcpy   -o CMakeFiles/cmTC_8f5c7.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'memcpy' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_8f5c7
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f5c7.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memcpy    -rdynamic CMakeFiles/cmTC_8f5c7.dir/CheckFunctionExists.c.o  -o cmTC_8f5c7 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function memset exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f1acd/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_f1acd.dir/build.make CMakeFiles/cmTC_f1acd.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1acd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memset   -o CMakeFiles/cmTC_f1acd.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'memset' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_f1acd
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1acd.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memset    -rdynamic CMakeFiles/cmTC_f1acd.dir/CheckFunctionExists.c.o  -o cmTC_f1acd 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function printf exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6d753/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_6d753.dir/build.make CMakeFiles/cmTC_6d753.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6d753.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=printf   -o CMakeFiles/cmTC_6d753.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'printf' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_6d753
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d753.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=printf    -rdynamic CMakeFiles/cmTC_6d753.dir/CheckFunctionExists.c.o  -o cmTC_6d753 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function setjmp exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_40ba9/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_40ba9.dir/build.make CMakeFiles/cmTC_40ba9.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40ba9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=setjmp   -o CMakeFiles/cmTC_40ba9.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_40ba9
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40ba9.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=setjmp    -rdynamic CMakeFiles/cmTC_40ba9.dir/CheckFunctionExists.c.o  -o cmTC_40ba9 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function signal exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8d550/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_8d550.dir/build.make CMakeFiles/cmTC_8d550.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d550.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=signal   -o CMakeFiles/cmTC_8d550.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8d550
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d550.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=signal    -rdynamic CMakeFiles/cmTC_8d550.dir/CheckFunctionExists.c.o  -o cmTC_8d550 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strsignal exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4b3c3/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_4b3c3.dir/build.make CMakeFiles/cmTC_4b3c3.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4b3c3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strsignal   -o CMakeFiles/cmTC_4b3c3.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4b3c3
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b3c3.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strsignal    -rdynamic CMakeFiles/cmTC_4b3c3.dir/CheckFunctionExists.c.o  -o cmTC_4b3c3 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strcmp exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7a05a/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_7a05a.dir/build.make CMakeFiles/cmTC_7a05a.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7a05a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strcmp   -o CMakeFiles/cmTC_7a05a.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'strcmp' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_7a05a
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a05a.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strcmp    -rdynamic CMakeFiles/cmTC_7a05a.dir/CheckFunctionExists.c.o  -o cmTC_7a05a 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function clock_gettime exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ec1ed/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_ec1ed.dir/build.make CMakeFiles/cmTC_ec1ed.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ec1ed.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTC_ec1ed.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ec1ed
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec1ed.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=clock_gettime    -rdynamic CMakeFiles/cmTC_ec1ed.dir/CheckFunctionExists.c.o  -o cmTC_ec1ed 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function sprintf exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_3d113/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_3d113.dir/build.make CMakeFiles/cmTC_3d113.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3d113.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=sprintf   -o CMakeFiles/cmTC_3d113.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'sprintf' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_3d113
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d113.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=sprintf    -rdynamic CMakeFiles/cmTC_3d113.dir/CheckFunctionExists.c.o  -o cmTC_3d113 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function vsnprintf exists passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_100a0/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_100a0.dir/build.make CMakeFiles/cmTC_100a0.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_100a0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=vsnprintf   -o CMakeFiles/cmTC_100a0.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'vsnprintf' [enabled by default]
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+   CHECK_FUNCTION_EXISTS(void);
+   ^
+Linking C executable cmTC_100a0
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_100a0.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=vsnprintf    -rdynamic CMakeFiles/cmTC_100a0.dir/CheckFunctionExists.c.o  -o cmTC_100a0 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_GCC_THREAD_LOCAL_STORAGE succeeded with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_53725/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_53725.dir/build.make CMakeFiles/cmTC_53725.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53725.dir/src.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_GCC_THREAD_LOCAL_STORAGE   -o CMakeFiles/cmTC_53725.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_53725
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53725.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_GCC_THREAD_LOCAL_STORAGE    -rdynamic CMakeFiles/cmTC_53725.dir/src.c.o  -o cmTC_53725 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+__thread int tls;
+
+int main(void) {
+    return 0;
+}
+Performing C SOURCE FILE Test HAVE_CLOCK_GETTIME_REALTIME succeeded with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b865e/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_b865e.dir/build.make CMakeFiles/cmTC_b865e.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b865e.dir/src.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_CLOCK_GETTIME_REALTIME   -o CMakeFiles/cmTC_b865e.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b865e
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b865e.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_CLOCK_GETTIME_REALTIME    -rdynamic CMakeFiles/cmTC_b865e.dir/src.c.o  -o cmTC_b865e /usr/lib64/librt.so 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <time.h>
+
+int main(void) {
+    struct timespec ts;
+
+    clock_gettime(CLOCK_REALTIME, &ts);
+
+    return 0;
+}
+Determining size of unsigned short passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_48a46/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_48a46.dir/build.make CMakeFiles/cmTC_48a46.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48a46.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_48a46.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTC_48a46
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48a46.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_48a46.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTC_48a46 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the system is big endian passed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c23e1/fast && gmake[3]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_c23e1.dir/build.make CMakeFiles/cmTC_c23e1.dir/build
+gmake[4]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c23e1.dir/TestEndianess.c.o
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_c23e1.dir/TestEndianess.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTC_c23e1
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c23e1.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     -rdynamic CMakeFiles/cmTC_c23e1.dir/TestEndianess.c.o  -o cmTC_c23e1 
+gmake[4]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/CMakeFiles/googletest"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/CMakeFiles/googletest.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/CMakeFiles/googletest-complete.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/tests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest"
+		],
+		"name" : "googletest"
+	}
+}

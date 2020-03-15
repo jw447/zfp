@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/zfp/types.h
+stdint.h
+-
+inttypes.h
+-
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/rand32.c
+math.h
+-
+rand32.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/rand32.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/rand32.h
+include/zfp/types.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/include/zfp/types.h
+

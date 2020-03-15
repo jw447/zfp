@@ -94,7 +94,7 @@ cudaEncode2(const uint maxbits,
     gather2(fblock, scalars + offset, stride.x, stride.y);
   }
 
-  zfp_encode_block<Scalar, ZFP_2D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
+  //zfp_encode_block<Scalar, ZFP_2D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
 
 }
 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgenSmoothRandNumsLib.so -o ../../lib64/libgenSmoothRandNumsLib.so CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.o -Wl,-rpath,/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64 ../../lib64/librand64Lib.so ../../lib64/libfixedpoint96Lib.so -lm 

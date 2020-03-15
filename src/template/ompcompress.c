@@ -43,7 +43,8 @@ _t2(compress_omp, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
       if (nx - x < 4)
         _t2(zfp_encode_partial_block_strided, Scalar, 1)(&s, p, MIN(nx - x, 4u), 1);
       else
-        _t2(zfp_encode_block, Scalar, 1)(&s, p);
+        //_t2(zfp_encode_block, Scalar, 1)(&s, p);
+        printf("unavailable\n");
     }
   }
 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libfixedpoint96Lib.so -o ../../lib64/libfixedpoint96Lib.so CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.o 

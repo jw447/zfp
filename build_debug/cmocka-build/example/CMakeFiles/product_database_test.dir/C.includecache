@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/database.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/product_database.c
+database.h
+-
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/product_database_test.c
+stdarg.h
+-
+stddef.h
+-
+setjmp.h
+-
+cmocka.h
+-
+database.h
+-
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+

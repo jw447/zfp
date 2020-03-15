@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../tests/utils/zfpCompressionParams.h
+stddef.h
+-
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpCompressionParams.c
+math.h
+-
+utils/zfpCompressionParams.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/utils/zfpCompressionParams.h
+

@@ -1,7 +1,7 @@
 #include <limits.h>
 #include <zfp.h>
 
-static void _t2(fwd_xform, Int, DIMS)(Int* p);
+static void _t2(fwd_xform, Int, DIMS)(Int* p, CPU_timing* cpu_timing);
 
 /* private functions ------------------------------------------------------- */
 
@@ -29,11 +29,10 @@ _t1(pad_block, Scalar)(Scalar* p, uint n, uint s)
 
 /* forward lifting transform of 4-vector */
 static void
-_t1(fwd_lift, Int)(Int* p, uint s)
+_t1(fwd_lift, Int)(Int* p, uint s, CPU_timing* cpu_timing)
 {
   //jwang
   //FuncName;
-
   Int x, y, z, w;
   x = *p; p += s;
   y = *p; p += s;
@@ -68,21 +67,22 @@ _t1(int2uint, Int)(Int x)
 
 /* reorder signed coefficients and convert to unsigned integer */
 static void
-_t1(fwd_order, Int)(UInt* ublock, const Int* iblock, const uchar* perm, uint n)
+_t1(fwd_order, Int)(UInt* ublock, const Int* iblock, const uchar* perm, uint n, CPU_timing* cpu_timing)
 {
   //jwang
-  //FuncName;
+  //gettimeofday(&reorderS, NULL);
   do
     *ublock++ = _t1(int2uint, Int)(iblock[*perm++]);
   while (--n);
+  //gettimeofday(&reorderE, NULL);
+  //(*cpu_timing).order_loop_time += ((reorderE.tv_sec*1000000+reorderE.tv_usec)-(reorderS.tv_sec*1000000+reorderS.tv_usec))/1000000.0;
 }
 
 /* compress sequence of size unsigned integers */
 static uint
-_t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, const UInt* restrict_ data, uint size)
+_t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, const UInt* restrict_ data, uint size, CPU_timing* cpu_timing)
 {
   //jwang
-  FuncName;
   /* make a copy of bit stream to avoid aliasing */
   bitstream s = *stream;
   uint intprec = CHAR_BIT * (uint)sizeof(UInt);
@@ -91,34 +91,44 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   uint i, k, m, n;
   uint64 x;
 
-  //jwang
-  //printf("intprec=%u, maxbits=%u, maxprec=%u, size=%u\n", intprec, maxbits, maxprec, size);
-  //printf("NumBP=%d\n", intprec - kmin);
-  //uint count=0;
-
-  count_xou++;
-  gettimeofday(&uintCostS, NULL);
+  //struct timespec tpstart;
+  //struct timespec tpend;
+  //clock_gettime(CLOCK_MONOTONIC, &tpstart);
+  //gettimeofday(&bpS, NULL);
   /* encode one bit plane at a time from MSB to LSB */
   for (k = intprec, n = 0; bits && k-- > kmin;) {
     //TODO
     /* step 1: extract bit plane #k to x */
+    //gettimeofday(&stepS, NULL);
     x = 0;
     for (i = 0; i < size; i++)
       x += (uint64)((data[i] >> k) & 1u) << i;
+    //gettimeofday(&stepE, NULL);
+
     /* step 2: encode first n bits of bit plane */
+    //gettimeofday(&stepS, NULL);
     m = MIN(n, bits);
     bits -= m;
     x = stream_write_bits(&s, x, m);
+    //gettimeofday(&stepE, NULL);
+
     /* step 3: unary run-length encode remainder of bit plane */
+    //gettimeofday(&stepS, NULL);
     for (; n < size && bits && (bits--, stream_write_bit(&s, !!x)); x >>= 1, n++)
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
-        //count++;
 	;
+    //gettimeofday(&stepE, NULL);
+    //(*cpu_timing).num_bp++;
+    //(*cpu_timing).step1 += ((stepE.tv_sec*1000000+stepE.tv_usec)-(stepS.tv_sec*1000000+stepS.tv_usec))/1000000.0;
+    //(*cpu_timing).step2 += ((stepE.tv_sec*1000000+stepE.tv_usec)-(stepS.tv_sec*1000000+stepS.tv_usec))/1000000.0;
+    //(*cpu_timing).step3 += ((stepE.tv_sec*1000000+stepE.tv_usec)-(stepS.tv_sec*1000000+stepS.tv_usec))/1000000.0;
   }
-  gettimeofday(&uintCostE, NULL);
-  uintCost += ((uintCostE.tv_sec*1000000+uintCostE.tv_usec)-(uintCostS.tv_sec*1000000+uintCostS.tv_usec))/1000000.0;
+  //gettimeofday(&bpE, NULL);
+  //(*cpu_timing).bp_time += ((bpE.tv_sec*1000000+bpE.tv_usec)-(bpS.tv_sec*1000000+bpS.tv_usec))/1000000.0;
+  //clock_gettime(CLOCK_MONOTONIC, &tpend);
+  //uint64_t diff = BILLION * (tpend.tv_sec - tpstart.tv_sec) + tpend.tv_nsec - tpstart.tv_nsec;
+  //printf("bp time = %llu\n", diff);
   *stream = s;
-  //printf("count=%u\n", count);
   return maxbits - bits;
 }
 
@@ -158,7 +168,7 @@ _t1(encode_many_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxp
 
 /* encode block of integers */
 static uint
-_t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int maxprec, Int* iblock)
+_t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int maxprec, Int* iblock, CPU_timing* cpu_timing)
 {
   //jwang
   FuncName;
@@ -166,20 +176,29 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
   int bits;
   cache_align_(UInt ublock[BLOCK_SIZE]);
 
-  //printf("/* perform decorrelating transform */\n");
-  gettimeofday(&XformCostS, NULL);
-  _t2(fwd_xform, Int, DIMS)(iblock);
-  gettimeofday(&XformCostE, NULL);
+  /* perform decorrelating transform */
+  //struct timespec tpstart;
+  //struct timespec tpend;
+  //clock_gettime(CLOCK_MONOTONIC, &tpstart);
+  //gettimeofday(&xformS, NULL);
+  _t2(fwd_xform, Int, DIMS)(iblock, cpu_timing);
+  //clock_gettime(CLOCK_MONOTONIC, &tpend);
+  //uint64_t diff = BILLION * (tpend.tv_sec - tpstart.tv_sec) + tpend.tv_nsec - tpstart.tv_nsec;
+  //printf("xform time = %llu\n", diff);
+  //gettimeofday(&xformE, NULL);
 
-
-  //printf("/* reorder signed coefficients and convert to unsigned integer */\n");
-  gettimeofday(&OrderCostS, NULL);
-  _t1(fwd_order, Int)(ublock, iblock, PERM, BLOCK_SIZE);
-  gettimeofday(&OrderCostE, NULL);
+  /* reorder signed coefficients and convert to unsigned integer */
+  //gettimeofday(&orderS, NULL);
+  //clock_gettime(CLOCK_MONOTONIC, &tpstart);
+  _t1(fwd_order, Int)(ublock, iblock, PERM, BLOCK_SIZE, cpu_timing);
+  //clock_gettime(CLOCK_MONOTONIC, &tpend);
+  //diff = BILLION * (tpend.tv_sec - tpstart.tv_sec) + tpend.tv_nsec - tpstart.tv_nsec;
+  //printf("order time = %llu\n", diff);
+  //gettimeofday(&orderE, NULL);
 
   /* encode integer coefficients */
   if (BLOCK_SIZE <= 64)
-    bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
+    bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE, cpu_timing);
   else
     bits = _t1(encode_many_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
   /* write at least minbits bits by padding with zeros */
@@ -187,8 +206,8 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
     stream_pad(stream, minbits - bits);
     bits = minbits;
   }
-  XformCost += ((XformCostE.tv_sec*1000000+XformCostE.tv_usec)-(XformCostS.tv_sec*1000000+XformCostS.tv_usec))/1000000.0; 
-  OrderCost += ((OrderCostE.tv_sec*1000000+OrderCostE.tv_usec)-(OrderCostS.tv_sec*1000000+OrderCostS.tv_usec))/1000000.0;
+  //(*cpu_timing).xform_time += ((xformE.tv_sec*1000000+xformE.tv_usec)-(xformS.tv_sec*1000000+xformS.tv_usec))/1000000.0;
+  //(*cpu_timing).order_time += ((orderE.tv_sec*1000000+orderE.tv_usec)-(orderS.tv_sec*1000000+orderS.tv_usec))/1000000.0;
 
   return bits;
 }

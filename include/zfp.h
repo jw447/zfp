@@ -65,6 +65,17 @@
 #include "zfp/system.h"
 #include "bitstream.h"
 #include <sys/time.h>
+
+
+#include <math.h>
+#include <unistd.h>
+#include <stdio.h>      /* for printf */
+#include <stdint.h>     /* for uint64 definition */
+#include <stdlib.h>     /* for exit() definition */
+#include <time.h>       /* for clock_gettime */
+#include <string.h>
+
+#define BILLION 1000000000L
 /* macros ------------------------------------------------------------------ */
 
 /* stringification */
@@ -755,126 +766,117 @@ void zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims);
 
 //#define FuncName printf("func: %s at file: %s\n", __func__, __FILE__)
 #define FuncName
+/* zfp cpu timers */
 struct timeval totalCostS;
 struct timeval totalCostE;
-double totalCost;
 
-struct timeval compCostS;
-struct timeval compCostE;
-double compCost;
+struct timeval ecostS;
+struct timeval ecost1, ecost2;
+struct timeval ecostE;
 
-struct timeval NBCostS;
-struct timeval NBCostE;
-double NBCost;
+struct timeval mcostS;
+struct timeval mcost1, mcost2, mcost3;
+struct timeval mcostE;
 
-struct timeval BfCostS;
-struct timeval BfCostE;
-double BfCost;
+struct timeval embedS;
+struct timeval xformS, xformE;
+struct timeval orderS, orderE;
+struct timeval reorderS, reorderE;
+struct timeval bpS, bpE, stepS, stepE;
+struct timeval embedE;
 
-struct timeval BiCostS;
-struct timeval BiCostE;
-double BiCost;
-
-struct timeval mCostS;
-struct timeval mCostE;
-double mCost;
-
-struct timeval zCostS;
-struct timeval zCostE;
-double zCost;
-
-struct timeval eCostS;
-struct timeval eCostE;
-double eCost;
-
-struct timeval XformCostS;
-struct timeval XformCostE;
-double XformCost;
-
-struct timeval OrderCostS;
-struct timeval OrderCostE;
-double OrderCost;
-
-struct timeval uintCostS;
-struct timeval uintCostE;
-double uintCost;
-
-uint count_emb;
-uint count_xou;
+/* zfp gpu timers */
 
 struct timeval cuda_start1S;
 struct timeval cuda_start1E;
-double cuda1;
+struct timeval cuda_start10S;
+struct timeval cuda_start10E;
+struct timeval cuda_start11S;
+struct timeval cuda_start11E;
+struct timeval cuda_start101S;
+struct timeval cuda_start101E;
+struct timeval cuda_start111S;
+struct timeval cuda_start111E;
 
 struct timeval cuda_start2S;
 struct timeval cuda_start2E;
-double cuda2;
+struct timeval cuda_start20S;
+struct timeval cuda_start20E;
+struct timeval cuda_start21S;
+struct timeval cuda_start21E;
+struct timeval cuda_start211S;
+struct timeval cuda_start211E;
+struct timeval cuda_start212S;
+struct timeval cuda_start212E;
 
 struct timeval cuda_start3S;
 struct timeval cuda_start3E;
-double cuda3;
-
-struct timeval cuda_start10S;
-struct timeval cuda_start10E;
-double cuda10;
-
-struct timeval cuda_start100S;
-struct timeval cuda_start100E;
-double cuda100;
-
-struct timeval cuda_start101S;
-struct timeval cuda_start101E;
-double cuda101;
-
-struct timeval cuda_start11S;
-struct timeval cuda_start11E;
-double cuda11;
-
-struct timeval cuda_start110S;
-struct timeval cuda_start110E;
-double cuda110;
-
-struct timeval cuda_start111S;
-struct timeval cuda_start111E;
-double cuda111;
-
-struct timeval cuda_start20S;
-struct timeval cuda_start20E;
-double cuda20;
-
-struct timeval cuda_start21S;
-struct timeval cuda_start21E;
-double cuda21;
-
-struct timeval cuda_start210S;
-struct timeval cuda_start210E;
-double cuda210;
-
-float seconds;
-int *d_kernel_clock;
-int h_kernel_clock;
-
-float kernel_t; // avg for all threads. should memcpy from device func.
-float BiCost_t; // ...
-float mCost_t;
-float zCost_t;
-float eCost_t;
-float XformCost_t;
-float OrderCost_t;
-float uintCost_t; // ...
-
-struct timeval cuda_start30S;
-struct timeval cuda_start30E;
-double cuda30;
-
 struct timeval cuda_start31S;
 struct timeval cuda_start31E;
-double cuda31;
-
 struct timeval cuda_start32S;
 struct timeval cuda_start32E;
-double cuda32;
+
+typedef struct {
+  float totalCost;
+// serial cpu
+  float ecost_time;
+  float max_exp_time;
+  float precision_time;
+  float emax_time;
+
+  float mcost_time;
+  float quantize_factor_time;
+  float cast_loop_time;
+
+  float embed_time;
+  float xform_time;
+  float order_time;
+  float order_loop_time;
+  float bp_time;
+  float step1, step2, step3;
+  int num_bp;
+// cuda
+  float warmup_time;
+  float cuda_Setup_time;
+  float cuda_setup_device_field_time;
+  float cuda_datamalloc_time;
+  float cuda_datamcpy_time;
+  float register_time;
+  unsigned long int field_bytes;
+  float cuda_setup_device_stream_time;
+  float cuda_buffermalloc_time;
+  float cuda_buffermcpy_time;
+
+  float cuda_Encode_time;
+  float cuda_setup1d_time;
+  float cuda_encode1d_time;
+  float cuda_kernel_time;
+  
+  float cuda_Cleanup_time;
+  float cuda_d2h_time;
+  float cuda_free_time;
+  uint stream_bytes;
+} CPU_timing;
+
+typedef struct {
+  int kernel_clock;
+  int pre_clock;
+  int encode_clock;
+  int ecost_clock;  // ecost = max_exp_clock + precision_clock + emax_clock;
+  int max_exp_clock;
+  int precision_clock;
+  int emax_clock;
+  int mcost_clock; // mcost = quantize_factor_clock + cast_loop_clock;
+  int quantize_factor_clock;
+  int cast_loop_clock;
+  int embed_clock; // overall embedded encoding
+  int xform_clock; // DCT
+  int order_clock; // reordering
+  int order_loop_clock; // loop in reordering
+  int bp_clock;    // encoding bps.
+  int step1, step2, step3; // 3  steps for a single bp.
+
+} GPU_timing;
+
+
 #endif
-
-
-

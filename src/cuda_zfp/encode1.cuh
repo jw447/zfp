@@ -6,10 +6,13 @@
 #include "encode.cuh"
 #include "type_info.cuh"
 
+#include "cuda_profiler_api.h"
+
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
 #define ZFP_1D_BLOCK_SIZE 4 
+
 
 namespace cuZFP
 {
@@ -42,10 +45,9 @@ void cudaEncode1(const uint maxbits,
            const int sx,
            const uint padded_dim,
            const uint tot_blocks,
-           int* d_kernel_clock) 
+           GPU_timing* gpu_timing_d) // pass device pointer here
 {
   clock_t start_time = clock();
-
   typedef unsigned long long int ull;
   typedef long long int ll;
   const ull blockId = blockIdx.x +
@@ -86,13 +88,12 @@ void cudaEncode1(const uint maxbits,
   {
     gather1(fblock, scalars + offset, sx);
   }
-
-  zfp_encode_block<Scalar, ZFP_1D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
-  //printf("Hello from block %d, thread %d\n", blockIdx.x, threadIdx.x);
+  clock_t pre_time = clock();
+  zfp_encode_block<Scalar, ZFP_1D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream, gpu_timing_d);
   clock_t end_time = clock();
-  if(block_idx == 0){
-    *d_kernel_clock = (int)(end_time - start_time);
-  }
+  (*gpu_timing_d).pre_clock = (int)(pre_time - start_time);
+  (*gpu_timing_d).encode_clock = (int)(end_time - pre_time);
+  (*gpu_timing_d).kernel_clock = (int)(end_time - start_time);
 }
 //
 // Launch the encode kernel
@@ -102,11 +103,16 @@ size_t encode1launch(uint dim,
                      int sx,
                      const Scalar *d_data,
                      Word *stream,
-                     const int maxbits)
+                     const int maxbits,
+                     CPU_timing* cpu_timing,
+                     GPU_timing* gpu_timing_h) // pass host device here
 {
-  const int cuda_block_size = 128;
+  //struct timeval cuda_start213S, cuda_start213E;
+  //struct timeval cuda_start214S, cuda_start214E;
+  //gettimeofday(&cuda_start212S, NULL); //cuda_22
+  //gettimeofday(&cuda_start213S, NULL); //cuda_22
+  const int cuda_block_size = 1024;
   dim3 block_size = dim3(cuda_block_size, 1, 1);
-
   uint zfp_pad(dim); 
   if(zfp_pad % 4 != 0) zfp_pad += 4 - dim % 4;
 
@@ -116,7 +122,6 @@ size_t encode1launch(uint dim,
   // cuda block size
   //
   int block_pad = 0; 
-  //printf("zfp_blocks=%d\n", zfp_blocks); // number of blocks
   if(zfp_blocks % cuda_block_size != 0)
   {
     block_pad = cuda_block_size - zfp_blocks % cuda_block_size; 
@@ -126,48 +131,52 @@ size_t encode1launch(uint dim,
  
   dim3 grid_size = calculate_grid_size(total_blocks, cuda_block_size);
 
-  //
   size_t stream_bytes = calc_device_mem1d(zfp_pad, maxbits);
   // ensure we have zeros
   cudaMemset(stream, 0, stream_bytes);
 
-  //cudaDeviceProp prop;
-  //int result = cudaGetDeviceProperties(&prop, 0);
-  //printf("gpu freq = %d khz\n", prop.clockRate);
-  //jwang
-  cudaMalloc(&d_kernel_clock, sizeof(int));
-  cudaMemset(d_kernel_clock, 0, sizeof(int));
+  //gettimeofday(&cuda_start213E, NULL); //cuda_22
+  //float cuda_23 = (float)((cuda_start213E.tv_sec*1000000+cuda_start213E.tv_usec)-(cuda_start213S.tv_sec*1000000+cuda_start213S.tv_usec))/1000000.0;
+  //printf("cuda_23=%f\n", cuda_23);
+
+  GPU_timing *gpu_timing_d;
+  cudaMalloc(&gpu_timing_d, sizeof(GPU_timing));
+  cudaMemset(gpu_timing_d, 0, sizeof(GPU_timing));
+ 
 #ifdef CUDA_ZFP_RATE_PRINT
   cudaEvent_t start, stop;
   cudaEventCreate(&start);
   cudaEventCreate(&stop);
   cudaEventRecord(start);
 #endif
-  
-  //cudaEncode1<Scalar> << <grid_size, block_size>> >
-  cudaEncode1<Scalar><<<1,1>>>
-    (maxbits,
+  //gettimeofday(&cuda_start214S, NULL);
+  cudaEncode1<Scalar> <<<grid_size, block_size>>>
+  (maxbits,
      d_data,
      stream,
      dim,
      sx,
      zfp_pad,
      zfp_blocks,
-     d_kernel_clock);
-   
+     gpu_timing_d);
 
 #ifdef CUDA_ZFP_RATE_PRINT
   cudaEventRecord(stop);
   cudaEventSynchronize(stop);
 
+  //gettimeofday(&cuda_start214E, NULL);
+  //float cuda_24 = (float)((cuda_start214E.tv_sec*1000000+cuda_start214E.tv_usec)-(cuda_start214S.tv_sec*1000000+cuda_start214S.tv_usec))/1000000.0;
+  //printf("cuda_24=%f\n", cuda_24);
+
   float miliseconds = 0.f;
   cudaEventElapsedTime(&miliseconds, start, stop);
-  seconds = miliseconds / 1000.f;
-  cudaMemcpy(&h_kernel_clock, d_kernel_clock, sizeof(int), cudaMemcpyDeviceToHost);
-  
-  cudaFree(d_kernel_clock);
-
+  (*cpu_timing).cuda_kernel_time = miliseconds / 1000.f;
+  cudaMemcpy(gpu_timing_h, gpu_timing_d, sizeof(GPU_timing), cudaMemcpyDeviceToHost);
+  cudaFree(gpu_timing_d);
 #endif
+  //gettimeofday(&cuda_start212E, NULL);
+  //float cuda_22 = (float)((cuda_start212E.tv_sec*1000000+cuda_start212E.tv_usec)-(cuda_start212S.tv_sec*1000000+cuda_start212S.tv_usec))/1000000.0;
+  //printf("cuda_22=%f\n", cuda_22); 
   return stream_bytes;
 }
 
@@ -179,11 +188,11 @@ size_t encode1(int dim,
                int sx,
                Scalar *d_data,
                Word *stream,
-               const int maxbits)
+               const int maxbits,
+               CPU_timing* cpu_timing,
+               GPU_timing* gpu_timing)
 {
-  //jwang
-  //printf("encode1\n");
-  return encode1launch<Scalar>(dim, sx, d_data, stream, maxbits);
+  return encode1launch<Scalar>(dim, sx, d_data, stream, maxbits, cpu_timing, gpu_timing);
 }
 
 }

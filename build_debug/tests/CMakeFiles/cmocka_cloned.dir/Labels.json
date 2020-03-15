@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned-complete.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-install.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-mkdir.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-update.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-patch.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure.rule"
+		},
+		{
+			"file" : "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cmocka_cloned"
+		],
+		"name" : "cmocka_cloned"
+	}
+}

@@ -15,9 +15,9 @@ bool is_gpu_ptr(const void *ptr)
 
   //gettimeofday(&cuda_ptrS, NULL); 
   cudaPointerAttributes atts;
-  const cudaError_t perr = cudaPointerGetAttributes(&atts, ptr);
+  const cudaError_t perr = cudaPointerGetAttributes(&atts, ptr); // get attributes of pointer
   //gettimeofday(&cuda_ptrE, NULL);
-
+  //printf("success=%d\n", perr);
   // clear last error so other error checking does
   // not pick it up
   cudaError_t error = cudaGetLastError();
@@ -31,9 +31,8 @@ bool is_gpu_ptr(const void *ptr)
 
 #endif
   //double cuda_ptr = ((cuda_ptrE.tv_sec*1000000+cuda_ptrE.tv_usec)-(cuda_ptrS.tv_sec*1000000+cuda_ptrS.tv_usec))/1000000.0;
-  //printf("cuda_ptr=%f\n", cuda_1);
-
-  
+  //printf("cuda_ptr=%f\n", cuda_ptr);
+  //printf("result=%d\n", result);
   
   return result;
 }

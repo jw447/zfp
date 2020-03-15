@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/testBitstreamSmallWsize.dir/testBitstreamSmallWsize.c.o  -o ../../../bin/testBitstreamSmallWsize ../../../cmocka-build/src/libcmocka.a 

@@ -100,7 +100,7 @@ cudaEncode(const uint maxbits,
   {
     gather3(fblock, scalars + offset, stride.x, stride.y, stride.z);
   }
-  zfp_encode_block<Scalar, ZFP_3D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
+  //zfp_encode_block<Scalar, ZFP_3D_BLOCK_SIZE>(fblock, maxbits, block_idx, stream);  
 
 }
 

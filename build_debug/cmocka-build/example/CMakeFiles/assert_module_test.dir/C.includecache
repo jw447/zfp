@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/assert_module.c
+assert.h
+-
+assert_module.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/assert_module.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/assert_module.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/assert_module_test.c
+stdarg.h
+-
+stddef.h
+-
+setjmp.h
+-
+cmocka.h
+-
+assert_module.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/assert_module.h
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+

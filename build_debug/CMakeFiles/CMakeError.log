@@ -1,0 +1,85 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d5ff1/fast && /usr/bin/gmake -f CMakeFiles/cmTC_d5ff1.dir/build.make CMakeFiles/cmTC_d5ff1.dir/build
+gmake[1]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d5ff1.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD -fPIE   -o CMakeFiles/cmTC_d5ff1.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d5ff1
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d5ff1.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_d5ff1.dir/src.c.o  -o cmTC_d5ff1 
+CMakeFiles/cmTC_d5ff1.dir/src.c.o: In function `main':
+src.c:(.text+0x64): undefined reference to `pthread_create'
+src.c:(.text+0x74): undefined reference to `pthread_detach'
+src.c:(.text+0x88): undefined reference to `pthread_join'
+src.c:(.text+0x9c): undefined reference to `pthread_atfork'
+/usr/bin/ld: link errors found, deleting executable `cmTC_d5ff1'
+/usr/bin/sha1sum: cmTC_d5ff1: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_d5ff1] Error 1
+gmake[1]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_d5ff1/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_caf21/fast && /usr/bin/gmake -f CMakeFiles/cmTC_caf21.dir/build.make CMakeFiles/cmTC_caf21.dir/build
+gmake[1]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_caf21.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create -fPIE   -o CMakeFiles/cmTC_caf21.dir/CheckFunctionExists.c.o   -c /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_caf21
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_caf21.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_caf21.dir/CheckFunctionExists.c.o  -o cmTC_caf21 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+/usr/bin/sha1sum: cmTC_caf21: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_caf21] Error 1
+gmake[1]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_caf21/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test HAVE_MATH failed with the following output:
+Change Dir: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_77b9a/fast && /usr/bin/gmake -f CMakeFiles/cmTC_77b9a.dir/build.make CMakeFiles/cmTC_77b9a.dir/build
+gmake[1]: Entering directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77b9a.dir/src.c.o
+/usr/bin/cc   -DHAVE_MATH -fPIE   -o CMakeFiles/cmTC_77b9a.dir/src.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_77b9a
+/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77b9a.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_MATH    -rdynamic CMakeFiles/cmTC_77b9a.dir/src.c.o  -o cmTC_77b9a 
+CMakeFiles/cmTC_77b9a.dir/src.c.o: In function `main':
+src.c:(.text+0x2c): undefined reference to `sqrt'
+/usr/bin/ld: link errors found, deleting executable `cmTC_77b9a'
+/usr/bin/sha1sum: cmTC_77b9a: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_77b9a] Error 1
+gmake[1]: Leaving directory `/gpfs/alpine/csc143/proj-shared/jwang/local-build/zfp/build_debug/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_77b9a/fast] Error 2
+
+
+Source file was:
+#include<math.h>
+float f; int main(){sqrt(f);return 0;}

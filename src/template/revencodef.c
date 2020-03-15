@@ -19,7 +19,8 @@ _t1(rev_fwd_cast, Scalar)(Int* iblock, const Scalar* fblock, uint n, int emax)
 {
   /* test for all-zero block, which needs special treatment */
   if (emax != -EBIAS)
-    _t1(fwd_cast, Scalar)(iblock, fblock, BLOCK_SIZE, emax);
+    printf("This function is not working for now.\n");
+    //_t1(fwd_cast, Scalar)(iblock, fblock, BLOCK_SIZE, emax);
   else
     while (n--)
       *iblock++ = 0;

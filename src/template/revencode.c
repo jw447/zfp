@@ -59,7 +59,7 @@ _t2(rev_encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, in
   /* perform decorrelating transform */
   _t2(rev_fwd_xform, Int, DIMS)(iblock);
   /* reorder signed coefficients and convert to unsigned integer */
-  _t1(fwd_order, Int)(ublock, iblock, PERM, BLOCK_SIZE);
+  //_t1(fwd_order, Int)(ublock, iblock, PERM, BLOCK_SIZE);
   /* determine and encode number of significant bits */
   prec = _t1(rev_precision, UInt)(ublock, BLOCK_SIZE);
   prec = MIN(prec, maxprec);
@@ -67,7 +67,8 @@ _t2(rev_encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, in
   stream_write_bits(stream, prec - 1, PBITS);
   /* encode integer coefficients */
   if (BLOCK_SIZE <= 64)
-    bits += _t1(encode_ints, UInt)(stream, maxbits - bits, prec, ublock, BLOCK_SIZE);
+    //bits += _t1(encode_ints, UInt)(stream, maxbits - bits, prec, ublock, BLOCK_SIZE);
+    printf("temporarily unavailable\n");
   else
     bits += _t1(encode_many_ints, UInt)(stream, maxbits - bits, prec, ublock, BLOCK_SIZE);
   /* write at least minbits bits by padding with zeros */

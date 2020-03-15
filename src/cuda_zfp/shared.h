@@ -269,6 +269,15 @@ unsigned char* get_perm<4>()
   return c_perm_1;
 }
 
+// atomic operation
+//__device__ int *fwd_lift_clock;
+//__device__ int *int2uint_clock;
+
+//cudaMalloc(&fwd_lift_clock, sizeof(int));
+//cudaMemset(fwd_lift_clock, 0, sizeof(int));
+
+//cudaMalloc(&int2uint_clock, sizeof(int));
+//cudaMemset(int2uint_clock, 0, sizeof(int));
 
 } // namespace cuZFP
 #endif

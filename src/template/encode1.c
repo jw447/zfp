@@ -22,12 +22,12 @@ _t2(gather_partial, Scalar, 1)(Scalar* q, const Scalar* p, uint nx, int sx)
 
 /* forward decorrelating 1D transform */
 static void
-_t2(fwd_xform, Int, 1)(Int* p)
+_t2(fwd_xform, Int, 1)(Int* p, CPU_timing* cpu_timing)
 {
   //jwang
   //FuncName;
   /* transform along x */
-  _t1(fwd_lift, Int)(p, 1);
+  _t1(fwd_lift, Int)(p, 1, cpu_timing);
 }
 
 /* public functions -------------------------------------------------------- */
@@ -40,7 +40,9 @@ _t2(zfp_encode_block_strided, Scalar, 1)(zfp_stream* stream, const Scalar* p, in
   cache_align_(Scalar fblock[4]);
   _t2(gather, Scalar, 1)(fblock, p, sx);
   /* encode floating-point block */
-  return _t2(zfp_encode_block, Scalar, 1)(stream, fblock);
+  //return _t2(zfp_encode_block, Scalar, 1)(stream, fblock);
+  printf("unavailable\n");
+  return 0;
 }
 
 /* encode nx-value floating-point block stored at p using stride sx */
@@ -52,5 +54,7 @@ _t2(zfp_encode_partial_block_strided, Scalar, 1)(zfp_stream* stream, const Scala
   cache_align_(Scalar fblock[4]);
   _t2(gather_partial, Scalar, 1)(fblock, p, nx, sx);
   /* encode floating-point block */
-  return _t2(zfp_encode_block, Scalar, 1)(stream, fblock);
+  //return _t2(zfp_encode_block, Scalar, 1)(stream, fblock, cpu_timing);
+  printf("unavailable\n");
+  return 0;
 }

@@ -700,7 +700,7 @@ zfp_stream_set_precision(zfp_stream* zfp, uint precision)
   zfp->maxbits = ZFP_MAX_BITS;
   zfp->maxprec = precision ? MIN(precision, ZFP_MAX_PREC) : ZFP_MAX_PREC;
   zfp->minexp = ZFP_MIN_EXP;
-  printf("precision=%u, minbits=%u, maxbits=%u,  maxprec=%u,  minexp=%d\n", precision, zfp->minbits, zfp->maxbits, zfp->maxprec, zfp->minexp);
+  //printf("precision=%u, minbits=%u, maxbits=%u,  maxprec=%u,  minexp=%d\n", precision, zfp->minbits, zfp->maxbits, zfp->maxprec, zfp->minexp);
   return zfp->maxprec;
 }
 
@@ -979,11 +979,8 @@ zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims)
     *oblock++ = (uint16)MAX(0x0000, MIN(i, 0xffff));
   }
 }
-
-/* public functions: compression and decompression --------------------------*/
-
-size_t
-zfp_compress(zfp_stream* zfp, const zfp_field* field)
+/* redefined zfp_compress. same functionality, more variables */
+size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_timing, GPU_timing* gpu_timing)
 {
   //jwang
   FuncName;
@@ -1031,8 +1028,105 @@ zfp_compress(zfp_stream* zfp, const zfp_field* field)
   uint strided = zfp_field_stride(field, NULL);
   uint dims = zfp_field_dimensionality(field);
   uint type = field->type;
+
+  //void (*compress)(zfp_stream*, const zfp_field*);
+  void _t2(compress_cuda, Scalar, 1)(zfp_stream*, const zfp_field*, CPU_timing*, GPU_timing*);
+  void _t2(compress, Scalar, 1)(zfp_stream*, const zfp_field*, CPU_timing*);
+
+  switch (type) {
+    case zfp_type_int32:
+    case zfp_type_int64:
+    case zfp_type_float:
+    case zfp_type_double:
+      break;
+    default:
+      return 0;
+  }
+  /* compress field and align bit stream on word boundary */
   //jwang
-  //printf("exec=%u\nstrided=%u\ndims=%u\ntype=%u\n", exec, strided, dims, type);
+  if(exec == 0)
+  {
+    if(type == 4){ // double
+      gettimeofday(&totalCostS, NULL);
+      compress_double_1(zfp, field, cpu_timing);
+      gettimeofday(&totalCostE, NULL);
+      (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+    }
+    if(type == 3){ // float
+      gettimeofday(&totalCostS, NULL);
+      compress_float_1(zfp, field, cpu_timing); 
+      gettimeofday(&totalCostE, NULL);
+      (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+    }
+  }
+  else if(exec == 2)
+  {
+    if(type == 4){ // double
+      gettimeofday(&totalCostS, NULL);
+      compress_cuda_double_1(zfp, field, cpu_timing, gpu_timing);
+      gettimeofday(&totalCostE, NULL);
+      (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+    }
+    if(type == 3){ // float
+      gettimeofday(&totalCostS, NULL);
+      compress_cuda_float_1(zfp, field, cpu_timing, gpu_timing);
+      gettimeofday(&totalCostE, NULL);
+      (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+    }
+  }
+  stream_flush(zfp->stream);
+
+  int outputsize = stream_size(zfp->stream);
+  return outputsize;
+}
+
+/* public functions: compression and decompression --------------------------*/
+size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
+{
+  /* function table [execution][strided][dimensionality][scalar type] */
+  void (*ftable[3][2][4][4])(zfp_stream*, const zfp_field*) = {
+    /* serial */
+    {{{ compress_int32_1,         compress_int64_1,         compress_float_1,         compress_double_1 },
+      { compress_strided_int32_2, compress_strided_int64_2, compress_strided_float_2, compress_strided_double_2 },
+      { compress_strided_int32_3, compress_strided_int64_3, compress_strided_float_3, compress_strided_double_3 },
+      { compress_strided_int32_4, compress_strided_int64_4, compress_strided_float_4, compress_strided_double_4 }},
+     {{ compress_strided_int32_1, compress_strided_int64_1, compress_strided_float_1, compress_strided_double_1 },
+      { compress_strided_int32_2, compress_strided_int64_2, compress_strided_float_2, compress_strided_double_2 },
+      { compress_strided_int32_3, compress_strided_int64_3, compress_strided_float_3, compress_strided_double_3 },
+      { compress_strided_int32_4, compress_strided_int64_4, compress_strided_float_4, compress_strided_double_4 }}},
+
+    /* OpenMP */
+#ifdef _OPENMP
+    {{{ compress_omp_int32_1,         compress_omp_int64_1,         compress_omp_float_1,         compress_omp_double_1 },
+      { compress_strided_omp_int32_2, compress_strided_omp_int64_2, compress_strided_omp_float_2, compress_strided_omp_double_2 },
+      { compress_strided_omp_int32_3, compress_strided_omp_int64_3, compress_strided_omp_float_3, compress_strided_omp_double_3 },
+      { compress_strided_omp_int32_4, compress_strided_omp_int64_4, compress_strided_omp_float_4, compress_strided_omp_double_4 }},
+     {{ compress_strided_omp_int32_1, compress_strided_omp_int64_1, compress_strided_omp_float_1, compress_strided_omp_double_1 },
+      { compress_strided_omp_int32_2, compress_strided_omp_int64_2, compress_strided_omp_float_2, compress_strided_omp_double_2 },
+      { compress_strided_omp_int32_3, compress_strided_omp_int64_3, compress_strided_omp_float_3, compress_strided_omp_double_3 },
+      { compress_strided_omp_int32_4, compress_strided_omp_int64_4, compress_strided_omp_float_4, compress_strided_omp_double_4 }}},
+#else
+    {{{ NULL }}},
+#endif
+
+    /* CUDA */
+#ifdef ZFP_WITH_CUDA
+    {{{ compress_cuda_int32_1,         compress_cuda_int64_1,         compress_cuda_float_1,         compress_cuda_double_1 },
+      { compress_strided_cuda_int32_2, compress_strided_cuda_int64_2, compress_strided_cuda_float_2, compress_strided_cuda_double_2 },
+      { compress_strided_cuda_int32_3, compress_strided_cuda_int64_3, compress_strided_cuda_float_3, compress_strided_cuda_double_3 },
+      { NULL,                            NULL,                            NULL,                            NULL }},
+     {{ compress_strided_cuda_int32_1, compress_strided_cuda_int64_1, compress_strided_cuda_float_1, compress_strided_cuda_double_1 },
+      { compress_strided_cuda_int32_2, compress_strided_cuda_int64_2, compress_strided_cuda_float_2, compress_strided_cuda_double_2 },
+      { compress_strided_cuda_int32_3, compress_strided_cuda_int64_3, compress_strided_cuda_float_3, compress_strided_cuda_double_3 },
+      { NULL,                            NULL,                            NULL,                            NULL }}},
+#else
+    {{{ NULL }}},
+#endif
+  };
+  uint exec = zfp->exec.policy;
+  uint strided = zfp_field_stride(field, NULL);
+  uint dims = zfp_field_dimensionality(field);
+  uint type = field->type;
 
   void (*compress)(zfp_stream*, const zfp_field*);
 
@@ -1052,16 +1146,10 @@ zfp_compress(zfp_stream* zfp, const zfp_field* field)
     return 0;
 
   /* compress field and align bit stream on word boundary */
-  //jwang
-  gettimeofday(&compCostS, NULL);
-  compress(zfp, field); // jwang - compress_double_1
-  gettimeofday(&compCostE, NULL);
-  compCost = ((compCostE.tv_sec*1000000+compCostE.tv_usec)-(compCostS.tv_sec*1000000+compCostS.tv_usec))/1000000.0;
+  compress(zfp, field); 
   stream_flush(zfp->stream);
-  
-  //jwang
+
   int outputsize = stream_size(zfp->stream);
-  //printf("outputsize=%d\n", outputsize);
   return outputsize;
 }
 

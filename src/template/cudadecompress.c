@@ -7,7 +7,9 @@ _t2(decompress_cuda, Scalar, 1)(zfp_stream* stream, zfp_field* field)
 {
   if(zfp_stream_compression_mode(stream) == zfp_mode_fixed_rate)
   {
-    cuda_decompress(stream, field);   
+    //cuda_decompress(stream, field);   
+    //TODO
+    printf("temporaily unavailable now. need further work.");
   }
 }
 
@@ -17,7 +19,7 @@ _t2(decompress_strided_cuda, Scalar, 1)(zfp_stream* stream, zfp_field* field)
 {
   if(zfp_stream_compression_mode(stream) == zfp_mode_fixed_rate)
   {
-    cuda_decompress(stream, field);   
+    //cuda_decompress(stream, field);   
   }
 }
 
@@ -27,7 +29,7 @@ _t2(decompress_strided_cuda, Scalar, 2)(zfp_stream* stream, zfp_field* field)
 {
   if(zfp_stream_compression_mode(stream) == zfp_mode_fixed_rate)
   {
-    cuda_decompress(stream, field);   
+    //cuda_decompress(stream, field);   
   }
 }
 
@@ -37,7 +39,7 @@ _t2(decompress_strided_cuda, Scalar, 3)(zfp_stream* stream, zfp_field* field)
 {
   if(zfp_stream_compression_mode(stream) == zfp_mode_fixed_rate)
   {
-    cuda_decompress(stream, field);   
+    //cuda_decompress(stream, field);   
   }
 }
 

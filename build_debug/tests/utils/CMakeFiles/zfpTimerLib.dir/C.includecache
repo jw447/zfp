@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpTimer.c
+zfpTimer.h
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpTimer.h
+stdlib.h
+-
+
+/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpTimer.h
+time.h
+-
+mach/mach_time.h
+-
+
