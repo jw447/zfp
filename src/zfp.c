@@ -984,46 +984,47 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
 {
   //jwang
   FuncName;
-  /* function table [execution][strided][dimensionality][scalar type] */
-  void (*ftable[3][2][4][4])(zfp_stream*, const zfp_field*) = {
-    /* serial */
-    {{{ compress_int32_1,         compress_int64_1,         compress_float_1,         compress_double_1 },
-      { compress_strided_int32_2, compress_strided_int64_2, compress_strided_float_2, compress_strided_double_2 },
-      { compress_strided_int32_3, compress_strided_int64_3, compress_strided_float_3, compress_strided_double_3 },
-      { compress_strided_int32_4, compress_strided_int64_4, compress_strided_float_4, compress_strided_double_4 }},
-     {{ compress_strided_int32_1, compress_strided_int64_1, compress_strided_float_1, compress_strided_double_1 },
-      { compress_strided_int32_2, compress_strided_int64_2, compress_strided_float_2, compress_strided_double_2 },
-      { compress_strided_int32_3, compress_strided_int64_3, compress_strided_float_3, compress_strided_double_3 },
-      { compress_strided_int32_4, compress_strided_int64_4, compress_strided_float_4, compress_strided_double_4 }}},
-
-    /* OpenMP */
-#ifdef _OPENMP
-    {{{ compress_omp_int32_1,         compress_omp_int64_1,         compress_omp_float_1,         compress_omp_double_1 },
-      { compress_strided_omp_int32_2, compress_strided_omp_int64_2, compress_strided_omp_float_2, compress_strided_omp_double_2 },
-      { compress_strided_omp_int32_3, compress_strided_omp_int64_3, compress_strided_omp_float_3, compress_strided_omp_double_3 },
-      { compress_strided_omp_int32_4, compress_strided_omp_int64_4, compress_strided_omp_float_4, compress_strided_omp_double_4 }},
-     {{ compress_strided_omp_int32_1, compress_strided_omp_int64_1, compress_strided_omp_float_1, compress_strided_omp_double_1 },
-      { compress_strided_omp_int32_2, compress_strided_omp_int64_2, compress_strided_omp_float_2, compress_strided_omp_double_2 },
-      { compress_strided_omp_int32_3, compress_strided_omp_int64_3, compress_strided_omp_float_3, compress_strided_omp_double_3 },
-      { compress_strided_omp_int32_4, compress_strided_omp_int64_4, compress_strided_omp_float_4, compress_strided_omp_double_4 }}},
-#else
-    {{{ NULL }}},
-#endif
-
-    /* CUDA */
-#ifdef ZFP_WITH_CUDA
-    {{{ compress_cuda_int32_1,         compress_cuda_int64_1,         compress_cuda_float_1,         compress_cuda_double_1 },
-      { compress_strided_cuda_int32_2, compress_strided_cuda_int64_2, compress_strided_cuda_float_2, compress_strided_cuda_double_2 },
-      { compress_strided_cuda_int32_3, compress_strided_cuda_int64_3, compress_strided_cuda_float_3, compress_strided_cuda_double_3 },
-      { NULL,                            NULL,                            NULL,                            NULL }},
-     {{ compress_strided_cuda_int32_1, compress_strided_cuda_int64_1, compress_strided_cuda_float_1, compress_strided_cuda_double_1 },
-      { compress_strided_cuda_int32_2, compress_strided_cuda_int64_2, compress_strided_cuda_float_2, compress_strided_cuda_double_2 },
-      { compress_strided_cuda_int32_3, compress_strided_cuda_int64_3, compress_strided_cuda_float_3, compress_strided_cuda_double_3 },
-      { NULL,                            NULL,                            NULL,                            NULL }}},
-#else
-    {{{ NULL }}},
-#endif
-  };
+  
+//  /* function table [execution][strided][dimensionality][scalar type] */
+//  void (*ftable[3][2][4][4])(zfp_stream*, const zfp_field*) = {
+//    /* serial */
+//    {{{ compress_int32_1,         compress_int64_1,         compress_float_1,         compress_double_1 },
+//      { compress_strided_int32_2, compress_strided_int64_2, compress_strided_float_2, compress_strided_double_2 },
+//      { compress_strided_int32_3, compress_strided_int64_3, compress_strided_float_3, compress_strided_double_3 },
+//      { compress_strided_int32_4, compress_strided_int64_4, compress_strided_float_4, compress_strided_double_4 }},
+//     {{ compress_strided_int32_1, compress_strided_int64_1, compress_strided_float_1, compress_strided_double_1 },
+//      { compress_strided_int32_2, compress_strided_int64_2, compress_strided_float_2, compress_strided_double_2 },
+//      { compress_strided_int32_3, compress_strided_int64_3, compress_strided_float_3, compress_strided_double_3 },
+//      { compress_strided_int32_4, compress_strided_int64_4, compress_strided_float_4, compress_strided_double_4 }}},
+//
+//    /* OpenMP */
+//#ifdef _OPENMP
+//    {{{ compress_omp_int32_1,         compress_omp_int64_1,         compress_omp_float_1,         compress_omp_double_1 },
+//      { compress_strided_omp_int32_2, compress_strided_omp_int64_2, compress_strided_omp_float_2, compress_strided_omp_double_2 },
+//      { compress_strided_omp_int32_3, compress_strided_omp_int64_3, compress_strided_omp_float_3, compress_strided_omp_double_3 },
+//      { compress_strided_omp_int32_4, compress_strided_omp_int64_4, compress_strided_omp_float_4, compress_strided_omp_double_4 }},
+//     {{ compress_strided_omp_int32_1, compress_strided_omp_int64_1, compress_strided_omp_float_1, compress_strided_omp_double_1 },
+//      { compress_strided_omp_int32_2, compress_strided_omp_int64_2, compress_strided_omp_float_2, compress_strided_omp_double_2 },
+//      { compress_strided_omp_int32_3, compress_strided_omp_int64_3, compress_strided_omp_float_3, compress_strided_omp_double_3 },
+//      { compress_strided_omp_int32_4, compress_strided_omp_int64_4, compress_strided_omp_float_4, compress_strided_omp_double_4 }}},
+//#else
+//    {{{ NULL }}},
+//#endif
+//
+//    /* CUDA */
+//#ifdef ZFP_WITH_CUDA
+//    {{{ compress_cuda_int32_1,         compress_cuda_int64_1,         compress_cuda_float_1,         compress_cuda_double_1 },
+//      { compress_strided_cuda_int32_2, compress_strided_cuda_int64_2, compress_strided_cuda_float_2, compress_strided_cuda_double_2 },
+//      { compress_strided_cuda_int32_3, compress_strided_cuda_int64_3, compress_strided_cuda_float_3, compress_strided_cuda_double_3 },
+//      { NULL,                            NULL,                            NULL,                            NULL }},
+//     {{ compress_strided_cuda_int32_1, compress_strided_cuda_int64_1, compress_strided_cuda_float_1, compress_strided_cuda_double_1 },
+//      { compress_strided_cuda_int32_2, compress_strided_cuda_int64_2, compress_strided_cuda_float_2, compress_strided_cuda_double_2 },
+//      { compress_strided_cuda_int32_3, compress_strided_cuda_int64_3, compress_strided_cuda_float_3, compress_strided_cuda_double_3 },
+//      { NULL,                            NULL,                            NULL,                            NULL }}},
+//#else
+//    {{{ NULL }}},
+//#endif
+//  };
   uint exec = zfp->exec.policy;
   uint strided = zfp_field_stride(field, NULL);
   uint dims = zfp_field_dimensionality(field);
