@@ -17144,7 +17144,7 @@ timeval cuda_start31E;
 timeval cuda_start32S; 
 # 817
 timeval cuda_start32E; 
-# 859
+# 865
 typedef 
 # 819
 struct { 
@@ -17214,45 +17214,53 @@ float cuda_d2h_time;
 float cuda_free_time; 
 # 858
 uint stream_bytes; 
-# 859
-} CPU_timing; 
-# 879
-typedef 
 # 861
-struct { 
+int maxprec; 
 # 862
-int kernel_clock; 
+int emax; 
 # 863
-int pre_clock; 
+int zmaxprec; 
 # 864
-int encode_clock; 
+int zminexp; 
 # 865
-int ecost_clock; 
-# 866
-int max_exp_clock; 
+} CPU_timing; 
+# 885
+typedef 
 # 867
-int precision_clock; 
+struct { 
 # 868
-int emax_clock; 
+int kernel_clock; 
 # 869
-int mcost_clock; 
+int pre_clock; 
 # 870
-int quantize_factor_clock; 
+int encode_clock; 
 # 871
-int cast_loop_clock; 
+int ecost_clock; 
 # 872
-int embed_clock; 
+int max_exp_clock; 
 # 873
-int xform_clock; 
+int precision_clock; 
 # 874
-int order_clock; 
+int emax_clock; 
 # 875
-int order_loop_clock; 
+int mcost_clock; 
 # 876
-int bp_clock; 
+int quantize_factor_clock; 
 # 877
-int step1, step2, step3; 
+int cast_loop_clock; 
+# 878
+int embed_clock; 
 # 879
+int xform_clock; 
+# 880
+int order_clock; 
+# 881
+int order_loop_clock; 
+# 882
+int bp_clock; 
+# 883
+int step1, step2, step3; 
+# 885
 } GPU_timing; 
 # 7 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.h"
 extern "C" {

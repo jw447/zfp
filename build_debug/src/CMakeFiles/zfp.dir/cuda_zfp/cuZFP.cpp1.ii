@@ -18256,6 +18256,12 @@ typedef struct {
   float cuda_d2h_time;
   float cuda_free_time;
   uint stream_bytes;
+
+
+  int maxprec;
+  int emax;
+  int zmaxprec;
+  int zminexp;
 } CPU_timing;
 
 typedef struct {

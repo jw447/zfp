@@ -556,50 +556,58 @@ int main(int argc, char* argv[])
     memset(gpu_timing_h, 0, sizeof(GPU_timing));
 
     zfpsize = zfp_compress1(zfp, field, cpu_timing, gpu_timing_h);
-
+    //zfpsize = zfp_compress(zfp, field);
+    /* crm metrics */
+    //printf("numelements=%u\n", count);
+    //printf("inputsize=%lu\n", (unsigned long)rawsize);
+    //printf("outputsize=%lu\n", zfpsize);
+    //printf("cratio=%f\n", (double)rawsize / zfpsize);
+    //printf("maxprec=%d\n", (*cpu_timing).maxprec);
+    //printf("emax=%d\n", (*cpu_timing).emax);
+    //printf("zmaxprec=%d\n", (*cpu_timing).zmaxprec);
+    //printf("zminexp=%d\n", (*cpu_timing).zminexp);
+    /* crt metrics */
     printf("totalCost=%f\n", (*cpu_timing).totalCost);
     // cuda
-    
-    printf("warmup_time=%f\n", (*cpu_timing).warmup_time);
-    printf("cuda_Setup_time=%f\n", (*cpu_timing).cuda_Setup_time);
-    printf("cuda_setup_device_field_time=%f\n", (*cpu_timing).cuda_setup_device_field_time);
-    printf("cuda_datamalloc_time=%f\n", (*cpu_timing).cuda_datamalloc_time);
-    printf("cuda_datamcpy_time=%f\n", (*cpu_timing).cuda_datamcpy_time);
-    printf("register_time=%f\n", (*cpu_timing).register_time);
-    printf("field_bytes=%lu\n", (*cpu_timing).field_bytes);
-    printf("cuda_setup_device_stream_time=%f\n", (*cpu_timing).cuda_setup_device_stream_time);
-    printf("cuda_buffermalloc_time=%f\n", (*cpu_timing).cuda_buffermalloc_time);
-    printf("cuda_buffermcpy_time=%f\n", (*cpu_timing).cuda_buffermcpy_time);
-    printf("cuda_Encode_time=%f\n", (*cpu_timing).cuda_Encode_time);
-    printf("cuda_setup1d_time=%f\n", (*cpu_timing).cuda_setup1d_time);
-    printf("cuda_encode1d_time=%f\n", (*cpu_timing).cuda_encode1d_time); // kernel run time
-    printf("cuda_Kernel_time=%f\n", (*cpu_timing).cuda_kernel_time); //kernel function
-    printf("_kernel_clock=%d\n", (*gpu_timing_h).kernel_clock);
-    printf("_pre_clock=%d\n", (*gpu_timing_h).pre_clock);
-    printf("_encode_clock=%d\n", (*gpu_timing_h).encode_clock);
-    printf("_ecost_clock=%d\n", (*gpu_timing_h).ecost_clock);
-    printf("_max_exp_clock=%d\n", (*gpu_timing_h).max_exp_clock);
-    printf("_precision_clock=%d\n", (*gpu_timing_h).precision_clock);
-    printf("_emax_clock=%d\n", (*gpu_timing_h).emax_clock);
-    printf("_mcost_clock=%d\n", (*gpu_timing_h).mcost_clock);
-    printf("_quantize_factor_clock=%d\n", (*gpu_timing_h).quantize_factor_clock);
-    printf("_cast_loop_clock=%d\n", (*gpu_timing_h).cast_loop_clock);
-    printf("_embed_clock=%d\n", (*gpu_timing_h).embed_clock);
-    printf("_xform_clock=%d\n", (*gpu_timing_h).xform_clock);
-    printf("_order_clock=%d\n", (*gpu_timing_h).order_clock);
-    printf("_order_loop_clock=%d\n", (*gpu_timing_h).order_loop_clock); 
-    printf("_bp_clock=%d\n", (*gpu_timing_h).bp_clock);
-    printf("_step1=%d\n", (*gpu_timing_h).step1);
-    printf("_step2=%d\n", (*gpu_timing_h).step2);
-    printf("_step3=%d\n", (*gpu_timing_h).step3);
-    
-    printf("cuda_Cleanup_time=%f\n", (*cpu_timing).cuda_Cleanup_time);
-    printf("cuda_d2h_time=%f\n", (*cpu_timing).cuda_d2h_time);
-    printf("cuda_free_time=%f\n", (*cpu_timing).cuda_free_time);
-    printf("stream_bytes=%u\n", (*cpu_timing).stream_bytes); 
+    //printf("warmup_time=%f\n", (*cpu_timing).warmup_time);
+    //printf("cuda_Setup_time=%f\n", (*cpu_timing).cuda_Setup_time);
+    //printf("cuda_setup_device_field_time=%f\n", (*cpu_timing).cuda_setup_device_field_time);
+    //printf("cuda_datamalloc_time=%f\n", (*cpu_timing).cuda_datamalloc_time);
+    //printf("cuda_datamcpy_time=%f\n", (*cpu_timing).cuda_datamcpy_time);
+    //printf("register_time=%f\n", (*cpu_timing).register_time);
+    //printf("field_bytes=%lu\n", (*cpu_timing).field_bytes);
+    //printf("cuda_setup_device_stream_time=%f\n", (*cpu_timing).cuda_setup_device_stream_time);
+    //printf("cuda_buffermalloc_time=%f\n", (*cpu_timing).cuda_buffermalloc_time);
+    //printf("cuda_buffermcpy_time=%f\n", (*cpu_timing).cuda_buffermcpy_time);
+    //printf("cuda_Encode_time=%f\n", (*cpu_timing).cuda_Encode_time);
+    //printf("cuda_setup1d_time=%f\n", (*cpu_timing).cuda_setup1d_time);
+    //printf("cuda_encode1d_time=%f\n", (*cpu_timing).cuda_encode1d_time); // kernel run time
+    //printf("cuda_Kernel_time=%f\n", (*cpu_timing).cuda_kernel_time); //kernel function
+    //printf("_kernel_clock=%d\n", (*gpu_timing_h).kernel_clock);
+    //printf("_pre_clock=%d\n", (*gpu_timing_h).pre_clock);
+    //printf("_encode_clock=%d\n", (*gpu_timing_h).encode_clock);
+    //printf("_ecost_clock=%d\n", (*gpu_timing_h).ecost_clock);
+    //printf("_max_exp_clock=%d\n", (*gpu_timing_h).max_exp_clock);
+    //printf("_precision_clock=%d\n", (*gpu_timing_h).precision_clock);
+    //printf("_emax_clock=%d\n", (*gpu_timing_h).emax_clock);
+    //printf("_mcost_clock=%d\n", (*gpu_timing_h).mcost_clock);
+    //printf("_quantize_factor_clock=%d\n", (*gpu_timing_h).quantize_factor_clock);
+    //printf("_cast_loop_clock=%d\n", (*gpu_timing_h).cast_loop_clock);
+    //printf("_embed_clock=%d\n", (*gpu_timing_h).embed_clock);
+    //printf("_xform_clock=%d\n", (*gpu_timing_h).xform_clock);
+    //printf("_order_clock=%d\n", (*gpu_timing_h).order_clock);
+    //printf("_order_loop_clock=%d\n", (*gpu_timing_h).order_loop_clock); 
+    //printf("_bp_clock=%d\n", (*gpu_timing_h).bp_clock);
+    //printf("_step1=%d\n", (*gpu_timing_h).step1);
+    //printf("_step2=%d\n", (*gpu_timing_h).step2);
+    //printf("_step3=%d\n", (*gpu_timing_h).step3);
+    //
+    //printf("cuda_Cleanup_time=%f\n", (*cpu_timing).cuda_Cleanup_time);
+    //printf("cuda_d2h_time=%f\n", (*cpu_timing).cuda_d2h_time);
+    //printf("cuda_free_time=%f\n", (*cpu_timing).cuda_free_time);
+    //printf("stream_bytes=%u\n", (*cpu_timing).stream_bytes); 
    
     // serial
-    /*
     printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
     printf("precision_time=%f\n", (*cpu_timing).precision_time);
     printf("max_exp_time=%f\n", (*cpu_timing).max_exp_time);
@@ -616,8 +624,6 @@ int main(int argc, char* argv[])
     printf("step2=%f\n", (*cpu_timing).step2);
     printf("step3=%f\n", (*cpu_timing).step3);
     printf("num_bp=%d\n", (*cpu_timing).num_bp);
-    */
-
 
     if (zfpsize == 0) {
       fprintf(stderr, "compression failed\n");
@@ -709,8 +715,8 @@ int main(int argc, char* argv[])
   /* print compression and error statistics */
   if (!quiet) {
     const char* type_name[] = { "int32", "int64", "float", "double" };
-    //printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
-    //printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
+    printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
+    printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
     if (stats)
       print_error(fi, fo, type, count);
   }
