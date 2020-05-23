@@ -1077,8 +1077,7 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
   }
   stream_flush(zfp->stream);
 
-  int outputsize = stream_size(zfp->stream);
-  return outputsize;
+  return stream_size(zfp->stream);
 }
 
 /* public functions: compression and decompression --------------------------*/

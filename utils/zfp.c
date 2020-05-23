@@ -559,7 +559,7 @@ int main(int argc, char* argv[])
 
     printf("totalCost=%f\n", (*cpu_timing).totalCost);
     // cuda
-    
+    /*
     printf("warmup_time=%f\n", (*cpu_timing).warmup_time);
     printf("cuda_Setup_time=%f\n", (*cpu_timing).cuda_Setup_time);
     printf("cuda_setup_device_field_time=%f\n", (*cpu_timing).cuda_setup_device_field_time);
@@ -597,9 +597,9 @@ int main(int argc, char* argv[])
     printf("cuda_d2h_time=%f\n", (*cpu_timing).cuda_d2h_time);
     printf("cuda_free_time=%f\n", (*cpu_timing).cuda_free_time);
     printf("stream_bytes=%u\n", (*cpu_timing).stream_bytes); 
-   
+    */
     // serial
-    /*
+    
     printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
     printf("precision_time=%f\n", (*cpu_timing).precision_time);
     printf("max_exp_time=%f\n", (*cpu_timing).max_exp_time);
@@ -616,7 +616,6 @@ int main(int argc, char* argv[])
     printf("step2=%f\n", (*cpu_timing).step2);
     printf("step3=%f\n", (*cpu_timing).step3);
     printf("num_bp=%d\n", (*cpu_timing).num_bp);
-    */
 
 
     if (zfpsize == 0) {
