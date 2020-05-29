@@ -11,6 +11,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/testZfpEncodeBlock4dD
  ../src/encode4d.c
  ../src/inline/bitstream.c
  ../src/inline/inline.h
+ ../src/template/Huffman.h
  ../src/template/codec.h
  ../src/template/codec4.c
  ../src/template/codecf.c

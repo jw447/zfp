@@ -345,6 +345,8 @@ src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/block1.h
 src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/encode1d.c
 src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/template/Huffman.c
+src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/template/codec1.c
 src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/template/codecf.c
@@ -367,6 +369,7 @@ src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/block1.h
 src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/encode1f.c
 src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/template/codec1.c
 src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/template/codecf.c
@@ -389,6 +392,7 @@ src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/block1.h
 src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/encode1i.c
 src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/template/codec1.c
 src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/template/encode.c
@@ -408,6 +412,7 @@ src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/block1.h
 src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/encode1l.c
 src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/template/codec1.c
 src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/template/encode.c
@@ -427,6 +432,7 @@ src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/block2.h
 src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/encode2d.c
 src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/template/codec2.c
 src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/template/codecf.c
@@ -449,6 +455,7 @@ src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/block2.h
 src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/encode2f.c
 src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/template/codec2.c
 src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/template/codecf.c
@@ -471,6 +478,7 @@ src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/block2.h
 src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/encode2i.c
 src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/template/codec2.c
 src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/template/encode.c
@@ -490,6 +498,7 @@ src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/block2.h
 src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/encode2l.c
 src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/template/codec2.c
 src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/template/encode.c
@@ -509,6 +518,7 @@ src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/block3.h
 src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/encode3d.c
 src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/template/codec3.c
 src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/template/codecf.c
@@ -531,6 +541,7 @@ src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/block3.h
 src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/encode3f.c
 src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/template/codec3.c
 src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/template/codecf.c
@@ -553,6 +564,7 @@ src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/block3.h
 src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/encode3i.c
 src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/template/codec3.c
 src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/template/encode.c
@@ -572,6 +584,7 @@ src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/block3.h
 src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/encode3l.c
 src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/template/codec3.c
 src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/template/encode.c
@@ -591,6 +604,7 @@ src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/block4.h
 src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/encode4d.c
 src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/template/codec4.c
 src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/template/codecf.c
@@ -613,6 +627,7 @@ src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/block4.h
 src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/encode4f.c
 src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/template/codec4.c
 src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/template/codecf.c
@@ -635,6 +650,7 @@ src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/block4.h
 src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/encode4i.c
 src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/template/codec4.c
 src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/template/encode.c
@@ -654,6 +670,7 @@ src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/block4.h
 src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/encode4l.c
 src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/inline/inline.h
+src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/template/Huffman.h
 src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/template/codec.h
 src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/template/codec4.c
 src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/template/encode.c

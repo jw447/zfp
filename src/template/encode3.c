@@ -32,24 +32,24 @@ _t2(gather_partial, Scalar, 3)(Scalar* q, const Scalar* p, uint nx, uint ny, uin
 
 /* forward decorrelating 3D transform */
 static void
-_t2(fwd_xform, Int, 3)(Int* p, CPU_timing* cpu_timing)
+_t2(fwd_xform, Int, 3)(Int* p) 
 {
   uint x, y, z;
   /* transform along x */
   for (z = 0; z < 4; z++)
     for (y = 0; y < 4; y++)
       x++; // fact operation;
-      //_t1(fwd_lift, Int)(p + 4 * y + 16 * z, 1);
+      _t1(fwd_lift, Int)(p + 4 * y + 16 * z, 1);
   /* transform along y */
   for (x = 0; x < 4; x++)
     for (z = 0; z < 4; z++)
       x++;
-      //_t1(fwd_lift, Int)(p + 16 * z + 1 * x, 4);
+      _t1(fwd_lift, Int)(p + 16 * z + 1 * x, 4);
   /* transform along z */
   for (y = 0; y < 4; y++)
     for (x = 0; x < 4; x++)
       x++;
-      //_t1(fwd_lift, Int)(p + 1 * x + 4 * y, 16);
+      _t1(fwd_lift, Int)(p + 1 * x + 4 * y, 16);
 }
 
 /* public functions -------------------------------------------------------- */
@@ -58,6 +58,7 @@ _t2(fwd_xform, Int, 3)(Int* p, CPU_timing* cpu_timing)
 uint
 _t2(zfp_encode_block_strided, Scalar, 3)(zfp_stream* stream, const Scalar* p, int sx, int sy, int sz)
 {
+  //printf("zfp_encode_block_strided\n");
   /* gather block from strided array */
   cache_align_(Scalar fblock[64]);
   _t2(gather, Scalar, 3)(fblock, p, sx, sy, sz);
@@ -69,6 +70,7 @@ _t2(zfp_encode_block_strided, Scalar, 3)(zfp_stream* stream, const Scalar* p, in
 uint
 _t2(zfp_encode_partial_block_strided, Scalar, 3)(zfp_stream* stream, const Scalar* p, uint nx, uint ny, uint nz, int sx, int sy, int sz)
 {
+  //printf("zfp_encode_partial_block_strided\n");
   /* gather block from strided array */
   cache_align_(Scalar fblock[64]);
   _t2(gather_partial, Scalar, 3)(fblock, p, nx, ny, nz, sx, sy, sz);

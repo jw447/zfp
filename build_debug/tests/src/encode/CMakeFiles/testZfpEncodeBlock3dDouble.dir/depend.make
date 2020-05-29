@@ -10,6 +10,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dD
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o: ../src/encode3d.c
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o: ../src/inline/bitstream.c
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o: ../src/inline/inline.h
+tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o: ../src/template/Huffman.h
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o: ../src/template/codec.h
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o: ../src/template/codec3.c
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o: ../src/template/codecf.c

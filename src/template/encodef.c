@@ -40,7 +40,7 @@ _t1(quantize, Scalar)(Scalar x, int e)
 
 /* forward block-floating-point transform to signed integers */
 static void
-_t1(fwd_cast, Scalar)(Int* iblock, const Scalar* fblock, uint n, int emax, CPU_timing* cpu_timing)
+_t1(fwd_cast, Scalar)(Int* iblock, const Scalar* fblock, uint n, int emax)
 {
   /* compute power-of-two scale factor s */
   //gettimeofday(&mcost1, NULL);
@@ -67,7 +67,7 @@ _t1(fwd_cast, Scalar)(Int* iblock, const Scalar* fblock, uint n, int emax, CPU_t
 
 /* encode contiguous floating-point block using lossy algorithm */
 static uint
-_t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timing* cpu_timing)
+_t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
 {
   //jwang
   FuncName;
@@ -106,12 +106,12 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
     /* perform forward block-floating-point transform */
     
     //gettimeofday(&mcostS, NULL);
-    _t1(fwd_cast, Scalar)(iblock, fblock, BLOCK_SIZE, emax, cpu_timing); // get mantisa.
+    _t1(fwd_cast, Scalar)(iblock, fblock, BLOCK_SIZE, emax); // get mantisa.
     //gettimeofday(&mcostE, NULL);
 
     /* encode integer block */
     //gettimeofday(&embedS, NULL);
-    bits += _t2(encode_block, Int, DIMS)(zfp->stream, zfp->minbits - bits, zfp->maxbits - bits, maxprec, iblock, cpu_timing);
+    bits += _t2(encode_block, Int, DIMS)(zfp->stream, zfp->minbits - bits, zfp->maxbits - bits, maxprec, iblock);
     //gettimeofday(&embedE, NULL);
   }
   
@@ -140,12 +140,6 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
 uint _t2(zfp_encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
 {
   //jwang
-  //return REVERSIBLE(zfp) ? _t2(rev_encode_block, Scalar, DIMS)(zfp, fblock) : _t2(encode_block, Scalar, DIMS)(zfp, fblock, cpu_timing);
-  printf("not available\n");
+  return REVERSIBLE(zfp) ? _t2(rev_encode_block, Scalar, DIMS)(zfp, fblock) : _t2(encode_block, Scalar, DIMS)(zfp, fblock);
 }
 
-uint _t2(jw_zfp_encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timing* cpu_timing)
-{
-  //jwang
-  return _t2(encode_block, Scalar, DIMS)(zfp, fblock, cpu_timing);
-}

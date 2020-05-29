@@ -15,3 +15,5 @@
 #include "template/revencode.c"
 #include "template/revencodef.c"
 #include "template/revencode1.c"
+
+#include "template/Huffman.c"

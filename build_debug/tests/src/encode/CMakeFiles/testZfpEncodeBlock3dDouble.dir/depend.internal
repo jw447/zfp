@@ -11,6 +11,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dD
  ../src/encode3d.c
  ../src/inline/bitstream.c
  ../src/inline/inline.h
+ ../src/template/Huffman.h
  ../src/template/codec.h
  ../src/template/codec3.c
  ../src/template/codecf.c

@@ -10,6 +10,7 @@ tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/block1.h
 tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/encode1d.c
 tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/inline/bitstream.c
 tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/inline/inline.h
+tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/template/Huffman.h
 tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/template/codec.h
 tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/template/codec1.c
 tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o: ../src/template/codecf.c

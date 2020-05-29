@@ -11,6 +11,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/testZfpEncodeBl
  ../src/encode3f.c
  ../src/inline/bitstream.c
  ../src/inline/inline.h
+ ../src/template/Huffman.h
  ../src/template/codec.h
  ../src/template/codec3.c
  ../src/template/codecf.c

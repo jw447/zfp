@@ -1,1 +1,1 @@
-/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/zfpcmd.dir/zfp.c.o  -o ../bin/zfp -Wl,-rpath,/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64 ../lib64/libzfp.so.0.5.5 -lm 
+/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/zfpcmd.dir/zfp.c.o  -o ../bin/zfp -Wl,-rpath,/sw/summit/cuda/10.1.168/lib64 ../lib64/libzfp.a -lm -lgomp -lpthread -lm /sw/summit/cuda/10.1.168/lib64/libcudart.so -lstdc++ 

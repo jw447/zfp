@@ -346,6 +346,8 @@ src/CMakeFiles/zfp.dir/encode1d.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1d.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.c
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec1.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -368,6 +370,7 @@ src/CMakeFiles/zfp.dir/encode1f.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1f.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec1.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -390,6 +393,7 @@ src/CMakeFiles/zfp.dir/encode1i.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1i.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec1.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c
@@ -409,6 +413,7 @@ src/CMakeFiles/zfp.dir/encode1l.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1l.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec1.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c
@@ -428,6 +433,7 @@ src/CMakeFiles/zfp.dir/encode2d.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2d.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec2.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -450,6 +456,7 @@ src/CMakeFiles/zfp.dir/encode2f.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2f.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec2.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -472,6 +479,7 @@ src/CMakeFiles/zfp.dir/encode2i.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2i.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec2.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c
@@ -491,6 +499,7 @@ src/CMakeFiles/zfp.dir/encode2l.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2l.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec2.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c
@@ -510,6 +519,7 @@ src/CMakeFiles/zfp.dir/encode3d.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3d.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec3.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -532,6 +542,7 @@ src/CMakeFiles/zfp.dir/encode3f.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3f.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec3.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -554,6 +565,7 @@ src/CMakeFiles/zfp.dir/encode3i.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3i.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec3.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c
@@ -573,6 +585,7 @@ src/CMakeFiles/zfp.dir/encode3l.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3l.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec3.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c
@@ -592,6 +605,7 @@ src/CMakeFiles/zfp.dir/encode4d.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4d.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec4.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -614,6 +628,7 @@ src/CMakeFiles/zfp.dir/encode4f.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4f.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec4.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codecf.c
@@ -636,6 +651,7 @@ src/CMakeFiles/zfp.dir/encode4i.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4i.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec4.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c
@@ -655,6 +671,7 @@ src/CMakeFiles/zfp.dir/encode4l.c.o
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4l.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/bitstream.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/inline/inline.h
+ /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/Huffman.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec.h
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/codec4.c
  /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/template/encode.c

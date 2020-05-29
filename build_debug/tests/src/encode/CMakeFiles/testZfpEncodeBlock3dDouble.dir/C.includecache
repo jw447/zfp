@@ -98,6 +98,8 @@ zfp.h
 
 ../src/inline/inline.h
 
+../src/template/Huffman.h
+
 ../src/template/codec.h
 
 ../src/template/codec3.c
@@ -113,6 +115,8 @@ limits.h
 -
 zfp.h
 -
+Huffman.h
+../src/template/Huffman.h
 
 ../src/template/encode3.c
 

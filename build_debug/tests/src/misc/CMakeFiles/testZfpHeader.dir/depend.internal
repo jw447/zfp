@@ -11,6 +11,7 @@ tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o
  ../src/encode1d.c
  ../src/inline/bitstream.c
  ../src/inline/inline.h
+ ../src/template/Huffman.h
  ../src/template/codec.h
  ../src/template/codec1.c
  ../src/template/codecf.c
