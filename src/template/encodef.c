@@ -103,6 +103,7 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
     cache_align_(Int iblock[BLOCK_SIZE]);
     /* encode common exponent; LSB indicates that exponent is nonzero */
     bits += EBITS;
+    printf("EBITS=%d, bits=%d\n", EBITS, bits);
     stream_write_bits(zfp->stream, 2 * e + 1, bits);
     /* perform forward block-floating-point transform */
     
@@ -124,6 +125,7 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
       bits = zfp->minbits;
     }
   }
+  printf("blocksize=%d\n", bits);
   (*cpu_timing).ecost_time += ((ecostE.tv_sec*1000000+ecostE.tv_usec)-(ecostS.tv_sec*1000000+ecostS.tv_usec))/1000000.0;
   (*cpu_timing).max_exp_time += ((ecost1.tv_sec*1000000+ecost1.tv_usec)-(ecostS.tv_sec*1000000+ecostS.tv_usec))/1000000.0;
   (*cpu_timing).precision_time += ((ecost2.tv_sec*1000000+ecost2.tv_usec)-(ecost1.tv_sec*1000000+ecost1.tv_usec))/1000000.0;

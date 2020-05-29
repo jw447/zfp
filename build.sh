@@ -12,5 +12,5 @@ which nvcc
 
 cd build_debug
 cmake -DZFP_WITH_OPENMP=ON -DZFP_WITH_CUDA=ON -DBUILD_EXAMPLES=OFF ..
-#make -j4
+make -j4
 

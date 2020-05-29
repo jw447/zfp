@@ -96,8 +96,11 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   //clock_gettime(CLOCK_MONOTONIC, &tpstart);
   gettimeofday(&bpS, NULL);
   /* encode one bit plane at a time from MSB to LSB */
+  //uint cbits;
+  //printf("-------\n");
+  //printf("bits0=%u\n", bits);
   for (k = intprec, n = 0; bits && k-- > kmin;) {
-    //TODO
+    //cbits = bits;
     /* step 1: extract bit plane #k to x */
     //gettimeofday(&stepS, NULL);
     x = 0;
@@ -117,6 +120,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
     for (; n < size && bits && (bits--, stream_write_bit(&s, !!x)); x >>= 1, n++)
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
 	;
+    //printf("bpbp=%u\n", (cbits -bits));
     //gettimeofday(&stepE, NULL);
     //(*cpu_timing).num_bp+= 1;
     //(*cpu_timing).step1 += ((stepE.tv_sec*1000000+stepE.tv_usec)-(stepS.tv_sec*1000000+stepS.tv_usec))/1000000.0;
@@ -195,10 +199,13 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
   //diff = BILLION * (tpend.tv_sec - tpstart.tv_sec) + tpend.tv_nsec - tpstart.tv_nsec;
   //printf("order time = %llu\n", diff);
   gettimeofday(&orderE, NULL);
-
+   
   /* encode integer coefficients */
-  if (BLOCK_SIZE <= 64)
+  if (BLOCK_SIZE <= 64){
+    //printf("maxbits=%d, maxprec=%d\n", maxbits, maxprec);
     bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE, cpu_timing);
+    //printf("blocksize=%d\n", bits);
+  }
   else
     bits = _t1(encode_many_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
   /* write at least minbits bits by padding with zeros */

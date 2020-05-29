@@ -567,7 +567,7 @@ int main(int argc, char* argv[])
     //printf("zmaxprec=%d\n", (*cpu_timing).zmaxprec);
     //printf("zminexp=%d\n", (*cpu_timing).zminexp);
     /* crt metrics */
-    printf("totalCost=%f\n", (*cpu_timing).totalCost);
+    //printf("totalCost=%f\n", (*cpu_timing).totalCost);
     // cuda
     //printf("warmup_time=%f\n", (*cpu_timing).warmup_time);
     //printf("cuda_Setup_time=%f\n", (*cpu_timing).cuda_Setup_time);
@@ -608,22 +608,22 @@ int main(int argc, char* argv[])
     //printf("stream_bytes=%u\n", (*cpu_timing).stream_bytes); 
    
     // serial
-    printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
-    printf("precision_time=%f\n", (*cpu_timing).precision_time);
-    printf("max_exp_time=%f\n", (*cpu_timing).max_exp_time);
-    printf("emax_time=%f\n", (*cpu_timing).emax_time);
-    printf("mcost_time=%f\n", (*cpu_timing).mcost_time);
-    printf("quantize_factor_time=%f\n", (*cpu_timing).quantize_factor_time);
-    printf("cast_loop_time=%f\n", (*cpu_timing).cast_loop_time); 
-    printf("embed_time=%f\n", (*cpu_timing).embed_time);
-    printf("xform_time=%f\n", (*cpu_timing).xform_time);
-    printf("order_time=%f\n", (*cpu_timing).order_time);
-    printf("order_loop_time=%f\n", (*cpu_timing).order_loop_time);
-    printf("bp_time=%f\n", (*cpu_timing).bp_time);
-    printf("step1=%f\n", (*cpu_timing).step1);
-    printf("step2=%f\n", (*cpu_timing).step2);
-    printf("step3=%f\n", (*cpu_timing).step3);
-    printf("num_bp=%d\n", (*cpu_timing).num_bp);
+    //printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
+    //printf("precision_time=%f\n", (*cpu_timing).precision_time);
+    //printf("max_exp_time=%f\n", (*cpu_timing).max_exp_time);
+    //printf("emax_time=%f\n", (*cpu_timing).emax_time);
+    //printf("mcost_time=%f\n", (*cpu_timing).mcost_time);
+    //printf("quantize_factor_time=%f\n", (*cpu_timing).quantize_factor_time);
+    //printf("cast_loop_time=%f\n", (*cpu_timing).cast_loop_time); 
+    //printf("embed_time=%f\n", (*cpu_timing).embed_time);
+    //printf("xform_time=%f\n", (*cpu_timing).xform_time);
+    //printf("order_time=%f\n", (*cpu_timing).order_time);
+    //printf("order_loop_time=%f\n", (*cpu_timing).order_loop_time);
+    //printf("bp_time=%f\n", (*cpu_timing).bp_time);
+    //printf("step1=%f\n", (*cpu_timing).step1);
+    //printf("step2=%f\n", (*cpu_timing).step2);
+    //printf("step3=%f\n", (*cpu_timing).step3);
+    //printf("num_bp=%d\n", (*cpu_timing).num_bp);
 
     if (zfpsize == 0) {
       fprintf(stderr, "compression failed\n");
@@ -715,8 +715,8 @@ int main(int argc, char* argv[])
   /* print compression and error statistics */
   if (!quiet) {
     const char* type_name[] = { "int32", "int64", "float", "double" };
-    printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
-    printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
+    //printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
+    //printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
     if (stats)
       print_error(fi, fo, type, count);
   }
