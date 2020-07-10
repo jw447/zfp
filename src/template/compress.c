@@ -10,13 +10,15 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field, CPU_timing*
   uint nx = field->nx;
   uint mx = nx & ~3u;
   uint x;
+  uint outputsize=0;
 
   /* compress array one block of 4 values at a time */
   for (x = 0; x < mx; x += 4, data += 4)
     //_t2(zfp_encode_block, Scalar, 1)(stream, data, cpu_timing);
-    _t2(jw_zfp_encode_block, Scalar, 1)(stream, data, cpu_timing);
+    outputsize += (int)_t2(jw_zfp_encode_block, Scalar, 1)(stream, data, cpu_timing);
   //if (x < nx)
   //  _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
+  printf("outputsize=%u\n", outputsize);
 }
 
 /* compress 1d strided array */

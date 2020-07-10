@@ -1,4 +1,6 @@
 #include <zfp.h>
+
+
 /* private functions ------------------------------------------------------- */
 
 /* gather 4-value block from strided array */

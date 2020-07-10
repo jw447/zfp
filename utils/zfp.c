@@ -560,7 +560,7 @@ int main(int argc, char* argv[])
     /* crm metrics */
     //printf("numelements=%u\n", count);
     //printf("inputsize=%lu\n", (unsigned long)rawsize);
-    //printf("outputsize=%lu\n", zfpsize);
+    printf("Outputsize=%lu\n", (zfpsize*8));
     //printf("cratio=%f\n", (double)rawsize / zfpsize);
     //printf("maxprec=%d\n", (*cpu_timing).maxprec);
     //printf("emax=%d\n", (*cpu_timing).emax);
