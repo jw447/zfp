@@ -196,44 +196,44 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
   //int* type = (uint64*) malloc((intprec - kmin)*sizeof(uint64));
   //printf("encode tree4\n");
 
-  uint64 x;
-  int i, k, j;
-  j = -1;
-  for (k = intprec; k-- > kmin;) {
-    x = 0;
-    for (i = 0; i < BLOCK_SIZE; i++)
-      x += (uint64)((ublock[i] >> k) & 1u) << i;
-    j += 1;
-    type[j] = x;
-  }
-  //printf("encode tree5\n");
-
-  size_t nodeCount = 0;
-  //printf("encode tree6\n");
-
-  init(huffmanTree, type, (j + 1));
-  for (i = 0; i < huffmanTree->stateNum; i++)
-    if (huffmanTree->code[i]) nodeCount++;
-      nodeCount = nodeCount*2-1;
-
-  unsigned char *treeBytes;
-  unsigned int treeByteSize = convert_HuffTree_to_bytes_anyStates(huffmanTree, nodeCount, &treeBytes);
-
-  printf("nodeCount=%lu, treeByteSize=%u\n", nodeCount, treeByteSize);
-
-  // 
-   SZ_ReleaseHuffman(huffmanTree);
-
-  ///* encode integer coefficients */
-  //if (BLOCK_SIZE <= 64)
-  //  bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
-  //else
-  //  bits = _t1(encode_many_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
-  ///* write at least minbits bits by padding with zeros */
-  //if (bits < minbits) {
-  //  stream_pad(stream, minbits - bits);
-  //  bits = minbits;
+  //uint64 x;
+  //int i, k, j;
+  //j = -1;
+  //for (k = intprec; k-- > kmin;) {
+  //  x = 0;
+  //  for (i = 0; i < BLOCK_SIZE; i++)
+  //    x += (uint64)((ublock[i] >> k) & 1u) << i;
+  //  j += 1;
+  //  type[j] = x;
   //}
+  ////printf("encode tree5\n");
+
+  //size_t nodeCount = 0;
+  ////printf("encode tree6\n");
+
+  //init(huffmanTree, type, (j + 1));
+  //for (i = 0; i < huffmanTree->stateNum; i++)
+  //  if (huffmanTree->code[i]) nodeCount++;
+  //    nodeCount = nodeCount*2-1;
+
+  //unsigned char *treeBytes;
+  //unsigned int treeByteSize = convert_HuffTree_to_bytes_anyStates(huffmanTree, nodeCount, &treeBytes);
+
+  //printf("nodeCount=%lu, treeByteSize=%u\n", nodeCount, treeByteSize);
+
+  //// 
+  // SZ_ReleaseHuffman(huffmanTree);
+
+  /* encode integer coefficients */
+  if (BLOCK_SIZE <= 64)
+    bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
+  else
+    bits = _t1(encode_many_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
+  /* write at least minbits bits by padding with zeros */
+  if (bits < minbits) {
+    stream_pad(stream, minbits - bits);
+    bits = minbits;
+  }
   //(*cpu_timing).xform_time += ((xformE.tv_sec*1000000+xformE.tv_usec)-(xformS.tv_sec*1000000+xformS.tv_usec))/1000000.0;
   //(*cpu_timing).order_time += ((orderE.tv_sec*1000000+orderE.tv_usec)-(orderS.tv_sec*1000000+orderS.tv_usec))/1000000.0;
 
