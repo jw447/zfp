@@ -600,22 +600,22 @@ int main(int argc, char* argv[])
     */
     // serial
     
-    printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
-    printf("precision_time=%f\n", (*cpu_timing).precision_time);
-    printf("max_exp_time=%f\n", (*cpu_timing).max_exp_time);
-    printf("emax_time=%f\n", (*cpu_timing).emax_time);
-    printf("mcost_time=%f\n", (*cpu_timing).mcost_time);
-    printf("quantize_factor_time=%f\n", (*cpu_timing).quantize_factor_time);
-    printf("cast_loop_time=%f\n", (*cpu_timing).cast_loop_time); 
-    printf("embed_time=%f\n", (*cpu_timing).embed_time);
-    printf("xform_time=%f\n", (*cpu_timing).xform_time);
-    printf("order_time=%f\n", (*cpu_timing).order_time);
-    printf("order_loop_time=%f\n", (*cpu_timing).order_loop_time);
-    printf("bp_time=%f\n", (*cpu_timing).bp_time);
-    printf("step1=%f\n", (*cpu_timing).step1);
-    printf("step2=%f\n", (*cpu_timing).step2);
-    printf("step3=%f\n", (*cpu_timing).step3);
-    printf("num_bp=%d\n", (*cpu_timing).num_bp);
+    //printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
+    //printf("precision_time=%f\n", (*cpu_timing).precision_time);
+    //printf("max_exp_time=%f\n", (*cpu_timing).max_exp_time);
+    //printf("emax_time=%f\n", (*cpu_timing).emax_time);
+    //printf("mcost_time=%f\n", (*cpu_timing).mcost_time);
+    //printf("quantize_factor_time=%f\n", (*cpu_timing).quantize_factor_time);
+    //printf("cast_loop_time=%f\n", (*cpu_timing).cast_loop_time); 
+    //printf("embed_time=%f\n", (*cpu_timing).embed_time);
+    //printf("xform_time=%f\n", (*cpu_timing).xform_time);
+    //printf("order_time=%f\n", (*cpu_timing).order_time);
+    //printf("order_loop_time=%f\n", (*cpu_timing).order_loop_time);
+    //printf("bp_time=%f\n", (*cpu_timing).bp_time);
+    //printf("step1=%f\n", (*cpu_timing).step1);
+    //printf("step2=%f\n", (*cpu_timing).step2);
+    //printf("step3=%f\n", (*cpu_timing).step3);
+    //printf("num_bp=%d\n", (*cpu_timing).num_bp);
 
 
     if (zfpsize == 0) {
