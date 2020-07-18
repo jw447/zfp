@@ -100,6 +100,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
     //TODO
     /* step 1: extract bit plane #k to x */
     //gettimeofday(&stepS, NULL);
+    uint cbits = bits;
     x = 0;
     for (i = 0; i < size; i++)
       x += (uint64)((data[i] >> k) & 1u) << i;
@@ -109,6 +110,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
 
     /* step 2: encode first n bits of bit plane */
     //gettimeofday(&stepS, NULL);
+    uint nn = n;
     m = MIN(n, bits);
     bits -= m;
     x = stream_write_bits(&s, x, m);
@@ -119,7 +121,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
     for (; n < size && bits && (bits--, stream_write_bit(&s, !!x)); x >>= 1, n++)
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
 	;
-    printf("bpvalue: %lu, first_n: %u, bits: %d\n", xx, nn, (cbits-bits));
+    //printf("bpvalue: %lu, first_n: %u, bits: %d\n", xx, nn, (cbits-bits));
     //gettimeofday(&stepE, NULL);
     //(*cpu_timing).num_bp++;
     //(*cpu_timing).step1 += ((stepE.tv_sec*1000000+stepE.tv_usec)-(stepS.tv_sec*1000000+stepS.tv_usec))/1000000.0;
