@@ -547,6 +547,7 @@ int main(int argc, char* argv[])
 
     /* compress data */
     //jwang
+    //
     CPU_timing *cpu_timing;
     GPU_timing *gpu_timing_h;
     cpu_timing = (CPU_timing*)malloc(sizeof(CPU_timing));
@@ -554,12 +555,11 @@ int main(int argc, char* argv[])
     
     memset(cpu_timing, 0, sizeof(CPU_timing));
     memset(gpu_timing_h, 0, sizeof(GPU_timing));
-
+    
     zfpsize = zfp_compress1(zfp, field, cpu_timing, gpu_timing_h);
 
     printf("totalCost=%f\n", (*cpu_timing).totalCost);
     // cuda
-    /*
     printf("warmup_time=%f\n", (*cpu_timing).warmup_time);
     printf("cuda_Setup_time=%f\n", (*cpu_timing).cuda_Setup_time);
     printf("cuda_setup_device_field_time=%f\n", (*cpu_timing).cuda_setup_device_field_time);
@@ -597,7 +597,6 @@ int main(int argc, char* argv[])
     printf("cuda_d2h_time=%f\n", (*cpu_timing).cuda_d2h_time);
     printf("cuda_free_time=%f\n", (*cpu_timing).cuda_free_time);
     printf("stream_bytes=%u\n", (*cpu_timing).stream_bytes); 
-    */
     // serial
     
     //printf("ecost_time=%f\n", (*cpu_timing).ecost_time);

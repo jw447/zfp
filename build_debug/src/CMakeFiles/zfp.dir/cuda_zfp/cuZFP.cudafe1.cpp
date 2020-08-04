@@ -38548,7 +38548,7 @@ inline void *stream_data(const bitstream *s)
 # 174
 { 
 # 176
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 177
 return s->begin; 
 # 178
@@ -38558,7 +38558,7 @@ inline size_t stream_size(const bitstream *s)
 # 183
 { 
 # 185
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 186
 return sizeof(word) * ((s->ptr) - (s->begin)); 
 # 187
@@ -38568,7 +38568,7 @@ inline size_t stream_capacity(const bitstream *s)
 # 192
 { 
 # 194
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 195
 return sizeof(word) * ((s->end) - (s->begin)); 
 # 196
@@ -38578,7 +38578,7 @@ inline size_t stream_stride_block(const bitstream *s)
 # 201
 { 
 # 203
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 207
 (void)s; 
 # 208
@@ -38590,7 +38590,7 @@ inline ptrdiff_t stream_stride_delta(const bitstream *s)
 # 215
 { 
 # 217
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 221
 (void)s; 
 # 222
@@ -38728,7 +38728,7 @@ inline size_t stream_rtell(const bitstream *s)
 # 328
 { 
 # 330
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 331
 return (((uint)((8) * sizeof(word))) * ((s->ptr) - (s->begin))) - (s->bits); 
 # 332
@@ -38738,7 +38738,7 @@ inline size_t stream_wtell(const bitstream *s)
 # 337
 { 
 # 339
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 340
 return (((uint)((8) * sizeof(word))) * ((s->ptr) - (s->begin))) + (s->bits); 
 # 341
@@ -38748,7 +38748,7 @@ inline void stream_rewind(bitstream *s)
 # 346
 { 
 # 348
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 349
 (s->ptr) = (s->begin); 
 # 350
@@ -38762,7 +38762,7 @@ inline void stream_rseek(bitstream *s, size_t offset)
 # 357
 { 
 # 359
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 360
 uint n = offset % ((uint)((8) * sizeof(word))); 
 # 361
@@ -38790,7 +38790,7 @@ inline void stream_wseek(bitstream *s, size_t offset)
 # 375
 { 
 # 377
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 378
 uint n = offset % ((uint)((8) * sizeof(word))); 
 # 379
@@ -38822,7 +38822,7 @@ inline void stream_skip(bitstream *s, uint n)
 # 395
 { 
 # 397
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 398
 stream_rseek(s, stream_rtell(s) + n); 
 # 399
@@ -38832,7 +38832,7 @@ inline void stream_pad(bitstream *s, uint n)
 # 404
 { 
 # 406
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 407
 for ((s->bits) += n; (s->bits) >= ((uint)((8) * sizeof(word))); (s->bits) -= ((uint)((8) * sizeof(word)))) { 
 # 408
@@ -38848,7 +38848,7 @@ inline size_t stream_align(bitstream *s)
 # 416
 { 
 # 418
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 419
 uint bits = s->bits; 
 # 420
@@ -38864,7 +38864,7 @@ inline size_t stream_flush(bitstream *s)
 # 428
 { 
 # 430
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 431
 uint bits = (((uint)((8) * sizeof(word))) - (s->bits)) % ((uint)((8) * sizeof(word))); 
 # 432
@@ -38880,7 +38880,7 @@ inline void stream_copy(bitstream *dst, bitstream *src, size_t n)
 # 440
 { 
 # 442
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 443
 while (n > ((uint)((8) * sizeof(word)))) { 
 # 444
@@ -38906,7 +38906,7 @@ inline bitstream *stream_open(void *buffer, size_t bytes)
 # 473
 { 
 # 475
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 476
 bitstream *s = (bitstream *)malloc(sizeof(bitstream)); 
 # 477
@@ -38928,7 +38928,7 @@ inline void stream_close(bitstream *s)
 # 491
 { 
 # 493
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 494
 free(s); 
 # 495
@@ -38938,7 +38938,7 @@ inline bitstream *stream_clone(const bitstream *s)
 # 500
 { 
 # 502
-; 
+printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
 # 503
 bitstream *c = (bitstream *)malloc(sizeof(bitstream)); 
 # 504

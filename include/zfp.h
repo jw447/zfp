@@ -764,8 +764,8 @@ void zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims);
 }
 #endif
 
-//#define FuncName printf("func: %s at file: %s\n", __func__, __FILE__)
-#define FuncName
+#define FuncName printf("func: %s at file: %s\n", __func__, __FILE__)
+//#define FuncName
 /* zfp cpu timers */
 struct timeval totalCostS;
 struct timeval totalCostE;
