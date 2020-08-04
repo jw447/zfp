@@ -13,10 +13,42 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   uint outputsize=0;
 
   /* compress array one block of 4 values at a time */
-  for (x = 0; x < mx; x += 4, data += 4)
-    _t2(zfp_encode_block, Scalar, 1)(stream, data);
-  if (x < nx)
-    _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
+  //for (x = 0; x < mx; x += 4, data += 4)
+  //  _t2(zfp_encode_block, Scalar, 1)(stream, data);
+  //if (x < nx)
+  //  _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
+
+  const Int* idata = (const Int*)data; // store the transformed coefficients.
+  /* jwang: until DCT */
+  for (x = 0; x < mx; x += 4, data += 4){
+    int emax = _t1(exponent_block, Scalar)(data, BLOCK_SIZE);
+    printf("emax=%d\n", emax);
+    int maxprec = precision(emax, stream->maxprec, stream->minexp, 1);
+    printf("maxprec=%d\n", maxprec);
+    uint e = maxprec ? emax + EBIAS : 0; 
+    
+    if (e) {
+      cache_align_(Int iblock[BLOCK_SIZE]);
+      /* encode common exponent; LSB indicates that exponent is nonzero */
+      /* perform forward block-floating-point transform */
+      _t1(fwd_cast, Scalar)(iblock, data, BLOCK_SIZE, emax); // get mantisa.
+      for(int i = 0; i <= BLOCK_SIZE; i++) printf("iblock=%d\n", iblocki[i]);
+
+      /* encode integer block */
+      //bits += _t2(encode_block, Int, DIMS)(zfp->stream, zfp->minbits - bits, zfp->maxbits - bits, maxprec, iblock);
+      //cache_align_(UInt ublock[BLOCK_SIZE]);
+      /* perform decorrelating transform */
+      //_t1(fwd_lift, Int)(ublock, 1);
+      
+    }
+
+  }
+
+
+
+  /* huffman encoding */
+
+
 }
 
 /* compress 1d strided array */
