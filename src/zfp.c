@@ -1003,7 +1003,6 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
       return 0;
   }
   /* compress field and align bit stream on word boundary */
-  //jwang
   if(exec == 0)
   {
     if(type == 4){ // double
@@ -1011,6 +1010,7 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
       compress_double_1(zfp, field, cpu_timing);
       gettimeofday(&totalCostE, NULL);
       (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+      printf("totalcost=%f\n", (*cpu_timing).totalCost);
     }
     if(type == 3){ // float
       gettimeofday(&totalCostS, NULL);
@@ -1024,14 +1024,12 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
     if(type == 4){ // double
       gettimeofday(&totalCostS, NULL);
       compress_cuda_double_1(zfp, field, cpu_timing, gpu_timing);
-      printf("cuda compression completed.\n");
       gettimeofday(&totalCostE, NULL);
       (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
     }
     if(type == 3){ // float
       gettimeofday(&totalCostS, NULL);
       compress_cuda_float_1(zfp, field, cpu_timing, gpu_timing);
-      printf("cuda compression completed.\n");
       gettimeofday(&totalCostE, NULL);
       (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
     }

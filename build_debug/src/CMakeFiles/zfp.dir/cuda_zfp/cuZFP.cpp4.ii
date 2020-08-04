@@ -17119,7 +17119,6 @@ void inline __attribute__((device)) encode_block(BlockWriter<BlockSize> &stream,
   end = clock();
   (*gpu_timing_d).order_clock = (int)(end - start);
 
-
   uint intprec = 8 * (uint)sizeof(UInt);
   uint kmin = intprec > maxprec ? intprec - maxprec : 0;
   uint bits = maxbits;
@@ -17222,7 +17221,7 @@ void inline __attribute__((device)) zfp_encode_block(Scalar *fblock,
 
 
     start = clock();
-
+    encode_block<Int, BlockSize>(block_writer, maxbits - ebits, maxprec, iblock, gpu_timing_d);
     end = clock();
     (*gpu_timing_d).embed_clock = (int)(end - start);
   }
@@ -36756,7 +36755,7 @@ inline void*
 stream_data(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   return s->begin;
 }
 
@@ -36765,7 +36764,7 @@ inline size_t
 stream_size(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   return sizeof(word) * (s->ptr - s->begin);
 }
 
@@ -36774,7 +36773,7 @@ inline size_t
 stream_capacity(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   return sizeof(word) * (s->end - s->begin);
 }
 
@@ -36783,7 +36782,7 @@ inline size_t
 stream_stride_block(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
 
 
 
@@ -36797,7 +36796,7 @@ inline ptrdiff_t
 stream_stride_delta(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
 
 
 
@@ -36910,7 +36909,7 @@ inline size_t
 stream_rtell(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   return ((uint)(8 * sizeof(word))) * (s->ptr - s->begin) - s->bits;
 }
 
@@ -36919,7 +36918,7 @@ inline size_t
 stream_wtell(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   return ((uint)(8 * sizeof(word))) * (s->ptr - s->begin) + s->bits;
 }
 
@@ -36928,7 +36927,7 @@ inline void
 stream_rewind(bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   s->ptr = s->begin;
   s->buffer = 0;
   s->bits = 0;
@@ -36939,7 +36938,7 @@ inline void
 stream_rseek(bitstream* s, size_t offset)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   uint n = offset % ((uint)(8 * sizeof(word)));
   s->ptr = s->begin + offset / ((uint)(8 * sizeof(word)));
   if (n) {
@@ -36957,7 +36956,7 @@ inline void
 stream_wseek(bitstream* s, size_t offset)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   uint n = offset % ((uint)(8 * sizeof(word)));
   s->ptr = s->begin + offset / ((uint)(8 * sizeof(word)));
   if (n) {
@@ -36977,7 +36976,7 @@ inline void
 stream_skip(bitstream* s, uint n)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   stream_rseek(s, stream_rtell(s) + n);
 }
 
@@ -36986,7 +36985,7 @@ inline void
 stream_pad(bitstream* s, uint n)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   for (s->bits += n; s->bits >= ((uint)(8 * sizeof(word))); s->bits -= ((uint)(8 * sizeof(word)))) {
     stream_write_word(s, s->buffer);
     s->buffer = 0;
@@ -36998,7 +36997,7 @@ inline size_t
 stream_align(bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   uint bits = s->bits;
   if (bits)
     stream_skip(s, bits);
@@ -37010,7 +37009,7 @@ inline size_t
 stream_flush(bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   uint bits = (((uint)(8 * sizeof(word))) - s->bits) % ((uint)(8 * sizeof(word)));
   if (bits)
     stream_pad(s, bits);
@@ -37022,7 +37021,7 @@ inline void
 stream_copy(bitstream* dst, bitstream* src, size_t n)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   while (n > ((uint)(8 * sizeof(word)))) {
     word w = (word)stream_read_bits(src, ((uint)(8 * sizeof(word))));
     stream_write_bits(dst, w, ((uint)(8 * sizeof(word))));
@@ -37038,7 +37037,7 @@ inline bitstream*
 stream_open(void* buffer, size_t bytes)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   bitstream* s = (bitstream*)malloc(sizeof(bitstream));
   if (s) {
     s->begin = (word*)buffer;
@@ -37056,7 +37055,7 @@ inline void
 stream_close(bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   free(s);
 }
 
@@ -37065,7 +37064,7 @@ inline bitstream*
 stream_clone(const bitstream* s)
 {
 
-  printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c");
+  ;
   bitstream* c = (bitstream*)malloc(sizeof(bitstream));
   if (c)
     *c = *s;

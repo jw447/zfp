@@ -319,7 +319,6 @@ void inline __device__ encode_block(BlockWriter<BlockSize> &stream,
   fwd_order<Int, UInt, BlockSize>(ublock, iblock, gpu_timing_d); //
   end = clock();
   (*gpu_timing_d).order_clock = (int)(end - start);
-  //
   
   uint intprec = CHAR_BIT * (uint)sizeof(UInt);
   uint kmin = intprec > maxprec ? intprec - maxprec : 0;
@@ -423,7 +422,7 @@ void inline __device__ zfp_encode_block(Scalar *fblock,
 
     //printf("maxbits=%d, ebits=%u, _maxbits=%d\n", maxbits, ebits, (maxbits-ebits));
     start = clock();
-    //encode_block<Int, BlockSize>(block_writer, maxbits - ebits, maxprec, iblock, gpu_timing_d); // encode mantissa
+    encode_block<Int, BlockSize>(block_writer, maxbits - ebits, maxprec, iblock, gpu_timing_d); // encode mantissa
     end = clock();
     (*gpu_timing_d).embed_clock = (int)(end - start);
   }

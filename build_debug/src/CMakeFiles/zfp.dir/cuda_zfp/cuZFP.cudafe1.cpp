@@ -18304,7 +18304,7 @@ iblock, GPU_timing *
 gpu_timing_d) 
 # 305
 {int volatile ___ = 1;(void)stream;(void)maxbits;(void)maxprec;(void)iblock;(void)gpu_timing_d;
-# 385
+# 384
 ::exit(___);}
 #if 0
 # 305
@@ -18331,318 +18331,320 @@ fwd_order< Int, typename zfp_traits< Int> ::UInt, BlockSize> (ublock, iblock, gp
 end = (clock()); 
 # 321
 ((*gpu_timing_d).order_clock) = ((int)(end - start)); 
-# 324
+# 323
 uint intprec = ((8) * ((uint)sizeof(UInt))); 
-# 325
+# 324
 uint kmin = (intprec > maxprec) ? intprec - maxprec : (0); 
-# 326
+# 325
 uint bits = maxbits; 
-# 327
+# 326
 uint i, k, m, n; 
-# 328
+# 327
 uint64 x; 
-# 331
+# 330
 size_t start1; 
-# 332
+# 331
 size_t start2; 
-# 333
+# 332
 size_t start3; 
-# 335
+# 334
 size_t end1; 
-# 336
+# 335
 size_t end2; 
-# 337
+# 336
 size_t end3; 
-# 339
+# 338
 start = (clock()); 
-# 341
+# 340
 for ((k = intprec), (n = (0)); bits && ((k--) > kmin);) { 
-# 344
+# 343
 start1 = (clock()); 
-# 345
+# 344
 x = (0); 
-# 346
+# 345
 for (i = (0); i < (BlockSize); i++) 
+# 346
+{ 
 # 347
-{ 
-# 348
 x += (((uint64)(((ublock[i]) >> k) & 1U)) << i); 
+# 348
+}  
 # 349
-}  
-# 350
 end1 = (clock()); 
-# 353
+# 352
 start2 = (clock()); 
-# 354
+# 353
 m = min(n, bits); 
-# 355
+# 354
 bits -= m; 
-# 356
+# 355
 x = (stream.write_bits(x, m)); 
-# 357
+# 356
 end2 = (clock()); 
-# 360
+# 359
 start3 = (clock()); 
-# 361
+# 360
 for (; (n < (BlockSize)) && bits && ((bits--), (stream.write_bit(!(!x)))); (x >>= 1), (n++)) 
-# 362
+# 361
 { 
-# 366
+# 365
 for (; (n < (BlockSize - 1)) && bits && ((bits--), (!(stream.write_bit(x & (1U))))); (x >>= 1), (n++)) 
-# 367
+# 366
 { 
-# 371
+# 370
 }  
-# 375
+# 374
 }  
-# 377
+# 376
 end3 = (clock()); 
-# 378
+# 377
 }  
+# 379
+end = (clock()); 
 # 380
-end = (clock()); 
-# 381
 ((*gpu_timing_d).bp_clock) = ((int)(end - start)); 
-# 382
+# 381
 ((*gpu_timing_d).step1) = ((int)(end1 - start1)); 
-# 383
+# 382
 ((*gpu_timing_d).step2) = ((int)(end2 - start2)); 
-# 384
+# 383
 ((*gpu_timing_d).step3) = ((int)(end3 - start3)); 
-# 385
+# 384
 } 
 #endif
-# 387 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 386 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template< class Scalar, int BlockSize> __attribute__((unused)) inline void 
-# 388
+# 387
 zfp_encode_block(Scalar *fblock, const int 
+# 388
+maxbits, const uint 
 # 389
-maxbits, const uint 
+block_idx, Word *
 # 390
-block_idx, Word *
+stream, GPU_timing *
 # 391
-stream, GPU_timing *
+gpu_timing_d) 
 # 392
-gpu_timing_d) 
-# 393
 {int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 430
-::exit(___);}
-#if 0
-# 393
-{ 
-# 396
-BlockWriter< BlockSize>  block_writer(stream, maxbits, block_idx); 
-# 398
-size_t start = clock(); 
-# 399
-int emax = max_exponent< Scalar, BlockSize> (fblock); 
-# 400
-size_t end1 = clock(); 
-# 402
-int maxprec = precision(emax, get_precision< Scalar> (), get_min_exp< Scalar> ()); 
-# 403
-size_t end2 = clock(); 
-# 405
-uint e = (maxprec) ? emax + get_ebias< Scalar> () : 0; 
-# 406
-size_t end3 = clock(); 
-# 408
-((*gpu_timing_d).max_exp_clock) = ((int)(end1 - start)); 
-# 409
-((*gpu_timing_d).precision_clock) = ((int)(end2 - end1)); 
-# 410
-((*gpu_timing_d).emax_clock) = ((int)(end3 - end2)); 
-# 411
-((*gpu_timing_d).ecost_clock) = ((int)(end3 - start)); 
-# 413
-if (e) 
-# 414
-{ 
-# 415
-const uint ebits = get_ebits< Scalar> () + 1; 
-# 416
-(block_writer.write_bits(((2) * e) + (1), ebits)); 
-# 417
-typedef typename zfp_traits< Scalar> ::Int Int; 
-# 418
-Int iblock[BlockSize]; 
-# 419
-start = (clock()); 
-# 420
-fwd_cast< Scalar, typename zfp_traits< Scalar> ::Int, BlockSize> (iblock, fblock, emax, gpu_timing_d); 
-# 421
-size_t end = clock(); 
-# 422
-((*gpu_timing_d).mcost_clock) = ((int)(end - start)); 
-# 425
-start = (clock()); 
-# 427
-end = (clock()); 
-# 428
-((*gpu_timing_d).embed_clock) = ((int)(end - start)); 
 # 429
+::exit(___);}
+#if 0
+# 392
+{ 
+# 395
+BlockWriter< BlockSize>  block_writer(stream, maxbits, block_idx); 
+# 397
+size_t start = clock(); 
+# 398
+int emax = max_exponent< Scalar, BlockSize> (fblock); 
+# 399
+size_t end1 = clock(); 
+# 401
+int maxprec = precision(emax, get_precision< Scalar> (), get_min_exp< Scalar> ()); 
+# 402
+size_t end2 = clock(); 
+# 404
+uint e = (maxprec) ? emax + get_ebias< Scalar> () : 0; 
+# 405
+size_t end3 = clock(); 
+# 407
+((*gpu_timing_d).max_exp_clock) = ((int)(end1 - start)); 
+# 408
+((*gpu_timing_d).precision_clock) = ((int)(end2 - end1)); 
+# 409
+((*gpu_timing_d).emax_clock) = ((int)(end3 - end2)); 
+# 410
+((*gpu_timing_d).ecost_clock) = ((int)(end3 - start)); 
+# 412
+if (e) 
+# 413
+{ 
+# 414
+const uint ebits = get_ebits< Scalar> () + 1; 
+# 415
+(block_writer.write_bits(((2) * e) + (1), ebits)); 
+# 416
+typedef typename zfp_traits< Scalar> ::Int Int; 
+# 417
+Int iblock[BlockSize]; 
+# 418
+start = (clock()); 
+# 419
+fwd_cast< Scalar, typename zfp_traits< Scalar> ::Int, BlockSize> (iblock, fblock, emax, gpu_timing_d); 
+# 420
+size_t end = clock(); 
+# 421
+((*gpu_timing_d).mcost_clock) = ((int)(end - start)); 
+# 424
+start = (clock()); 
+# 425
+encode_block< typename zfp_traits< Scalar> ::Int, BlockSize> (block_writer, maxbits - ebits, maxprec, iblock, gpu_timing_d); 
+# 426
+end = (clock()); 
+# 427
+((*gpu_timing_d).embed_clock) = ((int)(end - start)); 
+# 428
 }  
-# 430
+# 429
 } 
 #endif
-# 433 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 432 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< int, 64> (int *fblock, const int 
+# 433
+maxbits, const uint 
 # 434
-maxbits, const uint 
+block_idx, Word *
 # 435
-block_idx, Word *
+stream, GPU_timing *
 # 436
-stream, GPU_timing *
+gpu_timing_d) 
 # 437
-gpu_timing_d) 
-# 438
 {int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 442
-::exit(___);}
-#if 0
-# 438
-{ 
-# 439
-BlockWriter< 64>  block_writer(stream, maxbits, block_idx); 
-# 440
-const int intprec = get_precision< int> (); 
 # 441
-encode_block< int, 64> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 442
-} 
-#endif
-# 445 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
-template<> __attribute__((unused)) inline void zfp_encode_block< long long, 64> (long long *fblock, const int 
-# 446
-maxbits, const uint 
-# 447
-block_idx, Word *
-# 448
-stream, GPU_timing *
-# 449
-gpu_timing_d) 
-# 450
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 454
 ::exit(___);}
 #if 0
-# 450
+# 437
 { 
-# 451
+# 438
 BlockWriter< 64>  block_writer(stream, maxbits, block_idx); 
-# 452
-const int intprec = get_precision< long long> (); 
+# 439
+const int intprec = get_precision< int> (); 
+# 440
+encode_block< int, 64> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
+# 441
+} 
+#endif
+# 444 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+template<> __attribute__((unused)) inline void zfp_encode_block< long long, 64> (long long *fblock, const int 
+# 445
+maxbits, const uint 
+# 446
+block_idx, Word *
+# 447
+stream, GPU_timing *
+# 448
+gpu_timing_d) 
+# 449
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
 # 453
+::exit(___);}
+#if 0
+# 449
+{ 
+# 450
+BlockWriter< 64>  block_writer(stream, maxbits, block_idx); 
+# 451
+const int intprec = get_precision< long long> (); 
+# 452
 encode_block< long long, 64> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 454
+# 453
 } 
 #endif
-# 457 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 456 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< int, 16> (int *fblock, const int 
+# 457
+maxbits, const uint 
 # 458
-maxbits, const uint 
+block_idx, Word *
 # 459
-block_idx, Word *
+stream, GPU_timing *
 # 460
-stream, GPU_timing *
+gpu_timing_d) 
 # 461
-gpu_timing_d) 
-# 462
 {int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 466
-::exit(___);}
-#if 0
-# 462
-{ 
-# 463
-BlockWriter< 16>  block_writer(stream, maxbits, block_idx); 
-# 464
-const int intprec = get_precision< int> (); 
 # 465
-encode_block< int, 16> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 466
-} 
-#endif
-# 469 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
-template<> __attribute__((unused)) inline void zfp_encode_block< long long, 16> (long long *fblock, const int 
-# 470
-maxbits, const uint 
-# 471
-block_idx, Word *
-# 472
-stream, GPU_timing *
-# 473
-gpu_timing_d) 
-# 474
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 478
 ::exit(___);}
 #if 0
-# 474
+# 461
 { 
-# 475
+# 462
 BlockWriter< 16>  block_writer(stream, maxbits, block_idx); 
-# 476
-const int intprec = get_precision< long long> (); 
-# 477
-encode_block< long long, 16> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 478
-} 
-#endif
-# 481 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
-template<> __attribute__((unused)) inline void zfp_encode_block< int, 4> (int *fblock, const int 
-# 482
-maxbits, const uint 
-# 483
-block_idx, Word *
-# 484
-stream, GPU_timing *
-# 485
-gpu_timing_d) 
-# 486
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 490
-::exit(___);}
-#if 0
-# 486
-{ 
-# 487
-BlockWriter< 4>  block_writer(stream, maxbits, block_idx); 
-# 488
+# 463
 const int intprec = get_precision< int> (); 
-# 489
-encode_block< int, 4> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 490
+# 464
+encode_block< int, 16> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
+# 465
 } 
 #endif
-# 493 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
-template<> __attribute__((unused)) inline void zfp_encode_block< long long, 4> (long long *fblock, const int 
-# 494
+# 468 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+template<> __attribute__((unused)) inline void zfp_encode_block< long long, 16> (long long *fblock, const int 
+# 469
 maxbits, const uint 
-# 495
+# 470
 block_idx, Word *
-# 496
+# 471
 stream, GPU_timing *
-# 497
+# 472
 gpu_timing_d) 
-# 498
+# 473
 {int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 502
+# 477
 ::exit(___);}
 #if 0
-# 498
+# 473
 { 
-# 499
-BlockWriter< 4>  block_writer(stream, maxbits, block_idx); 
-# 500
+# 474
+BlockWriter< 16>  block_writer(stream, maxbits, block_idx); 
+# 475
 const int intprec = get_precision< long long> (); 
-# 501
-encode_block< long long, 4> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 502
+# 476
+encode_block< long long, 16> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
+# 477
 } 
 #endif
-# 504 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 480 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+template<> __attribute__((unused)) inline void zfp_encode_block< int, 4> (int *fblock, const int 
+# 481
+maxbits, const uint 
+# 482
+block_idx, Word *
+# 483
+stream, GPU_timing *
+# 484
+gpu_timing_d) 
+# 485
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
+# 489
+::exit(___);}
+#if 0
+# 485
+{ 
+# 486
+BlockWriter< 4>  block_writer(stream, maxbits, block_idx); 
+# 487
+const int intprec = get_precision< int> (); 
+# 488
+encode_block< int, 4> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
+# 489
+} 
+#endif
+# 492 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+template<> __attribute__((unused)) inline void zfp_encode_block< long long, 4> (long long *fblock, const int 
+# 493
+maxbits, const uint 
+# 494
+block_idx, Word *
+# 495
+stream, GPU_timing *
+# 496
+gpu_timing_d) 
+# 497
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
+# 501
+::exit(___);}
+#if 0
+# 497
+{ 
+# 498
+BlockWriter< 4>  block_writer(stream, maxbits, block_idx); 
+# 499
+const int intprec = get_precision< long long> (); 
+# 500
+encode_block< long long, 4> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
+# 501
+} 
+#endif
+# 503 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 }
 # 55 "/sw/summit/cuda/10.1.168/include/cuda_profiler_api.h"
 extern "C" {
@@ -38548,7 +38550,7 @@ inline void *stream_data(const bitstream *s)
 # 174
 { 
 # 176
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 177
 return s->begin; 
 # 178
@@ -38558,7 +38560,7 @@ inline size_t stream_size(const bitstream *s)
 # 183
 { 
 # 185
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 186
 return sizeof(word) * ((s->ptr) - (s->begin)); 
 # 187
@@ -38568,7 +38570,7 @@ inline size_t stream_capacity(const bitstream *s)
 # 192
 { 
 # 194
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 195
 return sizeof(word) * ((s->end) - (s->begin)); 
 # 196
@@ -38578,7 +38580,7 @@ inline size_t stream_stride_block(const bitstream *s)
 # 201
 { 
 # 203
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 207
 (void)s; 
 # 208
@@ -38590,7 +38592,7 @@ inline ptrdiff_t stream_stride_delta(const bitstream *s)
 # 215
 { 
 # 217
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 221
 (void)s; 
 # 222
@@ -38728,7 +38730,7 @@ inline size_t stream_rtell(const bitstream *s)
 # 328
 { 
 # 330
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 331
 return (((uint)((8) * sizeof(word))) * ((s->ptr) - (s->begin))) - (s->bits); 
 # 332
@@ -38738,7 +38740,7 @@ inline size_t stream_wtell(const bitstream *s)
 # 337
 { 
 # 339
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 340
 return (((uint)((8) * sizeof(word))) * ((s->ptr) - (s->begin))) + (s->bits); 
 # 341
@@ -38748,7 +38750,7 @@ inline void stream_rewind(bitstream *s)
 # 346
 { 
 # 348
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 349
 (s->ptr) = (s->begin); 
 # 350
@@ -38762,7 +38764,7 @@ inline void stream_rseek(bitstream *s, size_t offset)
 # 357
 { 
 # 359
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 360
 uint n = offset % ((uint)((8) * sizeof(word))); 
 # 361
@@ -38790,7 +38792,7 @@ inline void stream_wseek(bitstream *s, size_t offset)
 # 375
 { 
 # 377
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 378
 uint n = offset % ((uint)((8) * sizeof(word))); 
 # 379
@@ -38822,7 +38824,7 @@ inline void stream_skip(bitstream *s, uint n)
 # 395
 { 
 # 397
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 398
 stream_rseek(s, stream_rtell(s) + n); 
 # 399
@@ -38832,7 +38834,7 @@ inline void stream_pad(bitstream *s, uint n)
 # 404
 { 
 # 406
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 407
 for ((s->bits) += n; (s->bits) >= ((uint)((8) * sizeof(word))); (s->bits) -= ((uint)((8) * sizeof(word)))) { 
 # 408
@@ -38848,7 +38850,7 @@ inline size_t stream_align(bitstream *s)
 # 416
 { 
 # 418
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 419
 uint bits = s->bits; 
 # 420
@@ -38864,7 +38866,7 @@ inline size_t stream_flush(bitstream *s)
 # 428
 { 
 # 430
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 431
 uint bits = (((uint)((8) * sizeof(word))) - (s->bits)) % ((uint)((8) * sizeof(word))); 
 # 432
@@ -38880,7 +38882,7 @@ inline void stream_copy(bitstream *dst, bitstream *src, size_t n)
 # 440
 { 
 # 442
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 443
 while (n > ((uint)((8) * sizeof(word)))) { 
 # 444
@@ -38906,7 +38908,7 @@ inline bitstream *stream_open(void *buffer, size_t bytes)
 # 473
 { 
 # 475
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 476
 bitstream *s = (bitstream *)malloc(sizeof(bitstream)); 
 # 477
@@ -38928,7 +38930,7 @@ inline void stream_close(bitstream *s)
 # 491
 { 
 # 493
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 494
 free(s); 
 # 495
@@ -38938,7 +38940,7 @@ inline bitstream *stream_clone(const bitstream *s)
 # 500
 { 
 # 502
-printf("func: %s at file: %s\n", __func__, "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/../inline/bitstream.c"); 
+; 
 # 503
 bitstream *c = (bitstream *)malloc(sizeof(bitstream)); 
 # 504
