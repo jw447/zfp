@@ -12,6 +12,7 @@ _t2(compress_cuda, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   { 
     cuda_compress(stream, field);  // 
   }
+  else printf("only fixed rate mode is supported for now.\n");
 }
 
 /* compress 1d strided array */
