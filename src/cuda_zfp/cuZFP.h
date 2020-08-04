@@ -6,7 +6,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-  size_t cuda_compress(zfp_stream *stream, const zfp_field *field, CPU_timing* cpu_timing, GPU_timing* gpu_timing);
+  size_t cuda_compress(zfp_stream *stream, const zfp_field *field);
   void cuda_decompress(zfp_stream *stream, zfp_field *field);
 #ifdef __cplusplus
 }

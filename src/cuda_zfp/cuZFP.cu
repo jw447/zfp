@@ -99,7 +99,7 @@ bool is_contigous(const uint dims[3], const int3 &stride, long long int &offset)
 // encode expects device pointers
 //
 template<typename T>
-size_t encode(uint dims[3], int3 stride, int bits_per_block, T *d_data, Word *d_stream, CPU_timing* cpu_timing, GPU_timing* gpu_timing)
+size_t encode(uint dims[3], int3 stride, int bits_per_block, T *d_data, Word *d_stream)
 {
   int d = 0;
   size_t len = 1;
@@ -118,15 +118,8 @@ size_t encode(uint dims[3], int3 stride, int bits_per_block, T *d_data, Word *d_
   {
     int dim = dims[0];
     int sx = stride.x;
-    gettimeofday(&cuda_start20S, NULL);
     cuZFP::ConstantSetup::setup_1d();
-    gettimeofday(&cuda_start20E, NULL);
-    (*cpu_timing).cuda_setup1d_time = (float)((cuda_start20E.tv_sec*1000000+cuda_start20E.tv_usec)-(cuda_start20S.tv_sec*1000000+cuda_start20S.tv_usec))/1000000.0;
-
-    gettimeofday(&cuda_start21S, NULL);
-    stream_size = cuZFP::encode1<T>(dim, sx, d_data, d_stream, bits_per_block, cpu_timing, gpu_timing); // kernel run time 
-    gettimeofday(&cuda_start21E, NULL);
-    (*cpu_timing).cuda_encode1d_time = (float)((cuda_start21E.tv_sec*1000000+cuda_start21E.tv_usec)-(cuda_start21S.tv_sec*1000000+cuda_start21S.tv_usec))/1000000.0;
+    stream_size = cuZFP::encode1<T>(dim, sx, d_data, d_stream, bits_per_block); // kernel run time 
   }
   else if(d == 2)
   {
@@ -208,7 +201,7 @@ size_t decode(uint ndims[3], int3 stride, int bits_per_block, Word *stream, T *o
   return stream_bytes;
 }
 
-Word *setup_device_stream(zfp_stream *stream,const zfp_field *field, CPU_timing* cpu_timing)
+Word *setup_device_stream(zfp_stream *stream,const zfp_field *field)
 {
 
   bool stream_device = cuZFP::is_gpu_ptr(stream->stream->begin);
@@ -224,15 +217,8 @@ Word *setup_device_stream(zfp_stream *stream,const zfp_field *field, CPU_timing*
   // TODO: we we have a real stream we can just ask it how big it is
   size_t max_size = zfp_stream_maximum_size(stream, field);
 
-  gettimeofday(&cuda_start111S, NULL);
   cudaMalloc(&d_stream, max_size); // zfp buffer size. 
-  gettimeofday(&cuda_start111E, NULL);
-  (*cpu_timing).cuda_buffermalloc_time = (float)((cuda_start111E.tv_sec*1000000+cuda_start111E.tv_usec)-(cuda_start111S.tv_sec*1000000+cuda_start111S.tv_usec))/1000000.0;
- 
-  gettimeofday(&cuda_start111S, NULL);
   cudaMemcpy(d_stream, stream->stream->begin, max_size, cudaMemcpyHostToDevice);
-  gettimeofday(&cuda_start111E, NULL);
-  (*cpu_timing).cuda_buffermcpy_time = (float)((cuda_start111E.tv_sec*1000000+cuda_start111E.tv_usec)-(cuda_start111S.tv_sec*1000000+cuda_start111S.tv_usec))/1000000.0; 
   return d_stream;
 }
 
@@ -262,7 +248,7 @@ void * offset_void(zfp_type type, void *ptr, long long int offset)
   return offset_ptr;
 }
 
-void *setup_device_field(const zfp_field *field, const int3 &stride, long long int &offset, CPU_timing* cpu_timing)
+void *setup_device_field(const zfp_field *field, const int3 &stride, long long int &offset)
 {
   bool field_device = false;
   
@@ -295,27 +281,18 @@ void *setup_device_field(const zfp_field *field, const int3 &stride, long long i
   if(contig)
   {
     size_t field_bytes = type_size * field_size;
-    gettimeofday(&cuda_start101S, NULL);
     cudaMalloc(&d_data, field_bytes); // field_bytes=data size
-    gettimeofday(&cuda_start101E, NULL);
-    (*cpu_timing).cuda_datamalloc_time = (float)((cuda_start101E.tv_sec*1000000+cuda_start101E.tv_usec)-(cuda_start101S.tv_sec*1000000+cuda_start101S.tv_usec))/1000000.0;
     
     /* register pageable memory */
-    gettimeofday(&cuda_start101S, NULL);
     cudaError_t err_ = cudaHostRegister(host_ptr, field_bytes, cudaHostRegisterDefault);
-    gettimeofday(&cuda_start101E, NULL);
-    (*cpu_timing).register_time = (float)((cuda_start101E.tv_sec*1000000+cuda_start101E.tv_usec)-(cuda_start101S.tv_sec*1000000+cuda_start101S.tv_usec))/1000000.0;
 
-    gettimeofday(&cuda_start101S, NULL);
     cudaMemcpy(d_data, host_ptr, field_bytes, cudaMemcpyHostToDevice);
-    gettimeofday(&cuda_start101E, NULL);
-    (*cpu_timing).cuda_datamcpy_time = (float)((cuda_start101E.tv_sec*1000000+cuda_start101E.tv_usec)-(cuda_start101S.tv_sec*1000000+cuda_start101S.tv_usec))/1000000.0;
   }
 
   return offset_void(field->type, d_data, -offset);
 }
 
-void cleanup_device_ptr(void *orig_ptr, void *d_ptr, size_t bytes, long long int offset, zfp_type type, CPU_timing* cpu_timing)
+void cleanup_device_ptr(void *orig_ptr, void *d_ptr, size_t bytes, long long int offset, zfp_type type)
 {
   bool device = cuZFP::is_gpu_ptr(orig_ptr);
 
@@ -330,22 +307,16 @@ void cleanup_device_ptr(void *orig_ptr, void *d_ptr, size_t bytes, long long int
   if(bytes > 0)
   {
     cudaError_t err_ = cudaHostRegister(h_offset_ptr, bytes, cudaHostRegisterDefault);
-    gettimeofday(&cuda_start31S, NULL);
     cudaMemcpy(h_offset_ptr, d_offset_ptr, bytes, cudaMemcpyDeviceToHost);
-    gettimeofday(&cuda_start31E, NULL);
-    (*cpu_timing).cuda_d2h_time = (float)((cuda_start31E.tv_sec*1000000+cuda_start31E.tv_usec)-(cuda_start31S.tv_sec*1000000+cuda_start31S.tv_usec))/1000000.0;
   }
 
-  gettimeofday(&cuda_start32S, NULL);
   cudaFree(d_offset_ptr);
-  gettimeofday(&cuda_start32E, NULL);
-  (*cpu_timing).cuda_free_time = (float)((cuda_start32E.tv_sec*1000000+cuda_start32E.tv_usec)-(cuda_start32S.tv_sec*1000000+cuda_start32S.tv_usec))/1000000.0;
 }
 
 } // namespace internal
 
 size_t
-cuda_compress(zfp_stream *stream, const zfp_field *field, CPU_timing* cpu_timing, GPU_timing* gpu_timing)
+cuda_compress(zfp_stream *stream, const zfp_field *field)
 {
   //jwang
   cudaSetDevice(0);
@@ -353,10 +324,7 @@ cuda_compress(zfp_stream *stream, const zfp_field *field, CPU_timing* cpu_timing
   cudaPointerAttributes atts;
 
   // warm-up
-  gettimeofday(&cuda_start1S, NULL);
   cudaError_t perr = cudaPointerGetAttributes(&atts, dev_ptr); // get attributes of pointer
-  gettimeofday(&cuda_start1E, NULL);
-  (*cpu_timing).warmup_time = (float)((cuda_start1E.tv_sec*1000000+cuda_start1E.tv_usec)-(cuda_start1S.tv_sec*1000000+cuda_start1S.tv_usec))/1000000.0;
  
   uint dims[3];
   dims[0] = field->nx;
@@ -373,9 +341,7 @@ cuda_compress(zfp_stream *stream, const zfp_field *field, CPU_timing* cpu_timing
     }
   }
   unsigned long int field_bytes = type_size * field_size;
-  (*cpu_timing).field_bytes = field_bytes;
 
-  gettimeofday(&cuda_start1S, NULL); //cuda1
   int3 stride;  
   stride.x = field->sx ? field->sx : 1;
   stride.y = field->sy ? field->sy : field->nx;
@@ -384,68 +350,52 @@ cuda_compress(zfp_stream *stream, const zfp_field *field, CPU_timing* cpu_timing
   size_t stream_bytes = 0;
   long long int offset = 0; 
 
-  gettimeofday(&cuda_start10S, NULL); // cuda10
-  void *d_data = internal::setup_device_field(field, stride, offset, cpu_timing);
-  gettimeofday(&cuda_start10E, NULL); // cuda10
+  void *d_data = internal::setup_device_field(field, stride, offset);
 
   if(d_data == NULL)
   {
     // null means the array is non-contiguous host mem which is not supported
     return 0;
   }
-  gettimeofday(&cuda_start11S, NULL); // cuda11
-  Word *d_stream = internal::setup_device_stream(stream, field, cpu_timing);
-  gettimeofday(&cuda_start11E, NULL); // cuda11
+  Word *d_stream = internal::setup_device_stream(stream, field);
 
-  gettimeofday(&cuda_start1E, NULL); //cuda1
-  (*cpu_timing).cuda_setup_device_field_time = (float)((cuda_start10E.tv_sec*1000000+cuda_start10E.tv_usec)-(cuda_start10S.tv_sec*1000000+cuda_start10S.tv_usec))/1000000.0;
-  (*cpu_timing).cuda_setup_device_stream_time = (float)((cuda_start11E.tv_sec*1000000+cuda_start11E.tv_usec)-(cuda_start11S.tv_sec*1000000+cuda_start11S.tv_usec))/1000000.0;
-  (*cpu_timing).cuda_Setup_time = (float)((cuda_start1E.tv_sec*1000000+cuda_start1E.tv_usec)-(cuda_start1S.tv_sec*1000000+cuda_start1S.tv_usec))/1000000.0; 
 
-  gettimeofday(&cuda_start2S, NULL); //cuda2
   if(field->type == zfp_type_float)
   {
     float* data = (float*) d_data;
-    stream_bytes = internal::encode<float>(dims, stride, (int)stream->maxbits, data, d_stream, cpu_timing, gpu_timing); //
+    stream_bytes = internal::encode<float>(dims, stride, (int)stream->maxbits, data, d_stream); //
   }
   else if(field->type == zfp_type_double)
   {
     double* data = (double*) d_data;
-    stream_bytes = internal::encode<double>(dims, stride, (int)stream->maxbits, data, d_stream, cpu_timing, gpu_timing); //
+    stream_bytes = internal::encode<double>(dims, stride, (int)stream->maxbits, data, d_stream); //
   }
   else if(field->type == zfp_type_int32)
   {
     int * data = (int*) d_data;
-    stream_bytes = internal::encode<int>(dims, stride, (int)stream->maxbits, data, d_stream, cpu_timing, gpu_timing);
+    stream_bytes = internal::encode<int>(dims, stride, (int)stream->maxbits, data, d_stream);
   }
   else if(field->type == zfp_type_int64)
   {
     long long int * data = (long long int*) d_data;
-    stream_bytes = internal::encode<long long int>(dims, stride, (int)stream->maxbits, data, d_stream, cpu_timing, gpu_timing);
+    stream_bytes = internal::encode<long long int>(dims, stride, (int)stream->maxbits, data, d_stream);
   }
 
-  gettimeofday(&cuda_start2E, NULL); //cuda2
-  (*cpu_timing).cuda_Encode_time = (float)((cuda_start2E.tv_sec*1000000+cuda_start2E.tv_usec)-(cuda_start2S.tv_sec*1000000+cuda_start2S.tv_usec))/1000000.0;
 
-  internal::cleanup_device_ptr(field->data, d_data, 0, offset, field->type, cpu_timing);
-
-  gettimeofday(&cuda_start3S, NULL); //cuda3
-  internal::cleanup_device_ptr(stream->stream->begin, d_stream, stream_bytes, 0, field->type, cpu_timing);
-  gettimeofday(&cuda_start3E, NULL); //cuda3 
-  (*cpu_timing).cuda_Cleanup_time = (float)((cuda_start3E.tv_sec*1000000+cuda_start3E.tv_usec)-(cuda_start3S.tv_sec*1000000+cuda_start3S.tv_usec))/1000000.0;
+  internal::cleanup_device_ptr(field->data, d_data, 0, offset, field->type);
+  internal::cleanup_device_ptr(stream->stream->begin, d_stream, stream_bytes, 0, field->type);
   // zfp wants to flush the stream.
   // set bits to wsize because we already did that.
   size_t compressed_size = stream_bytes / sizeof(Word);
   stream->stream->bits = wsize;
   // set stream pointer to end of stream
   stream->stream->ptr = stream->stream->begin + compressed_size;
-    (*cpu_timing).stream_bytes = stream_bytes;
 
   return stream_bytes;
 }
  
 void 
-cuda_decompress(zfp_stream *stream, zfp_field *field, CPU_timing* cpu_timing)
+cuda_decompress(zfp_stream *stream, zfp_field *field)
 {
   uint dims[3];
   dims[0] = field->nx;
@@ -459,7 +409,7 @@ cuda_decompress(zfp_stream *stream, zfp_field *field, CPU_timing* cpu_timing)
 
   size_t decoded_bytes = 0;
   long long int offset = 0;
-  void *d_data = internal::setup_device_field(field, stride, offset, cpu_timing);
+  void *d_data = internal::setup_device_field(field, stride, offset);
   
   if(d_data == NULL)
   {
@@ -467,7 +417,7 @@ cuda_decompress(zfp_stream *stream, zfp_field *field, CPU_timing* cpu_timing)
     return;
   }
 
-  Word *d_stream = internal::setup_device_stream(stream, field, cpu_timing);
+  Word *d_stream = internal::setup_device_stream(stream, field);
 
   if(field->type == zfp_type_float)
   {
@@ -511,8 +461,8 @@ cuda_decompress(zfp_stream *stream, zfp_field *field, CPU_timing* cpu_timing)
   }
   
   size_t bytes = type_size * field_size;
-  internal::cleanup_device_ptr(stream->stream->begin, d_stream, 0, 0, field->type, cpu_timing);
-  internal::cleanup_device_ptr(field->data, d_data, bytes, offset, field->type, cpu_timing);
+  internal::cleanup_device_ptr(stream->stream->begin, d_stream, 0, 0, field->type);
+  internal::cleanup_device_ptr(field->data, d_data, bytes, offset, field->type);
   
   // this is how zfp determins if this was a success
   size_t words_read = decoded_bytes / sizeof(Word);

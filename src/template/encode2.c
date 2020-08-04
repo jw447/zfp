@@ -26,17 +26,15 @@ _t2(gather_partial, Scalar, 2)(Scalar* q, const Scalar* p, uint nx, uint ny, int
 
 /* forward decorrelating 2D transform */
 static void
-_t2(fwd_xform, Int, 2)(Int* p, CPU_timing* cpu_timing)
+_t2(fwd_xform, Int, 2)(Int* p)
 {
   uint x, y;
   /* transform along x */
   for (y = 0; y < 4; y++)
-    //_t1(fwd_lift, Int)(p + 4 * y, 1);
-    printf("not working right now\n");
+    _t1(fwd_lift, Int)(p + 4 * y, 1);
   /* transform along y */
   for (x = 0; x < 4; x++)
-    printf("not working right now\n");
-    //_t1(fwd_lift, Int)(p + 1 * x, 4);
+    _t1(fwd_lift, Int)(p + 1 * x, 4);
 }
 
 /* public functions -------------------------------------------------------- */
@@ -49,9 +47,7 @@ _t2(zfp_encode_block_strided, Scalar, 2)(zfp_stream* stream, const Scalar* p, in
   cache_align_(Scalar fblock[16]);
   _t2(gather, Scalar, 2)(fblock, p, sx, sy);
   /* encode floating-point block */
-  //return _t2(zfp_encode_block, Scalar, 2)(stream, fblock);
-  printf("temporarily unavailable\n");
-  return 0;
+  return _t2(zfp_encode_block, Scalar, 2)(stream, fblock);
 }
 
 /* encode nx*ny floating-point block stored at p using strides (sx, sy) */
@@ -62,7 +58,5 @@ _t2(zfp_encode_partial_block_strided, Scalar, 2)(zfp_stream* stream, const Scala
   cache_align_(Scalar fblock[16]);
   _t2(gather_partial, Scalar, 2)(fblock, p, nx, ny, sx, sy);
   /* encode floating-point block */
-  //return _t2(zfp_encode_block, Scalar, 2)(stream, fblock);
-  printf("temporarily unavailable\n");
-  return 0;
+  return _t2(zfp_encode_block, Scalar, 2)(stream, fblock);
 }

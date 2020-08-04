@@ -17064,208 +17064,10 @@ void zfp_demote_int32_to_int16(int16 * oblock, const int32 * iblock, uint dims);
 void zfp_demote_int32_to_uint16(uint16 * oblock, const int32 * iblock, uint dims); 
 # 764
 }
-# 770
-timeval totalCostS; 
-# 771
-timeval totalCostE; 
-# 773
-timeval ecostS; 
-# 774
-timeval ecost1, ecost2; 
-# 775
-timeval ecostE; 
-# 777
-timeval mcostS; 
-# 778
-timeval mcost1, mcost2, mcost3; 
-# 779
-timeval mcostE; 
-# 781
-timeval embedS; 
-# 782
-timeval xformS, xformE; 
-# 783
-timeval orderS, orderE; 
-# 784
-timeval reorderS, reorderE; 
-# 785
-timeval bpS, bpE, stepS, stepE; 
-# 786
-timeval embedE; 
-# 790
-timeval cuda_start1S; 
-# 791
-timeval cuda_start1E; 
-# 792
-timeval cuda_start10S; 
-# 793
-timeval cuda_start10E; 
-# 794
-timeval cuda_start11S; 
-# 795
-timeval cuda_start11E; 
-# 796
-timeval cuda_start101S; 
-# 797
-timeval cuda_start101E; 
-# 798
-timeval cuda_start111S; 
-# 799
-timeval cuda_start111E; 
-# 801
-timeval cuda_start2S; 
-# 802
-timeval cuda_start2E; 
-# 803
-timeval cuda_start20S; 
-# 804
-timeval cuda_start20E; 
-# 805
-timeval cuda_start21S; 
-# 806
-timeval cuda_start21E; 
-# 807
-timeval cuda_start211S; 
-# 808
-timeval cuda_start211E; 
-# 809
-timeval cuda_start212S; 
-# 810
-timeval cuda_start212E; 
-# 812
-timeval cuda_start3S; 
-# 813
-timeval cuda_start3E; 
-# 814
-timeval cuda_start31S; 
-# 815
-timeval cuda_start31E; 
-# 816
-timeval cuda_start32S; 
-# 817
-timeval cuda_start32E; 
-# 865
-typedef 
-# 819
-struct { 
-# 820
-float totalCost; 
-# 822
-float ecost_time; 
-# 823
-float max_exp_time; 
-# 824
-float precision_time; 
-# 825
-float emax_time; 
-# 827
-float mcost_time; 
-# 828
-float quantize_factor_time; 
-# 829
-float cast_loop_time; 
-# 831
-float embed_time; 
-# 832
-float xform_time; 
-# 833
-float order_time; 
-# 834
-float order_loop_time; 
-# 835
-float bp_time; 
-# 836
-float step1, step2, step3; 
-# 837
-int num_bp; 
-# 839
-float warmup_time; 
-# 840
-float cuda_Setup_time; 
-# 841
-float cuda_setup_device_field_time; 
-# 842
-float cuda_datamalloc_time; 
-# 843
-float cuda_datamcpy_time; 
-# 844
-float register_time; 
-# 845
-unsigned long field_bytes; 
-# 846
-float cuda_setup_device_stream_time; 
-# 847
-float cuda_buffermalloc_time; 
-# 848
-float cuda_buffermcpy_time; 
-# 850
-float cuda_Encode_time; 
-# 851
-float cuda_setup1d_time; 
-# 852
-float cuda_encode1d_time; 
-# 853
-float cuda_kernel_time; 
-# 855
-float cuda_Cleanup_time; 
-# 856
-float cuda_d2h_time; 
-# 857
-float cuda_free_time; 
-# 858
-uint stream_bytes; 
-# 861
-int maxprec; 
-# 862
-int emax; 
-# 863
-int zmaxprec; 
-# 864
-int zminexp; 
-# 865
-} CPU_timing; 
-# 885
-typedef 
-# 867
-struct { 
-# 868
-int kernel_clock; 
-# 869
-int pre_clock; 
-# 870
-int encode_clock; 
-# 871
-int ecost_clock; 
-# 872
-int max_exp_clock; 
-# 873
-int precision_clock; 
-# 874
-int emax_clock; 
-# 875
-int mcost_clock; 
-# 876
-int quantize_factor_clock; 
-# 877
-int cast_loop_clock; 
-# 878
-int embed_clock; 
-# 879
-int xform_clock; 
-# 880
-int order_clock; 
-# 881
-int order_loop_clock; 
-# 882
-int bp_clock; 
-# 883
-int step1, step2, step3; 
-# 885
-} GPU_timing; 
 # 7 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.h"
 extern "C" {
 # 9
-size_t cuda_compress(zfp_stream * stream, const zfp_field * field, CPU_timing * cpu_timing, GPU_timing * gpu_timing); 
+size_t cuda_compress(zfp_stream * stream, const zfp_field * field); 
 # 10
 void cuda_decompress(zfp_stream * stream, zfp_field * field); 
 # 12
@@ -17997,660 +17799,554 @@ return ldexp((1.0), (get_precision< double> () - 2) - exponent);
 # 117 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template< class Scalar, class Int, int BlockSize> __attribute__((unused)) void 
 # 118
-fwd_cast(Int *iblock, const Scalar *fblock, int emax, GPU_timing *gpu_timing) 
+fwd_cast(Int *iblock, const Scalar *fblock, int emax) 
 # 119
-{int volatile ___ = 1;(void)iblock;(void)fblock;(void)emax;(void)gpu_timing;
-# 132
+{int volatile ___ = 1;(void)iblock;(void)fblock;(void)emax;
+# 125
 ::exit(___);}
 #if 0
 # 119
 { 
 # 120
-size_t start = clock(); 
-# 121
 Scalar s = quantize_factor(emax, Scalar()); 
-# 122
-size_t end = clock(); 
-# 123
-((*gpu_timing).quantize_factor_clock) = ((int)(end - start)); 
-# 125
-start = (clock()); 
-# 126
+# 121
 for (int i = 0; i < BlockSize; ++i) 
-# 127
+# 122
 { 
-# 128
+# 123
 (iblock[i]) = ((Int)(s * (fblock[i]))); 
-# 129
+# 124
 }  
-# 130
-end = (clock()); 
-# 131
-((*gpu_timing).cast_loop_clock) = ((int)(end - start)); 
-# 132
+# 125
 } 
 #endif
-# 134 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 127 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template< int BlockSize> struct transform; 
-# 138
+# 131
 template<> struct transform< 64>  { 
-# 140
+# 133
 template< class Int> void 
-# 141
+# 134
 fwd_xform(Int *p) 
-# 142
+# 135
 {int volatile ___ = 1;(void)p;
-# 157
+# 150
 ::exit(___);}
 #if 0
-# 142
+# 135
 { 
-# 144
+# 137
 uint x, y, z; 
-# 146
+# 139
 for (z = (0); z < (4); z++) { 
+# 140
+for (y = (0); y < (4); y++) { 
+# 141
+fwd_lift< Int, 1> ((p + ((4) * y)) + ((16) * z)); }  }  
+# 143
+for (x = (0); x < (4); x++) { 
+# 144
+for (z = (0); z < (4); z++) { 
+# 145
+fwd_lift< Int, 4> ((p + ((16) * z)) + ((1) * x)); }  }  
 # 147
 for (y = (0); y < (4); y++) { 
 # 148
-fwd_lift< Int, 1> ((p + ((4) * y)) + ((16) * z)); }  }  
-# 150
 for (x = (0); x < (4); x++) { 
-# 151
-for (z = (0); z < (4); z++) { 
-# 152
-fwd_lift< Int, 4> ((p + ((16) * z)) + ((1) * x)); }  }  
-# 154
-for (y = (0); y < (4); y++) { 
-# 155
-for (x = (0); x < (4); x++) { 
-# 156
+# 149
 fwd_lift< Int, 16> ((p + ((1) * x)) + ((4) * y)); }  }  
-# 157
+# 150
 } 
 #endif
-# 159 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 152 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 }; 
-# 162
+# 155
 template<> struct transform< 16>  { 
-# 164
+# 157
 template< class Int> void 
-# 165
+# 158
 fwd_xform(Int *p) 
-# 166
+# 159
 {int volatile ___ = 1;(void)p;
-# 174
-::exit(___);}
-#if 0
-# 166
-{ 
 # 167
+::exit(___);}
+#if 0
+# 159
+{ 
+# 160
 uint x, y; 
-# 169
+# 162
 for (y = (0); y < (4); y++) { 
-# 170
+# 163
 fwd_lift< Int, 1> (p + ((4) * y)); }  
-# 172
+# 165
 for (x = (0); x < (4); x++) { 
-# 173
+# 166
 fwd_lift< Int, 4> (p + ((1) * x)); }  
-# 174
+# 167
 } 
 #endif
-# 175 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 168 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 }; 
-# 178
+# 171
 template<> struct transform< 4>  { 
-# 180
+# 173
 template< class Int> void 
-# 181
+# 174
 fwd_xform(Int *p) 
-# 182
+# 175
 {int volatile ___ = 1;(void)p;
-# 184
+# 177
 ::exit(___);}
 #if 0
-# 182
+# 175
 { 
-# 183
+# 176
 fwd_lift< Int, 1> (p); 
-# 184
+# 177
 } 
 #endif
-# 186 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 179 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 }; 
-# 188
+# 181
 template< class Int, class UInt, int BlockSize> __attribute__((unused)) void 
-# 189
-fwd_order(UInt *ublock, const Int *iblock, GPU_timing *gpu_timing_d) 
+# 182
+fwd_order(UInt *ublock, const Int *iblock) 
+# 183
+{int volatile ___ = 1;(void)ublock;(void)iblock;
 # 190
-{int volatile ___ = 1;(void)ublock;(void)iblock;(void)gpu_timing_d;
-# 202
 ::exit(___);}
 #if 0
-# 190
+# 183
 { 
-# 191
+# 184
 unsigned char *perm = get_perm< BlockSize> (); 
-# 193
-size_t start0 = clock(); 
-# 194
+# 186
 for (int i = 0; i < BlockSize; ++i) 
-# 195
+# 187
 { 
-# 197
+# 188
 (ublock[i]) = int2uint(iblock[perm[i]]); 
-# 199
+# 189
 }  
-# 200
-size_t end0 = clock(); 
-# 202
+# 190
 } 
 #endif
-# 204 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 192 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template< int block_size> 
-# 205
+# 193
 struct BlockWriter { 
-# 208
+# 196
 uint m_word_index; 
-# 209
+# 197
 uint m_start_bit; 
-# 210
+# 198
 uint m_current_bit; 
-# 211
+# 199
 const int m_maxbits; 
-# 212
+# 200
 Word *m_stream; 
-# 214
+# 202
 BlockWriter(Word *stream, const int &maxbits, const uint &block_idx) : m_current_bit((0)), m_maxbits(maxbits), m_stream(stream) 
-# 218
+# 206
 {int *volatile ___ = 0;(void)stream;(void)maxbits;(void)block_idx;
-# 221
+# 209
 ::free(___);}
 #if 0
-# 218
+# 206
 { 
-# 219
+# 207
 (m_word_index) = ((block_idx * maxbits) / (sizeof(Word) * (8))); 
-# 220
+# 208
 (m_start_bit) = ((uint)((block_idx * maxbits) % (sizeof(Word) * (8)))); 
-# 221
+# 209
 } 
 #endif
-# 223 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 211 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template< class T> void 
-# 225
+# 213
 print_bits(T bits) 
-# 226
+# 214
 {int volatile ___ = 1;(void)bits;
-# 236
+# 224
 ::exit(___);}
 #if 0
-# 226
+# 214
 { 
-# 227
+# 215
 const int bit_size = (sizeof(T) * (8)); 
-# 228
+# 216
 for (int i = (bit_size - 1); i >= 0; --i) 
-# 229
+# 217
 { 
-# 230
+# 218
 T one = (1); 
-# 231
+# 219
 T mask = one << i; 
-# 232
+# 220
 int val = (bits & mask) >> i; 
-# 233
+# 221
 printf("%d", val); 
-# 234
+# 222
 }  
-# 235
+# 223
 printf("\n"); 
-# 236
+# 224
 } 
 #endif
-# 238 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 226 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 void print(int index) 
-# 239
+# 227
 {int volatile ___ = 1;(void)index;
-# 241
+# 229
 ::exit(___);}
 #if 0
-# 239
+# 227
 { 
-# 240
+# 228
 print_bits((m_stream)[index]); 
-# 241
+# 229
 } 
 #endif
-# 246 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 234 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 unsigned long long write_bits(const unsigned long long &bits, const uint &n_bits) 
-# 247
+# 235
 {int volatile ___ = 1;(void)bits;(void)n_bits;
-# 273
-::exit(___);}
-#if 0
-# 247
-{ 
-# 248
-const uint wbits = (sizeof(Word) * (8)); 
-# 249
-uint seg_start = ((m_start_bit) + (m_current_bit)) % wbits; 
-# 250
-uint write_index = (m_word_index) + ((uint)(((m_start_bit) + (m_current_bit)) / wbits)); 
-# 251
-uint seg_end = (seg_start + n_bits) - (1); 
-# 252
-uint shift = seg_start; 
-# 258
-Word left = (bits >> n_bits) << n_bits; 
-# 260
-Word b = bits - left; 
 # 261
-Word add = b << shift; 
-# 262
-atomicAdd(&((m_stream)[write_index]), add); 
-# 264
-bool straddle = (seg_start < (sizeof(Word) * (8))) && (seg_end >= (sizeof(Word) * (8))); 
-# 265
-if (straddle) 
-# 266
-{ 
-# 267
-Word rem = b >> ((sizeof(Word) * (8)) - shift); 
-# 268
-atomicAdd(&((m_stream)[write_index + (1)]), rem); 
-# 269
-}  
-# 270
-(m_current_bit) += n_bits; 
-# 272
-return bits >> ((Word)n_bits); 
-# 273
-} 
-#endif
-# 276 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
-uint write_bit(const unsigned &bit) 
-# 277
-{int volatile ___ = 1;(void)bit;
-# 295
 ::exit(___);}
 #if 0
-# 277
+# 235
 { 
-# 278
+# 236
 const uint wbits = (sizeof(Word) * (8)); 
-# 279
+# 237
 uint seg_start = ((m_start_bit) + (m_current_bit)) % wbits; 
-# 280
+# 238
 uint write_index = (m_word_index) + ((uint)(((m_start_bit) + (m_current_bit)) / wbits)); 
-# 281
+# 239
+uint seg_end = (seg_start + n_bits) - (1); 
+# 240
 uint shift = seg_start; 
-# 287
-Word add = ((Word)bit) << shift; 
-# 289
+# 246
+Word left = (bits >> n_bits) << n_bits; 
+# 248
+Word b = bits - left; 
+# 249
+Word add = b << shift; 
+# 250
 atomicAdd(&((m_stream)[write_index]), add); 
-# 292
+# 252
+bool straddle = (seg_start < (sizeof(Word) * (8))) && (seg_end >= (sizeof(Word) * (8))); 
+# 253
+if (straddle) 
+# 254
+{ 
+# 255
+Word rem = b >> ((sizeof(Word) * (8)) - shift); 
+# 256
+atomicAdd(&((m_stream)[write_index + (1)]), rem); 
+# 257
+}  
+# 258
+(m_current_bit) += n_bits; 
+# 260
+return bits >> ((Word)n_bits); 
+# 261
+} 
+#endif
+# 264 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+uint write_bit(const unsigned &bit) 
+# 265
+{int volatile ___ = 1;(void)bit;
+# 283
+::exit(___);}
+#if 0
+# 265
+{ 
+# 266
+const uint wbits = (sizeof(Word) * (8)); 
+# 267
+uint seg_start = ((m_start_bit) + (m_current_bit)) % wbits; 
+# 268
+uint write_index = (m_word_index) + ((uint)(((m_start_bit) + (m_current_bit)) / wbits)); 
+# 269
+uint shift = seg_start; 
+# 275
+Word add = ((Word)bit) << shift; 
+# 277
+atomicAdd(&((m_stream)[write_index]), add); 
+# 280
 (m_current_bit) += (1); 
-# 294
+# 282
 return bit; 
-# 295
+# 283
 } 
 #endif
-# 297 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 285 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 }; 
-# 299
+# 287
 template< class Int, int BlockSize> __attribute__((unused)) inline void 
-# 300
+# 288
 encode_block(BlockWriter< BlockSize>  &stream, int 
-# 301
+# 289
 maxbits, int 
-# 302
+# 290
 maxprec, Int *
-# 303
-iblock, GPU_timing *
-# 304
-gpu_timing_d) 
-# 305
-{int volatile ___ = 1;(void)stream;(void)maxbits;(void)maxprec;(void)iblock;(void)gpu_timing_d;
-# 385
-::exit(___);}
-#if 0
-# 305
-{ 
-# 307
-transform< BlockSize>  tform; 
-# 309
-size_t start = clock(); 
-# 310
-(tform.fwd_xform(iblock)); 
-# 311
-size_t end = clock(); 
-# 312
-((*gpu_timing_d).xform_clock) = ((int)(end - start)); 
-# 314
-typedef typename zfp_traits< Int> ::UInt UInt; 
-# 315
-UInt ublock[BlockSize]; 
-# 318
-start = (clock()); 
-# 319
-fwd_order< Int, typename zfp_traits< Int> ::UInt, BlockSize> (ublock, iblock, gpu_timing_d); 
-# 320
-end = (clock()); 
-# 321
-((*gpu_timing_d).order_clock) = ((int)(end - start)); 
-# 324
-uint intprec = ((8) * ((uint)sizeof(UInt))); 
-# 325
-uint kmin = (intprec > maxprec) ? intprec - maxprec : (0); 
-# 326
-uint bits = maxbits; 
-# 327
-uint i, k, m, n; 
-# 328
-uint64 x; 
-# 331
-size_t start1; 
-# 332
-size_t start2; 
-# 333
-size_t start3; 
-# 335
-size_t end1; 
-# 336
-size_t end2; 
-# 337
-size_t end3; 
-# 339
-start = (clock()); 
-# 341
-for ((k = intprec), (n = (0)); bits && ((k--) > kmin);) { 
+# 291
+iblock) 
+# 292
+{int volatile ___ = 1;(void)stream;(void)maxbits;(void)maxprec;(void)iblock;
 # 344
-start1 = (clock()); 
-# 345
+::exit(___);}
+#if 0
+# 292
+{ 
+# 294
+transform< BlockSize>  tform; 
+# 296
+(tform.fwd_xform(iblock)); 
+# 298
+typedef typename zfp_traits< Int> ::UInt UInt; 
+# 299
+UInt ublock[BlockSize]; 
+# 302
+fwd_order< Int, typename zfp_traits< Int> ::UInt, BlockSize> (ublock, iblock); 
+# 304
+uint intprec = ((8) * ((uint)sizeof(UInt))); 
+# 305
+uint kmin = (intprec > maxprec) ? intprec - maxprec : (0); 
+# 306
+uint bits = maxbits; 
+# 307
+uint i, k, m, n; 
+# 308
+uint64 x; 
+# 311
+for ((k = intprec), (n = (0)); bits && ((k--) > kmin);) { 
+# 314
 x = (0); 
-# 346
+# 315
 for (i = (0); i < (BlockSize); i++) 
-# 347
+# 316
 { 
-# 348
+# 317
 x += (((uint64)(((ublock[i]) >> k) & 1U)) << i); 
-# 349
+# 318
 }  
-# 350
-end1 = (clock()); 
-# 353
-start2 = (clock()); 
-# 354
+# 321
 m = min(n, bits); 
-# 355
+# 322
 bits -= m; 
-# 356
+# 323
 x = (stream.write_bits(x, m)); 
-# 357
-end2 = (clock()); 
-# 360
-start3 = (clock()); 
-# 361
+# 326
 for (; (n < (BlockSize)) && bits && ((bits--), (stream.write_bit(!(!x)))); (x >>= 1), (n++)) 
-# 362
+# 327
 { 
-# 366
+# 331
 for (; (n < (BlockSize - 1)) && bits && ((bits--), (!(stream.write_bit(x & (1U))))); (x >>= 1), (n++)) 
-# 367
+# 332
 { 
-# 371
+# 336
 }  
-# 375
+# 340
 }  
-# 377
-end3 = (clock()); 
-# 378
+# 342
 }  
-# 380
-end = (clock()); 
-# 381
-((*gpu_timing_d).bp_clock) = ((int)(end - start)); 
-# 382
-((*gpu_timing_d).step1) = ((int)(end1 - start1)); 
-# 383
-((*gpu_timing_d).step2) = ((int)(end2 - start2)); 
-# 384
-((*gpu_timing_d).step3) = ((int)(end3 - start3)); 
-# 385
+# 344
 } 
 #endif
-# 387 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 346 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template< class Scalar, int BlockSize> __attribute__((unused)) inline void 
-# 388
+# 347
 zfp_encode_block(Scalar *fblock, const int 
-# 389
+# 348
 maxbits, const uint 
-# 390
+# 349
 block_idx, Word *
-# 391
-stream, GPU_timing *
-# 392
-gpu_timing_d) 
-# 393
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 430
+# 350
+stream) 
+# 351
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;
+# 371
 ::exit(___);}
 #if 0
-# 393
+# 351
 { 
-# 396
+# 354
 BlockWriter< BlockSize>  block_writer(stream, maxbits, block_idx); 
-# 398
-size_t start = clock(); 
-# 399
+# 356
 int emax = max_exponent< Scalar, BlockSize> (fblock); 
-# 400
-size_t end1 = clock(); 
-# 402
+# 357
 int maxprec = precision(emax, get_precision< Scalar> (), get_min_exp< Scalar> ()); 
-# 403
-size_t end2 = clock(); 
-# 405
+# 358
 uint e = (maxprec) ? emax + get_ebias< Scalar> () : 0; 
-# 406
-size_t end3 = clock(); 
-# 408
-((*gpu_timing_d).max_exp_clock) = ((int)(end1 - start)); 
-# 409
-((*gpu_timing_d).precision_clock) = ((int)(end2 - end1)); 
-# 410
-((*gpu_timing_d).emax_clock) = ((int)(end3 - end2)); 
-# 411
-((*gpu_timing_d).ecost_clock) = ((int)(end3 - start)); 
-# 413
+# 360
 if (e) 
-# 414
+# 361
 { 
-# 415
+# 362
 const uint ebits = get_ebits< Scalar> () + 1; 
-# 416
+# 363
 (block_writer.write_bits(((2) * e) + (1), ebits)); 
-# 417
+# 364
 typedef typename zfp_traits< Scalar> ::Int Int; 
-# 418
+# 365
 Int iblock[BlockSize]; 
-# 419
-start = (clock()); 
-# 420
-fwd_cast< Scalar, typename zfp_traits< Scalar> ::Int, BlockSize> (iblock, fblock, emax, gpu_timing_d); 
-# 421
-size_t end = clock(); 
-# 422
-((*gpu_timing_d).mcost_clock) = ((int)(end - start)); 
-# 425
-start = (clock()); 
-# 427
-end = (clock()); 
-# 428
-((*gpu_timing_d).embed_clock) = ((int)(end - start)); 
-# 429
+# 366
+fwd_cast< Scalar, typename zfp_traits< Scalar> ::Int, BlockSize> (iblock, fblock, emax); 
+# 369
+encode_block< typename zfp_traits< Scalar> ::Int, BlockSize> (block_writer, maxbits - ebits, maxprec, iblock); 
+# 370
 }  
-# 430
+# 371
 } 
 #endif
-# 433 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 374 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< int, 64> (int *fblock, const int 
-# 434
+# 375
 maxbits, const uint 
-# 435
+# 376
 block_idx, Word *
-# 436
-stream, GPU_timing *
-# 437
-gpu_timing_d) 
-# 438
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 442
+# 377
+stream) 
+# 378
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;
+# 382
 ::exit(___);}
 #if 0
-# 438
+# 378
 { 
-# 439
+# 379
 BlockWriter< 64>  block_writer(stream, maxbits, block_idx); 
-# 440
+# 380
 const int intprec = get_precision< int> (); 
-# 441
-encode_block< int, 64> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 442
+# 381
+encode_block< int, 64> (block_writer, maxbits, intprec, fblock); 
+# 382
 } 
 #endif
-# 445 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 385 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< long long, 64> (long long *fblock, const int 
-# 446
+# 386
 maxbits, const uint 
-# 447
+# 387
 block_idx, Word *
-# 448
-stream, GPU_timing *
-# 449
-gpu_timing_d) 
-# 450
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 454
+# 388
+stream) 
+# 389
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;
+# 393
 ::exit(___);}
 #if 0
-# 450
+# 389
 { 
-# 451
+# 390
 BlockWriter< 64>  block_writer(stream, maxbits, block_idx); 
-# 452
+# 391
 const int intprec = get_precision< long long> (); 
-# 453
-encode_block< long long, 64> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 454
+# 392
+encode_block< long long, 64> (block_writer, maxbits, intprec, fblock); 
+# 393
 } 
 #endif
-# 457 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 396 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< int, 16> (int *fblock, const int 
-# 458
+# 397
 maxbits, const uint 
-# 459
+# 398
 block_idx, Word *
-# 460
-stream, GPU_timing *
-# 461
-gpu_timing_d) 
-# 462
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 466
+# 399
+stream) 
+# 400
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;
+# 404
 ::exit(___);}
 #if 0
-# 462
+# 400
 { 
-# 463
+# 401
 BlockWriter< 16>  block_writer(stream, maxbits, block_idx); 
-# 464
+# 402
 const int intprec = get_precision< int> (); 
-# 465
-encode_block< int, 16> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 466
+# 403
+encode_block< int, 16> (block_writer, maxbits, intprec, fblock); 
+# 404
 } 
 #endif
-# 469 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 407 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< long long, 16> (long long *fblock, const int 
-# 470
+# 408
 maxbits, const uint 
-# 471
+# 409
 block_idx, Word *
-# 472
-stream, GPU_timing *
-# 473
-gpu_timing_d) 
-# 474
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 478
+# 410
+stream) 
+# 411
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;
+# 415
 ::exit(___);}
 #if 0
-# 474
+# 411
 { 
-# 475
+# 412
 BlockWriter< 16>  block_writer(stream, maxbits, block_idx); 
-# 476
+# 413
 const int intprec = get_precision< long long> (); 
-# 477
-encode_block< long long, 16> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 478
+# 414
+encode_block< long long, 16> (block_writer, maxbits, intprec, fblock); 
+# 415
 } 
 #endif
-# 481 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 418 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< int, 4> (int *fblock, const int 
-# 482
+# 419
 maxbits, const uint 
-# 483
+# 420
 block_idx, Word *
-# 484
-stream, GPU_timing *
-# 485
-gpu_timing_d) 
-# 486
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 490
+# 421
+stream) 
+# 422
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;
+# 426
 ::exit(___);}
 #if 0
-# 486
+# 422
 { 
-# 487
+# 423
 BlockWriter< 4>  block_writer(stream, maxbits, block_idx); 
-# 488
+# 424
 const int intprec = get_precision< int> (); 
-# 489
-encode_block< int, 4> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 490
+# 425
+encode_block< int, 4> (block_writer, maxbits, intprec, fblock); 
+# 426
 } 
 #endif
-# 493 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 429 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 template<> __attribute__((unused)) inline void zfp_encode_block< long long, 4> (long long *fblock, const int 
-# 494
+# 430
 maxbits, const uint 
-# 495
+# 431
 block_idx, Word *
-# 496
-stream, GPU_timing *
-# 497
-gpu_timing_d) 
-# 498
-{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;(void)gpu_timing_d;
-# 502
+# 432
+stream) 
+# 433
+{int volatile ___ = 1;(void)fblock;(void)maxbits;(void)block_idx;(void)stream;
+# 437
 ::exit(___);}
 #if 0
-# 498
+# 433
 { 
-# 499
+# 434
 BlockWriter< 4>  block_writer(stream, maxbits, block_idx); 
-# 500
+# 435
 const int intprec = get_precision< long long> (); 
-# 501
-encode_block< long long, 4> (block_writer, maxbits, intprec, fblock, gpu_timing_d); 
-# 502
+# 436
+encode_block< long long, 4> (block_writer, maxbits, intprec, fblock); 
+# 437
 } 
 #endif
-# 504 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
+# 439 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode.cuh"
 }
 # 55 "/sw/summit/cuda/10.1.168/include/cuda_profiler_api.h"
 extern "C" {
@@ -35503,75 +35199,61 @@ sx, const uint &
 # 46
 padded_dim, const uint &
 # 47
-tot_blocks, GPU_timing *&
-# 48
-gpu_timing_d) { ::cudaLaunchKernel(0, 0, 0, 0, 0, 0);}
+tot_blocks) { ::cudaLaunchKernel(0, 0, 0, 0, 0, 0);}
 #if 0
+# 48
+{ 
 # 49
-{ 
-# 50
-clock_t start_time = clock(); 
-# 51
 typedef unsigned long long ull; 
-# 52
+# 50
 typedef long long ll; 
-# 53
+# 51
 const ull blockId = ((__device_builtin_variable_blockIdx.x) + ((__device_builtin_variable_blockIdx.y) * (__device_builtin_variable_gridDim.x))) + (((__device_builtin_variable_gridDim.x) * (__device_builtin_variable_gridDim.y)) * (__device_builtin_variable_blockIdx.z)); 
-# 59
+# 57
 const uint block_idx = (blockId * (__device_builtin_variable_blockDim.x)) + (__device_builtin_variable_threadIdx.x); 
-# 61
+# 59
 if (block_idx >= tot_blocks) 
-# 62
+# 60
 { 
-# 65
+# 63
 return; 
+# 64
+}  
 # 66
-}  
-# 68
 uint block_dim; 
-# 69
+# 67
 block_dim = (padded_dim >> 2); 
-# 72
+# 70
 uint block; 
-# 73
+# 71
 block = ((block_idx % block_dim) * (4)); 
-# 75
+# 73
 const ll offset = ((ll)block) * sx; 
-# 77
+# 75
 Scalar fblock[4]; 
-# 79
+# 77
 bool partial = false; 
-# 80
+# 78
 if ((block + (4)) > dim) { partial = true; }  
-# 82
+# 80
 if (partial) 
-# 83
+# 81
 { 
-# 84
+# 82
 uint nx = (4) - (padded_dim - dim); 
-# 85
+# 83
 gather_partial1(fblock, scalars + offset, nx, sx); 
-# 86
+# 84
 } else 
-# 88
+# 86
 { 
-# 89
+# 87
 gather1(fblock, scalars + offset, sx); 
-# 90
+# 88
 }  
-# 91
-clock_t pre_time = clock(); 
-# 92
-zfp_encode_block< Scalar, 4> (fblock, maxbits, block_idx, stream, gpu_timing_d); 
-# 93
-clock_t end_time = clock(); 
-# 94
-((*gpu_timing_d).pre_clock) = ((int)(pre_time - start_time)); 
-# 95
-((*gpu_timing_d).encode_clock) = ((int)(end_time - pre_time)); 
-# 96
-((*gpu_timing_d).kernel_clock) = ((int)(end_time - start_time)); 
-# 97
+# 89
+zfp_encode_block< Scalar, 4> (fblock, maxbits, block_idx, stream); 
+# 90
 } 
 #endif
 # 39 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode1.cuh"
@@ -35589,184 +35271,152 @@ sx, const uint
 # 46
 padded_dim, const uint 
 # 47
-tot_blocks, GPU_timing *
+tot_blocks) 
 # 48
-gpu_timing_d) 
-# 49
-{__wrapper__device_stub_cudaEncode1<Scalar>(maxbits,scalars,stream,dim,sx,padded_dim,tot_blocks,gpu_timing_d);
-# 97
+{__wrapper__device_stub_cudaEncode1<Scalar>(maxbits,scalars,stream,dim,sx,padded_dim,tot_blocks);
+# 90
 return;}
 #if 0
+# 48
+{ 
 # 49
-{ 
-# 50
-clock_t start_time = clock(); 
-# 51
 typedef unsigned long long ull; 
-# 52
+# 50
 typedef long long ll; 
-# 53
+# 51
 const ull blockId = ((__device_builtin_variable_blockIdx.x) + ((__device_builtin_variable_blockIdx.y) * (__device_builtin_variable_gridDim.x))) + (((__device_builtin_variable_gridDim.x) * (__device_builtin_variable_gridDim.y)) * (__device_builtin_variable_blockIdx.z)); 
-# 59
+# 57
 const uint block_idx = (blockId * (__device_builtin_variable_blockDim.x)) + (__device_builtin_variable_threadIdx.x); 
-# 61
+# 59
 if (block_idx >= tot_blocks) 
-# 62
+# 60
 { 
-# 65
+# 63
 return; 
+# 64
+}  
 # 66
-}  
-# 68
 uint block_dim; 
-# 69
+# 67
 block_dim = (padded_dim >> 2); 
-# 72
+# 70
 uint block; 
-# 73
+# 71
 block = ((block_idx % block_dim) * (4)); 
-# 75
+# 73
 const ll offset = ((ll)block) * sx; 
-# 77
+# 75
 Scalar fblock[4]; 
-# 79
+# 77
 bool partial = false; 
-# 80
+# 78
 if ((block + (4)) > dim) { partial = true; }  
-# 82
+# 80
 if (partial) 
-# 83
+# 81
 { 
-# 84
+# 82
 uint nx = (4) - (padded_dim - dim); 
-# 85
+# 83
 gather_partial1(fblock, scalars + offset, nx, sx); 
-# 86
+# 84
 } else 
-# 88
+# 86
 { 
-# 89
+# 87
 gather1(fblock, scalars + offset, sx); 
-# 90
+# 88
 }  
-# 91
-clock_t pre_time = clock(); 
-# 92
-zfp_encode_block< Scalar, 4> (fblock, maxbits, block_idx, stream, gpu_timing_d); 
-# 93
-clock_t end_time = clock(); 
-# 94
-((*gpu_timing_d).pre_clock) = ((int)(pre_time - start_time)); 
-# 95
-((*gpu_timing_d).encode_clock) = ((int)(end_time - pre_time)); 
-# 96
-((*gpu_timing_d).kernel_clock) = ((int)(end_time - start_time)); 
-# 97
+# 89
+zfp_encode_block< Scalar, 4> (fblock, maxbits, block_idx, stream); 
+# 90
 } 
 #endif
-# 101 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode1.cuh"
+# 94 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/encode1.cuh"
 template< class Scalar> size_t 
-# 102
+# 95
 encode1launch(uint dim, int 
-# 103
+# 96
 sx, const Scalar *
-# 104
+# 97
 d_data, Word *
-# 105
+# 98
 stream, const int 
+# 99
+maxbits) 
+# 100
+{ 
+# 101
+const int cuda_block_size = 1024; 
+# 102
+dim3 block_size = dim3(cuda_block_size, 1, 1); 
+# 103
+uint zfp_pad(dim); 
+# 104
+if ((zfp_pad % (4)) != (0)) { zfp_pad += ((4) - (dim % (4))); }  
 # 106
-maxbits, CPU_timing *
-# 107
-cpu_timing, GPU_timing *
-# 108
-gpu_timing_h) 
-# 109
+const uint zfp_blocks = zfp_pad / (4); 
+# 111
+int block_pad = 0; 
+# 112
+if ((zfp_blocks % cuda_block_size) != (0)) 
+# 113
 { 
 # 114
-const int cuda_block_size = 1024; 
-# 115
-dim3 block_size = dim3(cuda_block_size, 1, 1); 
-# 116
-uint zfp_pad(dim); 
-# 117
-if ((zfp_pad % (4)) != (0)) { zfp_pad += ((4) - (dim % (4))); }  
-# 119
-const uint zfp_blocks = zfp_pad / (4); 
-# 124
-int block_pad = 0; 
-# 125
-if ((zfp_blocks % cuda_block_size) != (0)) 
-# 126
-{ 
-# 127
 block_pad = (cuda_block_size - (zfp_blocks % cuda_block_size)); 
-# 128
+# 115
 }  
-# 130
+# 117
 size_t total_blocks = block_pad + zfp_blocks; 
-# 132
+# 119
 dim3 grid_size = calculate_grid_size(total_blocks, cuda_block_size); 
-# 134
+# 121
 size_t stream_bytes = calc_device_mem1d(zfp_pad, maxbits); 
-# 136
+# 123
 cudaMemset(stream, 0, stream_bytes); 
-# 142
-GPU_timing *gpu_timing_d; 
-# 143
-cudaMalloc(&gpu_timing_d, sizeof(GPU_timing)); 
-# 144
-cudaMemset(gpu_timing_d, 0, sizeof(GPU_timing)); 
-# 147
+# 126
 cudaEvent_t start, stop; 
-# 148
+# 127
 cudaEventCreate(&start); 
-# 149
+# 128
 cudaEventCreate(&stop); 
-# 150
+# 129
 cudaEventRecord(start); 
-# 153
-(__cudaPushCallConfiguration(grid_size, block_size)) ? (void)0 : cudaEncode1< Scalar> (maxbits, d_data, stream, dim, sx, zfp_pad, zfp_blocks, gpu_timing_d); 
-# 164
+# 132
+(__cudaPushCallConfiguration(grid_size, block_size)) ? (void)0 : cudaEncode1< Scalar> (maxbits, d_data, stream, dim, sx, zfp_pad, zfp_blocks); 
+# 142
 cudaEventRecord(stop); 
-# 165
+# 143
 cudaEventSynchronize(stop); 
-# 171
+# 144
+cudaStreamSynchronize(0); 
+# 146
 float miliseconds = (0.0F); 
-# 172
+# 147
 cudaEventElapsedTime(&miliseconds, start, stop); 
-# 173
-((*cpu_timing).cuda_kernel_time) = (miliseconds / (1000.0F)); 
-# 174
-cudaMemcpy(gpu_timing_h, gpu_timing_d, sizeof(GPU_timing), cudaMemcpyDeviceToHost); 
-# 175
-cudaFree(gpu_timing_d); 
-# 180
+# 149
 return stream_bytes; 
-# 181
+# 150
 } 
-# 186
+# 155
 template< class Scalar> size_t 
-# 187
+# 156
 encode1(int dim, int 
-# 188
+# 157
 sx, Scalar *
-# 189
+# 158
 d_data, Word *
-# 190
+# 159
 stream, const int 
-# 191
-maxbits, CPU_timing *
-# 192
-cpu_timing, GPU_timing *
-# 193
-gpu_timing) 
-# 194
+# 160
+maxbits) 
+# 161
 { 
-# 195
-return encode1launch< Scalar> (dim, sx, d_data, stream, maxbits, cpu_timing, gpu_timing); 
-# 196
+# 162
+return encode1launch< Scalar> (dim, sx, d_data, stream, maxbits); 
+# 163
 } 
-# 198
+# 165
 }
 # 41 "/usr/include/c++/4.8.2/sstream" 3
 namespace std __attribute((__visibility__("default"))) { 
@@ -39058,7 +38708,7 @@ return is_contigous1d(dims[0], stride.x, offset);
 # 101
 template< class T> size_t 
 # 102
-encode(uint dims[3], int3 stride, int bits_per_block, T *d_data, Word *d_stream, CPU_timing *cpu_timing, GPU_timing *gpu_timing) 
+encode(uint dims[3], int3 stride, int bits_per_block, T *d_data, Word *d_stream) 
 # 103
 { 
 # 104
@@ -39094,656 +38744,562 @@ int dim = dims[0];
 # 120
 int sx = stride.x; 
 # 121
-gettimeofday(&cuda_start20S, __null); 
-# 122
 cuZFP::ConstantSetup::setup_1d(); 
+# 122
+stream_size = cuZFP::encode1< T> (dim, sx, d_data, d_stream, bits_per_block); 
 # 123
-gettimeofday(&cuda_start20E, __null); 
+} else { 
 # 124
-((*cpu_timing).cuda_setup1d_time) = (((float)((((cuda_start20E.tv_sec) * (1000000)) + (cuda_start20E.tv_usec)) - (((cuda_start20S.tv_sec) * (1000000)) + (cuda_start20S.tv_usec)))) / (1000000.0)); 
-# 126
-gettimeofday(&cuda_start21S, __null); 
-# 127
-stream_size = cuZFP::encode1< T> (dim, sx, d_data, d_stream, bits_per_block, cpu_timing, gpu_timing); 
-# 128
-gettimeofday(&cuda_start21E, __null); 
-# 129
-((*cpu_timing).cuda_encode1d_time) = (((float)((((cuda_start21E.tv_sec) * (1000000)) + (cuda_start21E.tv_usec)) - (((cuda_start21S.tv_sec) * (1000000)) + (cuda_start21S.tv_usec)))) / (1000000.0)); 
-# 130
-} else { 
-# 131
 if (d == 2) 
-# 132
+# 125
 { 
-# 133
+# 126
 uint2 ndims = make_uint2(dims[0], dims[1]); 
-# 134
+# 127
 int2 s; 
-# 135
+# 128
 (s.x) = (stride.x); 
-# 136
+# 129
 (s.y) = (stride.y); 
-# 137
+# 130
 cuZFP::ConstantSetup::setup_2d(); 
-# 138
+# 131
 stream_size = cuZFP::encode2< T> (ndims, s, d_data, d_stream, bits_per_block); 
-# 139
+# 132
 } else { 
-# 140
+# 133
 if (d == 3) 
-# 141
+# 134
 { 
-# 142
+# 135
 int3 s; 
-# 143
+# 136
 (s.x) = (stride.x); 
-# 144
+# 137
 (s.y) = (stride.y); 
-# 145
+# 138
 (s.z) = (stride.z); 
-# 146
+# 139
 uint3 ndims = make_uint3(dims[0], dims[1], dims[2]); 
-# 147
+# 140
 cuZFP::ConstantSetup::setup_3d(); 
-# 148
+# 141
 stream_size = cuZFP::encode< T> (ndims, s, d_data, d_stream, bits_per_block); 
-# 149
+# 142
 }  }  }  
-# 151
+# 144
 errors.chk("Encode"); 
-# 153
+# 146
 return stream_size; 
-# 154
+# 147
 } 
-# 156
+# 149
 template< class T> size_t 
-# 157
+# 150
 decode(uint ndims[3], int3 stride, int bits_per_block, Word *stream, T *out) 
+# 151
+{ 
+# 153
+int d = 0; 
+# 154
+size_t out_size = (1); 
+# 155
+size_t stream_bytes = (0); 
+# 156
+for (int i = 0; i < 3; ++i) 
+# 157
+{ 
 # 158
+if ((ndims[i]) != (0)) 
+# 159
 { 
 # 160
-int d = 0; 
+d++; 
 # 161
-size_t out_size = (1); 
+out_size *= (ndims[i]); 
 # 162
-size_t stream_bytes = (0); 
+}  
 # 163
-for (int i = 0; i < 3; ++i) 
-# 164
-{ 
+}  
 # 165
-if ((ndims[i]) != (0)) 
+if (d == 3) 
 # 166
 { 
 # 167
-d++; 
-# 168
-out_size *= (ndims[i]); 
-# 169
-}  
-# 170
-}  
-# 172
-if (d == 3) 
-# 173
-{ 
-# 174
 uint3 dims = make_uint3(ndims[0], ndims[1], ndims[2]); 
-# 176
+# 169
 int3 s; 
-# 177
+# 170
 (s.x) = (stride.x); 
-# 178
+# 171
 (s.y) = (stride.y); 
-# 179
+# 172
 (s.z) = (stride.z); 
-# 181
+# 174
 cuZFP::ConstantSetup::setup_3d(); 
-# 182
+# 175
 stream_bytes = cuZFP::decode3< T> (dims, s, stream, out, bits_per_block); 
-# 183
+# 176
 } else { 
-# 184
+# 177
 if (d == 1) 
-# 185
+# 178
 { 
-# 186
+# 179
 uint dim = ndims[0]; 
-# 187
+# 180
 int sx = stride.x; 
-# 189
+# 182
 cuZFP::ConstantSetup::setup_1d(); 
-# 190
+# 183
 stream_bytes = cuZFP::decode1< T> (dim, sx, stream, out, bits_per_block); 
-# 192
+# 185
 } else { 
-# 193
+# 186
 if (d == 2) 
-# 194
+# 187
 { 
-# 195
+# 188
 uint2 dims; 
-# 196
+# 189
 (dims.x) = (ndims[0]); 
-# 197
+# 190
 (dims.y) = (ndims[1]); 
-# 199
+# 192
 int2 s; 
-# 200
+# 193
 (s.x) = (stride.x); 
-# 201
+# 194
 (s.y) = (stride.y); 
-# 203
+# 196
 cuZFP::ConstantSetup::setup_2d(); 
-# 204
+# 197
 stream_bytes = cuZFP::decode2< T> (dims, s, stream, out, bits_per_block); 
-# 205
+# 198
 } else { 
-# 206
+# 199
 (((((std::cerr << (" d ==  "))) << d)) << (" not implemented\n")); }  }  }  
-# 208
+# 201
 return stream_bytes; 
-# 209
+# 202
 } 
+# 204
+Word *setup_device_stream(zfp_stream *stream, const zfp_field *field) 
+# 205
+{ 
+# 207
+bool stream_device = cuZFP::is_gpu_ptr((stream->stream)->begin); 
+# 209
+static_cast< void>(0); 
 # 211
-Word *setup_device_stream(zfp_stream *stream, const zfp_field *field, CPU_timing *cpu_timing) 
+if (stream_device) 
 # 212
 { 
-# 214
-bool stream_device = cuZFP::is_gpu_ptr((stream->stream)->begin); 
-# 216
-static_cast< void>(0); 
-# 218
-if (stream_device) 
-# 219
-{ 
-# 220
+# 213
 return (Word *)((stream->stream)->begin); 
-# 221
+# 214
 }  
-# 223
+# 216
 Word *d_stream = (__null); 
-# 225
+# 218
 size_t max_size = zfp_stream_maximum_size(stream, field); 
-# 227
-gettimeofday(&cuda_start111S, __null); 
-# 228
+# 220
 cudaMalloc(&d_stream, max_size); 
-# 229
-gettimeofday(&cuda_start111E, __null); 
-# 230
-((*cpu_timing).cuda_buffermalloc_time) = (((float)((((cuda_start111E.tv_sec) * (1000000)) + (cuda_start111E.tv_usec)) - (((cuda_start111S.tv_sec) * (1000000)) + (cuda_start111S.tv_usec)))) / (1000000.0)); 
-# 232
-gettimeofday(&cuda_start111S, __null); 
-# 233
+# 221
 cudaMemcpy(d_stream, (stream->stream)->begin, max_size, cudaMemcpyHostToDevice); 
-# 234
-gettimeofday(&cuda_start111E, __null); 
-# 235
-((*cpu_timing).cuda_buffermcpy_time) = (((float)((((cuda_start111E.tv_sec) * (1000000)) + (cuda_start111E.tv_usec)) - (((cuda_start111S.tv_sec) * (1000000)) + (cuda_start111S.tv_usec)))) / (1000000.0)); 
-# 236
+# 222
 return d_stream; 
-# 237
+# 223
 } 
-# 239
+# 225
 void *offset_void(zfp_type type, void *ptr, long long offset) 
-# 240
+# 226
 { 
-# 241
+# 227
 void *offset_ptr = (__null); 
-# 242
+# 228
 if (type == (zfp_type_float)) 
-# 243
+# 229
 { 
-# 244
+# 230
 float *data = (float *)ptr; 
-# 245
+# 231
 offset_ptr = ((void *)(&(data[offset]))); 
-# 246
+# 232
 } else { 
-# 247
+# 233
 if (type == (zfp_type_double)) 
-# 248
+# 234
 { 
-# 249
+# 235
 double *data = (double *)ptr; 
-# 250
+# 236
 offset_ptr = ((void *)(&(data[offset]))); 
-# 251
+# 237
 } else { 
-# 252
+# 238
 if (type == (zfp_type_int32)) 
-# 253
+# 239
 { 
-# 254
+# 240
 int *data = (int *)ptr; 
-# 255
+# 241
 offset_ptr = ((void *)(&(data[offset]))); 
-# 256
+# 242
 } else { 
-# 257
+# 243
 if (type == (zfp_type_int64)) 
-# 258
+# 244
 { 
-# 259
+# 245
 long long *data = (long long *)ptr; 
-# 260
+# 246
 offset_ptr = ((void *)(&(data[offset]))); 
-# 261
+# 247
 }  }  }  }  
-# 262
+# 248
 return offset_ptr; 
-# 263
+# 249
 } 
-# 265
-void *setup_device_field(const zfp_field *field, const int3 &stride, long long &offset, CPU_timing *cpu_timing) 
-# 266
+# 251
+void *setup_device_field(const zfp_field *field, const int3 &stride, long long &offset) 
+# 252
 { 
-# 267
+# 253
 bool field_device = false; 
-# 269
+# 255
 if (field_device) 
-# 270
+# 256
 { 
-# 271
+# 257
 offset = (0); 
-# 272
+# 258
 return field->data; 
+# 259
+}  
+# 260
+uint dims[3]; 
+# 261
+(dims[0]) = (field->nx); 
+# 262
+(dims[1]) = (field->ny); 
+# 263
+(dims[2]) = (field->nz); 
+# 265
+size_t type_size = zfp_type_size(field->type); 
+# 267
+size_t field_size = (1); 
+# 268
+for (int i = 0; i < 3; ++i) 
+# 269
+{ 
+# 270
+if ((dims[i]) != (0)) 
+# 271
+{ 
+# 272
+field_size *= (dims[i]); 
 # 273
 }  
 # 274
-uint dims[3]; 
-# 275
-(dims[0]) = (field->nx); 
+}  
 # 276
-(dims[1]) = (field->ny); 
-# 277
-(dims[2]) = (field->nz); 
-# 279
-size_t type_size = zfp_type_size(field->type); 
-# 281
-size_t field_size = (1); 
-# 282
-for (int i = 0; i < 3; ++i) 
-# 283
-{ 
-# 284
-if ((dims[i]) != (0)) 
-# 285
-{ 
-# 286
-field_size *= (dims[i]); 
-# 287
-}  
-# 288
-}  
-# 290
 bool contig = internal::is_contigous(dims, stride, offset); 
-# 292
+# 278
 void *host_ptr = offset_void(field->type, field->data, offset); ; 
-# 294
+# 280
 void *d_data = (__null); 
-# 295
+# 281
 if (contig) 
+# 282
+{ 
+# 283
+size_t field_bytes = type_size * field_size; 
+# 284
+cudaMalloc(&d_data, field_bytes); 
+# 287
+cudaError_t err_ = cudaHostRegister(host_ptr, field_bytes, 0); 
+# 289
+cudaMemcpy(d_data, host_ptr, field_bytes, cudaMemcpyHostToDevice); 
+# 290
+}  
+# 292
+return offset_void(field->type, d_data, -offset); 
+# 293
+} 
+# 295
+void cleanup_device_ptr(void *orig_ptr, void *d_ptr, size_t bytes, long long offset, zfp_type type) 
 # 296
 { 
 # 297
-size_t field_bytes = type_size * field_size; 
-# 298
-gettimeofday(&cuda_start101S, __null); 
-# 299
-cudaMalloc(&d_data, field_bytes); 
-# 300
-gettimeofday(&cuda_start101E, __null); 
-# 301
-((*cpu_timing).cuda_datamalloc_time) = (((float)((((cuda_start101E.tv_sec) * (1000000)) + (cuda_start101E.tv_usec)) - (((cuda_start101S.tv_sec) * (1000000)) + (cuda_start101S.tv_usec)))) / (1000000.0)); 
-# 304
-gettimeofday(&cuda_start101S, __null); 
-# 305
-cudaError_t err_ = cudaHostRegister(host_ptr, field_bytes, 0); 
-# 306
-gettimeofday(&cuda_start101E, __null); 
-# 307
-((*cpu_timing).register_time) = (((float)((((cuda_start101E.tv_sec) * (1000000)) + (cuda_start101E.tv_usec)) - (((cuda_start101S.tv_sec) * (1000000)) + (cuda_start101S.tv_usec)))) / (1000000.0)); 
-# 309
-gettimeofday(&cuda_start101S, __null); 
-# 310
-cudaMemcpy(d_data, host_ptr, field_bytes, cudaMemcpyHostToDevice); 
-# 311
-gettimeofday(&cuda_start101E, __null); 
-# 312
-((*cpu_timing).cuda_datamcpy_time) = (((float)((((cuda_start101E.tv_sec) * (1000000)) + (cuda_start101E.tv_usec)) - (((cuda_start101S.tv_sec) * (1000000)) + (cuda_start101S.tv_usec)))) / (1000000.0)); 
-# 313
-}  
-# 315
-return offset_void(field->type, d_data, -offset); 
-# 316
-} 
-# 318
-void cleanup_device_ptr(void *orig_ptr, void *d_ptr, size_t bytes, long long offset, zfp_type type, CPU_timing *cpu_timing) 
-# 319
-{ 
-# 320
 bool device = cuZFP::is_gpu_ptr(orig_ptr); 
-# 322
+# 299
 if (device) 
-# 323
+# 300
 { 
-# 324
+# 301
 return; 
-# 325
+# 302
 }  
-# 327
+# 304
 void *d_offset_ptr = offset_void(type, d_ptr, offset); 
-# 328
+# 305
 void *h_offset_ptr = offset_void(type, orig_ptr, offset); 
-# 330
+# 307
 if (bytes > (0)) 
-# 331
+# 308
 { 
-# 332
+# 309
 cudaError_t err_ = cudaHostRegister(h_offset_ptr, bytes, 0); 
-# 333
-gettimeofday(&cuda_start31S, __null); 
-# 334
+# 310
 cudaMemcpy(h_offset_ptr, d_offset_ptr, bytes, cudaMemcpyDeviceToHost); 
-# 335
-gettimeofday(&cuda_start31E, __null); 
-# 336
-((*cpu_timing).cuda_d2h_time) = (((float)((((cuda_start31E.tv_sec) * (1000000)) + (cuda_start31E.tv_usec)) - (((cuda_start31S.tv_sec) * (1000000)) + (cuda_start31S.tv_usec)))) / (1000000.0)); 
-# 337
+# 311
 }  
-# 339
-gettimeofday(&cuda_start32S, __null); 
-# 340
+# 313
 cudaFree(d_offset_ptr); 
-# 341
-gettimeofday(&cuda_start32E, __null); 
-# 342
-((*cpu_timing).cuda_free_time) = (((float)((((cuda_start32E.tv_sec) * (1000000)) + (cuda_start32E.tv_usec)) - (((cuda_start32S.tv_sec) * (1000000)) + (cuda_start32S.tv_usec)))) / (1000000.0)); 
-# 343
+# 314
 } 
-# 345
+# 316
 }
-# 348
-size_t cuda_compress(zfp_stream *stream, const zfp_field *field, CPU_timing *cpu_timing, GPU_timing *gpu_timing) 
-# 349
+# 319
+size_t cuda_compress(zfp_stream *stream, const zfp_field *field) 
+# 320
 { 
-# 351
+# 322
 cudaSetDevice(0); 
-# 352
+# 323
 void *dev_ptr = malloc(8); 
-# 353
+# 324
 cudaPointerAttributes atts; 
-# 356
-gettimeofday(&cuda_start1S, __null); 
-# 357
+# 327
 cudaError_t perr = cudaPointerGetAttributes(&atts, dev_ptr); 
-# 358
-gettimeofday(&cuda_start1E, __null); 
-# 359
-((*cpu_timing).warmup_time) = (((float)((((cuda_start1E.tv_sec) * (1000000)) + (cuda_start1E.tv_usec)) - (((cuda_start1S.tv_sec) * (1000000)) + (cuda_start1S.tv_usec)))) / (1000000.0)); 
-# 361
+# 329
 uint dims[3]; 
-# 362
+# 330
 (dims[0]) = (field->nx); 
-# 363
+# 331
 (dims[1]) = (field->ny); 
-# 364
+# 332
 (dims[2]) = (field->nz); 
-# 366
+# 334
 size_t type_size = zfp_type_size(field->type); 
-# 367
+# 335
 size_t field_size = (1); 
-# 368
+# 336
 for (int i = 0; i < 3; ++i) 
+# 337
+{ 
+# 338
+if ((dims[i]) != (0)) 
+# 339
+{ 
+# 340
+field_size *= (dims[i]); 
+# 341
+}  
+# 342
+}  
+# 343
+unsigned long field_bytes = type_size * field_size; 
+# 345
+int3 stride; 
+# 346
+(stride.x) = ((field->sx) ? field->sx : 1); 
+# 347
+(stride.y) = ((field->sy) ? field->sy : (field->nx)); 
+# 348
+(stride.z) = ((field->sz) ? field->sz : ((field->nx) * (field->ny))); 
+# 350
+size_t stream_bytes = (0); 
+# 351
+long long offset = (0); 
+# 353
+void *d_data = internal::setup_device_field(field, stride, offset); 
+# 355
+if (d_data == (__null)) 
+# 356
+{ 
+# 358
+return 0; 
+# 359
+}  
+# 360
+Word *d_stream = internal::setup_device_stream(stream, field); 
+# 363
+if ((field->type) == (zfp_type_float)) 
+# 364
+{ 
+# 365
+float *data = (float *)d_data; 
+# 366
+stream_bytes = internal::encode< float> (dims, stride, (int)(stream->maxbits), data, d_stream); 
+# 367
+} else { 
+# 368
+if ((field->type) == (zfp_type_double)) 
 # 369
 { 
 # 370
-if ((dims[i]) != (0)) 
+double *data = (double *)d_data; 
 # 371
-{ 
+stream_bytes = internal::encode< double> (dims, stride, (int)(stream->maxbits), data, d_stream); 
 # 372
-field_size *= (dims[i]); 
+} else { 
 # 373
-}  
+if ((field->type) == (zfp_type_int32)) 
 # 374
-}  
+{ 
 # 375
-unsigned long field_bytes = type_size * field_size; 
+int *data = (int *)d_data; 
 # 376
-((*cpu_timing).field_bytes) = field_bytes; 
+stream_bytes = internal::encode< int> (dims, stride, (int)(stream->maxbits), data, d_stream); 
+# 377
+} else { 
 # 378
-gettimeofday(&cuda_start1S, __null); 
+if ((field->type) == (zfp_type_int64)) 
 # 379
-int3 stride; 
+{ 
 # 380
-(stride.x) = ((field->sx) ? field->sx : 1); 
+long long *data = (long long *)d_data; 
 # 381
-(stride.y) = ((field->sy) ? field->sy : (field->nx)); 
+stream_bytes = internal::encode< long long> (dims, stride, (int)(stream->maxbits), data, d_stream); 
 # 382
-(stride.z) = ((field->sz) ? field->sz : ((field->nx) * (field->ny))); 
-# 384
-size_t stream_bytes = (0); 
+}  }  }  }  
 # 385
-long long offset = (0); 
-# 387
-gettimeofday(&cuda_start10S, __null); 
-# 388
-void *d_data = internal::setup_device_field(field, stride, offset, cpu_timing); 
+internal::cleanup_device_ptr(field->data, d_data, 0, offset, field->type); 
+# 386
+internal::cleanup_device_ptr((stream->stream)->begin, d_stream, stream_bytes, 0, field->type); 
 # 389
-gettimeofday(&cuda_start10E, __null); 
-# 391
-if (d_data == (__null)) 
-# 392
-{ 
-# 394
-return 0; 
-# 395
-}  
-# 396
-gettimeofday(&cuda_start11S, __null); 
-# 397
-Word *d_stream = internal::setup_device_stream(stream, field, cpu_timing); 
-# 398
-gettimeofday(&cuda_start11E, __null); 
-# 400
-gettimeofday(&cuda_start1E, __null); 
-# 401
-((*cpu_timing).cuda_setup_device_field_time) = (((float)((((cuda_start10E.tv_sec) * (1000000)) + (cuda_start10E.tv_usec)) - (((cuda_start10S.tv_sec) * (1000000)) + (cuda_start10S.tv_usec)))) / (1000000.0)); 
-# 402
-((*cpu_timing).cuda_setup_device_stream_time) = (((float)((((cuda_start11E.tv_sec) * (1000000)) + (cuda_start11E.tv_usec)) - (((cuda_start11S.tv_sec) * (1000000)) + (cuda_start11S.tv_usec)))) / (1000000.0)); 
-# 403
-((*cpu_timing).cuda_Setup_time) = (((float)((((cuda_start1E.tv_sec) * (1000000)) + (cuda_start1E.tv_usec)) - (((cuda_start1S.tv_sec) * (1000000)) + (cuda_start1S.tv_usec)))) / (1000000.0)); 
-# 405
-gettimeofday(&cuda_start2S, __null); 
-# 406
-if ((field->type) == (zfp_type_float)) 
-# 407
-{ 
-# 408
-float *data = (float *)d_data; 
-# 409
-stream_bytes = internal::encode< float> (dims, stride, (int)(stream->maxbits), data, d_stream, cpu_timing, gpu_timing); 
-# 410
-} else { 
-# 411
-if ((field->type) == (zfp_type_double)) 
-# 412
-{ 
-# 413
-double *data = (double *)d_data; 
-# 414
-stream_bytes = internal::encode< double> (dims, stride, (int)(stream->maxbits), data, d_stream, cpu_timing, gpu_timing); 
-# 415
-} else { 
-# 416
-if ((field->type) == (zfp_type_int32)) 
-# 417
-{ 
-# 418
-int *data = (int *)d_data; 
-# 419
-stream_bytes = internal::encode< int> (dims, stride, (int)(stream->maxbits), data, d_stream, cpu_timing, gpu_timing); 
-# 420
-} else { 
-# 421
-if ((field->type) == (zfp_type_int64)) 
-# 422
-{ 
-# 423
-long long *data = (long long *)d_data; 
-# 424
-stream_bytes = internal::encode< long long> (dims, stride, (int)(stream->maxbits), data, d_stream, cpu_timing, gpu_timing); 
-# 425
-}  }  }  }  
-# 427
-gettimeofday(&cuda_start2E, __null); 
-# 428
-((*cpu_timing).cuda_Encode_time) = (((float)((((cuda_start2E.tv_sec) * (1000000)) + (cuda_start2E.tv_usec)) - (((cuda_start2S.tv_sec) * (1000000)) + (cuda_start2S.tv_usec)))) / (1000000.0)); 
-# 430
-internal::cleanup_device_ptr(field->data, d_data, 0, offset, field->type, cpu_timing); 
-# 432
-gettimeofday(&cuda_start3S, __null); 
-# 433
-internal::cleanup_device_ptr((stream->stream)->begin, d_stream, stream_bytes, 0, field->type, cpu_timing); 
-# 434
-gettimeofday(&cuda_start3E, __null); 
-# 435
-((*cpu_timing).cuda_Cleanup_time) = (((float)((((cuda_start3E.tv_sec) * (1000000)) + (cuda_start3E.tv_usec)) - (((cuda_start3S.tv_sec) * (1000000)) + (cuda_start3S.tv_usec)))) / (1000000.0)); 
-# 438
 size_t compressed_size = stream_bytes / sizeof(Word); 
-# 439
+# 390
 ((stream->stream)->bits) = ((uint)((8) * sizeof(word))); 
-# 441
+# 392
 ((stream->stream)->ptr) = (((stream->stream)->begin) + compressed_size); 
-# 442
-((*cpu_timing).stream_bytes) = stream_bytes; 
-# 444
+# 394
 return stream_bytes; 
-# 445
+# 395
 } 
-# 448
-void cuda_decompress(zfp_stream *stream, zfp_field *field, CPU_timing *cpu_timing) 
-# 449
+# 398
+void cuda_decompress(zfp_stream *stream, zfp_field *field) 
+# 399
 { 
-# 450
+# 400
 uint dims[3]; 
-# 451
+# 401
 (dims[0]) = (field->nx); 
-# 452
+# 402
 (dims[1]) = (field->ny); 
-# 453
+# 403
 (dims[2]) = (field->nz); 
-# 455
+# 405
 int3 stride; 
-# 456
+# 406
 (stride.x) = ((field->sx) ? field->sx : 1); 
-# 457
+# 407
 (stride.y) = ((field->sy) ? field->sy : (field->nx)); 
-# 458
+# 408
 (stride.z) = ((field->sz) ? field->sz : ((field->nx) * (field->ny))); 
-# 460
+# 410
 size_t decoded_bytes = (0); 
-# 461
+# 411
 long long offset = (0); 
-# 462
-void *d_data = internal::setup_device_field(field, stride, offset, cpu_timing); 
-# 464
+# 412
+void *d_data = internal::setup_device_field(field, stride, offset); 
+# 414
 if (d_data == (__null)) 
-# 465
+# 415
 { 
-# 467
+# 417
 return; 
-# 468
+# 418
 }  
-# 470
-Word *d_stream = internal::setup_device_stream(stream, field, cpu_timing); 
-# 472
+# 420
+Word *d_stream = internal::setup_device_stream(stream, field); 
+# 422
 if ((field->type) == (zfp_type_float)) 
-# 473
+# 423
 { 
-# 474
+# 424
 float *data = (float *)d_data; 
-# 475
+# 425
 decoded_bytes = internal::decode(dims, stride, (int)(stream->maxbits), d_stream, data); 
-# 476
+# 426
 d_data = ((void *)data); 
-# 477
+# 427
 } else { 
-# 478
+# 428
 if ((field->type) == (zfp_type_double)) 
-# 479
+# 429
 { 
-# 480
+# 430
 double *data = (double *)d_data; 
-# 481
+# 431
 decoded_bytes = internal::decode(dims, stride, (int)(stream->maxbits), d_stream, data); 
-# 482
+# 432
 d_data = ((void *)data); 
-# 483
+# 433
 } else { 
-# 484
+# 434
 if ((field->type) == (zfp_type_int32)) 
-# 485
+# 435
 { 
-# 486
+# 436
 int *data = (int *)d_data; 
-# 487
+# 437
 decoded_bytes = internal::decode(dims, stride, (int)(stream->maxbits), d_stream, data); 
-# 488
+# 438
 d_data = ((void *)data); 
-# 489
+# 439
 } else { 
-# 490
+# 440
 if ((field->type) == (zfp_type_int64)) 
-# 491
+# 441
 { 
-# 492
+# 442
 long long *data = (long long *)d_data; 
-# 493
+# 443
 decoded_bytes = internal::decode(dims, stride, (int)(stream->maxbits), d_stream, data); 
-# 494
+# 444
 d_data = ((void *)data); 
-# 495
+# 445
 } else 
-# 497
+# 447
 { 
-# 498
+# 448
 (std::cerr << ("Cannot decompress: type unknown\n")); 
-# 499
+# 449
 }  }  }  }  
-# 502
+# 452
 size_t type_size = zfp_type_size(field->type); 
-# 504
+# 454
 size_t field_size = (1); 
-# 505
+# 455
 for (int i = 0; i < 3; ++i) 
-# 506
+# 456
 { 
-# 507
+# 457
 if ((dims[i]) != (0)) 
-# 508
+# 458
 { 
-# 509
+# 459
 field_size *= (dims[i]); 
-# 510
+# 460
 }  
-# 511
+# 461
 }  
-# 513
+# 463
 size_t bytes = type_size * field_size; 
-# 514
-internal::cleanup_device_ptr((stream->stream)->begin, d_stream, 0, 0, field->type, cpu_timing); 
-# 515
-internal::cleanup_device_ptr(field->data, d_data, bytes, offset, field->type, cpu_timing); 
-# 518
+# 464
+internal::cleanup_device_ptr((stream->stream)->begin, d_stream, 0, 0, field->type); 
+# 465
+internal::cleanup_device_ptr(field->data, d_data, bytes, offset, field->type); 
+# 468
 size_t words_read = decoded_bytes / sizeof(Word); 
-# 519
+# 469
 ((stream->stream)->bits) = ((uint)((8) * sizeof(word))); 
-# 521
+# 471
 ((stream->stream)->ptr) = (((stream->stream)->begin) + words_read); 
-# 522
+# 472
 } 
 
 # 1 "cuZFP.cudafe1.stub.c"

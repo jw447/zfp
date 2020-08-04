@@ -4,13 +4,13 @@
 #include "zfp.h"
 
 static void 
-_t2(compress_cuda, Scalar, 1)(zfp_stream* stream, const zfp_field* field, CPU_timing* cpu_timing, GPU_timing* gpu_timing)
+_t2(compress_cuda, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 {
   //jwang
   FuncName;
   if(zfp_stream_compression_mode(stream) == zfp_mode_fixed_rate)
   { 
-    cuda_compress(stream, field, cpu_timing, gpu_timing);  // 
+    cuda_compress(stream, field);  // 
   }
 }
 

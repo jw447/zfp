@@ -32,7 +32,7 @@ _t2(gather_partial, Scalar, 3)(Scalar* q, const Scalar* p, uint nx, uint ny, uin
 
 /* forward decorrelating 3D transform */
 static void
-_t2(fwd_xform, Int, 3)(Int* p, CPU_timing* cpu_timing)
+_t2(fwd_xform, Int, 3)(Int* p)
 {
   uint x, y, z;
   /* transform along x */

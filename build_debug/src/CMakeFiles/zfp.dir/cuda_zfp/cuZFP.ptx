@@ -10,358 +10,516 @@
 .target sm_70
 .address_size 64
 
-	// .globl	_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing
+	// .globl	_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj
 .const .align 1 .b8 c_perm_1[4];
 .const .align 1 .b8 c_perm_2[16];
 .const .align 1 .b8 c_perm[64];
 
-.visible .entry _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing(
-	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_0,
-	.param .u64 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_1,
-	.param .u64 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_2,
-	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_3,
-	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_4,
-	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_5,
-	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_6,
-	.param .u64 _ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_7
+.visible .entry _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj(
+	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_0,
+	.param .u64 _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_1,
+	.param .u64 _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_2,
+	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_3,
+	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_4,
+	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_5,
+	.param .u32 _ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_6
 )
 {
-	.local .align 16 .b8 	__local_depot0[16];
+	.local .align 16 .b8 	__local_depot0[32];
 	.reg .b64 	%SP;
 	.reg .b64 	%SPL;
-	.reg .pred 	%p<22>;
-	.reg .f32 	%f<44>;
-	.reg .b32 	%r<109>;
-	.reg .b64 	%rd<69>;
+	.reg .pred 	%p<48>;
+	.reg .f32 	%f<57>;
+	.reg .b32 	%r<219>;
+	.reg .f64 	%fd<13>;
+	.reg .b64 	%rd<125>;
 
 
 	mov.u64 	%SPL, __local_depot0;
-	ld.param.u64 	%rd20, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_1];
-	ld.param.u64 	%rd22, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_2];
-	ld.param.u32 	%r21, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_3];
-	ld.param.u32 	%r22, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_4];
-	ld.param.u32 	%r23, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_5];
-	ld.param.u32 	%r25, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_6];
-	ld.param.u64 	%rd21, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_7];
-	cvta.to.global.u64 	%rd1, %rd22;
-	add.u64 	%rd2, %SPL, 0;
-	// inline asm
-	mov.u32 	%r24, %clock;
-	// inline asm
-	mov.u32 	%r26, %ctaid.z;
-	mov.u32 	%r27, %nctaid.y;
-	mov.u32 	%r28, %ctaid.y;
-	mad.lo.s32 	%r29, %r26, %r27, %r28;
-	mov.u32 	%r30, %nctaid.x;
-	mov.u32 	%r31, %ctaid.x;
-	mad.lo.s32 	%r32, %r29, %r30, %r31;
-	mov.u32 	%r33, %ntid.x;
-	mov.u32 	%r34, %tid.x;
-	mad.lo.s32 	%r2, %r32, %r33, %r34;
-	setp.ge.u32	%p1, %r2, %r25;
-	@%p1 bra 	BB0_32;
+	ld.param.u64 	%rd25, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_1];
+	ld.param.u64 	%rd26, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_2];
+	ld.param.u32 	%r51, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_3];
+	ld.param.u32 	%r52, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_4];
+	ld.param.u32 	%r53, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_5];
+	ld.param.u32 	%r54, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_6];
+	cvta.to.global.u64 	%rd1, %rd26;
+	add.u64 	%rd2, %SPL, 16;
+	mov.u32 	%r55, %ctaid.z;
+	mov.u32 	%r56, %nctaid.y;
+	mov.u32 	%r57, %ctaid.y;
+	mad.lo.s32 	%r58, %r55, %r56, %r57;
+	mov.u32 	%r59, %nctaid.x;
+	mov.u32 	%r60, %ctaid.x;
+	mad.lo.s32 	%r61, %r58, %r59, %r60;
+	mov.u32 	%r62, %ntid.x;
+	mov.u32 	%r63, %tid.x;
+	mad.lo.s32 	%r1, %r61, %r62, %r63;
+	setp.ge.u32	%p5, %r1, %r54;
+	@%p5 bra 	BB0_45;
 
-	cvta.to.global.u64 	%rd3, %rd20;
-	shr.u32 	%r35, %r23, 2;
-	rem.u32 	%r36, %r2, %r35;
-	shl.b32 	%r37, %r36, 2;
-	cvt.u64.u32	%rd24, %r37;
-	cvt.s64.s32	%rd4, %r22;
-	mul.lo.s64 	%rd5, %rd24, %rd4;
-	add.s32 	%r38, %r37, 4;
-	setp.gt.u32	%p2, %r38, %r21;
-	shl.b64 	%rd25, %rd5, 2;
-	add.s64 	%rd6, %rd3, %rd25;
-	@%p2 bra 	BB0_3;
+	cvta.to.global.u64 	%rd3, %rd25;
+	shr.u32 	%r64, %r53, 2;
+	rem.u32 	%r65, %r1, %r64;
+	shl.b32 	%r66, %r65, 2;
+	cvt.u64.u32	%rd28, %r66;
+	cvt.s64.s32	%rd4, %r52;
+	mul.lo.s64 	%rd5, %rd28, %rd4;
+	add.s32 	%r67, %r66, 4;
+	setp.gt.u32	%p6, %r67, %r51;
+	shl.b64 	%rd29, %rd5, 2;
+	add.s64 	%rd6, %rd3, %rd29;
+	@%p6 bra 	BB0_3;
 	bra.uni 	BB0_2;
 
 BB0_3:
-	sub.s32 	%r3, %r21, %r23;
-	add.s32 	%r4, %r3, 4;
-	setp.eq.s32	%p3, %r4, 0;
-	@%p3 bra 	BB0_13;
+	ld.param.u32 	%r194, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_3];
+	sub.s32 	%r2, %r194, %r53;
+	setp.eq.s32	%p7, %r2, -4;
+	@%p7 bra 	BB0_13;
 
-	add.s32 	%r43, %r21, 4;
-	sub.s32 	%r5, %r43, %r23;
-	and.b32  	%r42, %r5, 3;
-	mov.u32 	%r104, 0;
-	setp.eq.s32	%p4, %r42, 0;
-	@%p4 bra 	BB0_10;
+	ld.param.u32 	%r195, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_3];
+	add.s32 	%r72, %r195, 4;
+	sub.s32 	%r3, %r72, %r53;
+	and.b32  	%r71, %r3, 3;
+	mov.u32 	%r200, 0;
+	setp.eq.s32	%p8, %r71, 0;
+	@%p8 bra 	BB0_10;
 
-	setp.eq.s32	%p5, %r42, 1;
-	@%p5 bra 	BB0_9;
+	setp.eq.s32	%p9, %r71, 1;
+	@%p9 bra 	BB0_9;
 
-	setp.eq.s32	%p6, %r42, 2;
-	@%p6 bra 	BB0_8;
+	setp.eq.s32	%p10, %r71, 2;
+	@%p10 bra 	BB0_8;
 
+	ld.param.u64 	%rd114, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_1];
+	cvta.to.global.u64 	%rd113, %rd114;
 	ld.global.f32 	%f15, [%rd6];
 	st.local.f32 	[%rd2], %f15;
-	add.s64 	%rd32, %rd5, %rd4;
-	shl.b64 	%rd33, %rd32, 2;
-	add.s64 	%rd6, %rd3, %rd33;
-	mov.u32 	%r104, 1;
+	add.s64 	%rd36, %rd5, %rd4;
+	shl.b64 	%rd37, %rd36, 2;
+	add.s64 	%rd6, %rd113, %rd37;
+	mov.u32 	%r200, 1;
 
 BB0_8:
 	ld.global.f32 	%f16, [%rd6];
-	mul.wide.u32 	%rd34, %r104, 4;
-	add.s64 	%rd35, %rd2, %rd34;
-	st.local.f32 	[%rd35], %f16;
-	add.s32 	%r104, %r104, 1;
-	shl.b64 	%rd36, %rd4, 2;
-	add.s64 	%rd6, %rd6, %rd36;
+	mul.wide.u32 	%rd38, %r200, 4;
+	add.s64 	%rd39, %rd2, %rd38;
+	st.local.f32 	[%rd39], %f16;
+	add.s32 	%r200, %r200, 1;
+	shl.b64 	%rd40, %rd4, 2;
+	add.s64 	%rd6, %rd6, %rd40;
 
 BB0_9:
 	ld.global.f32 	%f17, [%rd6];
-	mul.wide.u32 	%rd37, %r104, 4;
-	add.s64 	%rd38, %rd2, %rd37;
-	st.local.f32 	[%rd38], %f17;
-	add.s32 	%r104, %r104, 1;
-	shl.b64 	%rd39, %rd4, 2;
-	add.s64 	%rd6, %rd6, %rd39;
+	mul.wide.u32 	%rd41, %r200, 4;
+	add.s64 	%rd42, %rd2, %rd41;
+	st.local.f32 	[%rd42], %f17;
+	add.s32 	%r200, %r200, 1;
+	shl.b64 	%rd43, %rd4, 2;
+	add.s64 	%rd6, %rd6, %rd43;
 
 BB0_10:
-	setp.lt.u32	%p7, %r5, 4;
-	@%p7 bra 	BB0_13;
+	setp.lt.u32	%p11, %r3, 4;
+	@%p11 bra 	BB0_13;
 
-	mul.wide.s32 	%rd14, %r22, 4;
+	ld.param.u32 	%r196, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_4];
+	mul.wide.s32 	%rd14, %r196, 4;
 
 BB0_12:
 	ld.global.f32 	%f18, [%rd6];
-	mul.wide.u32 	%rd40, %r104, 4;
-	add.s64 	%rd41, %rd2, %rd40;
-	st.local.f32 	[%rd41], %f18;
-	add.s64 	%rd42, %rd6, %rd14;
-	ld.global.f32 	%f19, [%rd42];
-	add.s32 	%r45, %r104, 1;
-	mul.wide.u32 	%rd43, %r45, 4;
-	add.s64 	%rd44, %rd2, %rd43;
-	st.local.f32 	[%rd44], %f19;
-	add.s64 	%rd45, %rd42, %rd14;
-	ld.global.f32 	%f20, [%rd45];
-	add.s32 	%r46, %r104, 2;
-	mul.wide.u32 	%rd46, %r46, 4;
-	add.s64 	%rd47, %rd2, %rd46;
-	st.local.f32 	[%rd47], %f20;
-	add.s64 	%rd48, %rd45, %rd14;
-	add.s64 	%rd6, %rd48, %rd14;
-	ld.global.f32 	%f21, [%rd48];
-	add.s32 	%r47, %r104, 3;
-	mul.wide.u32 	%rd49, %r47, 4;
-	add.s64 	%rd50, %rd2, %rd49;
-	st.local.f32 	[%rd50], %f21;
-	add.s32 	%r104, %r104, 4;
-	setp.lt.u32	%p8, %r104, %r4;
-	@%p8 bra 	BB0_12;
+	mul.wide.u32 	%rd44, %r200, 4;
+	add.s64 	%rd45, %rd2, %rd44;
+	st.local.f32 	[%rd45], %f18;
+	add.s64 	%rd46, %rd6, %rd14;
+	ld.global.f32 	%f19, [%rd46];
+	add.s32 	%r74, %r200, 1;
+	mul.wide.u32 	%rd47, %r74, 4;
+	add.s64 	%rd48, %rd2, %rd47;
+	st.local.f32 	[%rd48], %f19;
+	add.s64 	%rd49, %rd46, %rd14;
+	ld.global.f32 	%f20, [%rd49];
+	add.s32 	%r75, %r200, 2;
+	mul.wide.u32 	%rd50, %r75, 4;
+	add.s64 	%rd51, %rd2, %rd50;
+	st.local.f32 	[%rd51], %f20;
+	add.s64 	%rd52, %rd49, %rd14;
+	add.s64 	%rd6, %rd52, %rd14;
+	ld.global.f32 	%f21, [%rd52];
+	add.s32 	%r76, %r200, 3;
+	mul.wide.u32 	%rd53, %r76, 4;
+	add.s64 	%rd54, %rd2, %rd53;
+	st.local.f32 	[%rd54], %f21;
+	add.s32 	%r77, %r2, 4;
+	add.s32 	%r200, %r200, 4;
+	setp.lt.u32	%p12, %r200, %r77;
+	@%p12 bra 	BB0_12;
 
 BB0_13:
-	setp.gt.s32	%p9, %r3, -3;
-	@%p9 bra 	BB0_17;
+	setp.gt.s32	%p13, %r2, -3;
+	@%p13 bra 	BB0_17;
 
-	setp.eq.s32	%p12, %r3, -4;
-	@%p12 bra 	BB0_20;
+	setp.eq.s32	%p45, %r2, -4;
+	@%p45 bra 	BB0_20;
 	bra.uni 	BB0_15;
 
 BB0_20:
-	mov.u32 	%r48, 0;
-	st.local.u32 	[%rd2], %r48;
-	mov.f32 	%f41, 0f00000000;
+	mov.u32 	%r78, 0;
+	st.local.u32 	[%rd2], %r78;
+	mov.f32 	%f54, 0f00000000;
 	bra.uni 	BB0_21;
 
 BB0_2:
-	ld.global.f32 	%f43, [%rd6];
-	mul.wide.s32 	%rd26, %r22, 4;
-	add.s64 	%rd27, %rd6, %rd26;
-	add.s64 	%rd28, %rd27, %rd26;
-	add.s64 	%rd29, %rd28, %rd26;
-	ld.global.f32 	%f42, [%rd29];
-	ld.global.f32 	%f13, [%rd27];
-	ld.global.f32 	%f14, [%rd28];
-	st.local.v4.f32 	[%rd2], {%f43, %f13, %f14, %f42};
+	ld.param.u32 	%r191, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_4];
+	ld.global.f32 	%f56, [%rd6];
+	mul.wide.s32 	%rd30, %r191, 4;
+	add.s64 	%rd31, %rd6, %rd30;
+	add.s64 	%rd32, %rd31, %rd30;
+	add.s64 	%rd33, %rd32, %rd30;
+	ld.global.f32 	%f55, [%rd33];
+	ld.global.f32 	%f13, [%rd31];
+	ld.global.f32 	%f14, [%rd32];
+	st.local.v4.f32 	[%rd2], {%f56, %f13, %f14, %f55};
 	bra.uni 	BB0_25;
 
 BB0_17:
-	setp.eq.s32	%p10, %r3, -1;
-	@%p10 bra 	BB0_23;
+	setp.eq.s32	%p14, %r2, -1;
+	@%p14 bra 	BB0_23;
 
-	setp.ne.s32	%p11, %r3, -2;
-	@%p11 bra 	BB0_24;
+	setp.ne.s32	%p15, %r2, -2;
+	@%p15 bra 	BB0_24;
 
-	ld.local.f32 	%f41, [%rd2+4];
+	ld.local.f32 	%f54, [%rd2+4];
 	bra.uni 	BB0_22;
 
 BB0_15:
-	setp.eq.s32	%p13, %r3, -3;
-	@%p13 bra 	BB0_16;
+	setp.eq.s32	%p17, %r2, -3;
+	@%p17 bra 	BB0_16;
 	bra.uni 	BB0_24;
 
 BB0_16:
-	ld.local.f32 	%f41, [%rd2];
+	ld.local.f32 	%f54, [%rd2];
 
 BB0_21:
-	st.local.f32 	[%rd2+4], %f41;
+	st.local.f32 	[%rd2+4], %f54;
 
 BB0_22:
-	st.local.f32 	[%rd2+8], %f41;
+	st.local.f32 	[%rd2+8], %f54;
 
 BB0_23:
-	ld.local.f32 	%f42, [%rd2];
-	st.local.f32 	[%rd2+12], %f42;
-	mov.f32 	%f43, %f42;
+	ld.local.f32 	%f55, [%rd2];
+	st.local.f32 	[%rd2+12], %f55;
+	mov.f32 	%f56, %f55;
 	bra.uni 	BB0_25;
 
 BB0_24:
-	ld.local.v4.f32 	{%f43, %f24, %f25, %f42}, [%rd2];
+	ld.local.v4.f32 	{%f56, %f24, %f25, %f55}, [%rd2];
 
 BB0_25:
-	ld.param.u32 	%r103, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_PyjijjP10GPU_timing_param_0];
-	mov.u32 	%r102, %ctaid.y;
-	mov.u32 	%r101, %nctaid.y;
-	mov.u32 	%r100, %ctaid.z;
-	mov.u32 	%r99, %ctaid.x;
-	mov.u32 	%r98, %nctaid.x;
-	mad.lo.s32 	%r97, %r100, %r101, %r102;
-	mov.u32 	%r96, %tid.x;
-	mov.u32 	%r95, %ntid.x;
-	mad.lo.s32 	%r94, %r97, %r98, %r99;
-	mad.lo.s32 	%r93, %r94, %r95, %r96;
-	// inline asm
-	mov.u32 	%r49, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r50, %clock;
-	// inline asm
-	abs.f32 	%f27, %f43;
+	add.u64 	%rd115, %SPL, 16;
+	ld.param.u32 	%r192, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_0];
+	mul.lo.s32 	%r11, %r1, %r192;
+	shr.u32 	%r12, %r11, 6;
+	abs.f32 	%f27, %f56;
 	mov.f32 	%f28, 0f00000000;
 	max.f32 	%f29, %f28, %f27;
-	ld.local.f32 	%f30, [%rd2+4];
+	ld.local.f32 	%f30, [%rd115+4];
 	abs.f32 	%f31, %f30;
 	max.f32 	%f32, %f29, %f31;
-	ld.local.f32 	%f33, [%rd2+8];
+	ld.local.f32 	%f33, [%rd115+8];
 	abs.f32 	%f34, %f33;
 	max.f32 	%f35, %f32, %f34;
-	abs.f32 	%f36, %f42;
+	abs.f32 	%f36, %f55;
 	max.f32 	%f12, %f35, %f36;
-	mul.lo.s32 	%r15, %r93, %r103;
-	shr.u32 	%r16, %r15, 6;
-	mov.u32 	%r108, -127;
-	setp.leu.f32	%p14, %f12, 0f00000000;
-	@%p14 bra 	BB0_27;
+	and.b32  	%r13, %r11, 63;
+	mov.u32 	%r204, -127;
+	setp.leu.f32	%p18, %f12, 0f00000000;
+	@%p18 bra 	BB0_27;
 
 	abs.f32 	%f37, %f12;
-	setp.lt.f32	%p15, %f37, 0f00800000;
+	setp.lt.f32	%p19, %f37, 0f00800000;
 	mul.f32 	%f38, %f12, 0f4B800000;
-	selp.f32	%f39, %f38, %f12, %p15;
-	mov.b32 	 %r52, %f39;
-	bfe.u32 	%r53, %r52, 23, 8;
-	setp.eq.f32	%p16, %f37, 0f00000000;
-	setp.eq.s32	%p17, %r53, 255;
-	or.pred  	%p18, %p16, %p17;
-	selp.b32	%r54, -150, -126, %p15;
-	mov.u32 	%r55, -126;
-	add.s32 	%r56, %r54, %r53;
-	selp.b32	%r57, 0, %r56, %p18;
-	max.s32 	%r108, %r57, %r55;
+	selp.f32	%f39, %f38, %f12, %p19;
+	mov.b32 	 %r80, %f39;
+	bfe.u32 	%r81, %r80, 23, 8;
+	setp.eq.f32	%p20, %f37, 0f00000000;
+	setp.eq.s32	%p21, %r81, 255;
+	or.pred  	%p22, %p20, %p21;
+	selp.b32	%r82, -150, -126, %p19;
+	mov.u32 	%r83, -126;
+	add.s32 	%r84, %r82, %r81;
+	selp.b32	%r85, 0, %r84, %p22;
+	max.s32 	%r204, %r85, %r83;
 
 BB0_27:
-	// inline asm
-	mov.u32 	%r58, %clock;
-	// inline asm
-	add.s32 	%r61, %r108, 1082;
-	mov.u32 	%r62, 0;
-	max.s32 	%r63, %r62, %r61;
-	mov.u32 	%r64, 32;
-	min.s32 	%r65, %r64, %r63;
-	// inline asm
-	mov.u32 	%r59, %clock;
-	// inline asm
-	setp.eq.s32	%p19, %r65, 0;
-	add.s32 	%r66, %r108, 127;
-	selp.b32	%r19, 0, %r66, %p19;
-	// inline asm
-	mov.u32 	%r60, %clock;
-	// inline asm
-	sub.s32 	%r67, %r58, %r50;
-	cvta.to.global.u64 	%rd53, %rd21;
-	add.s64 	%rd17, %rd53, 16;
-	st.global.u32 	[%rd53+16], %r67;
-	sub.s32 	%r68, %r59, %r58;
-	st.global.u32 	[%rd53+20], %r68;
-	sub.s32 	%r69, %r60, %r59;
-	st.global.u32 	[%rd53+24], %r69;
-	sub.s32 	%r70, %r60, %r50;
-	st.global.u32 	[%rd53+12], %r70;
-	setp.eq.s32	%p20, %r19, 0;
-	@%p20 bra 	BB0_31;
+	add.s32 	%r86, %r204, 1082;
+	mov.u32 	%r87, 0;
+	max.s32 	%r88, %r87, %r86;
+	mov.u32 	%r89, 32;
+	min.s32 	%r16, %r89, %r88;
+	setp.eq.s32	%p23, %r16, 0;
+	add.s32 	%r90, %r204, 127;
+	selp.b32	%r17, 0, %r90, %p23;
+	setp.eq.s32	%p24, %r17, 0;
+	@%p24 bra 	BB0_45;
 
-	shl.b32 	%r71, %r19, 1;
-	add.s32 	%r72, %r71, 1;
-	cvt.u64.u32	%rd54, %r72;
-	and.b64  	%rd18, %rd54, 511;
-	and.b32  	%r73, %r15, 63;
-	cvt.u64.u32	%rd19, %r73;
-	shl.b64 	%rd55, %rd18, %r73;
-	mul.wide.u32 	%rd56, %r16, 8;
-	add.s64 	%rd57, %rd1, %rd56;
-	atom.global.add.u64 	%rd58, [%rd57], %rd55;
-	add.s32 	%r74, %r73, 8;
-	setp.lt.u32	%p21, %r74, 64;
-	@%p21 bra 	BB0_30;
+	shl.b32 	%r91, %r17, 1;
+	add.s32 	%r92, %r91, 1;
+	cvt.u64.u32	%rd57, %r92;
+	and.b64  	%rd17, %rd57, 511;
+	cvt.u64.u32	%rd18, %r13;
+	shl.b64 	%rd58, %rd17, %r13;
+	mul.wide.u32 	%rd59, %r12, 8;
+	add.s64 	%rd60, %rd1, %rd59;
+	atom.global.add.u64 	%rd61, [%rd60], %rd58;
+	add.s32 	%r93, %r13, 8;
+	setp.lt.u32	%p25, %r93, 64;
+	@%p25 bra 	BB0_30;
 
-	mov.u64 	%rd59, 64;
-	sub.s64 	%rd60, %rd59, %rd19;
-	cvt.u32.u64	%r75, %rd60;
-	shr.u64 	%rd61, %rd18, %r75;
-	add.s32 	%r76, %r16, 1;
-	mul.wide.u32 	%rd62, %r76, 8;
-	add.s64 	%rd63, %rd1, %rd62;
-	atom.global.add.u64 	%rd64, [%rd63], %rd61;
+	mov.u64 	%rd62, 64;
+	sub.s64 	%rd63, %rd62, %rd18;
+	cvt.u32.u64	%r94, %rd63;
+	shr.u64 	%rd64, %rd17, %r94;
+	add.s32 	%r95, %r12, 1;
+	mul.wide.u32 	%rd65, %r95, 8;
+	add.s64 	%rd66, %rd1, %rd65;
+	atom.global.add.u64 	%rd67, [%rd66], %rd64;
 
 BB0_30:
-	// inline asm
-	mov.u32 	%r77, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r78, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r79, %clock;
-	// inline asm
-	sub.s32 	%r85, %r79, %r78;
-	st.global.u32 	[%rd17+16], %r85;
-	// inline asm
-	mov.u32 	%r80, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r81, %clock;
-	// inline asm
-	sub.s32 	%r86, %r81, %r80;
-	st.global.u32 	[%rd17+20], %r86;
-	// inline asm
-	mov.u32 	%r82, %clock;
-	// inline asm
-	sub.s32 	%r87, %r82, %r77;
-	st.global.u32 	[%rd17+12], %r87;
-	// inline asm
-	mov.u32 	%r83, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r84, %clock;
-	// inline asm
-	sub.s32 	%r88, %r84, %r83;
-	st.global.u32 	[%rd17+24], %r88;
+	mov.u32 	%r96, 30;
+	sub.s32 	%r97, %r96, %r204;
+	mov.u32 	%r98, 2200;
+	min.s32 	%r99, %r97, %r98;
+	mov.u32 	%r100, -2200;
+	max.s32 	%r18, %r100, %r99;
+	setp.eq.s32	%p26, %r18, 0;
+	mov.f64 	%fd12, 0d3FF0000000000000;
+	@%p26 bra 	BB0_36;
 
-BB0_31:
-	// inline asm
-	mov.u32 	%r89, %clock;
-	// inline asm
-	sub.s32 	%r90, %r49, %r24;
-	st.global.u32 	[%rd17+-12], %r90;
-	sub.s32 	%r91, %r89, %r49;
-	st.global.u32 	[%rd17+-8], %r91;
-	sub.s32 	%r92, %r89, %r24;
-	st.global.u32 	[%rd17+-16], %r92;
+	abs.s32 	%r19, %r18;
+	setp.lt.s32	%p27, %r19, 1022;
+	@%p27 bra 	BB0_35;
+	bra.uni 	BB0_32;
+
+BB0_35:
+	shl.b32 	%r120, %r18, 20;
+	add.s32 	%r121, %r120, 1072693248;
+	mov.b64 	%fd12, {%r87, %r121};
+	bra.uni 	BB0_36;
 
 BB0_32:
+	setp.lt.s32	%p28, %r19, 2044;
+	@%p28 bra 	BB0_34;
+	bra.uni 	BB0_33;
+
+BB0_34:
+	shr.u32 	%r111, %r18, 31;
+	add.s32 	%r112, %r18, %r111;
+	shr.s32 	%r113, %r112, 1;
+	shl.b32 	%r114, %r113, 20;
+	add.s32 	%r115, %r114, 1072693248;
+	mov.b64 	%fd10, {%r87, %r115};
+	sub.s32 	%r117, %r18, %r113;
+	shl.b32 	%r118, %r117, 20;
+	add.s32 	%r119, %r118, 1072693248;
+	mov.b64 	%fd11, {%r87, %r119};
+	mul.f64 	%fd12, %fd10, %fd11;
+	bra.uni 	BB0_36;
+
+BB0_33:
+	shr.s32 	%r101, %r18, 31;
+	shr.u32 	%r102, %r101, 30;
+	add.s32 	%r103, %r18, %r102;
+	shr.s32 	%r104, %r103, 2;
+	shl.b32 	%r105, %r104, 20;
+	add.s32 	%r106, %r105, 1072693248;
+	mov.b64 	%fd6, {%r87, %r106};
+	mul.f64 	%fd7, %fd6, %fd6;
+	mul.f64 	%fd8, %fd6, %fd7;
+	mad.lo.s32 	%r108, %r104, -3, %r18;
+	shl.b32 	%r109, %r108, 20;
+	add.s32 	%r110, %r109, 1072693248;
+	mov.b64 	%fd9, {%r87, %r110};
+	mul.f64 	%fd12, %fd9, %fd8;
+
+BB0_36:
+	add.u64 	%rd117, %SPL, 16;
+	ld.param.u32 	%r193, [_ZN5cuZFP11cudaEncode1IfEEvjPKT_Pyjijj_param_0];
+	ld.local.v4.f32 	{%f40, %f41, %f42, %f43}, [%rd117];
+	cvt.rn.f32.f64	%f48, %fd12;
+	mul.f32 	%f49, %f48, %f40;
+	cvt.rzi.s32.f32	%r126, %f49;
+	mul.f32 	%f50, %f48, %f41;
+	cvt.rzi.s32.f32	%r127, %f50;
+	mul.f32 	%f51, %f48, %f42;
+	cvt.rzi.s32.f32	%r128, %f51;
+	mul.f32 	%f52, %f48, %f43;
+	cvt.rzi.s32.f32	%r129, %f52;
+	add.s32 	%r130, %r129, %r126;
+	shr.s32 	%r131, %r130, 1;
+	sub.s32 	%r132, %r129, %r131;
+	add.s32 	%r133, %r128, %r127;
+	shr.s32 	%r134, %r133, 1;
+	sub.s32 	%r135, %r127, %r134;
+	add.s32 	%r136, %r131, %r134;
+	add.s32 	%r137, %r132, %r135;
+	shr.s32 	%r138, %r137, 1;
+	sub.s32 	%r139, %r135, %r138;
+	shr.s32 	%r140, %r139, 1;
+	add.s32 	%r141, %r140, %r138;
+	shr.s32 	%r142, %r141, 1;
+	sub.s32 	%r143, %r139, %r142;
+	shr.s32 	%r144, %r136, 1;
+	sub.s32 	%r145, %r134, %r144;
+	add.u64 	%rd71, %SPL, 0;
+	st.local.v4.u32 	[%rd71], {%r144, %r143, %r145, %r141};
+	ld.const.u8 	%r146, [c_perm_1];
+	mul.wide.u32 	%rd72, %r146, 4;
+	add.s64 	%rd73, %rd71, %rd72;
+	ld.local.u32 	%r147, [%rd73];
+	add.s32 	%r148, %r147, -1431655766;
+	xor.b32  	%r20, %r148, -1431655766;
+	ld.const.u8 	%r149, [c_perm_1+1];
+	mul.wide.u32 	%rd74, %r149, 4;
+	add.s64 	%rd75, %rd71, %rd74;
+	ld.local.u32 	%r150, [%rd75];
+	add.s32 	%r151, %r150, -1431655766;
+	xor.b32  	%r21, %r151, -1431655766;
+	ld.const.u8 	%r152, [c_perm_1+2];
+	mul.wide.u32 	%rd76, %r152, 4;
+	add.s64 	%rd77, %rd71, %rd76;
+	ld.local.u32 	%r153, [%rd77];
+	add.s32 	%r154, %r153, -1431655766;
+	xor.b32  	%r22, %r154, -1431655766;
+	ld.const.u8 	%r155, [c_perm_1+3];
+	mul.wide.u32 	%rd78, %r155, 4;
+	add.s64 	%rd79, %rd71, %rd78;
+	ld.local.u32 	%r156, [%rd79];
+	add.s32 	%r157, %r156, -1431655766;
+	xor.b32  	%r23, %r157, -1431655766;
+	sub.s32 	%r159, %r89, %r16;
+	setp.lt.u32	%p29, %r16, 32;
+	selp.b32	%r24, %r159, 0, %p29;
+	setp.gt.u32	%p30, %r24, 31;
+	add.s32 	%r210, %r193, -9;
+	setp.eq.s32	%p31, %r210, 0;
+	or.pred  	%p32, %p30, %p31;
+	@%p32 bra 	BB0_45;
+
+	mov.u32 	%r209, 9;
+	mov.u32 	%r205, 31;
+	mov.u32 	%r216, 0;
+
+BB0_38:
+	shr.u32 	%r160, %r20, %r205;
+	and.b32  	%r161, %r160, 1;
+	cvt.u64.u32	%rd80, %r161;
+	shr.u32 	%r162, %r21, %r205;
+	and.b32  	%r163, %r162, 1;
+	mul.wide.u32 	%rd81, %r163, 2;
+	or.b64  	%rd82, %rd81, %rd80;
+	shr.u32 	%r164, %r22, %r205;
+	and.b32  	%r165, %r164, 1;
+	mul.wide.u32 	%rd83, %r165, 4;
+	add.s64 	%rd84, %rd83, %rd82;
+	shr.u32 	%r166, %r23, %r205;
+	and.b32  	%r167, %r166, 1;
+	mul.wide.u32 	%rd85, %r167, 8;
+	add.s64 	%rd86, %rd85, %rd84;
+	min.u32 	%r30, %r216, %r210;
+	add.s32 	%r168, %r209, %r11;
+	and.b32  	%r169, %r168, 63;
+	add.s32 	%r170, %r209, %r13;
+	shr.u32 	%r171, %r170, 6;
+	add.s32 	%r31, %r171, %r12;
+	shr.u64 	%rd124, %rd86, %r30;
+	shl.b64 	%rd87, %rd124, %r30;
+	sub.s64 	%rd20, %rd86, %rd87;
+	shl.b64 	%rd88, %rd20, %r169;
+	mul.wide.u32 	%rd90, %r31, 8;
+	add.s64 	%rd91, %rd1, %rd90;
+	atom.global.add.u64 	%rd92, [%rd91], %rd88;
+	add.s32 	%r172, %r169, %r30;
+	add.s32 	%r173, %r172, -1;
+	setp.lt.u32	%p33, %r173, 64;
+	@%p33 bra 	BB0_40;
+
+	add.s32 	%r190, %r209, %r11;
+	and.b32  	%r189, %r190, 63;
+	cvt.u64.u32	%rd112, %r189;
+	mov.u64 	%rd93, 64;
+	sub.s64 	%rd94, %rd93, %rd112;
+	cvt.u32.u64	%r174, %rd94;
+	shr.u64 	%rd95, %rd20, %r174;
+	add.s32 	%r175, %r31, 1;
+	mul.wide.u32 	%rd97, %r175, 8;
+	add.s64 	%rd98, %rd1, %rd97;
+	atom.global.add.u64 	%rd99, [%rd98], %rd95;
+
+BB0_40:
+	add.s32 	%r209, %r30, %r209;
+	sub.s32 	%r210, %r210, %r30;
+	bra.uni 	BB0_41;
+
+BB0_46:
+	setp.eq.s32	%p42, %r210, 0;
+	setp.gt.u32	%p43, %r216, 2;
+	mov.pred 	%p47, 0;
+	or.pred  	%p44, %p43, %p42;
+	@%p44 bra 	BB0_48;
+
+	add.s32 	%r210, %r210, -1;
+	cvt.u32.u64	%r182, %rd124;
+	and.b32  	%r183, %r182, 1;
+	add.s32 	%r184, %r209, %r11;
+	and.b32  	%r185, %r184, 63;
+	add.s32 	%r186, %r209, %r13;
+	shr.u32 	%r187, %r186, 6;
+	add.s32 	%r188, %r187, %r12;
+	and.b64  	%rd106, %rd124, 1;
+	shl.b64 	%rd107, %rd106, %r185;
+	mul.wide.u32 	%rd109, %r188, 8;
+	add.s64 	%rd110, %rd1, %rd109;
+	atom.global.add.u64 	%rd111, [%rd110], %rd107;
+	add.s32 	%r209, %r209, 1;
+	setp.eq.s32	%p47, %r183, 0;
+
+BB0_48:
+	shr.u64 	%rd124, %rd124, 1;
+	add.s32 	%r216, %r216, 1;
+	@%p47 bra 	BB0_46;
+
+BB0_41:
+	setp.eq.s32	%p35, %r210, 0;
+	setp.gt.u32	%p36, %r216, 3;
+	mov.pred 	%p46, 0;
+	or.pred  	%p37, %p36, %p35;
+	@%p37 bra 	BB0_43;
+
+	add.s32 	%r210, %r210, -1;
+	add.s32 	%r176, %r209, %r11;
+	and.b32  	%r177, %r176, 63;
+	add.s32 	%r178, %r209, %r13;
+	shr.u32 	%r179, %r178, 6;
+	add.s32 	%r180, %r179, %r12;
+	setp.ne.s64	%p46, %rd124, 0;
+	selp.u64	%rd100, 1, 0, %p46;
+	shl.b64 	%rd101, %rd100, %r177;
+	mul.wide.u32 	%rd103, %r180, 8;
+	add.s64 	%rd104, %rd1, %rd103;
+	atom.global.add.u64 	%rd105, [%rd104], %rd101;
+	add.s32 	%r209, %r209, 1;
+
+BB0_43:
+	@%p46 bra 	BB0_46;
+
+	setp.gt.u32	%p38, %r205, %r24;
+	setp.ne.s32	%p39, %r210, 0;
+	selp.b32	%r181, -1, 0, %p39;
+	add.s32 	%r205, %r181, %r205;
+	and.pred  	%p40, %p38, %p39;
+	@%p40 bra 	BB0_38;
+
+BB0_45:
 	ret;
 }
 
@@ -2091,363 +2249,517 @@ BB2_244:
 	ret;
 }
 
-	// .globl	_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing
-.visible .entry _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing(
-	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_0,
-	.param .u64 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_1,
-	.param .u64 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_2,
-	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_3,
-	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_4,
-	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_5,
-	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_6,
-	.param .u64 _ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_7
+	// .globl	_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj
+.visible .entry _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj(
+	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_0,
+	.param .u64 _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_1,
+	.param .u64 _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_2,
+	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_3,
+	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_4,
+	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_5,
+	.param .u32 _ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_6
 )
 {
-	.local .align 16 .b8 	__local_depot3[32];
+	.local .align 16 .b8 	__local_depot3[64];
 	.reg .b64 	%SP;
 	.reg .b64 	%SPL;
-	.reg .pred 	%p<22>;
-	.reg .b32 	%r<106>;
-	.reg .f64 	%fd<44>;
-	.reg .b64 	%rd<71>;
+	.reg .pred 	%p<47>;
+	.reg .b32 	%r<180>;
+	.reg .f64 	%fd<68>;
+	.reg .b64 	%rd<156>;
 
 
 	mov.u64 	%SPL, __local_depot3;
-	ld.param.u64 	%rd20, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_1];
-	ld.param.u64 	%rd22, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_2];
-	ld.param.u32 	%r26, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_3];
-	ld.param.u32 	%r27, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_4];
-	ld.param.u32 	%r28, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_5];
-	ld.param.u32 	%r30, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_6];
-	cvta.to.global.u64 	%rd1, %rd22;
-	add.u64 	%rd2, %SPL, 0;
-	// inline asm
-	mov.u32 	%r29, %clock;
-	// inline asm
-	mov.u32 	%r31, %ctaid.z;
-	mov.u32 	%r32, %nctaid.y;
-	mov.u32 	%r33, %ctaid.y;
-	mad.lo.s32 	%r34, %r31, %r32, %r33;
-	mov.u32 	%r35, %nctaid.x;
-	mov.u32 	%r36, %ctaid.x;
-	mad.lo.s32 	%r37, %r34, %r35, %r36;
-	mov.u32 	%r38, %ntid.x;
-	mov.u32 	%r39, %tid.x;
-	mad.lo.s32 	%r2, %r37, %r38, %r39;
-	setp.ge.u32	%p1, %r2, %r30;
-	@%p1 bra 	BB3_36;
+	ld.param.u32 	%r51, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_0];
+	ld.param.u64 	%rd29, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_1];
+	ld.param.u64 	%rd30, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_2];
+	ld.param.u32 	%r52, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_3];
+	ld.param.u32 	%r53, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_4];
+	ld.param.u32 	%r54, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_5];
+	ld.param.u32 	%r55, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_Pyjijj_param_6];
+	cvta.to.global.u64 	%rd1, %rd30;
+	add.u64 	%rd2, %SPL, 32;
+	mov.u32 	%r56, %ctaid.z;
+	mov.u32 	%r57, %nctaid.y;
+	mov.u32 	%r58, %ctaid.y;
+	mad.lo.s32 	%r59, %r56, %r57, %r58;
+	mov.u32 	%r60, %nctaid.x;
+	mov.u32 	%r61, %ctaid.x;
+	mad.lo.s32 	%r62, %r59, %r60, %r61;
+	mov.u32 	%r63, %ntid.x;
+	mov.u32 	%r64, %tid.x;
+	mad.lo.s32 	%r1, %r62, %r63, %r64;
+	setp.ge.u32	%p5, %r1, %r55;
+	@%p5 bra 	BB3_49;
 
-	cvta.to.global.u64 	%rd3, %rd20;
-	shr.u32 	%r40, %r28, 2;
-	rem.u32 	%r41, %r2, %r40;
-	shl.b32 	%r42, %r41, 2;
-	cvt.u64.u32	%rd24, %r42;
-	cvt.s64.s32	%rd4, %r27;
-	mul.lo.s64 	%rd5, %rd24, %rd4;
-	add.s32 	%r43, %r42, 4;
-	setp.gt.u32	%p2, %r43, %r26;
-	shl.b64 	%rd25, %rd5, 3;
-	add.s64 	%rd6, %rd3, %rd25;
-	@%p2 bra 	BB3_3;
+	cvta.to.global.u64 	%rd3, %rd29;
+	shr.u32 	%r65, %r54, 2;
+	rem.u32 	%r66, %r1, %r65;
+	shl.b32 	%r67, %r66, 2;
+	cvt.u64.u32	%rd32, %r67;
+	cvt.s64.s32	%rd4, %r53;
+	mul.lo.s64 	%rd5, %rd32, %rd4;
+	add.s32 	%r68, %r67, 4;
+	setp.gt.u32	%p6, %r68, %r52;
+	shl.b64 	%rd33, %rd5, 3;
+	add.s64 	%rd6, %rd3, %rd33;
+	@%p6 bra 	BB3_3;
 	bra.uni 	BB3_2;
 
 BB3_3:
-	sub.s32 	%r3, %r26, %r28;
-	add.s32 	%r4, %r3, 4;
-	setp.eq.s32	%p3, %r4, 0;
-	@%p3 bra 	BB3_13;
-
-	add.s32 	%r48, %r26, 4;
-	sub.s32 	%r5, %r48, %r28;
-	and.b32  	%r47, %r5, 3;
-	mov.u32 	%r99, 0;
-	setp.eq.s32	%p4, %r47, 0;
-	@%p4 bra 	BB3_10;
-
-	setp.eq.s32	%p5, %r47, 1;
-	@%p5 bra 	BB3_9;
-
-	setp.eq.s32	%p6, %r47, 2;
-	@%p6 bra 	BB3_8;
-
-	ld.global.f64 	%fd17, [%rd6];
-	st.local.f64 	[%rd2], %fd17;
-	add.s64 	%rd32, %rd5, %rd4;
-	shl.b64 	%rd33, %rd32, 3;
-	add.s64 	%rd6, %rd3, %rd33;
-	mov.u32 	%r99, 1;
-
-BB3_8:
-	ld.global.f64 	%fd18, [%rd6];
-	mul.wide.u32 	%rd34, %r99, 8;
-	add.s64 	%rd35, %rd2, %rd34;
-	st.local.f64 	[%rd35], %fd18;
-	add.s32 	%r99, %r99, 1;
-	shl.b64 	%rd36, %rd4, 3;
-	add.s64 	%rd6, %rd6, %rd36;
-
-BB3_9:
-	ld.global.f64 	%fd19, [%rd6];
-	mul.wide.u32 	%rd37, %r99, 8;
-	add.s64 	%rd38, %rd2, %rd37;
-	st.local.f64 	[%rd38], %fd19;
-	add.s32 	%r99, %r99, 1;
-	shl.b64 	%rd39, %rd4, 3;
-	add.s64 	%rd6, %rd6, %rd39;
-
-BB3_10:
-	setp.lt.u32	%p7, %r5, 4;
+	sub.s32 	%r2, %r52, %r54;
+	setp.eq.s32	%p7, %r2, -4;
 	@%p7 bra 	BB3_13;
 
-	mul.wide.s32 	%rd14, %r27, 8;
+	add.s32 	%r73, %r52, 4;
+	sub.s32 	%r3, %r73, %r54;
+	and.b32  	%r72, %r3, 3;
+	mov.u32 	%r159, 0;
+	setp.eq.s32	%p8, %r72, 0;
+	@%p8 bra 	BB3_10;
+
+	setp.eq.s32	%p9, %r72, 1;
+	@%p9 bra 	BB3_9;
+
+	setp.eq.s32	%p10, %r72, 2;
+	@%p10 bra 	BB3_8;
+
+	ld.global.f64 	%fd21, [%rd6];
+	st.local.f64 	[%rd2], %fd21;
+	add.s64 	%rd40, %rd5, %rd4;
+	shl.b64 	%rd41, %rd40, 3;
+	add.s64 	%rd6, %rd3, %rd41;
+	mov.u32 	%r159, 1;
+
+BB3_8:
+	ld.global.f64 	%fd22, [%rd6];
+	mul.wide.u32 	%rd42, %r159, 8;
+	add.s64 	%rd43, %rd2, %rd42;
+	st.local.f64 	[%rd43], %fd22;
+	add.s32 	%r159, %r159, 1;
+	shl.b64 	%rd44, %rd4, 3;
+	add.s64 	%rd6, %rd6, %rd44;
+
+BB3_9:
+	ld.global.f64 	%fd23, [%rd6];
+	mul.wide.u32 	%rd45, %r159, 8;
+	add.s64 	%rd46, %rd2, %rd45;
+	st.local.f64 	[%rd46], %fd23;
+	add.s32 	%r159, %r159, 1;
+	shl.b64 	%rd47, %rd4, 3;
+	add.s64 	%rd6, %rd6, %rd47;
+
+BB3_10:
+	setp.lt.u32	%p11, %r3, 4;
+	@%p11 bra 	BB3_13;
+
+	mul.wide.s32 	%rd14, %r53, 8;
 
 BB3_12:
-	ld.global.f64 	%fd20, [%rd6];
-	mul.wide.u32 	%rd40, %r99, 8;
-	add.s64 	%rd41, %rd2, %rd40;
-	st.local.f64 	[%rd41], %fd20;
-	add.s64 	%rd42, %rd6, %rd14;
-	ld.global.f64 	%fd21, [%rd42];
-	add.s32 	%r50, %r99, 1;
-	mul.wide.u32 	%rd43, %r50, 8;
-	add.s64 	%rd44, %rd2, %rd43;
-	st.local.f64 	[%rd44], %fd21;
-	add.s64 	%rd45, %rd42, %rd14;
-	ld.global.f64 	%fd22, [%rd45];
-	add.s32 	%r51, %r99, 2;
-	mul.wide.u32 	%rd46, %r51, 8;
-	add.s64 	%rd47, %rd2, %rd46;
-	st.local.f64 	[%rd47], %fd22;
-	add.s64 	%rd48, %rd45, %rd14;
-	add.s64 	%rd6, %rd48, %rd14;
-	ld.global.f64 	%fd23, [%rd48];
-	add.s32 	%r52, %r99, 3;
-	mul.wide.u32 	%rd49, %r52, 8;
-	add.s64 	%rd50, %rd2, %rd49;
-	st.local.f64 	[%rd50], %fd23;
-	add.s32 	%r99, %r99, 4;
-	setp.lt.u32	%p8, %r99, %r4;
-	@%p8 bra 	BB3_12;
+	ld.global.f64 	%fd24, [%rd6];
+	mul.wide.u32 	%rd48, %r159, 8;
+	add.s64 	%rd49, %rd2, %rd48;
+	st.local.f64 	[%rd49], %fd24;
+	add.s64 	%rd50, %rd6, %rd14;
+	ld.global.f64 	%fd25, [%rd50];
+	add.s32 	%r75, %r159, 1;
+	mul.wide.u32 	%rd51, %r75, 8;
+	add.s64 	%rd52, %rd2, %rd51;
+	st.local.f64 	[%rd52], %fd25;
+	add.s64 	%rd53, %rd50, %rd14;
+	ld.global.f64 	%fd26, [%rd53];
+	add.s32 	%r76, %r159, 2;
+	mul.wide.u32 	%rd54, %r76, 8;
+	add.s64 	%rd55, %rd2, %rd54;
+	st.local.f64 	[%rd55], %fd26;
+	add.s64 	%rd56, %rd53, %rd14;
+	add.s64 	%rd6, %rd56, %rd14;
+	ld.global.f64 	%fd27, [%rd56];
+	add.s32 	%r77, %r159, 3;
+	mul.wide.u32 	%rd57, %r77, 8;
+	add.s64 	%rd58, %rd2, %rd57;
+	st.local.f64 	[%rd58], %fd27;
+	add.s32 	%r78, %r2, 4;
+	add.s32 	%r159, %r159, 4;
+	setp.lt.u32	%p12, %r159, %r78;
+	@%p12 bra 	BB3_12;
 
 BB3_13:
-	setp.gt.s32	%p9, %r3, -3;
-	@%p9 bra 	BB3_17;
+	setp.gt.s32	%p13, %r2, -3;
+	@%p13 bra 	BB3_17;
 
-	setp.eq.s32	%p12, %r3, -4;
-	@%p12 bra 	BB3_20;
+	@%p7 bra 	BB3_20;
 	bra.uni 	BB3_15;
 
 BB3_20:
-	mov.u64 	%rd51, 0;
-	st.local.u64 	[%rd2], %rd51;
-	mov.f64 	%fd40, 0d0000000000000000;
+	mov.u64 	%rd59, 0;
+	st.local.u64 	[%rd2], %rd59;
+	mov.f64 	%fd63, 0d0000000000000000;
 	bra.uni 	BB3_21;
 
 BB3_2:
-	ld.global.f64 	%fd42, [%rd6];
-	mul.wide.s32 	%rd26, %r27, 8;
-	add.s64 	%rd27, %rd6, %rd26;
-	ld.global.f64 	%fd15, [%rd27];
-	st.local.v2.f64 	[%rd2], {%fd42, %fd15};
-	add.s64 	%rd30, %rd27, %rd26;
-	add.s64 	%rd31, %rd30, %rd26;
-	ld.global.f64 	%fd41, [%rd31];
-	ld.global.f64 	%fd16, [%rd30];
-	st.local.v2.f64 	[%rd2+16], {%fd16, %fd41};
+	ld.global.f64 	%fd65, [%rd6];
+	mul.wide.s32 	%rd34, %r53, 8;
+	add.s64 	%rd35, %rd6, %rd34;
+	ld.global.f64 	%fd19, [%rd35];
+	st.local.v2.f64 	[%rd2], {%fd65, %fd19};
+	add.s64 	%rd38, %rd35, %rd34;
+	add.s64 	%rd39, %rd38, %rd34;
+	ld.global.f64 	%fd64, [%rd39];
+	ld.global.f64 	%fd20, [%rd38];
+	st.local.v2.f64 	[%rd2+16], {%fd20, %fd64};
 	bra.uni 	BB3_25;
 
 BB3_17:
-	setp.eq.s32	%p10, %r3, -1;
-	@%p10 bra 	BB3_23;
+	setp.eq.s32	%p14, %r2, -1;
+	@%p14 bra 	BB3_23;
 
-	setp.ne.s32	%p11, %r3, -2;
-	@%p11 bra 	BB3_24;
+	setp.ne.s32	%p15, %r2, -2;
+	@%p15 bra 	BB3_24;
 
-	ld.local.f64 	%fd40, [%rd2+8];
+	ld.local.f64 	%fd63, [%rd2+8];
 	bra.uni 	BB3_22;
 
 BB3_15:
-	setp.eq.s32	%p13, %r3, -3;
-	@%p13 bra 	BB3_16;
+	setp.eq.s32	%p17, %r2, -3;
+	@%p17 bra 	BB3_16;
 	bra.uni 	BB3_24;
 
 BB3_16:
-	ld.local.f64 	%fd40, [%rd2];
+	ld.local.f64 	%fd63, [%rd2];
 
 BB3_21:
-	st.local.f64 	[%rd2+8], %fd40;
+	st.local.f64 	[%rd2+8], %fd63;
 
 BB3_22:
-	st.local.f64 	[%rd2+16], %fd40;
+	st.local.f64 	[%rd2+16], %fd63;
 
 BB3_23:
-	ld.local.f64 	%fd41, [%rd2];
-	st.local.f64 	[%rd2+24], %fd41;
-	mov.f64 	%fd42, %fd41;
+	ld.local.f64 	%fd64, [%rd2];
+	st.local.f64 	[%rd2+24], %fd64;
+	mov.f64 	%fd65, %fd64;
 	bra.uni 	BB3_25;
 
 BB3_24:
-	ld.local.v2.f64 	{%fd42, %fd26}, [%rd2];
-	ld.local.v2.f64 	{%fd27, %fd41}, [%rd2+16];
+	ld.local.v2.f64 	{%fd65, %fd30}, [%rd2];
+	ld.local.v2.f64 	{%fd31, %fd64}, [%rd2+16];
 
 BB3_25:
-	ld.param.u32 	%r98, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_0];
-	// inline asm
-	mov.u32 	%r53, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r54, %clock;
-	// inline asm
-	abs.f64 	%fd29, %fd42;
-	mov.f64 	%fd30, 0d0000000000000000;
-	max.f64 	%fd31, %fd30, %fd29;
-	ld.local.f64 	%fd32, [%rd2+8];
-	abs.f64 	%fd33, %fd32;
-	max.f64 	%fd34, %fd31, %fd33;
-	ld.local.f64 	%fd35, [%rd2+16];
-	abs.f64 	%fd36, %fd35;
-	max.f64 	%fd37, %fd34, %fd36;
-	abs.f64 	%fd38, %fd41;
-	max.f64 	%fd43, %fd37, %fd38;
-	mul.lo.s32 	%r15, %r2, %r98;
-	shr.u32 	%r16, %r15, 6;
-	mov.u32 	%r105, -1023;
-	setp.leu.f64	%p14, %fd43, 0d0000000000000000;
-	@%p14 bra 	BB3_31;
+	mul.lo.s32 	%r11, %r1, %r51;
+	shr.u32 	%r12, %r11, 6;
+	abs.f64 	%fd33, %fd65;
+	mov.f64 	%fd34, 0d0000000000000000;
+	max.f64 	%fd35, %fd34, %fd33;
+	ld.local.f64 	%fd36, [%rd2+8];
+	abs.f64 	%fd37, %fd36;
+	max.f64 	%fd38, %fd35, %fd37;
+	ld.local.f64 	%fd39, [%rd2+16];
+	abs.f64 	%fd40, %fd39;
+	max.f64 	%fd41, %fd38, %fd40;
+	abs.f64 	%fd42, %fd64;
+	max.f64 	%fd66, %fd41, %fd42;
+	and.b32  	%r13, %r11, 63;
+	mov.u32 	%r165, -1023;
+	setp.leu.f64	%p18, %fd66, 0d0000000000000000;
+	@%p18 bra 	BB3_31;
 
 	{
 	.reg .b32 %temp; 
-	mov.b64 	{%temp, %r56}, %fd43;
+	mov.b64 	{%temp, %r80}, %fd66;
 	}
-	and.b32  	%r103, %r56, 2146435072;
-	setp.gt.u32	%p15, %r103, 1048575;
-	@%p15 bra 	BB3_28;
+	and.b32  	%r163, %r80, 2146435072;
+	setp.gt.u32	%p19, %r163, 1048575;
+	@%p19 bra 	BB3_28;
 
-	mul.f64 	%fd43, %fd43, 0d4350000000000000;
+	mul.f64 	%fd66, %fd66, 0d4350000000000000;
 	{
 	.reg .b32 %temp; 
-	mov.b64 	{%temp, %r57}, %fd43;
+	mov.b64 	{%temp, %r81}, %fd66;
 	}
-	and.b32  	%r58, %r57, 2146435072;
-	add.s32 	%r103, %r58, -56623104;
+	and.b32  	%r82, %r81, 2146435072;
+	add.s32 	%r163, %r82, -56623104;
 
 BB3_28:
-	setp.gt.s32	%p16, %r103, 2146435071;
-	setp.eq.f64	%p17, %fd43, 0d0000000000000000;
-	or.pred  	%p18, %p17, %p16;
-	mov.u32 	%r104, 0;
-	@%p18 bra 	BB3_30;
+	setp.gt.s32	%p20, %r163, 2146435071;
+	setp.eq.f64	%p21, %fd66, 0d0000000000000000;
+	or.pred  	%p22, %p21, %p20;
+	mov.u32 	%r164, 0;
+	@%p22 bra 	BB3_30;
 
-	add.s32 	%r104, %r103, -1071644672;
+	add.s32 	%r164, %r163, -1071644672;
 	// inline asm
-	shr.s32 %r104, %r104, 20;
+	shr.s32 %r164, %r164, 20;
 	// inline asm
 
 BB3_30:
-	mov.u32 	%r62, -1022;
-	max.s32 	%r105, %r104, %r62;
+	mov.u32 	%r86, -1022;
+	max.s32 	%r165, %r164, %r86;
 
 BB3_31:
-	ld.param.u64 	%rd66, [_ZN5cuZFP11cudaEncode1IdEEvjPKT_PyjijjP10GPU_timing_param_7];
-	// inline asm
-	mov.u32 	%r63, %clock;
-	// inline asm
-	add.s32 	%r66, %r105, 1082;
-	mov.u32 	%r67, 0;
-	max.s32 	%r68, %r67, %r66;
-	mov.u32 	%r69, 64;
-	min.s32 	%r70, %r69, %r68;
-	// inline asm
-	mov.u32 	%r64, %clock;
-	// inline asm
-	setp.eq.s32	%p19, %r70, 0;
-	add.s32 	%r71, %r105, 1023;
-	selp.b32	%r24, 0, %r71, %p19;
-	// inline asm
-	mov.u32 	%r65, %clock;
-	// inline asm
-	sub.s32 	%r72, %r63, %r54;
-	cvta.to.global.u64 	%rd54, %rd66;
-	add.s64 	%rd17, %rd54, 16;
-	st.global.u32 	[%rd54+16], %r72;
-	sub.s32 	%r73, %r64, %r63;
-	st.global.u32 	[%rd54+20], %r73;
-	sub.s32 	%r74, %r65, %r64;
-	st.global.u32 	[%rd54+24], %r74;
-	sub.s32 	%r75, %r65, %r54;
-	st.global.u32 	[%rd54+12], %r75;
-	setp.eq.s32	%p20, %r24, 0;
-	@%p20 bra 	BB3_35;
+	add.s32 	%r87, %r165, 1082;
+	mov.u32 	%r88, 0;
+	max.s32 	%r89, %r88, %r87;
+	mov.u32 	%r90, 64;
+	min.s32 	%r21, %r90, %r89;
+	setp.eq.s32	%p23, %r21, 0;
+	add.s32 	%r91, %r165, 1023;
+	selp.b32	%r22, 0, %r91, %p23;
+	setp.eq.s32	%p24, %r22, 0;
+	@%p24 bra 	BB3_49;
 
-	shl.b32 	%r76, %r24, 1;
-	add.s32 	%r77, %r76, 1;
-	cvt.u64.u32	%rd55, %r77;
-	and.b64  	%rd18, %rd55, 4095;
-	and.b32  	%r78, %r15, 63;
-	cvt.u64.u32	%rd19, %r78;
-	shl.b64 	%rd56, %rd18, %r78;
-	mul.wide.u32 	%rd57, %r16, 8;
-	add.s64 	%rd58, %rd1, %rd57;
-	atom.global.add.u64 	%rd59, [%rd58], %rd56;
-	add.s32 	%r79, %r78, 11;
-	setp.lt.u32	%p21, %r79, 64;
-	@%p21 bra 	BB3_34;
+	shl.b32 	%r92, %r22, 1;
+	add.s32 	%r93, %r92, 1;
+	cvt.u64.u32	%rd62, %r93;
+	and.b64  	%rd17, %rd62, 4095;
+	cvt.u64.u32	%rd18, %r13;
+	shl.b64 	%rd63, %rd17, %r13;
+	mul.wide.u32 	%rd64, %r12, 8;
+	add.s64 	%rd65, %rd1, %rd64;
+	atom.global.add.u64 	%rd66, [%rd65], %rd63;
+	add.s32 	%r94, %r13, 11;
+	setp.lt.u32	%p25, %r94, 64;
+	@%p25 bra 	BB3_34;
 
-	mov.u64 	%rd60, 64;
-	sub.s64 	%rd61, %rd60, %rd19;
-	cvt.u32.u64	%r80, %rd61;
-	shr.u64 	%rd62, %rd18, %r80;
-	add.s32 	%r81, %r16, 1;
-	mul.wide.u32 	%rd63, %r81, 8;
-	add.s64 	%rd64, %rd1, %rd63;
-	atom.global.add.u64 	%rd65, [%rd64], %rd62;
+	mov.u64 	%rd67, 64;
+	sub.s64 	%rd68, %rd67, %rd18;
+	cvt.u32.u64	%r95, %rd68;
+	shr.u64 	%rd69, %rd17, %r95;
+	add.s32 	%r96, %r12, 1;
+	mul.wide.u32 	%rd70, %r96, 8;
+	add.s64 	%rd71, %rd1, %rd70;
+	atom.global.add.u64 	%rd72, [%rd71], %rd69;
 
 BB3_34:
-	// inline asm
-	mov.u32 	%r82, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r83, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r84, %clock;
-	// inline asm
-	sub.s32 	%r90, %r84, %r83;
-	st.global.u32 	[%rd17+16], %r90;
-	// inline asm
-	mov.u32 	%r85, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r86, %clock;
-	// inline asm
-	sub.s32 	%r91, %r86, %r85;
-	st.global.u32 	[%rd17+20], %r91;
-	// inline asm
-	mov.u32 	%r87, %clock;
-	// inline asm
-	sub.s32 	%r92, %r87, %r82;
-	st.global.u32 	[%rd17+12], %r92;
-	// inline asm
-	mov.u32 	%r88, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r89, %clock;
-	// inline asm
-	sub.s32 	%r93, %r89, %r88;
-	st.global.u32 	[%rd17+24], %r93;
+	mov.u32 	%r97, 62;
+	sub.s32 	%r98, %r97, %r165;
+	mov.u32 	%r99, 2200;
+	min.s32 	%r100, %r98, %r99;
+	mov.u32 	%r101, -2200;
+	max.s32 	%r23, %r101, %r100;
+	setp.eq.s32	%p26, %r23, 0;
+	mov.f64 	%fd67, 0d3FF0000000000000;
+	@%p26 bra 	BB3_40;
 
-BB3_35:
-	// inline asm
-	mov.u32 	%r94, %clock;
-	// inline asm
-	sub.s32 	%r95, %r53, %r29;
-	st.global.u32 	[%rd17+-12], %r95;
-	sub.s32 	%r96, %r94, %r53;
-	st.global.u32 	[%rd17+-8], %r96;
-	sub.s32 	%r97, %r94, %r29;
-	st.global.u32 	[%rd17+-16], %r97;
+	abs.s32 	%r24, %r23;
+	setp.lt.s32	%p27, %r24, 1022;
+	@%p27 bra 	BB3_39;
+	bra.uni 	BB3_36;
+
+BB3_39:
+	shl.b32 	%r121, %r23, 20;
+	add.s32 	%r122, %r121, 1072693248;
+	mov.b64 	%fd67, {%r88, %r122};
+	bra.uni 	BB3_40;
 
 BB3_36:
+	setp.lt.s32	%p28, %r24, 2044;
+	@%p28 bra 	BB3_38;
+	bra.uni 	BB3_37;
+
+BB3_38:
+	shr.u32 	%r112, %r23, 31;
+	add.s32 	%r113, %r23, %r112;
+	shr.s32 	%r114, %r113, 1;
+	shl.b32 	%r115, %r114, 20;
+	add.s32 	%r116, %r115, 1072693248;
+	mov.b64 	%fd48, {%r88, %r116};
+	sub.s32 	%r118, %r23, %r114;
+	shl.b32 	%r119, %r118, 20;
+	add.s32 	%r120, %r119, 1072693248;
+	mov.b64 	%fd49, {%r88, %r120};
+	mul.f64 	%fd67, %fd48, %fd49;
+	bra.uni 	BB3_40;
+
+BB3_37:
+	shr.s32 	%r102, %r23, 31;
+	shr.u32 	%r103, %r102, 30;
+	add.s32 	%r104, %r23, %r103;
+	shr.s32 	%r105, %r104, 2;
+	shl.b32 	%r106, %r105, 20;
+	add.s32 	%r107, %r106, 1072693248;
+	mov.b64 	%fd44, {%r88, %r107};
+	mul.f64 	%fd45, %fd44, %fd44;
+	mul.f64 	%fd46, %fd44, %fd45;
+	mad.lo.s32 	%r109, %r105, -3, %r23;
+	shl.b32 	%r110, %r109, 20;
+	add.s32 	%r111, %r110, 1072693248;
+	mov.b64 	%fd47, {%r88, %r111};
+	mul.f64 	%fd67, %fd47, %fd46;
+
+BB3_40:
+	ld.local.v2.f64 	{%fd50, %fd51}, [%rd2];
+	mul.f64 	%fd54, %fd67, %fd50;
+	cvt.rzi.s64.f64	%rd75, %fd54;
+	mul.f64 	%fd55, %fd67, %fd51;
+	cvt.rzi.s64.f64	%rd76, %fd55;
+	ld.local.v2.f64 	{%fd56, %fd57}, [%rd2+16];
+	mul.f64 	%fd60, %fd67, %fd56;
+	cvt.rzi.s64.f64	%rd77, %fd60;
+	mul.f64 	%fd61, %fd67, %fd57;
+	cvt.rzi.s64.f64	%rd78, %fd61;
+	add.s64 	%rd79, %rd78, %rd75;
+	shr.s64 	%rd80, %rd79, 1;
+	sub.s64 	%rd81, %rd78, %rd80;
+	add.s64 	%rd82, %rd77, %rd76;
+	shr.s64 	%rd83, %rd82, 1;
+	sub.s64 	%rd84, %rd76, %rd83;
+	add.s64 	%rd85, %rd80, %rd83;
+	add.s64 	%rd86, %rd81, %rd84;
+	shr.s64 	%rd87, %rd86, 1;
+	sub.s64 	%rd88, %rd84, %rd87;
+	shr.s64 	%rd89, %rd88, 1;
+	add.s64 	%rd90, %rd89, %rd87;
+	shr.s64 	%rd91, %rd90, 1;
+	shr.s64 	%rd92, %rd85, 1;
+	sub.s64 	%rd93, %rd83, %rd92;
+	add.u64 	%rd95, %SPL, 0;
+	st.local.v2.u64 	[%rd95+16], {%rd93, %rd90};
+	sub.s64 	%rd96, %rd88, %rd91;
+	st.local.v2.u64 	[%rd95], {%rd92, %rd96};
+	ld.const.u8 	%r127, [c_perm_1];
+	mul.wide.u32 	%rd97, %r127, 8;
+	add.s64 	%rd98, %rd95, %rd97;
+	ld.local.u64 	%rd99, [%rd98];
+	add.s64 	%rd100, %rd99, -6148914691236517206;
+	xor.b64  	%rd19, %rd100, -6148914691236517206;
+	ld.const.u8 	%r128, [c_perm_1+1];
+	mul.wide.u32 	%rd101, %r128, 8;
+	add.s64 	%rd102, %rd95, %rd101;
+	ld.local.u64 	%rd103, [%rd102];
+	add.s64 	%rd104, %rd103, -6148914691236517206;
+	xor.b64  	%rd20, %rd104, -6148914691236517206;
+	ld.const.u8 	%r129, [c_perm_1+2];
+	mul.wide.u32 	%rd105, %r129, 8;
+	add.s64 	%rd106, %rd95, %rd105;
+	ld.local.u64 	%rd107, [%rd106];
+	add.s64 	%rd108, %rd107, -6148914691236517206;
+	xor.b64  	%rd21, %rd108, -6148914691236517206;
+	ld.const.u8 	%r130, [c_perm_1+3];
+	mul.wide.u32 	%rd109, %r130, 8;
+	add.s64 	%rd110, %rd95, %rd109;
+	ld.local.u64 	%rd111, [%rd110];
+	add.s64 	%rd112, %rd111, -6148914691236517206;
+	xor.b64  	%rd22, %rd112, -6148914691236517206;
+	sub.s32 	%r132, %r90, %r21;
+	setp.lt.u32	%p29, %r21, 64;
+	selp.b32	%r25, %r132, 0, %p29;
+	setp.gt.u32	%p30, %r25, 63;
+	add.s32 	%r171, %r51, -12;
+	setp.eq.s32	%p31, %r171, 0;
+	or.pred  	%p32, %p30, %p31;
+	@%p32 bra 	BB3_49;
+
+	mov.u32 	%r170, 12;
+	mov.u32 	%r166, 63;
+	mov.u32 	%r177, 0;
+
+BB3_42:
+	shr.u64 	%rd113, %rd19, %r166;
+	and.b64  	%rd114, %rd113, 1;
+	shr.u64 	%rd115, %rd20, %r166;
+	and.b64  	%rd116, %rd115, 1;
+	bfi.b64 	%rd117, %rd116, %rd114, 1, 1;
+	shr.u64 	%rd118, %rd21, %r166;
+	and.b64  	%rd119, %rd118, 1;
+	bfi.b64 	%rd120, %rd119, %rd117, 2, 1;
+	shr.u64 	%rd121, %rd22, %r166;
+	and.b64  	%rd122, %rd121, 1;
+	bfi.b64 	%rd123, %rd122, %rd120, 3, 1;
+	min.u32 	%r31, %r177, %r171;
+	add.s32 	%r133, %r170, %r11;
+	and.b32  	%r134, %r133, 63;
+	add.s32 	%r135, %r170, %r13;
+	shr.u32 	%r136, %r135, 6;
+	add.s32 	%r32, %r136, %r12;
+	shr.u64 	%rd155, %rd123, %r31;
+	shl.b64 	%rd124, %rd155, %r31;
+	sub.s64 	%rd24, %rd123, %rd124;
+	shl.b64 	%rd125, %rd24, %r134;
+	mul.wide.u32 	%rd127, %r32, 8;
+	add.s64 	%rd128, %rd1, %rd127;
+	atom.global.add.u64 	%rd129, [%rd128], %rd125;
+	add.s32 	%r137, %r134, %r31;
+	add.s32 	%r138, %r137, -1;
+	setp.lt.u32	%p33, %r138, 64;
+	@%p33 bra 	BB3_44;
+
+	add.s32 	%r158, %r170, %r11;
+	and.b32  	%r157, %r158, 63;
+	cvt.u64.u32	%rd149, %r157;
+	mov.u64 	%rd130, 64;
+	sub.s64 	%rd131, %rd130, %rd149;
+	cvt.u32.u64	%r139, %rd131;
+	shr.u64 	%rd132, %rd24, %r139;
+	add.s32 	%r140, %r32, 1;
+	mul.wide.u32 	%rd134, %r140, 8;
+	add.s64 	%rd135, %rd1, %rd134;
+	atom.global.add.u64 	%rd136, [%rd135], %rd132;
+
+BB3_44:
+	add.s32 	%r170, %r31, %r170;
+	sub.s32 	%r171, %r171, %r31;
+	bra.uni 	BB3_45;
+
+BB3_50:
+	setp.eq.s32	%p42, %r171, 0;
+	setp.gt.u32	%p43, %r177, 2;
+	mov.pred 	%p46, 0;
+	or.pred  	%p44, %p43, %p42;
+	@%p44 bra 	BB3_52;
+
+	add.s32 	%r171, %r171, -1;
+	cvt.u32.u64	%r147, %rd155;
+	and.b32  	%r148, %r147, 1;
+	add.s32 	%r149, %r170, %r11;
+	and.b32  	%r150, %r149, 63;
+	add.s32 	%r151, %r170, %r13;
+	shr.u32 	%r152, %r151, 6;
+	add.s32 	%r153, %r152, %r12;
+	and.b64  	%rd143, %rd155, 1;
+	shl.b64 	%rd144, %rd143, %r150;
+	mul.wide.u32 	%rd146, %r153, 8;
+	add.s64 	%rd147, %rd1, %rd146;
+	atom.global.add.u64 	%rd148, [%rd147], %rd144;
+	add.s32 	%r170, %r170, 1;
+	setp.eq.s32	%p46, %r148, 0;
+
+BB3_52:
+	shr.u64 	%rd155, %rd155, 1;
+	add.s32 	%r177, %r177, 1;
+	@%p46 bra 	BB3_50;
+
+BB3_45:
+	setp.eq.s32	%p35, %r171, 0;
+	setp.gt.u32	%p36, %r177, 3;
+	mov.pred 	%p45, 0;
+	or.pred  	%p37, %p36, %p35;
+	@%p37 bra 	BB3_47;
+
+	add.s32 	%r171, %r171, -1;
+	add.s32 	%r141, %r170, %r11;
+	and.b32  	%r142, %r141, 63;
+	add.s32 	%r143, %r170, %r13;
+	shr.u32 	%r144, %r143, 6;
+	add.s32 	%r145, %r144, %r12;
+	setp.ne.s64	%p45, %rd155, 0;
+	selp.u64	%rd137, 1, 0, %p45;
+	shl.b64 	%rd138, %rd137, %r142;
+	mul.wide.u32 	%rd140, %r145, 8;
+	add.s64 	%rd141, %rd1, %rd140;
+	atom.global.add.u64 	%rd142, [%rd141], %rd138;
+	add.s32 	%r170, %r170, 1;
+
+BB3_47:
+	@%p45 bra 	BB3_50;
+
+	setp.gt.u32	%p38, %r166, %r25;
+	setp.ne.s32	%p39, %r171, 0;
+	selp.b32	%r146, -1, 0, %p39;
+	add.s32 	%r166, %r146, %r166;
+	and.pred  	%p40, %p38, %p39;
+	@%p40 bra 	BB3_42;
+
+BB3_49:
 	ret;
 }
 
@@ -4198,449 +4510,371 @@ BB5_244:
 	ret;
 }
 
-	// .globl	_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing
-.visible .entry _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing(
-	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_0,
-	.param .u64 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_1,
-	.param .u64 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_2,
-	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_3,
-	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_4,
-	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_5,
-	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_6,
-	.param .u64 _ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_7
+	// .globl	_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj
+.visible .entry _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj(
+	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_0,
+	.param .u64 _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_1,
+	.param .u64 _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_2,
+	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_3,
+	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_4,
+	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_5,
+	.param .u32 _ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_6
 )
 {
 	.local .align 16 .b8 	__local_depot6[16];
 	.reg .b64 	%SP;
 	.reg .b64 	%SPL;
 	.reg .pred 	%p<34>;
-	.reg .b32 	%r<233>;
-	.reg .b64 	%rd<118>;
+	.reg .b32 	%r<189>;
+	.reg .b64 	%rd<104>;
 
 
 	mov.u64 	%SPL, __local_depot6;
-	ld.param.u64 	%rd22, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_1];
-	ld.param.u32 	%r69, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_3];
-	ld.param.u32 	%r70, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_4];
-	ld.param.u32 	%r71, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_5];
-	ld.param.u32 	%r73, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_6];
-	add.u64 	%rd1, %SPL, 0;
-	// inline asm
-	mov.u32 	%r72, %clock;
-	// inline asm
-	mov.u32 	%r74, %ctaid.z;
-	mov.u32 	%r75, %nctaid.y;
-	mov.u32 	%r76, %ctaid.y;
-	mad.lo.s32 	%r77, %r74, %r75, %r76;
-	mov.u32 	%r78, %nctaid.x;
-	mov.u32 	%r79, %ctaid.x;
-	mad.lo.s32 	%r80, %r77, %r78, %r79;
-	mov.u32 	%r81, %ntid.x;
-	mov.u32 	%r82, %tid.x;
-	mad.lo.s32 	%r2, %r80, %r81, %r82;
-	setp.ge.u32	%p5, %r2, %r73;
-	@%p5 bra 	BB6_35;
+	ld.param.u64 	%rd23, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_1];
+	ld.param.u64 	%rd24, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_2];
+	ld.param.u32 	%r54, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_3];
+	ld.param.u32 	%r55, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_4];
+	ld.param.u32 	%r56, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_5];
+	ld.param.u32 	%r57, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_6];
+	cvta.to.global.u64 	%rd1, %rd24;
+	add.u64 	%rd2, %SPL, 0;
+	mov.u32 	%r58, %ctaid.z;
+	mov.u32 	%r59, %nctaid.y;
+	mov.u32 	%r60, %ctaid.y;
+	mad.lo.s32 	%r61, %r58, %r59, %r60;
+	mov.u32 	%r62, %nctaid.x;
+	mov.u32 	%r63, %ctaid.x;
+	mad.lo.s32 	%r64, %r61, %r62, %r63;
+	mov.u32 	%r65, %ntid.x;
+	mov.u32 	%r66, %tid.x;
+	mad.lo.s32 	%r1, %r64, %r65, %r66;
+	setp.ge.u32	%p5, %r1, %r57;
+	@%p5 bra 	BB6_34;
 
-	cvta.to.global.u64 	%rd2, %rd22;
-	shr.u32 	%r83, %r71, 2;
-	rem.u32 	%r84, %r2, %r83;
-	shl.b32 	%r85, %r84, 2;
-	cvt.u64.u32	%rd26, %r85;
-	cvt.s64.s32	%rd3, %r70;
-	mul.lo.s64 	%rd4, %rd26, %rd3;
-	add.s32 	%r86, %r85, 4;
-	setp.gt.u32	%p6, %r86, %r69;
-	shl.b64 	%rd27, %rd4, 2;
-	add.s64 	%rd5, %rd2, %rd27;
+	cvta.to.global.u64 	%rd3, %rd23;
+	shr.u32 	%r67, %r56, 2;
+	rem.u32 	%r68, %r1, %r67;
+	shl.b32 	%r69, %r68, 2;
+	cvt.u64.u32	%rd26, %r69;
+	cvt.s64.s32	%rd4, %r55;
+	mul.lo.s64 	%rd5, %rd26, %rd4;
+	add.s32 	%r70, %r69, 4;
+	setp.gt.u32	%p6, %r70, %r54;
+	shl.b64 	%rd27, %rd5, 2;
+	add.s64 	%rd6, %rd3, %rd27;
 	@%p6 bra 	BB6_3;
 	bra.uni 	BB6_2;
 
 BB6_3:
-	sub.s32 	%r5, %r69, %r71;
-	setp.eq.s32	%p7, %r5, -4;
+	ld.param.u32 	%r162, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_3];
+	sub.s32 	%r4, %r162, %r56;
+	setp.eq.s32	%p7, %r4, -4;
 	@%p7 bra 	BB6_13;
 
-	add.s32 	%r93, %r69, 4;
-	sub.s32 	%r6, %r93, %r71;
-	and.b32  	%r92, %r6, 3;
-	mov.u32 	%r205, 0;
-	setp.eq.s32	%p8, %r92, 0;
+	ld.param.u32 	%r163, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_3];
+	add.s32 	%r77, %r163, 4;
+	sub.s32 	%r5, %r77, %r56;
+	and.b32  	%r76, %r5, 3;
+	mov.u32 	%r167, 0;
+	setp.eq.s32	%p8, %r76, 0;
 	@%p8 bra 	BB6_10;
 
-	setp.eq.s32	%p9, %r92, 1;
+	setp.eq.s32	%p9, %r76, 1;
 	@%p9 bra 	BB6_9;
 
-	setp.eq.s32	%p10, %r92, 2;
+	setp.eq.s32	%p10, %r76, 2;
 	@%p10 bra 	BB6_8;
 
-	ld.param.u64 	%rd105, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_1];
-	cvta.to.global.u64 	%rd104, %rd105;
-	ld.global.u32 	%r95, [%rd5];
-	st.local.u32 	[%rd1], %r95;
-	add.s64 	%rd34, %rd4, %rd3;
+	ld.param.u64 	%rd95, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_1];
+	cvta.to.global.u64 	%rd94, %rd95;
+	ld.global.u32 	%r79, [%rd6];
+	st.local.u32 	[%rd2], %r79;
+	add.s64 	%rd34, %rd5, %rd4;
 	shl.b64 	%rd35, %rd34, 2;
-	add.s64 	%rd5, %rd104, %rd35;
-	mov.u32 	%r205, 1;
+	add.s64 	%rd6, %rd94, %rd35;
+	mov.u32 	%r167, 1;
 
 BB6_8:
-	ld.global.u32 	%r96, [%rd5];
-	mul.wide.u32 	%rd36, %r205, 4;
-	add.s64 	%rd37, %rd1, %rd36;
-	st.local.u32 	[%rd37], %r96;
-	add.s32 	%r205, %r205, 1;
-	shl.b64 	%rd38, %rd3, 2;
-	add.s64 	%rd5, %rd5, %rd38;
+	ld.global.u32 	%r80, [%rd6];
+	mul.wide.u32 	%rd36, %r167, 4;
+	add.s64 	%rd37, %rd2, %rd36;
+	st.local.u32 	[%rd37], %r80;
+	add.s32 	%r167, %r167, 1;
+	shl.b64 	%rd38, %rd4, 2;
+	add.s64 	%rd6, %rd6, %rd38;
 
 BB6_9:
-	ld.global.u32 	%r97, [%rd5];
-	mul.wide.u32 	%rd39, %r205, 4;
-	add.s64 	%rd40, %rd1, %rd39;
-	st.local.u32 	[%rd40], %r97;
-	add.s32 	%r205, %r205, 1;
-	shl.b64 	%rd41, %rd3, 2;
-	add.s64 	%rd5, %rd5, %rd41;
+	ld.global.u32 	%r81, [%rd6];
+	mul.wide.u32 	%rd39, %r167, 4;
+	add.s64 	%rd40, %rd2, %rd39;
+	st.local.u32 	[%rd40], %r81;
+	add.s32 	%r167, %r167, 1;
+	shl.b64 	%rd41, %rd4, 2;
+	add.s64 	%rd6, %rd6, %rd41;
 
 BB6_10:
-	setp.lt.u32	%p11, %r6, 4;
+	setp.lt.u32	%p11, %r5, 4;
 	@%p11 bra 	BB6_13;
 
-	mul.wide.s32 	%rd13, %r70, 4;
+	ld.param.u32 	%r164, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_4];
+	mul.wide.s32 	%rd14, %r164, 4;
 
 BB6_12:
-	ld.global.u32 	%r98, [%rd5];
-	mul.wide.u32 	%rd42, %r205, 4;
-	add.s64 	%rd43, %rd1, %rd42;
-	st.local.u32 	[%rd43], %r98;
-	add.s64 	%rd44, %rd5, %rd13;
-	ld.global.u32 	%r99, [%rd44];
-	add.s32 	%r100, %r205, 1;
-	mul.wide.u32 	%rd45, %r100, 4;
-	add.s64 	%rd46, %rd1, %rd45;
-	st.local.u32 	[%rd46], %r99;
-	add.s64 	%rd47, %rd44, %rd13;
-	ld.global.u32 	%r101, [%rd47];
-	add.s32 	%r102, %r205, 2;
-	mul.wide.u32 	%rd48, %r102, 4;
-	add.s64 	%rd49, %rd1, %rd48;
-	st.local.u32 	[%rd49], %r101;
-	add.s64 	%rd50, %rd47, %rd13;
-	add.s64 	%rd5, %rd50, %rd13;
-	ld.global.u32 	%r103, [%rd50];
-	add.s32 	%r104, %r205, 3;
-	mul.wide.u32 	%rd51, %r104, 4;
-	add.s64 	%rd52, %rd1, %rd51;
-	st.local.u32 	[%rd52], %r103;
-	add.s32 	%r105, %r5, 4;
-	add.s32 	%r205, %r205, 4;
-	setp.lt.u32	%p12, %r205, %r105;
+	ld.global.u32 	%r82, [%rd6];
+	mul.wide.u32 	%rd42, %r167, 4;
+	add.s64 	%rd43, %rd2, %rd42;
+	st.local.u32 	[%rd43], %r82;
+	add.s64 	%rd44, %rd6, %rd14;
+	ld.global.u32 	%r83, [%rd44];
+	add.s32 	%r84, %r167, 1;
+	mul.wide.u32 	%rd45, %r84, 4;
+	add.s64 	%rd46, %rd2, %rd45;
+	st.local.u32 	[%rd46], %r83;
+	add.s64 	%rd47, %rd44, %rd14;
+	ld.global.u32 	%r85, [%rd47];
+	add.s32 	%r86, %r167, 2;
+	mul.wide.u32 	%rd48, %r86, 4;
+	add.s64 	%rd49, %rd2, %rd48;
+	st.local.u32 	[%rd49], %r85;
+	add.s64 	%rd50, %rd47, %rd14;
+	add.s64 	%rd6, %rd50, %rd14;
+	ld.global.u32 	%r87, [%rd50];
+	add.s32 	%r88, %r167, 3;
+	mul.wide.u32 	%rd51, %r88, 4;
+	add.s64 	%rd52, %rd2, %rd51;
+	st.local.u32 	[%rd52], %r87;
+	add.s32 	%r89, %r4, 4;
+	add.s32 	%r167, %r167, 4;
+	setp.lt.u32	%p12, %r167, %r89;
 	@%p12 bra 	BB6_12;
 
 BB6_13:
-	setp.gt.s32	%p13, %r5, -3;
+	setp.gt.s32	%p13, %r4, -3;
 	@%p13 bra 	BB6_17;
 
-	setp.eq.s32	%p31, %r5, -4;
+	setp.eq.s32	%p31, %r4, -4;
 	@%p31 bra 	BB6_20;
 	bra.uni 	BB6_15;
 
 BB6_20:
-	mov.u32 	%r210, 0;
-	st.local.u32 	[%rd1], %r210;
+	mov.u32 	%r172, 0;
+	st.local.u32 	[%rd2], %r172;
 	bra.uni 	BB6_21;
 
 BB6_2:
-	ld.global.u32 	%r212, [%rd5];
-	mul.wide.s32 	%rd28, %r70, 4;
-	add.s64 	%rd29, %rd5, %rd28;
+	ld.param.u32 	%r159, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_4];
+	ld.global.u32 	%r174, [%rd6];
+	mul.wide.s32 	%rd28, %r159, 4;
+	add.s64 	%rd29, %rd6, %rd28;
 	add.s64 	%rd30, %rd29, %rd28;
 	add.s64 	%rd31, %rd30, %rd28;
-	ld.global.u32 	%r211, [%rd31];
-	ld.global.u32 	%r87, [%rd29];
-	ld.global.u32 	%r88, [%rd30];
-	st.local.v4.u32 	[%rd1], {%r212, %r87, %r88, %r211};
+	ld.global.u32 	%r173, [%rd31];
+	ld.global.u32 	%r71, [%rd29];
+	ld.global.u32 	%r72, [%rd30];
+	st.local.v4.u32 	[%rd2], {%r174, %r71, %r72, %r173};
 	bra.uni 	BB6_25;
 
 BB6_17:
-	setp.eq.s32	%p14, %r5, -1;
+	setp.eq.s32	%p14, %r4, -1;
 	@%p14 bra 	BB6_23;
 
-	setp.ne.s32	%p15, %r5, -2;
+	setp.ne.s32	%p15, %r4, -2;
 	@%p15 bra 	BB6_24;
 
-	ld.local.u32 	%r210, [%rd1+4];
+	ld.local.u32 	%r172, [%rd2+4];
 	bra.uni 	BB6_22;
 
 BB6_15:
-	setp.eq.s32	%p17, %r5, -3;
+	setp.eq.s32	%p17, %r4, -3;
 	@%p17 bra 	BB6_16;
 	bra.uni 	BB6_24;
 
 BB6_16:
-	ld.local.u32 	%r210, [%rd1];
+	ld.local.u32 	%r172, [%rd2];
 
 BB6_21:
-	st.local.u32 	[%rd1+4], %r210;
+	st.local.u32 	[%rd2+4], %r172;
 
 BB6_22:
-	st.local.u32 	[%rd1+8], %r210;
+	st.local.u32 	[%rd2+8], %r172;
 
 BB6_23:
-	ld.local.u32 	%r211, [%rd1];
-	st.local.u32 	[%rd1+12], %r211;
-	mov.u32 	%r212, %r211;
+	ld.local.u32 	%r173, [%rd2];
+	st.local.u32 	[%rd2+12], %r173;
+	mov.u32 	%r174, %r173;
 	bra.uni 	BB6_25;
 
 BB6_24:
-	ld.local.v4.u32 	{%r212, %r108, %r109, %r211}, [%rd1];
+	ld.local.v4.u32 	{%r174, %r92, %r93, %r173}, [%rd2];
 
 BB6_25:
-	ld.param.u64 	%rd102, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_7];
-	ld.param.u32 	%r199, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_0];
-	// inline asm
-	mov.u32 	%r111, %clock;
-	// inline asm
-	mul.lo.s32 	%r24, %r2, %r199;
-	shr.u32 	%r25, %r24, 6;
-	// inline asm
-	mov.u32 	%r112, %clock;
-	// inline asm
-	add.s32 	%r123, %r211, %r212;
-	shr.s32 	%r124, %r123, 1;
-	sub.s32 	%r125, %r211, %r124;
-	ld.local.u32 	%r126, [%rd1+8];
-	ld.local.u32 	%r127, [%rd1+4];
-	add.s32 	%r128, %r126, %r127;
-	shr.s32 	%r129, %r128, 1;
-	sub.s32 	%r130, %r127, %r129;
-	add.s32 	%r131, %r124, %r129;
-	add.s32 	%r132, %r125, %r130;
-	shr.s32 	%r133, %r132, 1;
-	sub.s32 	%r134, %r130, %r133;
-	shr.s32 	%r135, %r134, 1;
-	add.s32 	%r136, %r135, %r133;
-	shr.s32 	%r137, %r136, 1;
-	sub.s32 	%r138, %r134, %r137;
-	shr.s32 	%r139, %r131, 1;
-	sub.s32 	%r140, %r129, %r139;
-	st.local.v4.u32 	[%rd1], {%r139, %r138, %r140, %r136};
-	// inline asm
-	mov.u32 	%r113, %clock;
-	// inline asm
-	sub.s32 	%r141, %r113, %r112;
-	cvta.to.global.u64 	%rd57, %rd102;
-	st.global.u32 	[%rd57+44], %r141;
-	// inline asm
-	mov.u32 	%r114, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r115, %clock;
-	// inline asm
-	ld.const.u8 	%r142, [c_perm_1];
-	mul.wide.u32 	%rd58, %r142, 4;
-	add.s64 	%rd59, %rd1, %rd58;
-	ld.local.u32 	%r143, [%rd59];
-	add.s32 	%r144, %r143, -1431655766;
-	xor.b32  	%r26, %r144, -1431655766;
-	ld.const.u8 	%r145, [c_perm_1+1];
-	mul.wide.u32 	%rd60, %r145, 4;
-	add.s64 	%rd61, %rd1, %rd60;
-	ld.local.u32 	%r146, [%rd61];
-	add.s32 	%r147, %r146, -1431655766;
-	xor.b32  	%r27, %r147, -1431655766;
-	ld.const.u8 	%r148, [c_perm_1+2];
-	mul.wide.u32 	%rd62, %r148, 4;
-	add.s64 	%rd63, %rd1, %rd62;
-	ld.local.u32 	%r149, [%rd63];
-	add.s32 	%r150, %r149, -1431655766;
-	xor.b32  	%r28, %r150, -1431655766;
-	ld.const.u8 	%r151, [c_perm_1+3];
-	mul.wide.u32 	%rd64, %r151, 4;
-	add.s64 	%rd65, %rd1, %rd64;
-	ld.local.u32 	%r152, [%rd65];
-	add.s32 	%r153, %r152, -1431655766;
-	xor.b32  	%r29, %r153, -1431655766;
-	and.b32  	%r30, %r24, 63;
-	// inline asm
-	mov.u32 	%r116, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r117, %clock;
-	// inline asm
-	sub.s32 	%r154, %r117, %r114;
-	st.global.u32 	[%rd57+48], %r154;
-	// inline asm
-	mov.u32 	%r118, %clock;
-	// inline asm
-	setp.eq.s32	%p18, %r199, 0;
+	add.u64 	%rd96, %SPL, 0;
+	ld.param.u32 	%r160, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_0];
+	mul.lo.s32 	%r22, %r1, %r160;
+	shr.u32 	%r23, %r22, 6;
+	add.s32 	%r98, %r173, %r174;
+	shr.s32 	%r99, %r98, 1;
+	sub.s32 	%r100, %r173, %r99;
+	ld.local.u32 	%r101, [%rd96+8];
+	ld.local.u32 	%r102, [%rd96+4];
+	add.s32 	%r103, %r101, %r102;
+	shr.s32 	%r104, %r103, 1;
+	sub.s32 	%r105, %r102, %r104;
+	add.s32 	%r106, %r99, %r104;
+	add.s32 	%r107, %r100, %r105;
+	shr.s32 	%r108, %r107, 1;
+	sub.s32 	%r109, %r105, %r108;
+	shr.s32 	%r110, %r109, 1;
+	add.s32 	%r111, %r110, %r108;
+	shr.s32 	%r112, %r111, 1;
+	sub.s32 	%r113, %r109, %r112;
+	shr.s32 	%r114, %r106, 1;
+	sub.s32 	%r115, %r104, %r114;
+	st.local.v4.u32 	[%rd96], {%r114, %r113, %r115, %r111};
+	ld.const.u8 	%r116, [c_perm_1];
+	mul.wide.u32 	%rd57, %r116, 4;
+	add.s64 	%rd58, %rd96, %rd57;
+	ld.local.u32 	%r117, [%rd58];
+	add.s32 	%r118, %r117, -1431655766;
+	xor.b32  	%r24, %r118, -1431655766;
+	ld.const.u8 	%r119, [c_perm_1+1];
+	mul.wide.u32 	%rd59, %r119, 4;
+	add.s64 	%rd60, %rd96, %rd59;
+	ld.local.u32 	%r120, [%rd60];
+	add.s32 	%r121, %r120, -1431655766;
+	xor.b32  	%r25, %r121, -1431655766;
+	ld.const.u8 	%r122, [c_perm_1+2];
+	mul.wide.u32 	%rd61, %r122, 4;
+	add.s64 	%rd62, %rd96, %rd61;
+	ld.local.u32 	%r123, [%rd62];
+	add.s32 	%r124, %r123, -1431655766;
+	xor.b32  	%r26, %r124, -1431655766;
+	ld.const.u8 	%r125, [c_perm_1+3];
+	mul.wide.u32 	%rd63, %r125, 4;
+	add.s64 	%rd64, %rd96, %rd63;
+	ld.local.u32 	%r126, [%rd64];
+	add.s32 	%r127, %r126, -1431655766;
+	xor.b32  	%r27, %r127, -1431655766;
+	and.b32  	%r28, %r22, 63;
+	setp.eq.s32	%p18, %r160, 0;
 	@%p18 bra 	BB6_34;
 
-	mov.u32 	%r224, 0;
-	mov.u32 	%r213, 31;
-	ld.param.u32 	%r218, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_0];
-	mov.u32 	%r217, %r224;
+	mov.u32 	%r186, 0;
+	mov.u32 	%r175, 31;
+	ld.param.u32 	%r180, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_Pyjijj_param_0];
+	mov.u32 	%r179, %r186;
 
 BB6_27:
-	ld.param.u64 	%rd101, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_2];
-	// inline asm
-	mov.u32 	%r232, %clock;
-	// inline asm
-	shr.u32 	%r158, %r26, %r213;
-	and.b32  	%r159, %r158, 1;
-	cvt.u64.u32	%rd66, %r159;
-	shr.u32 	%r160, %r27, %r213;
-	and.b32  	%r161, %r160, 1;
-	mul.wide.u32 	%rd67, %r161, 2;
-	or.b64  	%rd68, %rd67, %rd66;
-	shr.u32 	%r162, %r28, %r213;
-	and.b32  	%r163, %r162, 1;
-	mul.wide.u32 	%rd69, %r163, 4;
-	add.s64 	%rd70, %rd69, %rd68;
-	shr.u32 	%r164, %r29, %r213;
-	and.b32  	%r165, %r164, 1;
-	mul.wide.u32 	%rd71, %r165, 8;
-	add.s64 	%rd72, %rd71, %rd70;
-	// inline asm
-	mov.u32 	%r229, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r231, %clock;
-	// inline asm
-	min.u32 	%r39, %r224, %r218;
-	add.s32 	%r166, %r217, %r24;
-	and.b32  	%r167, %r166, 63;
-	add.s32 	%r168, %r217, %r30;
-	shr.u32 	%r169, %r168, 6;
-	add.s32 	%r40, %r169, %r25;
-	shr.u64 	%rd117, %rd72, %r39;
-	shl.b64 	%rd73, %rd117, %r39;
-	sub.s64 	%rd17, %rd72, %rd73;
-	shl.b64 	%rd74, %rd17, %r167;
-	cvta.to.global.u64 	%rd75, %rd101;
-	mul.wide.u32 	%rd76, %r40, 8;
-	add.s64 	%rd77, %rd75, %rd76;
-	atom.global.add.u64 	%rd78, [%rd77], %rd74;
-	add.s32 	%r170, %r167, %r39;
-	add.s32 	%r171, %r170, -1;
-	setp.lt.u32	%p19, %r171, 64;
+	shr.u32 	%r128, %r24, %r175;
+	and.b32  	%r129, %r128, 1;
+	cvt.u64.u32	%rd65, %r129;
+	shr.u32 	%r130, %r25, %r175;
+	and.b32  	%r131, %r130, 1;
+	mul.wide.u32 	%rd66, %r131, 2;
+	or.b64  	%rd67, %rd66, %rd65;
+	shr.u32 	%r132, %r26, %r175;
+	and.b32  	%r133, %r132, 1;
+	mul.wide.u32 	%rd68, %r133, 4;
+	add.s64 	%rd69, %rd68, %rd67;
+	shr.u32 	%r134, %r27, %r175;
+	and.b32  	%r135, %r134, 1;
+	mul.wide.u32 	%rd70, %r135, 8;
+	add.s64 	%rd71, %rd70, %rd69;
+	min.u32 	%r33, %r186, %r180;
+	add.s32 	%r136, %r179, %r22;
+	and.b32  	%r137, %r136, 63;
+	add.s32 	%r138, %r179, %r28;
+	shr.u32 	%r139, %r138, 6;
+	add.s32 	%r34, %r139, %r23;
+	shr.u64 	%rd103, %rd71, %r33;
+	shl.b64 	%rd72, %rd103, %r33;
+	sub.s64 	%rd18, %rd71, %rd72;
+	shl.b64 	%rd73, %rd18, %r137;
+	mul.wide.u32 	%rd74, %r34, 8;
+	add.s64 	%rd75, %rd1, %rd74;
+	atom.global.add.u64 	%rd76, [%rd75], %rd73;
+	add.s32 	%r140, %r137, %r33;
+	add.s32 	%r141, %r140, -1;
+	setp.lt.u32	%p19, %r141, 64;
 	@%p19 bra 	BB6_29;
 
-	ld.param.u64 	%rd111, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_2];
-	cvta.to.global.u64 	%rd110, %rd111;
-	add.s32 	%r204, %r217, %r24;
-	and.b32  	%r203, %r204, 63;
-	cvt.u64.u32	%rd103, %r203;
-	mov.u64 	%rd79, 64;
-	sub.s64 	%rd80, %rd79, %rd103;
-	cvt.u32.u64	%r172, %rd80;
-	shr.u64 	%rd81, %rd17, %r172;
-	add.s32 	%r173, %r40, 1;
-	mul.wide.u32 	%rd83, %r173, 8;
-	add.s64 	%rd84, %rd110, %rd83;
-	atom.global.add.u64 	%rd85, [%rd84], %rd81;
+	add.s32 	%r158, %r179, %r22;
+	and.b32  	%r157, %r158, 63;
+	cvt.u64.u32	%rd93, %r157;
+	mov.u64 	%rd77, 64;
+	sub.s64 	%rd78, %rd77, %rd93;
+	cvt.u32.u64	%r142, %rd78;
+	shr.u64 	%rd79, %rd18, %r142;
+	add.s32 	%r143, %r34, 1;
+	mul.wide.u32 	%rd80, %r143, 8;
+	add.s64 	%rd81, %rd1, %rd80;
+	atom.global.add.u64 	%rd82, [%rd81], %rd79;
 
 BB6_29:
-	add.s32 	%r217, %r39, %r217;
-	// inline asm
-	mov.u32 	%r228, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r230, %clock;
-	// inline asm
-	sub.s32 	%r218, %r218, %r39;
+	add.s32 	%r179, %r33, %r179;
+	sub.s32 	%r180, %r180, %r33;
 	bra.uni 	BB6_30;
 
-BB6_36:
-	setp.eq.s32	%p28, %r218, 0;
-	setp.gt.u32	%p29, %r224, 2;
+BB6_35:
+	setp.eq.s32	%p28, %r180, 0;
+	setp.gt.u32	%p29, %r186, 2;
 	mov.pred 	%p33, 0;
 	or.pred  	%p30, %p29, %p28;
-	@%p30 bra 	BB6_38;
+	@%p30 bra 	BB6_37;
 
-	ld.param.u64 	%rd107, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_2];
-	cvta.to.global.u64 	%rd106, %rd107;
-	add.s32 	%r218, %r218, -1;
-	cvt.u32.u64	%r183, %rd117;
-	and.b32  	%r184, %r183, 1;
-	add.s32 	%r185, %r217, %r24;
-	and.b32  	%r186, %r185, 63;
-	add.s32 	%r187, %r217, %r30;
-	shr.u32 	%r188, %r187, 6;
-	add.s32 	%r189, %r188, %r25;
-	and.b64  	%rd92, %rd117, 1;
-	shl.b64 	%rd93, %rd92, %r186;
-	mul.wide.u32 	%rd95, %r189, 8;
-	add.s64 	%rd96, %rd106, %rd95;
-	atom.global.add.u64 	%rd97, [%rd96], %rd93;
-	add.s32 	%r217, %r217, 1;
-	setp.eq.s32	%p33, %r184, 0;
+	add.s32 	%r180, %r180, -1;
+	cvt.u32.u64	%r150, %rd103;
+	and.b32  	%r151, %r150, 1;
+	add.s32 	%r152, %r179, %r22;
+	and.b32  	%r153, %r152, 63;
+	add.s32 	%r154, %r179, %r28;
+	shr.u32 	%r155, %r154, 6;
+	add.s32 	%r156, %r155, %r23;
+	and.b64  	%rd88, %rd103, 1;
+	shl.b64 	%rd89, %rd88, %r153;
+	mul.wide.u32 	%rd90, %r156, 8;
+	add.s64 	%rd91, %rd1, %rd90;
+	atom.global.add.u64 	%rd92, [%rd91], %rd89;
+	add.s32 	%r179, %r179, 1;
+	setp.eq.s32	%p33, %r151, 0;
 
-BB6_38:
-	shr.u64 	%rd117, %rd117, 1;
-	add.s32 	%r224, %r224, 1;
-	@%p33 bra 	BB6_36;
+BB6_37:
+	shr.u64 	%rd103, %rd103, 1;
+	add.s32 	%r186, %r186, 1;
+	@%p33 bra 	BB6_35;
 
 BB6_30:
-	setp.eq.s32	%p21, %r218, 0;
-	setp.gt.u32	%p22, %r224, 3;
+	setp.eq.s32	%p21, %r180, 0;
+	setp.gt.u32	%p22, %r186, 3;
 	mov.pred 	%p32, 0;
 	or.pred  	%p23, %p22, %p21;
 	@%p23 bra 	BB6_32;
 
-	ld.param.u64 	%rd109, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_2];
-	cvta.to.global.u64 	%rd108, %rd109;
-	add.s32 	%r218, %r218, -1;
-	add.s32 	%r176, %r217, %r24;
-	and.b32  	%r177, %r176, 63;
-	add.s32 	%r178, %r217, %r30;
-	shr.u32 	%r179, %r178, 6;
-	add.s32 	%r180, %r179, %r25;
-	setp.ne.s64	%p32, %rd117, 0;
-	selp.u64	%rd86, 1, 0, %p32;
-	shl.b64 	%rd87, %rd86, %r177;
-	mul.wide.u32 	%rd89, %r180, 8;
-	add.s64 	%rd90, %rd108, %rd89;
-	atom.global.add.u64 	%rd91, [%rd90], %rd87;
-	add.s32 	%r217, %r217, 1;
+	add.s32 	%r180, %r180, -1;
+	add.s32 	%r144, %r179, %r22;
+	and.b32  	%r145, %r144, 63;
+	add.s32 	%r146, %r179, %r28;
+	shr.u32 	%r147, %r146, 6;
+	add.s32 	%r148, %r147, %r23;
+	setp.ne.s64	%p32, %rd103, 0;
+	selp.u64	%rd83, 1, 0, %p32;
+	shl.b64 	%rd84, %rd83, %r145;
+	mul.wide.u32 	%rd85, %r148, 8;
+	add.s64 	%rd86, %rd1, %rd85;
+	atom.global.add.u64 	%rd87, [%rd86], %rd84;
+	add.s32 	%r179, %r179, 1;
 
 BB6_32:
-	@%p32 bra 	BB6_36;
+	@%p32 bra 	BB6_35;
 
-	// inline asm
-	mov.u32 	%r227, %clock;
-	// inline asm
-	setp.ne.s32	%p24, %r218, 0;
-	selp.b32	%r182, -1, 0, %p24;
-	add.s32 	%r53, %r182, %r213;
-	setp.ne.s32	%p25, %r213, 0;
-	and.pred  	%p26, %p25, %p24;
-	mov.u32 	%r213, %r53;
+	setp.ne.s32	%p24, %r175, 0;
+	setp.ne.s32	%p25, %r180, 0;
+	selp.b32	%r149, -1, 0, %p25;
+	add.s32 	%r175, %r149, %r175;
+	and.pred  	%p26, %p24, %p25;
 	@%p26 bra 	BB6_27;
 
 BB6_34:
-	ld.param.u64 	%rd100, [_ZN5cuZFP11cudaEncode1IiEEvjPKT_PyjijjP10GPU_timing_param_7];
-	cvta.to.global.u64 	%rd99, %rd100;
-	// inline asm
-	mov.u32 	%r190, %clock;
-	// inline asm
-	sub.s32 	%r192, %r190, %r118;
-	st.global.u32 	[%rd99+56], %r192;
-	sub.s32 	%r193, %r229, %r232;
-	st.global.u32 	[%rd99+60], %r193;
-	sub.s32 	%r194, %r228, %r231;
-	st.global.u32 	[%rd99+64], %r194;
-	sub.s32 	%r195, %r227, %r230;
-	st.global.u32 	[%rd99+68], %r195;
-	// inline asm
-	mov.u32 	%r191, %clock;
-	// inline asm
-	sub.s32 	%r196, %r111, %r72;
-	st.global.u32 	[%rd99+4], %r196;
-	sub.s32 	%r197, %r191, %r111;
-	st.global.u32 	[%rd99+8], %r197;
-	sub.s32 	%r198, %r191, %r72;
-	st.global.u32 	[%rd99], %r198;
-
-BB6_35:
 	ret;
 }
 
@@ -6342,221 +6576,214 @@ BB8_244:
 	ret;
 }
 
-	// .globl	_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing
-.visible .entry _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing(
-	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_0,
-	.param .u64 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_1,
-	.param .u64 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_2,
-	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_3,
-	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_4,
-	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_5,
-	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_6,
-	.param .u64 _ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_7
+	// .globl	_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj
+.visible .entry _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj(
+	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_0,
+	.param .u64 _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_1,
+	.param .u64 _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_2,
+	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_3,
+	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_4,
+	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_5,
+	.param .u32 _ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_6
 )
 {
 	.local .align 16 .b8 	__local_depot9[32];
 	.reg .b64 	%SP;
 	.reg .b64 	%SPL;
 	.reg .pred 	%p<34>;
-	.reg .b32 	%r<168>;
-	.reg .b64 	%rd<181>;
+	.reg .b32 	%r<122>;
+	.reg .b64 	%rd<165>;
 
 
 	mov.u64 	%SPL, __local_depot9;
-	ld.param.u64 	%rd37, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_1];
-	ld.param.u32 	%r54, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_3];
-	ld.param.u32 	%r55, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_4];
-	ld.param.u32 	%r56, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_5];
-	ld.param.u32 	%r58, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_6];
-	add.u64 	%rd1, %SPL, 0;
-	// inline asm
-	mov.u32 	%r57, %clock;
-	// inline asm
-	mov.u32 	%r59, %ctaid.z;
-	mov.u32 	%r60, %nctaid.y;
-	mov.u32 	%r61, %ctaid.y;
-	mad.lo.s32 	%r62, %r59, %r60, %r61;
-	mov.u32 	%r63, %nctaid.x;
-	mov.u32 	%r64, %ctaid.x;
-	mad.lo.s32 	%r65, %r62, %r63, %r64;
-	mov.u32 	%r66, %ntid.x;
-	mov.u32 	%r67, %tid.x;
-	mad.lo.s32 	%r2, %r65, %r66, %r67;
-	setp.ge.u32	%p5, %r2, %r58;
-	@%p5 bra 	BB9_35;
+	ld.param.u64 	%rd38, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_1];
+	ld.param.u64 	%rd39, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_2];
+	ld.param.u32 	%r39, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_3];
+	ld.param.u32 	%r40, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_4];
+	ld.param.u32 	%r41, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_5];
+	ld.param.u32 	%r42, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_6];
+	cvta.to.global.u64 	%rd1, %rd39;
+	add.u64 	%rd2, %SPL, 0;
+	mov.u32 	%r43, %ctaid.z;
+	mov.u32 	%r44, %nctaid.y;
+	mov.u32 	%r45, %ctaid.y;
+	mad.lo.s32 	%r46, %r43, %r44, %r45;
+	mov.u32 	%r47, %nctaid.x;
+	mov.u32 	%r48, %ctaid.x;
+	mad.lo.s32 	%r49, %r46, %r47, %r48;
+	mov.u32 	%r50, %ntid.x;
+	mov.u32 	%r51, %tid.x;
+	mad.lo.s32 	%r1, %r49, %r50, %r51;
+	setp.ge.u32	%p5, %r1, %r42;
+	@%p5 bra 	BB9_34;
 
-	cvta.to.global.u64 	%rd2, %rd37;
-	shr.u32 	%r68, %r56, 2;
-	rem.u32 	%r69, %r2, %r68;
-	shl.b32 	%r70, %r69, 2;
-	cvt.u64.u32	%rd41, %r70;
-	cvt.s64.s32	%rd3, %r55;
-	mul.lo.s64 	%rd4, %rd41, %rd3;
-	add.s32 	%r71, %r70, 4;
-	setp.gt.u32	%p6, %r71, %r54;
-	shl.b64 	%rd42, %rd4, 3;
-	add.s64 	%rd5, %rd2, %rd42;
+	cvta.to.global.u64 	%rd3, %rd38;
+	shr.u32 	%r52, %r41, 2;
+	rem.u32 	%r53, %r1, %r52;
+	shl.b32 	%r54, %r53, 2;
+	cvt.u64.u32	%rd41, %r54;
+	cvt.s64.s32	%rd4, %r40;
+	mul.lo.s64 	%rd5, %rd41, %rd4;
+	add.s32 	%r55, %r54, 4;
+	setp.gt.u32	%p6, %r55, %r39;
+	shl.b64 	%rd42, %rd5, 3;
+	add.s64 	%rd6, %rd3, %rd42;
 	@%p6 bra 	BB9_3;
 	bra.uni 	BB9_2;
 
 BB9_3:
-	ld.param.u32 	%r142, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_5];
-	sub.s32 	%r3, %r54, %r142;
-	setp.eq.s32	%p7, %r3, -4;
+	ld.param.u32 	%r101, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_3];
+	sub.s32 	%r2, %r101, %r41;
+	setp.eq.s32	%p7, %r2, -4;
 	@%p7 bra 	BB9_13;
 
-	ld.param.u32 	%r143, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_5];
-	add.s32 	%r76, %r54, 4;
-	sub.s32 	%r4, %r76, %r143;
-	and.b32  	%r75, %r4, 3;
-	mov.u32 	%r144, 0;
-	setp.eq.s32	%p8, %r75, 0;
+	ld.param.u32 	%r102, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_3];
+	add.s32 	%r60, %r102, 4;
+	sub.s32 	%r3, %r60, %r41;
+	and.b32  	%r59, %r3, 3;
+	mov.u32 	%r104, 0;
+	setp.eq.s32	%p8, %r59, 0;
 	@%p8 bra 	BB9_10;
 
-	setp.eq.s32	%p9, %r75, 1;
+	setp.eq.s32	%p9, %r59, 1;
 	@%p9 bra 	BB9_9;
 
-	setp.eq.s32	%p10, %r75, 2;
+	setp.eq.s32	%p10, %r59, 2;
 	@%p10 bra 	BB9_8;
 
-	ld.param.u64 	%rd170, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_1];
-	cvta.to.global.u64 	%rd169, %rd170;
-	ld.global.u64 	%rd51, [%rd5];
-	st.local.u64 	[%rd1], %rd51;
-	add.s64 	%rd52, %rd4, %rd3;
+	ld.param.u64 	%rd154, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_1];
+	cvta.to.global.u64 	%rd153, %rd154;
+	ld.global.u64 	%rd51, [%rd6];
+	st.local.u64 	[%rd2], %rd51;
+	add.s64 	%rd52, %rd5, %rd4;
 	shl.b64 	%rd53, %rd52, 3;
-	add.s64 	%rd5, %rd169, %rd53;
-	mov.u32 	%r144, 1;
+	add.s64 	%rd6, %rd153, %rd53;
+	mov.u32 	%r104, 1;
 
 BB9_8:
-	ld.global.u64 	%rd54, [%rd5];
-	mul.wide.u32 	%rd55, %r144, 8;
-	add.s64 	%rd56, %rd1, %rd55;
+	ld.global.u64 	%rd54, [%rd6];
+	mul.wide.u32 	%rd55, %r104, 8;
+	add.s64 	%rd56, %rd2, %rd55;
 	st.local.u64 	[%rd56], %rd54;
-	add.s32 	%r144, %r144, 1;
-	shl.b64 	%rd57, %rd3, 3;
-	add.s64 	%rd5, %rd5, %rd57;
+	add.s32 	%r104, %r104, 1;
+	shl.b64 	%rd57, %rd4, 3;
+	add.s64 	%rd6, %rd6, %rd57;
 
 BB9_9:
-	ld.global.u64 	%rd58, [%rd5];
-	mul.wide.u32 	%rd59, %r144, 8;
-	add.s64 	%rd60, %rd1, %rd59;
+	ld.global.u64 	%rd58, [%rd6];
+	mul.wide.u32 	%rd59, %r104, 8;
+	add.s64 	%rd60, %rd2, %rd59;
 	st.local.u64 	[%rd60], %rd58;
-	add.s32 	%r144, %r144, 1;
-	shl.b64 	%rd61, %rd3, 3;
-	add.s64 	%rd5, %rd5, %rd61;
+	add.s32 	%r104, %r104, 1;
+	shl.b64 	%rd61, %rd4, 3;
+	add.s64 	%rd6, %rd6, %rd61;
 
 BB9_10:
-	setp.lt.u32	%p11, %r4, 4;
+	setp.lt.u32	%p11, %r3, 4;
 	@%p11 bra 	BB9_13;
 
-	mul.wide.s32 	%rd15, %r55, 8;
+	ld.param.u32 	%r103, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_4];
+	mul.wide.s32 	%rd16, %r103, 8;
 
 BB9_12:
-	ld.global.u64 	%rd62, [%rd5];
-	mul.wide.u32 	%rd63, %r144, 8;
-	add.s64 	%rd64, %rd1, %rd63;
+	ld.global.u64 	%rd62, [%rd6];
+	mul.wide.u32 	%rd63, %r104, 8;
+	add.s64 	%rd64, %rd2, %rd63;
 	st.local.u64 	[%rd64], %rd62;
-	add.s64 	%rd65, %rd5, %rd15;
+	add.s64 	%rd65, %rd6, %rd16;
 	ld.global.u64 	%rd66, [%rd65];
-	add.s32 	%r78, %r144, 1;
-	mul.wide.u32 	%rd67, %r78, 8;
-	add.s64 	%rd68, %rd1, %rd67;
+	add.s32 	%r62, %r104, 1;
+	mul.wide.u32 	%rd67, %r62, 8;
+	add.s64 	%rd68, %rd2, %rd67;
 	st.local.u64 	[%rd68], %rd66;
-	add.s64 	%rd69, %rd65, %rd15;
+	add.s64 	%rd69, %rd65, %rd16;
 	ld.global.u64 	%rd70, [%rd69];
-	add.s32 	%r79, %r144, 2;
-	mul.wide.u32 	%rd71, %r79, 8;
-	add.s64 	%rd72, %rd1, %rd71;
+	add.s32 	%r63, %r104, 2;
+	mul.wide.u32 	%rd71, %r63, 8;
+	add.s64 	%rd72, %rd2, %rd71;
 	st.local.u64 	[%rd72], %rd70;
-	add.s64 	%rd73, %rd69, %rd15;
-	add.s64 	%rd5, %rd73, %rd15;
+	add.s64 	%rd73, %rd69, %rd16;
+	add.s64 	%rd6, %rd73, %rd16;
 	ld.global.u64 	%rd74, [%rd73];
-	add.s32 	%r80, %r144, 3;
-	mul.wide.u32 	%rd75, %r80, 8;
-	add.s64 	%rd76, %rd1, %rd75;
+	add.s32 	%r64, %r104, 3;
+	mul.wide.u32 	%rd75, %r64, 8;
+	add.s64 	%rd76, %rd2, %rd75;
 	st.local.u64 	[%rd76], %rd74;
-	add.s32 	%r81, %r3, 4;
-	add.s32 	%r144, %r144, 4;
-	setp.lt.u32	%p12, %r144, %r81;
+	add.s32 	%r65, %r2, 4;
+	add.s32 	%r104, %r104, 4;
+	setp.lt.u32	%p12, %r104, %r65;
 	@%p12 bra 	BB9_12;
 
 BB9_13:
-	setp.gt.s32	%p13, %r3, -3;
+	setp.gt.s32	%p13, %r2, -3;
 	@%p13 bra 	BB9_17;
 
-	setp.eq.s32	%p31, %r3, -4;
+	setp.eq.s32	%p31, %r2, -4;
 	@%p31 bra 	BB9_20;
 	bra.uni 	BB9_15;
 
 BB9_20:
-	mov.u64 	%rd176, 0;
-	st.local.u64 	[%rd1], %rd176;
+	mov.u64 	%rd160, 0;
+	st.local.u64 	[%rd2], %rd160;
 	bra.uni 	BB9_21;
 
 BB9_2:
-	ld.global.u64 	%rd178, [%rd5];
-	mul.wide.s32 	%rd43, %r55, 8;
-	add.s64 	%rd44, %rd5, %rd43;
+	ld.param.u32 	%r100, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_4];
+	ld.global.u64 	%rd162, [%rd6];
+	mul.wide.s32 	%rd43, %r100, 8;
+	add.s64 	%rd44, %rd6, %rd43;
 	ld.global.u64 	%rd45, [%rd44];
-	st.local.v2.u64 	[%rd1], {%rd178, %rd45};
+	st.local.v2.u64 	[%rd2], {%rd162, %rd45};
 	add.s64 	%rd48, %rd44, %rd43;
 	add.s64 	%rd49, %rd48, %rd43;
-	ld.global.u64 	%rd177, [%rd49];
+	ld.global.u64 	%rd161, [%rd49];
 	ld.global.u64 	%rd50, [%rd48];
-	st.local.v2.u64 	[%rd1+16], {%rd50, %rd177};
+	st.local.v2.u64 	[%rd2+16], {%rd50, %rd161};
 	bra.uni 	BB9_25;
 
 BB9_17:
-	setp.eq.s32	%p14, %r3, -1;
+	setp.eq.s32	%p14, %r2, -1;
 	@%p14 bra 	BB9_23;
 
-	setp.ne.s32	%p15, %r3, -2;
+	setp.ne.s32	%p15, %r2, -2;
 	@%p15 bra 	BB9_24;
 
-	ld.local.u64 	%rd176, [%rd1+8];
+	ld.local.u64 	%rd160, [%rd2+8];
 	bra.uni 	BB9_22;
 
 BB9_15:
-	setp.eq.s32	%p17, %r3, -3;
+	setp.eq.s32	%p17, %r2, -3;
 	@%p17 bra 	BB9_16;
 	bra.uni 	BB9_24;
 
 BB9_16:
-	ld.local.u64 	%rd176, [%rd1];
+	ld.local.u64 	%rd160, [%rd2];
 
 BB9_21:
-	st.local.u64 	[%rd1+8], %rd176;
+	st.local.u64 	[%rd2+8], %rd160;
 
 BB9_22:
-	st.local.u64 	[%rd1+16], %rd176;
+	st.local.u64 	[%rd2+16], %rd160;
 
 BB9_23:
-	ld.local.u64 	%rd177, [%rd1];
-	st.local.u64 	[%rd1+24], %rd177;
-	mov.u64 	%rd178, %rd177;
+	ld.local.u64 	%rd161, [%rd2];
+	st.local.u64 	[%rd2+24], %rd161;
+	mov.u64 	%rd162, %rd161;
 	bra.uni 	BB9_25;
 
 BB9_24:
-	ld.local.v2.u64 	{%rd178, %rd81}, [%rd1];
-	ld.local.v2.u64 	{%rd82, %rd177}, [%rd1+16];
+	ld.local.v2.u64 	{%rd162, %rd81}, [%rd2];
+	ld.local.v2.u64 	{%rd82, %rd161}, [%rd2+16];
 
 BB9_25:
-	ld.param.u64 	%rd162, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_7];
-	ld.param.u32 	%r141, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_0];
-	// inline asm
-	mov.u32 	%r82, %clock;
-	// inline asm
-	mul.lo.s32 	%r13, %r2, %r141;
-	shr.u32 	%r14, %r13, 6;
-	// inline asm
-	mov.u32 	%r83, %clock;
-	// inline asm
-	add.s64 	%rd84, %rd177, %rd178;
+	ld.param.u32 	%r97, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_0];
+	mul.lo.s32 	%r11, %r1, %r97;
+	shr.u32 	%r12, %r11, 6;
+	add.s64 	%rd84, %rd161, %rd162;
 	shr.s64 	%rd85, %rd84, 1;
-	sub.s64 	%rd86, %rd177, %rd85;
-	ld.local.u64 	%rd87, [%rd1+16];
-	ld.local.u64 	%rd88, [%rd1+8];
+	sub.s64 	%rd86, %rd161, %rd85;
+	ld.local.u64 	%rd87, [%rd2+16];
+	ld.local.u64 	%rd88, [%rd2+8];
 	add.s64 	%rd89, %rd87, %rd88;
 	shr.s64 	%rd90, %rd89, 1;
 	sub.s64 	%rd91, %rd88, %rd90;
@@ -6569,223 +6796,149 @@ BB9_25:
 	shr.s64 	%rd98, %rd97, 1;
 	shr.s64 	%rd99, %rd92, 1;
 	sub.s64 	%rd100, %rd90, %rd99;
-	st.local.v2.u64 	[%rd1+16], {%rd100, %rd97};
+	st.local.v2.u64 	[%rd2+16], {%rd100, %rd97};
 	sub.s64 	%rd101, %rd95, %rd98;
-	st.local.v2.u64 	[%rd1], {%rd99, %rd101};
-	// inline asm
-	mov.u32 	%r84, %clock;
-	// inline asm
-	sub.s32 	%r94, %r84, %r83;
-	cvta.to.global.u64 	%rd104, %rd162;
-	st.global.u32 	[%rd104+44], %r94;
-	// inline asm
-	mov.u32 	%r85, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r86, %clock;
-	// inline asm
-	ld.const.u8 	%r95, [c_perm_1];
-	mul.wide.u32 	%rd105, %r95, 8;
-	add.s64 	%rd106, %rd1, %rd105;
-	ld.local.u64 	%rd107, [%rd106];
-	add.s64 	%rd108, %rd107, -6148914691236517206;
-	xor.b64  	%rd27, %rd108, -6148914691236517206;
-	ld.const.u8 	%r96, [c_perm_1+1];
-	mul.wide.u32 	%rd109, %r96, 8;
-	add.s64 	%rd110, %rd1, %rd109;
-	ld.local.u64 	%rd111, [%rd110];
-	add.s64 	%rd112, %rd111, -6148914691236517206;
-	xor.b64  	%rd28, %rd112, -6148914691236517206;
-	ld.const.u8 	%r97, [c_perm_1+2];
-	mul.wide.u32 	%rd113, %r97, 8;
-	add.s64 	%rd114, %rd1, %rd113;
-	ld.local.u64 	%rd115, [%rd114];
-	add.s64 	%rd116, %rd115, -6148914691236517206;
-	xor.b64  	%rd29, %rd116, -6148914691236517206;
-	ld.const.u8 	%r98, [c_perm_1+3];
-	mul.wide.u32 	%rd117, %r98, 8;
-	add.s64 	%rd118, %rd1, %rd117;
-	ld.local.u64 	%rd119, [%rd118];
-	add.s64 	%rd120, %rd119, -6148914691236517206;
-	xor.b64  	%rd30, %rd120, -6148914691236517206;
-	and.b32  	%r15, %r13, 63;
-	// inline asm
-	mov.u32 	%r87, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r88, %clock;
-	// inline asm
-	sub.s32 	%r99, %r88, %r85;
-	st.global.u32 	[%rd104+48], %r99;
-	// inline asm
-	mov.u32 	%r89, %clock;
-	// inline asm
-	setp.eq.s32	%p18, %r141, 0;
+	st.local.v2.u64 	[%rd2], {%rd99, %rd101};
+	ld.const.u8 	%r69, [c_perm_1];
+	mul.wide.u32 	%rd104, %r69, 8;
+	add.s64 	%rd105, %rd2, %rd104;
+	ld.local.u64 	%rd106, [%rd105];
+	add.s64 	%rd107, %rd106, -6148914691236517206;
+	xor.b64  	%rd28, %rd107, -6148914691236517206;
+	ld.const.u8 	%r70, [c_perm_1+1];
+	mul.wide.u32 	%rd108, %r70, 8;
+	add.s64 	%rd109, %rd2, %rd108;
+	ld.local.u64 	%rd110, [%rd109];
+	add.s64 	%rd111, %rd110, -6148914691236517206;
+	xor.b64  	%rd29, %rd111, -6148914691236517206;
+	ld.const.u8 	%r71, [c_perm_1+2];
+	mul.wide.u32 	%rd112, %r71, 8;
+	add.s64 	%rd113, %rd2, %rd112;
+	ld.local.u64 	%rd114, [%rd113];
+	add.s64 	%rd115, %rd114, -6148914691236517206;
+	xor.b64  	%rd30, %rd115, -6148914691236517206;
+	ld.const.u8 	%r72, [c_perm_1+3];
+	mul.wide.u32 	%rd116, %r72, 8;
+	add.s64 	%rd117, %rd2, %rd116;
+	ld.local.u64 	%rd118, [%rd117];
+	add.s64 	%rd119, %rd118, -6148914691236517206;
+	xor.b64  	%rd31, %rd119, -6148914691236517206;
+	and.b32  	%r13, %r11, 63;
+	setp.eq.s32	%p18, %r97, 0;
 	@%p18 bra 	BB9_34;
 
-	mov.u32 	%r159, 0;
-	mov.u32 	%r148, 63;
-	ld.param.u32 	%r153, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_0];
-	mov.u32 	%r152, %r159;
+	mov.u32 	%r119, 0;
+	mov.u32 	%r108, 63;
+	ld.param.u32 	%r113, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_Pyjijj_param_0];
+	mov.u32 	%r112, %r119;
 
 BB9_27:
-	ld.param.u64 	%rd160, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_2];
-	// inline asm
-	mov.u32 	%r167, %clock;
-	// inline asm
-	shr.u64 	%rd121, %rd27, %r148;
-	and.b64  	%rd122, %rd121, 1;
-	shr.u64 	%rd123, %rd28, %r148;
-	and.b64  	%rd124, %rd123, 1;
-	bfi.b64 	%rd125, %rd124, %rd122, 1, 1;
-	shr.u64 	%rd126, %rd29, %r148;
-	and.b64  	%rd127, %rd126, 1;
-	bfi.b64 	%rd128, %rd127, %rd125, 2, 1;
-	shr.u64 	%rd129, %rd30, %r148;
-	and.b64  	%rd130, %rd129, 1;
-	bfi.b64 	%rd131, %rd130, %rd128, 3, 1;
-	// inline asm
-	mov.u32 	%r164, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r166, %clock;
-	// inline asm
-	min.u32 	%r24, %r159, %r153;
-	add.s32 	%r103, %r152, %r13;
-	and.b32  	%r104, %r103, 63;
-	add.s32 	%r105, %r152, %r15;
-	shr.u32 	%r106, %r105, 6;
-	add.s32 	%r25, %r106, %r14;
-	shr.u64 	%rd180, %rd131, %r24;
-	shl.b64 	%rd132, %rd180, %r24;
-	sub.s64 	%rd32, %rd131, %rd132;
-	shl.b64 	%rd133, %rd32, %r104;
-	cvta.to.global.u64 	%rd134, %rd160;
-	mul.wide.u32 	%rd135, %r25, 8;
-	add.s64 	%rd136, %rd134, %rd135;
-	atom.global.add.u64 	%rd137, [%rd136], %rd133;
-	add.s32 	%r107, %r104, %r24;
-	add.s32 	%r108, %r107, -1;
-	setp.lt.u32	%p19, %r108, 64;
+	shr.u64 	%rd120, %rd28, %r108;
+	and.b64  	%rd121, %rd120, 1;
+	shr.u64 	%rd122, %rd29, %r108;
+	and.b64  	%rd123, %rd122, 1;
+	bfi.b64 	%rd124, %rd123, %rd121, 1, 1;
+	shr.u64 	%rd125, %rd30, %r108;
+	and.b64  	%rd126, %rd125, 1;
+	bfi.b64 	%rd127, %rd126, %rd124, 2, 1;
+	shr.u64 	%rd128, %rd31, %r108;
+	and.b64  	%rd129, %rd128, 1;
+	bfi.b64 	%rd130, %rd129, %rd127, 3, 1;
+	min.u32 	%r18, %r119, %r113;
+	add.s32 	%r73, %r112, %r11;
+	and.b32  	%r74, %r73, 63;
+	add.s32 	%r75, %r112, %r13;
+	shr.u32 	%r76, %r75, 6;
+	add.s32 	%r19, %r76, %r12;
+	shr.u64 	%rd164, %rd130, %r18;
+	shl.b64 	%rd131, %rd164, %r18;
+	sub.s64 	%rd33, %rd130, %rd131;
+	shl.b64 	%rd132, %rd33, %r74;
+	mul.wide.u32 	%rd133, %r19, 8;
+	add.s64 	%rd134, %rd1, %rd133;
+	atom.global.add.u64 	%rd135, [%rd134], %rd132;
+	add.s32 	%r77, %r74, %r18;
+	add.s32 	%r78, %r77, -1;
+	setp.lt.u32	%p19, %r78, 64;
 	@%p19 bra 	BB9_29;
 
-	ld.param.u64 	%rd168, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_2];
-	cvta.to.global.u64 	%rd167, %rd168;
-	add.s32 	%r140, %r152, %r13;
-	and.b32  	%r139, %r140, 63;
-	cvt.u64.u32	%rd161, %r139;
-	mov.u64 	%rd138, 64;
-	sub.s64 	%rd139, %rd138, %rd161;
-	cvt.u32.u64	%r109, %rd139;
-	shr.u64 	%rd140, %rd32, %r109;
-	add.s32 	%r110, %r25, 1;
-	mul.wide.u32 	%rd142, %r110, 8;
-	add.s64 	%rd143, %rd167, %rd142;
-	atom.global.add.u64 	%rd144, [%rd143], %rd140;
+	add.s32 	%r99, %r112, %r11;
+	and.b32  	%r98, %r99, 63;
+	cvt.u64.u32	%rd152, %r98;
+	mov.u64 	%rd136, 64;
+	sub.s64 	%rd137, %rd136, %rd152;
+	cvt.u32.u64	%r79, %rd137;
+	shr.u64 	%rd138, %rd33, %r79;
+	add.s32 	%r80, %r19, 1;
+	mul.wide.u32 	%rd139, %r80, 8;
+	add.s64 	%rd140, %rd1, %rd139;
+	atom.global.add.u64 	%rd141, [%rd140], %rd138;
 
 BB9_29:
-	add.s32 	%r152, %r24, %r152;
-	// inline asm
-	mov.u32 	%r163, %clock;
-	// inline asm
-	// inline asm
-	mov.u32 	%r165, %clock;
-	// inline asm
-	sub.s32 	%r153, %r153, %r24;
+	add.s32 	%r112, %r18, %r112;
+	sub.s32 	%r113, %r113, %r18;
 	bra.uni 	BB9_30;
 
-BB9_36:
-	setp.eq.s32	%p28, %r153, 0;
-	setp.gt.u32	%p29, %r159, 2;
+BB9_35:
+	setp.eq.s32	%p28, %r113, 0;
+	setp.gt.u32	%p29, %r119, 2;
 	mov.pred 	%p33, 0;
 	or.pred  	%p30, %p29, %p28;
-	@%p30 bra 	BB9_38;
+	@%p30 bra 	BB9_37;
 
-	ld.param.u64 	%rd164, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_2];
-	cvta.to.global.u64 	%rd163, %rd164;
-	add.s32 	%r153, %r153, -1;
-	cvt.u32.u64	%r120, %rd180;
-	and.b32  	%r121, %r120, 1;
-	add.s32 	%r122, %r152, %r13;
-	and.b32  	%r123, %r122, 63;
-	add.s32 	%r124, %r152, %r15;
-	shr.u32 	%r125, %r124, 6;
-	add.s32 	%r126, %r125, %r14;
-	and.b64  	%rd151, %rd180, 1;
-	shl.b64 	%rd152, %rd151, %r123;
-	mul.wide.u32 	%rd154, %r126, 8;
-	add.s64 	%rd155, %rd163, %rd154;
-	atom.global.add.u64 	%rd156, [%rd155], %rd152;
-	add.s32 	%r152, %r152, 1;
-	setp.eq.s32	%p33, %r121, 0;
+	add.s32 	%r113, %r113, -1;
+	cvt.u32.u64	%r87, %rd164;
+	and.b32  	%r88, %r87, 1;
+	add.s32 	%r89, %r112, %r11;
+	and.b32  	%r90, %r89, 63;
+	add.s32 	%r91, %r112, %r13;
+	shr.u32 	%r92, %r91, 6;
+	add.s32 	%r93, %r92, %r12;
+	and.b64  	%rd147, %rd164, 1;
+	shl.b64 	%rd148, %rd147, %r90;
+	mul.wide.u32 	%rd149, %r93, 8;
+	add.s64 	%rd150, %rd1, %rd149;
+	atom.global.add.u64 	%rd151, [%rd150], %rd148;
+	add.s32 	%r112, %r112, 1;
+	setp.eq.s32	%p33, %r88, 0;
 
-BB9_38:
-	shr.u64 	%rd180, %rd180, 1;
-	add.s32 	%r159, %r159, 1;
-	@%p33 bra 	BB9_36;
+BB9_37:
+	shr.u64 	%rd164, %rd164, 1;
+	add.s32 	%r119, %r119, 1;
+	@%p33 bra 	BB9_35;
 
 BB9_30:
-	setp.eq.s32	%p21, %r153, 0;
-	setp.gt.u32	%p22, %r159, 3;
+	setp.eq.s32	%p21, %r113, 0;
+	setp.gt.u32	%p22, %r119, 3;
 	mov.pred 	%p32, 0;
 	or.pred  	%p23, %p22, %p21;
 	@%p23 bra 	BB9_32;
 
-	ld.param.u64 	%rd166, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_2];
-	cvta.to.global.u64 	%rd165, %rd166;
-	add.s32 	%r153, %r153, -1;
-	add.s32 	%r113, %r152, %r13;
-	and.b32  	%r114, %r113, 63;
-	add.s32 	%r115, %r152, %r15;
-	shr.u32 	%r116, %r115, 6;
-	add.s32 	%r117, %r116, %r14;
-	setp.ne.s64	%p32, %rd180, 0;
-	selp.u64	%rd145, 1, 0, %p32;
-	shl.b64 	%rd146, %rd145, %r114;
-	mul.wide.u32 	%rd148, %r117, 8;
-	add.s64 	%rd149, %rd165, %rd148;
-	atom.global.add.u64 	%rd150, [%rd149], %rd146;
-	add.s32 	%r152, %r152, 1;
+	add.s32 	%r113, %r113, -1;
+	add.s32 	%r81, %r112, %r11;
+	and.b32  	%r82, %r81, 63;
+	add.s32 	%r83, %r112, %r13;
+	shr.u32 	%r84, %r83, 6;
+	add.s32 	%r85, %r84, %r12;
+	setp.ne.s64	%p32, %rd164, 0;
+	selp.u64	%rd142, 1, 0, %p32;
+	shl.b64 	%rd143, %rd142, %r82;
+	mul.wide.u32 	%rd144, %r85, 8;
+	add.s64 	%rd145, %rd1, %rd144;
+	atom.global.add.u64 	%rd146, [%rd145], %rd143;
+	add.s32 	%r112, %r112, 1;
 
 BB9_32:
-	@%p32 bra 	BB9_36;
+	@%p32 bra 	BB9_35;
 
-	// inline asm
-	mov.u32 	%r162, %clock;
-	// inline asm
-	setp.ne.s32	%p24, %r153, 0;
-	selp.b32	%r119, -1, 0, %p24;
-	add.s32 	%r38, %r119, %r148;
-	setp.ne.s32	%p25, %r148, 0;
-	and.pred  	%p26, %p25, %p24;
-	mov.u32 	%r148, %r38;
+	setp.ne.s32	%p24, %r108, 0;
+	setp.ne.s32	%p25, %r113, 0;
+	selp.b32	%r86, -1, 0, %p25;
+	add.s32 	%r108, %r86, %r108;
+	and.pred  	%p26, %p24, %p25;
 	@%p26 bra 	BB9_27;
 
 BB9_34:
-	ld.param.u64 	%rd159, [_ZN5cuZFP11cudaEncode1IxEEvjPKT_PyjijjP10GPU_timing_param_7];
-	cvta.to.global.u64 	%rd158, %rd159;
-	// inline asm
-	mov.u32 	%r127, %clock;
-	// inline asm
-	sub.s32 	%r129, %r127, %r89;
-	st.global.u32 	[%rd158+56], %r129;
-	sub.s32 	%r130, %r164, %r167;
-	st.global.u32 	[%rd158+60], %r130;
-	sub.s32 	%r131, %r163, %r166;
-	st.global.u32 	[%rd158+64], %r131;
-	sub.s32 	%r132, %r162, %r165;
-	st.global.u32 	[%rd158+68], %r132;
-	// inline asm
-	mov.u32 	%r128, %clock;
-	// inline asm
-	sub.s32 	%r133, %r82, %r57;
-	st.global.u32 	[%rd158+4], %r133;
-	sub.s32 	%r134, %r128, %r82;
-	st.global.u32 	[%rd158+8], %r134;
-	sub.s32 	%r135, %r128, %r57;
-	st.global.u32 	[%rd158], %r135;
-
-BB9_35:
 	ret;
 }
 

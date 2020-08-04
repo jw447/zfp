@@ -115,20 +115,13 @@ quantize_factor<double>(const int &exponent, double)
 }
 
 template<typename Scalar, typename Int, int BlockSize>
-void __device__ fwd_cast(Int *iblock, const Scalar *fblock, int emax, GPU_timing* gpu_timing)
+void __device__ fwd_cast(Int *iblock, const Scalar *fblock, int emax)
 {
-  size_t start = clock();
   Scalar s = quantize_factor(emax, Scalar());
-  size_t end = clock();
-  (*gpu_timing).quantize_factor_clock = (int)(end - start);
-
-  start = clock();
   for(int i = 0; i < BlockSize; ++i)
   {
     iblock[i] = (Int) (s * fblock[i]);
   }
-  end = clock();
-  (*gpu_timing).cast_loop_clock = (int)(end - start);
 }
 
 template<int BlockSize>
@@ -186,19 +179,14 @@ struct transform<4>
 };
 
 template<typename Int, typename UInt, int BlockSize>
-__device__ void fwd_order(UInt *ublock, const Int *iblock, GPU_timing* gpu_timing_d)
+__device__ void fwd_order(UInt *ublock, const Int *iblock)
 {
   unsigned char *perm = get_perm<BlockSize>(); // 8 clock cycles.
 
-  size_t start0 = clock();
   for(int i = 0; i < BlockSize; ++i)
   {
-    //start = clock();
     ublock[i] = int2uint(iblock[perm[i]]);
-    //end = clock();
   }
-  size_t end0 = clock();
-  //(*gpu_timing_d).order_loop_clock = (int)(end0 - start0);
 }
 
 template<int block_size>
@@ -300,26 +288,18 @@ template<typename Int, int BlockSize>
 void inline __device__ encode_block(BlockWriter<BlockSize> &stream,
                                     int maxbits,
                                     int maxprec,
-                                    Int *iblock,
-                                    GPU_timing* gpu_timing_d)
+                                    Int *iblock)
 {
   // transform cost
   transform<BlockSize> tform;
 
-  size_t start = clock();
   tform.fwd_xform(iblock); //
-  size_t end = clock();
-  (*gpu_timing_d).xform_clock = (int)(end - start); 
 
   typedef typename zfp_traits<Int>::UInt UInt;
   UInt ublock[BlockSize]; 
 
   // reordering cost
-  start = clock();
-  fwd_order<Int, UInt, BlockSize>(ublock, iblock, gpu_timing_d); //
-  end = clock();
-  (*gpu_timing_d).order_clock = (int)(end - start);
-  //
+  fwd_order<Int, UInt, BlockSize>(ublock, iblock); //
   
   uint intprec = CHAR_BIT * (uint)sizeof(UInt);
   uint kmin = intprec > maxprec ? intprec - maxprec : 0;
@@ -328,36 +308,21 @@ void inline __device__ encode_block(BlockWriter<BlockSize> &stream,
   uint64 x;
 
   // embedded cost
-  size_t start1;
-  size_t start2;
-  size_t start3;
-
-  size_t end1;
-  size_t end2;
-  size_t end3;
-
-  start = clock();
-
   for (k = intprec, n = 0; bits && k-- > kmin;) {
     
     /* step 1 */
-    start1 = clock();
     x = 0;
     for (i = 0; i < BlockSize; i++)
     {
       x += (uint64)((ublock[i] >> k) & 1u) << i; //
     }
-    end1 = clock();
 
     /* step 2 */
-    start2 = clock();
     m = min(n, bits);
     bits -= m;
     x = stream.write_bits(x, m);    
-    end2 = clock();
 
     /* step 3 */
-    start3 = clock();
     for (; n < BlockSize && bits && (bits--, stream.write_bit(!!x)); x >>= 1, n++)
     {
       //printf("/for-loop 1\n");
@@ -374,41 +339,23 @@ void inline __device__ encode_block(BlockWriter<BlockSize> &stream,
       //printf("-------\n");
     }
     //printf("=========\n");
-    end3 = clock(); 
   }
   //printf("============\n");
-  end = clock();
-  (*gpu_timing_d).bp_clock = (int)(end - start);
-  (*gpu_timing_d).step1 = (int)(end1-start1);
-  (*gpu_timing_d).step2 = (int)(end2-start2);
-  (*gpu_timing_d).step3 = (int)(end3-start3);
 }
 
 template<typename Scalar, int BlockSize>
 void inline __device__ zfp_encode_block(Scalar *fblock,
                                         const int maxbits,
                                         const uint block_idx,
-                                        Word *stream,
-                                        GPU_timing* gpu_timing_d)
+                                        Word *stream)
 {
   //TODO
   //jwang
   BlockWriter<BlockSize> block_writer(stream, maxbits, block_idx);
 
-  size_t start = clock(); //
   int emax = max_exponent<Scalar, BlockSize>(fblock);
-  size_t end1 = clock();
-
   int maxprec = precision(emax, get_precision<Scalar>(), get_min_exp<Scalar>());
-  size_t end2 = clock();
-
   uint e = maxprec ? emax + get_ebias<Scalar>() : 0;
-  size_t end3 = clock();
-
-  (*gpu_timing_d).max_exp_clock = (int)(end1 - start);
-  (*gpu_timing_d).precision_clock = (int)(end2 - end1);
-  (*gpu_timing_d).emax_clock = (int)(end3 - end2);
-  (*gpu_timing_d).ecost_clock = (int)(end3 - start);
 
   if(e)
   {
@@ -416,16 +363,10 @@ void inline __device__ zfp_encode_block(Scalar *fblock,
     block_writer.write_bits(2 * e + 1, ebits);
     typedef typename zfp_traits<Scalar>::Int Int;
     Int iblock[BlockSize];
-    start = clock(); //
-    fwd_cast<Scalar, Int, BlockSize>(iblock, fblock, emax, gpu_timing_d); // get mantissa
-    size_t end = clock(); //
-    (*gpu_timing_d).mcost_clock = (int)(end - start); //
+    fwd_cast<Scalar, Int, BlockSize>(iblock, fblock, emax); // get mantissa
 
     //printf("maxbits=%d, ebits=%u, _maxbits=%d\n", maxbits, ebits, (maxbits-ebits));
-    start = clock();
-    //encode_block<Int, BlockSize>(block_writer, maxbits - ebits, maxprec, iblock, gpu_timing_d); // encode mantissa
-    end = clock();
-    (*gpu_timing_d).embed_clock = (int)(end - start);
+    encode_block<Int, BlockSize>(block_writer, maxbits - ebits, maxprec, iblock); // encode mantissa
   }
 }
 
@@ -433,72 +374,66 @@ template<>
 void inline __device__ zfp_encode_block<int, 64>(int *fblock,
                                              const int maxbits,
                                              const uint block_idx,
-                                             Word *stream,
-                                             GPU_timing* gpu_timing_d)
+                                             Word *stream)
 {
   BlockWriter<64> block_writer(stream, maxbits, block_idx);
   const int intprec = get_precision<int>();
-  encode_block<int, 64>(block_writer, maxbits, intprec, fblock, gpu_timing_d);
+  encode_block<int, 64>(block_writer, maxbits, intprec, fblock);
 }
 
 template<>
 void inline __device__ zfp_encode_block<long long int, 64>(long long int *fblock,
                                                        const int maxbits,
                                                        const uint block_idx,
-                                                       Word *stream,
-                                                       GPU_timing* gpu_timing_d)
+                                                       Word *stream)
 {
   BlockWriter<64> block_writer(stream, maxbits, block_idx);
   const int intprec = get_precision<long long int>();
-  encode_block<long long int, 64>(block_writer, maxbits, intprec, fblock, gpu_timing_d);
+  encode_block<long long int, 64>(block_writer, maxbits, intprec, fblock);
 }
 
 template<>
 void inline __device__ zfp_encode_block<int, 16>(int *fblock,
                                              const int maxbits,
                                              const uint block_idx,
-                                             Word *stream,
-                                             GPU_timing* gpu_timing_d)
+                                             Word *stream)
 {
   BlockWriter<16> block_writer(stream, maxbits, block_idx);
   const int intprec = get_precision<int>();
-  encode_block<int, 16>(block_writer, maxbits, intprec, fblock, gpu_timing_d);
+  encode_block<int, 16>(block_writer, maxbits, intprec, fblock);
 }
 
 template<>
 void inline __device__ zfp_encode_block<long long int, 16>(long long int *fblock,
                                                        const int maxbits,
                                                        const uint block_idx,
-                                                       Word *stream,
-                                                       GPU_timing* gpu_timing_d)
+                                                       Word *stream)
 {
   BlockWriter<16> block_writer(stream, maxbits, block_idx);
   const int intprec = get_precision<long long int>();
-  encode_block<long long int, 16>(block_writer, maxbits, intprec, fblock, gpu_timing_d);
+  encode_block<long long int, 16>(block_writer, maxbits, intprec, fblock);
 }
 
 template<>
 void inline __device__ zfp_encode_block<int, 4>(int *fblock,
                                                 const int maxbits,
                                                 const uint block_idx,
-                                                Word *stream,
-                                                GPU_timing* gpu_timing_d)
+                                                Word *stream)
 {
   BlockWriter<4> block_writer(stream, maxbits, block_idx);
   const int intprec = get_precision<int>();
-  encode_block<int, 4>(block_writer, maxbits, intprec, fblock, gpu_timing_d);
+  encode_block<int, 4>(block_writer, maxbits, intprec, fblock);
 }
 
 template<>
 void inline __device__ zfp_encode_block<long long int, 4>(long long int *fblock,
                                                           const int maxbits,
                                                           const uint block_idx,
-                                                          Word *stream,
-                                                          GPU_timing* gpu_timing_d)
+                                                          Word *stream)
 {
   BlockWriter<4> block_writer(stream, maxbits, block_idx);
   const int intprec = get_precision<long long int>();
-  encode_block<long long int, 4>(block_writer, maxbits, intprec, fblock, gpu_timing_d);
+  encode_block<long long int, 4>(block_writer, maxbits, intprec, fblock);
 }
 
 }  // namespace cuZFP
