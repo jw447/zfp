@@ -58,6 +58,7 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
   //jwang
   FuncName;
   uint bits = 1;
+  //printf("sizeof Int=%d\n", sizeof(Int));
 
   /* compute maximum exponent */
   int emax = _t1(exponent_block, Scalar)(fblock, BLOCK_SIZE);
