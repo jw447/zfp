@@ -7,6 +7,7 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   //jwang
   FuncName;
   const Scalar* data = (const Scalar*)field->data;
+  
   uint nx = field->nx;
   uint mx = nx & ~3u;
   uint x;
@@ -16,6 +17,9 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
     _t2(zfp_encode_block, Scalar, 1)(stream, data);
   if (x < nx)
     _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
+}
+
+
 }
 
 /* compress 1d strided array */
