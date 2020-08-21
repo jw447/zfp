@@ -79,7 +79,10 @@ zfpcmd_EXTERNAL_OBJECTS =
 
 bin/zfp: utils/CMakeFiles/zfpcmd.dir/zfp.c.o
 bin/zfp: utils/CMakeFiles/zfpcmd.dir/build.make
-bin/zfp: lib64/libzfp.so.0.5.5
+bin/zfp: lib64/libzfp.a
+bin/zfp: /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/libgomp.so
+bin/zfp: /usr/lib64/libpthread.so
+bin/zfp: /sw/summit/cuda/10.1.168/lib64/libcudart.so
 bin/zfp: utils/CMakeFiles/zfpcmd.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../bin/zfp"
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/utils && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/zfpcmd.dir/link.txt --verbose=$(VERBOSE)

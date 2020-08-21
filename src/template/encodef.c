@@ -4,6 +4,12 @@
 static uint _t2(rev_encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock);
 
 /* private functions ------------------------------------------------------- */
+/* maximum number of bit planes to encode */
+static uint
+precision(int maxexp, uint maxprec, int minexp, int dims)
+{
+  return MIN(maxprec, (uint)MAX(0, maxexp - minexp + 2 * (dims + 1)));
+}
 
 /* return normalized floating-point exponent for x >= 0 */
 static int
@@ -70,7 +76,7 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
     cache_align_(Int iblock[BLOCK_SIZE]);
     /* encode common exponent; LSB indicates that exponent is nonzero */
     bits += EBITS;
-    //printf("EBITS=%d, bits=%d\n", EBITS, bits);
+    //printf("EBITS=%d bits=%d ", EBITS, bits);
     stream_write_bits(zfp->stream, 2 * e + 1, bits);
 
     /* perform forward block-floating-point transform */

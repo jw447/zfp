@@ -2,6 +2,13 @@ static uint _t2(rev_decode_block, Scalar, DIMS)(zfp_stream* zfp, Scalar* fblock)
 
 /* private functions ------------------------------------------------------- */
 
+/* maximum number of bit planes to encode */
+static uint
+precision(int maxexp, uint maxprec, int minexp, int dims)
+{
+  return MIN(maxprec, (uint)MAX(0, maxexp - minexp + 2 * (dims + 1)));
+}
+
 /* decode contiguous floating-point block using lossy algorithm */
 static uint
 _t2(decode_block, Scalar, DIMS)(zfp_stream* zfp, Scalar* fblock)

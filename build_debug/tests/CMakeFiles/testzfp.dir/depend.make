@@ -24,6 +24,7 @@ tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../array/zfparray3.h
 tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../array/zfpcodec.h
 tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../array/zfpcodecd.h
 tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../array/zfpcodecf.h
+tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../include/Huffman.h
 tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../include/bitstream.h
 tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../include/zfp.h
 tests/CMakeFiles/testzfp.dir/testzfp.cpp.o: ../include/zfp/system.h

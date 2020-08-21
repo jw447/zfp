@@ -42,17 +42,18 @@ unset(_expectedTargets)
 
 
 # Create imported target zfp::zfp
-add_library(zfp::zfp SHARED IMPORTED)
+add_library(zfp::zfp STATIC IMPORTED)
 
 set_target_properties(zfp::zfp PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include;/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/array"
+  INTERFACE_LINK_LIBRARIES "/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/libgomp.so;/usr/lib64/libpthread.so;\$<LINK_ONLY:m>;/sw/summit/cuda/10.1.168/lib64/libcudart.so;\$<LINK_ONLY:stdc++>"
 )
 
 # Import target "zfp::zfp" for configuration "Release"
 set_property(TARGET zfp::zfp APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(zfp::zfp PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64/libzfp.so.0.5.5"
-  IMPORTED_SONAME_RELEASE "libzfp.so.0"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "C"
+  IMPORTED_LOCATION_RELEASE "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64/libzfp.a"
   )
 
 # This file does not depend on other imported targets which have

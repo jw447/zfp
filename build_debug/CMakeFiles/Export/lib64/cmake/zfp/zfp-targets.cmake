@@ -51,11 +51,16 @@ if(_IMPORT_PREFIX STREQUAL "/")
 endif()
 
 # Create imported target zfp::zfp
-add_library(zfp::zfp SHARED IMPORTED)
+add_library(zfp::zfp STATIC IMPORTED)
 
 set_target_properties(zfp::zfp PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+  INTERFACE_LINK_LIBRARIES "/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/libgomp.so;/usr/lib64/libpthread.so;\$<LINK_ONLY:m>;/sw/summit/cuda/10.1.168/lib64/libcudart.so;\$<LINK_ONLY:stdc++>"
 )
+
+if(CMAKE_VERSION VERSION_LESS 2.8.12)
+  message(FATAL_ERROR "This file relies on consumers using CMake 2.8.12 or greater.")
+endif()
 
 # Load information for each installed configuration.
 get_filename_component(_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)

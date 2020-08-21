@@ -25,6 +25,7 @@ tests/CMakeFiles/testzfp.dir/testzfp.cpp.o
  ../array/zfpcodec.h
  ../array/zfpcodecd.h
  ../array/zfpcodecf.h
+ ../include/Huffman.h
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/system.h

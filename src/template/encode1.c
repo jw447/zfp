@@ -22,12 +22,9 @@ _t2(gather_partial, Scalar, 1)(Scalar* q, const Scalar* p, uint nx, int sx)
 }
 
 /* forward decorrelating 1D transform */
-static void
+void
 _t2(fwd_xform, Int, 1)(Int* p)
 {
-  //jwang
-  //FuncName;
-  /* transform along x */
   _t1(fwd_lift, Int)(p, 1);
 }
 

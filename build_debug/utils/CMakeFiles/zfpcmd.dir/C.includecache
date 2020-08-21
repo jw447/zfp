@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../include/Huffman.h
+
+../include/TightDataPointStorageD.h
+
 ../include/bitstream.h
 stddef.h
 -
@@ -37,6 +41,10 @@ time.h
 -
 string.h
 -
+Huffman.h
+../include/Huffman.h
+TightDataPointStorageD.h
+../include/TightDataPointStorageD.h
 
 ../include/zfp/macros.h
 

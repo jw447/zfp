@@ -1,7 +1,56 @@
 #include "zfp.h"
 
-/* compress 1d contiguous array */
-static void
+///* ----------  functions needed for  DCT ---------- */
+//#define BLOCK_SIZE 4
+//#define EBIAS ((1 << (EBITS - 1)) - 1) /* exponent bias */
+//
+///* return normalized floating-point exponent for x >= 0 */
+//int
+//_t1(exponent, Scalar)(Scalar x)
+//{
+//  if (x > 0) {
+//    int e;
+//    FREXP(x, &e);
+//    /* clamp exponent in case x is denormal */
+//    return MAX(e, 1 - EBIAS);
+//  }
+//  return -EBIAS;
+//}
+//
+///* compute maximum floating-point exponent in block of n values */
+//static int
+//_t1(exponent_block, Scalar)(const Scalar* p, uint n)
+//{
+//  Scalar max = 0;
+//  do {
+//    Scalar f = FABS(*p++);
+//    if (max < f)
+//      max = f;
+//  } while (--n);
+//  return _t1(exponent, Scalar)(max);
+//}
+//
+///* map floating-point number x to integer relative to exponent e */
+//static Scalar
+//_t1(quantize, Scalar)(Scalar x, int e)
+//{
+//  return LDEXP(x, (CHAR_BIT * (int)sizeof(Scalar) - 2) - e);
+//}
+//
+///* forward block-floating-point transform to signed integers */
+//static void
+//_t1(fwd_cast, Scalar)(Int* iblock, const Scalar* fblock, uint n, int emax)
+//{
+//  /* compute power-of-two scale factor s */
+//  Scalar s = _t1(quantize, Scalar)(1, emax);
+//
+//  /* compute p-bit int y = s*x where x is floating and |y| <= 2^(p-2) - 1 */
+//  do
+//    *iblock++ = (Int)(s * *fblock++);
+//  while (--n);
+//}  
+
+void 
 _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 {
   //jwang
@@ -10,45 +59,68 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   uint nx = field->nx;
   uint mx = nx & ~3u;
   uint x;
-  uint outputsize=0;
 
-  /* compress array one block of 4 values at a time */
-  //for (x = 0; x < mx; x += 4, data += 4)
-  //  _t2(zfp_encode_block, Scalar, 1)(stream, data);
-  //if (x < nx)
-  //  _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
+  for (x = 0; x < mx; x += 4, data += 4)
+    _t2(zfp_encode_block, Scalar, 1)(stream, data);
+  if (x < nx)
+    _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
+  //uint outputsize=0;
 
-  const Int* idata = (const Int*)data; // store the transformed coefficients.
-  /* jwang: until DCT */
-  for (x = 0; x < mx; x += 4, data += 4){
-    int emax = _t1(exponent_block, Scalar)(data, BLOCK_SIZE);
-    printf("emax=%d\n", emax);
-    int maxprec = precision(emax, stream->maxprec, stream->minexp, 1);
-    printf("maxprec=%d\n", maxprec);
-    uint e = maxprec ? emax + EBIAS : 0; 
-    
-    if (e) {
-      cache_align_(Int iblock[BLOCK_SIZE]);
-      /* encode common exponent; LSB indicates that exponent is nonzero */
-      /* perform forward block-floating-point transform */
-      _t1(fwd_cast, Scalar)(iblock, data, BLOCK_SIZE, emax); // get mantisa.
-      for(int i = 0; i <= BLOCK_SIZE; i++) printf("iblock=%d\n", iblocki[i]);
+  //Int* idata; // store the transformed coefficients.
+  //idata = (Int *)malloc(sizeof(Int) * nx);
+  //memset(idata, 0, sizeof(Int) * nx);
 
-      /* encode integer block */
-      //bits += _t2(encode_block, Int, DIMS)(zfp->stream, zfp->minbits - bits, zfp->maxbits - bits, maxprec, iblock);
-      //cache_align_(UInt ublock[BLOCK_SIZE]);
-      /* perform decorrelating transform */
-      //_t1(fwd_lift, Int)(ublock, 1);
-      
-    }
+  ///* jwang: until DCT */
+  //for (x = 0; x < mx; x += 4, data += 4, idata += 4){
+  //  //for(int i = 0; i < BLOCK_SIZE; i++) printf("fblock=%d\n", data[i]);
+  //  int emax = _t1(exponent_block, Scalar)(data, BLOCK_SIZE);
+  //  //printf("emax=%d\n", emax);
+  //  int maxprec = precision(emax, stream->maxprec, stream->minexp, 1);
+  //  //printf("maxprec=%d\n", maxprec);
+  //  uint e = maxprec ? emax + EBIAS : 0; 
+  //  //printf("e=%u\n", e);
+  //  
+  //  if (e) {
+  //    cache_align_(Int iblock[BLOCK_SIZE]);
+  //    /* perform forward block-floating-point transform */
+  //    _t1(fwd_cast, Scalar)(iblock, data, BLOCK_SIZE, emax); // get mantisa.
 
-  }
+  //    /* perform decorrelating transform */
+  //    _t2(fwd_xform, Int, 1)(iblock);
+  //    for(int i = 0; i < BLOCK_SIZE; i++){
+  //      idata[i] = iblock[i];
+  //    }
+  //    //for(int i = 0; i < BLOCK_SIZE; i++) printf("idata=%lld ", idata[i]);
+  //    //printf("\n");
+  //  }
 
+  //}
+  ////printf("mx = %d\n", mx);
+  //idata -= mx;
+  ////printf("%lld, %lld, %lld, %lld\n", idata[0], idata[1], idata[2], idata[3]);
 
+  ////printf("%d\n", sizeof(Int));
+  ///* huffman encoding */
+  //int stateNum = 1; 
+  //for (int i = 1; i < nx; i++){
+  //  int j = 0;
+  //  for (j = 0; j < i; j++){
+  //    if(idata[i] == idata[j])
+  //      break;
+  //  }
+  //  if (i == j) stateNum++;
+  //}
 
-  /* huffman encoding */
-
-
+  //printf("nx = %d, stateNum = %d\n", nx, stateNum);
+  //int stateNum = 65536;
+  //unsigned char* typeArray;
+  //*typeArray = (unsigned char *)malloc(nx/4);
+  //size_t typeArray_size = 0;
+  
+  //HuffmanTree* huffmanTree = createHuffmanTree(stateNum);
+  //encode_withTree(huffmanTree, idata, nx, &typeArray, &typeArray_size);
+  //SZ_ReleaseHuffman(huffmanTree);
+  //printf("typeArray_size=%u\n", typeArray_size);
 }
 
 /* compress 1d strided array */

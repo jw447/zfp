@@ -16634,435 +16634,619 @@ typedef unsigned long uintptr_t;
 typedef long intmax_t; 
 # 135
 typedef unsigned long uintmax_t; 
-# 136 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
-typedef 
-# 132
-enum { 
-# 133
-zfp_exec_serial, 
-# 134
-zfp_exec_omp, 
-# 135
-zfp_exec_cuda
-# 136
-} zfp_exec_policy; 
-# 142
-typedef 
-# 139
-struct { 
-# 140
-uint threads; 
-# 141
-uint chunk_size; 
-# 142
-} zfp_exec_params_omp; 
-# 147
-typedef 
-# 145
-union { 
-# 146
-zfp_exec_params_omp omp; 
-# 147
-} zfp_exec_params; 
-# 152
-typedef 
-# 149
-struct { 
-# 150
-zfp_exec_policy policy; 
-# 151
-zfp_exec_params params; 
-# 152
-} zfp_execution; 
-# 162
-typedef 
-# 155
-struct { 
-# 156
-uint minbits; 
-# 157
-uint maxbits; 
-# 158
-uint maxprec; 
-# 159
-int minexp; 
-# 160
-bitstream *stream; 
-# 161
-zfp_execution exec; 
-# 162
-} zfp_stream; 
-# 172
-typedef 
-# 165
-enum { 
-# 166
-zfp_mode_null, 
-# 167
-zfp_mode_expert, 
-# 168
-zfp_mode_fixed_rate, 
-# 169
-zfp_mode_fixed_precision, 
-# 170
-zfp_mode_fixed_accuracy, 
-# 171
-zfp_mode_reversible
-# 172
-} zfp_mode; 
-# 181
-typedef 
-# 175
-enum { 
-# 176
-zfp_type_none, 
-# 177
-zfp_type_int32, 
-# 178
-zfp_type_int64, 
-# 179
-zfp_type_float, 
-# 180
-zfp_type_double
-# 181
-} zfp_type; 
-# 189
-typedef 
-# 184
-struct { 
-# 185
-zfp_type type; 
-# 186
-uint nx, ny, nz, nw; 
-# 187
-int sx, sy, sz, sw; 
-# 188
-void *data; 
-# 189
-} zfp_field; 
-# 192
+# 14 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/Huffman.h"
 extern "C" {
-# 197
-extern const uint zfp_codec_version; 
-# 198
-extern const uint zfp_library_version; 
+# 26
+typedef 
+# 21
+struct node_t { 
+# 22
+node_t *left, *right; 
+# 23
+size_t freq; 
+# 24
+char t; 
+# 25
+unsigned c; 
+# 26
+} *node; 
+# 39
+typedef 
+# 28
+struct HuffmanTree { 
+# 29
+unsigned stateNum; 
+# 30
+unsigned allNodes; 
+# 31
+node_t *pool; 
+# 32
+node *qqq, *qq; 
+# 33
+int n_nodes; 
+# 34
+int qend; 
+# 35
+unsigned long **code; 
+# 36
+unsigned char *cout; 
+# 37
+int n_inode; 
+# 38
+int maxBitCount; 
+# 39
+} HuffmanTree; 
+# 41
+HuffmanTree *createHuffmanTree(int stateNum); 
+# 42
+HuffmanTree *createDefaultHuffmanTree(); 
+# 44
+node new_node(HuffmanTree * huffmanTree, size_t freq, unsigned c, node a, node b); 
+# 45
+node new_node2(HuffmanTree * huffmanTree, unsigned c, unsigned char t); 
+# 46
+void qinsert(HuffmanTree * huffmanTree, node n); 
+# 47
+node qremove(HuffmanTree * huffmanTree); 
+# 48
+void build_code(HuffmanTree * huffmanTree, node n, int len, unsigned long out1, unsigned long out2); 
+# 49
+void init(HuffmanTree * huffmanTree, int * s, size_t length); 
+# 50
+void init_static(HuffmanTree * huffmanTree, int * s, size_t length); 
+# 51
+void encode(HuffmanTree * huffmanTree, int * s, size_t length, unsigned char * out, size_t * outSize); 
+# 54
+void decode(unsigned char * s, size_t targetLength, node t, int * out); 
+# 55
+void decode_MSST19(unsigned char * s, size_t targetLength, node t, int * out, int maxBits); 
+# 57
+void pad_tree_uchar(HuffmanTree * huffmanTree, unsigned char * L, unsigned char * R, unsigned * C, unsigned char * t, unsigned i, node root); 
+# 58
+void pad_tree_ushort(HuffmanTree * huffmanTree, unsigned short * L, unsigned short * R, unsigned * C, unsigned char * t, unsigned i, node root); 
+# 59
+void pad_tree_uint(HuffmanTree * huffmanTree, unsigned * L, unsigned * R, unsigned * C, unsigned char * t, unsigned i, node root); 
+# 60
+unsigned convert_HuffTree_to_bytes_anyStates(HuffmanTree * huffmanTree, int nodeCount, unsigned char ** out); 
+# 61
+void unpad_tree_uchar(HuffmanTree * huffmanTree, unsigned char * L, unsigned char * R, unsigned * C, unsigned char * t, unsigned i, node root); 
+# 62
+void unpad_tree_ushort(HuffmanTree * huffmanTree, unsigned short * L, unsigned short * R, unsigned * C, unsigned char * t, unsigned i, node root); 
+# 63
+void unpad_tree_uint(HuffmanTree * huffmanTree, unsigned * L, unsigned * R, unsigned * C, unsigned char * t, unsigned i, node root); 
+# 64
+node reconstruct_HuffTree_from_bytes_anyStates(HuffmanTree * huffmanTree, unsigned char * bytes, int nodeCount); 
+# 66
+void encode_withTree(HuffmanTree * huffmanTree, int * s, size_t length, unsigned char ** out, size_t * outSize); 
+# 68
+int encode_withTree_MSST19(HuffmanTree * huffmanTree, int * s, size_t length, unsigned char ** out, size_t * outSize); 
+# 69
+void decode_withTree(HuffmanTree * huffmanTree, unsigned char * s, size_t targetLength, int * out); 
+# 70
+void decode_withTree_MSST19(HuffmanTree * huffmanTree, unsigned char * s, size_t targetLength, int * out, int maxBits); 
+# 71
+void SZ_ReleaseHuffman(HuffmanTree * huffmanTree); 
+# 74
+}
+# 14 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/TightDataPointStorageD.h"
+extern "C" {
+# 64
+typedef 
+# 17
+struct TightDataPointStorageD { 
+# 19
+size_t dataSeriesLength; 
+# 20
+int allSameData; 
+# 21
+double realPrecision; 
+# 22
+double medianValue; 
+# 23
+char reqLength; 
+# 24
+char radExpo; 
+# 26
+double minLogValue; 
+# 28
+int stateNum; 
+# 29
+int allNodes; 
+# 31
+size_t exactDataNum; 
+# 32
+double reservedValue; 
+# 34
+unsigned char *rtypeArray; 
+# 35
+size_t rtypeArray_size; 
+# 37
+unsigned char *typeArray; 
+# 38
+size_t typeArray_size; 
+# 40
+unsigned char *leadNumArray; 
+# 41
+size_t leadNumArray_size; 
+# 43
+unsigned char *exactMidBytes; 
+# 44
+size_t exactMidBytes_size; 
+# 46
+unsigned char *residualMidBits; 
+# 47
+size_t residualMidBits_size; 
+# 49
+unsigned intervals; 
+# 51
+unsigned char isLossless; 
+# 53
+size_t segment_size; 
+# 55
+unsigned char *pwrErrBoundBytes; 
+# 56
+int pwrErrBoundBytes_size; 
+# 58
+unsigned char *raBytes; 
+# 59
+size_t raBytes_size; 
+# 61
+unsigned char plus_bits; 
+# 62
+unsigned char max_bits; 
+# 64
+} TightDataPointStorageD; 
+# 66
+void new_TightDataPointStorageD_Empty(TightDataPointStorageD ** self); 
+# 67
+int new_TightDataPointStorageD_fromFlatBytes(TightDataPointStorageD ** self, unsigned char * flatBytes, size_t flatBytesLength); 
+# 69
+void new_TightDataPointStorageD(TightDataPointStorageD ** self, size_t dataSeriesLength, size_t exactDataNum, int * type, unsigned char * exactMidBytes, size_t exactMidBytes_size, unsigned char * leadNumIntArray, unsigned char * resiMidBits, size_t resiMidBits_size, unsigned char resiBitLength, double realPrecision, double medianValue, char reqLength, unsigned intervals, unsigned char * pwrErrBoundBytes, size_t pwrErrBoundBytes_size, unsigned char radExpo); 
+# 78
+void new_TightDataPointStorageD2(TightDataPointStorageD ** self, size_t dataSeriesLength, size_t exactDataNum, int * type, unsigned char * exactMidBytes, size_t exactMidBytes_size, unsigned char * leadNumIntArray, unsigned char * resiMidBits, size_t resiMidBits_size, unsigned char * resiBitLength, size_t resiBitLengthSize, double realPrecision, double medianValue, char reqLength, unsigned intervals, unsigned char * pwrErrBoundBytes, size_t pwrErrBoundBytes_size, unsigned char radExpo); 
+# 87
+void convertTDPStoBytes_double(TightDataPointStorageD * tdps, unsigned char * bytes, unsigned char * dsLengthBytes, unsigned char sameByte); 
+# 88
+void convertTDPStoBytes_double_reserve(TightDataPointStorageD * tdps, unsigned char * bytes, unsigned char * dsLengthBytes, unsigned char sameByte); 
+# 89
+void convertTDPStoFlatBytes_double(TightDataPointStorageD * tdps, unsigned char ** bytes, size_t * size); 
+# 90
+void convertTDPStoFlatBytes_double_args(TightDataPointStorageD * tdps, unsigned char * bytes, size_t * size); 
+# 92
+void free_TightDataPointStorageD(TightDataPointStorageD * tdps); 
+# 93
+void free_TightDataPointStorageD2(TightDataPointStorageD * tdps); 
+# 96
+}
+# 138 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+typedef 
+# 134
+enum { 
+# 135
+zfp_exec_serial, 
+# 136
+zfp_exec_omp, 
+# 137
+zfp_exec_cuda
+# 138
+} zfp_exec_policy; 
+# 144
+typedef 
+# 141
+struct { 
+# 142
+uint threads; 
+# 143
+uint chunk_size; 
+# 144
+} zfp_exec_params_omp; 
+# 149
+typedef 
+# 147
+union { 
+# 148
+zfp_exec_params_omp omp; 
+# 149
+} zfp_exec_params; 
+# 154
+typedef 
+# 151
+struct { 
+# 152
+zfp_exec_policy policy; 
+# 153
+zfp_exec_params params; 
+# 154
+} zfp_execution; 
+# 164
+typedef 
+# 157
+struct { 
+# 158
+uint minbits; 
+# 159
+uint maxbits; 
+# 160
+uint maxprec; 
+# 161
+int minexp; 
+# 162
+bitstream *stream; 
+# 163
+zfp_execution exec; 
+# 164
+} zfp_stream; 
+# 174
+typedef 
+# 167
+enum { 
+# 168
+zfp_mode_null, 
+# 169
+zfp_mode_expert, 
+# 170
+zfp_mode_fixed_rate, 
+# 171
+zfp_mode_fixed_precision, 
+# 172
+zfp_mode_fixed_accuracy, 
+# 173
+zfp_mode_reversible
+# 174
+} zfp_mode; 
+# 183
+typedef 
+# 177
+enum { 
+# 178
+zfp_type_none, 
+# 179
+zfp_type_int32, 
+# 180
+zfp_type_int64, 
+# 181
+zfp_type_float, 
+# 182
+zfp_type_double
+# 183
+} zfp_type; 
+# 191
+typedef 
+# 186
+struct { 
+# 187
+zfp_type type; 
+# 188
+uint nx, ny, nz, nw; 
+# 189
+int sx, sy, sz, sw; 
+# 190
+void *data; 
+# 191
+} zfp_field; 
+# 194
+extern "C" {
 # 199
+extern const uint zfp_codec_version; 
+# 200
+extern const uint zfp_library_version; 
+# 201
 extern const char *const zfp_version_string; 
-# 204
+# 206
 size_t zfp_type_size(zfp_type type); 
-# 212
+# 214
 zfp_stream *zfp_stream_open(bitstream * stream); 
-# 218
+# 220
 void zfp_stream_close(zfp_stream * stream); 
-# 226
+# 228
 bitstream *zfp_stream_bit_stream(const zfp_stream * stream); 
-# 232
+# 234
 zfp_mode zfp_stream_compression_mode(const zfp_stream * stream); 
-# 238
+# 240
 uint64 zfp_stream_mode(const zfp_stream * stream); 
-# 244
+# 246
 void zfp_stream_params(const zfp_stream * stream, uint * minbits, uint * maxbits, uint * maxprec, int * minexp); 
-# 254
+# 256
 size_t zfp_stream_compressed_size(const zfp_stream * stream); 
-# 260
+# 262
 size_t zfp_stream_maximum_size(const zfp_stream * stream, const zfp_field * field); 
-# 269
+# 271
 void zfp_stream_rewind(zfp_stream * stream); 
-# 275
+# 277
 void zfp_stream_set_bit_stream(zfp_stream * stream, bitstream * bs); 
-# 282
+# 284
 void zfp_stream_set_reversible(zfp_stream * stream); 
-# 288
+# 290
 double zfp_stream_set_rate(zfp_stream * stream, double rate, zfp_type type, uint dims, int wra); 
-# 298
+# 300
 uint zfp_stream_set_precision(zfp_stream * stream, uint precision); 
-# 305
+# 307
 double zfp_stream_set_accuracy(zfp_stream * stream, double tolerance); 
-# 312
+# 314
 zfp_mode zfp_stream_set_mode(zfp_stream * stream, uint64 mode); 
-# 319
+# 321
 int zfp_stream_set_params(zfp_stream * stream, uint minbits, uint maxbits, uint maxprec, int minexp); 
-# 331
+# 333
 zfp_exec_policy zfp_stream_execution(const zfp_stream * stream); 
-# 337
+# 339
 uint zfp_stream_omp_threads(const zfp_stream * stream); 
-# 343
+# 345
 uint zfp_stream_omp_chunk_size(const zfp_stream * stream); 
-# 349
+# 351
 int zfp_stream_set_execution(zfp_stream * stream, zfp_exec_policy policy); 
-# 356
+# 358
 int zfp_stream_set_omp_threads(zfp_stream * stream, uint threads); 
-# 363
+# 365
 int zfp_stream_set_omp_chunk_size(zfp_stream * stream, uint chunk_size); 
-# 372
+# 374
 zfp_field *zfp_field_alloc(); 
-# 376
+# 378
 zfp_field *zfp_field_1d(void * pointer, zfp_type type, uint nx); 
-# 384
+# 386
 zfp_field *zfp_field_2d(void * pointer, zfp_type type, uint nx, uint ny); 
-# 393
+# 395
 zfp_field *zfp_field_3d(void * pointer, zfp_type type, uint nx, uint ny, uint nz); 
-# 403
+# 405
 zfp_field *zfp_field_4d(void * pointer, zfp_type type, uint nx, uint ny, uint nz, uint nw); 
-# 414
+# 416
 void zfp_field_free(zfp_field * field); 
-# 422
+# 424
 void *zfp_field_pointer(const zfp_field * field); 
-# 428
+# 430
 zfp_type zfp_field_type(const zfp_field * field); 
-# 434
+# 436
 uint zfp_field_precision(const zfp_field * field); 
-# 440
+# 442
 uint zfp_field_dimensionality(const zfp_field * field); 
-# 446
+# 448
 size_t zfp_field_size(const zfp_field * field, uint * size); 
-# 453
+# 455
 int zfp_field_stride(const zfp_field * field, int * stride); 
-# 460
+# 462
 uint64 zfp_field_metadata(const zfp_field * field); 
-# 468
+# 470
 void zfp_field_set_pointer(zfp_field * field, void * pointer); 
-# 475
+# 477
 zfp_type zfp_field_set_type(zfp_field * field, zfp_type type); 
-# 482
+# 484
 void zfp_field_set_size_1d(zfp_field * field, uint nx); 
-# 489
+# 491
 void zfp_field_set_size_2d(zfp_field * field, uint nx, uint ny); 
-# 497
+# 499
 void zfp_field_set_size_3d(zfp_field * field, uint nx, uint ny, uint nz); 
-# 506
+# 508
 void zfp_field_set_size_4d(zfp_field * field, uint nx, uint ny, uint nz, uint nw); 
-# 516
+# 518
 void zfp_field_set_stride_1d(zfp_field * field, int sx); 
-# 523
+# 525
 void zfp_field_set_stride_2d(zfp_field * field, int sx, int sy); 
-# 531
+# 533
 void zfp_field_set_stride_3d(zfp_field * field, int sx, int sy, int sz); 
-# 540
+# 542
 void zfp_field_set_stride_4d(zfp_field * field, int sx, int sy, int sz, int sw); 
-# 550
+# 552
 int zfp_field_set_metadata(zfp_field * field, uint64 meta); 
-# 559
+# 561
 size_t zfp_compress(zfp_stream * stream, const zfp_field * field); 
-# 566
+# 568
 size_t zfp_decompress(zfp_stream * stream, zfp_field * field); 
-# 573
+# 575
 size_t zfp_write_header(zfp_stream * stream, const zfp_field * field, uint mask); 
-# 581
+# 583
 size_t zfp_read_header(zfp_stream * stream, zfp_field * field, uint mask); 
-# 591
+# 593
 size_t zfp_stream_flush(zfp_stream * stream); 
-# 597
+# 599
 size_t zfp_stream_align(zfp_stream * stream); 
-# 614 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 616 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 uint zfp_encode_block_int32_1(zfp_stream * stream, const int32 * block); 
-# 615
-uint zfp_encode_block_int64_1(zfp_stream * stream, const int64 * block); 
-# 616
-uint zfp_encode_block_float_1(zfp_stream * stream, const float * block); 
 # 617
+uint zfp_encode_block_int64_1(zfp_stream * stream, const int64 * block); 
+# 618
+uint zfp_encode_block_float_1(zfp_stream * stream, const float * block); 
+# 619
 uint zfp_encode_block_double_1(zfp_stream * stream, const double * block); 
-# 620
-uint zfp_encode_block_strided_int32_1(zfp_stream * stream, const int32 * p, int sx); 
-# 621
-uint zfp_encode_block_strided_int64_1(zfp_stream * stream, const int64 * p, int sx); 
 # 622
-uint zfp_encode_block_strided_float_1(zfp_stream * stream, const float * p, int sx); 
+uint zfp_encode_block_strided_int32_1(zfp_stream * stream, const int32 * p, int sx); 
 # 623
-uint zfp_encode_block_strided_double_1(zfp_stream * stream, const double * p, int sx); 
+uint zfp_encode_block_strided_int64_1(zfp_stream * stream, const int64 * p, int sx); 
 # 624
-uint zfp_encode_partial_block_strided_int32_1(zfp_stream * stream, const int32 * p, uint nx, int sx); 
+uint zfp_encode_block_strided_float_1(zfp_stream * stream, const float * p, int sx); 
 # 625
-uint zfp_encode_partial_block_strided_int64_1(zfp_stream * stream, const int64 * p, uint nx, int sx); 
+uint zfp_encode_block_strided_double_1(zfp_stream * stream, const double * p, int sx); 
 # 626
-uint zfp_encode_partial_block_strided_float_1(zfp_stream * stream, const float * p, uint nx, int sx); 
+uint zfp_encode_partial_block_strided_int32_1(zfp_stream * stream, const int32 * p, uint nx, int sx); 
 # 627
+uint zfp_encode_partial_block_strided_int64_1(zfp_stream * stream, const int64 * p, uint nx, int sx); 
+# 628
+uint zfp_encode_partial_block_strided_float_1(zfp_stream * stream, const float * p, uint nx, int sx); 
+# 629
 uint zfp_encode_partial_block_strided_double_1(zfp_stream * stream, const double * p, uint nx, int sx); 
-# 630
-uint zfp_encode_block_int32_2(zfp_stream * stream, const int32 * block); 
-# 631
-uint zfp_encode_block_int64_2(zfp_stream * stream, const int64 * block); 
 # 632
-uint zfp_encode_block_float_2(zfp_stream * stream, const float * block); 
+uint zfp_encode_block_int32_2(zfp_stream * stream, const int32 * block); 
 # 633
+uint zfp_encode_block_int64_2(zfp_stream * stream, const int64 * block); 
+# 634
+uint zfp_encode_block_float_2(zfp_stream * stream, const float * block); 
+# 635
 uint zfp_encode_block_double_2(zfp_stream * stream, const double * block); 
-# 636
-uint zfp_encode_partial_block_strided_int32_2(zfp_stream * stream, const int32 * p, uint nx, uint ny, int sx, int sy); 
-# 637
-uint zfp_encode_partial_block_strided_int64_2(zfp_stream * stream, const int64 * p, uint nx, uint ny, int sx, int sy); 
 # 638
-uint zfp_encode_partial_block_strided_float_2(zfp_stream * stream, const float * p, uint nx, uint ny, int sx, int sy); 
+uint zfp_encode_partial_block_strided_int32_2(zfp_stream * stream, const int32 * p, uint nx, uint ny, int sx, int sy); 
 # 639
-uint zfp_encode_partial_block_strided_double_2(zfp_stream * stream, const double * p, uint nx, uint ny, int sx, int sy); 
+uint zfp_encode_partial_block_strided_int64_2(zfp_stream * stream, const int64 * p, uint nx, uint ny, int sx, int sy); 
 # 640
-uint zfp_encode_block_strided_int32_2(zfp_stream * stream, const int32 * p, int sx, int sy); 
+uint zfp_encode_partial_block_strided_float_2(zfp_stream * stream, const float * p, uint nx, uint ny, int sx, int sy); 
 # 641
-uint zfp_encode_block_strided_int64_2(zfp_stream * stream, const int64 * p, int sx, int sy); 
+uint zfp_encode_partial_block_strided_double_2(zfp_stream * stream, const double * p, uint nx, uint ny, int sx, int sy); 
 # 642
-uint zfp_encode_block_strided_float_2(zfp_stream * stream, const float * p, int sx, int sy); 
+uint zfp_encode_block_strided_int32_2(zfp_stream * stream, const int32 * p, int sx, int sy); 
 # 643
+uint zfp_encode_block_strided_int64_2(zfp_stream * stream, const int64 * p, int sx, int sy); 
+# 644
+uint zfp_encode_block_strided_float_2(zfp_stream * stream, const float * p, int sx, int sy); 
+# 645
 uint zfp_encode_block_strided_double_2(zfp_stream * stream, const double * p, int sx, int sy); 
-# 646
-uint zfp_encode_block_int32_3(zfp_stream * stream, const int32 * block); 
-# 647
-uint zfp_encode_block_int64_3(zfp_stream * stream, const int64 * block); 
 # 648
-uint zfp_encode_block_float_3(zfp_stream * stream, const float * block); 
+uint zfp_encode_block_int32_3(zfp_stream * stream, const int32 * block); 
 # 649
+uint zfp_encode_block_int64_3(zfp_stream * stream, const int64 * block); 
+# 650
+uint zfp_encode_block_float_3(zfp_stream * stream, const float * block); 
+# 651
 uint zfp_encode_block_double_3(zfp_stream * stream, const double * block); 
-# 652
-uint zfp_encode_block_strided_int32_3(zfp_stream * stream, const int32 * p, int sx, int sy, int sz); 
-# 653
-uint zfp_encode_block_strided_int64_3(zfp_stream * stream, const int64 * p, int sx, int sy, int sz); 
 # 654
-uint zfp_encode_block_strided_float_3(zfp_stream * stream, const float * p, int sx, int sy, int sz); 
+uint zfp_encode_block_strided_int32_3(zfp_stream * stream, const int32 * p, int sx, int sy, int sz); 
 # 655
-uint zfp_encode_block_strided_double_3(zfp_stream * stream, const double * p, int sx, int sy, int sz); 
+uint zfp_encode_block_strided_int64_3(zfp_stream * stream, const int64 * p, int sx, int sy, int sz); 
 # 656
-uint zfp_encode_partial_block_strided_int32_3(zfp_stream * stream, const int32 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+uint zfp_encode_block_strided_float_3(zfp_stream * stream, const float * p, int sx, int sy, int sz); 
 # 657
-uint zfp_encode_partial_block_strided_int64_3(zfp_stream * stream, const int64 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+uint zfp_encode_block_strided_double_3(zfp_stream * stream, const double * p, int sx, int sy, int sz); 
 # 658
-uint zfp_encode_partial_block_strided_float_3(zfp_stream * stream, const float * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+uint zfp_encode_partial_block_strided_int32_3(zfp_stream * stream, const int32 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
 # 659
+uint zfp_encode_partial_block_strided_int64_3(zfp_stream * stream, const int64 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+# 660
+uint zfp_encode_partial_block_strided_float_3(zfp_stream * stream, const float * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+# 661
 uint zfp_encode_partial_block_strided_double_3(zfp_stream * stream, const double * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
-# 662
-uint zfp_encode_block_int32_4(zfp_stream * stream, const int32 * block); 
-# 663
-uint zfp_encode_block_int64_4(zfp_stream * stream, const int64 * block); 
 # 664
-uint zfp_encode_block_float_4(zfp_stream * stream, const float * block); 
+uint zfp_encode_block_int32_4(zfp_stream * stream, const int32 * block); 
 # 665
+uint zfp_encode_block_int64_4(zfp_stream * stream, const int64 * block); 
+# 666
+uint zfp_encode_block_float_4(zfp_stream * stream, const float * block); 
+# 667
 uint zfp_encode_block_double_4(zfp_stream * stream, const double * block); 
-# 668
-uint zfp_encode_block_strided_int32_4(zfp_stream * stream, const int32 * p, int sx, int sy, int sz, int sw); 
-# 669
-uint zfp_encode_block_strided_int64_4(zfp_stream * stream, const int64 * p, int sx, int sy, int sz, int sw); 
 # 670
-uint zfp_encode_block_strided_float_4(zfp_stream * stream, const float * p, int sx, int sy, int sz, int sw); 
+uint zfp_encode_block_strided_int32_4(zfp_stream * stream, const int32 * p, int sx, int sy, int sz, int sw); 
 # 671
-uint zfp_encode_block_strided_double_4(zfp_stream * stream, const double * p, int sx, int sy, int sz, int sw); 
+uint zfp_encode_block_strided_int64_4(zfp_stream * stream, const int64 * p, int sx, int sy, int sz, int sw); 
 # 672
-uint zfp_encode_partial_block_strided_int32_4(zfp_stream * stream, const int32 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+uint zfp_encode_block_strided_float_4(zfp_stream * stream, const float * p, int sx, int sy, int sz, int sw); 
 # 673
-uint zfp_encode_partial_block_strided_int64_4(zfp_stream * stream, const int64 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+uint zfp_encode_block_strided_double_4(zfp_stream * stream, const double * p, int sx, int sy, int sz, int sw); 
 # 674
-uint zfp_encode_partial_block_strided_float_4(zfp_stream * stream, const float * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+uint zfp_encode_partial_block_strided_int32_4(zfp_stream * stream, const int32 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
 # 675
+uint zfp_encode_partial_block_strided_int64_4(zfp_stream * stream, const int64 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+# 676
+uint zfp_encode_partial_block_strided_float_4(zfp_stream * stream, const float * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+# 677
 uint zfp_encode_partial_block_strided_double_4(zfp_stream * stream, const double * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
-# 686 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 688 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 uint zfp_decode_block_int32_1(zfp_stream * stream, int32 * block); 
-# 687
-uint zfp_decode_block_int64_1(zfp_stream * stream, int64 * block); 
-# 688
-uint zfp_decode_block_float_1(zfp_stream * stream, float * block); 
 # 689
+uint zfp_decode_block_int64_1(zfp_stream * stream, int64 * block); 
+# 690
+uint zfp_decode_block_float_1(zfp_stream * stream, float * block); 
+# 691
 uint zfp_decode_block_double_1(zfp_stream * stream, double * block); 
-# 692
-uint zfp_decode_block_strided_int32_1(zfp_stream * stream, int32 * p, int sx); 
-# 693
-uint zfp_decode_block_strided_int64_1(zfp_stream * stream, int64 * p, int sx); 
 # 694
-uint zfp_decode_block_strided_float_1(zfp_stream * stream, float * p, int sx); 
+uint zfp_decode_block_strided_int32_1(zfp_stream * stream, int32 * p, int sx); 
 # 695
-uint zfp_decode_block_strided_double_1(zfp_stream * stream, double * p, int sx); 
+uint zfp_decode_block_strided_int64_1(zfp_stream * stream, int64 * p, int sx); 
 # 696
-uint zfp_decode_partial_block_strided_int32_1(zfp_stream * stream, int32 * p, uint nx, int sx); 
+uint zfp_decode_block_strided_float_1(zfp_stream * stream, float * p, int sx); 
 # 697
-uint zfp_decode_partial_block_strided_int64_1(zfp_stream * stream, int64 * p, uint nx, int sx); 
+uint zfp_decode_block_strided_double_1(zfp_stream * stream, double * p, int sx); 
 # 698
-uint zfp_decode_partial_block_strided_float_1(zfp_stream * stream, float * p, uint nx, int sx); 
+uint zfp_decode_partial_block_strided_int32_1(zfp_stream * stream, int32 * p, uint nx, int sx); 
 # 699
+uint zfp_decode_partial_block_strided_int64_1(zfp_stream * stream, int64 * p, uint nx, int sx); 
+# 700
+uint zfp_decode_partial_block_strided_float_1(zfp_stream * stream, float * p, uint nx, int sx); 
+# 701
 uint zfp_decode_partial_block_strided_double_1(zfp_stream * stream, double * p, uint nx, int sx); 
-# 702
-uint zfp_decode_block_int32_2(zfp_stream * stream, int32 * block); 
-# 703
-uint zfp_decode_block_int64_2(zfp_stream * stream, int64 * block); 
 # 704
-uint zfp_decode_block_float_2(zfp_stream * stream, float * block); 
+uint zfp_decode_block_int32_2(zfp_stream * stream, int32 * block); 
 # 705
+uint zfp_decode_block_int64_2(zfp_stream * stream, int64 * block); 
+# 706
+uint zfp_decode_block_float_2(zfp_stream * stream, float * block); 
+# 707
 uint zfp_decode_block_double_2(zfp_stream * stream, double * block); 
-# 708
-uint zfp_decode_block_strided_int32_2(zfp_stream * stream, int32 * p, int sx, int sy); 
-# 709
-uint zfp_decode_block_strided_int64_2(zfp_stream * stream, int64 * p, int sx, int sy); 
 # 710
-uint zfp_decode_block_strided_float_2(zfp_stream * stream, float * p, int sx, int sy); 
+uint zfp_decode_block_strided_int32_2(zfp_stream * stream, int32 * p, int sx, int sy); 
 # 711
-uint zfp_decode_block_strided_double_2(zfp_stream * stream, double * p, int sx, int sy); 
+uint zfp_decode_block_strided_int64_2(zfp_stream * stream, int64 * p, int sx, int sy); 
 # 712
-uint zfp_decode_partial_block_strided_int32_2(zfp_stream * stream, int32 * p, uint nx, uint ny, int sx, int sy); 
+uint zfp_decode_block_strided_float_2(zfp_stream * stream, float * p, int sx, int sy); 
 # 713
-uint zfp_decode_partial_block_strided_int64_2(zfp_stream * stream, int64 * p, uint nx, uint ny, int sx, int sy); 
+uint zfp_decode_block_strided_double_2(zfp_stream * stream, double * p, int sx, int sy); 
 # 714
-uint zfp_decode_partial_block_strided_float_2(zfp_stream * stream, float * p, uint nx, uint ny, int sx, int sy); 
+uint zfp_decode_partial_block_strided_int32_2(zfp_stream * stream, int32 * p, uint nx, uint ny, int sx, int sy); 
 # 715
+uint zfp_decode_partial_block_strided_int64_2(zfp_stream * stream, int64 * p, uint nx, uint ny, int sx, int sy); 
+# 716
+uint zfp_decode_partial_block_strided_float_2(zfp_stream * stream, float * p, uint nx, uint ny, int sx, int sy); 
+# 717
 uint zfp_decode_partial_block_strided_double_2(zfp_stream * stream, double * p, uint nx, uint ny, int sx, int sy); 
-# 718
-uint zfp_decode_block_int32_3(zfp_stream * stream, int32 * block); 
-# 719
-uint zfp_decode_block_int64_3(zfp_stream * stream, int64 * block); 
 # 720
-uint zfp_decode_block_float_3(zfp_stream * stream, float * block); 
+uint zfp_decode_block_int32_3(zfp_stream * stream, int32 * block); 
 # 721
+uint zfp_decode_block_int64_3(zfp_stream * stream, int64 * block); 
+# 722
+uint zfp_decode_block_float_3(zfp_stream * stream, float * block); 
+# 723
 uint zfp_decode_block_double_3(zfp_stream * stream, double * block); 
-# 724
-uint zfp_decode_block_strided_int32_3(zfp_stream * stream, int32 * p, int sx, int sy, int sz); 
-# 725
-uint zfp_decode_block_strided_int64_3(zfp_stream * stream, int64 * p, int sx, int sy, int sz); 
 # 726
-uint zfp_decode_block_strided_float_3(zfp_stream * stream, float * p, int sx, int sy, int sz); 
+uint zfp_decode_block_strided_int32_3(zfp_stream * stream, int32 * p, int sx, int sy, int sz); 
 # 727
-uint zfp_decode_block_strided_double_3(zfp_stream * stream, double * p, int sx, int sy, int sz); 
+uint zfp_decode_block_strided_int64_3(zfp_stream * stream, int64 * p, int sx, int sy, int sz); 
 # 728
-uint zfp_decode_partial_block_strided_int32_3(zfp_stream * stream, int32 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+uint zfp_decode_block_strided_float_3(zfp_stream * stream, float * p, int sx, int sy, int sz); 
 # 729
-uint zfp_decode_partial_block_strided_int64_3(zfp_stream * stream, int64 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+uint zfp_decode_block_strided_double_3(zfp_stream * stream, double * p, int sx, int sy, int sz); 
 # 730
-uint zfp_decode_partial_block_strided_float_3(zfp_stream * stream, float * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+uint zfp_decode_partial_block_strided_int32_3(zfp_stream * stream, int32 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
 # 731
+uint zfp_decode_partial_block_strided_int64_3(zfp_stream * stream, int64 * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+# 732
+uint zfp_decode_partial_block_strided_float_3(zfp_stream * stream, float * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
+# 733
 uint zfp_decode_partial_block_strided_double_3(zfp_stream * stream, double * p, uint nx, uint ny, uint nz, int sx, int sy, int sz); 
-# 734
-uint zfp_decode_block_int32_4(zfp_stream * stream, int32 * block); 
-# 735
-uint zfp_decode_block_int64_4(zfp_stream * stream, int64 * block); 
 # 736
-uint zfp_decode_block_float_4(zfp_stream * stream, float * block); 
+uint zfp_decode_block_int32_4(zfp_stream * stream, int32 * block); 
 # 737
+uint zfp_decode_block_int64_4(zfp_stream * stream, int64 * block); 
+# 738
+uint zfp_decode_block_float_4(zfp_stream * stream, float * block); 
+# 739
 uint zfp_decode_block_double_4(zfp_stream * stream, double * block); 
-# 740
-uint zfp_decode_block_strided_int32_4(zfp_stream * stream, int32 * p, int sx, int sy, int sz, int sw); 
-# 741
-uint zfp_decode_block_strided_int64_4(zfp_stream * stream, int64 * p, int sx, int sy, int sz, int sw); 
 # 742
-uint zfp_decode_block_strided_float_4(zfp_stream * stream, float * p, int sx, int sy, int sz, int sw); 
+uint zfp_decode_block_strided_int32_4(zfp_stream * stream, int32 * p, int sx, int sy, int sz, int sw); 
 # 743
-uint zfp_decode_block_strided_double_4(zfp_stream * stream, double * p, int sx, int sy, int sz, int sw); 
+uint zfp_decode_block_strided_int64_4(zfp_stream * stream, int64 * p, int sx, int sy, int sz, int sw); 
 # 744
-uint zfp_decode_partial_block_strided_int32_4(zfp_stream * stream, int32 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+uint zfp_decode_block_strided_float_4(zfp_stream * stream, float * p, int sx, int sy, int sz, int sw); 
 # 745
-uint zfp_decode_partial_block_strided_int64_4(zfp_stream * stream, int64 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+uint zfp_decode_block_strided_double_4(zfp_stream * stream, double * p, int sx, int sy, int sz, int sw); 
 # 746
-uint zfp_decode_partial_block_strided_float_4(zfp_stream * stream, float * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+uint zfp_decode_partial_block_strided_int32_4(zfp_stream * stream, int32 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
 # 747
+uint zfp_decode_partial_block_strided_int64_4(zfp_stream * stream, int64 * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+# 748
+uint zfp_decode_partial_block_strided_float_4(zfp_stream * stream, float * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
+# 749
 uint zfp_decode_partial_block_strided_double_4(zfp_stream * stream, double * p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw); 
-# 752
-void zfp_promote_int8_to_int32(int32 * oblock, const int8 * iblock, uint dims); 
-# 753
-void zfp_promote_uint8_to_int32(int32 * oblock, const uint8 * iblock, uint dims); 
 # 754
-void zfp_promote_int16_to_int32(int32 * oblock, const int16 * iblock, uint dims); 
+void zfp_promote_int8_to_int32(int32 * oblock, const int8 * iblock, uint dims); 
 # 755
+void zfp_promote_uint8_to_int32(int32 * oblock, const uint8 * iblock, uint dims); 
+# 756
+void zfp_promote_int16_to_int32(int32 * oblock, const int16 * iblock, uint dims); 
+# 757
 void zfp_promote_uint16_to_int32(int32 * oblock, const uint16 * iblock, uint dims); 
-# 758
-void zfp_demote_int32_to_int8(int8 * oblock, const int32 * iblock, uint dims); 
-# 759
-void zfp_demote_int32_to_uint8(uint8 * oblock, const int32 * iblock, uint dims); 
 # 760
-void zfp_demote_int32_to_int16(int16 * oblock, const int32 * iblock, uint dims); 
+void zfp_demote_int32_to_int8(int8 * oblock, const int32 * iblock, uint dims); 
 # 761
+void zfp_demote_int32_to_uint8(uint8 * oblock, const int32 * iblock, uint dims); 
+# 762
+void zfp_demote_int32_to_int16(int16 * oblock, const int32 * iblock, uint dims); 
+# 763
 void zfp_demote_int32_to_uint16(uint16 * oblock, const int32 * iblock, uint dims); 
-# 764
+# 766
 }
 # 7 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.h"
 extern "C" {

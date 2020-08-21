@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_FLAGS = -O3 -DNDEBUG -fPIC   -fopenmp -std=gnu99
 
-C_DEFINES = -DZFP_WITH_CUDA -Dzfp_EXPORTS
+C_DEFINES = -DZFP_WITH_CUDA
 
 C_INCLUDES = -I/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include 
 

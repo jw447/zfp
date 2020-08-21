@@ -21,7 +21,7 @@ set(zfp_source
   encode3f.c encode3d.c encode3i.c encode3l.c
   decode3f.c decode3d.c decode3i.c decode3l.c
   encode4f.c encode4d.c encode4i.c encode4l.c
-  decode4f.c decode4d.c decode4i.c decode4l.c)
+  decode4f.c decode4d.c decode4i.c decode4l.c Huffman.c TightDataPointStorageD.c)
 
 add_library(zfp ${zfp_source}
                 ${zfp_cuda_backend_obj})

@@ -150,6 +150,8 @@ zfpcodecd.h
 
 ../array/zfpcodecf.h
 
+../include/Huffman.h
+
 ../include/bitstream.h
 stddef.h
 -
@@ -181,6 +183,8 @@ time.h
 -
 string.h
 -
+Huffman.h
+../include/Huffman.h
 
 ../include/zfp/system.h
 

@@ -57,6 +57,8 @@ include src/CMakeFiles/zfp.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/zfp.dir/flags.make
 
+src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: ../include/Huffman.h
+src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: ../include/TightDataPointStorageD.h
 src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: ../include/bitstream.h
 src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: ../include/zfp.h
 src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: ../include/zfp/system.h
@@ -716,6 +718,32 @@ src/CMakeFiles/zfp.dir/decode4l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode4l.c.s"
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode4l.c -o CMakeFiles/zfp.dir/decode4l.c.s
 
+src/CMakeFiles/zfp.dir/Huffman.c.o: src/CMakeFiles/zfp.dir/flags.make
+src/CMakeFiles/zfp.dir/Huffman.c.o: ../src/Huffman.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object src/CMakeFiles/zfp.dir/Huffman.c.o"
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/Huffman.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/Huffman.c
+
+src/CMakeFiles/zfp.dir/Huffman.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/Huffman.c.i"
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/Huffman.c > CMakeFiles/zfp.dir/Huffman.c.i
+
+src/CMakeFiles/zfp.dir/Huffman.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/Huffman.c.s"
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/Huffman.c -o CMakeFiles/zfp.dir/Huffman.c.s
+
+src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.o: src/CMakeFiles/zfp.dir/flags.make
+src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.o: ../src/TightDataPointStorageD.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.o"
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/TightDataPointStorageD.c.o   -c /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/TightDataPointStorageD.c
+
+src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/TightDataPointStorageD.c.i"
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/TightDataPointStorageD.c > CMakeFiles/zfp.dir/TightDataPointStorageD.c.i
+
+src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/TightDataPointStorageD.c.s"
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/TightDataPointStorageD.c -o CMakeFiles/zfp.dir/TightDataPointStorageD.c.s
+
 # Object files for target zfp
 zfp_OBJECTS = \
 "CMakeFiles/zfp.dir/zfp.c.o" \
@@ -751,64 +779,59 @@ zfp_OBJECTS = \
 "CMakeFiles/zfp.dir/decode4f.c.o" \
 "CMakeFiles/zfp.dir/decode4d.c.o" \
 "CMakeFiles/zfp.dir/decode4i.c.o" \
-"CMakeFiles/zfp.dir/decode4l.c.o"
+"CMakeFiles/zfp.dir/decode4l.c.o" \
+"CMakeFiles/zfp.dir/Huffman.c.o" \
+"CMakeFiles/zfp.dir/TightDataPointStorageD.c.o"
 
 # External object files for target zfp
 zfp_EXTERNAL_OBJECTS = \
 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o"
 
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/zfp.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/bitstream.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode1f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode1d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode1i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode1l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode1f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode1d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode1i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode1l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode2f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode2d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode2i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode2l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode2f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode2d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode2i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode2l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode3f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode3d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode3i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode3l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode3f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode3d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode3i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode3l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode4f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode4d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode4i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/encode4l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode4f.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode4d.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode4i.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode4l.c.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/build.make
-lib64/libzfp.so.0.5.5: /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/libgomp.so
-lib64/libzfp.so.0.5.5: /usr/lib64/libpthread.so
-lib64/libzfp.so.0.5.5: /sw/summit/cuda/10.1.168/lib64/libcudart.so
-lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking C shared library ../lib64/libzfp.so"
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/zfp.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/bitstream.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode1f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode1d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode1i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode1l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode1f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode1d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode1i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode1l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode2f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode2d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode2i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode2l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode2f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode2d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode2i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode2l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode3f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode3d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode3i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode3l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode3f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode3d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode3i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode3l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode4f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode4d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode4i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/encode4l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode4f.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode4d.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode4i.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/decode4l.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/Huffman.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/build.make
+lib64/libzfp.a: src/CMakeFiles/zfp.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Linking C static library ../lib64/libzfp.a"
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && $(CMAKE_COMMAND) -P CMakeFiles/zfp.dir/cmake_clean_target.cmake
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/zfp.dir/link.txt --verbose=$(VERBOSE)
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src && $(CMAKE_COMMAND) -E cmake_symlink_library ../lib64/libzfp.so.0.5.5 ../lib64/libzfp.so.0 ../lib64/libzfp.so
-
-lib64/libzfp.so.0: lib64/libzfp.so.0.5.5
-	@$(CMAKE_COMMAND) -E touch_nocreate lib64/libzfp.so.0
-
-lib64/libzfp.so: lib64/libzfp.so.0.5.5
-	@$(CMAKE_COMMAND) -E touch_nocreate lib64/libzfp.so
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/zfp.dir/build: lib64/libzfp.so
+src/CMakeFiles/zfp.dir/build: lib64/libzfp.a
 
 .PHONY : src/CMakeFiles/zfp.dir/build
 

@@ -124,17 +124,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/progress.marks
@@ -181,6 +170,60 @@ zfp: src/CMakeFiles/zfp.dir/rule
 zfp/fast:
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/build
 .PHONY : zfp/fast
+
+Huffman.o: Huffman.c.o
+
+.PHONY : Huffman.o
+
+# target to build an object file
+Huffman.c.o:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/Huffman.c.o
+.PHONY : Huffman.c.o
+
+Huffman.i: Huffman.c.i
+
+.PHONY : Huffman.i
+
+# target to preprocess a source file
+Huffman.c.i:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/Huffman.c.i
+.PHONY : Huffman.c.i
+
+Huffman.s: Huffman.c.s
+
+.PHONY : Huffman.s
+
+# target to generate assembly for a file
+Huffman.c.s:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/Huffman.c.s
+.PHONY : Huffman.c.s
+
+TightDataPointStorageD.o: TightDataPointStorageD.c.o
+
+.PHONY : TightDataPointStorageD.o
+
+# target to build an object file
+TightDataPointStorageD.c.o:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.o
+.PHONY : TightDataPointStorageD.c.o
+
+TightDataPointStorageD.i: TightDataPointStorageD.c.i
+
+.PHONY : TightDataPointStorageD.i
+
+# target to preprocess a source file
+TightDataPointStorageD.c.i:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.i
+.PHONY : TightDataPointStorageD.c.i
+
+TightDataPointStorageD.s: TightDataPointStorageD.c.s
+
+.PHONY : TightDataPointStorageD.s
+
+# target to generate assembly for a file
+TightDataPointStorageD.c.s:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/TightDataPointStorageD.c.s
+.PHONY : TightDataPointStorageD.c.s
 
 bitstream.o: bitstream.c.o
 
@@ -1112,8 +1155,13 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... zfp"
+	@echo "... Huffman.o"
+	@echo "... Huffman.i"
+	@echo "... Huffman.s"
+	@echo "... TightDataPointStorageD.o"
+	@echo "... TightDataPointStorageD.i"
+	@echo "... TightDataPointStorageD.s"
 	@echo "... bitstream.o"
 	@echo "... bitstream.i"
 	@echo "... bitstream.s"

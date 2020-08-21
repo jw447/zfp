@@ -17550,7 +17550,160 @@ typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
 # 10 "/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/include/stdint.h" 2 3 4
 # 74 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h" 2
-# 132 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+
+
+
+# 1 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/Huffman.h" 1
+# 14 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/Huffman.h"
+extern "C" {
+
+
+
+
+
+
+typedef struct node_t {
+ struct node_t *left, *right;
+ size_t freq;
+ char t;
+ unsigned int c;
+} *node;
+
+typedef struct HuffmanTree {
+ unsigned int stateNum;
+ unsigned int allNodes;
+ struct node_t* pool;
+ node *qqq, *qq;
+ int n_nodes;
+ int qend;
+ unsigned long **code;
+ unsigned char *cout;
+ int n_inode;
+ int maxBitCount;
+} HuffmanTree;
+
+HuffmanTree* createHuffmanTree(int stateNum);
+HuffmanTree* createDefaultHuffmanTree();
+
+node new_node(HuffmanTree *huffmanTree, size_t freq, unsigned int c, node a, node b);
+node new_node2(HuffmanTree *huffmanTree, unsigned int c, unsigned char t);
+void qinsert(HuffmanTree *huffmanTree, node n);
+node qremove(HuffmanTree *huffmanTree);
+void build_code(HuffmanTree *huffmanTree, node n, int len, unsigned long out1, unsigned long out2);
+void init(HuffmanTree *huffmanTree, int *s, size_t length);
+void init_static(HuffmanTree *huffmanTree, int *s, size_t length);
+void encode(HuffmanTree *huffmanTree, int *s, size_t length, unsigned char *out, size_t *outSize);
+
+
+void decode(unsigned char *s, size_t targetLength, node t, int *out);
+void decode_MSST19(unsigned char *s, size_t targetLength, node t, int *out, int maxBits);
+
+void pad_tree_uchar(HuffmanTree* huffmanTree, unsigned char* L, unsigned char* R, unsigned int* C, unsigned char* t, unsigned int i, node root);
+void pad_tree_ushort(HuffmanTree* huffmanTree, unsigned short* L, unsigned short* R, unsigned int* C, unsigned char* t, unsigned int i, node root);
+void pad_tree_uint(HuffmanTree* huffmanTree, unsigned int* L, unsigned int* R, unsigned int* C, unsigned char* t, unsigned int i, node root);
+unsigned int convert_HuffTree_to_bytes_anyStates(HuffmanTree* huffmanTree, int nodeCount, unsigned char** out);
+void unpad_tree_uchar(HuffmanTree* huffmanTree, unsigned char* L, unsigned char* R, unsigned int* C, unsigned char *t, unsigned int i, node root);
+void unpad_tree_ushort(HuffmanTree* huffmanTree, unsigned short* L, unsigned short* R, unsigned int* C, unsigned char* t, unsigned int i, node root);
+void unpad_tree_uint(HuffmanTree* huffmanTree, unsigned int* L, unsigned int* R, unsigned int* C, unsigned char* t, unsigned int i, node root);
+node reconstruct_HuffTree_from_bytes_anyStates(HuffmanTree *huffmanTree, unsigned char* bytes, int nodeCount);
+
+void encode_withTree(HuffmanTree* huffmanTree, int *s, size_t length, unsigned char **out, size_t *outSize);
+
+int encode_withTree_MSST19(HuffmanTree* huffmanTree, int *s, size_t length, unsigned char **out, size_t *outSize);
+void decode_withTree(HuffmanTree* huffmanTree, unsigned char *s, size_t targetLength, int *out);
+void decode_withTree_MSST19(HuffmanTree* huffmanTree, unsigned char *s, size_t targetLength, int *out, int maxBits);
+void SZ_ReleaseHuffman(HuffmanTree* huffmanTree);
+
+
+}
+# 78 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h" 2
+# 1 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/TightDataPointStorageD.h" 1
+# 14 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/TightDataPointStorageD.h"
+extern "C" {
+
+
+typedef struct TightDataPointStorageD
+{
+ size_t dataSeriesLength;
+ int allSameData;
+ double realPrecision;
+ double medianValue;
+ char reqLength;
+ char radExpo;
+
+ double minLogValue;
+
+ int stateNum;
+ int allNodes;
+
+ size_t exactDataNum;
+ double reservedValue;
+
+ unsigned char* rtypeArray;
+ size_t rtypeArray_size;
+
+ unsigned char* typeArray;
+ size_t typeArray_size;
+
+ unsigned char* leadNumArray;
+ size_t leadNumArray_size;
+
+ unsigned char* exactMidBytes;
+ size_t exactMidBytes_size;
+
+ unsigned char* residualMidBits;
+ size_t residualMidBits_size;
+
+ unsigned int intervals;
+
+ unsigned char isLossless;
+
+ size_t segment_size;
+
+ unsigned char* pwrErrBoundBytes;
+ int pwrErrBoundBytes_size;
+
+ unsigned char* raBytes;
+ size_t raBytes_size;
+
+ unsigned char plus_bits;
+ unsigned char max_bits;
+
+} TightDataPointStorageD;
+
+void new_TightDataPointStorageD_Empty(TightDataPointStorageD **self);
+int new_TightDataPointStorageD_fromFlatBytes(TightDataPointStorageD **self, unsigned char* flatBytes, size_t flatBytesLength);
+
+void new_TightDataPointStorageD(TightDataPointStorageD **self,
+  size_t dataSeriesLength, size_t exactDataNum,
+  int* type, unsigned char* exactMidBytes, size_t exactMidBytes_size,
+  unsigned char* leadNumIntArray,
+  unsigned char* resiMidBits, size_t resiMidBits_size,
+  unsigned char resiBitLength,
+  double realPrecision, double medianValue, char reqLength, unsigned int intervals,
+  unsigned char* pwrErrBoundBytes, size_t pwrErrBoundBytes_size, unsigned char radExpo);
+
+void new_TightDataPointStorageD2(TightDataPointStorageD **self,
+  size_t dataSeriesLength, size_t exactDataNum,
+  int* type, unsigned char* exactMidBytes, size_t exactMidBytes_size,
+  unsigned char* leadNumIntArray,
+  unsigned char* resiMidBits, size_t resiMidBits_size,
+  unsigned char* resiBitLength, size_t resiBitLengthSize,
+  double realPrecision, double medianValue, char reqLength, unsigned int intervals,
+  unsigned char* pwrErrBoundBytes, size_t pwrErrBoundBytes_size, unsigned char radExpo);
+
+void convertTDPStoBytes_double(TightDataPointStorageD* tdps, unsigned char* bytes, unsigned char* dsLengthBytes, unsigned char sameByte);
+void convertTDPStoBytes_double_reserve(TightDataPointStorageD* tdps, unsigned char* bytes, unsigned char* dsLengthBytes, unsigned char sameByte);
+void convertTDPStoFlatBytes_double(TightDataPointStorageD *tdps, unsigned char** bytes, size_t *size);
+void convertTDPStoFlatBytes_double_args(TightDataPointStorageD *tdps, unsigned char* bytes, size_t *size);
+
+void free_TightDataPointStorageD(TightDataPointStorageD *tdps);
+void free_TightDataPointStorageD2(TightDataPointStorageD *tdps);
+
+
+}
+# 79 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h" 2
+# 134 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 typedef enum {
   zfp_exec_serial = 0,
   zfp_exec_omp = 1,
@@ -18019,7 +18172,7 @@ size_t
 zfp_stream_align(
   zfp_stream* stream
 );
-# 614 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 616 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 uint zfp_encode_block_int32_1(zfp_stream* stream, const int32* block);
 uint zfp_encode_block_int64_1(zfp_stream* stream, const int64* block);
 uint zfp_encode_block_float_1(zfp_stream* stream, const float* block);
@@ -18082,7 +18235,7 @@ uint zfp_encode_partial_block_strided_int32_4(zfp_stream* stream, const int32* p
 uint zfp_encode_partial_block_strided_int64_4(zfp_stream* stream, const int64* p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw);
 uint zfp_encode_partial_block_strided_float_4(zfp_stream* stream, const float* p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw);
 uint zfp_encode_partial_block_strided_double_4(zfp_stream* stream, const double* p, uint nx, uint ny, uint nz, uint nw, int sx, int sy, int sz, int sw);
-# 686 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 688 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 uint zfp_decode_block_int32_1(zfp_stream* stream, int32* block);
 uint zfp_decode_block_int64_1(zfp_stream* stream, int64* block);
 uint zfp_decode_block_float_1(zfp_stream* stream, float* block);

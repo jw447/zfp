@@ -2,6 +2,8 @@
 #define TEMPLATE_H
 
 /* concatenation */
+#define _cat(x, y)    x ## y
+
 #define _cat2(x, y) x ## _ ## y
 
 #define _cat3(x, y, z) x ## _ ## y ## _ ## z

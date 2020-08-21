@@ -74,6 +74,8 @@
 #include <stdlib.h>     /* for exit() definition */
 #include <time.h>       /* for clock_gettime */
 #include <string.h>
+#include "Huffman.h"
+#include "TightDataPointStorageD.h"
 
 #define BILLION 1000000000L
 /* macros ------------------------------------------------------------------ */

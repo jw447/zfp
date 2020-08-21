@@ -49,37 +49,128 @@ is_reversible(const zfp_stream* zfp)
 
 /* template instantiation of integer and float compressor -------------------*/
 
+/* maximum number of bit planes to encode */
+//static uint
+//precision(int maxexp, uint maxprec, int minexp, int dims)
+//{
+//  return MIN(maxprec, (uint)MAX(0, maxexp - minexp + 2 * (dims + 1)));
+//}
+
+
 #define Scalar int32
+//#include "traitsi.h"
 #include "template/compress.c"
 #include "template/decompress.c"
 #include "template/ompcompress.c"
 #include "template/cudacompress.c"
 #include "template/cudadecompress.c"
 #undef Scalar
+//#undef Int
+//#undef UInt
+//#undef EBITS
+//#undef PBITS 
+//#undef NBMASK 
+//#undef TCMASK 
+//#undef FABS 
+//#undef FREXP 
+//#undef LDEXP
+
 
 #define Scalar int64
+//#include "traitsl.h"
 #include "template/compress.c"
 #include "template/decompress.c"
 #include "template/ompcompress.c"
 #include "template/cudacompress.c"
 #include "template/cudadecompress.c"
 #undef Scalar
+//#undef Int
+//#undef UInt
+//#undef EBITS
+//#undef PBITS 
+//#undef NBMASK 
+//#undef TCMASK 
+//#undef FABS 
+//#undef FREXP 
+//#undef LDEXP
 
 #define Scalar float
+//#include "traitsf.h"
 #include "template/compress.c"
 #include "template/decompress.c"
 #include "template/ompcompress.c"
 #include "template/cudacompress.c"
 #include "template/cudadecompress.c"
 #undef Scalar
+//#undef Int
+//#undef UInt
+//#undef EBITS
+//#undef PBITS 
+//#undef NBMASK 
+//#undef TCMASK 
+//#undef FABS 
+//#undef FREXP 
+//#undef LDEXP
 
 #define Scalar double
+//#include "traitsd.h"
 #include "template/compress.c"
 #include "template/decompress.c"
 #include "template/ompcompress.c"
 #include "template/cudacompress.c"
 #include "template/cudadecompress.c"
 #undef Scalar
+//#undef Int
+//#undef UInt
+//#undef EBITS
+//#undef PBITS 
+//#undef NBMASK 
+//#undef TCMASK 
+//#undef FABS 
+//#undef FREXP 
+//#undef LDEXP
+
+void _t2(fwd_xform, int32, 1)(int32* p)
+{
+  uint s = 1;
+  int32 x, y, z, w;
+  x = *p; p += s;
+  y = *p; p += s;
+  z = *p; p += s;
+  w = *p; p += s;
+
+  x += w; x >>= 1; w -= x;
+  z += y; z >>= 1; y -= z;
+  x += z; x >>= 1; z -= x;
+  w += y; w >>= 1; y -= w;
+  w += y >> 1; y -= w >> 1;
+
+  p -= s; *p = w;
+  p -= s; *p = z;
+  p -= s; *p = y;
+  p -= s; *p = x;
+}
+
+void _t2(fwd_xform, int64, 1)(int64* p)
+{
+  uint s = 1;
+  int64 x, y, z, w;
+  x = *p; p += s;
+  y = *p; p += s;
+  z = *p; p += s;
+  w = *p; p += s;
+
+  x += w; x >>= 1; w -= x;
+  z += y; z >>= 1; y -= z;
+  x += z; x >>= 1; z -= x;
+  w += y; w >>= 1; y -= w;
+  w += y >> 1; y -= w >> 1;
+
+  p -= s; *p = w;
+  p -= s; *p = z;
+  p -= s; *p = y;
+  p -= s; *p = x;
+}
 
 /* public functions: miscellaneous ----------------------------------------- */
 
@@ -1050,7 +1141,6 @@ size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
   stream_flush(zfp->stream);
 
   size_t outputsize = stream_size(zfp->stream);
-  printf("compressed size=%lu\n", outputsize);
   return outputsize;
 }
 

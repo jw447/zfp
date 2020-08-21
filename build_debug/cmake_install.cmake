@@ -75,7 +75,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/cmake_install.cmake")
   include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/utils/cmake_install.cmake")
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmake_install.cmake")
 
 endif()
 
