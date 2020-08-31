@@ -85,15 +85,15 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
     /* encode integer block */
     bits += _t2(encode_block, Int, DIMS)(zfp->stream, zfp->minbits - bits, zfp->maxbits - bits, maxprec, iblock);
   }
-  else {
-    /* write single zero-bit to indicate that all values are zero */
-    stream_write_bit(zfp->stream, 0);
-    if (zfp->minbits > bits) {
-      stream_pad(zfp->stream, zfp->minbits - bits);
-      bits = zfp->minbits;
-    }
-  }
-  //printf("blocksize=%d\n", bits);
+  //else {
+  //  /* write single zero-bit to indicate that all values are zero */
+  //  stream_write_bit(zfp->stream, 0);
+  //  if (zfp->minbits > bits) {
+  //    stream_pad(zfp->stream, zfp->minbits - bits);
+  //    bits = zfp->minbits;
+  //  }
+  //}
+  //printf("bits=%u\n", bits);
   return bits;
 }
 

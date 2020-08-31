@@ -82,9 +82,16 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   uint i, k, m, n, nn;
   uint64 x;
 
-  printf("intprec=%u ", intprec);
+  /* block-wise RLE encoding */
+  //int elem[size];
+  //int count[size];
+  //int index = rle(&data, size, elem, count);
+  //int outputsize_rle = sizeof(int)*(index)*2;
+  ////printf("indexnum=%d, rle_size=%d ", index, outputsize_rle);
+
+  //return outputsize_rle; // bytes
+
   /* huffman encoding approach */
-  /* step 1: extract bit planes into array type*/
   int bpNum = intprec - kmin;
   int type[bpNum];
   for (k = intprec; k > kmin; k--){
@@ -94,10 +101,6 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
       type[intprec - k] = (int)x;
   }
   
-  //fprintf(stderr, "bpvalue\n");
-  //for (i = 0; i < bpNum; i++) fprintf(stderr, "%d ", type[i]);
-  //fprintf(stderr, "\n");
-
   int stateNum = size; // at most 4 unique values for 1d. 0 - 3.
 
   TightDataPointStorageD* tdps;
@@ -113,13 +116,12 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   tdps->rtypeArray = NULL;
   tdps->rtypeArray_size = 0;
 
-  printf("malloc ");
   HuffmanTree* huffmanTree = createHuffmanTree(stateNum);
-  printf("createHuff ");
   encode_withTree(huffmanTree, type, bpNum, &tdps->typeArray, &tdps->typeArray_size);
-  printf("encodewithtree ");
-  //SZ_ReleaseHuffman(huffmanTree);
-  printf("release tree ");
+  SZ_ReleaseHuffman(huffmanTree);
+
+  //printf("typeArray_size=%u\n", tdps->typeArray_size);
+  return tdps->typeArray_size;
 
   ///* encode one bit plane at a time from MSB to LSB */
   //for (k = intprec, n = 0; bits && k-- > kmin;) {
@@ -142,8 +144,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   //      ;
   //}
   //*stream = s;
-  //printf("typeArray_size=%u\n", tdps->typeArray_size);
-  return tdps->typeArray_size;
+
 }
 
 /* compress sequence of size > 64 unsigned integers */
@@ -199,9 +200,9 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
    
   /* encode integer coefficients */
   if (BLOCK_SIZE <= 64){
-    printf("minbits=%d maxbits=%d maxprec=%d ", minbits, maxbits, maxprec);
+    //printf("minbits=%d maxbits=%d maxprec=%d ", minbits, maxbits, maxprec);
     bytes = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
-    printf("blocksize=%d ", bytes);
+    //printf("encodingsize(bits)=%d\n", bytes*8);
   }
   //else
   // bits = _t1(encode_many_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
@@ -211,5 +212,5 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
   //  bits = minbits;
   //}
 
-  return bytes;
+  return bytes*8; // bits
 }

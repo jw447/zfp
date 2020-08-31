@@ -17246,7 +17246,9 @@ void zfp_demote_int32_to_uint8(uint8 * oblock, const int32 * iblock, uint dims);
 void zfp_demote_int32_to_int16(int16 * oblock, const int32 * iblock, uint dims); 
 # 763
 void zfp_demote_int32_to_uint16(uint16 * oblock, const int32 * iblock, uint dims); 
-# 766
+# 765
+int rle(uint * s, size_t len, int * elem, int * count); 
+# 768
 }
 # 7 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.h"
 extern "C" {
