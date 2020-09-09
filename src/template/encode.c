@@ -198,7 +198,10 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
 
   /* encode integer coefficients */
   if (BLOCK_SIZE <= 64)
+  {
     bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE, cpu_timing);
+    printf("blocksize=%d\n", bits);
+  }
   else
     bits = _t1(encode_many_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
   /* write at least minbits bits by padding with zeros */
