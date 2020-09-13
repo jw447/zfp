@@ -102,7 +102,7 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
     cache_align_(Int iblock[BLOCK_SIZE]);
     /* encode common exponent; LSB indicates that exponent is nonzero */
     bits += EBITS;
-    printf("EBITS=%d, bits=%d\n", EBITS, bits);
+    //printf("EBITS=%d, bits=%d\n", EBITS, bits);
     stream_write_bits(zfp->stream, 2 * e + 1, bits);
     /* perform forward block-floating-point transform */
     
