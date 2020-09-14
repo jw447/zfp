@@ -102,12 +102,12 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   uint bits = maxbits;
   uint i, k, m, n, nn;
   uint64 x;
-  //uint64 xx;
+  uint64 xx;
 
   //printf("size=%u\n", size);
 
   /* encode one bit plane at a time from MSB to LSB */
-  //uint cbits;
+  uint cbits;
   //
   // Function for calculating variance 
   // Compute mean (average of elements) 
@@ -125,15 +125,15 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   //printf("mean=%lf, variance=%lf\n", mean, var);
   //printf("intprec=%u, kmin=%u\n", intprec, kmin);
   for (k = intprec, n = 0; bits && k-- > kmin;) {
-    //cbits = bits;
+    cbits = bits;
     /* step 1: extract bit plane #k to x */
     x = 0;
     for (i = 0; i < size; i++)
       x += (uint64)((data[i] >> k) & 1u) << i;
-    //xx = x;
+    xx = x;
 
     /* step 2: encode first n bits of bit plane */
-    //nn = n;
+    nn = n;
     m = MIN(n, bits);
     bits -= m;
     x = stream_write_bits(&s, x, m);
@@ -143,7 +143,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
 	;
     //printf("bpbp=%u\n", (cbits -bits));
-    //printf("bpvalue: %lu, first_n: %u, bits: %d\n", xx, nn, (cbits-bits));
+    printf("%u,%d\n", nn, (cbits-bits));
   }
   //printf("bp---\n");
   *stream = s;
