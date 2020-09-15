@@ -1,10 +1,52 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+..//include/zfp/types.h
+stdint.h
+-
+inttypes.h
+-
+
+..//src/encode2d.c
+inline/inline.h
+../src/inline/inline.h
+zfp.h
+../src/zfp.h
+zfp/macros.h
+../src/zfp/macros.h
+block2.h
+../src/block2.h
+traitsd.h
+../src/traitsd.h
+template/template.h
+../src/template/template.h
+template/codec.h
+../src/template/codec.h
+inline/bitstream.c
+../src/inline/bitstream.c
+template/codecf.c
+../src/template/codecf.c
+template/codec2.c
+../src/template/codec2.c
+template/encode.c
+../src/template/encode.c
+template/encodef.c
+../src/template/encodef.c
+template/encode2.c
+../src/template/encode2.c
+template/revcodecf.c
+../src/template/revcodecf.c
+template/revencode.c
+../src/template/revencode.c
+template/revencodef.c
+../src/template/revencodef.c
+template/revencode2.c
+../src/template/revencode2.c
 
 ../include/bitstream.h
 stddef.h
@@ -49,42 +91,6 @@ inttypes.h
 -
 
 ../src/block2.h
-
-../src/encode2d.c
-inline/inline.h
-../src/inline/inline.h
-zfp.h
-../src/zfp.h
-zfp/macros.h
-../src/zfp/macros.h
-block2.h
-../src/block2.h
-traitsd.h
-../src/traitsd.h
-template/template.h
-../src/template/template.h
-template/codec.h
-../src/template/codec.h
-inline/bitstream.c
-../src/inline/bitstream.c
-template/codecf.c
-../src/template/codecf.c
-template/codec2.c
-../src/template/codec2.c
-template/encode.c
-../src/template/encode.c
-template/encodef.c
-../src/template/encodef.c
-template/encode2.c
-../src/template/encode2.c
-template/revcodecf.c
-../src/template/revcodecf.c
-template/revencode.c
-../src/template/revencode.c
-template/revencodef.c
-../src/template/revencodef.c
-template/revencode2.c
-../src/template/revencode2.c
 
 ../src/inline/bitstream.c
 limits.h
@@ -178,27 +184,27 @@ time.h
 mach/mach_time.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/cudaExecBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/cudaExecBase.c
 math.h
 -
 zfpEndtoendBase.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testZfpCuda2dDouble.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testZfpCuda2dDouble.c
 src/encode2d.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/src/encode2d.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/src/encode2d.c
 constants/2dDouble.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/constants/2dDouble.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/constants/2dDouble.h
 cudaExecBase.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/cudaExecBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/cudaExecBase.c
 testcases/cuda.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testcases/cuda.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/cuda.c
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testcases/cuda.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/cuda.c
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testcases/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/utils/testMacros.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
 stdarg.h
 -
 stddef.h
@@ -216,19 +222,19 @@ math.h
 string.h
 -
 utils/genSmoothRandNums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/genSmoothRandNums.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/genSmoothRandNums.h
 utils/stridedOperations.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/stridedOperations.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/stridedOperations.h
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/testMacros.h
 utils/zfpChecksums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpChecksums.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpChecksums.h
 utils/zfpCompressionParams.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpCompressionParams.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpCompressionParams.h
 utils/zfpHash.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpHash.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpHash.h
 utils/zfpTimer.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpTimer.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpTimer.h
 
 cmocka-src/include/cmocka.h
 

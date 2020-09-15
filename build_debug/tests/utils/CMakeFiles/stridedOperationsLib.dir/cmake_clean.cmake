@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib64/libstridedOperationsLib.pdb"
-  "../../lib64/libstridedOperationsLib.so"
   "CMakeFiles/stridedOperationsLib.dir/stridedOperations.c.o"
+  "../../lib/libstridedOperationsLib.pdb"
+  "../../lib/libstridedOperationsLib.so"
 )
 
 # Per-language clean rules from dependency scanning.

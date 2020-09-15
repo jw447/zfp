@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpTimer.c
+/home/ubuntu/local_build/zfp/tests/utils/zfpTimer.c
 zfpTimer.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpTimer.h
+/home/ubuntu/local_build/zfp/tests/utils/zfpTimer.h
 stdlib.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpTimer.h
+/home/ubuntu/local_build/zfp/tests/utils/zfpTimer.h
 time.h
 -
 mach/mach_time.h

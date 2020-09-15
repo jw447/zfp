@@ -4,23 +4,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o"
+  "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c" "/home/ubuntu/local_build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o"
+  "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c" "/home/ubuntu/local_build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "example/chef_wrap"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap"
+  "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap"
   "."
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include"
+  "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example"
+  "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/src/CMakeFiles/cmocka_shared.dir/DependInfo.cmake"
+  "/home/ubuntu/local_build/zfp/build_debug/cmocka-build/src/CMakeFiles/cmocka_shared.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

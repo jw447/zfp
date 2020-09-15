@@ -1,1 +1,1 @@
-/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.o  -o ../../bin/testArray3fViews -Wl,-rpath,/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64 ../../lib64/libgtest_main.so ../../lib64/libzfp.so.0.5.5 ../../lib64/libgtest.so -pthread 
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.o  -o ../../bin/testArray3fViews -rdynamic ../../lib/libgtest_main.so ../../lib/libzfp.so.0.5.5 ../../lib/libgtest.so -pthread -Wl,-rpath,/home/ubuntu/local_build/zfp/build_debug/lib 

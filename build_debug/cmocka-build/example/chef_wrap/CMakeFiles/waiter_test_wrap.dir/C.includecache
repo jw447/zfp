@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c
 stdarg.h
 -
 stddef.h
@@ -24,11 +24,11 @@ stdbool.h
 string.h
 -
 chef.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c
 errno.h
 -
 stdbool.h
@@ -48,11 +48,11 @@ setjmp.h
 cmocka.h
 -
 waiter_test_wrap.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.h
 chef.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 

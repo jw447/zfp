@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka_private.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka_private.h
 config.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/config.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/config.h
 stdint.h
 -
 windows.h
@@ -18,9 +18,9 @@ windows.h
 stdio.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/src/cmocka.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/src/cmocka.c
 config.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/src/config.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/src/config.h
 malloc.h
 -
 inttypes.h
@@ -46,7 +46,7 @@ string.h
 time.h
 -
 cmocka_platform.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/src/cmocka_platform.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/src/cmocka_platform.h
 cmocka.h
 -
 cmocka_private.h

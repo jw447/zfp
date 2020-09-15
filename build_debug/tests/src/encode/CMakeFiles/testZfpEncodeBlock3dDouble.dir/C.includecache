@@ -1,10 +1,52 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+..//include/zfp/types.h
+stdint.h
+-
+inttypes.h
+-
+
+..//src/encode3d.c
+inline/inline.h
+../src/inline/inline.h
+zfp.h
+../src/zfp.h
+zfp/macros.h
+../src/zfp/macros.h
+block3.h
+../src/block3.h
+traitsd.h
+../src/traitsd.h
+template/template.h
+../src/template/template.h
+template/codec.h
+../src/template/codec.h
+inline/bitstream.c
+../src/inline/bitstream.c
+template/codecf.c
+../src/template/codecf.c
+template/codec3.c
+../src/template/codec3.c
+template/encode.c
+../src/template/encode.c
+template/encodef.c
+../src/template/encodef.c
+template/encode3.c
+../src/template/encode3.c
+template/revcodecf.c
+../src/template/revcodecf.c
+template/revencode.c
+../src/template/revencode.c
+template/revencodef.c
+../src/template/revencodef.c
+template/revencode3.c
+../src/template/revencode3.c
 
 ../include/bitstream.h
 stddef.h
@@ -49,42 +91,6 @@ inttypes.h
 -
 
 ../src/block3.h
-
-../src/encode3d.c
-inline/inline.h
-../src/inline/inline.h
-zfp.h
-../src/zfp.h
-zfp/macros.h
-../src/zfp/macros.h
-block3.h
-../src/block3.h
-traitsd.h
-../src/traitsd.h
-template/template.h
-../src/template/template.h
-template/codec.h
-../src/template/codec.h
-inline/bitstream.c
-../src/inline/bitstream.c
-template/codecf.c
-../src/template/codecf.c
-template/codec3.c
-../src/template/codec3.c
-template/encode.c
-../src/template/encode.c
-template/encodef.c
-../src/template/encodef.c
-template/encode3.c
-../src/template/encode3.c
-template/revcodecf.c
-../src/template/revcodecf.c
-template/revencode.c
-../src/template/revencode.c
-template/revencodef.c
-../src/template/revencodef.c
-template/revencode3.c
-../src/template/revencode3.c
 
 ../src/inline/bitstream.c
 limits.h
@@ -162,23 +168,23 @@ stddef.h
 include/zfp/types.h
 ../tests/utils/include/zfp/types.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/testZfpEncodeBlock3dDouble.c
+/home/ubuntu/local_build/zfp/tests/src/encode/testZfpEncodeBlock3dDouble.c
 src/encode3d.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/src/encode3d.c
+/home/ubuntu/local_build/zfp/tests/src/encode/src/encode3d.c
 constants/3dDouble.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/constants/3dDouble.h
+/home/ubuntu/local_build/zfp/tests/src/encode/constants/3dDouble.h
 utils/rand64.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/utils/rand64.h
+/home/ubuntu/local_build/zfp/tests/src/encode/utils/rand64.h
 zfpEncodeBlockBase.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/zfpEncodeBlockBase.c
+/home/ubuntu/local_build/zfp/tests/src/encode/zfpEncodeBlockBase.c
 testcases/block.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/testcases/block.c
+/home/ubuntu/local_build/zfp/tests/src/encode/testcases/block.c
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/testcases/block.c
+/home/ubuntu/local_build/zfp/tests/src/encode/testcases/block.c
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/testcases/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/encode/testcases/utils/testMacros.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/zfpEncodeBlockBase.c
+/home/ubuntu/local_build/zfp/tests/src/encode/zfpEncodeBlockBase.c
 stdarg.h
 -
 stddef.h
@@ -190,11 +196,11 @@ cmocka.h
 stdlib.h
 -
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/encode/utils/testMacros.h
 utils/zfpChecksums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/utils/zfpChecksums.h
+/home/ubuntu/local_build/zfp/tests/src/encode/utils/zfpChecksums.h
 utils/zfpHash.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/encode/utils/zfpHash.h
+/home/ubuntu/local_build/zfp/tests/src/encode/utils/zfpHash.h
 
 cmocka-src/include/cmocka.h
 

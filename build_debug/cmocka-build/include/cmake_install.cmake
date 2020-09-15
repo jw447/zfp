@@ -1,4 +1,4 @@
-# Install script for directory: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include
+# Install script for directory: /home/ubuntu/local_build/zfp/build_debug/cmocka-src/include
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,15 +29,10 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xheadersx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "headers")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/usr/local/include/cmocka.h;/usr/local/include/cmocka_pbc.h")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -47,8 +42,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xheadersx" OR NOT CMAKE_INSTALL_COMP
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/usr/local/include" TYPE FILE FILES
-    "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h"
-    "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka_pbc.h"
+    "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h"
+    "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka_pbc.h"
     )
 endif()
 

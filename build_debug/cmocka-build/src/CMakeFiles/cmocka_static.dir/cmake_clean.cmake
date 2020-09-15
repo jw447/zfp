@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cmocka_static.dir/cmocka.c.o"
-  "libcmocka.a"
   "libcmocka.pdb"
+  "libcmocka.a"
 )
 
 # Per-language clean rules from dependency scanning.

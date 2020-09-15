@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib64/libzfpCompressionParamsLib.pdb"
-  "../../lib64/libzfpCompressionParamsLib.so"
   "CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.o"
+  "../../lib/libzfpCompressionParamsLib.pdb"
+  "../../lib/libzfpCompressionParamsLib.so"
 )
 
 # Per-language clean rules from dependency scanning.

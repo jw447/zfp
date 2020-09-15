@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../bin/testArray2dPtrs"
-  "../../bin/testArray2dPtrs.pdb"
   "CMakeFiles/testArray2dPtrs.dir/testArray2dPtrs.cpp.o"
+  "../../bin/testArray2dPtrs.pdb"
+  "../../bin/testArray2dPtrs"
 )
 
 # Per-language clean rules from dependency scanning.

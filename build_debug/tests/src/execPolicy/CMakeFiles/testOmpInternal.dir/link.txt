@@ -1,1 +1,1 @@
-/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/testOmpInternal.dir/testOmpInternal.c.o  -o ../../../bin/testOmpInternal -Wl,-rpath,/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64 ../../../cmocka-build/src/libcmocka.a ../../../lib64/libzfp.so.0.5.5 -fopenmp -lgomp -lpthread 
+/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/testOmpInternal.dir/testOmpInternal.c.o  -o ../../../bin/testOmpInternal -rdynamic ../../../cmocka-build/src/libcmocka.a ../../../lib/libzfp.so.0.5.5 -fopenmp -fopenmp -Wl,-rpath,/home/ubuntu/local_build/zfp/build_debug/lib 

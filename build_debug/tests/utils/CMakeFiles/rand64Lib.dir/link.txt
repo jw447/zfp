@@ -1,1 +1,1 @@
-/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,librand64Lib.so -o ../../lib64/librand64Lib.so CMakeFiles/rand64Lib.dir/rand64.c.o -lm 
+/usr/bin/cc  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,librand64Lib.so -o ../../lib/librand64Lib.so CMakeFiles/rand64Lib.dir/rand64.c.o -lm 

@@ -1,1 +1,1 @@
-/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libzfpHashLib.so -o ../../lib64/libzfpHashLib.so CMakeFiles/zfpHashLib.dir/zfpHash.c.o 
+/usr/bin/cc  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libzfpHashLib.so -o ../../lib/libzfpHashLib.so CMakeFiles/zfpHashLib.dir/zfpHash.c.o 

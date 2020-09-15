@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/testZfpDecodeBlock4dDouble.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/src/decode/CMakeFiles/testZfpDecodeBlock4dDouble.dir/testZfpDecodeBlock4dDouble.c.o"
+  "/home/ubuntu/local_build/zfp/tests/src/decode/testZfpDecodeBlock4dDouble.c" "/home/ubuntu/local_build/zfp/build_debug/tests/src/decode/CMakeFiles/testZfpDecodeBlock4dDouble.dir/testZfpDecodeBlock4dDouble.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -19,10 +19,10 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/DependInfo.cmake"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/utils/CMakeFiles/rand64Lib.dir/DependInfo.cmake"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/utils/CMakeFiles/zfpHashLib.dir/DependInfo.cmake"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/utils/CMakeFiles/zfpChecksumsLib.dir/DependInfo.cmake"
+  "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/DependInfo.cmake"
+  "/home/ubuntu/local_build/zfp/build_debug/tests/utils/CMakeFiles/rand64Lib.dir/DependInfo.cmake"
+  "/home/ubuntu/local_build/zfp/build_debug/tests/utils/CMakeFiles/zfpHashLib.dir/DependInfo.cmake"
+  "/home/ubuntu/local_build/zfp/build_debug/tests/utils/CMakeFiles/zfpChecksumsLib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

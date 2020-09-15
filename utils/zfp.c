@@ -570,11 +570,14 @@ int main(int argc, char* argv[])
     printf("cuda_setup_device_stream_time=%f\n", (*cpu_timing).cuda_setup_device_stream_time);
     printf("cuda_buffermalloc_time=%f\n", (*cpu_timing).cuda_buffermalloc_time);
     printf("cuda_buffermcpy_time=%f\n", (*cpu_timing).cuda_buffermcpy_time);
+    */
     printf("cuda_Encode_time=%f\n", (*cpu_timing).cuda_Encode_time);
+    /*
     printf("cuda_setup1d_time=%f\n", (*cpu_timing).cuda_setup1d_time);
     printf("cuda_encode1d_time=%f\n", (*cpu_timing).cuda_encode1d_time); // kernel run time
+    */
     printf("cuda_Kernel_time=%f\n", (*cpu_timing).cuda_kernel_time); //kernel function
-    printf("_kernel_clock=%d\n", (*gpu_timing_h).kernel_clock);
+    /*printf("_kernel_clock=%d\n", (*gpu_timing_h).kernel_clock);
     printf("_pre_clock=%d\n", (*gpu_timing_h).pre_clock);
     printf("_encode_clock=%d\n", (*gpu_timing_h).encode_clock);
     printf("_ecost_clock=%d\n", (*gpu_timing_h).ecost_clock);

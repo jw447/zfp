@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../../bin/testOmp"
-  "../../../bin/testOmp.pdb"
   "CMakeFiles/testOmp.dir/testOmp.c.o"
+  "../../../bin/testOmp.pdb"
+  "../../../bin/testOmp"
 )
 
 # Per-language clean rules from dependency scanning.

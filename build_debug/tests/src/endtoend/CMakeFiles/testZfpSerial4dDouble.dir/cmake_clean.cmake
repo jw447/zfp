@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../../bin/testZfpSerial4dDouble"
-  "../../../bin/testZfpSerial4dDouble.pdb"
   "CMakeFiles/testZfpSerial4dDouble.dir/testZfpSerial4dDouble.c.o"
+  "../../../bin/testZfpSerial4dDouble.pdb"
+  "../../../bin/testZfpSerial4dDouble"
 )
 
 # Per-language clean rules from dependency scanning.

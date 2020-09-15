@@ -1,10 +1,32 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+..//array/zfparray2.h
+cstddef
+-
+iterator
+-
+cstring
+-
+zfparray.h
+../array/zfparray.h
+zfpcodec.h
+../array/zfpcodec.h
+zfp/cache.h
+../array/zfp/cache.h
+zfp/reference2.h
+../array/zfp/reference2.h
+zfp/pointer2.h
+../array/zfp/pointer2.h
+zfp/iterator2.h
+../array/zfp/iterator2.h
+zfp/view2.h
+../array/zfp/view2.h
 
 ../array/zfp/cache.h
 memory.h
@@ -55,28 +77,6 @@ zfp/header.h
 ../array/zfp/header.h
 zfp/headerHelpers.h
 ../array/zfp/headerHelpers.h
-
-../array/zfparray2.h
-cstddef
--
-iterator
--
-cstring
--
-zfparray.h
-../array/zfparray.h
-zfpcodec.h
-../array/zfpcodec.h
-zfp/cache.h
-../array/zfp/cache.h
-zfp/reference2.h
-../array/zfp/reference2.h
-zfp/pointer2.h
-../array/zfp/pointer2.h
-zfp/iterator2.h
-../array/zfp/iterator2.h
-zfp/view2.h
-../array/zfp/view2.h
 
 ../array/zfpcodec.h
 zfp.h
@@ -132,27 +132,27 @@ inttypes.h
 
 ../tests/constants/universalConsts.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArray2ItersBase.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArray2ItersBase.cpp
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArray2fIters.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArray2fIters.cpp
 array/zfparray2.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/array/zfparray2.h
+/home/ubuntu/local_build/zfp/tests/array/array/zfparray2.h
 utils/gtest2fTest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtest2fTest.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtest2fTest.h
 testArrayItersBase.cpp
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArrayItersBase.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArrayItersBase.cpp
 testArray2ItersBase.cpp
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArray2ItersBase.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArray2ItersBase.cpp
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArrayItersBase.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArrayItersBase.cpp
 gtest/gtest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/gtest/gtest.h
+/home/ubuntu/local_build/zfp/tests/array/gtest/gtest.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtest2fTest.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtest2fTest.h
 gtest/gtest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtest/gtest.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtest/gtest.h
 constants/universalConsts.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/constants/universalConsts.h
+/home/ubuntu/local_build/zfp/tests/array/utils/constants/universalConsts.h
 
 googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

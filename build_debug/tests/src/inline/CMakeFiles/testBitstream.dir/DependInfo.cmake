@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/inline/testBitstream.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.o"
+  "/home/ubuntu/local_build/zfp/tests/src/inline/testBitstream.c" "/home/ubuntu/local_build/zfp/build_debug/tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

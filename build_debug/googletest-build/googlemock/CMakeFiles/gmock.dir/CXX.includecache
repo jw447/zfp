@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/gmock-all.cc
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/gmock-all.cc
 gmock/gmock.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/gmock/gmock.h
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/gmock/gmock.h
 src/gmock-cardinalities.cc
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-cardinalities.cc
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-cardinalities.cc
 src/gmock-internal-utils.cc
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-internal-utils.cc
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-internal-utils.cc
 src/gmock-matchers.cc
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-matchers.cc
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-matchers.cc
 src/gmock-spec-builders.cc
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-spec-builders.cc
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/src/gmock-spec-builders.cc
 src/gmock.cc
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/src/gmock.cc
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/src/gmock.cc
 
 googletest-src/googlemock/include/gmock/gmock-actions.h
 errno.h

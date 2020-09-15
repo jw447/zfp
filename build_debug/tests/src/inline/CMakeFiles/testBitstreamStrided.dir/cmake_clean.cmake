@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../../bin/testBitstreamStrided"
-  "../../../bin/testBitstreamStrided.pdb"
   "CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.o"
+  "../../../bin/testBitstreamStrided.pdb"
+  "../../../bin/testBitstreamStrided"
 )
 
 # Per-language clean rules from dependency scanning.

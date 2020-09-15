@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/allocate_module.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c
 config.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/config.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/config.h
 malloc.h
 -
 sys/types.h
@@ -16,7 +16,7 @@ sys/types.h
 stdlib.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
 stdarg.h
 -
 stddef.h
@@ -26,7 +26,7 @@ setjmp.h
 cmocka.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 
 config.h
 

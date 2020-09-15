@@ -1,1 +1,1 @@
-/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.o  -o ../../../bin/testBitstreamStrided ../../../cmocka-build/src/libcmocka.a 
+/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.o  -o ../../../bin/testBitstreamStrided -rdynamic ../../../cmocka-build/src/libcmocka.a 

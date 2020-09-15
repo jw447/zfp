@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib64/libzfpTimerLib.pdb"
-  "../../lib64/libzfpTimerLib.so"
   "CMakeFiles/zfpTimerLib.dir/zfpTimer.c.o"
+  "../../lib/libzfpTimerLib.pdb"
+  "../../lib/libzfpTimerLib.so"
 )
 
 # Per-language clean rules from dependency scanning.

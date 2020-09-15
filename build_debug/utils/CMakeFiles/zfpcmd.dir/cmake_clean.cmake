@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../bin/zfp"
-  "../bin/zfp.pdb"
   "CMakeFiles/zfpcmd.dir/zfp.c.o"
+  "../bin/zfp.pdb"
+  "../bin/zfp"
 )
 
 # Per-language clean rules from dependency scanning.

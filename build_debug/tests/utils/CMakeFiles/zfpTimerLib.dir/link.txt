@@ -1,1 +1,1 @@
-/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libzfpTimerLib.so -o ../../lib64/libzfpTimerLib.so CMakeFiles/zfpTimerLib.dir/zfpTimer.c.o 
+/usr/bin/cc  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libzfpTimerLib.so -o ../../lib/libzfpTimerLib.so CMakeFiles/zfpTimerLib.dir/zfpTimer.c.o 

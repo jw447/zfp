@@ -1,1 +1,1 @@
-cmd='/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake;-DWITH_STATIC_LIB=ON;-DCMAKE_C_COMPILER=/usr/bin/cc;-DUNIT_TESTING=OFF;-GUnix Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'
+cmd='/usr/bin/cmake;-DWITH_STATIC_LIB=ON;-DCMAKE_C_COMPILER=/usr/bin/cc;-DUNIT_TESTING=OFF;-GUnix Makefiles;/home/ubuntu/local_build/zfp/build_debug/cmocka-src'

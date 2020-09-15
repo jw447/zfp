@@ -4,30 +4,37 @@
 
 
 # Configuration directories and files
-SourceDirectory: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp
-BuildDirectory: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug
+SourceDirectory: /home/ubuntu/local_build/zfp
+BuildDirectory: /home/ubuntu/local_build/zfp/build_debug
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: login1
+Site: ip-172-31-6-78
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
 
-# Subprojects
-LabelsForSubprojects: 
-
 # Submission information
-SubmitURL: https://open.cdash.org/submit.php?project=zfp
+IsCDash: TRUE
+CDashVersion: 
+QueryCDashVersion: 
+DropSite: open.cdash.org
+DropLocation: /submit.php?project=zfp
+DropSiteUser: 
+DropSitePassword: 
+DropSiteMode: 
+DropMethod: https
+TriggerSite: 
+ScpCommand: /usr/bin/scp
 
 # Dashboard start time
 NightlyStartTime: 01:00:00 UTC
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp"
-MakeCommand: /autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "/usr/bin/cmake" "/home/ubuntu/local_build/zfp"
+MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -35,17 +42,16 @@ UpdateVersionOnly:
 
 # CVS options
 # Default is "-d -P -A"
-CVSCommand: /usr/bin/cvs
+CVSCommand: CVSCOMMAND-NOTFOUND
 CVSUpdateOptions: -d -A -P
 
 # Subversion options
-SVNCommand: /usr/bin/svn
+SVNCommand: SVNCOMMAND-NOTFOUND
 SVNOptions: 
 SVNUpdateOptions: 
 
 # Git options
 GITCommand: /usr/bin/git
-GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
 
@@ -63,7 +69,7 @@ UpdateType: git
 
 # Compiler info
 Compiler: /usr/bin/c++
-CompilerVersion: 4.8.5
+CompilerVersion: 5.4.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
@@ -80,8 +86,8 @@ CoverageCommand: /usr/bin/gcov
 CoverageExtraFlags: -l
 
 # Cluster commands
-SlurmBatchCommand: /usr/bin/sbatch
-SlurmRunCommand: /usr/bin/srun
+SlurmBatchCommand: SLURM_SBATCH_COMMAND-NOTFOUND
+SlurmRunCommand: SLURM_SRUN_COMMAND-NOTFOUND
 
 # Testing options
 # TimeOut is the amount of time in seconds to wait for processes

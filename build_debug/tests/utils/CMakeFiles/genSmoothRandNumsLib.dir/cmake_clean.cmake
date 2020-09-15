@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib64/libgenSmoothRandNumsLib.pdb"
-  "../../lib64/libgenSmoothRandNumsLib.so"
   "CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.o"
+  "../../lib/libgenSmoothRandNumsLib.pdb"
+  "../../lib/libgenSmoothRandNumsLib.so"
 )
 
 # Per-language clean rules from dependency scanning.

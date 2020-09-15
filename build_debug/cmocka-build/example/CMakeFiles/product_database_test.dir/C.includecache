@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/database.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/database.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/product_database.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database.c
 database.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/product_database_test.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c
 stdarg.h
 -
 stddef.h
@@ -24,5 +24,5 @@ cmocka.h
 database.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -10,9 +10,9 @@
 stddef.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpCompressionParams.c
+/home/ubuntu/local_build/zfp/tests/utils/zfpCompressionParams.c
 math.h
 -
 utils/zfpCompressionParams.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/utils/zfpCompressionParams.h
+/home/ubuntu/local_build/zfp/tests/utils/utils/zfpCompressionParams.h
 

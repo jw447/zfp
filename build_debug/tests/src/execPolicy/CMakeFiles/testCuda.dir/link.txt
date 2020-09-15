@@ -1,1 +1,1 @@
-/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/testCuda.dir/testCuda.c.o  -o ../../../bin/testCuda -Wl,-rpath,/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64 ../../../cmocka-build/src/libcmocka.a ../../../lib64/libzfp.so.0.5.5 
+/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/testCuda.dir/testCuda.c.o  -o ../../../bin/testCuda -rdynamic ../../../cmocka-build/src/libcmocka.a ../../../lib/libzfp.so.0.5.5 -Wl,-rpath,/home/ubuntu/local_build/zfp/build_debug/lib 

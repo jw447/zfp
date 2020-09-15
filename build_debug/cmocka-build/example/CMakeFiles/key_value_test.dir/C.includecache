@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/key_value.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/key_value.c
 stddef.h
 -
 stdlib.h
@@ -14,11 +14,11 @@ stdlib.h
 string.h
 -
 key_value.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/key_value.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/key_value.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/key_value.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/key_value.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/key_value_test.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/key_value_test.c
 stdarg.h
 -
 stddef.h
@@ -30,7 +30,7 @@ string.h
 cmocka.h
 -
 key_value.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/key_value.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/key_value.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 

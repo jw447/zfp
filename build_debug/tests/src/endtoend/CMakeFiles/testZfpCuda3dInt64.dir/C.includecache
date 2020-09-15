@@ -1,10 +1,46 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+..//include/zfp/types.h
+stdint.h
+-
+inttypes.h
+-
+
+..//src/encode3l.c
+inline/inline.h
+../src/inline/inline.h
+zfp.h
+../src/zfp.h
+zfp/macros.h
+../src/zfp/macros.h
+block3.h
+../src/block3.h
+traitsl.h
+../src/traitsl.h
+template/template.h
+../src/template/template.h
+template/codec.h
+../src/template/codec.h
+inline/bitstream.c
+../src/inline/bitstream.c
+template/codec3.c
+../src/template/codec3.c
+template/encode.c
+../src/template/encode.c
+template/encodei.c
+../src/template/encodei.c
+template/encode3.c
+../src/template/encode3.c
+template/revencode.c
+../src/template/revencode.c
+template/revencode3.c
+../src/template/revencode3.c
 
 ../include/bitstream.h
 stddef.h
@@ -49,36 +85,6 @@ inttypes.h
 -
 
 ../src/block3.h
-
-../src/encode3l.c
-inline/inline.h
-../src/inline/inline.h
-zfp.h
-../src/zfp.h
-zfp/macros.h
-../src/zfp/macros.h
-block3.h
-../src/block3.h
-traitsl.h
-../src/traitsl.h
-template/template.h
-../src/template/template.h
-template/codec.h
-../src/template/codec.h
-inline/bitstream.c
-../src/inline/bitstream.c
-template/codec3.c
-../src/template/codec3.c
-template/encode.c
-../src/template/encode.c
-template/encodei.c
-../src/template/encodei.c
-template/encode3.c
-../src/template/encode3.c
-template/revencode.c
-../src/template/revencode.c
-template/revencode3.c
-../src/template/revencode3.c
 
 ../src/inline/bitstream.c
 limits.h
@@ -156,27 +162,27 @@ time.h
 mach/mach_time.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/cudaExecBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/cudaExecBase.c
 math.h
 -
 zfpEndtoendBase.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testZfpCuda3dInt64.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testZfpCuda3dInt64.c
 src/encode3l.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/src/encode3l.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/src/encode3l.c
 constants/3dInt64.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/constants/3dInt64.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/constants/3dInt64.h
 cudaExecBase.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/cudaExecBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/cudaExecBase.c
 testcases/cuda.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testcases/cuda.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/cuda.c
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testcases/cuda.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/cuda.c
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/testcases/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/utils/testMacros.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+/home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
 stdarg.h
 -
 stddef.h
@@ -194,19 +200,19 @@ math.h
 string.h
 -
 utils/genSmoothRandNums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/genSmoothRandNums.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/genSmoothRandNums.h
 utils/stridedOperations.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/stridedOperations.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/stridedOperations.h
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/testMacros.h
 utils/zfpChecksums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpChecksums.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpChecksums.h
 utils/zfpCompressionParams.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpCompressionParams.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpCompressionParams.h
 utils/zfpHash.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpHash.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpHash.h
 utils/zfpTimer.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/endtoend/utils/zfpTimer.h
+/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpTimer.h
 
 cmocka-src/include/cmocka.h
 

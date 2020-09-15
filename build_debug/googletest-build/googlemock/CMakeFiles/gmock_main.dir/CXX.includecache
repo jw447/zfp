@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/gmock_main.cc
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/gmock_main.cc
 iostream
 -
 gmock/gmock.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/gmock/gmock.h
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/gmock/gmock.h
 gtest/gtest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/googlemock/src/gtest/gtest.h
+/home/ubuntu/local_build/zfp/build_debug/googletest-src/googlemock/src/gtest/gtest.h
 tchar.h
 -
 

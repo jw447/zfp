@@ -1,1 +1,1 @@
-/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libzfpCompressionParamsLib.so -o ../../lib64/libzfpCompressionParamsLib.so CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.o -lm 
+/usr/bin/cc  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libzfpCompressionParamsLib.so -o ../../lib/libzfpCompressionParamsLib.so CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.o -lm 

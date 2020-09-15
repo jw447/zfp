@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../../bin/testZfpCuda2dInt64"
-  "../../../bin/testZfpCuda2dInt64.pdb"
   "CMakeFiles/testZfpCuda2dInt64.dir/testZfpCuda2dInt64.c.o"
+  "../../../bin/testZfpCuda2dInt64.pdb"
+  "../../../bin/testZfpCuda2dInt64"
 )
 
 # Per-language clean rules from dependency scanning.

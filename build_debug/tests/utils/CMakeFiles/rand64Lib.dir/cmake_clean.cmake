@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib64/librand64Lib.pdb"
-  "../../lib64/librand64Lib.so"
   "CMakeFiles/rand64Lib.dir/rand64.c.o"
+  "../../lib/librand64Lib.pdb"
+  "../../lib/librand64Lib.so"
 )
 
 # Per-language clean rules from dependency scanning.

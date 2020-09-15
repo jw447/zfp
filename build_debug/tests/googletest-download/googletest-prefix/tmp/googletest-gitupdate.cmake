@@ -1,7 +1,10 @@
+if("4fe76c4d6e667ba588a3868d052a2aa4b423afa3" STREQUAL "")
+  message(FATAL_ERROR "Tag for git checkout should not be empty.")
+endif()
 
 execute_process(
   COMMAND "/usr/bin/git" rev-list --max-count=1 HEAD
-  WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+  WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
   RESULT_VARIABLE error_code
   OUTPUT_VARIABLE head_sha
   OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -12,7 +15,7 @@ endif()
 
 execute_process(
   COMMAND "/usr/bin/git" show-ref 4fe76c4d6e667ba588a3868d052a2aa4b423afa3
-  WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+  WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
   OUTPUT_VARIABLE show_ref_output
   )
 # If a remote ref is asked for, which can possibly move around,
@@ -38,7 +41,7 @@ endif()
 # yet).
 execute_process(
   COMMAND "/usr/bin/git" rev-list --max-count=1 4fe76c4d6e667ba588a3868d052a2aa4b423afa3
-  WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+  WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
   RESULT_VARIABLE error_code
   OUTPUT_VARIABLE tag_sha
   OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -48,7 +51,7 @@ execute_process(
 if(error_code OR is_remote_ref OR NOT ("${tag_sha}" STREQUAL "${head_sha}"))
   execute_process(
     COMMAND "/usr/bin/git" fetch
-    WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+    WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
     RESULT_VARIABLE error_code
     )
   if(error_code)
@@ -59,7 +62,7 @@ if(error_code OR is_remote_ref OR NOT ("${tag_sha}" STREQUAL "${head_sha}"))
     # Check if stash is needed
     execute_process(
       COMMAND "/usr/bin/git" status --porcelain
-      WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+      WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
       RESULT_VARIABLE error_code
       OUTPUT_VARIABLE repo_status
       )
@@ -72,8 +75,8 @@ if(error_code OR is_remote_ref OR NOT ("${tag_sha}" STREQUAL "${head_sha}"))
     # perform git pull --rebase
     if(need_stash)
       execute_process(
-        COMMAND "/usr/bin/git" stash save --all;--quiet
-        WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+        COMMAND "/usr/bin/git" stash save --quiet
+        WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
         RESULT_VARIABLE error_code
         )
       if(error_code)
@@ -84,60 +87,60 @@ if(error_code OR is_remote_ref OR NOT ("${tag_sha}" STREQUAL "${head_sha}"))
     # Pull changes from the remote branch
     execute_process(
       COMMAND "/usr/bin/git" rebase ${git_remote}/${git_tag}
-      WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+      WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
       RESULT_VARIABLE error_code
       )
     if(error_code)
       # Rebase failed: Restore previous state.
       execute_process(
         COMMAND "/usr/bin/git" rebase --abort
-        WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+        WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
       )
       if(need_stash)
         execute_process(
           COMMAND "/usr/bin/git" stash pop --index --quiet
-          WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+          WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
           )
       endif()
-      message(FATAL_ERROR "\nFailed to rebase in: '/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/'.\nYou will have to resolve the conflicts manually")
+      message(FATAL_ERROR "\nFailed to rebase in: '/home/ubuntu/local_build/zfp/build_debug/googletest-src/'.\nYou will have to resolve the conflicts manually")
     endif()
 
     if(need_stash)
       execute_process(
         COMMAND "/usr/bin/git" stash pop --index --quiet
-        WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+        WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
         RESULT_VARIABLE error_code
         )
       if(error_code)
         # Stash pop --index failed: Try again dropping the index
         execute_process(
           COMMAND "/usr/bin/git" reset --hard --quiet
-          WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+          WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
           RESULT_VARIABLE error_code
           )
         execute_process(
           COMMAND "/usr/bin/git" stash pop --quiet
-          WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+          WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
           RESULT_VARIABLE error_code
           )
         if(error_code)
           # Stash pop failed: Restore previous state.
           execute_process(
             COMMAND "/usr/bin/git" reset --hard --quiet ${head_sha}
-            WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+            WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
           )
           execute_process(
             COMMAND "/usr/bin/git" stash pop --index --quiet
-            WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+            WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
           )
-          message(FATAL_ERROR "\nFailed to unstash changes in: '/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/'.\nYou will have to resolve the conflicts manually")
+          message(FATAL_ERROR "\nFailed to unstash changes in: '/home/ubuntu/local_build/zfp/build_debug/googletest-src/'.\nYou will have to resolve the conflicts manually")
         endif()
       endif()
     endif()
   else()
     execute_process(
       COMMAND "/usr/bin/git" checkout 4fe76c4d6e667ba588a3868d052a2aa4b423afa3
-      WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src"
+      WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src"
       RESULT_VARIABLE error_code
       )
     if(error_code)
@@ -146,12 +149,12 @@ if(error_code OR is_remote_ref OR NOT ("${tag_sha}" STREQUAL "${head_sha}"))
   endif()
 
   execute_process(
-    COMMAND "/usr/bin/git" submodule update --recursive --init 
-    WORKING_DIRECTORY "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/"
+    COMMAND "/usr/bin/git" submodule update --recursive 
+    WORKING_DIRECTORY "/home/ubuntu/local_build/zfp/build_debug/googletest-src/"
     RESULT_VARIABLE error_code
     )
   if(error_code)
-    message(FATAL_ERROR "Failed to update submodules in: '/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/googletest-src/'")
+    message(FATAL_ERROR "Failed to update submodules in: '/home/ubuntu/local_build/zfp/build_debug/googletest-src/'")
   endif()
 endif()
 

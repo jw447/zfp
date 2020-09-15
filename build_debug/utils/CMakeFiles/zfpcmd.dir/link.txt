@@ -1,1 +1,1 @@
-/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/zfpcmd.dir/zfp.c.o  -o ../bin/zfp -Wl,-rpath,/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64 ../lib64/libzfp.so.0.5.5 -lm 
+/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/zfpcmd.dir/zfp.c.o  -o ../bin/zfp -rdynamic ../lib/libzfp.so.0.5.5 -lm -Wl,-rpath,/home/ubuntu/local_build/zfp/build_debug/lib 

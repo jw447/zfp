@@ -1,4 +1,4 @@
-# Install script for directory: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src
+# Install script for directory: /home/ubuntu/local_build/zfp/build_debug/cmocka-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,15 +29,10 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xpkgconfigx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "pkgconfig")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/usr/local/lib/pkgconfig/cmocka.pc")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -46,10 +41,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xpkgconfigx" OR NOT CMAKE_INSTALL_CO
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/lib/pkgconfig" TYPE FILE FILES "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/cmocka.pc")
+file(INSTALL DESTINATION "/usr/local/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/local_build/zfp/build_debug/cmocka-build/cmocka.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "devel")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/usr/local/lib/cmake/cmocka/cmocka-config.cmake;/usr/local/lib/cmake/cmocka/cmocka-config-version.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -59,17 +54,17 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPON
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/usr/local/lib/cmake/cmocka" TYPE FILE FILES
-    "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/cmocka-config.cmake"
-    "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/cmocka-config-version.cmake"
+    "/home/ubuntu/local_build/zfp/build_debug/cmocka-build/cmocka-config.cmake"
+    "/home/ubuntu/local_build/zfp/build_debug/cmocka-build/cmocka-config-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/doc/cmake_install.cmake")
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/include/cmake_install.cmake")
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/src/cmake_install.cmake")
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/example/cmake_install.cmake")
+  include("/home/ubuntu/local_build/zfp/build_debug/cmocka-build/doc/cmake_install.cmake")
+  include("/home/ubuntu/local_build/zfp/build_debug/cmocka-build/include/cmake_install.cmake")
+  include("/home/ubuntu/local_build/zfp/build_debug/cmocka-build/src/cmake_install.cmake")
+  include("/home/ubuntu/local_build/zfp/build_debug/cmocka-build/example/cmake_install.cmake")
 
 endif()
 
@@ -81,5 +76,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/local_build/zfp/build_debug/cmocka-build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

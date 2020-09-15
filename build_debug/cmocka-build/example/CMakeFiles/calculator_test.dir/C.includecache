@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/calculator.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/calculator.c
 config.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/config.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/config.h
 assert.h
 -
 malloc.h
@@ -20,7 +20,7 @@ stdlib.h
 string.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/calculator_test.c
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/calculator_test.c
 stdarg.h
 -
 stddef.h
@@ -28,11 +28,11 @@ stddef.h
 setjmp.h
 -
 cmocka.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/example/cmocka.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/cmocka.h
 stdio.h
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 
 config.h
 

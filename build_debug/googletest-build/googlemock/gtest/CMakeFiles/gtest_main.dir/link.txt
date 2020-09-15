@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgtest_main.so -o ../../../lib64/libgtest_main.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -Wl,-rpath,/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64: ../../../lib64/libgtest.so -pthread 
+/usr/bin/c++  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgtest_main.so -o ../../../lib/libgtest_main.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o ../../../lib/libgtest.so -pthread -Wl,-rpath,/home/ubuntu/local_build/zfp/build_debug/lib: 

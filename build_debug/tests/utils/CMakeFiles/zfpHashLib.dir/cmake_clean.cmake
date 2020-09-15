@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib64/libzfpHashLib.pdb"
-  "../../lib64/libzfpHashLib.so"
   "CMakeFiles/zfpHashLib.dir/zfpHash.c.o"
+  "../../lib/libzfpHashLib.pdb"
+  "../../lib/libzfpHashLib.so"
 )
 
 # Per-language clean rules from dependency scanning.

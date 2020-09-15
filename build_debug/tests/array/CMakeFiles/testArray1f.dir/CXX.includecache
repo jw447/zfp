@@ -1,10 +1,62 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+..//array/zfparray1.h
+cstddef
+-
+iterator
+-
+cstring
+-
+zfparray.h
+../array/zfparray.h
+zfpcodec.h
+../array/zfpcodec.h
+zfp/cache.h
+../array/zfp/cache.h
+zfp/reference1.h
+../array/zfp/reference1.h
+zfp/pointer1.h
+../array/zfp/pointer1.h
+zfp/iterator1.h
+../array/zfp/iterator1.h
+zfp/view1.h
+../array/zfp/view1.h
+
+..//array/zfparray2.h
+cstddef
+-
+iterator
+-
+cstring
+-
+zfparray.h
+../array/zfparray.h
+zfpcodec.h
+../array/zfpcodec.h
+zfp/cache.h
+../array/zfp/cache.h
+zfp/reference2.h
+../array/zfp/reference2.h
+zfp/pointer2.h
+../array/zfp/pointer2.h
+zfp/iterator2.h
+../array/zfp/iterator2.h
+zfp/view2.h
+../array/zfp/view2.h
+
+..//array/zfpfactory.h
+
+..//include/zfp/types.h
+stdint.h
+-
+inttypes.h
+-
 
 ../array/zfp/cache.h
 memory.h
@@ -64,50 +116,6 @@ zfp/header.h
 zfp/headerHelpers.h
 ../array/zfp/headerHelpers.h
 
-../array/zfparray1.h
-cstddef
--
-iterator
--
-cstring
--
-zfparray.h
-../array/zfparray.h
-zfpcodec.h
-../array/zfpcodec.h
-zfp/cache.h
-../array/zfp/cache.h
-zfp/reference1.h
-../array/zfp/reference1.h
-zfp/pointer1.h
-../array/zfp/pointer1.h
-zfp/iterator1.h
-../array/zfp/iterator1.h
-zfp/view1.h
-../array/zfp/view1.h
-
-../array/zfparray2.h
-cstddef
--
-iterator
--
-cstring
--
-zfparray.h
-../array/zfparray.h
-zfpcodec.h
-../array/zfpcodec.h
-zfp/cache.h
-../array/zfp/cache.h
-zfp/reference2.h
-../array/zfp/reference2.h
-zfp/pointer2.h
-../array/zfp/pointer2.h
-zfp/iterator2.h
-../array/zfp/iterator2.h
-zfp/view2.h
-../array/zfp/view2.h
-
 ../array/zfpcodec.h
 zfp.h
 ../array/zfp.h
@@ -119,8 +127,6 @@ zfpcodecd.h
 ../array/zfpcodecd.h
 
 ../array/zfpcodecf.h
-
-../array/zfpfactory.h
 
 ../include/bitstream.h
 stddef.h
@@ -188,65 +194,65 @@ stddef.h
 include/zfp/types.h
 ../tests/utils/include/zfp/types.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArray1Base.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArray1Base.cpp
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArray1f.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArray1f.cpp
 array/zfparray1.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/array/zfparray1.h
+/home/ubuntu/local_build/zfp/tests/array/array/zfparray1.h
 array/zfparray2.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/array/zfparray2.h
+/home/ubuntu/local_build/zfp/tests/array/array/zfparray2.h
 array/zfpfactory.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/array/zfpfactory.h
+/home/ubuntu/local_build/zfp/tests/array/array/zfpfactory.h
 constants/1dFloat.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/constants/1dFloat.h
+/home/ubuntu/local_build/zfp/tests/array/constants/1dFloat.h
 gtest/gtest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/gtest/gtest.h
+/home/ubuntu/local_build/zfp/tests/array/gtest/gtest.h
 utils/gtestFloatEnv.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtestFloatEnv.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtestFloatEnv.h
 utils/gtestBaseFixture.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtestBaseFixture.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtestBaseFixture.h
 utils/predicates.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/predicates.h
+/home/ubuntu/local_build/zfp/tests/array/utils/predicates.h
 testArrayBase.cpp
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArrayBase.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArrayBase.cpp
 testArray1Base.cpp
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArray1Base.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArray1Base.cpp
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/testArrayBase.cpp
+/home/ubuntu/local_build/zfp/tests/array/testArrayBase.cpp
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/array/utils/testMacros.h
 utils/zfpChecksums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/zfpChecksums.h
+/home/ubuntu/local_build/zfp/tests/array/utils/zfpChecksums.h
 utils/zfpHash.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/zfpHash.h
+/home/ubuntu/local_build/zfp/tests/array/utils/zfpHash.h
 cstring
 -
 sstream
 -
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/commonMacros.h
+/home/ubuntu/local_build/zfp/tests/array/utils/commonMacros.h
 zfp.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/zfp.h
+/home/ubuntu/local_build/zfp/tests/array/utils/zfp.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtestBaseFixture.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtestBaseFixture.h
 gtest/gtest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtest/gtest.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtest/gtest.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtestFloatEnv.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtestFloatEnv.h
 gtest/gtest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtest/gtest.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtest/gtest.h
 zfp.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/zfp.h
+/home/ubuntu/local_build/zfp/tests/array/utils/zfp.h
 commonMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/commonMacros.h
+/home/ubuntu/local_build/zfp/tests/array/utils/commonMacros.h
 utils/genSmoothRandNums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/utils/genSmoothRandNums.h
+/home/ubuntu/local_build/zfp/tests/array/utils/utils/genSmoothRandNums.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/predicates.h
+/home/ubuntu/local_build/zfp/tests/array/utils/predicates.h
 array/zfparray1.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/array/zfparray1.h
+/home/ubuntu/local_build/zfp/tests/array/utils/array/zfparray1.h
 gtest/gtest.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/array/utils/gtest/gtest.h
+/home/ubuntu/local_build/zfp/tests/array/utils/gtest/gtest.h
 
 googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

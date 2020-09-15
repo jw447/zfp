@@ -3,8 +3,8 @@
 set -e 
 set -x
 
-module load cmake/3.15.2
-module load cuda/10.1.168
+#module load cmake/3.15.2
+#module load cuda/10.1.168
 which nvcc
 
 cd build_debug

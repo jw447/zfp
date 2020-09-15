@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../../bin/testCuda"
-  "../../../bin/testCuda.pdb"
   "CMakeFiles/testCuda.dir/testCuda.c.o"
+  "../../../bin/testCuda.pdb"
+  "../../../bin/testCuda"
 )
 
 # Per-language clean rules from dependency scanning.

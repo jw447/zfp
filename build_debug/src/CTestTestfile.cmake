@@ -1,7 +1,7 @@
 # CMake generated Testfile for 
-# Source directory: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src
-# Build directory: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src
+# Source directory: /home/ubuntu/local_build/zfp/src
+# Build directory: /home/ubuntu/local_build/zfp/build_debug/src
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-subdirs("cuda_zfp")
+subdirs(cuda_zfp)

@@ -4,47 +4,46 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/bitstream.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/bitstream.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode1d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode1f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode1i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode1l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode2d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode2f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode2i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode2l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode3d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode3f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode3i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode3l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode4d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode4f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode4i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/decode4l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode1l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode2l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode3l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4d.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4d.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4f.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4f.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4i.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4i.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/encode4l.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4l.c.o"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/zfp.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/zfp.c.o"
+  "/home/ubuntu/local_build/zfp/src/bitstream.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/bitstream.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode1d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1d.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode1f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1f.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode1i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1i.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode1l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode1l.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode2d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2d.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode2f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2f.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode2i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2i.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode2l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode2l.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode3d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3d.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode3f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3f.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode3i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3i.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode3l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode3l.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode4d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4d.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode4f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4f.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode4i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4i.c.o"
+  "/home/ubuntu/local_build/zfp/src/decode4l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/decode4l.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode1d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1d.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode1f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1f.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode1i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1i.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode1l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode1l.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode2d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2d.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode2f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2f.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode2i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2i.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode2l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode2l.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode3d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3d.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode3f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3f.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode3i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3i.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode3l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode3l.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode4d.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4d.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode4f.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4f.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode4i.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4i.c.o"
+  "/home/ubuntu/local_build/zfp/src/encode4l.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/encode4l.c.o"
+  "/home/ubuntu/local_build/zfp/src/zfp.c" "/home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/zfp.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
   "ZFP_WITH_CUDA"
-  "zfp_EXPORTS"
   )
 
 # The include file search paths:
@@ -54,8 +53,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64/libzfp.so" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64/libzfp.so.0.5.5"
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64/libzfp.so.0" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/lib64/libzfp.so.0.5.5"
+  "/home/ubuntu/local_build/zfp/build_debug/lib/libzfp.so" "/home/ubuntu/local_build/zfp/build_debug/lib/libzfp.so.0.5.5"
+  "/home/ubuntu/local_build/zfp/build_debug/lib/libzfp.so.0" "/home/ubuntu/local_build/zfp/build_debug/lib/libzfp.so.0.5.5"
   )
 
 

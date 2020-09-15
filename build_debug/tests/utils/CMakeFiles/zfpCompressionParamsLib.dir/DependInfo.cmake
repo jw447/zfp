@@ -4,14 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/utils/zfpCompressionParams.c" "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.o"
+  "/home/ubuntu/local_build/zfp/tests/utils/zfpCompressionParams.c" "/home/ubuntu/local_build/zfp/build_debug/tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_C
-  "zfpCompressionParamsLib_EXPORTS"
-  )
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

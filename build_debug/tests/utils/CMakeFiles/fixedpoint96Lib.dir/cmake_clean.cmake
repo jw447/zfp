@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib64/libfixedpoint96Lib.pdb"
-  "../../lib64/libfixedpoint96Lib.so"
   "CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.o"
+  "../../lib/libfixedpoint96Lib.pdb"
+  "../../lib/libfixedpoint96Lib.so"
 )
 
 # Per-language clean rules from dependency scanning.

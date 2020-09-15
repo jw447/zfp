@@ -1,4 +1,4 @@
-# Install script for directory: /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp
+# Install script for directory: /home/ubuntu/local_build/zfp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,53 +29,48 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ubuntu/local_build/zfp/include/")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ubuntu/local_build/zfp/array/")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/array/")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/zfp" TYPE FILE FILES
-    "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/zfp-config.cmake"
-    "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/zfp-config-version.cmake"
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zfp" TYPE FILE FILES
+    "/home/ubuntu/local_build/zfp/build_debug/zfp-config.cmake"
+    "/home/ubuntu/local_build/zfp/build_debug/zfp-config-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/zfp/zfp-targets.cmake")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/zfp/zfp-targets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
-         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/zfp/zfp-targets.cmake"
-         "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/Export/lib64/cmake/zfp/zfp-targets.cmake")
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/zfp/zfp-targets.cmake"
+         "/home/ubuntu/local_build/zfp/build_debug/CMakeFiles/Export/lib/cmake/zfp/zfp-targets.cmake")
     if(EXPORT_FILE_CHANGED)
-      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/zfp/zfp-targets-*.cmake")
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/zfp/zfp-targets-*.cmake")
       if(OLD_CONFIG_FILES)
-        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/zfp/zfp-targets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/zfp/zfp-targets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
         file(REMOVE ${OLD_CONFIG_FILES})
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/zfp" TYPE FILE FILES "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/Export/lib64/cmake/zfp/zfp-targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zfp" TYPE FILE FILES "/home/ubuntu/local_build/zfp/build_debug/CMakeFiles/Export/lib/cmake/zfp/zfp-targets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/zfp" TYPE FILE FILES "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles/Export/lib64/cmake/zfp/zfp-targets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zfp" TYPE FILE FILES "/home/ubuntu/local_build/zfp/build_debug/CMakeFiles/Export/lib/cmake/zfp/zfp-targets-release.cmake")
   endif()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/src/cmake_install.cmake")
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/utils/cmake_install.cmake")
-  include("/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/cmake_install.cmake")
+  include("/home/ubuntu/local_build/zfp/build_debug/src/cmake_install.cmake")
+  include("/home/ubuntu/local_build/zfp/build_debug/utils/cmake_install.cmake")
+  include("/home/ubuntu/local_build/zfp/build_debug/tests/cmake_install.cmake")
 
 endif()
 
@@ -87,5 +82,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/local_build/zfp/build_debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

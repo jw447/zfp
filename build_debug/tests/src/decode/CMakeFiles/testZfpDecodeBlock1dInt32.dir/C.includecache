@@ -1,10 +1,46 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+..//include/zfp/types.h
+stdint.h
+-
+inttypes.h
+-
+
+..//src/decode1i.c
+inline/inline.h
+../src/inline/inline.h
+zfp.h
+../src/zfp.h
+zfp/macros.h
+../src/zfp/macros.h
+block1.h
+../src/block1.h
+traitsi.h
+../src/traitsi.h
+template/template.h
+../src/template/template.h
+template/codec.h
+../src/template/codec.h
+inline/bitstream.c
+../src/inline/bitstream.c
+template/codec1.c
+../src/template/codec1.c
+template/decode.c
+../src/template/decode.c
+template/decodei.c
+../src/template/decodei.c
+template/decode1.c
+../src/template/decode1.c
+template/revdecode.c
+../src/template/revdecode.c
+template/revdecode1.c
+../src/template/revdecode1.c
 
 ../include/bitstream.h
 stddef.h
@@ -49,36 +85,6 @@ inttypes.h
 -
 
 ../src/block1.h
-
-../src/decode1i.c
-inline/inline.h
-../src/inline/inline.h
-zfp.h
-../src/zfp.h
-zfp/macros.h
-../src/zfp/macros.h
-block1.h
-../src/block1.h
-traitsi.h
-../src/traitsi.h
-template/template.h
-../src/template/template.h
-template/codec.h
-../src/template/codec.h
-inline/bitstream.c
-../src/inline/bitstream.c
-template/codec1.c
-../src/template/codec1.c
-template/decode.c
-../src/template/decode.c
-template/decodei.c
-../src/template/decodei.c
-template/decode1.c
-../src/template/decode1.c
-template/revdecode.c
-../src/template/revdecode.c
-template/revdecode1.c
-../src/template/revdecode1.c
 
 ../src/inline/bitstream.c
 limits.h
@@ -138,23 +144,23 @@ stddef.h
 include/zfp/types.h
 ../tests/utils/include/zfp/types.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/testZfpDecodeBlock1dInt32.c
+/home/ubuntu/local_build/zfp/tests/src/decode/testZfpDecodeBlock1dInt32.c
 src/decode1i.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/src/decode1i.c
+/home/ubuntu/local_build/zfp/tests/src/decode/src/decode1i.c
 constants/1dInt32.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/constants/1dInt32.h
+/home/ubuntu/local_build/zfp/tests/src/decode/constants/1dInt32.h
 utils/rand32.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/utils/rand32.h
+/home/ubuntu/local_build/zfp/tests/src/decode/utils/rand32.h
 zfpDecodeBlockBase.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/zfpDecodeBlockBase.c
+/home/ubuntu/local_build/zfp/tests/src/decode/zfpDecodeBlockBase.c
 testcases/block.c
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/testcases/block.c
+/home/ubuntu/local_build/zfp/tests/src/decode/testcases/block.c
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/testcases/block.c
+/home/ubuntu/local_build/zfp/tests/src/decode/testcases/block.c
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/testcases/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/decode/testcases/utils/testMacros.h
 
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/zfpDecodeBlockBase.c
+/home/ubuntu/local_build/zfp/tests/src/decode/zfpDecodeBlockBase.c
 stdarg.h
 -
 stddef.h
@@ -166,11 +172,11 @@ cmocka.h
 stdlib.h
 -
 utils/testMacros.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/utils/testMacros.h
+/home/ubuntu/local_build/zfp/tests/src/decode/utils/testMacros.h
 utils/zfpChecksums.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/utils/zfpChecksums.h
+/home/ubuntu/local_build/zfp/tests/src/decode/utils/zfpChecksums.h
 utils/zfpHash.h
-/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/tests/src/decode/utils/zfpHash.h
+/home/ubuntu/local_build/zfp/tests/src/decode/utils/zfpHash.h
 
 cmocka-src/include/cmocka.h
 
