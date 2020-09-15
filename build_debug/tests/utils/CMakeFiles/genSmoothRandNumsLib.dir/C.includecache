@@ -12,11 +12,11 @@ stdint.h
 inttypes.h
 -
 
-/home/ubuntu/local_build/zfp/tests/utils/fixedpoint96.h
+/home/cc/local_build/zfp/tests/utils/fixedpoint96.h
 include/zfp/types.h
-/home/ubuntu/local_build/zfp/tests/utils/include/zfp/types.h
+/home/cc/local_build/zfp/tests/utils/include/zfp/types.h
 
-/home/ubuntu/local_build/zfp/tests/utils/genSmoothRandNums.c
+/home/cc/local_build/zfp/tests/utils/genSmoothRandNums.c
 stdlib.h
 -
 string.h
@@ -24,17 +24,17 @@ string.h
 math.h
 -
 genSmoothRandNums.h
-/home/ubuntu/local_build/zfp/tests/utils/genSmoothRandNums.h
+/home/cc/local_build/zfp/tests/utils/genSmoothRandNums.h
 fixedpoint96.h
-/home/ubuntu/local_build/zfp/tests/utils/fixedpoint96.h
+/home/cc/local_build/zfp/tests/utils/fixedpoint96.h
 rand64.h
-/home/ubuntu/local_build/zfp/tests/utils/rand64.h
+/home/cc/local_build/zfp/tests/utils/rand64.h
 
-/home/ubuntu/local_build/zfp/tests/utils/genSmoothRandNums.h
+/home/cc/local_build/zfp/tests/utils/genSmoothRandNums.h
 include/zfp/types.h
-/home/ubuntu/local_build/zfp/tests/utils/include/zfp/types.h
+/home/cc/local_build/zfp/tests/utils/include/zfp/types.h
 
-/home/ubuntu/local_build/zfp/tests/utils/rand64.h
+/home/cc/local_build/zfp/tests/utils/rand64.h
 include/zfp/types.h
-/home/ubuntu/local_build/zfp/tests/utils/include/zfp/types.h
+/home/cc/local_build/zfp/tests/utils/include/zfp/types.h
 

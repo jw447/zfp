@@ -28,11 +28,11 @@ tests/array/CMakeFiles/testArray3fRefs.dir/testArray3fRefs.cpp.o
  ../tests/constants/universalConsts.h
  ../tests/utils/rand32.h
  ../tests/utils/zfpHash.h
- /home/ubuntu/local_build/zfp/tests/array/testArray3RefsBase.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArray3fRefs.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArrayRefsBase.cpp
- /home/ubuntu/local_build/zfp/tests/array/utils/gtest3fTest.h
- /home/ubuntu/local_build/zfp/tests/array/utils/predicates.h
+ /home/cc/local_build/zfp/tests/array/testArray3RefsBase.cpp
+ /home/cc/local_build/zfp/tests/array/testArray3fRefs.cpp
+ /home/cc/local_build/zfp/tests/array/testArrayRefsBase.cpp
+ /home/cc/local_build/zfp/tests/array/utils/gtest3fTest.h
+ /home/cc/local_build/zfp/tests/array/utils/predicates.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

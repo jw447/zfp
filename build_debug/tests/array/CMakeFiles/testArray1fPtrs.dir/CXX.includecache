@@ -132,23 +132,23 @@ inttypes.h
 
 ../tests/constants/universalConsts.h
 
-/home/ubuntu/local_build/zfp/tests/array/testArray1fPtrs.cpp
+/home/cc/local_build/zfp/tests/array/testArray1fPtrs.cpp
 array/zfparray1.h
-/home/ubuntu/local_build/zfp/tests/array/array/zfparray1.h
+/home/cc/local_build/zfp/tests/array/array/zfparray1.h
 utils/gtest1fTest.h
-/home/ubuntu/local_build/zfp/tests/array/utils/gtest1fTest.h
+/home/cc/local_build/zfp/tests/array/utils/gtest1fTest.h
 testArrayPtrsBase.cpp
-/home/ubuntu/local_build/zfp/tests/array/testArrayPtrsBase.cpp
+/home/cc/local_build/zfp/tests/array/testArrayPtrsBase.cpp
 
-/home/ubuntu/local_build/zfp/tests/array/testArrayPtrsBase.cpp
+/home/cc/local_build/zfp/tests/array/testArrayPtrsBase.cpp
 gtest/gtest.h
-/home/ubuntu/local_build/zfp/tests/array/gtest/gtest.h
+/home/cc/local_build/zfp/tests/array/gtest/gtest.h
 
-/home/ubuntu/local_build/zfp/tests/array/utils/gtest1fTest.h
+/home/cc/local_build/zfp/tests/array/utils/gtest1fTest.h
 gtest/gtest.h
-/home/ubuntu/local_build/zfp/tests/array/utils/gtest/gtest.h
+/home/cc/local_build/zfp/tests/array/utils/gtest/gtest.h
 constants/universalConsts.h
-/home/ubuntu/local_build/zfp/tests/array/utils/constants/universalConsts.h
+/home/cc/local_build/zfp/tests/array/utils/constants/universalConsts.h
 
 googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

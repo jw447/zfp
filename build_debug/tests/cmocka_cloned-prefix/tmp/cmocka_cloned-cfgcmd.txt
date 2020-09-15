@@ -1,1 +1,1 @@
-cmd='/usr/bin/cmake;-DWITH_STATIC_LIB=ON;-DCMAKE_C_COMPILER=/usr/bin/cc;-DUNIT_TESTING=OFF;-GUnix Makefiles;/home/ubuntu/local_build/zfp/build_debug/cmocka-src'
+cmd='/usr/bin/cmake;-DWITH_STATIC_LIB=ON;-DCMAKE_C_COMPILER=/usr/bin/cc;-DUNIT_TESTING=OFF;-GUnix Makefiles;/home/cc/local_build/zfp/build_debug/cmocka-src'

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles /home/ubuntu/local_build/zfp/build_debug/tests/src/encode/CMakeFiles/progress.marks
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/src/encode/CMakeFiles/progress.marks
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/clean
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ testZfpEncodeBlock4dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDoub
 
 # fast build rule for target.
 testZfpEncodeBlock4dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build
 .PHONY : testZfpEncodeBlock4dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ testZfpEncodeBlock3dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDoub
 
 # fast build rule for target.
 testZfpEncodeBlock3dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build
 .PHONY : testZfpEncodeBlock3dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ testZfpEncodeBlockStrided3dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided3dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build
 .PHONY : testZfpEncodeBlockStrided3dFloat/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ testZfpEncodeBlock3dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat
 
 # fast build rule for target.
 testZfpEncodeBlock3dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build
 .PHONY : testZfpEncodeBlock3dFloat/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ testZfpEncodeBlockStrided2dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided2dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build
 .PHONY : testZfpEncodeBlockStrided2dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ testZfpEncodeBlockStrided2dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided2dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build
 .PHONY : testZfpEncodeBlockStrided2dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ testZfpEncodeBlockStrided4dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided4dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build
 .PHONY : testZfpEncodeBlockStrided4dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ testZfpEncodeBlock2dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64
 
 # fast build rule for target.
 testZfpEncodeBlock2dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build
 .PHONY : testZfpEncodeBlock2dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/rule
 
 # Convenience name for target.
@@ -297,12 +297,12 @@ testZfpEncodeBlockStrided3dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided3dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build
 .PHONY : testZfpEncodeBlockStrided3dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/rule
 
 # Convenience name for target.
@@ -312,12 +312,12 @@ testZfpEncodeBlockStrided4dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided4dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build
 .PHONY : testZfpEncodeBlockStrided4dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/rule
 
 # Convenience name for target.
@@ -327,12 +327,12 @@ testZfpEncodeBlock2dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32
 
 # fast build rule for target.
 testZfpEncodeBlock2dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build
 .PHONY : testZfpEncodeBlock2dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/rule
 
 # Convenience name for target.
@@ -342,12 +342,12 @@ testZfpEncodeBlockStrided4dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided4dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build
 .PHONY : testZfpEncodeBlockStrided4dFloat/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ testZfpEncodeBlock4dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32
 
 # fast build rule for target.
 testZfpEncodeBlock4dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build
 .PHONY : testZfpEncodeBlock4dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/rule
 
 # Convenience name for target.
@@ -372,12 +372,12 @@ testZfpEncodeBlock3dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32
 
 # fast build rule for target.
 testZfpEncodeBlock3dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build
 .PHONY : testZfpEncodeBlock3dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/rule
 
 # Convenience name for target.
@@ -387,12 +387,12 @@ testZfpEncodeBlockStrided3dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBloc
 
 # fast build rule for target.
 testZfpEncodeBlockStrided3dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build
 .PHONY : testZfpEncodeBlockStrided3dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/rule
 
 # Convenience name for target.
@@ -402,12 +402,12 @@ testZfpEncodeBlockStrided2dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided2dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build
 .PHONY : testZfpEncodeBlockStrided2dFloat/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/rule
 
 # Convenience name for target.
@@ -417,12 +417,12 @@ testZfpEncodeBlockStrided1dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided1dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build
 .PHONY : testZfpEncodeBlockStrided1dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/rule
 
 # Convenience name for target.
@@ -432,12 +432,12 @@ testZfpEncodeBlock1dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32
 
 # fast build rule for target.
 testZfpEncodeBlock1dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build
 .PHONY : testZfpEncodeBlock1dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/rule
 
 # Convenience name for target.
@@ -447,12 +447,12 @@ testZfpEncodeBlockStrided3dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided3dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build
 .PHONY : testZfpEncodeBlockStrided3dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/rule
 
 # Convenience name for target.
@@ -462,12 +462,12 @@ testZfpEncodeBlock4dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat
 
 # fast build rule for target.
 testZfpEncodeBlock4dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build
 .PHONY : testZfpEncodeBlock4dFloat/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/rule
 
 # Convenience name for target.
@@ -477,12 +477,12 @@ testZfpEncodeBlockStrided1dInt32: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided1dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build
 .PHONY : testZfpEncodeBlockStrided1dInt32/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/rule
 
 # Convenience name for target.
@@ -492,12 +492,12 @@ testZfpEncodeBlock1dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64
 
 # fast build rule for target.
 testZfpEncodeBlock1dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build
 .PHONY : testZfpEncodeBlock1dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/rule
 
 # Convenience name for target.
@@ -507,12 +507,12 @@ testZfpEncodeBlockStrided4dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBloc
 
 # fast build rule for target.
 testZfpEncodeBlockStrided4dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build
 .PHONY : testZfpEncodeBlockStrided4dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/rule
 
 # Convenience name for target.
@@ -522,12 +522,12 @@ testZfpEncodeBlock2dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDoub
 
 # fast build rule for target.
 testZfpEncodeBlock2dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build
 .PHONY : testZfpEncodeBlock2dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/rule
 
 # Convenience name for target.
@@ -537,12 +537,12 @@ testZfpEncodeBlock3dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64
 
 # fast build rule for target.
 testZfpEncodeBlock3dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build
 .PHONY : testZfpEncodeBlock3dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/rule
 
 # Convenience name for target.
@@ -552,12 +552,12 @@ testZfpEncodeBlock4dInt64: tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64
 
 # fast build rule for target.
 testZfpEncodeBlock4dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build
 .PHONY : testZfpEncodeBlock4dInt64/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/rule
 
 # Convenience name for target.
@@ -567,12 +567,12 @@ testZfpEncodeBlock1dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat
 
 # fast build rule for target.
 testZfpEncodeBlock1dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build
 .PHONY : testZfpEncodeBlock1dFloat/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/rule
 
 # Convenience name for target.
@@ -582,12 +582,12 @@ testZfpEncodeBlockStrided1dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock
 
 # fast build rule for target.
 testZfpEncodeBlockStrided1dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build
 .PHONY : testZfpEncodeBlockStrided1dFloat/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/rule
 
 # Convenience name for target.
@@ -597,12 +597,12 @@ testZfpEncodeBlockStrided2dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBloc
 
 # fast build rule for target.
 testZfpEncodeBlockStrided2dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build
 .PHONY : testZfpEncodeBlockStrided2dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/rule
 
 # Convenience name for target.
@@ -612,12 +612,12 @@ testZfpEncodeBlock1dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDoub
 
 # fast build rule for target.
 testZfpEncodeBlock1dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build
 .PHONY : testZfpEncodeBlock1dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/rule
 
 # Convenience name for target.
@@ -627,12 +627,12 @@ testZfpEncodeBlockStrided1dDouble: tests/src/encode/CMakeFiles/testZfpEncodeBloc
 
 # fast build rule for target.
 testZfpEncodeBlockStrided1dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build
 .PHONY : testZfpEncodeBlockStrided1dDouble/fast
 
 # Convenience name for target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/rule
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/rule
 
 # Convenience name for target.
@@ -642,7 +642,7 @@ testZfpEncodeBlock2dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat
 
 # fast build rule for target.
 testZfpEncodeBlock2dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build
 .PHONY : testZfpEncodeBlock2dFloat/fast
 
 testZfpEncodeBlock1dDouble.o: testZfpEncodeBlock1dDouble.c.o
@@ -651,7 +651,7 @@ testZfpEncodeBlock1dDouble.o: testZfpEncodeBlock1dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlock1dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/testZfpEncodeBlock1dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/testZfpEncodeBlock1dDouble.c.o
 .PHONY : testZfpEncodeBlock1dDouble.c.o
 
 testZfpEncodeBlock1dDouble.i: testZfpEncodeBlock1dDouble.c.i
@@ -660,7 +660,7 @@ testZfpEncodeBlock1dDouble.i: testZfpEncodeBlock1dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock1dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/testZfpEncodeBlock1dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/testZfpEncodeBlock1dDouble.c.i
 .PHONY : testZfpEncodeBlock1dDouble.c.i
 
 testZfpEncodeBlock1dDouble.s: testZfpEncodeBlock1dDouble.c.s
@@ -669,7 +669,7 @@ testZfpEncodeBlock1dDouble.s: testZfpEncodeBlock1dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock1dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/testZfpEncodeBlock1dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dDouble.dir/testZfpEncodeBlock1dDouble.c.s
 .PHONY : testZfpEncodeBlock1dDouble.c.s
 
 testZfpEncodeBlock1dFloat.o: testZfpEncodeBlock1dFloat.c.o
@@ -678,7 +678,7 @@ testZfpEncodeBlock1dFloat.o: testZfpEncodeBlock1dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlock1dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/testZfpEncodeBlock1dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/testZfpEncodeBlock1dFloat.c.o
 .PHONY : testZfpEncodeBlock1dFloat.c.o
 
 testZfpEncodeBlock1dFloat.i: testZfpEncodeBlock1dFloat.c.i
@@ -687,7 +687,7 @@ testZfpEncodeBlock1dFloat.i: testZfpEncodeBlock1dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock1dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/testZfpEncodeBlock1dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/testZfpEncodeBlock1dFloat.c.i
 .PHONY : testZfpEncodeBlock1dFloat.c.i
 
 testZfpEncodeBlock1dFloat.s: testZfpEncodeBlock1dFloat.c.s
@@ -696,7 +696,7 @@ testZfpEncodeBlock1dFloat.s: testZfpEncodeBlock1dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock1dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/testZfpEncodeBlock1dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/testZfpEncodeBlock1dFloat.c.s
 .PHONY : testZfpEncodeBlock1dFloat.c.s
 
 testZfpEncodeBlock1dInt32.o: testZfpEncodeBlock1dInt32.c.o
@@ -705,7 +705,7 @@ testZfpEncodeBlock1dInt32.o: testZfpEncodeBlock1dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlock1dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/testZfpEncodeBlock1dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/testZfpEncodeBlock1dInt32.c.o
 .PHONY : testZfpEncodeBlock1dInt32.c.o
 
 testZfpEncodeBlock1dInt32.i: testZfpEncodeBlock1dInt32.c.i
@@ -714,7 +714,7 @@ testZfpEncodeBlock1dInt32.i: testZfpEncodeBlock1dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock1dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/testZfpEncodeBlock1dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/testZfpEncodeBlock1dInt32.c.i
 .PHONY : testZfpEncodeBlock1dInt32.c.i
 
 testZfpEncodeBlock1dInt32.s: testZfpEncodeBlock1dInt32.c.s
@@ -723,7 +723,7 @@ testZfpEncodeBlock1dInt32.s: testZfpEncodeBlock1dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock1dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/testZfpEncodeBlock1dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt32.dir/testZfpEncodeBlock1dInt32.c.s
 .PHONY : testZfpEncodeBlock1dInt32.c.s
 
 testZfpEncodeBlock1dInt64.o: testZfpEncodeBlock1dInt64.c.o
@@ -732,7 +732,7 @@ testZfpEncodeBlock1dInt64.o: testZfpEncodeBlock1dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlock1dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/testZfpEncodeBlock1dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/testZfpEncodeBlock1dInt64.c.o
 .PHONY : testZfpEncodeBlock1dInt64.c.o
 
 testZfpEncodeBlock1dInt64.i: testZfpEncodeBlock1dInt64.c.i
@@ -741,7 +741,7 @@ testZfpEncodeBlock1dInt64.i: testZfpEncodeBlock1dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock1dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/testZfpEncodeBlock1dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/testZfpEncodeBlock1dInt64.c.i
 .PHONY : testZfpEncodeBlock1dInt64.c.i
 
 testZfpEncodeBlock1dInt64.s: testZfpEncodeBlock1dInt64.c.s
@@ -750,7 +750,7 @@ testZfpEncodeBlock1dInt64.s: testZfpEncodeBlock1dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock1dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/testZfpEncodeBlock1dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock1dInt64.dir/testZfpEncodeBlock1dInt64.c.s
 .PHONY : testZfpEncodeBlock1dInt64.c.s
 
 testZfpEncodeBlock2dDouble.o: testZfpEncodeBlock2dDouble.c.o
@@ -759,7 +759,7 @@ testZfpEncodeBlock2dDouble.o: testZfpEncodeBlock2dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlock2dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/testZfpEncodeBlock2dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/testZfpEncodeBlock2dDouble.c.o
 .PHONY : testZfpEncodeBlock2dDouble.c.o
 
 testZfpEncodeBlock2dDouble.i: testZfpEncodeBlock2dDouble.c.i
@@ -768,7 +768,7 @@ testZfpEncodeBlock2dDouble.i: testZfpEncodeBlock2dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock2dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/testZfpEncodeBlock2dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/testZfpEncodeBlock2dDouble.c.i
 .PHONY : testZfpEncodeBlock2dDouble.c.i
 
 testZfpEncodeBlock2dDouble.s: testZfpEncodeBlock2dDouble.c.s
@@ -777,7 +777,7 @@ testZfpEncodeBlock2dDouble.s: testZfpEncodeBlock2dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock2dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/testZfpEncodeBlock2dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dDouble.dir/testZfpEncodeBlock2dDouble.c.s
 .PHONY : testZfpEncodeBlock2dDouble.c.s
 
 testZfpEncodeBlock2dFloat.o: testZfpEncodeBlock2dFloat.c.o
@@ -786,7 +786,7 @@ testZfpEncodeBlock2dFloat.o: testZfpEncodeBlock2dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlock2dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/testZfpEncodeBlock2dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/testZfpEncodeBlock2dFloat.c.o
 .PHONY : testZfpEncodeBlock2dFloat.c.o
 
 testZfpEncodeBlock2dFloat.i: testZfpEncodeBlock2dFloat.c.i
@@ -795,7 +795,7 @@ testZfpEncodeBlock2dFloat.i: testZfpEncodeBlock2dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock2dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/testZfpEncodeBlock2dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/testZfpEncodeBlock2dFloat.c.i
 .PHONY : testZfpEncodeBlock2dFloat.c.i
 
 testZfpEncodeBlock2dFloat.s: testZfpEncodeBlock2dFloat.c.s
@@ -804,7 +804,7 @@ testZfpEncodeBlock2dFloat.s: testZfpEncodeBlock2dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock2dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/testZfpEncodeBlock2dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dFloat.dir/testZfpEncodeBlock2dFloat.c.s
 .PHONY : testZfpEncodeBlock2dFloat.c.s
 
 testZfpEncodeBlock2dInt32.o: testZfpEncodeBlock2dInt32.c.o
@@ -813,7 +813,7 @@ testZfpEncodeBlock2dInt32.o: testZfpEncodeBlock2dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlock2dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/testZfpEncodeBlock2dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/testZfpEncodeBlock2dInt32.c.o
 .PHONY : testZfpEncodeBlock2dInt32.c.o
 
 testZfpEncodeBlock2dInt32.i: testZfpEncodeBlock2dInt32.c.i
@@ -822,7 +822,7 @@ testZfpEncodeBlock2dInt32.i: testZfpEncodeBlock2dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock2dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/testZfpEncodeBlock2dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/testZfpEncodeBlock2dInt32.c.i
 .PHONY : testZfpEncodeBlock2dInt32.c.i
 
 testZfpEncodeBlock2dInt32.s: testZfpEncodeBlock2dInt32.c.s
@@ -831,7 +831,7 @@ testZfpEncodeBlock2dInt32.s: testZfpEncodeBlock2dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock2dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/testZfpEncodeBlock2dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt32.dir/testZfpEncodeBlock2dInt32.c.s
 .PHONY : testZfpEncodeBlock2dInt32.c.s
 
 testZfpEncodeBlock2dInt64.o: testZfpEncodeBlock2dInt64.c.o
@@ -840,7 +840,7 @@ testZfpEncodeBlock2dInt64.o: testZfpEncodeBlock2dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlock2dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/testZfpEncodeBlock2dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/testZfpEncodeBlock2dInt64.c.o
 .PHONY : testZfpEncodeBlock2dInt64.c.o
 
 testZfpEncodeBlock2dInt64.i: testZfpEncodeBlock2dInt64.c.i
@@ -849,7 +849,7 @@ testZfpEncodeBlock2dInt64.i: testZfpEncodeBlock2dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock2dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/testZfpEncodeBlock2dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/testZfpEncodeBlock2dInt64.c.i
 .PHONY : testZfpEncodeBlock2dInt64.c.i
 
 testZfpEncodeBlock2dInt64.s: testZfpEncodeBlock2dInt64.c.s
@@ -858,7 +858,7 @@ testZfpEncodeBlock2dInt64.s: testZfpEncodeBlock2dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock2dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/testZfpEncodeBlock2dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/testZfpEncodeBlock2dInt64.c.s
 .PHONY : testZfpEncodeBlock2dInt64.c.s
 
 testZfpEncodeBlock3dDouble.o: testZfpEncodeBlock3dDouble.c.o
@@ -867,7 +867,7 @@ testZfpEncodeBlock3dDouble.o: testZfpEncodeBlock3dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlock3dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.o
 .PHONY : testZfpEncodeBlock3dDouble.c.o
 
 testZfpEncodeBlock3dDouble.i: testZfpEncodeBlock3dDouble.c.i
@@ -876,7 +876,7 @@ testZfpEncodeBlock3dDouble.i: testZfpEncodeBlock3dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock3dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.i
 .PHONY : testZfpEncodeBlock3dDouble.c.i
 
 testZfpEncodeBlock3dDouble.s: testZfpEncodeBlock3dDouble.c.s
@@ -885,7 +885,7 @@ testZfpEncodeBlock3dDouble.s: testZfpEncodeBlock3dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock3dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dDouble.dir/testZfpEncodeBlock3dDouble.c.s
 .PHONY : testZfpEncodeBlock3dDouble.c.s
 
 testZfpEncodeBlock3dFloat.o: testZfpEncodeBlock3dFloat.c.o
@@ -894,7 +894,7 @@ testZfpEncodeBlock3dFloat.o: testZfpEncodeBlock3dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlock3dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/testZfpEncodeBlock3dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/testZfpEncodeBlock3dFloat.c.o
 .PHONY : testZfpEncodeBlock3dFloat.c.o
 
 testZfpEncodeBlock3dFloat.i: testZfpEncodeBlock3dFloat.c.i
@@ -903,7 +903,7 @@ testZfpEncodeBlock3dFloat.i: testZfpEncodeBlock3dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock3dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/testZfpEncodeBlock3dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/testZfpEncodeBlock3dFloat.c.i
 .PHONY : testZfpEncodeBlock3dFloat.c.i
 
 testZfpEncodeBlock3dFloat.s: testZfpEncodeBlock3dFloat.c.s
@@ -912,7 +912,7 @@ testZfpEncodeBlock3dFloat.s: testZfpEncodeBlock3dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock3dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/testZfpEncodeBlock3dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dFloat.dir/testZfpEncodeBlock3dFloat.c.s
 .PHONY : testZfpEncodeBlock3dFloat.c.s
 
 testZfpEncodeBlock3dInt32.o: testZfpEncodeBlock3dInt32.c.o
@@ -921,7 +921,7 @@ testZfpEncodeBlock3dInt32.o: testZfpEncodeBlock3dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlock3dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/testZfpEncodeBlock3dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/testZfpEncodeBlock3dInt32.c.o
 .PHONY : testZfpEncodeBlock3dInt32.c.o
 
 testZfpEncodeBlock3dInt32.i: testZfpEncodeBlock3dInt32.c.i
@@ -930,7 +930,7 @@ testZfpEncodeBlock3dInt32.i: testZfpEncodeBlock3dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock3dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/testZfpEncodeBlock3dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/testZfpEncodeBlock3dInt32.c.i
 .PHONY : testZfpEncodeBlock3dInt32.c.i
 
 testZfpEncodeBlock3dInt32.s: testZfpEncodeBlock3dInt32.c.s
@@ -939,7 +939,7 @@ testZfpEncodeBlock3dInt32.s: testZfpEncodeBlock3dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock3dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/testZfpEncodeBlock3dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt32.dir/testZfpEncodeBlock3dInt32.c.s
 .PHONY : testZfpEncodeBlock3dInt32.c.s
 
 testZfpEncodeBlock3dInt64.o: testZfpEncodeBlock3dInt64.c.o
@@ -948,7 +948,7 @@ testZfpEncodeBlock3dInt64.o: testZfpEncodeBlock3dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlock3dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/testZfpEncodeBlock3dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/testZfpEncodeBlock3dInt64.c.o
 .PHONY : testZfpEncodeBlock3dInt64.c.o
 
 testZfpEncodeBlock3dInt64.i: testZfpEncodeBlock3dInt64.c.i
@@ -957,7 +957,7 @@ testZfpEncodeBlock3dInt64.i: testZfpEncodeBlock3dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock3dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/testZfpEncodeBlock3dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/testZfpEncodeBlock3dInt64.c.i
 .PHONY : testZfpEncodeBlock3dInt64.c.i
 
 testZfpEncodeBlock3dInt64.s: testZfpEncodeBlock3dInt64.c.s
@@ -966,7 +966,7 @@ testZfpEncodeBlock3dInt64.s: testZfpEncodeBlock3dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock3dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/testZfpEncodeBlock3dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock3dInt64.dir/testZfpEncodeBlock3dInt64.c.s
 .PHONY : testZfpEncodeBlock3dInt64.c.s
 
 testZfpEncodeBlock4dDouble.o: testZfpEncodeBlock4dDouble.c.o
@@ -975,7 +975,7 @@ testZfpEncodeBlock4dDouble.o: testZfpEncodeBlock4dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlock4dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/testZfpEncodeBlock4dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/testZfpEncodeBlock4dDouble.c.o
 .PHONY : testZfpEncodeBlock4dDouble.c.o
 
 testZfpEncodeBlock4dDouble.i: testZfpEncodeBlock4dDouble.c.i
@@ -984,7 +984,7 @@ testZfpEncodeBlock4dDouble.i: testZfpEncodeBlock4dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock4dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/testZfpEncodeBlock4dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/testZfpEncodeBlock4dDouble.c.i
 .PHONY : testZfpEncodeBlock4dDouble.c.i
 
 testZfpEncodeBlock4dDouble.s: testZfpEncodeBlock4dDouble.c.s
@@ -993,7 +993,7 @@ testZfpEncodeBlock4dDouble.s: testZfpEncodeBlock4dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock4dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/testZfpEncodeBlock4dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dDouble.dir/testZfpEncodeBlock4dDouble.c.s
 .PHONY : testZfpEncodeBlock4dDouble.c.s
 
 testZfpEncodeBlock4dFloat.o: testZfpEncodeBlock4dFloat.c.o
@@ -1002,7 +1002,7 @@ testZfpEncodeBlock4dFloat.o: testZfpEncodeBlock4dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlock4dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/testZfpEncodeBlock4dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/testZfpEncodeBlock4dFloat.c.o
 .PHONY : testZfpEncodeBlock4dFloat.c.o
 
 testZfpEncodeBlock4dFloat.i: testZfpEncodeBlock4dFloat.c.i
@@ -1011,7 +1011,7 @@ testZfpEncodeBlock4dFloat.i: testZfpEncodeBlock4dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock4dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/testZfpEncodeBlock4dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/testZfpEncodeBlock4dFloat.c.i
 .PHONY : testZfpEncodeBlock4dFloat.c.i
 
 testZfpEncodeBlock4dFloat.s: testZfpEncodeBlock4dFloat.c.s
@@ -1020,7 +1020,7 @@ testZfpEncodeBlock4dFloat.s: testZfpEncodeBlock4dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock4dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/testZfpEncodeBlock4dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dFloat.dir/testZfpEncodeBlock4dFloat.c.s
 .PHONY : testZfpEncodeBlock4dFloat.c.s
 
 testZfpEncodeBlock4dInt32.o: testZfpEncodeBlock4dInt32.c.o
@@ -1029,7 +1029,7 @@ testZfpEncodeBlock4dInt32.o: testZfpEncodeBlock4dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlock4dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/testZfpEncodeBlock4dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/testZfpEncodeBlock4dInt32.c.o
 .PHONY : testZfpEncodeBlock4dInt32.c.o
 
 testZfpEncodeBlock4dInt32.i: testZfpEncodeBlock4dInt32.c.i
@@ -1038,7 +1038,7 @@ testZfpEncodeBlock4dInt32.i: testZfpEncodeBlock4dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock4dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/testZfpEncodeBlock4dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/testZfpEncodeBlock4dInt32.c.i
 .PHONY : testZfpEncodeBlock4dInt32.c.i
 
 testZfpEncodeBlock4dInt32.s: testZfpEncodeBlock4dInt32.c.s
@@ -1047,7 +1047,7 @@ testZfpEncodeBlock4dInt32.s: testZfpEncodeBlock4dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock4dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/testZfpEncodeBlock4dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt32.dir/testZfpEncodeBlock4dInt32.c.s
 .PHONY : testZfpEncodeBlock4dInt32.c.s
 
 testZfpEncodeBlock4dInt64.o: testZfpEncodeBlock4dInt64.c.o
@@ -1056,7 +1056,7 @@ testZfpEncodeBlock4dInt64.o: testZfpEncodeBlock4dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlock4dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/testZfpEncodeBlock4dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/testZfpEncodeBlock4dInt64.c.o
 .PHONY : testZfpEncodeBlock4dInt64.c.o
 
 testZfpEncodeBlock4dInt64.i: testZfpEncodeBlock4dInt64.c.i
@@ -1065,7 +1065,7 @@ testZfpEncodeBlock4dInt64.i: testZfpEncodeBlock4dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlock4dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/testZfpEncodeBlock4dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/testZfpEncodeBlock4dInt64.c.i
 .PHONY : testZfpEncodeBlock4dInt64.c.i
 
 testZfpEncodeBlock4dInt64.s: testZfpEncodeBlock4dInt64.c.s
@@ -1074,7 +1074,7 @@ testZfpEncodeBlock4dInt64.s: testZfpEncodeBlock4dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlock4dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/testZfpEncodeBlock4dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/testZfpEncodeBlock4dInt64.c.s
 .PHONY : testZfpEncodeBlock4dInt64.c.s
 
 testZfpEncodeBlockStrided1dDouble.o: testZfpEncodeBlockStrided1dDouble.c.o
@@ -1083,7 +1083,7 @@ testZfpEncodeBlockStrided1dDouble.o: testZfpEncodeBlockStrided1dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided1dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/testZfpEncodeBlockStrided1dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/testZfpEncodeBlockStrided1dDouble.c.o
 .PHONY : testZfpEncodeBlockStrided1dDouble.c.o
 
 testZfpEncodeBlockStrided1dDouble.i: testZfpEncodeBlockStrided1dDouble.c.i
@@ -1092,7 +1092,7 @@ testZfpEncodeBlockStrided1dDouble.i: testZfpEncodeBlockStrided1dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided1dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/testZfpEncodeBlockStrided1dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/testZfpEncodeBlockStrided1dDouble.c.i
 .PHONY : testZfpEncodeBlockStrided1dDouble.c.i
 
 testZfpEncodeBlockStrided1dDouble.s: testZfpEncodeBlockStrided1dDouble.c.s
@@ -1101,7 +1101,7 @@ testZfpEncodeBlockStrided1dDouble.s: testZfpEncodeBlockStrided1dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided1dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/testZfpEncodeBlockStrided1dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dDouble.dir/testZfpEncodeBlockStrided1dDouble.c.s
 .PHONY : testZfpEncodeBlockStrided1dDouble.c.s
 
 testZfpEncodeBlockStrided1dFloat.o: testZfpEncodeBlockStrided1dFloat.c.o
@@ -1110,7 +1110,7 @@ testZfpEncodeBlockStrided1dFloat.o: testZfpEncodeBlockStrided1dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided1dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/testZfpEncodeBlockStrided1dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/testZfpEncodeBlockStrided1dFloat.c.o
 .PHONY : testZfpEncodeBlockStrided1dFloat.c.o
 
 testZfpEncodeBlockStrided1dFloat.i: testZfpEncodeBlockStrided1dFloat.c.i
@@ -1119,7 +1119,7 @@ testZfpEncodeBlockStrided1dFloat.i: testZfpEncodeBlockStrided1dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided1dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/testZfpEncodeBlockStrided1dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/testZfpEncodeBlockStrided1dFloat.c.i
 .PHONY : testZfpEncodeBlockStrided1dFloat.c.i
 
 testZfpEncodeBlockStrided1dFloat.s: testZfpEncodeBlockStrided1dFloat.c.s
@@ -1128,7 +1128,7 @@ testZfpEncodeBlockStrided1dFloat.s: testZfpEncodeBlockStrided1dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided1dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/testZfpEncodeBlockStrided1dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dFloat.dir/testZfpEncodeBlockStrided1dFloat.c.s
 .PHONY : testZfpEncodeBlockStrided1dFloat.c.s
 
 testZfpEncodeBlockStrided1dInt32.o: testZfpEncodeBlockStrided1dInt32.c.o
@@ -1137,7 +1137,7 @@ testZfpEncodeBlockStrided1dInt32.o: testZfpEncodeBlockStrided1dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided1dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/testZfpEncodeBlockStrided1dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/testZfpEncodeBlockStrided1dInt32.c.o
 .PHONY : testZfpEncodeBlockStrided1dInt32.c.o
 
 testZfpEncodeBlockStrided1dInt32.i: testZfpEncodeBlockStrided1dInt32.c.i
@@ -1146,7 +1146,7 @@ testZfpEncodeBlockStrided1dInt32.i: testZfpEncodeBlockStrided1dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided1dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/testZfpEncodeBlockStrided1dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/testZfpEncodeBlockStrided1dInt32.c.i
 .PHONY : testZfpEncodeBlockStrided1dInt32.c.i
 
 testZfpEncodeBlockStrided1dInt32.s: testZfpEncodeBlockStrided1dInt32.c.s
@@ -1155,7 +1155,7 @@ testZfpEncodeBlockStrided1dInt32.s: testZfpEncodeBlockStrided1dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided1dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/testZfpEncodeBlockStrided1dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt32.dir/testZfpEncodeBlockStrided1dInt32.c.s
 .PHONY : testZfpEncodeBlockStrided1dInt32.c.s
 
 testZfpEncodeBlockStrided1dInt64.o: testZfpEncodeBlockStrided1dInt64.c.o
@@ -1164,7 +1164,7 @@ testZfpEncodeBlockStrided1dInt64.o: testZfpEncodeBlockStrided1dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided1dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/testZfpEncodeBlockStrided1dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/testZfpEncodeBlockStrided1dInt64.c.o
 .PHONY : testZfpEncodeBlockStrided1dInt64.c.o
 
 testZfpEncodeBlockStrided1dInt64.i: testZfpEncodeBlockStrided1dInt64.c.i
@@ -1173,7 +1173,7 @@ testZfpEncodeBlockStrided1dInt64.i: testZfpEncodeBlockStrided1dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided1dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/testZfpEncodeBlockStrided1dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/testZfpEncodeBlockStrided1dInt64.c.i
 .PHONY : testZfpEncodeBlockStrided1dInt64.c.i
 
 testZfpEncodeBlockStrided1dInt64.s: testZfpEncodeBlockStrided1dInt64.c.s
@@ -1182,7 +1182,7 @@ testZfpEncodeBlockStrided1dInt64.s: testZfpEncodeBlockStrided1dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided1dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/testZfpEncodeBlockStrided1dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided1dInt64.dir/testZfpEncodeBlockStrided1dInt64.c.s
 .PHONY : testZfpEncodeBlockStrided1dInt64.c.s
 
 testZfpEncodeBlockStrided2dDouble.o: testZfpEncodeBlockStrided2dDouble.c.o
@@ -1191,7 +1191,7 @@ testZfpEncodeBlockStrided2dDouble.o: testZfpEncodeBlockStrided2dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided2dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/testZfpEncodeBlockStrided2dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/testZfpEncodeBlockStrided2dDouble.c.o
 .PHONY : testZfpEncodeBlockStrided2dDouble.c.o
 
 testZfpEncodeBlockStrided2dDouble.i: testZfpEncodeBlockStrided2dDouble.c.i
@@ -1200,7 +1200,7 @@ testZfpEncodeBlockStrided2dDouble.i: testZfpEncodeBlockStrided2dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided2dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/testZfpEncodeBlockStrided2dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/testZfpEncodeBlockStrided2dDouble.c.i
 .PHONY : testZfpEncodeBlockStrided2dDouble.c.i
 
 testZfpEncodeBlockStrided2dDouble.s: testZfpEncodeBlockStrided2dDouble.c.s
@@ -1209,7 +1209,7 @@ testZfpEncodeBlockStrided2dDouble.s: testZfpEncodeBlockStrided2dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided2dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/testZfpEncodeBlockStrided2dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dDouble.dir/testZfpEncodeBlockStrided2dDouble.c.s
 .PHONY : testZfpEncodeBlockStrided2dDouble.c.s
 
 testZfpEncodeBlockStrided2dFloat.o: testZfpEncodeBlockStrided2dFloat.c.o
@@ -1218,7 +1218,7 @@ testZfpEncodeBlockStrided2dFloat.o: testZfpEncodeBlockStrided2dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided2dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/testZfpEncodeBlockStrided2dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/testZfpEncodeBlockStrided2dFloat.c.o
 .PHONY : testZfpEncodeBlockStrided2dFloat.c.o
 
 testZfpEncodeBlockStrided2dFloat.i: testZfpEncodeBlockStrided2dFloat.c.i
@@ -1227,7 +1227,7 @@ testZfpEncodeBlockStrided2dFloat.i: testZfpEncodeBlockStrided2dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided2dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/testZfpEncodeBlockStrided2dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/testZfpEncodeBlockStrided2dFloat.c.i
 .PHONY : testZfpEncodeBlockStrided2dFloat.c.i
 
 testZfpEncodeBlockStrided2dFloat.s: testZfpEncodeBlockStrided2dFloat.c.s
@@ -1236,7 +1236,7 @@ testZfpEncodeBlockStrided2dFloat.s: testZfpEncodeBlockStrided2dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided2dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/testZfpEncodeBlockStrided2dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dFloat.dir/testZfpEncodeBlockStrided2dFloat.c.s
 .PHONY : testZfpEncodeBlockStrided2dFloat.c.s
 
 testZfpEncodeBlockStrided2dInt32.o: testZfpEncodeBlockStrided2dInt32.c.o
@@ -1245,7 +1245,7 @@ testZfpEncodeBlockStrided2dInt32.o: testZfpEncodeBlockStrided2dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided2dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/testZfpEncodeBlockStrided2dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/testZfpEncodeBlockStrided2dInt32.c.o
 .PHONY : testZfpEncodeBlockStrided2dInt32.c.o
 
 testZfpEncodeBlockStrided2dInt32.i: testZfpEncodeBlockStrided2dInt32.c.i
@@ -1254,7 +1254,7 @@ testZfpEncodeBlockStrided2dInt32.i: testZfpEncodeBlockStrided2dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided2dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/testZfpEncodeBlockStrided2dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/testZfpEncodeBlockStrided2dInt32.c.i
 .PHONY : testZfpEncodeBlockStrided2dInt32.c.i
 
 testZfpEncodeBlockStrided2dInt32.s: testZfpEncodeBlockStrided2dInt32.c.s
@@ -1263,7 +1263,7 @@ testZfpEncodeBlockStrided2dInt32.s: testZfpEncodeBlockStrided2dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided2dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/testZfpEncodeBlockStrided2dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt32.dir/testZfpEncodeBlockStrided2dInt32.c.s
 .PHONY : testZfpEncodeBlockStrided2dInt32.c.s
 
 testZfpEncodeBlockStrided2dInt64.o: testZfpEncodeBlockStrided2dInt64.c.o
@@ -1272,7 +1272,7 @@ testZfpEncodeBlockStrided2dInt64.o: testZfpEncodeBlockStrided2dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided2dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/testZfpEncodeBlockStrided2dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/testZfpEncodeBlockStrided2dInt64.c.o
 .PHONY : testZfpEncodeBlockStrided2dInt64.c.o
 
 testZfpEncodeBlockStrided2dInt64.i: testZfpEncodeBlockStrided2dInt64.c.i
@@ -1281,7 +1281,7 @@ testZfpEncodeBlockStrided2dInt64.i: testZfpEncodeBlockStrided2dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided2dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/testZfpEncodeBlockStrided2dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/testZfpEncodeBlockStrided2dInt64.c.i
 .PHONY : testZfpEncodeBlockStrided2dInt64.c.i
 
 testZfpEncodeBlockStrided2dInt64.s: testZfpEncodeBlockStrided2dInt64.c.s
@@ -1290,7 +1290,7 @@ testZfpEncodeBlockStrided2dInt64.s: testZfpEncodeBlockStrided2dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided2dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/testZfpEncodeBlockStrided2dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided2dInt64.dir/testZfpEncodeBlockStrided2dInt64.c.s
 .PHONY : testZfpEncodeBlockStrided2dInt64.c.s
 
 testZfpEncodeBlockStrided3dDouble.o: testZfpEncodeBlockStrided3dDouble.c.o
@@ -1299,7 +1299,7 @@ testZfpEncodeBlockStrided3dDouble.o: testZfpEncodeBlockStrided3dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided3dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/testZfpEncodeBlockStrided3dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/testZfpEncodeBlockStrided3dDouble.c.o
 .PHONY : testZfpEncodeBlockStrided3dDouble.c.o
 
 testZfpEncodeBlockStrided3dDouble.i: testZfpEncodeBlockStrided3dDouble.c.i
@@ -1308,7 +1308,7 @@ testZfpEncodeBlockStrided3dDouble.i: testZfpEncodeBlockStrided3dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided3dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/testZfpEncodeBlockStrided3dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/testZfpEncodeBlockStrided3dDouble.c.i
 .PHONY : testZfpEncodeBlockStrided3dDouble.c.i
 
 testZfpEncodeBlockStrided3dDouble.s: testZfpEncodeBlockStrided3dDouble.c.s
@@ -1317,7 +1317,7 @@ testZfpEncodeBlockStrided3dDouble.s: testZfpEncodeBlockStrided3dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided3dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/testZfpEncodeBlockStrided3dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dDouble.dir/testZfpEncodeBlockStrided3dDouble.c.s
 .PHONY : testZfpEncodeBlockStrided3dDouble.c.s
 
 testZfpEncodeBlockStrided3dFloat.o: testZfpEncodeBlockStrided3dFloat.c.o
@@ -1326,7 +1326,7 @@ testZfpEncodeBlockStrided3dFloat.o: testZfpEncodeBlockStrided3dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided3dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/testZfpEncodeBlockStrided3dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/testZfpEncodeBlockStrided3dFloat.c.o
 .PHONY : testZfpEncodeBlockStrided3dFloat.c.o
 
 testZfpEncodeBlockStrided3dFloat.i: testZfpEncodeBlockStrided3dFloat.c.i
@@ -1335,7 +1335,7 @@ testZfpEncodeBlockStrided3dFloat.i: testZfpEncodeBlockStrided3dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided3dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/testZfpEncodeBlockStrided3dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/testZfpEncodeBlockStrided3dFloat.c.i
 .PHONY : testZfpEncodeBlockStrided3dFloat.c.i
 
 testZfpEncodeBlockStrided3dFloat.s: testZfpEncodeBlockStrided3dFloat.c.s
@@ -1344,7 +1344,7 @@ testZfpEncodeBlockStrided3dFloat.s: testZfpEncodeBlockStrided3dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided3dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/testZfpEncodeBlockStrided3dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dFloat.dir/testZfpEncodeBlockStrided3dFloat.c.s
 .PHONY : testZfpEncodeBlockStrided3dFloat.c.s
 
 testZfpEncodeBlockStrided3dInt32.o: testZfpEncodeBlockStrided3dInt32.c.o
@@ -1353,7 +1353,7 @@ testZfpEncodeBlockStrided3dInt32.o: testZfpEncodeBlockStrided3dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided3dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/testZfpEncodeBlockStrided3dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/testZfpEncodeBlockStrided3dInt32.c.o
 .PHONY : testZfpEncodeBlockStrided3dInt32.c.o
 
 testZfpEncodeBlockStrided3dInt32.i: testZfpEncodeBlockStrided3dInt32.c.i
@@ -1362,7 +1362,7 @@ testZfpEncodeBlockStrided3dInt32.i: testZfpEncodeBlockStrided3dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided3dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/testZfpEncodeBlockStrided3dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/testZfpEncodeBlockStrided3dInt32.c.i
 .PHONY : testZfpEncodeBlockStrided3dInt32.c.i
 
 testZfpEncodeBlockStrided3dInt32.s: testZfpEncodeBlockStrided3dInt32.c.s
@@ -1371,7 +1371,7 @@ testZfpEncodeBlockStrided3dInt32.s: testZfpEncodeBlockStrided3dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided3dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/testZfpEncodeBlockStrided3dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt32.dir/testZfpEncodeBlockStrided3dInt32.c.s
 .PHONY : testZfpEncodeBlockStrided3dInt32.c.s
 
 testZfpEncodeBlockStrided3dInt64.o: testZfpEncodeBlockStrided3dInt64.c.o
@@ -1380,7 +1380,7 @@ testZfpEncodeBlockStrided3dInt64.o: testZfpEncodeBlockStrided3dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided3dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/testZfpEncodeBlockStrided3dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/testZfpEncodeBlockStrided3dInt64.c.o
 .PHONY : testZfpEncodeBlockStrided3dInt64.c.o
 
 testZfpEncodeBlockStrided3dInt64.i: testZfpEncodeBlockStrided3dInt64.c.i
@@ -1389,7 +1389,7 @@ testZfpEncodeBlockStrided3dInt64.i: testZfpEncodeBlockStrided3dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided3dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/testZfpEncodeBlockStrided3dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/testZfpEncodeBlockStrided3dInt64.c.i
 .PHONY : testZfpEncodeBlockStrided3dInt64.c.i
 
 testZfpEncodeBlockStrided3dInt64.s: testZfpEncodeBlockStrided3dInt64.c.s
@@ -1398,7 +1398,7 @@ testZfpEncodeBlockStrided3dInt64.s: testZfpEncodeBlockStrided3dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided3dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/testZfpEncodeBlockStrided3dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided3dInt64.dir/testZfpEncodeBlockStrided3dInt64.c.s
 .PHONY : testZfpEncodeBlockStrided3dInt64.c.s
 
 testZfpEncodeBlockStrided4dDouble.o: testZfpEncodeBlockStrided4dDouble.c.o
@@ -1407,7 +1407,7 @@ testZfpEncodeBlockStrided4dDouble.o: testZfpEncodeBlockStrided4dDouble.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided4dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/testZfpEncodeBlockStrided4dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/testZfpEncodeBlockStrided4dDouble.c.o
 .PHONY : testZfpEncodeBlockStrided4dDouble.c.o
 
 testZfpEncodeBlockStrided4dDouble.i: testZfpEncodeBlockStrided4dDouble.c.i
@@ -1416,7 +1416,7 @@ testZfpEncodeBlockStrided4dDouble.i: testZfpEncodeBlockStrided4dDouble.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided4dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/testZfpEncodeBlockStrided4dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/testZfpEncodeBlockStrided4dDouble.c.i
 .PHONY : testZfpEncodeBlockStrided4dDouble.c.i
 
 testZfpEncodeBlockStrided4dDouble.s: testZfpEncodeBlockStrided4dDouble.c.s
@@ -1425,7 +1425,7 @@ testZfpEncodeBlockStrided4dDouble.s: testZfpEncodeBlockStrided4dDouble.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided4dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/testZfpEncodeBlockStrided4dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/testZfpEncodeBlockStrided4dDouble.c.s
 .PHONY : testZfpEncodeBlockStrided4dDouble.c.s
 
 testZfpEncodeBlockStrided4dFloat.o: testZfpEncodeBlockStrided4dFloat.c.o
@@ -1434,7 +1434,7 @@ testZfpEncodeBlockStrided4dFloat.o: testZfpEncodeBlockStrided4dFloat.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided4dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o
 .PHONY : testZfpEncodeBlockStrided4dFloat.c.o
 
 testZfpEncodeBlockStrided4dFloat.i: testZfpEncodeBlockStrided4dFloat.c.i
@@ -1443,7 +1443,7 @@ testZfpEncodeBlockStrided4dFloat.i: testZfpEncodeBlockStrided4dFloat.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided4dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.i
 .PHONY : testZfpEncodeBlockStrided4dFloat.c.i
 
 testZfpEncodeBlockStrided4dFloat.s: testZfpEncodeBlockStrided4dFloat.c.s
@@ -1452,7 +1452,7 @@ testZfpEncodeBlockStrided4dFloat.s: testZfpEncodeBlockStrided4dFloat.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided4dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.s
 .PHONY : testZfpEncodeBlockStrided4dFloat.c.s
 
 testZfpEncodeBlockStrided4dInt32.o: testZfpEncodeBlockStrided4dInt32.c.o
@@ -1461,7 +1461,7 @@ testZfpEncodeBlockStrided4dInt32.o: testZfpEncodeBlockStrided4dInt32.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided4dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/testZfpEncodeBlockStrided4dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/testZfpEncodeBlockStrided4dInt32.c.o
 .PHONY : testZfpEncodeBlockStrided4dInt32.c.o
 
 testZfpEncodeBlockStrided4dInt32.i: testZfpEncodeBlockStrided4dInt32.c.i
@@ -1470,7 +1470,7 @@ testZfpEncodeBlockStrided4dInt32.i: testZfpEncodeBlockStrided4dInt32.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided4dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/testZfpEncodeBlockStrided4dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/testZfpEncodeBlockStrided4dInt32.c.i
 .PHONY : testZfpEncodeBlockStrided4dInt32.c.i
 
 testZfpEncodeBlockStrided4dInt32.s: testZfpEncodeBlockStrided4dInt32.c.s
@@ -1479,7 +1479,7 @@ testZfpEncodeBlockStrided4dInt32.s: testZfpEncodeBlockStrided4dInt32.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided4dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/testZfpEncodeBlockStrided4dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt32.dir/testZfpEncodeBlockStrided4dInt32.c.s
 .PHONY : testZfpEncodeBlockStrided4dInt32.c.s
 
 testZfpEncodeBlockStrided4dInt64.o: testZfpEncodeBlockStrided4dInt64.c.o
@@ -1488,7 +1488,7 @@ testZfpEncodeBlockStrided4dInt64.o: testZfpEncodeBlockStrided4dInt64.c.o
 
 # target to build an object file
 testZfpEncodeBlockStrided4dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/testZfpEncodeBlockStrided4dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/testZfpEncodeBlockStrided4dInt64.c.o
 .PHONY : testZfpEncodeBlockStrided4dInt64.c.o
 
 testZfpEncodeBlockStrided4dInt64.i: testZfpEncodeBlockStrided4dInt64.c.i
@@ -1497,7 +1497,7 @@ testZfpEncodeBlockStrided4dInt64.i: testZfpEncodeBlockStrided4dInt64.c.i
 
 # target to preprocess a source file
 testZfpEncodeBlockStrided4dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/testZfpEncodeBlockStrided4dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/testZfpEncodeBlockStrided4dInt64.c.i
 .PHONY : testZfpEncodeBlockStrided4dInt64.c.i
 
 testZfpEncodeBlockStrided4dInt64.s: testZfpEncodeBlockStrided4dInt64.c.s
@@ -1506,7 +1506,7 @@ testZfpEncodeBlockStrided4dInt64.s: testZfpEncodeBlockStrided4dInt64.c.s
 
 # target to generate assembly for a file
 testZfpEncodeBlockStrided4dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/testZfpEncodeBlockStrided4dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/build.make tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dInt64.dir/testZfpEncodeBlockStrided4dInt64.c.s
 .PHONY : testZfpEncodeBlockStrided4dInt64.c.s
 
 # Help Target
@@ -1661,6 +1661,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

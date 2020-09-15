@@ -12,13 +12,13 @@ stdint.h
 inttypes.h
 -
 
-/home/ubuntu/local_build/zfp/tests/utils/fixedpoint96.c
+/home/cc/local_build/zfp/tests/utils/fixedpoint96.c
 limits.h
 -
 fixedpoint96.h
-/home/ubuntu/local_build/zfp/tests/utils/fixedpoint96.h
+/home/cc/local_build/zfp/tests/utils/fixedpoint96.h
 
-/home/ubuntu/local_build/zfp/tests/utils/fixedpoint96.h
+/home/cc/local_build/zfp/tests/utils/fixedpoint96.h
 include/zfp/types.h
-/home/ubuntu/local_build/zfp/tests/utils/include/zfp/types.h
+/home/cc/local_build/zfp/tests/utils/include/zfp/types.h
 

@@ -1,1 +1,1 @@
-/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/testOmp.dir/testOmp.c.o  -o ../../../bin/testOmp -rdynamic ../../../cmocka-build/src/libcmocka.a ../../../lib/libzfp.so.0.5.5 -fopenmp -Wl,-rpath,/home/ubuntu/local_build/zfp/build_debug/lib 
+/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/testOmp.dir/testOmp.c.o  -o ../../../bin/testOmp -rdynamic ../../../cmocka-build/src/libcmocka.a ../../../lib/libzfp.so.0.5.5 -fopenmp -Wl,-rpath,/home/cc/local_build/zfp/build_debug/lib 

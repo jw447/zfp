@@ -64,7 +64,7 @@ stdint.h
 inttypes.h
 -
 
-/home/ubuntu/local_build/zfp/tests/src/inline/testBitstream.c
+/home/cc/local_build/zfp/tests/src/inline/testBitstream.c
 stdarg.h
 -
 stddef.h
@@ -74,9 +74,9 @@ setjmp.h
 cmocka.h
 -
 include/bitstream.h
-/home/ubuntu/local_build/zfp/tests/src/inline/include/bitstream.h
+/home/cc/local_build/zfp/tests/src/inline/include/bitstream.h
 src/inline/bitstream.c
-/home/ubuntu/local_build/zfp/tests/src/inline/src/inline/bitstream.c
+/home/cc/local_build/zfp/tests/src/inline/src/inline/bitstream.c
 
 cmocka-src/include/cmocka.h
 

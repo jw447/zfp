@@ -148,11 +148,11 @@ doubleConsts.h
 
 ../tests/constants/universalConsts.h
 
-/home/ubuntu/local_build/zfp/tests/src/misc/testZfpHeader.c
+/home/cc/local_build/zfp/tests/src/misc/testZfpHeader.c
 src/encode1d.c
-/home/ubuntu/local_build/zfp/tests/src/misc/src/encode1d.c
+/home/cc/local_build/zfp/tests/src/misc/src/encode1d.c
 constants/1dDouble.h
-/home/ubuntu/local_build/zfp/tests/src/misc/constants/1dDouble.h
+/home/cc/local_build/zfp/tests/src/misc/constants/1dDouble.h
 stdarg.h
 -
 stddef.h

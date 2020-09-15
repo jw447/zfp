@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
 
 # Include any dependencies generated for this target.
 include example/CMakeFiles/allocate_module_test.dir/depend.make
@@ -58,17 +58,17 @@ include example/CMakeFiles/allocate_module_test.dir/progress.make
 include example/CMakeFiles/allocate_module_test.dir/flags.make
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o: example/CMakeFiles/allocate_module_test.dir/flags.make
-example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o: /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/allocate_module_test.dir/allocate_module.c.o   -c /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c
+example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/allocate_module_test.dir/allocate_module.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/allocate_module_test.dir/allocate_module.c.i"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c > CMakeFiles/allocate_module_test.dir/allocate_module.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c > CMakeFiles/allocate_module_test.dir/allocate_module.c.i
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/allocate_module_test.dir/allocate_module.c.s"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c -o CMakeFiles/allocate_module_test.dir/allocate_module.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c -o CMakeFiles/allocate_module_test.dir/allocate_module.c.s
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o.requires:
 
@@ -82,17 +82,17 @@ example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o.provides.build: 
 
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o: example/CMakeFiles/allocate_module_test.dir/flags.make
-example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o: /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o   -c /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
+example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/allocate_module_test.dir/allocate_module_test.c.i"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c > CMakeFiles/allocate_module_test.dir/allocate_module_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c > CMakeFiles/allocate_module_test.dir/allocate_module_test.c.i
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/allocate_module_test.dir/allocate_module_test.c.s"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c -o CMakeFiles/allocate_module_test.dir/allocate_module_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c -o CMakeFiles/allocate_module_test.dir/allocate_module_test.c.s
 
 example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o.requires:
 
@@ -118,8 +118,8 @@ example/allocate_module_test: example/CMakeFiles/allocate_module_test.dir/alloca
 example/allocate_module_test: example/CMakeFiles/allocate_module_test.dir/build.make
 example/allocate_module_test: src/libcmocka.so.0.4.0
 example/allocate_module_test: example/CMakeFiles/allocate_module_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable allocate_module_test"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/allocate_module_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable allocate_module_test"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/allocate_module_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/CMakeFiles/allocate_module_test.dir/build: example/allocate_module_test
@@ -132,10 +132,10 @@ example/CMakeFiles/allocate_module_test.dir/requires: example/CMakeFiles/allocat
 .PHONY : example/CMakeFiles/allocate_module_test.dir/requires
 
 example/CMakeFiles/allocate_module_test.dir/clean:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -P CMakeFiles/allocate_module_test.dir/cmake_clean.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -P CMakeFiles/allocate_module_test.dir/cmake_clean.cmake
 .PHONY : example/CMakeFiles/allocate_module_test.dir/clean
 
 example/CMakeFiles/allocate_module_test.dir/depend:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/local_build/zfp/build_debug/cmocka-src /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example /home/ubuntu/local_build/zfp/build_debug/cmocka-build /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/allocate_module_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src /home/cc/local_build/zfp/build_debug/cmocka-src/example /home/cc/local_build/zfp/build_debug/cmocka-build /home/cc/local_build/zfp/build_debug/cmocka-build/example /home/cc/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/allocate_module_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/CMakeFiles/allocate_module_test.dir/depend
 

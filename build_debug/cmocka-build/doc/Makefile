@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/cc/local_build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -78,49 +78,16 @@ package_source/fast: package_source
 
 .PHONY : package_source/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
 package/fast: package
 
 .PHONY : package/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -144,16 +111,49 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles /home/ubuntu/local_build/zfp/build_debug/cmocka-build/doc/CMakeFiles/progress.marks
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles 0
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles /home/cc/local_build/zfp/build_debug/cmocka-build/doc/CMakeFiles/progress.marks
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/clean
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/clean
 .PHONY : clean
 
 # The main clean target
@@ -163,18 +163,48 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+doc/CMakeFiles/doxygen.dir/rule:
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/doxygen.dir/rule
+.PHONY : doc/CMakeFiles/doxygen.dir/rule
+
+# Convenience name for target.
+doxygen: doc/CMakeFiles/doxygen.dir/rule
+
+.PHONY : doxygen
+
+# fast build rule for target.
+doxygen/fast:
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f doc/CMakeFiles/doxygen.dir/build.make doc/CMakeFiles/doxygen.dir/build
+.PHONY : doxygen/fast
+
+# Convenience name for target.
+doc/CMakeFiles/doc.dir/rule:
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/doc.dir/rule
+.PHONY : doc/CMakeFiles/doc.dir/rule
+
+# Convenience name for target.
+doc: doc/CMakeFiles/doc.dir/rule
+
+.PHONY : doc
+
+# fast build rule for target.
+doc/fast:
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f doc/CMakeFiles/doc.dir/build.make doc/CMakeFiles/doc.dir/build
+.PHONY : doc/fast
 
 # Help Target
 help:
@@ -184,12 +214,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... package_source"
-	@echo "... rebuild_cache"
 	@echo "... package"
-	@echo "... install/strip"
-	@echo "... install/local"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... doxygen"
+	@echo "... doc"
+	@echo "... install/local"
+	@echo "... install/strip"
 .PHONY : help
 
 
@@ -201,6 +233,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

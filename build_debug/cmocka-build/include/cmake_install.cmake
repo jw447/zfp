@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/local_build/zfp/build_debug/cmocka-src/include
+# Install script for directory: /home/cc/local_build/zfp/build_debug/cmocka-src/include
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -42,8 +42,8 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "headers
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/usr/local/include" TYPE FILE FILES
-    "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h"
-    "/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka_pbc.h"
+    "/home/cc/local_build/zfp/build_debug/cmocka-src/include/cmocka.h"
+    "/home/cc/local_build/zfp/build_debug/cmocka-src/include/cmocka_pbc.h"
     )
 endif()
 

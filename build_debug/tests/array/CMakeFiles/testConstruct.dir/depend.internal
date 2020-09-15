@@ -25,10 +25,10 @@ tests/array/CMakeFiles/testConstruct.dir/testConstruct.cpp.o
  ../include/zfp.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/ubuntu/local_build/zfp/tests/array/testConstruct.cpp
- /home/ubuntu/local_build/zfp/tests/array/utils/commonMacros.h
- /home/ubuntu/local_build/zfp/tests/array/utils/gtestCApiTest.h
- /home/ubuntu/local_build/zfp/tests/array/utils/gtestTestEnv.h
+ /home/cc/local_build/zfp/tests/array/testConstruct.cpp
+ /home/cc/local_build/zfp/tests/array/utils/commonMacros.h
+ /home/cc/local_build/zfp/tests/array/utils/gtestCApiTest.h
+ /home/cc/local_build/zfp/tests/array/utils/gtestTestEnv.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

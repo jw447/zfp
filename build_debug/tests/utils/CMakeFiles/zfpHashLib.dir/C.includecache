@@ -12,13 +12,13 @@ stdint.h
 inttypes.h
 -
 
-/home/ubuntu/local_build/zfp/tests/utils/zfpHash.c
+/home/cc/local_build/zfp/tests/utils/zfpHash.c
 zfpHash.h
-/home/ubuntu/local_build/zfp/tests/utils/zfpHash.h
+/home/cc/local_build/zfp/tests/utils/zfpHash.h
 
-/home/ubuntu/local_build/zfp/tests/utils/zfpHash.h
+/home/cc/local_build/zfp/tests/utils/zfpHash.h
 stddef.h
 -
 include/zfp/types.h
-/home/ubuntu/local_build/zfp/tests/utils/include/zfp/types.h
+/home/cc/local_build/zfp/tests/utils/include/zfp/types.h
 

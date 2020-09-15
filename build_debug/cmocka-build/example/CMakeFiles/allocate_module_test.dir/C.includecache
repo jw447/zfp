@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module.c
 config.h
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/config.h
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/config.h
 malloc.h
 -
 sys/types.h
@@ -16,7 +16,7 @@ sys/types.h
 stdlib.h
 -
 
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/allocate_module_test.c
 stdarg.h
 -
 stddef.h
@@ -26,7 +26,7 @@ setjmp.h
 cmocka.h
 -
 
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/cc/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 
 config.h
 

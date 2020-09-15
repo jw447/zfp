@@ -22,11 +22,11 @@ tests/array/CMakeFiles/testArray1fViews.dir/testArray1fViews.cpp.o
  ../include/zfp/types.h
  ../tests/constants/universalConsts.h
  ../tests/utils/rand32.h
- /home/ubuntu/local_build/zfp/tests/array/testArray1ViewsBase.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArray1fViews.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArrayViewsBase.cpp
- /home/ubuntu/local_build/zfp/tests/array/utils/gtest1fTest.h
- /home/ubuntu/local_build/zfp/tests/array/utils/predicates.h
+ /home/cc/local_build/zfp/tests/array/testArray1ViewsBase.cpp
+ /home/cc/local_build/zfp/tests/array/testArray1fViews.cpp
+ /home/cc/local_build/zfp/tests/array/testArrayViewsBase.cpp
+ /home/cc/local_build/zfp/tests/array/utils/gtest1fTest.h
+ /home/cc/local_build/zfp/tests/array/utils/predicates.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

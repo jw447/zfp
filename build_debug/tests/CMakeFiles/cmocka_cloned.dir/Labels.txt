@@ -1,13 +1,13 @@
 # Target labels
  cmocka_cloned
 # Source files and their labels
-/home/ubuntu/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned
-/home/ubuntu/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned-complete.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-install.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-mkdir.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-update.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-patch.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure.rule
-/home/ubuntu/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build.rule
+/home/cc/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned
+/home/cc/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned.rule
+/home/cc/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned-complete.rule
+/home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-install.rule
+/home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-mkdir.rule
+/home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download.rule
+/home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-update.rule
+/home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-patch.rule
+/home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure.rule
+/home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build.rule

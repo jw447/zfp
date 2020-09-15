@@ -168,23 +168,23 @@ stddef.h
 include/zfp/types.h
 ../tests/utils/include/zfp/types.h
 
-/home/ubuntu/local_build/zfp/tests/src/encode/testZfpEncodeBlockStrided3dDouble.c
+/home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlockStrided3dDouble.c
 src/encode3d.c
-/home/ubuntu/local_build/zfp/tests/src/encode/src/encode3d.c
+/home/cc/local_build/zfp/tests/src/encode/src/encode3d.c
 constants/3dDouble.h
-/home/ubuntu/local_build/zfp/tests/src/encode/constants/3dDouble.h
+/home/cc/local_build/zfp/tests/src/encode/constants/3dDouble.h
 utils/rand64.h
-/home/ubuntu/local_build/zfp/tests/src/encode/utils/rand64.h
+/home/cc/local_build/zfp/tests/src/encode/utils/rand64.h
 zfpEncodeBlockStridedBase.c
-/home/ubuntu/local_build/zfp/tests/src/encode/zfpEncodeBlockStridedBase.c
+/home/cc/local_build/zfp/tests/src/encode/zfpEncodeBlockStridedBase.c
 testcases/blockStrided.c
-/home/ubuntu/local_build/zfp/tests/src/encode/testcases/blockStrided.c
+/home/cc/local_build/zfp/tests/src/encode/testcases/blockStrided.c
 
-/home/ubuntu/local_build/zfp/tests/src/encode/testcases/blockStrided.c
+/home/cc/local_build/zfp/tests/src/encode/testcases/blockStrided.c
 utils/testMacros.h
-/home/ubuntu/local_build/zfp/tests/src/encode/testcases/utils/testMacros.h
+/home/cc/local_build/zfp/tests/src/encode/testcases/utils/testMacros.h
 
-/home/ubuntu/local_build/zfp/tests/src/encode/zfpEncodeBlockStridedBase.c
+/home/cc/local_build/zfp/tests/src/encode/zfpEncodeBlockStridedBase.c
 stdarg.h
 -
 stddef.h
@@ -196,11 +196,11 @@ cmocka.h
 stdlib.h
 -
 utils/testMacros.h
-/home/ubuntu/local_build/zfp/tests/src/encode/utils/testMacros.h
+/home/cc/local_build/zfp/tests/src/encode/utils/testMacros.h
 utils/zfpChecksums.h
-/home/ubuntu/local_build/zfp/tests/src/encode/utils/zfpChecksums.h
+/home/cc/local_build/zfp/tests/src/encode/utils/zfpChecksums.h
 utils/zfpHash.h
-/home/ubuntu/local_build/zfp/tests/src/encode/utils/zfpHash.h
+/home/cc/local_build/zfp/tests/src/encode/utils/zfpHash.h
 
 cmocka-src/include/cmocka.h
 

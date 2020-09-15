@@ -27,11 +27,11 @@ tests/array/CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.o
  ../include/zfp/types.h
  ../tests/constants/universalConsts.h
  ../tests/utils/rand64.h
- /home/ubuntu/local_build/zfp/tests/array/testArray3ViewsBase.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArray3fViews.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArrayViewsBase.cpp
- /home/ubuntu/local_build/zfp/tests/array/utils/gtest3dTest.h
- /home/ubuntu/local_build/zfp/tests/array/utils/predicates.h
+ /home/cc/local_build/zfp/tests/array/testArray3ViewsBase.cpp
+ /home/cc/local_build/zfp/tests/array/testArray3fViews.cpp
+ /home/cc/local_build/zfp/tests/array/testArrayViewsBase.cpp
+ /home/cc/local_build/zfp/tests/array/utils/gtest3dTest.h
+ /home/cc/local_build/zfp/tests/array/utils/predicates.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

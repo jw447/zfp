@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/assert_macro.c
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/assert_macro.c
 string.h
 -
 assert_macro.h
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/assert_macro.h
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/assert_macro.h
 
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/assert_macro.h
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/assert_macro.h
 
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/assert_macro_test.c
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/assert_macro_test.c
 stdarg.h
 -
 stddef.h
@@ -24,7 +24,7 @@ setjmp.h
 cmocka.h
 -
 assert_macro.h
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/assert_macro.h
+/home/cc/local_build/zfp/build_debug/cmocka-src/example/assert_macro.h
 
-/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/cc/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/cmocka_shared.dir/depend.make
@@ -58,17 +58,17 @@ include src/CMakeFiles/cmocka_shared.dir/progress.make
 include src/CMakeFiles/cmocka_shared.dir/flags.make
 
 src/CMakeFiles/cmocka_shared.dir/cmocka.c.o: src/CMakeFiles/cmocka_shared.dir/flags.make
-src/CMakeFiles/cmocka_shared.dir/cmocka.c.o: /home/ubuntu/local_build/zfp/build_debug/cmocka-src/src/cmocka.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/cmocka_shared.dir/cmocka.c.o"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cmocka_shared.dir/cmocka.c.o   -c /home/ubuntu/local_build/zfp/build_debug/cmocka-src/src/cmocka.c
+src/CMakeFiles/cmocka_shared.dir/cmocka.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/src/cmocka.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/cmocka_shared.dir/cmocka.c.o"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cmocka_shared.dir/cmocka.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/src/cmocka.c
 
 src/CMakeFiles/cmocka_shared.dir/cmocka.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cmocka_shared.dir/cmocka.c.i"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/local_build/zfp/build_debug/cmocka-src/src/cmocka.c > CMakeFiles/cmocka_shared.dir/cmocka.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/src/cmocka.c > CMakeFiles/cmocka_shared.dir/cmocka.c.i
 
 src/CMakeFiles/cmocka_shared.dir/cmocka.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cmocka_shared.dir/cmocka.c.s"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/local_build/zfp/build_debug/cmocka-src/src/cmocka.c -o CMakeFiles/cmocka_shared.dir/cmocka.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/src/cmocka.c -o CMakeFiles/cmocka_shared.dir/cmocka.c.s
 
 src/CMakeFiles/cmocka_shared.dir/cmocka.c.o.requires:
 
@@ -91,9 +91,9 @@ cmocka_shared_EXTERNAL_OBJECTS =
 src/libcmocka.so.0.4.0: src/CMakeFiles/cmocka_shared.dir/cmocka.c.o
 src/libcmocka.so.0.4.0: src/CMakeFiles/cmocka_shared.dir/build.make
 src/libcmocka.so.0.4.0: src/CMakeFiles/cmocka_shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libcmocka.so"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cmocka_shared.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src && $(CMAKE_COMMAND) -E cmake_symlink_library libcmocka.so.0.4.0 libcmocka.so.0 libcmocka.so
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libcmocka.so"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cmocka_shared.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/src && $(CMAKE_COMMAND) -E cmake_symlink_library libcmocka.so.0.4.0 libcmocka.so.0 libcmocka.so
 
 src/libcmocka.so.0: src/libcmocka.so.0.4.0
 	@$(CMAKE_COMMAND) -E touch_nocreate src/libcmocka.so.0
@@ -111,10 +111,10 @@ src/CMakeFiles/cmocka_shared.dir/requires: src/CMakeFiles/cmocka_shared.dir/cmoc
 .PHONY : src/CMakeFiles/cmocka_shared.dir/requires
 
 src/CMakeFiles/cmocka_shared.dir/clean:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src && $(CMAKE_COMMAND) -P CMakeFiles/cmocka_shared.dir/cmake_clean.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/src && $(CMAKE_COMMAND) -P CMakeFiles/cmocka_shared.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/cmocka_shared.dir/clean
 
 src/CMakeFiles/cmocka_shared.dir/depend:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/local_build/zfp/build_debug/cmocka-src /home/ubuntu/local_build/zfp/build_debug/cmocka-src/src /home/ubuntu/local_build/zfp/build_debug/cmocka-build /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src /home/ubuntu/local_build/zfp/build_debug/cmocka-build/src/CMakeFiles/cmocka_shared.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src /home/cc/local_build/zfp/build_debug/cmocka-src/src /home/cc/local_build/zfp/build_debug/cmocka-build /home/cc/local_build/zfp/build_debug/cmocka-build/src /home/cc/local_build/zfp/build_debug/cmocka-build/src/CMakeFiles/cmocka_shared.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/cmocka_shared.dir/depend
 

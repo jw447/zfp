@@ -22,5 +22,5 @@ tests/utils/CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.o
  ../tests/constants/checksums/4dFloat.h
  ../tests/constants/checksums/4dInt32.h
  ../tests/constants/checksums/4dInt64.h
- /home/ubuntu/local_build/zfp/tests/utils/zfpChecksums.c
- /home/ubuntu/local_build/zfp/tests/utils/zfpChecksums.h
+ /home/cc/local_build/zfp/tests/utils/zfpChecksums.c
+ /home/cc/local_build/zfp/tests/utils/zfpChecksums.h

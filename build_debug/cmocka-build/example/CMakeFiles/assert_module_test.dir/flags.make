@@ -6,7 +6,7 @@ C_FLAGS =  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissin
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/ubuntu/local_build/zfp/build_debug/cmocka-build/example -I/home/ubuntu/local_build/zfp/build_debug/cmocka-src/example -I/home/ubuntu/local_build/zfp/build_debug/cmocka-build -I/home/ubuntu/local_build/zfp/build_debug/cmocka-src/include 
+C_INCLUDES = -I/home/cc/local_build/zfp/build_debug/cmocka-build/example -I/home/cc/local_build/zfp/build_debug/cmocka-src/example -I/home/cc/local_build/zfp/build_debug/cmocka-build -I/home/cc/local_build/zfp/build_debug/cmocka-src/include 
 
 # Custom defines: example/CMakeFiles/assert_module_test.dir/assert_module.c.o_DEFINES = UNIT_TESTING=1
 

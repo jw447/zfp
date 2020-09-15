@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
 
 # Include any dependencies generated for this target.
 include example/CMakeFiles/product_database_test.dir/depend.make
@@ -58,17 +58,17 @@ include example/CMakeFiles/product_database_test.dir/progress.make
 include example/CMakeFiles/product_database_test.dir/flags.make
 
 example/CMakeFiles/product_database_test.dir/product_database.c.o: example/CMakeFiles/product_database_test.dir/flags.make
-example/CMakeFiles/product_database_test.dir/product_database.c.o: /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/CMakeFiles/product_database_test.dir/product_database.c.o"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/product_database_test.dir/product_database.c.o   -c /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database.c
+example/CMakeFiles/product_database_test.dir/product_database.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/CMakeFiles/product_database_test.dir/product_database.c.o"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/product_database_test.dir/product_database.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database.c
 
 example/CMakeFiles/product_database_test.dir/product_database.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/product_database_test.dir/product_database.c.i"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database.c > CMakeFiles/product_database_test.dir/product_database.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database.c > CMakeFiles/product_database_test.dir/product_database.c.i
 
 example/CMakeFiles/product_database_test.dir/product_database.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/product_database_test.dir/product_database.c.s"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database.c -o CMakeFiles/product_database_test.dir/product_database.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database.c -o CMakeFiles/product_database_test.dir/product_database.c.s
 
 example/CMakeFiles/product_database_test.dir/product_database.c.o.requires:
 
@@ -82,17 +82,17 @@ example/CMakeFiles/product_database_test.dir/product_database.c.o.provides.build
 
 
 example/CMakeFiles/product_database_test.dir/product_database_test.c.o: example/CMakeFiles/product_database_test.dir/flags.make
-example/CMakeFiles/product_database_test.dir/product_database_test.c.o: /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/CMakeFiles/product_database_test.dir/product_database_test.c.o"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/product_database_test.dir/product_database_test.c.o   -c /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c
+example/CMakeFiles/product_database_test.dir/product_database_test.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/CMakeFiles/product_database_test.dir/product_database_test.c.o"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/product_database_test.dir/product_database_test.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c
 
 example/CMakeFiles/product_database_test.dir/product_database_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/product_database_test.dir/product_database_test.c.i"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c > CMakeFiles/product_database_test.dir/product_database_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c > CMakeFiles/product_database_test.dir/product_database_test.c.i
 
 example/CMakeFiles/product_database_test.dir/product_database_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/product_database_test.dir/product_database_test.c.s"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c -o CMakeFiles/product_database_test.dir/product_database_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/product_database_test.c -o CMakeFiles/product_database_test.dir/product_database_test.c.s
 
 example/CMakeFiles/product_database_test.dir/product_database_test.c.o.requires:
 
@@ -118,8 +118,8 @@ example/product_database_test: example/CMakeFiles/product_database_test.dir/prod
 example/product_database_test: example/CMakeFiles/product_database_test.dir/build.make
 example/product_database_test: src/libcmocka.so.0.4.0
 example/product_database_test: example/CMakeFiles/product_database_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable product_database_test"
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/product_database_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable product_database_test"
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/product_database_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/CMakeFiles/product_database_test.dir/build: example/product_database_test
@@ -132,10 +132,10 @@ example/CMakeFiles/product_database_test.dir/requires: example/CMakeFiles/produc
 .PHONY : example/CMakeFiles/product_database_test.dir/requires
 
 example/CMakeFiles/product_database_test.dir/clean:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -P CMakeFiles/product_database_test.dir/cmake_clean.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -P CMakeFiles/product_database_test.dir/cmake_clean.cmake
 .PHONY : example/CMakeFiles/product_database_test.dir/clean
 
 example/CMakeFiles/product_database_test.dir/depend:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/local_build/zfp/build_debug/cmocka-src /home/ubuntu/local_build/zfp/build_debug/cmocka-src/example /home/ubuntu/local_build/zfp/build_debug/cmocka-build /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/product_database_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src /home/cc/local_build/zfp/build_debug/cmocka-src/example /home/cc/local_build/zfp/build_debug/cmocka-build /home/cc/local_build/zfp/build_debug/cmocka-build/example /home/cc/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/product_database_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/CMakeFiles/product_database_test.dir/depend
 

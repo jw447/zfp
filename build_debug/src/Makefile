@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles /home/ubuntu/local_build/zfp/build_debug/src/CMakeFiles/progress.marks
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/src/CMakeFiles/progress.marks
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/zfp.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/zfp.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/zfp.dir/rule
 .PHONY : src/CMakeFiles/zfp.dir/rule
 
 # Convenience name for target.
@@ -177,7 +177,7 @@ zfp: src/CMakeFiles/zfp.dir/rule
 
 # fast build rule for target.
 zfp/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/build
 .PHONY : zfp/fast
 
 bitstream.o: bitstream.c.o
@@ -186,7 +186,7 @@ bitstream.o: bitstream.c.o
 
 # target to build an object file
 bitstream.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/bitstream.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/bitstream.c.o
 .PHONY : bitstream.c.o
 
 bitstream.i: bitstream.c.i
@@ -195,7 +195,7 @@ bitstream.i: bitstream.c.i
 
 # target to preprocess a source file
 bitstream.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/bitstream.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/bitstream.c.i
 .PHONY : bitstream.c.i
 
 bitstream.s: bitstream.c.s
@@ -204,7 +204,7 @@ bitstream.s: bitstream.c.s
 
 # target to generate assembly for a file
 bitstream.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/bitstream.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/bitstream.c.s
 .PHONY : bitstream.c.s
 
 decode1d.o: decode1d.c.o
@@ -213,7 +213,7 @@ decode1d.o: decode1d.c.o
 
 # target to build an object file
 decode1d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1d.c.o
 .PHONY : decode1d.c.o
 
 decode1d.i: decode1d.c.i
@@ -222,7 +222,7 @@ decode1d.i: decode1d.c.i
 
 # target to preprocess a source file
 decode1d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1d.c.i
 .PHONY : decode1d.c.i
 
 decode1d.s: decode1d.c.s
@@ -231,7 +231,7 @@ decode1d.s: decode1d.c.s
 
 # target to generate assembly for a file
 decode1d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1d.c.s
 .PHONY : decode1d.c.s
 
 decode1f.o: decode1f.c.o
@@ -240,7 +240,7 @@ decode1f.o: decode1f.c.o
 
 # target to build an object file
 decode1f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1f.c.o
 .PHONY : decode1f.c.o
 
 decode1f.i: decode1f.c.i
@@ -249,7 +249,7 @@ decode1f.i: decode1f.c.i
 
 # target to preprocess a source file
 decode1f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1f.c.i
 .PHONY : decode1f.c.i
 
 decode1f.s: decode1f.c.s
@@ -258,7 +258,7 @@ decode1f.s: decode1f.c.s
 
 # target to generate assembly for a file
 decode1f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1f.c.s
 .PHONY : decode1f.c.s
 
 decode1i.o: decode1i.c.o
@@ -267,7 +267,7 @@ decode1i.o: decode1i.c.o
 
 # target to build an object file
 decode1i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1i.c.o
 .PHONY : decode1i.c.o
 
 decode1i.i: decode1i.c.i
@@ -276,7 +276,7 @@ decode1i.i: decode1i.c.i
 
 # target to preprocess a source file
 decode1i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1i.c.i
 .PHONY : decode1i.c.i
 
 decode1i.s: decode1i.c.s
@@ -285,7 +285,7 @@ decode1i.s: decode1i.c.s
 
 # target to generate assembly for a file
 decode1i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1i.c.s
 .PHONY : decode1i.c.s
 
 decode1l.o: decode1l.c.o
@@ -294,7 +294,7 @@ decode1l.o: decode1l.c.o
 
 # target to build an object file
 decode1l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1l.c.o
 .PHONY : decode1l.c.o
 
 decode1l.i: decode1l.c.i
@@ -303,7 +303,7 @@ decode1l.i: decode1l.c.i
 
 # target to preprocess a source file
 decode1l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1l.c.i
 .PHONY : decode1l.c.i
 
 decode1l.s: decode1l.c.s
@@ -312,7 +312,7 @@ decode1l.s: decode1l.c.s
 
 # target to generate assembly for a file
 decode1l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode1l.c.s
 .PHONY : decode1l.c.s
 
 decode2d.o: decode2d.c.o
@@ -321,7 +321,7 @@ decode2d.o: decode2d.c.o
 
 # target to build an object file
 decode2d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2d.c.o
 .PHONY : decode2d.c.o
 
 decode2d.i: decode2d.c.i
@@ -330,7 +330,7 @@ decode2d.i: decode2d.c.i
 
 # target to preprocess a source file
 decode2d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2d.c.i
 .PHONY : decode2d.c.i
 
 decode2d.s: decode2d.c.s
@@ -339,7 +339,7 @@ decode2d.s: decode2d.c.s
 
 # target to generate assembly for a file
 decode2d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2d.c.s
 .PHONY : decode2d.c.s
 
 decode2f.o: decode2f.c.o
@@ -348,7 +348,7 @@ decode2f.o: decode2f.c.o
 
 # target to build an object file
 decode2f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2f.c.o
 .PHONY : decode2f.c.o
 
 decode2f.i: decode2f.c.i
@@ -357,7 +357,7 @@ decode2f.i: decode2f.c.i
 
 # target to preprocess a source file
 decode2f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2f.c.i
 .PHONY : decode2f.c.i
 
 decode2f.s: decode2f.c.s
@@ -366,7 +366,7 @@ decode2f.s: decode2f.c.s
 
 # target to generate assembly for a file
 decode2f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2f.c.s
 .PHONY : decode2f.c.s
 
 decode2i.o: decode2i.c.o
@@ -375,7 +375,7 @@ decode2i.o: decode2i.c.o
 
 # target to build an object file
 decode2i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2i.c.o
 .PHONY : decode2i.c.o
 
 decode2i.i: decode2i.c.i
@@ -384,7 +384,7 @@ decode2i.i: decode2i.c.i
 
 # target to preprocess a source file
 decode2i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2i.c.i
 .PHONY : decode2i.c.i
 
 decode2i.s: decode2i.c.s
@@ -393,7 +393,7 @@ decode2i.s: decode2i.c.s
 
 # target to generate assembly for a file
 decode2i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2i.c.s
 .PHONY : decode2i.c.s
 
 decode2l.o: decode2l.c.o
@@ -402,7 +402,7 @@ decode2l.o: decode2l.c.o
 
 # target to build an object file
 decode2l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2l.c.o
 .PHONY : decode2l.c.o
 
 decode2l.i: decode2l.c.i
@@ -411,7 +411,7 @@ decode2l.i: decode2l.c.i
 
 # target to preprocess a source file
 decode2l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2l.c.i
 .PHONY : decode2l.c.i
 
 decode2l.s: decode2l.c.s
@@ -420,7 +420,7 @@ decode2l.s: decode2l.c.s
 
 # target to generate assembly for a file
 decode2l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode2l.c.s
 .PHONY : decode2l.c.s
 
 decode3d.o: decode3d.c.o
@@ -429,7 +429,7 @@ decode3d.o: decode3d.c.o
 
 # target to build an object file
 decode3d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3d.c.o
 .PHONY : decode3d.c.o
 
 decode3d.i: decode3d.c.i
@@ -438,7 +438,7 @@ decode3d.i: decode3d.c.i
 
 # target to preprocess a source file
 decode3d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3d.c.i
 .PHONY : decode3d.c.i
 
 decode3d.s: decode3d.c.s
@@ -447,7 +447,7 @@ decode3d.s: decode3d.c.s
 
 # target to generate assembly for a file
 decode3d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3d.c.s
 .PHONY : decode3d.c.s
 
 decode3f.o: decode3f.c.o
@@ -456,7 +456,7 @@ decode3f.o: decode3f.c.o
 
 # target to build an object file
 decode3f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3f.c.o
 .PHONY : decode3f.c.o
 
 decode3f.i: decode3f.c.i
@@ -465,7 +465,7 @@ decode3f.i: decode3f.c.i
 
 # target to preprocess a source file
 decode3f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3f.c.i
 .PHONY : decode3f.c.i
 
 decode3f.s: decode3f.c.s
@@ -474,7 +474,7 @@ decode3f.s: decode3f.c.s
 
 # target to generate assembly for a file
 decode3f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3f.c.s
 .PHONY : decode3f.c.s
 
 decode3i.o: decode3i.c.o
@@ -483,7 +483,7 @@ decode3i.o: decode3i.c.o
 
 # target to build an object file
 decode3i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3i.c.o
 .PHONY : decode3i.c.o
 
 decode3i.i: decode3i.c.i
@@ -492,7 +492,7 @@ decode3i.i: decode3i.c.i
 
 # target to preprocess a source file
 decode3i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3i.c.i
 .PHONY : decode3i.c.i
 
 decode3i.s: decode3i.c.s
@@ -501,7 +501,7 @@ decode3i.s: decode3i.c.s
 
 # target to generate assembly for a file
 decode3i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3i.c.s
 .PHONY : decode3i.c.s
 
 decode3l.o: decode3l.c.o
@@ -510,7 +510,7 @@ decode3l.o: decode3l.c.o
 
 # target to build an object file
 decode3l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3l.c.o
 .PHONY : decode3l.c.o
 
 decode3l.i: decode3l.c.i
@@ -519,7 +519,7 @@ decode3l.i: decode3l.c.i
 
 # target to preprocess a source file
 decode3l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3l.c.i
 .PHONY : decode3l.c.i
 
 decode3l.s: decode3l.c.s
@@ -528,7 +528,7 @@ decode3l.s: decode3l.c.s
 
 # target to generate assembly for a file
 decode3l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode3l.c.s
 .PHONY : decode3l.c.s
 
 decode4d.o: decode4d.c.o
@@ -537,7 +537,7 @@ decode4d.o: decode4d.c.o
 
 # target to build an object file
 decode4d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4d.c.o
 .PHONY : decode4d.c.o
 
 decode4d.i: decode4d.c.i
@@ -546,7 +546,7 @@ decode4d.i: decode4d.c.i
 
 # target to preprocess a source file
 decode4d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4d.c.i
 .PHONY : decode4d.c.i
 
 decode4d.s: decode4d.c.s
@@ -555,7 +555,7 @@ decode4d.s: decode4d.c.s
 
 # target to generate assembly for a file
 decode4d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4d.c.s
 .PHONY : decode4d.c.s
 
 decode4f.o: decode4f.c.o
@@ -564,7 +564,7 @@ decode4f.o: decode4f.c.o
 
 # target to build an object file
 decode4f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4f.c.o
 .PHONY : decode4f.c.o
 
 decode4f.i: decode4f.c.i
@@ -573,7 +573,7 @@ decode4f.i: decode4f.c.i
 
 # target to preprocess a source file
 decode4f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4f.c.i
 .PHONY : decode4f.c.i
 
 decode4f.s: decode4f.c.s
@@ -582,7 +582,7 @@ decode4f.s: decode4f.c.s
 
 # target to generate assembly for a file
 decode4f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4f.c.s
 .PHONY : decode4f.c.s
 
 decode4i.o: decode4i.c.o
@@ -591,7 +591,7 @@ decode4i.o: decode4i.c.o
 
 # target to build an object file
 decode4i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4i.c.o
 .PHONY : decode4i.c.o
 
 decode4i.i: decode4i.c.i
@@ -600,7 +600,7 @@ decode4i.i: decode4i.c.i
 
 # target to preprocess a source file
 decode4i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4i.c.i
 .PHONY : decode4i.c.i
 
 decode4i.s: decode4i.c.s
@@ -609,7 +609,7 @@ decode4i.s: decode4i.c.s
 
 # target to generate assembly for a file
 decode4i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4i.c.s
 .PHONY : decode4i.c.s
 
 decode4l.o: decode4l.c.o
@@ -618,7 +618,7 @@ decode4l.o: decode4l.c.o
 
 # target to build an object file
 decode4l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4l.c.o
 .PHONY : decode4l.c.o
 
 decode4l.i: decode4l.c.i
@@ -627,7 +627,7 @@ decode4l.i: decode4l.c.i
 
 # target to preprocess a source file
 decode4l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4l.c.i
 .PHONY : decode4l.c.i
 
 decode4l.s: decode4l.c.s
@@ -636,7 +636,7 @@ decode4l.s: decode4l.c.s
 
 # target to generate assembly for a file
 decode4l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/decode4l.c.s
 .PHONY : decode4l.c.s
 
 encode1d.o: encode1d.c.o
@@ -645,7 +645,7 @@ encode1d.o: encode1d.c.o
 
 # target to build an object file
 encode1d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1d.c.o
 .PHONY : encode1d.c.o
 
 encode1d.i: encode1d.c.i
@@ -654,7 +654,7 @@ encode1d.i: encode1d.c.i
 
 # target to preprocess a source file
 encode1d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1d.c.i
 .PHONY : encode1d.c.i
 
 encode1d.s: encode1d.c.s
@@ -663,7 +663,7 @@ encode1d.s: encode1d.c.s
 
 # target to generate assembly for a file
 encode1d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1d.c.s
 .PHONY : encode1d.c.s
 
 encode1f.o: encode1f.c.o
@@ -672,7 +672,7 @@ encode1f.o: encode1f.c.o
 
 # target to build an object file
 encode1f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1f.c.o
 .PHONY : encode1f.c.o
 
 encode1f.i: encode1f.c.i
@@ -681,7 +681,7 @@ encode1f.i: encode1f.c.i
 
 # target to preprocess a source file
 encode1f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1f.c.i
 .PHONY : encode1f.c.i
 
 encode1f.s: encode1f.c.s
@@ -690,7 +690,7 @@ encode1f.s: encode1f.c.s
 
 # target to generate assembly for a file
 encode1f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1f.c.s
 .PHONY : encode1f.c.s
 
 encode1i.o: encode1i.c.o
@@ -699,7 +699,7 @@ encode1i.o: encode1i.c.o
 
 # target to build an object file
 encode1i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1i.c.o
 .PHONY : encode1i.c.o
 
 encode1i.i: encode1i.c.i
@@ -708,7 +708,7 @@ encode1i.i: encode1i.c.i
 
 # target to preprocess a source file
 encode1i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1i.c.i
 .PHONY : encode1i.c.i
 
 encode1i.s: encode1i.c.s
@@ -717,7 +717,7 @@ encode1i.s: encode1i.c.s
 
 # target to generate assembly for a file
 encode1i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1i.c.s
 .PHONY : encode1i.c.s
 
 encode1l.o: encode1l.c.o
@@ -726,7 +726,7 @@ encode1l.o: encode1l.c.o
 
 # target to build an object file
 encode1l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1l.c.o
 .PHONY : encode1l.c.o
 
 encode1l.i: encode1l.c.i
@@ -735,7 +735,7 @@ encode1l.i: encode1l.c.i
 
 # target to preprocess a source file
 encode1l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1l.c.i
 .PHONY : encode1l.c.i
 
 encode1l.s: encode1l.c.s
@@ -744,7 +744,7 @@ encode1l.s: encode1l.c.s
 
 # target to generate assembly for a file
 encode1l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode1l.c.s
 .PHONY : encode1l.c.s
 
 encode2d.o: encode2d.c.o
@@ -753,7 +753,7 @@ encode2d.o: encode2d.c.o
 
 # target to build an object file
 encode2d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2d.c.o
 .PHONY : encode2d.c.o
 
 encode2d.i: encode2d.c.i
@@ -762,7 +762,7 @@ encode2d.i: encode2d.c.i
 
 # target to preprocess a source file
 encode2d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2d.c.i
 .PHONY : encode2d.c.i
 
 encode2d.s: encode2d.c.s
@@ -771,7 +771,7 @@ encode2d.s: encode2d.c.s
 
 # target to generate assembly for a file
 encode2d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2d.c.s
 .PHONY : encode2d.c.s
 
 encode2f.o: encode2f.c.o
@@ -780,7 +780,7 @@ encode2f.o: encode2f.c.o
 
 # target to build an object file
 encode2f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2f.c.o
 .PHONY : encode2f.c.o
 
 encode2f.i: encode2f.c.i
@@ -789,7 +789,7 @@ encode2f.i: encode2f.c.i
 
 # target to preprocess a source file
 encode2f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2f.c.i
 .PHONY : encode2f.c.i
 
 encode2f.s: encode2f.c.s
@@ -798,7 +798,7 @@ encode2f.s: encode2f.c.s
 
 # target to generate assembly for a file
 encode2f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2f.c.s
 .PHONY : encode2f.c.s
 
 encode2i.o: encode2i.c.o
@@ -807,7 +807,7 @@ encode2i.o: encode2i.c.o
 
 # target to build an object file
 encode2i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2i.c.o
 .PHONY : encode2i.c.o
 
 encode2i.i: encode2i.c.i
@@ -816,7 +816,7 @@ encode2i.i: encode2i.c.i
 
 # target to preprocess a source file
 encode2i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2i.c.i
 .PHONY : encode2i.c.i
 
 encode2i.s: encode2i.c.s
@@ -825,7 +825,7 @@ encode2i.s: encode2i.c.s
 
 # target to generate assembly for a file
 encode2i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2i.c.s
 .PHONY : encode2i.c.s
 
 encode2l.o: encode2l.c.o
@@ -834,7 +834,7 @@ encode2l.o: encode2l.c.o
 
 # target to build an object file
 encode2l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2l.c.o
 .PHONY : encode2l.c.o
 
 encode2l.i: encode2l.c.i
@@ -843,7 +843,7 @@ encode2l.i: encode2l.c.i
 
 # target to preprocess a source file
 encode2l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2l.c.i
 .PHONY : encode2l.c.i
 
 encode2l.s: encode2l.c.s
@@ -852,7 +852,7 @@ encode2l.s: encode2l.c.s
 
 # target to generate assembly for a file
 encode2l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode2l.c.s
 .PHONY : encode2l.c.s
 
 encode3d.o: encode3d.c.o
@@ -861,7 +861,7 @@ encode3d.o: encode3d.c.o
 
 # target to build an object file
 encode3d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3d.c.o
 .PHONY : encode3d.c.o
 
 encode3d.i: encode3d.c.i
@@ -870,7 +870,7 @@ encode3d.i: encode3d.c.i
 
 # target to preprocess a source file
 encode3d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3d.c.i
 .PHONY : encode3d.c.i
 
 encode3d.s: encode3d.c.s
@@ -879,7 +879,7 @@ encode3d.s: encode3d.c.s
 
 # target to generate assembly for a file
 encode3d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3d.c.s
 .PHONY : encode3d.c.s
 
 encode3f.o: encode3f.c.o
@@ -888,7 +888,7 @@ encode3f.o: encode3f.c.o
 
 # target to build an object file
 encode3f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3f.c.o
 .PHONY : encode3f.c.o
 
 encode3f.i: encode3f.c.i
@@ -897,7 +897,7 @@ encode3f.i: encode3f.c.i
 
 # target to preprocess a source file
 encode3f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3f.c.i
 .PHONY : encode3f.c.i
 
 encode3f.s: encode3f.c.s
@@ -906,7 +906,7 @@ encode3f.s: encode3f.c.s
 
 # target to generate assembly for a file
 encode3f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3f.c.s
 .PHONY : encode3f.c.s
 
 encode3i.o: encode3i.c.o
@@ -915,7 +915,7 @@ encode3i.o: encode3i.c.o
 
 # target to build an object file
 encode3i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3i.c.o
 .PHONY : encode3i.c.o
 
 encode3i.i: encode3i.c.i
@@ -924,7 +924,7 @@ encode3i.i: encode3i.c.i
 
 # target to preprocess a source file
 encode3i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3i.c.i
 .PHONY : encode3i.c.i
 
 encode3i.s: encode3i.c.s
@@ -933,7 +933,7 @@ encode3i.s: encode3i.c.s
 
 # target to generate assembly for a file
 encode3i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3i.c.s
 .PHONY : encode3i.c.s
 
 encode3l.o: encode3l.c.o
@@ -942,7 +942,7 @@ encode3l.o: encode3l.c.o
 
 # target to build an object file
 encode3l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3l.c.o
 .PHONY : encode3l.c.o
 
 encode3l.i: encode3l.c.i
@@ -951,7 +951,7 @@ encode3l.i: encode3l.c.i
 
 # target to preprocess a source file
 encode3l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3l.c.i
 .PHONY : encode3l.c.i
 
 encode3l.s: encode3l.c.s
@@ -960,7 +960,7 @@ encode3l.s: encode3l.c.s
 
 # target to generate assembly for a file
 encode3l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode3l.c.s
 .PHONY : encode3l.c.s
 
 encode4d.o: encode4d.c.o
@@ -969,7 +969,7 @@ encode4d.o: encode4d.c.o
 
 # target to build an object file
 encode4d.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4d.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4d.c.o
 .PHONY : encode4d.c.o
 
 encode4d.i: encode4d.c.i
@@ -978,7 +978,7 @@ encode4d.i: encode4d.c.i
 
 # target to preprocess a source file
 encode4d.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4d.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4d.c.i
 .PHONY : encode4d.c.i
 
 encode4d.s: encode4d.c.s
@@ -987,7 +987,7 @@ encode4d.s: encode4d.c.s
 
 # target to generate assembly for a file
 encode4d.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4d.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4d.c.s
 .PHONY : encode4d.c.s
 
 encode4f.o: encode4f.c.o
@@ -996,7 +996,7 @@ encode4f.o: encode4f.c.o
 
 # target to build an object file
 encode4f.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4f.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4f.c.o
 .PHONY : encode4f.c.o
 
 encode4f.i: encode4f.c.i
@@ -1005,7 +1005,7 @@ encode4f.i: encode4f.c.i
 
 # target to preprocess a source file
 encode4f.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4f.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4f.c.i
 .PHONY : encode4f.c.i
 
 encode4f.s: encode4f.c.s
@@ -1014,7 +1014,7 @@ encode4f.s: encode4f.c.s
 
 # target to generate assembly for a file
 encode4f.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4f.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4f.c.s
 .PHONY : encode4f.c.s
 
 encode4i.o: encode4i.c.o
@@ -1023,7 +1023,7 @@ encode4i.o: encode4i.c.o
 
 # target to build an object file
 encode4i.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4i.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4i.c.o
 .PHONY : encode4i.c.o
 
 encode4i.i: encode4i.c.i
@@ -1032,7 +1032,7 @@ encode4i.i: encode4i.c.i
 
 # target to preprocess a source file
 encode4i.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4i.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4i.c.i
 .PHONY : encode4i.c.i
 
 encode4i.s: encode4i.c.s
@@ -1041,7 +1041,7 @@ encode4i.s: encode4i.c.s
 
 # target to generate assembly for a file
 encode4i.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4i.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4i.c.s
 .PHONY : encode4i.c.s
 
 encode4l.o: encode4l.c.o
@@ -1050,7 +1050,7 @@ encode4l.o: encode4l.c.o
 
 # target to build an object file
 encode4l.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4l.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4l.c.o
 .PHONY : encode4l.c.o
 
 encode4l.i: encode4l.c.i
@@ -1059,7 +1059,7 @@ encode4l.i: encode4l.c.i
 
 # target to preprocess a source file
 encode4l.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4l.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4l.c.i
 .PHONY : encode4l.c.i
 
 encode4l.s: encode4l.c.s
@@ -1068,7 +1068,7 @@ encode4l.s: encode4l.c.s
 
 # target to generate assembly for a file
 encode4l.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4l.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/encode4l.c.s
 .PHONY : encode4l.c.s
 
 zfp.o: zfp.c.o
@@ -1077,7 +1077,7 @@ zfp.o: zfp.c.o
 
 # target to build an object file
 zfp.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/zfp.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/zfp.c.o
 .PHONY : zfp.c.o
 
 zfp.i: zfp.c.i
@@ -1086,7 +1086,7 @@ zfp.i: zfp.c.i
 
 # target to preprocess a source file
 zfp.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/zfp.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/zfp.c.i
 .PHONY : zfp.c.i
 
 zfp.s: zfp.c.s
@@ -1095,7 +1095,7 @@ zfp.s: zfp.c.s
 
 # target to generate assembly for a file
 zfp.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/zfp.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f src/CMakeFiles/zfp.dir/build.make src/CMakeFiles/zfp.dir/zfp.c.s
 .PHONY : zfp.c.s
 
 # Help Target
@@ -1225,6 +1225,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

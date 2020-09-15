@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/local_build/zfp/tests/utils
+# Install script for directory: /home/cc/local_build/zfp/tests/utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/local_build/zfp/src
+# Install script for directory: /home/cc/local_build/zfp/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -46,9 +46,9 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/ubuntu/local_build/zfp/build_debug/lib/libzfp.so.0.5.5"
-    "/home/ubuntu/local_build/zfp/build_debug/lib/libzfp.so.0"
-    "/home/ubuntu/local_build/zfp/build_debug/lib/libzfp.so"
+    "/home/cc/local_build/zfp/build_debug/lib/libzfp.so.0.5.5"
+    "/home/cc/local_build/zfp/build_debug/lib/libzfp.so.0"
+    "/home/cc/local_build/zfp/build_debug/lib/libzfp.so"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libzfp.so.0.5.5"
@@ -70,7 +70,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/local_build/zfp/build_debug/src/cuda_zfp/cmake_install.cmake")
+  include("/home/cc/local_build/zfp/build_debug/src/cuda_zfp/cmake_install.cmake")
 
 endif()
 

@@ -6,5 +6,5 @@ C_FLAGS = -O3 -DNDEBUG -fPIE   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/ubuntu/local_build/zfp/include -I/home/ubuntu/local_build/zfp/array 
+C_INCLUDES = -I/home/cc/local_build/zfp/include -I/home/cc/local_build/zfp/array 
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-build
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/cc/local_build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -81,7 +81,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -146,14 +146,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/progress.marks
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles 0
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles /home/cc/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/progress.marks
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
 .PHONY : clean
 
 # The main clean target
@@ -163,22 +163,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/CMakeFiles/allocate_module_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/allocate_module_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/allocate_module_test.dir/rule
 .PHONY : example/CMakeFiles/allocate_module_test.dir/rule
 
 # Convenience name for target.
@@ -188,12 +188,12 @@ allocate_module_test: example/CMakeFiles/allocate_module_test.dir/rule
 
 # fast build rule for target.
 allocate_module_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/build
 .PHONY : allocate_module_test/fast
 
 # Convenience name for target.
 example/CMakeFiles/simple_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/simple_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/simple_test.dir/rule
 .PHONY : example/CMakeFiles/simple_test.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ simple_test: example/CMakeFiles/simple_test.dir/rule
 
 # fast build rule for target.
 simple_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/build
 .PHONY : simple_test/fast
 
 # Convenience name for target.
 example/CMakeFiles/calculator_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/calculator_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/calculator_test.dir/rule
 .PHONY : example/CMakeFiles/calculator_test.dir/rule
 
 # Convenience name for target.
@@ -218,12 +218,12 @@ calculator_test: example/CMakeFiles/calculator_test.dir/rule
 
 # fast build rule for target.
 calculator_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/build
 .PHONY : calculator_test/fast
 
 # Convenience name for target.
 example/CMakeFiles/assert_macro_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/assert_macro_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/assert_macro_test.dir/rule
 .PHONY : example/CMakeFiles/assert_macro_test.dir/rule
 
 # Convenience name for target.
@@ -233,12 +233,12 @@ assert_macro_test: example/CMakeFiles/assert_macro_test.dir/rule
 
 # fast build rule for target.
 assert_macro_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/build
 .PHONY : assert_macro_test/fast
 
 # Convenience name for target.
 example/CMakeFiles/assert_module_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/assert_module_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/assert_module_test.dir/rule
 .PHONY : example/CMakeFiles/assert_module_test.dir/rule
 
 # Convenience name for target.
@@ -248,12 +248,12 @@ assert_module_test: example/CMakeFiles/assert_module_test.dir/rule
 
 # fast build rule for target.
 assert_module_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/build
 .PHONY : assert_module_test/fast
 
 # Convenience name for target.
 example/CMakeFiles/customer_database_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/customer_database_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/customer_database_test.dir/rule
 .PHONY : example/CMakeFiles/customer_database_test.dir/rule
 
 # Convenience name for target.
@@ -263,12 +263,12 @@ customer_database_test: example/CMakeFiles/customer_database_test.dir/rule
 
 # fast build rule for target.
 customer_database_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/build
 .PHONY : customer_database_test/fast
 
 # Convenience name for target.
 example/CMakeFiles/product_database_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/product_database_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/product_database_test.dir/rule
 .PHONY : example/CMakeFiles/product_database_test.dir/rule
 
 # Convenience name for target.
@@ -278,12 +278,12 @@ product_database_test: example/CMakeFiles/product_database_test.dir/rule
 
 # fast build rule for target.
 product_database_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/build
 .PHONY : product_database_test/fast
 
 # Convenience name for target.
 example/CMakeFiles/key_value_test.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/key_value_test.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/key_value_test.dir/rule
 .PHONY : example/CMakeFiles/key_value_test.dir/rule
 
 # Convenience name for target.
@@ -293,7 +293,7 @@ key_value_test: example/CMakeFiles/key_value_test.dir/rule
 
 # fast build rule for target.
 key_value_test/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/build
 .PHONY : key_value_test/fast
 
 allocate_module.o: allocate_module.c.o
@@ -302,7 +302,7 @@ allocate_module.o: allocate_module.c.o
 
 # target to build an object file
 allocate_module.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o
 .PHONY : allocate_module.c.o
 
 allocate_module.i: allocate_module.c.i
@@ -311,7 +311,7 @@ allocate_module.i: allocate_module.c.i
 
 # target to preprocess a source file
 allocate_module.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module.c.i
 .PHONY : allocate_module.c.i
 
 allocate_module.s: allocate_module.c.s
@@ -320,7 +320,7 @@ allocate_module.s: allocate_module.c.s
 
 # target to generate assembly for a file
 allocate_module.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module.c.s
 .PHONY : allocate_module.c.s
 
 allocate_module_test.o: allocate_module_test.c.o
@@ -329,7 +329,7 @@ allocate_module_test.o: allocate_module_test.c.o
 
 # target to build an object file
 allocate_module_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o
 .PHONY : allocate_module_test.c.o
 
 allocate_module_test.i: allocate_module_test.c.i
@@ -338,7 +338,7 @@ allocate_module_test.i: allocate_module_test.c.i
 
 # target to preprocess a source file
 allocate_module_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.i
 .PHONY : allocate_module_test.c.i
 
 allocate_module_test.s: allocate_module_test.c.s
@@ -347,7 +347,7 @@ allocate_module_test.s: allocate_module_test.c.s
 
 # target to generate assembly for a file
 allocate_module_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/allocate_module_test.dir/build.make example/CMakeFiles/allocate_module_test.dir/allocate_module_test.c.s
 .PHONY : allocate_module_test.c.s
 
 assert_macro.o: assert_macro.c.o
@@ -356,7 +356,7 @@ assert_macro.o: assert_macro.c.o
 
 # target to build an object file
 assert_macro.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o
 .PHONY : assert_macro.c.o
 
 assert_macro.i: assert_macro.c.i
@@ -365,7 +365,7 @@ assert_macro.i: assert_macro.c.i
 
 # target to preprocess a source file
 assert_macro.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro.c.i
 .PHONY : assert_macro.c.i
 
 assert_macro.s: assert_macro.c.s
@@ -374,7 +374,7 @@ assert_macro.s: assert_macro.c.s
 
 # target to generate assembly for a file
 assert_macro.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro.c.s
 .PHONY : assert_macro.c.s
 
 assert_macro_test.o: assert_macro_test.c.o
@@ -383,7 +383,7 @@ assert_macro_test.o: assert_macro_test.c.o
 
 # target to build an object file
 assert_macro_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o
 .PHONY : assert_macro_test.c.o
 
 assert_macro_test.i: assert_macro_test.c.i
@@ -392,7 +392,7 @@ assert_macro_test.i: assert_macro_test.c.i
 
 # target to preprocess a source file
 assert_macro_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.i
 .PHONY : assert_macro_test.c.i
 
 assert_macro_test.s: assert_macro_test.c.s
@@ -401,7 +401,7 @@ assert_macro_test.s: assert_macro_test.c.s
 
 # target to generate assembly for a file
 assert_macro_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_macro_test.dir/build.make example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.s
 .PHONY : assert_macro_test.c.s
 
 assert_module.o: assert_module.c.o
@@ -410,7 +410,7 @@ assert_module.o: assert_module.c.o
 
 # target to build an object file
 assert_module.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module.c.o
 .PHONY : assert_module.c.o
 
 assert_module.i: assert_module.c.i
@@ -419,7 +419,7 @@ assert_module.i: assert_module.c.i
 
 # target to preprocess a source file
 assert_module.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module.c.i
 .PHONY : assert_module.c.i
 
 assert_module.s: assert_module.c.s
@@ -428,7 +428,7 @@ assert_module.s: assert_module.c.s
 
 # target to generate assembly for a file
 assert_module.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module.c.s
 .PHONY : assert_module.c.s
 
 assert_module_test.o: assert_module_test.c.o
@@ -437,7 +437,7 @@ assert_module_test.o: assert_module_test.c.o
 
 # target to build an object file
 assert_module_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o
 .PHONY : assert_module_test.c.o
 
 assert_module_test.i: assert_module_test.c.i
@@ -446,7 +446,7 @@ assert_module_test.i: assert_module_test.c.i
 
 # target to preprocess a source file
 assert_module_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module_test.c.i
 .PHONY : assert_module_test.c.i
 
 assert_module_test.s: assert_module_test.c.s
@@ -455,7 +455,7 @@ assert_module_test.s: assert_module_test.c.s
 
 # target to generate assembly for a file
 assert_module_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/assert_module_test.dir/build.make example/CMakeFiles/assert_module_test.dir/assert_module_test.c.s
 .PHONY : assert_module_test.c.s
 
 calculator.o: calculator.c.o
@@ -464,7 +464,7 @@ calculator.o: calculator.c.o
 
 # target to build an object file
 calculator.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator.c.o
 .PHONY : calculator.c.o
 
 calculator.i: calculator.c.i
@@ -473,7 +473,7 @@ calculator.i: calculator.c.i
 
 # target to preprocess a source file
 calculator.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator.c.i
 .PHONY : calculator.c.i
 
 calculator.s: calculator.c.s
@@ -482,7 +482,7 @@ calculator.s: calculator.c.s
 
 # target to generate assembly for a file
 calculator.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator.c.s
 .PHONY : calculator.c.s
 
 calculator_test.o: calculator_test.c.o
@@ -491,7 +491,7 @@ calculator_test.o: calculator_test.c.o
 
 # target to build an object file
 calculator_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator_test.c.o
 .PHONY : calculator_test.c.o
 
 calculator_test.i: calculator_test.c.i
@@ -500,7 +500,7 @@ calculator_test.i: calculator_test.c.i
 
 # target to preprocess a source file
 calculator_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator_test.c.i
 .PHONY : calculator_test.c.i
 
 calculator_test.s: calculator_test.c.s
@@ -509,7 +509,7 @@ calculator_test.s: calculator_test.c.s
 
 # target to generate assembly for a file
 calculator_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/calculator_test.dir/build.make example/CMakeFiles/calculator_test.dir/calculator_test.c.s
 .PHONY : calculator_test.c.s
 
 customer_database.o: customer_database.c.o
@@ -518,7 +518,7 @@ customer_database.o: customer_database.c.o
 
 # target to build an object file
 customer_database.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database.c.o
 .PHONY : customer_database.c.o
 
 customer_database.i: customer_database.c.i
@@ -527,7 +527,7 @@ customer_database.i: customer_database.c.i
 
 # target to preprocess a source file
 customer_database.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database.c.i
 .PHONY : customer_database.c.i
 
 customer_database.s: customer_database.c.s
@@ -536,7 +536,7 @@ customer_database.s: customer_database.c.s
 
 # target to generate assembly for a file
 customer_database.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database.c.s
 .PHONY : customer_database.c.s
 
 customer_database_test.o: customer_database_test.c.o
@@ -545,7 +545,7 @@ customer_database_test.o: customer_database_test.c.o
 
 # target to build an object file
 customer_database_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database_test.c.o
 .PHONY : customer_database_test.c.o
 
 customer_database_test.i: customer_database_test.c.i
@@ -554,7 +554,7 @@ customer_database_test.i: customer_database_test.c.i
 
 # target to preprocess a source file
 customer_database_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database_test.c.i
 .PHONY : customer_database_test.c.i
 
 customer_database_test.s: customer_database_test.c.s
@@ -563,7 +563,7 @@ customer_database_test.s: customer_database_test.c.s
 
 # target to generate assembly for a file
 customer_database_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/customer_database_test.dir/build.make example/CMakeFiles/customer_database_test.dir/customer_database_test.c.s
 .PHONY : customer_database_test.c.s
 
 key_value.o: key_value.c.o
@@ -572,7 +572,7 @@ key_value.o: key_value.c.o
 
 # target to build an object file
 key_value.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value.c.o
 .PHONY : key_value.c.o
 
 key_value.i: key_value.c.i
@@ -581,7 +581,7 @@ key_value.i: key_value.c.i
 
 # target to preprocess a source file
 key_value.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value.c.i
 .PHONY : key_value.c.i
 
 key_value.s: key_value.c.s
@@ -590,7 +590,7 @@ key_value.s: key_value.c.s
 
 # target to generate assembly for a file
 key_value.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value.c.s
 .PHONY : key_value.c.s
 
 key_value_test.o: key_value_test.c.o
@@ -599,7 +599,7 @@ key_value_test.o: key_value_test.c.o
 
 # target to build an object file
 key_value_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value_test.c.o
 .PHONY : key_value_test.c.o
 
 key_value_test.i: key_value_test.c.i
@@ -608,7 +608,7 @@ key_value_test.i: key_value_test.c.i
 
 # target to preprocess a source file
 key_value_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value_test.c.i
 .PHONY : key_value_test.c.i
 
 key_value_test.s: key_value_test.c.s
@@ -617,7 +617,7 @@ key_value_test.s: key_value_test.c.s
 
 # target to generate assembly for a file
 key_value_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/key_value_test.dir/build.make example/CMakeFiles/key_value_test.dir/key_value_test.c.s
 .PHONY : key_value_test.c.s
 
 product_database.o: product_database.c.o
@@ -626,7 +626,7 @@ product_database.o: product_database.c.o
 
 # target to build an object file
 product_database.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database.c.o
 .PHONY : product_database.c.o
 
 product_database.i: product_database.c.i
@@ -635,7 +635,7 @@ product_database.i: product_database.c.i
 
 # target to preprocess a source file
 product_database.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database.c.i
 .PHONY : product_database.c.i
 
 product_database.s: product_database.c.s
@@ -644,7 +644,7 @@ product_database.s: product_database.c.s
 
 # target to generate assembly for a file
 product_database.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database.c.s
 .PHONY : product_database.c.s
 
 product_database_test.o: product_database_test.c.o
@@ -653,7 +653,7 @@ product_database_test.o: product_database_test.c.o
 
 # target to build an object file
 product_database_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database_test.c.o
 .PHONY : product_database_test.c.o
 
 product_database_test.i: product_database_test.c.i
@@ -662,7 +662,7 @@ product_database_test.i: product_database_test.c.i
 
 # target to preprocess a source file
 product_database_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database_test.c.i
 .PHONY : product_database_test.c.i
 
 product_database_test.s: product_database_test.c.s
@@ -671,7 +671,7 @@ product_database_test.s: product_database_test.c.s
 
 # target to generate assembly for a file
 product_database_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/product_database_test.dir/build.make example/CMakeFiles/product_database_test.dir/product_database_test.c.s
 .PHONY : product_database_test.c.s
 
 simple_test.o: simple_test.c.o
@@ -680,7 +680,7 @@ simple_test.o: simple_test.c.o
 
 # target to build an object file
 simple_test.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/simple_test.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/simple_test.c.o
 .PHONY : simple_test.c.o
 
 simple_test.i: simple_test.c.i
@@ -689,7 +689,7 @@ simple_test.i: simple_test.c.i
 
 # target to preprocess a source file
 simple_test.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/simple_test.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/simple_test.c.i
 .PHONY : simple_test.c.i
 
 simple_test.s: simple_test.c.s
@@ -698,7 +698,7 @@ simple_test.s: simple_test.c.s
 
 # target to generate assembly for a file
 simple_test.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/simple_test.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/CMakeFiles/simple_test.dir/build.make example/CMakeFiles/simple_test.dir/simple_test.c.s
 .PHONY : simple_test.c.s
 
 # Help Target
@@ -779,6 +779,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

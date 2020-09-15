@@ -34,8 +34,8 @@ tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.o
  ../tests/utils/zfpCompressionParams.h
  ../tests/utils/zfpHash.h
  ../tests/utils/zfpTimer.h
- /home/ubuntu/local_build/zfp/tests/src/endtoend/ompExecBase.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/testZfpOmp2dFloat.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/omp.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+ /home/cc/local_build/zfp/tests/src/endtoend/ompExecBase.c
+ /home/cc/local_build/zfp/tests/src/endtoend/testZfpOmp2dFloat.c
+ /home/cc/local_build/zfp/tests/src/endtoend/testcases/omp.c
+ /home/cc/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
  cmocka-src/include/cmocka.h

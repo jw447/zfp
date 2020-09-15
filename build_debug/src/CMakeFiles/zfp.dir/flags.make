@@ -6,5 +6,5 @@ C_FLAGS = -O3 -DNDEBUG -fPIC   -fopenmp -std=gnu99
 
 C_DEFINES = -DZFP_WITH_CUDA -Dzfp_EXPORTS
 
-C_INCLUDES = -I/home/ubuntu/local_build/zfp/include 
+C_INCLUDES = -I/home/cc/local_build/zfp/include 
 

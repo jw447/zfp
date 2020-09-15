@@ -28,7 +28,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlock2dInt64.dir/testZfpEncodeBlock2dIn
  ../tests/utils/testMacros.h
  ../tests/utils/zfpChecksums.h
  ../tests/utils/zfpHash.h
- /home/ubuntu/local_build/zfp/tests/src/encode/testZfpEncodeBlock2dInt64.c
- /home/ubuntu/local_build/zfp/tests/src/encode/testcases/block.c
- /home/ubuntu/local_build/zfp/tests/src/encode/zfpEncodeBlockBase.c
+ /home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlock2dInt64.c
+ /home/cc/local_build/zfp/tests/src/encode/testcases/block.c
+ /home/cc/local_build/zfp/tests/src/encode/zfpEncodeBlockBase.c
  cmocka-src/include/cmocka.h

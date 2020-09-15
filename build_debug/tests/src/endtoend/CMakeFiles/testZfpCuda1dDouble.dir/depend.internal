@@ -34,8 +34,8 @@ tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/testZfpCuda1dDouble.c.o
  ../tests/utils/zfpCompressionParams.h
  ../tests/utils/zfpHash.h
  ../tests/utils/zfpTimer.h
- /home/ubuntu/local_build/zfp/tests/src/endtoend/cudaExecBase.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/testZfpCuda1dDouble.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/cuda.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+ /home/cc/local_build/zfp/tests/src/endtoend/cudaExecBase.c
+ /home/cc/local_build/zfp/tests/src/endtoend/testZfpCuda1dDouble.c
+ /home/cc/local_build/zfp/tests/src/endtoend/testcases/cuda.c
+ /home/cc/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
  cmocka-src/include/cmocka.h

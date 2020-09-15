@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
 
 # Utility rule file for ExperimentalConfigure.
 
@@ -71,6 +71,6 @@ CMakeFiles/ExperimentalConfigure.dir/clean:
 .PHONY : CMakeFiles/ExperimentalConfigure.dir/clean
 
 CMakeFiles/ExperimentalConfigure.dir/depend:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/local_build/zfp /home/ubuntu/local_build/zfp /home/ubuntu/local_build/zfp/build_debug /home/ubuntu/local_build/zfp/build_debug /home/ubuntu/local_build/zfp/build_debug/CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp /home/cc/local_build/zfp /home/cc/local_build/zfp/build_debug /home/cc/local_build/zfp/build_debug /home/cc/local_build/zfp/build_debug/CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ExperimentalConfigure.dir/depend
 

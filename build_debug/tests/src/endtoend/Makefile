@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles /home/ubuntu/local_build/zfp/build_debug/tests/src/endtoend/CMakeFiles/progress.marks
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/src/endtoend/CMakeFiles/progress.marks
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/clean
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ testZfpOmp4dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule
 
 # fast build rule for target.
 testZfpOmp4dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build
 .PHONY : testZfpOmp4dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ testZfpSerial2dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/r
 
 # fast build rule for target.
 testZfpSerial2dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build
 .PHONY : testZfpSerial2dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ testZfpSerial4dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rul
 
 # fast build rule for target.
 testZfpSerial4dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build
 .PHONY : testZfpSerial4dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ testZfpOmp3dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule
 
 # fast build rule for target.
 testZfpOmp3dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build
 .PHONY : testZfpOmp3dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ testZfpOmp3dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule
 
 # fast build rule for target.
 testZfpOmp3dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build
 .PHONY : testZfpOmp3dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ testZfpOmp2dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule
 
 # fast build rule for target.
 testZfpOmp2dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build
 .PHONY : testZfpOmp2dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ testZfpSerial4dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rul
 
 # fast build rule for target.
 testZfpSerial4dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build
 .PHONY : testZfpSerial4dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ testZfpOmp4dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule
 
 # fast build rule for target.
 testZfpOmp4dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build
 .PHONY : testZfpOmp4dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/rule
 
 # Convenience name for target.
@@ -297,12 +297,12 @@ testZfpSerial3dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/rul
 
 # fast build rule for target.
 testZfpSerial3dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build
 .PHONY : testZfpSerial3dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
 
 # Convenience name for target.
@@ -312,12 +312,12 @@ testZfpSerial2dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rul
 
 # fast build rule for target.
 testZfpSerial2dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build
 .PHONY : testZfpSerial2dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/rule
 
 # Convenience name for target.
@@ -327,12 +327,12 @@ testZfpCuda3dInt32: tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/rule
 
 # fast build rule for target.
 testZfpCuda3dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build
 .PHONY : testZfpCuda3dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/rule
 
 # Convenience name for target.
@@ -342,12 +342,12 @@ testZfpSerial2dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/rul
 
 # fast build rule for target.
 testZfpSerial2dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build
 .PHONY : testZfpSerial2dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ testZfpCuda3dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
 
 # fast build rule for target.
 testZfpCuda3dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build
 .PHONY : testZfpCuda3dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
 
 # Convenience name for target.
@@ -372,12 +372,12 @@ testZfpCuda2dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
 
 # fast build rule for target.
 testZfpCuda2dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build
 .PHONY : testZfpCuda2dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule
 
 # Convenience name for target.
@@ -387,12 +387,12 @@ testZfpOmp2dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule
 
 # fast build rule for target.
 testZfpOmp2dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build
 .PHONY : testZfpOmp2dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
 
 # Convenience name for target.
@@ -402,12 +402,12 @@ testZfpCuda1dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
 
 # fast build rule for target.
 testZfpCuda1dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build
 .PHONY : testZfpCuda1dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
 
 # Convenience name for target.
@@ -417,12 +417,12 @@ testZfpSerial1dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rul
 
 # fast build rule for target.
 testZfpSerial1dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build
 .PHONY : testZfpSerial1dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
 
 # Convenience name for target.
@@ -432,12 +432,12 @@ testZfpCuda1dInt32: tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
 
 # fast build rule for target.
 testZfpCuda1dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build
 .PHONY : testZfpCuda1dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule
 
 # Convenience name for target.
@@ -447,12 +447,12 @@ testZfpOmp1dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule
 
 # fast build rule for target.
 testZfpOmp1dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build
 .PHONY : testZfpOmp1dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule
 
 # Convenience name for target.
@@ -462,12 +462,12 @@ testZfpOmp2dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule
 
 # fast build rule for target.
 testZfpOmp2dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build
 .PHONY : testZfpOmp2dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
 
 # Convenience name for target.
@@ -477,12 +477,12 @@ testZfpSerial3dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rul
 
 # fast build rule for target.
 testZfpSerial3dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build
 .PHONY : testZfpSerial3dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
 
 # Convenience name for target.
@@ -492,12 +492,12 @@ testZfpSerial2dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rul
 
 # fast build rule for target.
 testZfpSerial2dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build
 .PHONY : testZfpSerial2dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
 
 # Convenience name for target.
@@ -507,12 +507,12 @@ testZfpCuda2dInt32: tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
 
 # fast build rule for target.
 testZfpCuda2dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build
 .PHONY : testZfpCuda2dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
 
 # Convenience name for target.
@@ -522,12 +522,12 @@ testZfpSerial1dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rul
 
 # fast build rule for target.
 testZfpSerial1dInt32/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build
 .PHONY : testZfpSerial1dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
 
 # Convenience name for target.
@@ -537,12 +537,12 @@ testZfpSerial1dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rul
 
 # fast build rule for target.
 testZfpSerial1dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build
 .PHONY : testZfpSerial1dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule
 
 # Convenience name for target.
@@ -552,12 +552,12 @@ testZfpOmp1dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule
 
 # fast build rule for target.
 testZfpOmp1dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build
 .PHONY : testZfpOmp1dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
 
 # Convenience name for target.
@@ -567,12 +567,12 @@ testZfpCuda2dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
 
 # fast build rule for target.
 testZfpCuda2dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build
 .PHONY : testZfpCuda2dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
 
 # Convenience name for target.
@@ -582,12 +582,12 @@ testZfpCuda1dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
 
 # fast build rule for target.
 testZfpCuda1dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build
 .PHONY : testZfpCuda1dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
 
 # Convenience name for target.
@@ -597,12 +597,12 @@ testZfpSerial1dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/r
 
 # fast build rule for target.
 testZfpSerial1dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build
 .PHONY : testZfpSerial1dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule
 
 # Convenience name for target.
@@ -612,12 +612,12 @@ testZfpOmp1dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule
 
 # fast build rule for target.
 testZfpOmp1dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build
 .PHONY : testZfpOmp1dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
 
 # Convenience name for target.
@@ -627,12 +627,12 @@ testZfpCuda2dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
 
 # fast build rule for target.
 testZfpCuda2dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build
 .PHONY : testZfpCuda2dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule
 
 # Convenience name for target.
@@ -642,12 +642,12 @@ testZfpOmp1dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule
 
 # fast build rule for target.
 testZfpOmp1dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build
 .PHONY : testZfpOmp1dInt64/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule
 
 # Convenience name for target.
@@ -657,12 +657,12 @@ testZfpOmp3dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule
 
 # fast build rule for target.
 testZfpOmp3dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build
 .PHONY : testZfpOmp3dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule
 
 # Convenience name for target.
@@ -672,12 +672,12 @@ testZfpOmp4dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule
 
 # fast build rule for target.
 testZfpOmp4dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build
 .PHONY : testZfpOmp4dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
 
 # Convenience name for target.
@@ -687,12 +687,12 @@ testZfpSerial3dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rul
 
 # fast build rule for target.
 testZfpSerial3dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build
 .PHONY : testZfpSerial3dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
 
 # Convenience name for target.
@@ -702,12 +702,12 @@ testZfpCuda3dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
 
 # fast build rule for target.
 testZfpCuda3dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build
 .PHONY : testZfpCuda3dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
 
 # Convenience name for target.
@@ -717,12 +717,12 @@ testZfpCuda3dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
 
 # fast build rule for target.
 testZfpCuda3dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build
 .PHONY : testZfpCuda3dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
 
 # Convenience name for target.
@@ -732,12 +732,12 @@ testZfpSerial4dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/r
 
 # fast build rule for target.
 testZfpSerial4dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build
 .PHONY : testZfpSerial4dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
 
 # Convenience name for target.
@@ -747,12 +747,12 @@ testZfpSerial3dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/r
 
 # fast build rule for target.
 testZfpSerial3dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build
 .PHONY : testZfpSerial3dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule
 
 # Convenience name for target.
@@ -762,12 +762,12 @@ testZfpOmp2dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule
 
 # fast build rule for target.
 testZfpOmp2dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build
 .PHONY : testZfpOmp2dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule
 
 # Convenience name for target.
@@ -777,12 +777,12 @@ testZfpOmp3dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule
 
 # fast build rule for target.
 testZfpOmp3dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build
 .PHONY : testZfpOmp3dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
 
 # Convenience name for target.
@@ -792,12 +792,12 @@ testZfpSerial4dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rul
 
 # fast build rule for target.
 testZfpSerial4dFloat/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build
 .PHONY : testZfpSerial4dFloat/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule
 
 # Convenience name for target.
@@ -807,12 +807,12 @@ testZfpOmp4dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule
 
 # fast build rule for target.
 testZfpOmp4dDouble/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build
 .PHONY : testZfpOmp4dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
 .PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
 
 # Convenience name for target.
@@ -822,7 +822,7 @@ testZfpCuda1dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
 
 # fast build rule for target.
 testZfpCuda1dInt64/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build
 .PHONY : testZfpCuda1dInt64/fast
 
 testZfpCuda1dDouble.o: testZfpCuda1dDouble.c.o
@@ -831,7 +831,7 @@ testZfpCuda1dDouble.o: testZfpCuda1dDouble.c.o
 
 # target to build an object file
 testZfpCuda1dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/testZfpCuda1dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/testZfpCuda1dDouble.c.o
 .PHONY : testZfpCuda1dDouble.c.o
 
 testZfpCuda1dDouble.i: testZfpCuda1dDouble.c.i
@@ -840,7 +840,7 @@ testZfpCuda1dDouble.i: testZfpCuda1dDouble.c.i
 
 # target to preprocess a source file
 testZfpCuda1dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/testZfpCuda1dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/testZfpCuda1dDouble.c.i
 .PHONY : testZfpCuda1dDouble.c.i
 
 testZfpCuda1dDouble.s: testZfpCuda1dDouble.c.s
@@ -849,7 +849,7 @@ testZfpCuda1dDouble.s: testZfpCuda1dDouble.c.s
 
 # target to generate assembly for a file
 testZfpCuda1dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/testZfpCuda1dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/testZfpCuda1dDouble.c.s
 .PHONY : testZfpCuda1dDouble.c.s
 
 testZfpCuda1dFloat.o: testZfpCuda1dFloat.c.o
@@ -858,7 +858,7 @@ testZfpCuda1dFloat.o: testZfpCuda1dFloat.c.o
 
 # target to build an object file
 testZfpCuda1dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/testZfpCuda1dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/testZfpCuda1dFloat.c.o
 .PHONY : testZfpCuda1dFloat.c.o
 
 testZfpCuda1dFloat.i: testZfpCuda1dFloat.c.i
@@ -867,7 +867,7 @@ testZfpCuda1dFloat.i: testZfpCuda1dFloat.c.i
 
 # target to preprocess a source file
 testZfpCuda1dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/testZfpCuda1dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/testZfpCuda1dFloat.c.i
 .PHONY : testZfpCuda1dFloat.c.i
 
 testZfpCuda1dFloat.s: testZfpCuda1dFloat.c.s
@@ -876,7 +876,7 @@ testZfpCuda1dFloat.s: testZfpCuda1dFloat.c.s
 
 # target to generate assembly for a file
 testZfpCuda1dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/testZfpCuda1dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/testZfpCuda1dFloat.c.s
 .PHONY : testZfpCuda1dFloat.c.s
 
 testZfpCuda1dInt32.o: testZfpCuda1dInt32.c.o
@@ -885,7 +885,7 @@ testZfpCuda1dInt32.o: testZfpCuda1dInt32.c.o
 
 # target to build an object file
 testZfpCuda1dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/testZfpCuda1dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/testZfpCuda1dInt32.c.o
 .PHONY : testZfpCuda1dInt32.c.o
 
 testZfpCuda1dInt32.i: testZfpCuda1dInt32.c.i
@@ -894,7 +894,7 @@ testZfpCuda1dInt32.i: testZfpCuda1dInt32.c.i
 
 # target to preprocess a source file
 testZfpCuda1dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/testZfpCuda1dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/testZfpCuda1dInt32.c.i
 .PHONY : testZfpCuda1dInt32.c.i
 
 testZfpCuda1dInt32.s: testZfpCuda1dInt32.c.s
@@ -903,7 +903,7 @@ testZfpCuda1dInt32.s: testZfpCuda1dInt32.c.s
 
 # target to generate assembly for a file
 testZfpCuda1dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/testZfpCuda1dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/testZfpCuda1dInt32.c.s
 .PHONY : testZfpCuda1dInt32.c.s
 
 testZfpCuda1dInt64.o: testZfpCuda1dInt64.c.o
@@ -912,7 +912,7 @@ testZfpCuda1dInt64.o: testZfpCuda1dInt64.c.o
 
 # target to build an object file
 testZfpCuda1dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/testZfpCuda1dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/testZfpCuda1dInt64.c.o
 .PHONY : testZfpCuda1dInt64.c.o
 
 testZfpCuda1dInt64.i: testZfpCuda1dInt64.c.i
@@ -921,7 +921,7 @@ testZfpCuda1dInt64.i: testZfpCuda1dInt64.c.i
 
 # target to preprocess a source file
 testZfpCuda1dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/testZfpCuda1dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/testZfpCuda1dInt64.c.i
 .PHONY : testZfpCuda1dInt64.c.i
 
 testZfpCuda1dInt64.s: testZfpCuda1dInt64.c.s
@@ -930,7 +930,7 @@ testZfpCuda1dInt64.s: testZfpCuda1dInt64.c.s
 
 # target to generate assembly for a file
 testZfpCuda1dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/testZfpCuda1dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/testZfpCuda1dInt64.c.s
 .PHONY : testZfpCuda1dInt64.c.s
 
 testZfpCuda2dDouble.o: testZfpCuda2dDouble.c.o
@@ -939,7 +939,7 @@ testZfpCuda2dDouble.o: testZfpCuda2dDouble.c.o
 
 # target to build an object file
 testZfpCuda2dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/testZfpCuda2dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/testZfpCuda2dDouble.c.o
 .PHONY : testZfpCuda2dDouble.c.o
 
 testZfpCuda2dDouble.i: testZfpCuda2dDouble.c.i
@@ -948,7 +948,7 @@ testZfpCuda2dDouble.i: testZfpCuda2dDouble.c.i
 
 # target to preprocess a source file
 testZfpCuda2dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/testZfpCuda2dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/testZfpCuda2dDouble.c.i
 .PHONY : testZfpCuda2dDouble.c.i
 
 testZfpCuda2dDouble.s: testZfpCuda2dDouble.c.s
@@ -957,7 +957,7 @@ testZfpCuda2dDouble.s: testZfpCuda2dDouble.c.s
 
 # target to generate assembly for a file
 testZfpCuda2dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/testZfpCuda2dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/testZfpCuda2dDouble.c.s
 .PHONY : testZfpCuda2dDouble.c.s
 
 testZfpCuda2dFloat.o: testZfpCuda2dFloat.c.o
@@ -966,7 +966,7 @@ testZfpCuda2dFloat.o: testZfpCuda2dFloat.c.o
 
 # target to build an object file
 testZfpCuda2dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/testZfpCuda2dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/testZfpCuda2dFloat.c.o
 .PHONY : testZfpCuda2dFloat.c.o
 
 testZfpCuda2dFloat.i: testZfpCuda2dFloat.c.i
@@ -975,7 +975,7 @@ testZfpCuda2dFloat.i: testZfpCuda2dFloat.c.i
 
 # target to preprocess a source file
 testZfpCuda2dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/testZfpCuda2dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/testZfpCuda2dFloat.c.i
 .PHONY : testZfpCuda2dFloat.c.i
 
 testZfpCuda2dFloat.s: testZfpCuda2dFloat.c.s
@@ -984,7 +984,7 @@ testZfpCuda2dFloat.s: testZfpCuda2dFloat.c.s
 
 # target to generate assembly for a file
 testZfpCuda2dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/testZfpCuda2dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/testZfpCuda2dFloat.c.s
 .PHONY : testZfpCuda2dFloat.c.s
 
 testZfpCuda2dInt32.o: testZfpCuda2dInt32.c.o
@@ -993,7 +993,7 @@ testZfpCuda2dInt32.o: testZfpCuda2dInt32.c.o
 
 # target to build an object file
 testZfpCuda2dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/testZfpCuda2dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/testZfpCuda2dInt32.c.o
 .PHONY : testZfpCuda2dInt32.c.o
 
 testZfpCuda2dInt32.i: testZfpCuda2dInt32.c.i
@@ -1002,7 +1002,7 @@ testZfpCuda2dInt32.i: testZfpCuda2dInt32.c.i
 
 # target to preprocess a source file
 testZfpCuda2dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/testZfpCuda2dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/testZfpCuda2dInt32.c.i
 .PHONY : testZfpCuda2dInt32.c.i
 
 testZfpCuda2dInt32.s: testZfpCuda2dInt32.c.s
@@ -1011,7 +1011,7 @@ testZfpCuda2dInt32.s: testZfpCuda2dInt32.c.s
 
 # target to generate assembly for a file
 testZfpCuda2dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/testZfpCuda2dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/testZfpCuda2dInt32.c.s
 .PHONY : testZfpCuda2dInt32.c.s
 
 testZfpCuda2dInt64.o: testZfpCuda2dInt64.c.o
@@ -1020,7 +1020,7 @@ testZfpCuda2dInt64.o: testZfpCuda2dInt64.c.o
 
 # target to build an object file
 testZfpCuda2dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/testZfpCuda2dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/testZfpCuda2dInt64.c.o
 .PHONY : testZfpCuda2dInt64.c.o
 
 testZfpCuda2dInt64.i: testZfpCuda2dInt64.c.i
@@ -1029,7 +1029,7 @@ testZfpCuda2dInt64.i: testZfpCuda2dInt64.c.i
 
 # target to preprocess a source file
 testZfpCuda2dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/testZfpCuda2dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/testZfpCuda2dInt64.c.i
 .PHONY : testZfpCuda2dInt64.c.i
 
 testZfpCuda2dInt64.s: testZfpCuda2dInt64.c.s
@@ -1038,7 +1038,7 @@ testZfpCuda2dInt64.s: testZfpCuda2dInt64.c.s
 
 # target to generate assembly for a file
 testZfpCuda2dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/testZfpCuda2dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/testZfpCuda2dInt64.c.s
 .PHONY : testZfpCuda2dInt64.c.s
 
 testZfpCuda3dDouble.o: testZfpCuda3dDouble.c.o
@@ -1047,7 +1047,7 @@ testZfpCuda3dDouble.o: testZfpCuda3dDouble.c.o
 
 # target to build an object file
 testZfpCuda3dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/testZfpCuda3dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/testZfpCuda3dDouble.c.o
 .PHONY : testZfpCuda3dDouble.c.o
 
 testZfpCuda3dDouble.i: testZfpCuda3dDouble.c.i
@@ -1056,7 +1056,7 @@ testZfpCuda3dDouble.i: testZfpCuda3dDouble.c.i
 
 # target to preprocess a source file
 testZfpCuda3dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/testZfpCuda3dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/testZfpCuda3dDouble.c.i
 .PHONY : testZfpCuda3dDouble.c.i
 
 testZfpCuda3dDouble.s: testZfpCuda3dDouble.c.s
@@ -1065,7 +1065,7 @@ testZfpCuda3dDouble.s: testZfpCuda3dDouble.c.s
 
 # target to generate assembly for a file
 testZfpCuda3dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/testZfpCuda3dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/testZfpCuda3dDouble.c.s
 .PHONY : testZfpCuda3dDouble.c.s
 
 testZfpCuda3dFloat.o: testZfpCuda3dFloat.c.o
@@ -1074,7 +1074,7 @@ testZfpCuda3dFloat.o: testZfpCuda3dFloat.c.o
 
 # target to build an object file
 testZfpCuda3dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/testZfpCuda3dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/testZfpCuda3dFloat.c.o
 .PHONY : testZfpCuda3dFloat.c.o
 
 testZfpCuda3dFloat.i: testZfpCuda3dFloat.c.i
@@ -1083,7 +1083,7 @@ testZfpCuda3dFloat.i: testZfpCuda3dFloat.c.i
 
 # target to preprocess a source file
 testZfpCuda3dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/testZfpCuda3dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/testZfpCuda3dFloat.c.i
 .PHONY : testZfpCuda3dFloat.c.i
 
 testZfpCuda3dFloat.s: testZfpCuda3dFloat.c.s
@@ -1092,7 +1092,7 @@ testZfpCuda3dFloat.s: testZfpCuda3dFloat.c.s
 
 # target to generate assembly for a file
 testZfpCuda3dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/testZfpCuda3dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/testZfpCuda3dFloat.c.s
 .PHONY : testZfpCuda3dFloat.c.s
 
 testZfpCuda3dInt32.o: testZfpCuda3dInt32.c.o
@@ -1101,7 +1101,7 @@ testZfpCuda3dInt32.o: testZfpCuda3dInt32.c.o
 
 # target to build an object file
 testZfpCuda3dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/testZfpCuda3dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/testZfpCuda3dInt32.c.o
 .PHONY : testZfpCuda3dInt32.c.o
 
 testZfpCuda3dInt32.i: testZfpCuda3dInt32.c.i
@@ -1110,7 +1110,7 @@ testZfpCuda3dInt32.i: testZfpCuda3dInt32.c.i
 
 # target to preprocess a source file
 testZfpCuda3dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/testZfpCuda3dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/testZfpCuda3dInt32.c.i
 .PHONY : testZfpCuda3dInt32.c.i
 
 testZfpCuda3dInt32.s: testZfpCuda3dInt32.c.s
@@ -1119,7 +1119,7 @@ testZfpCuda3dInt32.s: testZfpCuda3dInt32.c.s
 
 # target to generate assembly for a file
 testZfpCuda3dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/testZfpCuda3dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/testZfpCuda3dInt32.c.s
 .PHONY : testZfpCuda3dInt32.c.s
 
 testZfpCuda3dInt64.o: testZfpCuda3dInt64.c.o
@@ -1128,7 +1128,7 @@ testZfpCuda3dInt64.o: testZfpCuda3dInt64.c.o
 
 # target to build an object file
 testZfpCuda3dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/testZfpCuda3dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/testZfpCuda3dInt64.c.o
 .PHONY : testZfpCuda3dInt64.c.o
 
 testZfpCuda3dInt64.i: testZfpCuda3dInt64.c.i
@@ -1137,7 +1137,7 @@ testZfpCuda3dInt64.i: testZfpCuda3dInt64.c.i
 
 # target to preprocess a source file
 testZfpCuda3dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/testZfpCuda3dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/testZfpCuda3dInt64.c.i
 .PHONY : testZfpCuda3dInt64.c.i
 
 testZfpCuda3dInt64.s: testZfpCuda3dInt64.c.s
@@ -1146,7 +1146,7 @@ testZfpCuda3dInt64.s: testZfpCuda3dInt64.c.s
 
 # target to generate assembly for a file
 testZfpCuda3dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/testZfpCuda3dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/testZfpCuda3dInt64.c.s
 .PHONY : testZfpCuda3dInt64.c.s
 
 testZfpOmp1dDouble.o: testZfpOmp1dDouble.c.o
@@ -1155,7 +1155,7 @@ testZfpOmp1dDouble.o: testZfpOmp1dDouble.c.o
 
 # target to build an object file
 testZfpOmp1dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.o
 .PHONY : testZfpOmp1dDouble.c.o
 
 testZfpOmp1dDouble.i: testZfpOmp1dDouble.c.i
@@ -1164,7 +1164,7 @@ testZfpOmp1dDouble.i: testZfpOmp1dDouble.c.i
 
 # target to preprocess a source file
 testZfpOmp1dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.i
 .PHONY : testZfpOmp1dDouble.c.i
 
 testZfpOmp1dDouble.s: testZfpOmp1dDouble.c.s
@@ -1173,7 +1173,7 @@ testZfpOmp1dDouble.s: testZfpOmp1dDouble.c.s
 
 # target to generate assembly for a file
 testZfpOmp1dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.s
 .PHONY : testZfpOmp1dDouble.c.s
 
 testZfpOmp1dFloat.o: testZfpOmp1dFloat.c.o
@@ -1182,7 +1182,7 @@ testZfpOmp1dFloat.o: testZfpOmp1dFloat.c.o
 
 # target to build an object file
 testZfpOmp1dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.o
 .PHONY : testZfpOmp1dFloat.c.o
 
 testZfpOmp1dFloat.i: testZfpOmp1dFloat.c.i
@@ -1191,7 +1191,7 @@ testZfpOmp1dFloat.i: testZfpOmp1dFloat.c.i
 
 # target to preprocess a source file
 testZfpOmp1dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.i
 .PHONY : testZfpOmp1dFloat.c.i
 
 testZfpOmp1dFloat.s: testZfpOmp1dFloat.c.s
@@ -1200,7 +1200,7 @@ testZfpOmp1dFloat.s: testZfpOmp1dFloat.c.s
 
 # target to generate assembly for a file
 testZfpOmp1dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.s
 .PHONY : testZfpOmp1dFloat.c.s
 
 testZfpOmp1dInt32.o: testZfpOmp1dInt32.c.o
@@ -1209,7 +1209,7 @@ testZfpOmp1dInt32.o: testZfpOmp1dInt32.c.o
 
 # target to build an object file
 testZfpOmp1dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.o
 .PHONY : testZfpOmp1dInt32.c.o
 
 testZfpOmp1dInt32.i: testZfpOmp1dInt32.c.i
@@ -1218,7 +1218,7 @@ testZfpOmp1dInt32.i: testZfpOmp1dInt32.c.i
 
 # target to preprocess a source file
 testZfpOmp1dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.i
 .PHONY : testZfpOmp1dInt32.c.i
 
 testZfpOmp1dInt32.s: testZfpOmp1dInt32.c.s
@@ -1227,7 +1227,7 @@ testZfpOmp1dInt32.s: testZfpOmp1dInt32.c.s
 
 # target to generate assembly for a file
 testZfpOmp1dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.s
 .PHONY : testZfpOmp1dInt32.c.s
 
 testZfpOmp1dInt64.o: testZfpOmp1dInt64.c.o
@@ -1236,7 +1236,7 @@ testZfpOmp1dInt64.o: testZfpOmp1dInt64.c.o
 
 # target to build an object file
 testZfpOmp1dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.o
 .PHONY : testZfpOmp1dInt64.c.o
 
 testZfpOmp1dInt64.i: testZfpOmp1dInt64.c.i
@@ -1245,7 +1245,7 @@ testZfpOmp1dInt64.i: testZfpOmp1dInt64.c.i
 
 # target to preprocess a source file
 testZfpOmp1dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.i
 .PHONY : testZfpOmp1dInt64.c.i
 
 testZfpOmp1dInt64.s: testZfpOmp1dInt64.c.s
@@ -1254,7 +1254,7 @@ testZfpOmp1dInt64.s: testZfpOmp1dInt64.c.s
 
 # target to generate assembly for a file
 testZfpOmp1dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.s
 .PHONY : testZfpOmp1dInt64.c.s
 
 testZfpOmp2dDouble.o: testZfpOmp2dDouble.c.o
@@ -1263,7 +1263,7 @@ testZfpOmp2dDouble.o: testZfpOmp2dDouble.c.o
 
 # target to build an object file
 testZfpOmp2dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.o
 .PHONY : testZfpOmp2dDouble.c.o
 
 testZfpOmp2dDouble.i: testZfpOmp2dDouble.c.i
@@ -1272,7 +1272,7 @@ testZfpOmp2dDouble.i: testZfpOmp2dDouble.c.i
 
 # target to preprocess a source file
 testZfpOmp2dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.i
 .PHONY : testZfpOmp2dDouble.c.i
 
 testZfpOmp2dDouble.s: testZfpOmp2dDouble.c.s
@@ -1281,7 +1281,7 @@ testZfpOmp2dDouble.s: testZfpOmp2dDouble.c.s
 
 # target to generate assembly for a file
 testZfpOmp2dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.s
 .PHONY : testZfpOmp2dDouble.c.s
 
 testZfpOmp2dFloat.o: testZfpOmp2dFloat.c.o
@@ -1290,7 +1290,7 @@ testZfpOmp2dFloat.o: testZfpOmp2dFloat.c.o
 
 # target to build an object file
 testZfpOmp2dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.o
 .PHONY : testZfpOmp2dFloat.c.o
 
 testZfpOmp2dFloat.i: testZfpOmp2dFloat.c.i
@@ -1299,7 +1299,7 @@ testZfpOmp2dFloat.i: testZfpOmp2dFloat.c.i
 
 # target to preprocess a source file
 testZfpOmp2dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.i
 .PHONY : testZfpOmp2dFloat.c.i
 
 testZfpOmp2dFloat.s: testZfpOmp2dFloat.c.s
@@ -1308,7 +1308,7 @@ testZfpOmp2dFloat.s: testZfpOmp2dFloat.c.s
 
 # target to generate assembly for a file
 testZfpOmp2dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.s
 .PHONY : testZfpOmp2dFloat.c.s
 
 testZfpOmp2dInt32.o: testZfpOmp2dInt32.c.o
@@ -1317,7 +1317,7 @@ testZfpOmp2dInt32.o: testZfpOmp2dInt32.c.o
 
 # target to build an object file
 testZfpOmp2dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.o
 .PHONY : testZfpOmp2dInt32.c.o
 
 testZfpOmp2dInt32.i: testZfpOmp2dInt32.c.i
@@ -1326,7 +1326,7 @@ testZfpOmp2dInt32.i: testZfpOmp2dInt32.c.i
 
 # target to preprocess a source file
 testZfpOmp2dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.i
 .PHONY : testZfpOmp2dInt32.c.i
 
 testZfpOmp2dInt32.s: testZfpOmp2dInt32.c.s
@@ -1335,7 +1335,7 @@ testZfpOmp2dInt32.s: testZfpOmp2dInt32.c.s
 
 # target to generate assembly for a file
 testZfpOmp2dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.s
 .PHONY : testZfpOmp2dInt32.c.s
 
 testZfpOmp2dInt64.o: testZfpOmp2dInt64.c.o
@@ -1344,7 +1344,7 @@ testZfpOmp2dInt64.o: testZfpOmp2dInt64.c.o
 
 # target to build an object file
 testZfpOmp2dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.o
 .PHONY : testZfpOmp2dInt64.c.o
 
 testZfpOmp2dInt64.i: testZfpOmp2dInt64.c.i
@@ -1353,7 +1353,7 @@ testZfpOmp2dInt64.i: testZfpOmp2dInt64.c.i
 
 # target to preprocess a source file
 testZfpOmp2dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.i
 .PHONY : testZfpOmp2dInt64.c.i
 
 testZfpOmp2dInt64.s: testZfpOmp2dInt64.c.s
@@ -1362,7 +1362,7 @@ testZfpOmp2dInt64.s: testZfpOmp2dInt64.c.s
 
 # target to generate assembly for a file
 testZfpOmp2dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.s
 .PHONY : testZfpOmp2dInt64.c.s
 
 testZfpOmp3dDouble.o: testZfpOmp3dDouble.c.o
@@ -1371,7 +1371,7 @@ testZfpOmp3dDouble.o: testZfpOmp3dDouble.c.o
 
 # target to build an object file
 testZfpOmp3dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.o
 .PHONY : testZfpOmp3dDouble.c.o
 
 testZfpOmp3dDouble.i: testZfpOmp3dDouble.c.i
@@ -1380,7 +1380,7 @@ testZfpOmp3dDouble.i: testZfpOmp3dDouble.c.i
 
 # target to preprocess a source file
 testZfpOmp3dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.i
 .PHONY : testZfpOmp3dDouble.c.i
 
 testZfpOmp3dDouble.s: testZfpOmp3dDouble.c.s
@@ -1389,7 +1389,7 @@ testZfpOmp3dDouble.s: testZfpOmp3dDouble.c.s
 
 # target to generate assembly for a file
 testZfpOmp3dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.s
 .PHONY : testZfpOmp3dDouble.c.s
 
 testZfpOmp3dFloat.o: testZfpOmp3dFloat.c.o
@@ -1398,7 +1398,7 @@ testZfpOmp3dFloat.o: testZfpOmp3dFloat.c.o
 
 # target to build an object file
 testZfpOmp3dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.o
 .PHONY : testZfpOmp3dFloat.c.o
 
 testZfpOmp3dFloat.i: testZfpOmp3dFloat.c.i
@@ -1407,7 +1407,7 @@ testZfpOmp3dFloat.i: testZfpOmp3dFloat.c.i
 
 # target to preprocess a source file
 testZfpOmp3dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.i
 .PHONY : testZfpOmp3dFloat.c.i
 
 testZfpOmp3dFloat.s: testZfpOmp3dFloat.c.s
@@ -1416,7 +1416,7 @@ testZfpOmp3dFloat.s: testZfpOmp3dFloat.c.s
 
 # target to generate assembly for a file
 testZfpOmp3dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.s
 .PHONY : testZfpOmp3dFloat.c.s
 
 testZfpOmp3dInt32.o: testZfpOmp3dInt32.c.o
@@ -1425,7 +1425,7 @@ testZfpOmp3dInt32.o: testZfpOmp3dInt32.c.o
 
 # target to build an object file
 testZfpOmp3dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.o
 .PHONY : testZfpOmp3dInt32.c.o
 
 testZfpOmp3dInt32.i: testZfpOmp3dInt32.c.i
@@ -1434,7 +1434,7 @@ testZfpOmp3dInt32.i: testZfpOmp3dInt32.c.i
 
 # target to preprocess a source file
 testZfpOmp3dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.i
 .PHONY : testZfpOmp3dInt32.c.i
 
 testZfpOmp3dInt32.s: testZfpOmp3dInt32.c.s
@@ -1443,7 +1443,7 @@ testZfpOmp3dInt32.s: testZfpOmp3dInt32.c.s
 
 # target to generate assembly for a file
 testZfpOmp3dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.s
 .PHONY : testZfpOmp3dInt32.c.s
 
 testZfpOmp3dInt64.o: testZfpOmp3dInt64.c.o
@@ -1452,7 +1452,7 @@ testZfpOmp3dInt64.o: testZfpOmp3dInt64.c.o
 
 # target to build an object file
 testZfpOmp3dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.o
 .PHONY : testZfpOmp3dInt64.c.o
 
 testZfpOmp3dInt64.i: testZfpOmp3dInt64.c.i
@@ -1461,7 +1461,7 @@ testZfpOmp3dInt64.i: testZfpOmp3dInt64.c.i
 
 # target to preprocess a source file
 testZfpOmp3dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.i
 .PHONY : testZfpOmp3dInt64.c.i
 
 testZfpOmp3dInt64.s: testZfpOmp3dInt64.c.s
@@ -1470,7 +1470,7 @@ testZfpOmp3dInt64.s: testZfpOmp3dInt64.c.s
 
 # target to generate assembly for a file
 testZfpOmp3dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.s
 .PHONY : testZfpOmp3dInt64.c.s
 
 testZfpOmp4dDouble.o: testZfpOmp4dDouble.c.o
@@ -1479,7 +1479,7 @@ testZfpOmp4dDouble.o: testZfpOmp4dDouble.c.o
 
 # target to build an object file
 testZfpOmp4dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.o
 .PHONY : testZfpOmp4dDouble.c.o
 
 testZfpOmp4dDouble.i: testZfpOmp4dDouble.c.i
@@ -1488,7 +1488,7 @@ testZfpOmp4dDouble.i: testZfpOmp4dDouble.c.i
 
 # target to preprocess a source file
 testZfpOmp4dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.i
 .PHONY : testZfpOmp4dDouble.c.i
 
 testZfpOmp4dDouble.s: testZfpOmp4dDouble.c.s
@@ -1497,7 +1497,7 @@ testZfpOmp4dDouble.s: testZfpOmp4dDouble.c.s
 
 # target to generate assembly for a file
 testZfpOmp4dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.s
 .PHONY : testZfpOmp4dDouble.c.s
 
 testZfpOmp4dFloat.o: testZfpOmp4dFloat.c.o
@@ -1506,7 +1506,7 @@ testZfpOmp4dFloat.o: testZfpOmp4dFloat.c.o
 
 # target to build an object file
 testZfpOmp4dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.o
 .PHONY : testZfpOmp4dFloat.c.o
 
 testZfpOmp4dFloat.i: testZfpOmp4dFloat.c.i
@@ -1515,7 +1515,7 @@ testZfpOmp4dFloat.i: testZfpOmp4dFloat.c.i
 
 # target to preprocess a source file
 testZfpOmp4dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.i
 .PHONY : testZfpOmp4dFloat.c.i
 
 testZfpOmp4dFloat.s: testZfpOmp4dFloat.c.s
@@ -1524,7 +1524,7 @@ testZfpOmp4dFloat.s: testZfpOmp4dFloat.c.s
 
 # target to generate assembly for a file
 testZfpOmp4dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.s
 .PHONY : testZfpOmp4dFloat.c.s
 
 testZfpOmp4dInt32.o: testZfpOmp4dInt32.c.o
@@ -1533,7 +1533,7 @@ testZfpOmp4dInt32.o: testZfpOmp4dInt32.c.o
 
 # target to build an object file
 testZfpOmp4dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.o
 .PHONY : testZfpOmp4dInt32.c.o
 
 testZfpOmp4dInt32.i: testZfpOmp4dInt32.c.i
@@ -1542,7 +1542,7 @@ testZfpOmp4dInt32.i: testZfpOmp4dInt32.c.i
 
 # target to preprocess a source file
 testZfpOmp4dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.i
 .PHONY : testZfpOmp4dInt32.c.i
 
 testZfpOmp4dInt32.s: testZfpOmp4dInt32.c.s
@@ -1551,7 +1551,7 @@ testZfpOmp4dInt32.s: testZfpOmp4dInt32.c.s
 
 # target to generate assembly for a file
 testZfpOmp4dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.s
 .PHONY : testZfpOmp4dInt32.c.s
 
 testZfpOmp4dInt64.o: testZfpOmp4dInt64.c.o
@@ -1560,7 +1560,7 @@ testZfpOmp4dInt64.o: testZfpOmp4dInt64.c.o
 
 # target to build an object file
 testZfpOmp4dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.o
 .PHONY : testZfpOmp4dInt64.c.o
 
 testZfpOmp4dInt64.i: testZfpOmp4dInt64.c.i
@@ -1569,7 +1569,7 @@ testZfpOmp4dInt64.i: testZfpOmp4dInt64.c.i
 
 # target to preprocess a source file
 testZfpOmp4dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.i
 .PHONY : testZfpOmp4dInt64.c.i
 
 testZfpOmp4dInt64.s: testZfpOmp4dInt64.c.s
@@ -1578,7 +1578,7 @@ testZfpOmp4dInt64.s: testZfpOmp4dInt64.c.s
 
 # target to generate assembly for a file
 testZfpOmp4dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.s
 .PHONY : testZfpOmp4dInt64.c.s
 
 testZfpSerial1dDouble.o: testZfpSerial1dDouble.c.o
@@ -1587,7 +1587,7 @@ testZfpSerial1dDouble.o: testZfpSerial1dDouble.c.o
 
 # target to build an object file
 testZfpSerial1dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/testZfpSerial1dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/testZfpSerial1dDouble.c.o
 .PHONY : testZfpSerial1dDouble.c.o
 
 testZfpSerial1dDouble.i: testZfpSerial1dDouble.c.i
@@ -1596,7 +1596,7 @@ testZfpSerial1dDouble.i: testZfpSerial1dDouble.c.i
 
 # target to preprocess a source file
 testZfpSerial1dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/testZfpSerial1dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/testZfpSerial1dDouble.c.i
 .PHONY : testZfpSerial1dDouble.c.i
 
 testZfpSerial1dDouble.s: testZfpSerial1dDouble.c.s
@@ -1605,7 +1605,7 @@ testZfpSerial1dDouble.s: testZfpSerial1dDouble.c.s
 
 # target to generate assembly for a file
 testZfpSerial1dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/testZfpSerial1dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/testZfpSerial1dDouble.c.s
 .PHONY : testZfpSerial1dDouble.c.s
 
 testZfpSerial1dFloat.o: testZfpSerial1dFloat.c.o
@@ -1614,7 +1614,7 @@ testZfpSerial1dFloat.o: testZfpSerial1dFloat.c.o
 
 # target to build an object file
 testZfpSerial1dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/testZfpSerial1dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/testZfpSerial1dFloat.c.o
 .PHONY : testZfpSerial1dFloat.c.o
 
 testZfpSerial1dFloat.i: testZfpSerial1dFloat.c.i
@@ -1623,7 +1623,7 @@ testZfpSerial1dFloat.i: testZfpSerial1dFloat.c.i
 
 # target to preprocess a source file
 testZfpSerial1dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/testZfpSerial1dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/testZfpSerial1dFloat.c.i
 .PHONY : testZfpSerial1dFloat.c.i
 
 testZfpSerial1dFloat.s: testZfpSerial1dFloat.c.s
@@ -1632,7 +1632,7 @@ testZfpSerial1dFloat.s: testZfpSerial1dFloat.c.s
 
 # target to generate assembly for a file
 testZfpSerial1dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/testZfpSerial1dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/testZfpSerial1dFloat.c.s
 .PHONY : testZfpSerial1dFloat.c.s
 
 testZfpSerial1dInt32.o: testZfpSerial1dInt32.c.o
@@ -1641,7 +1641,7 @@ testZfpSerial1dInt32.o: testZfpSerial1dInt32.c.o
 
 # target to build an object file
 testZfpSerial1dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/testZfpSerial1dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/testZfpSerial1dInt32.c.o
 .PHONY : testZfpSerial1dInt32.c.o
 
 testZfpSerial1dInt32.i: testZfpSerial1dInt32.c.i
@@ -1650,7 +1650,7 @@ testZfpSerial1dInt32.i: testZfpSerial1dInt32.c.i
 
 # target to preprocess a source file
 testZfpSerial1dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/testZfpSerial1dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/testZfpSerial1dInt32.c.i
 .PHONY : testZfpSerial1dInt32.c.i
 
 testZfpSerial1dInt32.s: testZfpSerial1dInt32.c.s
@@ -1659,7 +1659,7 @@ testZfpSerial1dInt32.s: testZfpSerial1dInt32.c.s
 
 # target to generate assembly for a file
 testZfpSerial1dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/testZfpSerial1dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/testZfpSerial1dInt32.c.s
 .PHONY : testZfpSerial1dInt32.c.s
 
 testZfpSerial1dInt64.o: testZfpSerial1dInt64.c.o
@@ -1668,7 +1668,7 @@ testZfpSerial1dInt64.o: testZfpSerial1dInt64.c.o
 
 # target to build an object file
 testZfpSerial1dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/testZfpSerial1dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/testZfpSerial1dInt64.c.o
 .PHONY : testZfpSerial1dInt64.c.o
 
 testZfpSerial1dInt64.i: testZfpSerial1dInt64.c.i
@@ -1677,7 +1677,7 @@ testZfpSerial1dInt64.i: testZfpSerial1dInt64.c.i
 
 # target to preprocess a source file
 testZfpSerial1dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/testZfpSerial1dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/testZfpSerial1dInt64.c.i
 .PHONY : testZfpSerial1dInt64.c.i
 
 testZfpSerial1dInt64.s: testZfpSerial1dInt64.c.s
@@ -1686,7 +1686,7 @@ testZfpSerial1dInt64.s: testZfpSerial1dInt64.c.s
 
 # target to generate assembly for a file
 testZfpSerial1dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/testZfpSerial1dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/testZfpSerial1dInt64.c.s
 .PHONY : testZfpSerial1dInt64.c.s
 
 testZfpSerial2dDouble.o: testZfpSerial2dDouble.c.o
@@ -1695,7 +1695,7 @@ testZfpSerial2dDouble.o: testZfpSerial2dDouble.c.o
 
 # target to build an object file
 testZfpSerial2dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/testZfpSerial2dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/testZfpSerial2dDouble.c.o
 .PHONY : testZfpSerial2dDouble.c.o
 
 testZfpSerial2dDouble.i: testZfpSerial2dDouble.c.i
@@ -1704,7 +1704,7 @@ testZfpSerial2dDouble.i: testZfpSerial2dDouble.c.i
 
 # target to preprocess a source file
 testZfpSerial2dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/testZfpSerial2dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/testZfpSerial2dDouble.c.i
 .PHONY : testZfpSerial2dDouble.c.i
 
 testZfpSerial2dDouble.s: testZfpSerial2dDouble.c.s
@@ -1713,7 +1713,7 @@ testZfpSerial2dDouble.s: testZfpSerial2dDouble.c.s
 
 # target to generate assembly for a file
 testZfpSerial2dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/testZfpSerial2dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/testZfpSerial2dDouble.c.s
 .PHONY : testZfpSerial2dDouble.c.s
 
 testZfpSerial2dFloat.o: testZfpSerial2dFloat.c.o
@@ -1722,7 +1722,7 @@ testZfpSerial2dFloat.o: testZfpSerial2dFloat.c.o
 
 # target to build an object file
 testZfpSerial2dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/testZfpSerial2dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/testZfpSerial2dFloat.c.o
 .PHONY : testZfpSerial2dFloat.c.o
 
 testZfpSerial2dFloat.i: testZfpSerial2dFloat.c.i
@@ -1731,7 +1731,7 @@ testZfpSerial2dFloat.i: testZfpSerial2dFloat.c.i
 
 # target to preprocess a source file
 testZfpSerial2dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/testZfpSerial2dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/testZfpSerial2dFloat.c.i
 .PHONY : testZfpSerial2dFloat.c.i
 
 testZfpSerial2dFloat.s: testZfpSerial2dFloat.c.s
@@ -1740,7 +1740,7 @@ testZfpSerial2dFloat.s: testZfpSerial2dFloat.c.s
 
 # target to generate assembly for a file
 testZfpSerial2dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/testZfpSerial2dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/testZfpSerial2dFloat.c.s
 .PHONY : testZfpSerial2dFloat.c.s
 
 testZfpSerial2dInt32.o: testZfpSerial2dInt32.c.o
@@ -1749,7 +1749,7 @@ testZfpSerial2dInt32.o: testZfpSerial2dInt32.c.o
 
 # target to build an object file
 testZfpSerial2dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/testZfpSerial2dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/testZfpSerial2dInt32.c.o
 .PHONY : testZfpSerial2dInt32.c.o
 
 testZfpSerial2dInt32.i: testZfpSerial2dInt32.c.i
@@ -1758,7 +1758,7 @@ testZfpSerial2dInt32.i: testZfpSerial2dInt32.c.i
 
 # target to preprocess a source file
 testZfpSerial2dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/testZfpSerial2dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/testZfpSerial2dInt32.c.i
 .PHONY : testZfpSerial2dInt32.c.i
 
 testZfpSerial2dInt32.s: testZfpSerial2dInt32.c.s
@@ -1767,7 +1767,7 @@ testZfpSerial2dInt32.s: testZfpSerial2dInt32.c.s
 
 # target to generate assembly for a file
 testZfpSerial2dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/testZfpSerial2dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/testZfpSerial2dInt32.c.s
 .PHONY : testZfpSerial2dInt32.c.s
 
 testZfpSerial2dInt64.o: testZfpSerial2dInt64.c.o
@@ -1776,7 +1776,7 @@ testZfpSerial2dInt64.o: testZfpSerial2dInt64.c.o
 
 # target to build an object file
 testZfpSerial2dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/testZfpSerial2dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/testZfpSerial2dInt64.c.o
 .PHONY : testZfpSerial2dInt64.c.o
 
 testZfpSerial2dInt64.i: testZfpSerial2dInt64.c.i
@@ -1785,7 +1785,7 @@ testZfpSerial2dInt64.i: testZfpSerial2dInt64.c.i
 
 # target to preprocess a source file
 testZfpSerial2dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/testZfpSerial2dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/testZfpSerial2dInt64.c.i
 .PHONY : testZfpSerial2dInt64.c.i
 
 testZfpSerial2dInt64.s: testZfpSerial2dInt64.c.s
@@ -1794,7 +1794,7 @@ testZfpSerial2dInt64.s: testZfpSerial2dInt64.c.s
 
 # target to generate assembly for a file
 testZfpSerial2dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/testZfpSerial2dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/testZfpSerial2dInt64.c.s
 .PHONY : testZfpSerial2dInt64.c.s
 
 testZfpSerial3dDouble.o: testZfpSerial3dDouble.c.o
@@ -1803,7 +1803,7 @@ testZfpSerial3dDouble.o: testZfpSerial3dDouble.c.o
 
 # target to build an object file
 testZfpSerial3dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/testZfpSerial3dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/testZfpSerial3dDouble.c.o
 .PHONY : testZfpSerial3dDouble.c.o
 
 testZfpSerial3dDouble.i: testZfpSerial3dDouble.c.i
@@ -1812,7 +1812,7 @@ testZfpSerial3dDouble.i: testZfpSerial3dDouble.c.i
 
 # target to preprocess a source file
 testZfpSerial3dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/testZfpSerial3dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/testZfpSerial3dDouble.c.i
 .PHONY : testZfpSerial3dDouble.c.i
 
 testZfpSerial3dDouble.s: testZfpSerial3dDouble.c.s
@@ -1821,7 +1821,7 @@ testZfpSerial3dDouble.s: testZfpSerial3dDouble.c.s
 
 # target to generate assembly for a file
 testZfpSerial3dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/testZfpSerial3dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/testZfpSerial3dDouble.c.s
 .PHONY : testZfpSerial3dDouble.c.s
 
 testZfpSerial3dFloat.o: testZfpSerial3dFloat.c.o
@@ -1830,7 +1830,7 @@ testZfpSerial3dFloat.o: testZfpSerial3dFloat.c.o
 
 # target to build an object file
 testZfpSerial3dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/testZfpSerial3dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/testZfpSerial3dFloat.c.o
 .PHONY : testZfpSerial3dFloat.c.o
 
 testZfpSerial3dFloat.i: testZfpSerial3dFloat.c.i
@@ -1839,7 +1839,7 @@ testZfpSerial3dFloat.i: testZfpSerial3dFloat.c.i
 
 # target to preprocess a source file
 testZfpSerial3dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/testZfpSerial3dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/testZfpSerial3dFloat.c.i
 .PHONY : testZfpSerial3dFloat.c.i
 
 testZfpSerial3dFloat.s: testZfpSerial3dFloat.c.s
@@ -1848,7 +1848,7 @@ testZfpSerial3dFloat.s: testZfpSerial3dFloat.c.s
 
 # target to generate assembly for a file
 testZfpSerial3dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/testZfpSerial3dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/testZfpSerial3dFloat.c.s
 .PHONY : testZfpSerial3dFloat.c.s
 
 testZfpSerial3dInt32.o: testZfpSerial3dInt32.c.o
@@ -1857,7 +1857,7 @@ testZfpSerial3dInt32.o: testZfpSerial3dInt32.c.o
 
 # target to build an object file
 testZfpSerial3dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/testZfpSerial3dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/testZfpSerial3dInt32.c.o
 .PHONY : testZfpSerial3dInt32.c.o
 
 testZfpSerial3dInt32.i: testZfpSerial3dInt32.c.i
@@ -1866,7 +1866,7 @@ testZfpSerial3dInt32.i: testZfpSerial3dInt32.c.i
 
 # target to preprocess a source file
 testZfpSerial3dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/testZfpSerial3dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/testZfpSerial3dInt32.c.i
 .PHONY : testZfpSerial3dInt32.c.i
 
 testZfpSerial3dInt32.s: testZfpSerial3dInt32.c.s
@@ -1875,7 +1875,7 @@ testZfpSerial3dInt32.s: testZfpSerial3dInt32.c.s
 
 # target to generate assembly for a file
 testZfpSerial3dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/testZfpSerial3dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/testZfpSerial3dInt32.c.s
 .PHONY : testZfpSerial3dInt32.c.s
 
 testZfpSerial3dInt64.o: testZfpSerial3dInt64.c.o
@@ -1884,7 +1884,7 @@ testZfpSerial3dInt64.o: testZfpSerial3dInt64.c.o
 
 # target to build an object file
 testZfpSerial3dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/testZfpSerial3dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/testZfpSerial3dInt64.c.o
 .PHONY : testZfpSerial3dInt64.c.o
 
 testZfpSerial3dInt64.i: testZfpSerial3dInt64.c.i
@@ -1893,7 +1893,7 @@ testZfpSerial3dInt64.i: testZfpSerial3dInt64.c.i
 
 # target to preprocess a source file
 testZfpSerial3dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/testZfpSerial3dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/testZfpSerial3dInt64.c.i
 .PHONY : testZfpSerial3dInt64.c.i
 
 testZfpSerial3dInt64.s: testZfpSerial3dInt64.c.s
@@ -1902,7 +1902,7 @@ testZfpSerial3dInt64.s: testZfpSerial3dInt64.c.s
 
 # target to generate assembly for a file
 testZfpSerial3dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/testZfpSerial3dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/testZfpSerial3dInt64.c.s
 .PHONY : testZfpSerial3dInt64.c.s
 
 testZfpSerial4dDouble.o: testZfpSerial4dDouble.c.o
@@ -1911,7 +1911,7 @@ testZfpSerial4dDouble.o: testZfpSerial4dDouble.c.o
 
 # target to build an object file
 testZfpSerial4dDouble.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/testZfpSerial4dDouble.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/testZfpSerial4dDouble.c.o
 .PHONY : testZfpSerial4dDouble.c.o
 
 testZfpSerial4dDouble.i: testZfpSerial4dDouble.c.i
@@ -1920,7 +1920,7 @@ testZfpSerial4dDouble.i: testZfpSerial4dDouble.c.i
 
 # target to preprocess a source file
 testZfpSerial4dDouble.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/testZfpSerial4dDouble.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/testZfpSerial4dDouble.c.i
 .PHONY : testZfpSerial4dDouble.c.i
 
 testZfpSerial4dDouble.s: testZfpSerial4dDouble.c.s
@@ -1929,7 +1929,7 @@ testZfpSerial4dDouble.s: testZfpSerial4dDouble.c.s
 
 # target to generate assembly for a file
 testZfpSerial4dDouble.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/testZfpSerial4dDouble.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/testZfpSerial4dDouble.c.s
 .PHONY : testZfpSerial4dDouble.c.s
 
 testZfpSerial4dFloat.o: testZfpSerial4dFloat.c.o
@@ -1938,7 +1938,7 @@ testZfpSerial4dFloat.o: testZfpSerial4dFloat.c.o
 
 # target to build an object file
 testZfpSerial4dFloat.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/testZfpSerial4dFloat.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/testZfpSerial4dFloat.c.o
 .PHONY : testZfpSerial4dFloat.c.o
 
 testZfpSerial4dFloat.i: testZfpSerial4dFloat.c.i
@@ -1947,7 +1947,7 @@ testZfpSerial4dFloat.i: testZfpSerial4dFloat.c.i
 
 # target to preprocess a source file
 testZfpSerial4dFloat.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/testZfpSerial4dFloat.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/testZfpSerial4dFloat.c.i
 .PHONY : testZfpSerial4dFloat.c.i
 
 testZfpSerial4dFloat.s: testZfpSerial4dFloat.c.s
@@ -1956,7 +1956,7 @@ testZfpSerial4dFloat.s: testZfpSerial4dFloat.c.s
 
 # target to generate assembly for a file
 testZfpSerial4dFloat.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/testZfpSerial4dFloat.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/testZfpSerial4dFloat.c.s
 .PHONY : testZfpSerial4dFloat.c.s
 
 testZfpSerial4dInt32.o: testZfpSerial4dInt32.c.o
@@ -1965,7 +1965,7 @@ testZfpSerial4dInt32.o: testZfpSerial4dInt32.c.o
 
 # target to build an object file
 testZfpSerial4dInt32.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/testZfpSerial4dInt32.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/testZfpSerial4dInt32.c.o
 .PHONY : testZfpSerial4dInt32.c.o
 
 testZfpSerial4dInt32.i: testZfpSerial4dInt32.c.i
@@ -1974,7 +1974,7 @@ testZfpSerial4dInt32.i: testZfpSerial4dInt32.c.i
 
 # target to preprocess a source file
 testZfpSerial4dInt32.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/testZfpSerial4dInt32.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/testZfpSerial4dInt32.c.i
 .PHONY : testZfpSerial4dInt32.c.i
 
 testZfpSerial4dInt32.s: testZfpSerial4dInt32.c.s
@@ -1983,7 +1983,7 @@ testZfpSerial4dInt32.s: testZfpSerial4dInt32.c.s
 
 # target to generate assembly for a file
 testZfpSerial4dInt32.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/testZfpSerial4dInt32.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/testZfpSerial4dInt32.c.s
 .PHONY : testZfpSerial4dInt32.c.s
 
 testZfpSerial4dInt64.o: testZfpSerial4dInt64.c.o
@@ -1992,7 +1992,7 @@ testZfpSerial4dInt64.o: testZfpSerial4dInt64.c.o
 
 # target to build an object file
 testZfpSerial4dInt64.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/testZfpSerial4dInt64.c.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/testZfpSerial4dInt64.c.o
 .PHONY : testZfpSerial4dInt64.c.o
 
 testZfpSerial4dInt64.i: testZfpSerial4dInt64.c.i
@@ -2001,7 +2001,7 @@ testZfpSerial4dInt64.i: testZfpSerial4dInt64.c.i
 
 # target to preprocess a source file
 testZfpSerial4dInt64.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/testZfpSerial4dInt64.c.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/testZfpSerial4dInt64.c.i
 .PHONY : testZfpSerial4dInt64.c.i
 
 testZfpSerial4dInt64.s: testZfpSerial4dInt64.c.s
@@ -2010,7 +2010,7 @@ testZfpSerial4dInt64.s: testZfpSerial4dInt64.c.s
 
 # target to generate assembly for a file
 testZfpSerial4dInt64.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/testZfpSerial4dInt64.c.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/testZfpSerial4dInt64.c.s
 .PHONY : testZfpSerial4dInt64.c.s
 
 # Help Target
@@ -2213,6 +2213,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

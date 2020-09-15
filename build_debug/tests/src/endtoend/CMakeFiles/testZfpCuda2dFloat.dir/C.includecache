@@ -184,27 +184,27 @@ time.h
 mach/mach_time.h
 -
 
-/home/ubuntu/local_build/zfp/tests/src/endtoend/cudaExecBase.c
+/home/cc/local_build/zfp/tests/src/endtoend/cudaExecBase.c
 math.h
 -
 zfpEndtoendBase.c
-/home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+/home/cc/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
 
-/home/ubuntu/local_build/zfp/tests/src/endtoend/testZfpCuda2dFloat.c
+/home/cc/local_build/zfp/tests/src/endtoend/testZfpCuda2dFloat.c
 src/encode2f.c
-/home/ubuntu/local_build/zfp/tests/src/endtoend/src/encode2f.c
+/home/cc/local_build/zfp/tests/src/endtoend/src/encode2f.c
 constants/2dFloat.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/constants/2dFloat.h
+/home/cc/local_build/zfp/tests/src/endtoend/constants/2dFloat.h
 cudaExecBase.c
-/home/ubuntu/local_build/zfp/tests/src/endtoend/cudaExecBase.c
+/home/cc/local_build/zfp/tests/src/endtoend/cudaExecBase.c
 testcases/cuda.c
-/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/cuda.c
+/home/cc/local_build/zfp/tests/src/endtoend/testcases/cuda.c
 
-/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/cuda.c
+/home/cc/local_build/zfp/tests/src/endtoend/testcases/cuda.c
 utils/testMacros.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/utils/testMacros.h
+/home/cc/local_build/zfp/tests/src/endtoend/testcases/utils/testMacros.h
 
-/home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+/home/cc/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
 stdarg.h
 -
 stddef.h
@@ -222,19 +222,19 @@ math.h
 string.h
 -
 utils/genSmoothRandNums.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/genSmoothRandNums.h
+/home/cc/local_build/zfp/tests/src/endtoend/utils/genSmoothRandNums.h
 utils/stridedOperations.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/stridedOperations.h
+/home/cc/local_build/zfp/tests/src/endtoend/utils/stridedOperations.h
 utils/testMacros.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/testMacros.h
+/home/cc/local_build/zfp/tests/src/endtoend/utils/testMacros.h
 utils/zfpChecksums.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpChecksums.h
+/home/cc/local_build/zfp/tests/src/endtoend/utils/zfpChecksums.h
 utils/zfpCompressionParams.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpCompressionParams.h
+/home/cc/local_build/zfp/tests/src/endtoend/utils/zfpCompressionParams.h
 utils/zfpHash.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpHash.h
+/home/cc/local_build/zfp/tests/src/endtoend/utils/zfpHash.h
 utils/zfpTimer.h
-/home/ubuntu/local_build/zfp/tests/src/endtoend/utils/zfpTimer.h
+/home/cc/local_build/zfp/tests/src/endtoend/utils/zfpTimer.h
 
 cmocka-src/include/cmocka.h
 

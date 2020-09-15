@@ -38,13 +38,13 @@ tests/array/CMakeFiles/testArray3f.dir/testArray3f.cpp.o
  ../tests/utils/testMacros.h
  ../tests/utils/zfpChecksums.h
  ../tests/utils/zfpHash.h
- /home/ubuntu/local_build/zfp/tests/array/testArray3Base.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArray3f.cpp
- /home/ubuntu/local_build/zfp/tests/array/testArrayBase.cpp
- /home/ubuntu/local_build/zfp/tests/array/utils/commonMacros.h
- /home/ubuntu/local_build/zfp/tests/array/utils/gtestBaseFixture.h
- /home/ubuntu/local_build/zfp/tests/array/utils/gtestFloatEnv.h
- /home/ubuntu/local_build/zfp/tests/array/utils/predicates.h
+ /home/cc/local_build/zfp/tests/array/testArray3Base.cpp
+ /home/cc/local_build/zfp/tests/array/testArray3f.cpp
+ /home/cc/local_build/zfp/tests/array/testArrayBase.cpp
+ /home/cc/local_build/zfp/tests/array/utils/commonMacros.h
+ /home/cc/local_build/zfp/tests/array/utils/gtestBaseFixture.h
+ /home/cc/local_build/zfp/tests/array/utils/gtestFloatEnv.h
+ /home/cc/local_build/zfp/tests/array/utils/predicates.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

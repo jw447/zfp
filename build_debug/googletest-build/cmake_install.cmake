@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/local_build/zfp/build_debug/googletest-src
+# Install script for directory: /home/cc/local_build/zfp/build_debug/googletest-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/local_build/zfp/build_debug/googletest-build/googlemock/cmake_install.cmake")
+  include("/home/cc/local_build/zfp/build_debug/googletest-build/googlemock/cmake_install.cmake")
 
 endif()
 

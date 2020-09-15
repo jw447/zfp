@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/cc/local_build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -92,7 +92,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -146,14 +146,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles /home/ubuntu/local_build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/progress.marks
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/cmocka-build/CMakeFiles 0
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/progress.marks
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/clean
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/clean
 .PHONY : clean
 
 # The main clean target
@@ -163,22 +163,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/preinstall
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/preinstall
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/rule
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/rule
 .PHONY : example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/rule
 
 # Convenience name for target.
@@ -188,7 +188,7 @@ waiter_test_wrap: example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/rule
 
 # fast build rule for target.
 waiter_test_wrap/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build
 .PHONY : waiter_test_wrap/fast
 
 chef.o: chef.c.o
@@ -197,7 +197,7 @@ chef.o: chef.c.o
 
 # target to build an object file
 chef.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o
 .PHONY : chef.c.o
 
 chef.i: chef.c.i
@@ -206,7 +206,7 @@ chef.i: chef.c.i
 
 # target to preprocess a source file
 chef.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.i
 .PHONY : chef.c.i
 
 chef.s: chef.c.s
@@ -215,7 +215,7 @@ chef.s: chef.c.s
 
 # target to generate assembly for a file
 chef.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.s
 .PHONY : chef.c.s
 
 waiter_test_wrap.o: waiter_test_wrap.c.o
@@ -224,7 +224,7 @@ waiter_test_wrap.o: waiter_test_wrap.c.o
 
 # target to build an object file
 waiter_test_wrap.c.o:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o
 .PHONY : waiter_test_wrap.c.o
 
 waiter_test_wrap.i: waiter_test_wrap.c.i
@@ -233,7 +233,7 @@ waiter_test_wrap.i: waiter_test_wrap.c.i
 
 # target to preprocess a source file
 waiter_test_wrap.c.i:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.i
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.i
 .PHONY : waiter_test_wrap.c.i
 
 waiter_test_wrap.s: waiter_test_wrap.c.s
@@ -242,7 +242,7 @@ waiter_test_wrap.s: waiter_test_wrap.c.s
 
 # target to generate assembly for a file
 waiter_test_wrap.c.s:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.s
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.s
 .PHONY : waiter_test_wrap.c.s
 
 # Help Target
@@ -277,6 +277,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

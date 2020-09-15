@@ -46,9 +46,9 @@ stdint.h
 inttypes.h
 -
 
-/home/ubuntu/local_build/zfp/tests/src/execPolicy/testOmp.c
+/home/cc/local_build/zfp/tests/src/execPolicy/testOmp.c
 zfp.h
-/home/ubuntu/local_build/zfp/tests/src/execPolicy/zfp.h
+/home/cc/local_build/zfp/tests/src/execPolicy/zfp.h
 stdarg.h
 -
 stddef.h

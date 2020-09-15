@@ -28,7 +28,7 @@ tests/src/decode/CMakeFiles/testZfpDecodeBlock3dInt64.dir/testZfpDecodeBlock3dIn
  ../tests/utils/testMacros.h
  ../tests/utils/zfpChecksums.h
  ../tests/utils/zfpHash.h
- /home/ubuntu/local_build/zfp/tests/src/decode/testZfpDecodeBlock3dInt64.c
- /home/ubuntu/local_build/zfp/tests/src/decode/testcases/block.c
- /home/ubuntu/local_build/zfp/tests/src/decode/zfpDecodeBlockBase.c
+ /home/cc/local_build/zfp/tests/src/decode/testZfpDecodeBlock3dInt64.c
+ /home/cc/local_build/zfp/tests/src/decode/testcases/block.c
+ /home/cc/local_build/zfp/tests/src/decode/zfpDecodeBlockBase.c
  cmocka-src/include/cmocka.h

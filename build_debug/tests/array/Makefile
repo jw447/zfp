@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles /home/ubuntu/local_build/zfp/build_debug/tests/array/CMakeFiles/progress.marks
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/array/CMakeFiles/progress.marks
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/clean
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/preinstall
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/array/CMakeFiles/testConstruct.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testConstruct.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testConstruct.dir/rule
 .PHONY : tests/array/CMakeFiles/testConstruct.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ testConstruct: tests/array/CMakeFiles/testConstruct.dir/rule
 
 # fast build rule for target.
 testConstruct/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/build
 .PHONY : testConstruct/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3dViews.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dViews.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dViews.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3dViews.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ testArray3dViews: tests/array/CMakeFiles/testArray3dViews.dir/rule
 
 # fast build rule for target.
 testArray3dViews/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/build
 .PHONY : testArray3dViews/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3d.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3d.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3d.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3d.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ testArray3d: tests/array/CMakeFiles/testArray3d.dir/rule
 
 # fast build rule for target.
 testArray3d/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/build
 .PHONY : testArray3d/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2dIters.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dIters.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dIters.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2dIters.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ testArray2dIters: tests/array/CMakeFiles/testArray2dIters.dir/rule
 
 # fast build rule for target.
 testArray2dIters/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/build
 .PHONY : testArray2dIters/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2dPtrs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dPtrs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dPtrs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2dPtrs.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ testArray2dPtrs: tests/array/CMakeFiles/testArray2dPtrs.dir/rule
 
 # fast build rule for target.
 testArray2dPtrs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/build
 .PHONY : testArray2dPtrs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2fViews.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fViews.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fViews.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2fViews.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ testArray2fViews: tests/array/CMakeFiles/testArray2fViews.dir/rule
 
 # fast build rule for target.
 testArray2fViews/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/build
 .PHONY : testArray2fViews/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3dRefs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dRefs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dRefs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3dRefs.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ testArray3dRefs: tests/array/CMakeFiles/testArray3dRefs.dir/rule
 
 # fast build rule for target.
 testArray3dRefs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/build
 .PHONY : testArray3dRefs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2fPtrs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fPtrs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fPtrs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2fPtrs.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ testArray2fPtrs: tests/array/CMakeFiles/testArray2fPtrs.dir/rule
 
 # fast build rule for target.
 testArray2fPtrs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/build
 .PHONY : testArray2fPtrs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1dPtrs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dPtrs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dPtrs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1dPtrs.dir/rule
 
 # Convenience name for target.
@@ -297,12 +297,12 @@ testArray1dPtrs: tests/array/CMakeFiles/testArray1dPtrs.dir/rule
 
 # fast build rule for target.
 testArray1dPtrs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/build
 .PHONY : testArray1dPtrs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2d.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2d.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2d.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2d.dir/rule
 
 # Convenience name for target.
@@ -312,12 +312,12 @@ testArray2d: tests/array/CMakeFiles/testArray2d.dir/rule
 
 # fast build rule for target.
 testArray2d/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/build
 .PHONY : testArray2d/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2fRefs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fRefs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fRefs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2fRefs.dir/rule
 
 # Convenience name for target.
@@ -327,12 +327,12 @@ testArray2fRefs: tests/array/CMakeFiles/testArray2fRefs.dir/rule
 
 # fast build rule for target.
 testArray2fRefs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/build
 .PHONY : testArray2fRefs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1d.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1d.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1d.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1d.dir/rule
 
 # Convenience name for target.
@@ -342,12 +342,12 @@ testArray1d: tests/array/CMakeFiles/testArray1d.dir/rule
 
 # fast build rule for target.
 testArray1d/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/build
 .PHONY : testArray1d/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2f.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2f.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2f.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2f.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ testArray2f: tests/array/CMakeFiles/testArray2f.dir/rule
 
 # fast build rule for target.
 testArray2f/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/build
 .PHONY : testArray2f/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2dViews.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dViews.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dViews.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2dViews.dir/rule
 
 # Convenience name for target.
@@ -372,12 +372,12 @@ testArray2dViews: tests/array/CMakeFiles/testArray2dViews.dir/rule
 
 # fast build rule for target.
 testArray2dViews/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/build
 .PHONY : testArray2dViews/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3fRefs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fRefs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fRefs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3fRefs.dir/rule
 
 # Convenience name for target.
@@ -387,12 +387,12 @@ testArray3fRefs: tests/array/CMakeFiles/testArray3fRefs.dir/rule
 
 # fast build rule for target.
 testArray3fRefs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/build
 .PHONY : testArray3fRefs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3fIters.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fIters.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fIters.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3fIters.dir/rule
 
 # Convenience name for target.
@@ -402,12 +402,12 @@ testArray3fIters: tests/array/CMakeFiles/testArray3fIters.dir/rule
 
 # fast build rule for target.
 testArray3fIters/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/build
 .PHONY : testArray3fIters/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1fViews.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fViews.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fViews.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1fViews.dir/rule
 
 # Convenience name for target.
@@ -417,12 +417,12 @@ testArray1fViews: tests/array/CMakeFiles/testArray1fViews.dir/rule
 
 # fast build rule for target.
 testArray1fViews/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/build
 .PHONY : testArray1fViews/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1f.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1f.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1f.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1f.dir/rule
 
 # Convenience name for target.
@@ -432,12 +432,12 @@ testArray1f: tests/array/CMakeFiles/testArray1f.dir/rule
 
 # fast build rule for target.
 testArray1f/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/build
 .PHONY : testArray1f/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1fRefs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fRefs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fRefs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1fRefs.dir/rule
 
 # Convenience name for target.
@@ -447,12 +447,12 @@ testArray1fRefs: tests/array/CMakeFiles/testArray1fRefs.dir/rule
 
 # fast build rule for target.
 testArray1fRefs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/build
 .PHONY : testArray1fRefs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3f.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3f.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3f.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3f.dir/rule
 
 # Convenience name for target.
@@ -462,12 +462,12 @@ testArray3f: tests/array/CMakeFiles/testArray3f.dir/rule
 
 # fast build rule for target.
 testArray3f/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/build
 .PHONY : testArray3f/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3dPtrs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dPtrs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dPtrs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3dPtrs.dir/rule
 
 # Convenience name for target.
@@ -477,12 +477,12 @@ testArray3dPtrs: tests/array/CMakeFiles/testArray3dPtrs.dir/rule
 
 # fast build rule for target.
 testArray3dPtrs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/build
 .PHONY : testArray3dPtrs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2dRefs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dRefs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2dRefs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2dRefs.dir/rule
 
 # Convenience name for target.
@@ -492,12 +492,12 @@ testArray2dRefs: tests/array/CMakeFiles/testArray2dRefs.dir/rule
 
 # fast build rule for target.
 testArray2dRefs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/build
 .PHONY : testArray2dRefs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1fIters.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fIters.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fIters.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1fIters.dir/rule
 
 # Convenience name for target.
@@ -507,12 +507,12 @@ testArray1fIters: tests/array/CMakeFiles/testArray1fIters.dir/rule
 
 # fast build rule for target.
 testArray1fIters/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/build
 .PHONY : testArray1fIters/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3fPtrs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fPtrs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fPtrs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3fPtrs.dir/rule
 
 # Convenience name for target.
@@ -522,12 +522,12 @@ testArray3fPtrs: tests/array/CMakeFiles/testArray3fPtrs.dir/rule
 
 # fast build rule for target.
 testArray3fPtrs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/build
 .PHONY : testArray3fPtrs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray2fIters.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fIters.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray2fIters.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray2fIters.dir/rule
 
 # Convenience name for target.
@@ -537,12 +537,12 @@ testArray2fIters: tests/array/CMakeFiles/testArray2fIters.dir/rule
 
 # fast build rule for target.
 testArray2fIters/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/build
 .PHONY : testArray2fIters/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3fViews.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fViews.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3fViews.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3fViews.dir/rule
 
 # Convenience name for target.
@@ -552,12 +552,12 @@ testArray3fViews: tests/array/CMakeFiles/testArray3fViews.dir/rule
 
 # fast build rule for target.
 testArray3fViews/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/build
 .PHONY : testArray3fViews/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1dRefs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dRefs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dRefs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1dRefs.dir/rule
 
 # Convenience name for target.
@@ -567,12 +567,12 @@ testArray1dRefs: tests/array/CMakeFiles/testArray1dRefs.dir/rule
 
 # fast build rule for target.
 testArray1dRefs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/build
 .PHONY : testArray1dRefs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray3dIters.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dIters.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray3dIters.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray3dIters.dir/rule
 
 # Convenience name for target.
@@ -582,12 +582,12 @@ testArray3dIters: tests/array/CMakeFiles/testArray3dIters.dir/rule
 
 # fast build rule for target.
 testArray3dIters/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/build
 .PHONY : testArray3dIters/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1fPtrs.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fPtrs.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1fPtrs.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1fPtrs.dir/rule
 
 # Convenience name for target.
@@ -597,12 +597,12 @@ testArray1fPtrs: tests/array/CMakeFiles/testArray1fPtrs.dir/rule
 
 # fast build rule for target.
 testArray1fPtrs/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/build
 .PHONY : testArray1fPtrs/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1dIters.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dIters.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dIters.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1dIters.dir/rule
 
 # Convenience name for target.
@@ -612,12 +612,12 @@ testArray1dIters: tests/array/CMakeFiles/testArray1dIters.dir/rule
 
 # fast build rule for target.
 testArray1dIters/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/build
 .PHONY : testArray1dIters/fast
 
 # Convenience name for target.
 tests/array/CMakeFiles/testArray1dViews.dir/rule:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dViews.dir/rule
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/array/CMakeFiles/testArray1dViews.dir/rule
 .PHONY : tests/array/CMakeFiles/testArray1dViews.dir/rule
 
 # Convenience name for target.
@@ -627,7 +627,7 @@ testArray1dViews: tests/array/CMakeFiles/testArray1dViews.dir/rule
 
 # fast build rule for target.
 testArray1dViews/fast:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/build
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/build
 .PHONY : testArray1dViews/fast
 
 testArray1d.o: testArray1d.cpp.o
@@ -636,7 +636,7 @@ testArray1d.o: testArray1d.cpp.o
 
 # target to build an object file
 testArray1d.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/testArray1d.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/testArray1d.cpp.o
 .PHONY : testArray1d.cpp.o
 
 testArray1d.i: testArray1d.cpp.i
@@ -645,7 +645,7 @@ testArray1d.i: testArray1d.cpp.i
 
 # target to preprocess a source file
 testArray1d.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/testArray1d.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/testArray1d.cpp.i
 .PHONY : testArray1d.cpp.i
 
 testArray1d.s: testArray1d.cpp.s
@@ -654,7 +654,7 @@ testArray1d.s: testArray1d.cpp.s
 
 # target to generate assembly for a file
 testArray1d.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/testArray1d.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1d.dir/build.make tests/array/CMakeFiles/testArray1d.dir/testArray1d.cpp.s
 .PHONY : testArray1d.cpp.s
 
 testArray1dIters.o: testArray1dIters.cpp.o
@@ -663,7 +663,7 @@ testArray1dIters.o: testArray1dIters.cpp.o
 
 # target to build an object file
 testArray1dIters.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/testArray1dIters.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/testArray1dIters.cpp.o
 .PHONY : testArray1dIters.cpp.o
 
 testArray1dIters.i: testArray1dIters.cpp.i
@@ -672,7 +672,7 @@ testArray1dIters.i: testArray1dIters.cpp.i
 
 # target to preprocess a source file
 testArray1dIters.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/testArray1dIters.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/testArray1dIters.cpp.i
 .PHONY : testArray1dIters.cpp.i
 
 testArray1dIters.s: testArray1dIters.cpp.s
@@ -681,7 +681,7 @@ testArray1dIters.s: testArray1dIters.cpp.s
 
 # target to generate assembly for a file
 testArray1dIters.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/testArray1dIters.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dIters.dir/build.make tests/array/CMakeFiles/testArray1dIters.dir/testArray1dIters.cpp.s
 .PHONY : testArray1dIters.cpp.s
 
 testArray1dPtrs.o: testArray1dPtrs.cpp.o
@@ -690,7 +690,7 @@ testArray1dPtrs.o: testArray1dPtrs.cpp.o
 
 # target to build an object file
 testArray1dPtrs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/testArray1dPtrs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/testArray1dPtrs.cpp.o
 .PHONY : testArray1dPtrs.cpp.o
 
 testArray1dPtrs.i: testArray1dPtrs.cpp.i
@@ -699,7 +699,7 @@ testArray1dPtrs.i: testArray1dPtrs.cpp.i
 
 # target to preprocess a source file
 testArray1dPtrs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/testArray1dPtrs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/testArray1dPtrs.cpp.i
 .PHONY : testArray1dPtrs.cpp.i
 
 testArray1dPtrs.s: testArray1dPtrs.cpp.s
@@ -708,7 +708,7 @@ testArray1dPtrs.s: testArray1dPtrs.cpp.s
 
 # target to generate assembly for a file
 testArray1dPtrs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/testArray1dPtrs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dPtrs.dir/build.make tests/array/CMakeFiles/testArray1dPtrs.dir/testArray1dPtrs.cpp.s
 .PHONY : testArray1dPtrs.cpp.s
 
 testArray1dRefs.o: testArray1dRefs.cpp.o
@@ -717,7 +717,7 @@ testArray1dRefs.o: testArray1dRefs.cpp.o
 
 # target to build an object file
 testArray1dRefs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/testArray1dRefs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/testArray1dRefs.cpp.o
 .PHONY : testArray1dRefs.cpp.o
 
 testArray1dRefs.i: testArray1dRefs.cpp.i
@@ -726,7 +726,7 @@ testArray1dRefs.i: testArray1dRefs.cpp.i
 
 # target to preprocess a source file
 testArray1dRefs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/testArray1dRefs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/testArray1dRefs.cpp.i
 .PHONY : testArray1dRefs.cpp.i
 
 testArray1dRefs.s: testArray1dRefs.cpp.s
@@ -735,7 +735,7 @@ testArray1dRefs.s: testArray1dRefs.cpp.s
 
 # target to generate assembly for a file
 testArray1dRefs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/testArray1dRefs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dRefs.dir/build.make tests/array/CMakeFiles/testArray1dRefs.dir/testArray1dRefs.cpp.s
 .PHONY : testArray1dRefs.cpp.s
 
 testArray1dViews.o: testArray1dViews.cpp.o
@@ -744,7 +744,7 @@ testArray1dViews.o: testArray1dViews.cpp.o
 
 # target to build an object file
 testArray1dViews.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/testArray1dViews.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/testArray1dViews.cpp.o
 .PHONY : testArray1dViews.cpp.o
 
 testArray1dViews.i: testArray1dViews.cpp.i
@@ -753,7 +753,7 @@ testArray1dViews.i: testArray1dViews.cpp.i
 
 # target to preprocess a source file
 testArray1dViews.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/testArray1dViews.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/testArray1dViews.cpp.i
 .PHONY : testArray1dViews.cpp.i
 
 testArray1dViews.s: testArray1dViews.cpp.s
@@ -762,7 +762,7 @@ testArray1dViews.s: testArray1dViews.cpp.s
 
 # target to generate assembly for a file
 testArray1dViews.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/testArray1dViews.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1dViews.dir/build.make tests/array/CMakeFiles/testArray1dViews.dir/testArray1dViews.cpp.s
 .PHONY : testArray1dViews.cpp.s
 
 testArray1f.o: testArray1f.cpp.o
@@ -771,7 +771,7 @@ testArray1f.o: testArray1f.cpp.o
 
 # target to build an object file
 testArray1f.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/testArray1f.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/testArray1f.cpp.o
 .PHONY : testArray1f.cpp.o
 
 testArray1f.i: testArray1f.cpp.i
@@ -780,7 +780,7 @@ testArray1f.i: testArray1f.cpp.i
 
 # target to preprocess a source file
 testArray1f.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/testArray1f.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/testArray1f.cpp.i
 .PHONY : testArray1f.cpp.i
 
 testArray1f.s: testArray1f.cpp.s
@@ -789,7 +789,7 @@ testArray1f.s: testArray1f.cpp.s
 
 # target to generate assembly for a file
 testArray1f.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/testArray1f.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1f.dir/build.make tests/array/CMakeFiles/testArray1f.dir/testArray1f.cpp.s
 .PHONY : testArray1f.cpp.s
 
 testArray1fIters.o: testArray1fIters.cpp.o
@@ -798,7 +798,7 @@ testArray1fIters.o: testArray1fIters.cpp.o
 
 # target to build an object file
 testArray1fIters.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/testArray1fIters.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/testArray1fIters.cpp.o
 .PHONY : testArray1fIters.cpp.o
 
 testArray1fIters.i: testArray1fIters.cpp.i
@@ -807,7 +807,7 @@ testArray1fIters.i: testArray1fIters.cpp.i
 
 # target to preprocess a source file
 testArray1fIters.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/testArray1fIters.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/testArray1fIters.cpp.i
 .PHONY : testArray1fIters.cpp.i
 
 testArray1fIters.s: testArray1fIters.cpp.s
@@ -816,7 +816,7 @@ testArray1fIters.s: testArray1fIters.cpp.s
 
 # target to generate assembly for a file
 testArray1fIters.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/testArray1fIters.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fIters.dir/build.make tests/array/CMakeFiles/testArray1fIters.dir/testArray1fIters.cpp.s
 .PHONY : testArray1fIters.cpp.s
 
 testArray1fPtrs.o: testArray1fPtrs.cpp.o
@@ -825,7 +825,7 @@ testArray1fPtrs.o: testArray1fPtrs.cpp.o
 
 # target to build an object file
 testArray1fPtrs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/testArray1fPtrs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/testArray1fPtrs.cpp.o
 .PHONY : testArray1fPtrs.cpp.o
 
 testArray1fPtrs.i: testArray1fPtrs.cpp.i
@@ -834,7 +834,7 @@ testArray1fPtrs.i: testArray1fPtrs.cpp.i
 
 # target to preprocess a source file
 testArray1fPtrs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/testArray1fPtrs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/testArray1fPtrs.cpp.i
 .PHONY : testArray1fPtrs.cpp.i
 
 testArray1fPtrs.s: testArray1fPtrs.cpp.s
@@ -843,7 +843,7 @@ testArray1fPtrs.s: testArray1fPtrs.cpp.s
 
 # target to generate assembly for a file
 testArray1fPtrs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/testArray1fPtrs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fPtrs.dir/build.make tests/array/CMakeFiles/testArray1fPtrs.dir/testArray1fPtrs.cpp.s
 .PHONY : testArray1fPtrs.cpp.s
 
 testArray1fRefs.o: testArray1fRefs.cpp.o
@@ -852,7 +852,7 @@ testArray1fRefs.o: testArray1fRefs.cpp.o
 
 # target to build an object file
 testArray1fRefs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/testArray1fRefs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/testArray1fRefs.cpp.o
 .PHONY : testArray1fRefs.cpp.o
 
 testArray1fRefs.i: testArray1fRefs.cpp.i
@@ -861,7 +861,7 @@ testArray1fRefs.i: testArray1fRefs.cpp.i
 
 # target to preprocess a source file
 testArray1fRefs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/testArray1fRefs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/testArray1fRefs.cpp.i
 .PHONY : testArray1fRefs.cpp.i
 
 testArray1fRefs.s: testArray1fRefs.cpp.s
@@ -870,7 +870,7 @@ testArray1fRefs.s: testArray1fRefs.cpp.s
 
 # target to generate assembly for a file
 testArray1fRefs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/testArray1fRefs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fRefs.dir/build.make tests/array/CMakeFiles/testArray1fRefs.dir/testArray1fRefs.cpp.s
 .PHONY : testArray1fRefs.cpp.s
 
 testArray1fViews.o: testArray1fViews.cpp.o
@@ -879,7 +879,7 @@ testArray1fViews.o: testArray1fViews.cpp.o
 
 # target to build an object file
 testArray1fViews.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/testArray1fViews.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/testArray1fViews.cpp.o
 .PHONY : testArray1fViews.cpp.o
 
 testArray1fViews.i: testArray1fViews.cpp.i
@@ -888,7 +888,7 @@ testArray1fViews.i: testArray1fViews.cpp.i
 
 # target to preprocess a source file
 testArray1fViews.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/testArray1fViews.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/testArray1fViews.cpp.i
 .PHONY : testArray1fViews.cpp.i
 
 testArray1fViews.s: testArray1fViews.cpp.s
@@ -897,7 +897,7 @@ testArray1fViews.s: testArray1fViews.cpp.s
 
 # target to generate assembly for a file
 testArray1fViews.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/testArray1fViews.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray1fViews.dir/build.make tests/array/CMakeFiles/testArray1fViews.dir/testArray1fViews.cpp.s
 .PHONY : testArray1fViews.cpp.s
 
 testArray2d.o: testArray2d.cpp.o
@@ -906,7 +906,7 @@ testArray2d.o: testArray2d.cpp.o
 
 # target to build an object file
 testArray2d.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/testArray2d.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/testArray2d.cpp.o
 .PHONY : testArray2d.cpp.o
 
 testArray2d.i: testArray2d.cpp.i
@@ -915,7 +915,7 @@ testArray2d.i: testArray2d.cpp.i
 
 # target to preprocess a source file
 testArray2d.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/testArray2d.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/testArray2d.cpp.i
 .PHONY : testArray2d.cpp.i
 
 testArray2d.s: testArray2d.cpp.s
@@ -924,7 +924,7 @@ testArray2d.s: testArray2d.cpp.s
 
 # target to generate assembly for a file
 testArray2d.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/testArray2d.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2d.dir/build.make tests/array/CMakeFiles/testArray2d.dir/testArray2d.cpp.s
 .PHONY : testArray2d.cpp.s
 
 testArray2dIters.o: testArray2dIters.cpp.o
@@ -933,7 +933,7 @@ testArray2dIters.o: testArray2dIters.cpp.o
 
 # target to build an object file
 testArray2dIters.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/testArray2dIters.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/testArray2dIters.cpp.o
 .PHONY : testArray2dIters.cpp.o
 
 testArray2dIters.i: testArray2dIters.cpp.i
@@ -942,7 +942,7 @@ testArray2dIters.i: testArray2dIters.cpp.i
 
 # target to preprocess a source file
 testArray2dIters.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/testArray2dIters.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/testArray2dIters.cpp.i
 .PHONY : testArray2dIters.cpp.i
 
 testArray2dIters.s: testArray2dIters.cpp.s
@@ -951,7 +951,7 @@ testArray2dIters.s: testArray2dIters.cpp.s
 
 # target to generate assembly for a file
 testArray2dIters.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/testArray2dIters.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dIters.dir/build.make tests/array/CMakeFiles/testArray2dIters.dir/testArray2dIters.cpp.s
 .PHONY : testArray2dIters.cpp.s
 
 testArray2dPtrs.o: testArray2dPtrs.cpp.o
@@ -960,7 +960,7 @@ testArray2dPtrs.o: testArray2dPtrs.cpp.o
 
 # target to build an object file
 testArray2dPtrs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/testArray2dPtrs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/testArray2dPtrs.cpp.o
 .PHONY : testArray2dPtrs.cpp.o
 
 testArray2dPtrs.i: testArray2dPtrs.cpp.i
@@ -969,7 +969,7 @@ testArray2dPtrs.i: testArray2dPtrs.cpp.i
 
 # target to preprocess a source file
 testArray2dPtrs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/testArray2dPtrs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/testArray2dPtrs.cpp.i
 .PHONY : testArray2dPtrs.cpp.i
 
 testArray2dPtrs.s: testArray2dPtrs.cpp.s
@@ -978,7 +978,7 @@ testArray2dPtrs.s: testArray2dPtrs.cpp.s
 
 # target to generate assembly for a file
 testArray2dPtrs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/testArray2dPtrs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dPtrs.dir/build.make tests/array/CMakeFiles/testArray2dPtrs.dir/testArray2dPtrs.cpp.s
 .PHONY : testArray2dPtrs.cpp.s
 
 testArray2dRefs.o: testArray2dRefs.cpp.o
@@ -987,7 +987,7 @@ testArray2dRefs.o: testArray2dRefs.cpp.o
 
 # target to build an object file
 testArray2dRefs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/testArray2dRefs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/testArray2dRefs.cpp.o
 .PHONY : testArray2dRefs.cpp.o
 
 testArray2dRefs.i: testArray2dRefs.cpp.i
@@ -996,7 +996,7 @@ testArray2dRefs.i: testArray2dRefs.cpp.i
 
 # target to preprocess a source file
 testArray2dRefs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/testArray2dRefs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/testArray2dRefs.cpp.i
 .PHONY : testArray2dRefs.cpp.i
 
 testArray2dRefs.s: testArray2dRefs.cpp.s
@@ -1005,7 +1005,7 @@ testArray2dRefs.s: testArray2dRefs.cpp.s
 
 # target to generate assembly for a file
 testArray2dRefs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/testArray2dRefs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dRefs.dir/build.make tests/array/CMakeFiles/testArray2dRefs.dir/testArray2dRefs.cpp.s
 .PHONY : testArray2dRefs.cpp.s
 
 testArray2dViews.o: testArray2dViews.cpp.o
@@ -1014,7 +1014,7 @@ testArray2dViews.o: testArray2dViews.cpp.o
 
 # target to build an object file
 testArray2dViews.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/testArray2dViews.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/testArray2dViews.cpp.o
 .PHONY : testArray2dViews.cpp.o
 
 testArray2dViews.i: testArray2dViews.cpp.i
@@ -1023,7 +1023,7 @@ testArray2dViews.i: testArray2dViews.cpp.i
 
 # target to preprocess a source file
 testArray2dViews.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/testArray2dViews.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/testArray2dViews.cpp.i
 .PHONY : testArray2dViews.cpp.i
 
 testArray2dViews.s: testArray2dViews.cpp.s
@@ -1032,7 +1032,7 @@ testArray2dViews.s: testArray2dViews.cpp.s
 
 # target to generate assembly for a file
 testArray2dViews.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/testArray2dViews.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2dViews.dir/build.make tests/array/CMakeFiles/testArray2dViews.dir/testArray2dViews.cpp.s
 .PHONY : testArray2dViews.cpp.s
 
 testArray2f.o: testArray2f.cpp.o
@@ -1041,7 +1041,7 @@ testArray2f.o: testArray2f.cpp.o
 
 # target to build an object file
 testArray2f.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/testArray2f.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/testArray2f.cpp.o
 .PHONY : testArray2f.cpp.o
 
 testArray2f.i: testArray2f.cpp.i
@@ -1050,7 +1050,7 @@ testArray2f.i: testArray2f.cpp.i
 
 # target to preprocess a source file
 testArray2f.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/testArray2f.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/testArray2f.cpp.i
 .PHONY : testArray2f.cpp.i
 
 testArray2f.s: testArray2f.cpp.s
@@ -1059,7 +1059,7 @@ testArray2f.s: testArray2f.cpp.s
 
 # target to generate assembly for a file
 testArray2f.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/testArray2f.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2f.dir/build.make tests/array/CMakeFiles/testArray2f.dir/testArray2f.cpp.s
 .PHONY : testArray2f.cpp.s
 
 testArray2fIters.o: testArray2fIters.cpp.o
@@ -1068,7 +1068,7 @@ testArray2fIters.o: testArray2fIters.cpp.o
 
 # target to build an object file
 testArray2fIters.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.o
 .PHONY : testArray2fIters.cpp.o
 
 testArray2fIters.i: testArray2fIters.cpp.i
@@ -1077,7 +1077,7 @@ testArray2fIters.i: testArray2fIters.cpp.i
 
 # target to preprocess a source file
 testArray2fIters.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.i
 .PHONY : testArray2fIters.cpp.i
 
 testArray2fIters.s: testArray2fIters.cpp.s
@@ -1086,7 +1086,7 @@ testArray2fIters.s: testArray2fIters.cpp.s
 
 # target to generate assembly for a file
 testArray2fIters.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fIters.dir/build.make tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.s
 .PHONY : testArray2fIters.cpp.s
 
 testArray2fPtrs.o: testArray2fPtrs.cpp.o
@@ -1095,7 +1095,7 @@ testArray2fPtrs.o: testArray2fPtrs.cpp.o
 
 # target to build an object file
 testArray2fPtrs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/testArray2fPtrs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/testArray2fPtrs.cpp.o
 .PHONY : testArray2fPtrs.cpp.o
 
 testArray2fPtrs.i: testArray2fPtrs.cpp.i
@@ -1104,7 +1104,7 @@ testArray2fPtrs.i: testArray2fPtrs.cpp.i
 
 # target to preprocess a source file
 testArray2fPtrs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/testArray2fPtrs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/testArray2fPtrs.cpp.i
 .PHONY : testArray2fPtrs.cpp.i
 
 testArray2fPtrs.s: testArray2fPtrs.cpp.s
@@ -1113,7 +1113,7 @@ testArray2fPtrs.s: testArray2fPtrs.cpp.s
 
 # target to generate assembly for a file
 testArray2fPtrs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/testArray2fPtrs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fPtrs.dir/build.make tests/array/CMakeFiles/testArray2fPtrs.dir/testArray2fPtrs.cpp.s
 .PHONY : testArray2fPtrs.cpp.s
 
 testArray2fRefs.o: testArray2fRefs.cpp.o
@@ -1122,7 +1122,7 @@ testArray2fRefs.o: testArray2fRefs.cpp.o
 
 # target to build an object file
 testArray2fRefs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/testArray2fRefs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/testArray2fRefs.cpp.o
 .PHONY : testArray2fRefs.cpp.o
 
 testArray2fRefs.i: testArray2fRefs.cpp.i
@@ -1131,7 +1131,7 @@ testArray2fRefs.i: testArray2fRefs.cpp.i
 
 # target to preprocess a source file
 testArray2fRefs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/testArray2fRefs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/testArray2fRefs.cpp.i
 .PHONY : testArray2fRefs.cpp.i
 
 testArray2fRefs.s: testArray2fRefs.cpp.s
@@ -1140,7 +1140,7 @@ testArray2fRefs.s: testArray2fRefs.cpp.s
 
 # target to generate assembly for a file
 testArray2fRefs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/testArray2fRefs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fRefs.dir/build.make tests/array/CMakeFiles/testArray2fRefs.dir/testArray2fRefs.cpp.s
 .PHONY : testArray2fRefs.cpp.s
 
 testArray2fViews.o: testArray2fViews.cpp.o
@@ -1149,7 +1149,7 @@ testArray2fViews.o: testArray2fViews.cpp.o
 
 # target to build an object file
 testArray2fViews.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/testArray2fViews.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/testArray2fViews.cpp.o
 .PHONY : testArray2fViews.cpp.o
 
 testArray2fViews.i: testArray2fViews.cpp.i
@@ -1158,7 +1158,7 @@ testArray2fViews.i: testArray2fViews.cpp.i
 
 # target to preprocess a source file
 testArray2fViews.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/testArray2fViews.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/testArray2fViews.cpp.i
 .PHONY : testArray2fViews.cpp.i
 
 testArray2fViews.s: testArray2fViews.cpp.s
@@ -1167,7 +1167,7 @@ testArray2fViews.s: testArray2fViews.cpp.s
 
 # target to generate assembly for a file
 testArray2fViews.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/testArray2fViews.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray2fViews.dir/build.make tests/array/CMakeFiles/testArray2fViews.dir/testArray2fViews.cpp.s
 .PHONY : testArray2fViews.cpp.s
 
 testArray3d.o: testArray3d.cpp.o
@@ -1176,7 +1176,7 @@ testArray3d.o: testArray3d.cpp.o
 
 # target to build an object file
 testArray3d.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/testArray3d.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/testArray3d.cpp.o
 .PHONY : testArray3d.cpp.o
 
 testArray3d.i: testArray3d.cpp.i
@@ -1185,7 +1185,7 @@ testArray3d.i: testArray3d.cpp.i
 
 # target to preprocess a source file
 testArray3d.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/testArray3d.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/testArray3d.cpp.i
 .PHONY : testArray3d.cpp.i
 
 testArray3d.s: testArray3d.cpp.s
@@ -1194,7 +1194,7 @@ testArray3d.s: testArray3d.cpp.s
 
 # target to generate assembly for a file
 testArray3d.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/testArray3d.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3d.dir/build.make tests/array/CMakeFiles/testArray3d.dir/testArray3d.cpp.s
 .PHONY : testArray3d.cpp.s
 
 testArray3dIters.o: testArray3dIters.cpp.o
@@ -1203,7 +1203,7 @@ testArray3dIters.o: testArray3dIters.cpp.o
 
 # target to build an object file
 testArray3dIters.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/testArray3dIters.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/testArray3dIters.cpp.o
 .PHONY : testArray3dIters.cpp.o
 
 testArray3dIters.i: testArray3dIters.cpp.i
@@ -1212,7 +1212,7 @@ testArray3dIters.i: testArray3dIters.cpp.i
 
 # target to preprocess a source file
 testArray3dIters.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/testArray3dIters.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/testArray3dIters.cpp.i
 .PHONY : testArray3dIters.cpp.i
 
 testArray3dIters.s: testArray3dIters.cpp.s
@@ -1221,7 +1221,7 @@ testArray3dIters.s: testArray3dIters.cpp.s
 
 # target to generate assembly for a file
 testArray3dIters.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/testArray3dIters.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dIters.dir/build.make tests/array/CMakeFiles/testArray3dIters.dir/testArray3dIters.cpp.s
 .PHONY : testArray3dIters.cpp.s
 
 testArray3dPtrs.o: testArray3dPtrs.cpp.o
@@ -1230,7 +1230,7 @@ testArray3dPtrs.o: testArray3dPtrs.cpp.o
 
 # target to build an object file
 testArray3dPtrs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/testArray3dPtrs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/testArray3dPtrs.cpp.o
 .PHONY : testArray3dPtrs.cpp.o
 
 testArray3dPtrs.i: testArray3dPtrs.cpp.i
@@ -1239,7 +1239,7 @@ testArray3dPtrs.i: testArray3dPtrs.cpp.i
 
 # target to preprocess a source file
 testArray3dPtrs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/testArray3dPtrs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/testArray3dPtrs.cpp.i
 .PHONY : testArray3dPtrs.cpp.i
 
 testArray3dPtrs.s: testArray3dPtrs.cpp.s
@@ -1248,7 +1248,7 @@ testArray3dPtrs.s: testArray3dPtrs.cpp.s
 
 # target to generate assembly for a file
 testArray3dPtrs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/testArray3dPtrs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dPtrs.dir/build.make tests/array/CMakeFiles/testArray3dPtrs.dir/testArray3dPtrs.cpp.s
 .PHONY : testArray3dPtrs.cpp.s
 
 testArray3dRefs.o: testArray3dRefs.cpp.o
@@ -1257,7 +1257,7 @@ testArray3dRefs.o: testArray3dRefs.cpp.o
 
 # target to build an object file
 testArray3dRefs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/testArray3dRefs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/testArray3dRefs.cpp.o
 .PHONY : testArray3dRefs.cpp.o
 
 testArray3dRefs.i: testArray3dRefs.cpp.i
@@ -1266,7 +1266,7 @@ testArray3dRefs.i: testArray3dRefs.cpp.i
 
 # target to preprocess a source file
 testArray3dRefs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/testArray3dRefs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/testArray3dRefs.cpp.i
 .PHONY : testArray3dRefs.cpp.i
 
 testArray3dRefs.s: testArray3dRefs.cpp.s
@@ -1275,7 +1275,7 @@ testArray3dRefs.s: testArray3dRefs.cpp.s
 
 # target to generate assembly for a file
 testArray3dRefs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/testArray3dRefs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dRefs.dir/build.make tests/array/CMakeFiles/testArray3dRefs.dir/testArray3dRefs.cpp.s
 .PHONY : testArray3dRefs.cpp.s
 
 testArray3dViews.o: testArray3dViews.cpp.o
@@ -1284,7 +1284,7 @@ testArray3dViews.o: testArray3dViews.cpp.o
 
 # target to build an object file
 testArray3dViews.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/testArray3dViews.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/testArray3dViews.cpp.o
 .PHONY : testArray3dViews.cpp.o
 
 testArray3dViews.i: testArray3dViews.cpp.i
@@ -1293,7 +1293,7 @@ testArray3dViews.i: testArray3dViews.cpp.i
 
 # target to preprocess a source file
 testArray3dViews.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/testArray3dViews.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/testArray3dViews.cpp.i
 .PHONY : testArray3dViews.cpp.i
 
 testArray3dViews.s: testArray3dViews.cpp.s
@@ -1302,7 +1302,7 @@ testArray3dViews.s: testArray3dViews.cpp.s
 
 # target to generate assembly for a file
 testArray3dViews.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/testArray3dViews.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3dViews.dir/build.make tests/array/CMakeFiles/testArray3dViews.dir/testArray3dViews.cpp.s
 .PHONY : testArray3dViews.cpp.s
 
 testArray3f.o: testArray3f.cpp.o
@@ -1311,7 +1311,7 @@ testArray3f.o: testArray3f.cpp.o
 
 # target to build an object file
 testArray3f.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/testArray3f.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/testArray3f.cpp.o
 .PHONY : testArray3f.cpp.o
 
 testArray3f.i: testArray3f.cpp.i
@@ -1320,7 +1320,7 @@ testArray3f.i: testArray3f.cpp.i
 
 # target to preprocess a source file
 testArray3f.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/testArray3f.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/testArray3f.cpp.i
 .PHONY : testArray3f.cpp.i
 
 testArray3f.s: testArray3f.cpp.s
@@ -1329,7 +1329,7 @@ testArray3f.s: testArray3f.cpp.s
 
 # target to generate assembly for a file
 testArray3f.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/testArray3f.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3f.dir/build.make tests/array/CMakeFiles/testArray3f.dir/testArray3f.cpp.s
 .PHONY : testArray3f.cpp.s
 
 testArray3fIters.o: testArray3fIters.cpp.o
@@ -1338,7 +1338,7 @@ testArray3fIters.o: testArray3fIters.cpp.o
 
 # target to build an object file
 testArray3fIters.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/testArray3fIters.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/testArray3fIters.cpp.o
 .PHONY : testArray3fIters.cpp.o
 
 testArray3fIters.i: testArray3fIters.cpp.i
@@ -1347,7 +1347,7 @@ testArray3fIters.i: testArray3fIters.cpp.i
 
 # target to preprocess a source file
 testArray3fIters.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/testArray3fIters.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/testArray3fIters.cpp.i
 .PHONY : testArray3fIters.cpp.i
 
 testArray3fIters.s: testArray3fIters.cpp.s
@@ -1356,7 +1356,7 @@ testArray3fIters.s: testArray3fIters.cpp.s
 
 # target to generate assembly for a file
 testArray3fIters.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/testArray3fIters.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fIters.dir/build.make tests/array/CMakeFiles/testArray3fIters.dir/testArray3fIters.cpp.s
 .PHONY : testArray3fIters.cpp.s
 
 testArray3fPtrs.o: testArray3fPtrs.cpp.o
@@ -1365,7 +1365,7 @@ testArray3fPtrs.o: testArray3fPtrs.cpp.o
 
 # target to build an object file
 testArray3fPtrs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.o
 .PHONY : testArray3fPtrs.cpp.o
 
 testArray3fPtrs.i: testArray3fPtrs.cpp.i
@@ -1374,7 +1374,7 @@ testArray3fPtrs.i: testArray3fPtrs.cpp.i
 
 # target to preprocess a source file
 testArray3fPtrs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.i
 .PHONY : testArray3fPtrs.cpp.i
 
 testArray3fPtrs.s: testArray3fPtrs.cpp.s
@@ -1383,7 +1383,7 @@ testArray3fPtrs.s: testArray3fPtrs.cpp.s
 
 # target to generate assembly for a file
 testArray3fPtrs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fPtrs.dir/build.make tests/array/CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.s
 .PHONY : testArray3fPtrs.cpp.s
 
 testArray3fRefs.o: testArray3fRefs.cpp.o
@@ -1392,7 +1392,7 @@ testArray3fRefs.o: testArray3fRefs.cpp.o
 
 # target to build an object file
 testArray3fRefs.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/testArray3fRefs.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/testArray3fRefs.cpp.o
 .PHONY : testArray3fRefs.cpp.o
 
 testArray3fRefs.i: testArray3fRefs.cpp.i
@@ -1401,7 +1401,7 @@ testArray3fRefs.i: testArray3fRefs.cpp.i
 
 # target to preprocess a source file
 testArray3fRefs.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/testArray3fRefs.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/testArray3fRefs.cpp.i
 .PHONY : testArray3fRefs.cpp.i
 
 testArray3fRefs.s: testArray3fRefs.cpp.s
@@ -1410,7 +1410,7 @@ testArray3fRefs.s: testArray3fRefs.cpp.s
 
 # target to generate assembly for a file
 testArray3fRefs.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/testArray3fRefs.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fRefs.dir/build.make tests/array/CMakeFiles/testArray3fRefs.dir/testArray3fRefs.cpp.s
 .PHONY : testArray3fRefs.cpp.s
 
 testArray3fViews.o: testArray3fViews.cpp.o
@@ -1419,7 +1419,7 @@ testArray3fViews.o: testArray3fViews.cpp.o
 
 # target to build an object file
 testArray3fViews.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.o
 .PHONY : testArray3fViews.cpp.o
 
 testArray3fViews.i: testArray3fViews.cpp.i
@@ -1428,7 +1428,7 @@ testArray3fViews.i: testArray3fViews.cpp.i
 
 # target to preprocess a source file
 testArray3fViews.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.i
 .PHONY : testArray3fViews.cpp.i
 
 testArray3fViews.s: testArray3fViews.cpp.s
@@ -1437,7 +1437,7 @@ testArray3fViews.s: testArray3fViews.cpp.s
 
 # target to generate assembly for a file
 testArray3fViews.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testArray3fViews.dir/build.make tests/array/CMakeFiles/testArray3fViews.dir/testArray3fViews.cpp.s
 .PHONY : testArray3fViews.cpp.s
 
 testConstruct.o: testConstruct.cpp.o
@@ -1446,7 +1446,7 @@ testConstruct.o: testConstruct.cpp.o
 
 # target to build an object file
 testConstruct.cpp.o:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/testConstruct.cpp.o
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/testConstruct.cpp.o
 .PHONY : testConstruct.cpp.o
 
 testConstruct.i: testConstruct.cpp.i
@@ -1455,7 +1455,7 @@ testConstruct.i: testConstruct.cpp.i
 
 # target to preprocess a source file
 testConstruct.cpp.i:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/testConstruct.cpp.i
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/testConstruct.cpp.i
 .PHONY : testConstruct.cpp.i
 
 testConstruct.s: testConstruct.cpp.s
@@ -1464,7 +1464,7 @@ testConstruct.s: testConstruct.cpp.s
 
 # target to generate assembly for a file
 testConstruct.cpp.s:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/testConstruct.cpp.s
+	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/array/CMakeFiles/testConstruct.dir/build.make tests/array/CMakeFiles/testConstruct.dir/testConstruct.cpp.s
 .PHONY : testConstruct.cpp.s
 
 # Help Target
@@ -1615,6 +1615,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

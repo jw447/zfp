@@ -8,5 +8,5 @@ tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.o
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/ubuntu/local_build/zfp/tests/src/execPolicy/testOmpInternal.c
+ /home/cc/local_build/zfp/tests/src/execPolicy/testOmpInternal.c
  cmocka-src/include/cmocka.h

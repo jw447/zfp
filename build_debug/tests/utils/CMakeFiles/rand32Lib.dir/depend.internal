@@ -3,5 +3,5 @@
 
 tests/utils/CMakeFiles/rand32Lib.dir/rand32.c.o
  ..//include/zfp/types.h
- /home/ubuntu/local_build/zfp/tests/utils/rand32.c
- /home/ubuntu/local_build/zfp/tests/utils/rand32.h
+ /home/cc/local_build/zfp/tests/utils/rand32.c
+ /home/cc/local_build/zfp/tests/utils/rand32.h

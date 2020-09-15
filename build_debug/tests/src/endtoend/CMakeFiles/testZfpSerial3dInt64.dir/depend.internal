@@ -31,8 +31,8 @@ tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/testZfpSerial3dInt64.c.o
  ../tests/utils/zfpCompressionParams.h
  ../tests/utils/zfpHash.h
  ../tests/utils/zfpTimer.h
- /home/ubuntu/local_build/zfp/tests/src/endtoend/serialExecBase.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/testZfpSerial3dInt64.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/testcases/serial.c
- /home/ubuntu/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+ /home/cc/local_build/zfp/tests/src/endtoend/serialExecBase.c
+ /home/cc/local_build/zfp/tests/src/endtoend/testZfpSerial3dInt64.c
+ /home/cc/local_build/zfp/tests/src/endtoend/testcases/serial.c
+ /home/cc/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
  cmocka-src/include/cmocka.h
