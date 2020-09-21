@@ -26,5 +26,5 @@ tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o
  ../tests/constants/1dDouble.h
  ../tests/constants/doubleConsts.h
  ../tests/constants/universalConsts.h
- /home/cc/local_build/zfp/tests/src/misc/testZfpHeader.c
+ /home/cc/local-build/zfp/tests/src/misc/testZfpHeader.c
  cmocka-src/include/cmocka.h

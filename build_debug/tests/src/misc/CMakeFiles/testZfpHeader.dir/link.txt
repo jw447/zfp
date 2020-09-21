@@ -1,1 +1,1 @@
-/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o  -o ../../../bin/testZfpHeader -rdynamic ../../../cmocka-build/src/libcmocka.a ../../../lib/libzfp.so.0.5.5 -lm -Wl,-rpath,/home/cc/local_build/zfp/build_debug/lib 
+/usr/bin/cc  -O3 -DNDEBUG   CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o  -o ../../../bin/testZfpHeader -rdynamic ../../../cmocka-build/src/libcmocka.a ../../../lib/libzfp.so.0.5.5 -lm -Wl,-rpath,/home/cc/local-build/zfp/build_debug/lib 

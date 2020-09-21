@@ -20,9 +20,9 @@ tests/array/CMakeFiles/testArray1dPtrs.dir/testArray1dPtrs.cpp.o
  ../include/zfp/system.h
  ../include/zfp/types.h
  ../tests/constants/universalConsts.h
- /home/cc/local_build/zfp/tests/array/testArray1dPtrs.cpp
- /home/cc/local_build/zfp/tests/array/testArrayPtrsBase.cpp
- /home/cc/local_build/zfp/tests/array/utils/gtest1dTest.h
+ /home/cc/local-build/zfp/tests/array/testArray1dPtrs.cpp
+ /home/cc/local-build/zfp/tests/array/testArrayPtrsBase.cpp
+ /home/cc/local-build/zfp/tests/array/utils/gtest1dTest.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

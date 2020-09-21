@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug/cmocka-build
 
 # Utility rule file for doxygen.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
 include doc/CMakeFiles/doxygen.dir/progress.make
 
 doc/CMakeFiles/doxygen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Writing documentation to /home/cc/local_build/zfp/build_debug/cmocka-build/doc/doc..."
-	cd /home/cc/local_build/zfp/build_debug/cmocka-src/doc && /usr/bin/doxygen /home/cc/local_build/zfp/build_debug/cmocka-build/doc/Doxyfile
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Writing documentation to /home/cc/local-build/zfp/build_debug/cmocka-build/doc/doc..."
+	cd /home/cc/local-build/zfp/build_debug/cmocka-src/doc && /usr/bin/doxygen /home/cc/local-build/zfp/build_debug/cmocka-build/doc/Doxyfile
 
 doxygen: doc/CMakeFiles/doxygen
 doxygen: doc/CMakeFiles/doxygen.dir/build.make
@@ -68,10 +68,10 @@ doc/CMakeFiles/doxygen.dir/build: doxygen
 .PHONY : doc/CMakeFiles/doxygen.dir/build
 
 doc/CMakeFiles/doxygen.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/doc && $(CMAKE_COMMAND) -P CMakeFiles/doxygen.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/doc && $(CMAKE_COMMAND) -P CMakeFiles/doxygen.dir/cmake_clean.cmake
 .PHONY : doc/CMakeFiles/doxygen.dir/clean
 
 doc/CMakeFiles/doxygen.dir/depend:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src /home/cc/local_build/zfp/build_debug/cmocka-src/doc /home/cc/local_build/zfp/build_debug/cmocka-build /home/cc/local_build/zfp/build_debug/cmocka-build/doc /home/cc/local_build/zfp/build_debug/cmocka-build/doc/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp/build_debug/cmocka-src /home/cc/local-build/zfp/build_debug/cmocka-src/doc /home/cc/local-build/zfp/build_debug/cmocka-build /home/cc/local-build/zfp/build_debug/cmocka-build/doc /home/cc/local-build/zfp/build_debug/cmocka-build/doc/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : doc/CMakeFiles/doxygen.dir/depend
 

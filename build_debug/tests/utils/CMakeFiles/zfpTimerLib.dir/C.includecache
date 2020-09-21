@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/cc/local_build/zfp/tests/utils/zfpTimer.c
+/home/cc/local-build/zfp/tests/utils/zfpTimer.c
 zfpTimer.h
-/home/cc/local_build/zfp/tests/utils/zfpTimer.h
+/home/cc/local-build/zfp/tests/utils/zfpTimer.h
 stdlib.h
 -
 
-/home/cc/local_build/zfp/tests/utils/zfpTimer.h
+/home/cc/local-build/zfp/tests/utils/zfpTimer.h
 time.h
 -
 mach/mach_time.h

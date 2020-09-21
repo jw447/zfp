@@ -3,7 +3,7 @@
 
 tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.o
  ..//include/zfp/types.h
- /home/cc/local_build/zfp/tests/utils/fixedpoint96.h
- /home/cc/local_build/zfp/tests/utils/genSmoothRandNums.c
- /home/cc/local_build/zfp/tests/utils/genSmoothRandNums.h
- /home/cc/local_build/zfp/tests/utils/rand64.h
+ /home/cc/local-build/zfp/tests/utils/fixedpoint96.h
+ /home/cc/local-build/zfp/tests/utils/genSmoothRandNums.c
+ /home/cc/local-build/zfp/tests/utils/genSmoothRandNums.h
+ /home/cc/local-build/zfp/tests/utils/rand64.h

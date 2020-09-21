@@ -178,39 +178,39 @@ stddef.h
 include/zfp/types.h
 ../tests/utils/include/zfp/types.h
 
-/home/cc/local_build/zfp/tests/array/testArray3RefsBase.cpp
+/home/cc/local-build/zfp/tests/array/testArray3RefsBase.cpp
 
-/home/cc/local_build/zfp/tests/array/testArray3dRefs.cpp
+/home/cc/local-build/zfp/tests/array/testArray3dRefs.cpp
 array/zfparray3.h
-/home/cc/local_build/zfp/tests/array/array/zfparray3.h
+/home/cc/local-build/zfp/tests/array/array/zfparray3.h
 utils/rand64.h
-/home/cc/local_build/zfp/tests/array/utils/rand64.h
+/home/cc/local-build/zfp/tests/array/utils/rand64.h
 utils/gtest3dTest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest3dTest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest3dTest.h
 testArrayRefsBase.cpp
-/home/cc/local_build/zfp/tests/array/testArrayRefsBase.cpp
+/home/cc/local-build/zfp/tests/array/testArrayRefsBase.cpp
 testArray3RefsBase.cpp
-/home/cc/local_build/zfp/tests/array/testArray3RefsBase.cpp
+/home/cc/local-build/zfp/tests/array/testArray3RefsBase.cpp
 
-/home/cc/local_build/zfp/tests/array/testArrayRefsBase.cpp
+/home/cc/local-build/zfp/tests/array/testArrayRefsBase.cpp
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/gtest/gtest.h
 utils/predicates.h
-/home/cc/local_build/zfp/tests/array/utils/predicates.h
+/home/cc/local-build/zfp/tests/array/utils/predicates.h
 utils/zfpHash.h
-/home/cc/local_build/zfp/tests/array/utils/zfpHash.h
+/home/cc/local-build/zfp/tests/array/utils/zfpHash.h
 
-/home/cc/local_build/zfp/tests/array/utils/gtest3dTest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest3dTest.h
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest/gtest.h
 constants/universalConsts.h
-/home/cc/local_build/zfp/tests/array/utils/constants/universalConsts.h
+/home/cc/local-build/zfp/tests/array/utils/constants/universalConsts.h
 
-/home/cc/local_build/zfp/tests/array/utils/predicates.h
+/home/cc/local-build/zfp/tests/array/utils/predicates.h
 array/zfparray1.h
-/home/cc/local_build/zfp/tests/array/utils/array/zfparray1.h
+/home/cc/local-build/zfp/tests/array/utils/array/zfparray1.h
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest/gtest.h
 
 googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 # Utility rule file for cmocka_cloned.
 
@@ -64,52 +64,52 @@ tests/CMakeFiles/cmocka_cloned-complete: tests/cmocka_cloned-prefix/src/cmocka_c
 tests/CMakeFiles/cmocka_cloned-complete: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure
 tests/CMakeFiles/cmocka_cloned-complete: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build
 tests/CMakeFiles/cmocka_cloned-complete: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'cmocka_cloned'"
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/tests/CMakeFiles
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned-complete
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'cmocka_cloned'"
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/tests/CMakeFiles
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned-complete
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-done
 
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-install: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No install step for 'cmocka_cloned'"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E echo_append
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No install step for 'cmocka_cloned'"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E echo_append
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-install
 
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'cmocka_cloned'"
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/cmocka-src
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/cmocka-build
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/tmp
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'cmocka_cloned'"
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/cmocka-src
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/cmocka-build
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/tmp
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-mkdir
 
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-gitinfo.txt
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'cmocka_cloned'"
-	/usr/bin/cmake -P /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/tmp/cmocka_cloned-gitclone.cmake
-	/usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'cmocka_cloned'"
+	/usr/bin/cmake -P /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/tmp/cmocka_cloned-gitclone.cmake
+	/usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download
 
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-update: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Performing update step for 'cmocka_cloned'"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-src && /usr/bin/cmake -P /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/tmp/cmocka_cloned-gitupdate.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Performing update step for 'cmocka_cloned'"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-src && /usr/bin/cmake -P /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/tmp/cmocka_cloned-gitupdate.cmake
 
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-patch: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'cmocka_cloned'"
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E echo_append
-	cd /home/cc/local_build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-patch
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'cmocka_cloned'"
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E echo_append
+	cd /home/cc/local-build/zfp/build_debug/tests && /usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-patch
 
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure: tests/cmocka_cloned-prefix/tmp/cmocka_cloned-cfgcmd.txt
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-update
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'cmocka_cloned'"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cmake -DWITH_STATIC_LIB=ON -DCMAKE_C_COMPILER=/usr/bin/cc -DUNIT_TESTING=OFF "-GUnix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'cmocka_cloned'"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cmake -DWITH_STATIC_LIB=ON -DCMAKE_C_COMPILER=/usr/bin/cc -DUNIT_TESTING=OFF "-GUnix Makefiles" /home/cc/local-build/zfp/build_debug/cmocka-src
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure
 
 tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build: tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'cmocka_cloned'"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cmake --build .
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E touch /home/cc/local_build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'cmocka_cloned'"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cmake --build .
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cmake -E touch /home/cc/local-build/zfp/build_debug/tests/cmocka_cloned-prefix/src/cmocka_cloned-stamp/cmocka_cloned-build
 
 cmocka_cloned: tests/CMakeFiles/cmocka_cloned
 cmocka_cloned: tests/CMakeFiles/cmocka_cloned-complete
@@ -130,10 +130,10 @@ tests/CMakeFiles/cmocka_cloned.dir/build: cmocka_cloned
 .PHONY : tests/CMakeFiles/cmocka_cloned.dir/build
 
 tests/CMakeFiles/cmocka_cloned.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/tests && $(CMAKE_COMMAND) -P CMakeFiles/cmocka_cloned.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/tests && $(CMAKE_COMMAND) -P CMakeFiles/cmocka_cloned.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/cmocka_cloned.dir/clean
 
 tests/CMakeFiles/cmocka_cloned.dir/depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp /home/cc/local_build/zfp/tests /home/cc/local_build/zfp/build_debug /home/cc/local_build/zfp/build_debug/tests /home/cc/local_build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp /home/cc/local-build/zfp/tests /home/cc/local-build/zfp/build_debug /home/cc/local-build/zfp/build_debug/tests /home/cc/local-build/zfp/build_debug/tests/CMakeFiles/cmocka_cloned.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/cmocka_cloned.dir/depend
 

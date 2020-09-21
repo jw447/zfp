@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/utils/CMakeFiles/progress.marks
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles /home/cc/local-build/zfp/build_debug/tests/utils/CMakeFiles/progress.marks
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/clean
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/utils/CMakeFiles/fixedpoint96Lib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/fixedpoint96Lib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/fixedpoint96Lib.dir/rule
 .PHONY : tests/utils/CMakeFiles/fixedpoint96Lib.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ fixedpoint96Lib: tests/utils/CMakeFiles/fixedpoint96Lib.dir/rule
 
 # fast build rule for target.
 fixedpoint96Lib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/build
 .PHONY : fixedpoint96Lib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/rule
 .PHONY : tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ zfpCompressionParamsLib: tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/rule
 
 # fast build rule for target.
 zfpCompressionParamsLib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build
 .PHONY : zfpCompressionParamsLib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/rand64Lib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/rand64Lib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/rand64Lib.dir/rule
 .PHONY : tests/utils/CMakeFiles/rand64Lib.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ rand64Lib: tests/utils/CMakeFiles/rand64Lib.dir/rule
 
 # fast build rule for target.
 rand64Lib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/build
 .PHONY : rand64Lib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/rand32Lib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/rand32Lib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/rand32Lib.dir/rule
 .PHONY : tests/utils/CMakeFiles/rand32Lib.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ rand32Lib: tests/utils/CMakeFiles/rand32Lib.dir/rule
 
 # fast build rule for target.
 rand32Lib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/build
 .PHONY : rand32Lib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/rule
 .PHONY : tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ genSmoothRandNumsLib: tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/rule
 
 # fast build rule for target.
 genSmoothRandNumsLib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build
 .PHONY : genSmoothRandNumsLib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/zfpTimerLib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpTimerLib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpTimerLib.dir/rule
 .PHONY : tests/utils/CMakeFiles/zfpTimerLib.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ zfpTimerLib: tests/utils/CMakeFiles/zfpTimerLib.dir/rule
 
 # fast build rule for target.
 zfpTimerLib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/build
 .PHONY : zfpTimerLib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/zfpChecksumsLib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpChecksumsLib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpChecksumsLib.dir/rule
 .PHONY : tests/utils/CMakeFiles/zfpChecksumsLib.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ zfpChecksumsLib: tests/utils/CMakeFiles/zfpChecksumsLib.dir/rule
 
 # fast build rule for target.
 zfpChecksumsLib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/build
 .PHONY : zfpChecksumsLib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/zfpHashLib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpHashLib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/zfpHashLib.dir/rule
 .PHONY : tests/utils/CMakeFiles/zfpHashLib.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ zfpHashLib: tests/utils/CMakeFiles/zfpHashLib.dir/rule
 
 # fast build rule for target.
 zfpHashLib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/build
 .PHONY : zfpHashLib/fast
 
 # Convenience name for target.
 tests/utils/CMakeFiles/stridedOperationsLib.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/stridedOperationsLib.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/utils/CMakeFiles/stridedOperationsLib.dir/rule
 .PHONY : tests/utils/CMakeFiles/stridedOperationsLib.dir/rule
 
 # Convenience name for target.
@@ -297,7 +297,7 @@ stridedOperationsLib: tests/utils/CMakeFiles/stridedOperationsLib.dir/rule
 
 # fast build rule for target.
 stridedOperationsLib/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/build
 .PHONY : stridedOperationsLib/fast
 
 fixedpoint96.o: fixedpoint96.c.o
@@ -306,7 +306,7 @@ fixedpoint96.o: fixedpoint96.c.o
 
 # target to build an object file
 fixedpoint96.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.o
 .PHONY : fixedpoint96.c.o
 
 fixedpoint96.i: fixedpoint96.c.i
@@ -315,7 +315,7 @@ fixedpoint96.i: fixedpoint96.c.i
 
 # target to preprocess a source file
 fixedpoint96.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.i
 .PHONY : fixedpoint96.c.i
 
 fixedpoint96.s: fixedpoint96.c.s
@@ -324,7 +324,7 @@ fixedpoint96.s: fixedpoint96.c.s
 
 # target to generate assembly for a file
 fixedpoint96.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/fixedpoint96Lib.dir/build.make tests/utils/CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.s
 .PHONY : fixedpoint96.c.s
 
 genSmoothRandNums.o: genSmoothRandNums.c.o
@@ -333,7 +333,7 @@ genSmoothRandNums.o: genSmoothRandNums.c.o
 
 # target to build an object file
 genSmoothRandNums.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.o
 .PHONY : genSmoothRandNums.c.o
 
 genSmoothRandNums.i: genSmoothRandNums.c.i
@@ -342,7 +342,7 @@ genSmoothRandNums.i: genSmoothRandNums.c.i
 
 # target to preprocess a source file
 genSmoothRandNums.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.i
 .PHONY : genSmoothRandNums.c.i
 
 genSmoothRandNums.s: genSmoothRandNums.c.s
@@ -351,7 +351,7 @@ genSmoothRandNums.s: genSmoothRandNums.c.s
 
 # target to generate assembly for a file
 genSmoothRandNums.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/build.make tests/utils/CMakeFiles/genSmoothRandNumsLib.dir/genSmoothRandNums.c.s
 .PHONY : genSmoothRandNums.c.s
 
 rand32.o: rand32.c.o
@@ -360,7 +360,7 @@ rand32.o: rand32.c.o
 
 # target to build an object file
 rand32.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/rand32.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/rand32.c.o
 .PHONY : rand32.c.o
 
 rand32.i: rand32.c.i
@@ -369,7 +369,7 @@ rand32.i: rand32.c.i
 
 # target to preprocess a source file
 rand32.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/rand32.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/rand32.c.i
 .PHONY : rand32.c.i
 
 rand32.s: rand32.c.s
@@ -378,7 +378,7 @@ rand32.s: rand32.c.s
 
 # target to generate assembly for a file
 rand32.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/rand32.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand32Lib.dir/build.make tests/utils/CMakeFiles/rand32Lib.dir/rand32.c.s
 .PHONY : rand32.c.s
 
 rand64.o: rand64.c.o
@@ -387,7 +387,7 @@ rand64.o: rand64.c.o
 
 # target to build an object file
 rand64.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/rand64.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/rand64.c.o
 .PHONY : rand64.c.o
 
 rand64.i: rand64.c.i
@@ -396,7 +396,7 @@ rand64.i: rand64.c.i
 
 # target to preprocess a source file
 rand64.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/rand64.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/rand64.c.i
 .PHONY : rand64.c.i
 
 rand64.s: rand64.c.s
@@ -405,7 +405,7 @@ rand64.s: rand64.c.s
 
 # target to generate assembly for a file
 rand64.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/rand64.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/rand64Lib.dir/build.make tests/utils/CMakeFiles/rand64Lib.dir/rand64.c.s
 .PHONY : rand64.c.s
 
 stridedOperations.o: stridedOperations.c.o
@@ -414,7 +414,7 @@ stridedOperations.o: stridedOperations.c.o
 
 # target to build an object file
 stridedOperations.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/stridedOperations.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/stridedOperations.c.o
 .PHONY : stridedOperations.c.o
 
 stridedOperations.i: stridedOperations.c.i
@@ -423,7 +423,7 @@ stridedOperations.i: stridedOperations.c.i
 
 # target to preprocess a source file
 stridedOperations.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/stridedOperations.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/stridedOperations.c.i
 .PHONY : stridedOperations.c.i
 
 stridedOperations.s: stridedOperations.c.s
@@ -432,7 +432,7 @@ stridedOperations.s: stridedOperations.c.s
 
 # target to generate assembly for a file
 stridedOperations.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/stridedOperations.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/stridedOperationsLib.dir/build.make tests/utils/CMakeFiles/stridedOperationsLib.dir/stridedOperations.c.s
 .PHONY : stridedOperations.c.s
 
 zfpChecksums.o: zfpChecksums.c.o
@@ -441,7 +441,7 @@ zfpChecksums.o: zfpChecksums.c.o
 
 # target to build an object file
 zfpChecksums.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.o
 .PHONY : zfpChecksums.c.o
 
 zfpChecksums.i: zfpChecksums.c.i
@@ -450,7 +450,7 @@ zfpChecksums.i: zfpChecksums.c.i
 
 # target to preprocess a source file
 zfpChecksums.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.i
 .PHONY : zfpChecksums.c.i
 
 zfpChecksums.s: zfpChecksums.c.s
@@ -459,7 +459,7 @@ zfpChecksums.s: zfpChecksums.c.s
 
 # target to generate assembly for a file
 zfpChecksums.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpChecksumsLib.dir/build.make tests/utils/CMakeFiles/zfpChecksumsLib.dir/zfpChecksums.c.s
 .PHONY : zfpChecksums.c.s
 
 zfpCompressionParams.o: zfpCompressionParams.c.o
@@ -468,7 +468,7 @@ zfpCompressionParams.o: zfpCompressionParams.c.o
 
 # target to build an object file
 zfpCompressionParams.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.o
 .PHONY : zfpCompressionParams.c.o
 
 zfpCompressionParams.i: zfpCompressionParams.c.i
@@ -477,7 +477,7 @@ zfpCompressionParams.i: zfpCompressionParams.c.i
 
 # target to preprocess a source file
 zfpCompressionParams.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.i
 .PHONY : zfpCompressionParams.c.i
 
 zfpCompressionParams.s: zfpCompressionParams.c.s
@@ -486,7 +486,7 @@ zfpCompressionParams.s: zfpCompressionParams.c.s
 
 # target to generate assembly for a file
 zfpCompressionParams.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/build.make tests/utils/CMakeFiles/zfpCompressionParamsLib.dir/zfpCompressionParams.c.s
 .PHONY : zfpCompressionParams.c.s
 
 zfpHash.o: zfpHash.c.o
@@ -495,7 +495,7 @@ zfpHash.o: zfpHash.c.o
 
 # target to build an object file
 zfpHash.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/zfpHash.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/zfpHash.c.o
 .PHONY : zfpHash.c.o
 
 zfpHash.i: zfpHash.c.i
@@ -504,7 +504,7 @@ zfpHash.i: zfpHash.c.i
 
 # target to preprocess a source file
 zfpHash.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/zfpHash.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/zfpHash.c.i
 .PHONY : zfpHash.c.i
 
 zfpHash.s: zfpHash.c.s
@@ -513,7 +513,7 @@ zfpHash.s: zfpHash.c.s
 
 # target to generate assembly for a file
 zfpHash.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/zfpHash.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpHashLib.dir/build.make tests/utils/CMakeFiles/zfpHashLib.dir/zfpHash.c.s
 .PHONY : zfpHash.c.s
 
 zfpTimer.o: zfpTimer.c.o
@@ -522,7 +522,7 @@ zfpTimer.o: zfpTimer.c.o
 
 # target to build an object file
 zfpTimer.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/zfpTimer.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/zfpTimer.c.o
 .PHONY : zfpTimer.c.o
 
 zfpTimer.i: zfpTimer.c.i
@@ -531,7 +531,7 @@ zfpTimer.i: zfpTimer.c.i
 
 # target to preprocess a source file
 zfpTimer.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/zfpTimer.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/zfpTimer.c.i
 .PHONY : zfpTimer.c.i
 
 zfpTimer.s: zfpTimer.c.s
@@ -540,7 +540,7 @@ zfpTimer.s: zfpTimer.c.s
 
 # target to generate assembly for a file
 zfpTimer.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/zfpTimer.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/utils/CMakeFiles/zfpTimerLib.dir/build.make tests/utils/CMakeFiles/zfpTimerLib.dir/zfpTimer.c.s
 .PHONY : zfpTimer.c.s
 
 # Help Target
@@ -603,6 +603,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

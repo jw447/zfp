@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap
+# Install script for directory: /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

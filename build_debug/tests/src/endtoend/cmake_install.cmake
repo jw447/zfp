@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/local_build/zfp/tests/src/endtoend
+# Install script for directory: /home/cc/local-build/zfp/tests/src/endtoend
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

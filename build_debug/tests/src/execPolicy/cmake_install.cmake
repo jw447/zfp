@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/local_build/zfp/tests/src/execPolicy
+# Install script for directory: /home/cc/local-build/zfp/tests/src/execPolicy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

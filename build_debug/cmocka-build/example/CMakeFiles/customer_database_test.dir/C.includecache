@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/customer_database.c
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/customer_database.c
 stddef.h
 -
 stdio.h
@@ -14,7 +14,7 @@ stdio.h
 database.h
 -
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/customer_database_test.c
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/customer_database_test.c
 stdarg.h
 -
 stddef.h
@@ -26,7 +26,7 @@ cmocka.h
 database.h
 -
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/database.h
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/database.h
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/cc/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
 

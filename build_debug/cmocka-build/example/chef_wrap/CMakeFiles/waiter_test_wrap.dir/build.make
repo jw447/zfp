@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug/cmocka-build
 
 # Include any dependencies generated for this target.
 include example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/depend.make
@@ -58,17 +58,17 @@ include example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/progress.make
 include example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/flags.make
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o: example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/flags.make
-example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c
+example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o: /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.i"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c > CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.i
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c > CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.i
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.s"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c -o CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.s
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/waiter_test_wrap.c -o CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.s
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o.requires:
 
@@ -82,17 +82,17 @@ example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/waiter_test_wrap.c.o.provides.
 
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o: example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/flags.make
-example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/waiter_test_wrap.dir/chef.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c
+example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o: /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/waiter_test_wrap.dir/chef.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/waiter_test_wrap.dir/chef.c.i"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c > CMakeFiles/waiter_test_wrap.dir/chef.c.i
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c > CMakeFiles/waiter_test_wrap.dir/chef.c.i
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/waiter_test_wrap.dir/chef.c.s"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c -o CMakeFiles/waiter_test_wrap.dir/chef.c.s
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap/chef.c -o CMakeFiles/waiter_test_wrap.dir/chef.c.s
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/chef.c.o.requires:
 
@@ -118,8 +118,8 @@ example/chef_wrap/waiter_test_wrap: example/chef_wrap/CMakeFiles/waiter_test_wra
 example/chef_wrap/waiter_test_wrap: example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build.make
 example/chef_wrap/waiter_test_wrap: src/libcmocka.so.0.4.0
 example/chef_wrap/waiter_test_wrap: example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable waiter_test_wrap"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/waiter_test_wrap.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable waiter_test_wrap"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/waiter_test_wrap.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/build: example/chef_wrap/waiter_test_wrap
@@ -132,10 +132,10 @@ example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/requires: example/chef_wrap/CM
 .PHONY : example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/requires
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap && $(CMAKE_COMMAND) -P CMakeFiles/waiter_test_wrap.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap && $(CMAKE_COMMAND) -P CMakeFiles/waiter_test_wrap.dir/cmake_clean.cmake
 .PHONY : example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/clean
 
 example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/depend:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src /home/cc/local_build/zfp/build_debug/cmocka-src/example/chef_wrap /home/cc/local_build/zfp/build_debug/cmocka-build /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap /home/cc/local_build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp/build_debug/cmocka-src /home/cc/local-build/zfp/build_debug/cmocka-src/example/chef_wrap /home/cc/local-build/zfp/build_debug/cmocka-build /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap /home/cc/local-build/zfp/build_debug/cmocka-build/example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/chef_wrap/CMakeFiles/waiter_test_wrap.dir/depend
 

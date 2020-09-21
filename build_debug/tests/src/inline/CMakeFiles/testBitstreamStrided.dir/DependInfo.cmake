@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/cc/local_build/zfp/tests/src/inline/testBitstreamStrided.c" "/home/cc/local_build/zfp/build_debug/tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.o"
+  "/home/cc/local-build/zfp/tests/src/inline/testBitstreamStrided.c" "/home/cc/local-build/zfp/build_debug/tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

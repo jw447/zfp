@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug/cmocka-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/cc/local_build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/cc/local-build/zfp/build_debug/cmocka-build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -81,7 +81,7 @@ package_source/fast: package_source
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -146,14 +146,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles /home/cc/local_build/zfp/build_debug/cmocka-build/doc/CMakeFiles/progress.marks
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles 0
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles /home/cc/local-build/zfp/build_debug/cmocka-build/doc/CMakeFiles/progress.marks
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/clean
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/clean
 .PHONY : clean
 
 # The main clean target
@@ -163,22 +163,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 doc/CMakeFiles/doxygen.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/doxygen.dir/rule
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/doxygen.dir/rule
 .PHONY : doc/CMakeFiles/doxygen.dir/rule
 
 # Convenience name for target.
@@ -188,12 +188,12 @@ doxygen: doc/CMakeFiles/doxygen.dir/rule
 
 # fast build rule for target.
 doxygen/fast:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f doc/CMakeFiles/doxygen.dir/build.make doc/CMakeFiles/doxygen.dir/build
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f doc/CMakeFiles/doxygen.dir/build.make doc/CMakeFiles/doxygen.dir/build
 .PHONY : doxygen/fast
 
 # Convenience name for target.
 doc/CMakeFiles/doc.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/doc.dir/rule
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/doc.dir/rule
 .PHONY : doc/CMakeFiles/doc.dir/rule
 
 # Convenience name for target.
@@ -203,7 +203,7 @@ doc: doc/CMakeFiles/doc.dir/rule
 
 # fast build rule for target.
 doc/fast:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(MAKE) -f doc/CMakeFiles/doc.dir/build.make doc/CMakeFiles/doc.dir/build
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(MAKE) -f doc/CMakeFiles/doc.dir/build.make doc/CMakeFiles/doc.dir/build
 .PHONY : doc/fast
 
 # Help Target
@@ -233,6 +233,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

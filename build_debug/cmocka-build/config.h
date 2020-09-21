@@ -9,8 +9,8 @@
 #define LIBDIR "/usr/local/lib"
 #define PLUGINDIR "/usr/local/lib/cmocka-0"
 #define SYSCONFDIR "/usr/local/etc"
-#define BINARYDIR "/home/cc/local_build/zfp/build_debug/cmocka-build"
-#define SOURCEDIR "/home/cc/local_build/zfp/build_debug/cmocka-src"
+#define BINARYDIR "/home/cc/local-build/zfp/build_debug/cmocka-build"
+#define SOURCEDIR "/home/cc/local-build/zfp/build_debug/cmocka-src"
 
 /************************** HEADER FILES *************************/
 

@@ -1,1 +1,1 @@
-/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.o  -o ../../bin/testArray3fPtrs -rdynamic ../../lib/libgtest_main.so ../../lib/libzfp.so.0.5.5 ../../lib/libgtest.so -lpthread -Wl,-rpath,/home/cc/local_build/zfp/build_debug/lib 
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.o  -o ../../bin/testArray3fPtrs -rdynamic ../../lib/libgtest_main.so ../../lib/libzfp.so.0.5.5 ../../lib/libgtest.so -lpthread -Wl,-rpath,/home/cc/local-build/zfp/build_debug/lib 

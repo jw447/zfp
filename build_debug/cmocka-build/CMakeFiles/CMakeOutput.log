@@ -1,4 +1,4 @@
-The system is: Linux - 4.4.0-189-generic - x86_64
+The system is: Linux - 4.4.0-145-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -10,36 +10,36 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/3.5.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/3.5.1/CompilerIdC/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6a7cd/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_6a7cd.dir/build.make CMakeFiles/cmTC_6a7cd.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6a7cd.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_6a7cd.dir/testCCompiler.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_6a7cd
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a7cd.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_6a7cd.dir/testCCompiler.c.o  -o cmTC_6a7cd -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6eb7f/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6eb7f.dir/build.make CMakeFiles/cmTC_6eb7f.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6eb7f.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_6eb7f.dir/testCCompiler.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_6eb7f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6eb7f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_6eb7f.dir/testCCompiler.c.o  -o cmTC_6eb7f -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_23de3/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_23de3.dir/build.make CMakeFiles/cmTC_23de3.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_23de3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23de3.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o  -o cmTC_23de3 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_2331d/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_2331d.dir/build.make CMakeFiles/cmTC_2331d.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_2331d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2331d.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o  -o cmTC_2331d -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -49,25 +49,25 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.12) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_23de3' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrNDMWr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_23de3 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2331d' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6B5uWU.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_2331d /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_23de3/fast"]
-  ignore line: [make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_23de3.dir/build.make CMakeFiles/cmTC_23de3.dir/build]
-  ignore line: [make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_23de3]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23de3.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o  -o cmTC_23de3 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_2331d/fast"]
+  ignore line: [make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2331d.dir/build.make CMakeFiles/cmTC_2331d.dir/build]
+  ignore line: [make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_2331d]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2331d.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o  -o cmTC_2331d -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -77,13 +77,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.12) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_23de3' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrNDMWr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_23de3 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2331d' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6B5uWU.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_2331d /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccrNDMWr.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc6B5uWU.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -101,7 +101,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_23de3] ==> ignore
+    arg [cmTC_2331d] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -113,7 +113,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_23de3.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_2331d.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -145,19 +145,19 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6e4c0/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_6e4c0.dir/build.make CMakeFiles/cmTC_6e4c0.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6e4c0.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_6e4c0.dir/feature_tests.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_6e4c0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e4c0.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_6e4c0.dir/feature_tests.c.o  -o cmTC_6e4c0 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_e6eb1/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_e6eb1.dir/build.make CMakeFiles/cmTC_e6eb1.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6eb1.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_e6eb1.dir/feature_tests.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e6eb1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6eb1.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_e6eb1.dir/feature_tests.c.o  -o cmTC_e6eb1 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -167,19 +167,19 @@ make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CM
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1d6fd/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_1d6fd.dir/build.make CMakeFiles/cmTC_1d6fd.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1d6fd.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_1d6fd.dir/feature_tests.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1d6fd
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d6fd.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_1d6fd.dir/feature_tests.c.o  -o cmTC_1d6fd -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6939a/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6939a.dir/build.make CMakeFiles/cmTC_6939a.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6939a.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_6939a.dir/feature_tests.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6939a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6939a.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_6939a.dir/feature_tests.c.o  -o cmTC_6939a -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -189,19 +189,19 @@ make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CM
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ba208/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_ba208.dir/build.make CMakeFiles/cmTC_ba208.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ba208.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_ba208.dir/feature_tests.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_ba208
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba208.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_ba208.dir/feature_tests.c.o  -o cmTC_ba208 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_36ff4/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_36ff4.dir/build.make CMakeFiles/cmTC_36ff4.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_36ff4.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_36ff4.dir/feature_tests.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_36ff4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36ff4.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_36ff4.dir/feature_tests.c.o  -o cmTC_36ff4 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -209,346 +209,346 @@ make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CM
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Performing C SOURCE FILE Test WITH_FPIC succeeded with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_33b2d/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_33b2d.dir/build.make CMakeFiles/cmTC_33b2d.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_33b2d.dir/src.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -DWITH_FPIC   -fPIC -o CMakeFiles/cmTC_33b2d.dir/src.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_33b2d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33b2d.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -DWITH_FPIC    CMakeFiles/cmTC_33b2d.dir/src.c.o  -o cmTC_33b2d -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_1f1dd/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_1f1dd.dir/build.make CMakeFiles/cmTC_1f1dd.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1f1dd.dir/src.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -DWITH_FPIC   -fPIC -o CMakeFiles/cmTC_1f1dd.dir/src.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1f1dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f1dd.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -DWITH_FPIC    CMakeFiles/cmTC_1f1dd.dir/src.c.o  -o cmTC_1f1dd -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test WITH_STACK_PROTECTOR succeeded with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_cab96/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_cab96.dir/build.make CMakeFiles/cmTC_cab96.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_cab96.dir/src.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -DWITH_STACK_PROTECTOR   -fstack-protector -o CMakeFiles/cmTC_cab96.dir/src.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
-/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c:1:27: warning: unused parameter ‘argv’ [-Wunused-parameter]
+Run Build Command:"/usr/bin/make" "cmTC_0faed/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_0faed.dir/build.make CMakeFiles/cmTC_0faed.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0faed.dir/src.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -DWITH_STACK_PROTECTOR   -fstack-protector -o CMakeFiles/cmTC_0faed.dir/src.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c:1:27: warning: unused parameter ‘argv’ [-Wunused-parameter]
  int main(int argc, char **argv) { char buffer[256]; return buffer[argc]=0;}
                            ^
-Linking C executable cmTC_cab96
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cab96.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -DWITH_STACK_PROTECTOR    CMakeFiles/cmTC_cab96.dir/src.c.o  -o cmTC_cab96 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_0faed
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0faed.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -DWITH_STACK_PROTECTOR    CMakeFiles/cmTC_0faed.dir/src.c.o  -o cmTC_0faed -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 Source file was:
 int main(int argc, char **argv) { char buffer[256]; return buffer[argc]=0;}
 Performing C SOURCE FILE Test WITH_VISIBILITY_HIDDEN succeeded with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_379ee/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_379ee.dir/build.make CMakeFiles/cmTC_379ee.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_379ee.dir/src.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DWITH_VISIBILITY_HIDDEN   -fvisibility=hidden -o CMakeFiles/cmTC_379ee.dir/src.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_379ee
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_379ee.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DWITH_VISIBILITY_HIDDEN    CMakeFiles/cmTC_379ee.dir/src.c.o  -o cmTC_379ee -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_eaaaf/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_eaaaf.dir/build.make CMakeFiles/cmTC_eaaaf.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eaaaf.dir/src.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DWITH_VISIBILITY_HIDDEN   -fvisibility=hidden -o CMakeFiles/cmTC_eaaaf.dir/src.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_eaaaf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eaaaf.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DWITH_VISIBILITY_HIDDEN    CMakeFiles/cmTC_eaaaf.dir/src.c.o  -o cmTC_eaaaf -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 Source file was:
 int main(void) { return 0; }
 Determining if the include file assert.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7791e/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_7791e.dir/build.make CMakeFiles/cmTC_7791e.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7791e.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_7791e.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_7791e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7791e.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_7791e.dir/CheckIncludeFile.c.o  -o cmTC_7791e -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_f1d2c/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_f1d2c.dir/build.make CMakeFiles/cmTC_f1d2c.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1d2c.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_f1d2c.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f1d2c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1d2c.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_f1d2c.dir/CheckIncludeFile.c.o  -o cmTC_f1d2c -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file inttypes.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5ced1/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_5ced1.dir/build.make CMakeFiles/cmTC_5ced1.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5ced1.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_5ced1.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_5ced1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ced1.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_5ced1.dir/CheckIncludeFile.c.o  -o cmTC_5ced1 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_48479/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_48479.dir/build.make CMakeFiles/cmTC_48479.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48479.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_48479.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_48479
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48479.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_48479.dir/CheckIncludeFile.c.o  -o cmTC_48479 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file malloc.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3c080/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_3c080.dir/build.make CMakeFiles/cmTC_3c080.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3c080.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_3c080.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_3c080
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c080.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_3c080.dir/CheckIncludeFile.c.o  -o cmTC_3c080 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_171ab/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_171ab.dir/build.make CMakeFiles/cmTC_171ab.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_171ab.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_171ab.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_171ab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_171ab.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_171ab.dir/CheckIncludeFile.c.o  -o cmTC_171ab -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file memory.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b400e/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_b400e.dir/build.make CMakeFiles/cmTC_b400e.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b400e.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_b400e.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_b400e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b400e.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_b400e.dir/CheckIncludeFile.c.o  -o cmTC_b400e -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_cb123/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_cb123.dir/build.make CMakeFiles/cmTC_cb123.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cb123.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_cb123.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_cb123
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb123.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_cb123.dir/CheckIncludeFile.c.o  -o cmTC_cb123 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file setjmp.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_92ad6/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_92ad6.dir/build.make CMakeFiles/cmTC_92ad6.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_92ad6.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_92ad6.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_92ad6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92ad6.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_92ad6.dir/CheckIncludeFile.c.o  -o cmTC_92ad6 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6c7ec/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6c7ec.dir/build.make CMakeFiles/cmTC_6c7ec.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6c7ec.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_6c7ec.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6c7ec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c7ec.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_6c7ec.dir/CheckIncludeFile.c.o  -o cmTC_6c7ec -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file signal.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_255af/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_255af.dir/build.make CMakeFiles/cmTC_255af.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_255af.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_255af.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_255af
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_255af.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_255af.dir/CheckIncludeFile.c.o  -o cmTC_255af -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_58988/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_58988.dir/build.make CMakeFiles/cmTC_58988.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58988.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_58988.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_58988
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58988.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_58988.dir/CheckIncludeFile.c.o  -o cmTC_58988 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stdarg.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_cfd70/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_cfd70.dir/build.make CMakeFiles/cmTC_cfd70.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_cfd70.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_cfd70.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_cfd70
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfd70.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_cfd70.dir/CheckIncludeFile.c.o  -o cmTC_cfd70 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_c03de/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_c03de.dir/build.make CMakeFiles/cmTC_c03de.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c03de.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_c03de.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c03de
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c03de.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_c03de.dir/CheckIncludeFile.c.o  -o cmTC_c03de -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stddef.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3b207/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_3b207.dir/build.make CMakeFiles/cmTC_3b207.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3b207.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_3b207.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_3b207
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b207.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_3b207.dir/CheckIncludeFile.c.o  -o cmTC_3b207 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_205af/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_205af.dir/build.make CMakeFiles/cmTC_205af.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_205af.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_205af.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_205af
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_205af.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_205af.dir/CheckIncludeFile.c.o  -o cmTC_205af -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stdint.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c98f7/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_c98f7.dir/build.make CMakeFiles/cmTC_c98f7.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c98f7.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_c98f7.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_c98f7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c98f7.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_c98f7.dir/CheckIncludeFile.c.o  -o cmTC_c98f7 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6b629/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6b629.dir/build.make CMakeFiles/cmTC_6b629.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6b629.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_6b629.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6b629
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b629.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_6b629.dir/CheckIncludeFile.c.o  -o cmTC_6b629 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stdio.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e4adc/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_e4adc.dir/build.make CMakeFiles/cmTC_e4adc.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e4adc.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_e4adc.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_e4adc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4adc.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_e4adc.dir/CheckIncludeFile.c.o  -o cmTC_e4adc -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6b9d5/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6b9d5.dir/build.make CMakeFiles/cmTC_6b9d5.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6b9d5.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_6b9d5.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6b9d5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b9d5.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_6b9d5.dir/CheckIncludeFile.c.o  -o cmTC_6b9d5 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stdlib.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6c7d1/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_6c7d1.dir/build.make CMakeFiles/cmTC_6c7d1.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6c7d1.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_6c7d1.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_6c7d1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c7d1.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_6c7d1.dir/CheckIncludeFile.c.o  -o cmTC_6c7d1 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_798e5/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_798e5.dir/build.make CMakeFiles/cmTC_798e5.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_798e5.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_798e5.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_798e5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_798e5.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_798e5.dir/CheckIncludeFile.c.o  -o cmTC_798e5 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file string.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_382b3/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_382b3.dir/build.make CMakeFiles/cmTC_382b3.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_382b3.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_382b3.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_382b3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_382b3.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_382b3.dir/CheckIncludeFile.c.o  -o cmTC_382b3 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_f244b/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_f244b.dir/build.make CMakeFiles/cmTC_f244b.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f244b.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_f244b.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f244b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f244b.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_f244b.dir/CheckIncludeFile.c.o  -o cmTC_f244b -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file strings.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9dfc4/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_9dfc4.dir/build.make CMakeFiles/cmTC_9dfc4.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_9dfc4.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_9dfc4.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_9dfc4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9dfc4.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_9dfc4.dir/CheckIncludeFile.c.o  -o cmTC_9dfc4 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_87c00/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_87c00.dir/build.make CMakeFiles/cmTC_87c00.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87c00.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_87c00.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_87c00
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87c00.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_87c00.dir/CheckIncludeFile.c.o  -o cmTC_87c00 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file sys/stat.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_37aaa/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_37aaa.dir/build.make CMakeFiles/cmTC_37aaa.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_37aaa.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_37aaa.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_37aaa
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37aaa.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_37aaa.dir/CheckIncludeFile.c.o  -o cmTC_37aaa -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_df6be/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_df6be.dir/build.make CMakeFiles/cmTC_df6be.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_df6be.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_df6be.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_df6be
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df6be.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_df6be.dir/CheckIncludeFile.c.o  -o cmTC_df6be -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file sys/types.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f037e/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_f037e.dir/build.make CMakeFiles/cmTC_f037e.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f037e.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_f037e.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_f037e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f037e.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_f037e.dir/CheckIncludeFile.c.o  -o cmTC_f037e -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_42f6d/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_42f6d.dir/build.make CMakeFiles/cmTC_42f6d.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42f6d.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_42f6d.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_42f6d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42f6d.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_42f6d.dir/CheckIncludeFile.c.o  -o cmTC_42f6d -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file time.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a3d95/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_a3d95.dir/build.make CMakeFiles/cmTC_a3d95.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a3d95.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_a3d95.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_a3d95
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3d95.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_a3d95.dir/CheckIncludeFile.c.o  -o cmTC_a3d95 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_2850d/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_2850d.dir/build.make CMakeFiles/cmTC_2850d.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2850d.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_2850d.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2850d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2850d.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_2850d.dir/CheckIncludeFile.c.o  -o cmTC_2850d -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file unistd.h exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a3d14/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_a3d14.dir/build.make CMakeFiles/cmTC_a3d14.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a3d14.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_a3d14.dir/CheckIncludeFile.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_a3d14
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3d14.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_a3d14.dir/CheckIncludeFile.c.o  -o cmTC_a3d14 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_09443/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_09443.dir/build.make CMakeFiles/cmTC_09443.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_09443.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_09443.dir/CheckIncludeFile.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_09443
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09443.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_09443.dir/CheckIncludeFile.c.o  -o cmTC_09443 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Performing C SOURCE FILE Test HAVE_STRUCT_TIMESPEC succeeded with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f96ac/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_f96ac.dir/build.make CMakeFiles/cmTC_f96ac.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f96ac.dir/src.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_STRUCT_TIMESPEC   -o CMakeFiles/cmTC_f96ac.dir/src.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_f96ac
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f96ac.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_STRUCT_TIMESPEC    CMakeFiles/cmTC_f96ac.dir/src.c.o  -o cmTC_f96ac -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a86d8/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_a86d8.dir/build.make CMakeFiles/cmTC_a86d8.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a86d8.dir/src.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_STRUCT_TIMESPEC   -o CMakeFiles/cmTC_a86d8.dir/src.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a86d8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a86d8.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_STRUCT_TIMESPEC    CMakeFiles/cmTC_a86d8.dir/src.c.o  -o cmTC_a86d8 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 Source file was:
 
@@ -561,335 +561,335 @@ int main()
 }
 
 Determining if the function calloc exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3a490/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_3a490.dir/build.make CMakeFiles/cmTC_3a490.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3a490.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=calloc   -o CMakeFiles/cmTC_3a490.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_48951/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_48951.dir/build.make CMakeFiles/cmTC_48951.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48951.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=calloc   -o CMakeFiles/cmTC_48951.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘calloc’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_3a490
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a490.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=calloc    CMakeFiles/cmTC_3a490.dir/CheckFunctionExists.c.o  -o cmTC_3a490 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_48951
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48951.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=calloc    CMakeFiles/cmTC_48951.dir/CheckFunctionExists.c.o  -o cmTC_48951 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function exit exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c4625/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_c4625.dir/build.make CMakeFiles/cmTC_c4625.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c4625.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=exit   -o CMakeFiles/cmTC_c4625.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_d93e7/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_d93e7.dir/build.make CMakeFiles/cmTC_d93e7.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d93e7.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=exit   -o CMakeFiles/cmTC_d93e7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘exit’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_c4625
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4625.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=exit    CMakeFiles/cmTC_c4625.dir/CheckFunctionExists.c.o  -o cmTC_c4625 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_d93e7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d93e7.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=exit    CMakeFiles/cmTC_d93e7.dir/CheckFunctionExists.c.o  -o cmTC_d93e7 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function fprintf exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_17417/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_17417.dir/build.make CMakeFiles/cmTC_17417.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_17417.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=fprintf   -o CMakeFiles/cmTC_17417.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_d9a43/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_d9a43.dir/build.make CMakeFiles/cmTC_d9a43.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d9a43.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=fprintf   -o CMakeFiles/cmTC_d9a43.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘fprintf’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_17417
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17417.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=fprintf    CMakeFiles/cmTC_17417.dir/CheckFunctionExists.c.o  -o cmTC_17417 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_d9a43
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9a43.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=fprintf    CMakeFiles/cmTC_d9a43.dir/CheckFunctionExists.c.o  -o cmTC_d9a43 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function free exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f645e/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_f645e.dir/build.make CMakeFiles/cmTC_f645e.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f645e.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=free   -o CMakeFiles/cmTC_f645e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_9f775/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9f775.dir/build.make CMakeFiles/cmTC_9f775.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9f775.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=free   -o CMakeFiles/cmTC_9f775.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘free’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_f645e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f645e.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=free    CMakeFiles/cmTC_f645e.dir/CheckFunctionExists.c.o  -o cmTC_f645e -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_9f775
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f775.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=free    CMakeFiles/cmTC_9f775.dir/CheckFunctionExists.c.o  -o cmTC_9f775 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function longjmp exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c8613/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_c8613.dir/build.make CMakeFiles/cmTC_c8613.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c8613.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=longjmp   -o CMakeFiles/cmTC_c8613.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_c8613
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8613.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=longjmp    CMakeFiles/cmTC_c8613.dir/CheckFunctionExists.c.o  -o cmTC_c8613 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_136dd/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_136dd.dir/build.make CMakeFiles/cmTC_136dd.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_136dd.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=longjmp   -o CMakeFiles/cmTC_136dd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_136dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_136dd.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=longjmp    CMakeFiles/cmTC_136dd.dir/CheckFunctionExists.c.o  -o cmTC_136dd -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function siglongjmp exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2e707/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_2e707.dir/build.make CMakeFiles/cmTC_2e707.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2e707.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=siglongjmp   -o CMakeFiles/cmTC_2e707.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_2e707
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e707.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=siglongjmp    CMakeFiles/cmTC_2e707.dir/CheckFunctionExists.c.o  -o cmTC_2e707 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_bac51/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_bac51.dir/build.make CMakeFiles/cmTC_bac51.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bac51.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=siglongjmp   -o CMakeFiles/cmTC_bac51.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bac51
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bac51.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=siglongjmp    CMakeFiles/cmTC_bac51.dir/CheckFunctionExists.c.o  -o cmTC_bac51 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function malloc exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bac14/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_bac14.dir/build.make CMakeFiles/cmTC_bac14.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bac14.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=malloc   -o CMakeFiles/cmTC_bac14.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_5adc6/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_5adc6.dir/build.make CMakeFiles/cmTC_5adc6.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5adc6.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=malloc   -o CMakeFiles/cmTC_5adc6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘malloc’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_bac14
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bac14.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=malloc    CMakeFiles/cmTC_bac14.dir/CheckFunctionExists.c.o  -o cmTC_bac14 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_5adc6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5adc6.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=malloc    CMakeFiles/cmTC_5adc6.dir/CheckFunctionExists.c.o  -o cmTC_5adc6 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function memcpy exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6233e/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_6233e.dir/build.make CMakeFiles/cmTC_6233e.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6233e.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memcpy   -o CMakeFiles/cmTC_6233e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_ac996/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_ac996.dir/build.make CMakeFiles/cmTC_ac996.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ac996.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memcpy   -o CMakeFiles/cmTC_ac996.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘memcpy’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_6233e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6233e.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memcpy    CMakeFiles/cmTC_6233e.dir/CheckFunctionExists.c.o  -o cmTC_6233e -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_ac996
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac996.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memcpy    CMakeFiles/cmTC_ac996.dir/CheckFunctionExists.c.o  -o cmTC_ac996 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function memset exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_99779/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_99779.dir/build.make CMakeFiles/cmTC_99779.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_99779.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memset   -o CMakeFiles/cmTC_99779.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_7af4d/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_7af4d.dir/build.make CMakeFiles/cmTC_7af4d.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7af4d.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memset   -o CMakeFiles/cmTC_7af4d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘memset’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_99779
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99779.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memset    CMakeFiles/cmTC_99779.dir/CheckFunctionExists.c.o  -o cmTC_99779 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_7af4d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7af4d.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=memset    CMakeFiles/cmTC_7af4d.dir/CheckFunctionExists.c.o  -o cmTC_7af4d -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function printf exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1ffd8/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_1ffd8.dir/build.make CMakeFiles/cmTC_1ffd8.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1ffd8.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=printf   -o CMakeFiles/cmTC_1ffd8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_40d9b/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_40d9b.dir/build.make CMakeFiles/cmTC_40d9b.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40d9b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=printf   -o CMakeFiles/cmTC_40d9b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘printf’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_1ffd8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ffd8.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=printf    CMakeFiles/cmTC_1ffd8.dir/CheckFunctionExists.c.o  -o cmTC_1ffd8 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_40d9b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40d9b.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=printf    CMakeFiles/cmTC_40d9b.dir/CheckFunctionExists.c.o  -o cmTC_40d9b -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function setjmp exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_60cac/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_60cac.dir/build.make CMakeFiles/cmTC_60cac.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_60cac.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=setjmp   -o CMakeFiles/cmTC_60cac.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_60cac
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60cac.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=setjmp    CMakeFiles/cmTC_60cac.dir/CheckFunctionExists.c.o  -o cmTC_60cac -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_0afb3/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_0afb3.dir/build.make CMakeFiles/cmTC_0afb3.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0afb3.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=setjmp   -o CMakeFiles/cmTC_0afb3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0afb3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0afb3.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=setjmp    CMakeFiles/cmTC_0afb3.dir/CheckFunctionExists.c.o  -o cmTC_0afb3 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function signal exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a80b9/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_a80b9.dir/build.make CMakeFiles/cmTC_a80b9.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a80b9.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=signal   -o CMakeFiles/cmTC_a80b9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a80b9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a80b9.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=signal    CMakeFiles/cmTC_a80b9.dir/CheckFunctionExists.c.o  -o cmTC_a80b9 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a3d1c/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_a3d1c.dir/build.make CMakeFiles/cmTC_a3d1c.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a3d1c.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=signal   -o CMakeFiles/cmTC_a3d1c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a3d1c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3d1c.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=signal    CMakeFiles/cmTC_a3d1c.dir/CheckFunctionExists.c.o  -o cmTC_a3d1c -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function strsignal exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1c224/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_1c224.dir/build.make CMakeFiles/cmTC_1c224.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1c224.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strsignal   -o CMakeFiles/cmTC_1c224.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_1c224
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c224.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strsignal    CMakeFiles/cmTC_1c224.dir/CheckFunctionExists.c.o  -o cmTC_1c224 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_95d4b/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_95d4b.dir/build.make CMakeFiles/cmTC_95d4b.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_95d4b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strsignal   -o CMakeFiles/cmTC_95d4b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_95d4b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95d4b.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strsignal    CMakeFiles/cmTC_95d4b.dir/CheckFunctionExists.c.o  -o cmTC_95d4b -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function strcmp exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2a9e4/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_2a9e4.dir/build.make CMakeFiles/cmTC_2a9e4.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2a9e4.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strcmp   -o CMakeFiles/cmTC_2a9e4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_eafc0/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_eafc0.dir/build.make CMakeFiles/cmTC_eafc0.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eafc0.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strcmp   -o CMakeFiles/cmTC_eafc0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘strcmp’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_2a9e4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a9e4.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strcmp    CMakeFiles/cmTC_2a9e4.dir/CheckFunctionExists.c.o  -o cmTC_2a9e4 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_eafc0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eafc0.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=strcmp    CMakeFiles/cmTC_eafc0.dir/CheckFunctionExists.c.o  -o cmTC_eafc0 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function clock_gettime exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_08609/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_08609.dir/build.make CMakeFiles/cmTC_08609.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_08609.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTC_08609.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_08609
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_08609.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=clock_gettime    CMakeFiles/cmTC_08609.dir/CheckFunctionExists.c.o  -o cmTC_08609 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_87945/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_87945.dir/build.make CMakeFiles/cmTC_87945.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87945.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTC_87945.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_87945
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87945.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=clock_gettime    CMakeFiles/cmTC_87945.dir/CheckFunctionExists.c.o  -o cmTC_87945 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function sprintf exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8ff74/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_8ff74.dir/build.make CMakeFiles/cmTC_8ff74.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8ff74.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=sprintf   -o CMakeFiles/cmTC_8ff74.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_dde47/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_dde47.dir/build.make CMakeFiles/cmTC_dde47.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dde47.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=sprintf   -o CMakeFiles/cmTC_dde47.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘sprintf’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_8ff74
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ff74.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=sprintf    CMakeFiles/cmTC_8ff74.dir/CheckFunctionExists.c.o  -o cmTC_8ff74 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_dde47
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dde47.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=sprintf    CMakeFiles/cmTC_dde47.dir/CheckFunctionExists.c.o  -o cmTC_dde47 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function vsnprintf exists passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_55da8/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_55da8.dir/build.make CMakeFiles/cmTC_55da8.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_55da8.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=vsnprintf   -o CMakeFiles/cmTC_55da8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Run Build Command:"/usr/bin/make" "cmTC_f7262/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_f7262.dir/build.make CMakeFiles/cmTC_f7262.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7262.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=vsnprintf   -o CMakeFiles/cmTC_f7262.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
 <command-line>:0:23: warning: conflicting types for built-in function ‘vsnprintf’
 /usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
  char CHECK_FUNCTION_EXISTS();
       ^
-Linking C executable cmTC_55da8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55da8.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=vsnprintf    CMakeFiles/cmTC_55da8.dir/CheckFunctionExists.c.o  -o cmTC_55da8 -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Linking C executable cmTC_f7262
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7262.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DCHECK_FUNCTION_EXISTS=vsnprintf    CMakeFiles/cmTC_f7262.dir/CheckFunctionExists.c.o  -o cmTC_f7262 -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 
 Performing C SOURCE FILE Test HAVE_GCC_THREAD_LOCAL_STORAGE succeeded with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b3f4a/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_b3f4a.dir/build.make CMakeFiles/cmTC_b3f4a.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b3f4a.dir/src.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_GCC_THREAD_LOCAL_STORAGE   -o CMakeFiles/cmTC_b3f4a.dir/src.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_b3f4a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b3f4a.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_GCC_THREAD_LOCAL_STORAGE    CMakeFiles/cmTC_b3f4a.dir/src.c.o  -o cmTC_b3f4a -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_529ef/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_529ef.dir/build.make CMakeFiles/cmTC_529ef.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_529ef.dir/src.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_GCC_THREAD_LOCAL_STORAGE   -o CMakeFiles/cmTC_529ef.dir/src.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_529ef
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_529ef.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_GCC_THREAD_LOCAL_STORAGE    CMakeFiles/cmTC_529ef.dir/src.c.o  -o cmTC_529ef -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 Source file was:
 
@@ -899,19 +899,19 @@ int main(void) {
     return 0;
 }
 Performing C SOURCE FILE Test HAVE_CLOCK_GETTIME_REALTIME succeeded with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_35fa8/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_35fa8.dir/build.make CMakeFiles/cmTC_35fa8.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_35fa8.dir/src.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_CLOCK_GETTIME_REALTIME   -o CMakeFiles/cmTC_35fa8.dir/src.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_35fa8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35fa8.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_CLOCK_GETTIME_REALTIME    CMakeFiles/cmTC_35fa8.dir/src.c.o  -o cmTC_35fa8 -rdynamic /usr/lib/x86_64-linux-gnu/librt.so 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_67a94/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_67a94.dir/build.make CMakeFiles/cmTC_67a94.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_67a94.dir/src.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_CLOCK_GETTIME_REALTIME   -o CMakeFiles/cmTC_67a94.dir/src.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_67a94
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67a94.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -DHAVE_CLOCK_GETTIME_REALTIME    CMakeFiles/cmTC_67a94.dir/src.c.o  -o cmTC_67a94 -rdynamic /usr/lib/x86_64-linux-gnu/librt.so 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 Source file was:
 
@@ -925,18 +925,18 @@ int main(void) {
     return 0;
 }
 Determining size of unsigned short passed with the following output:
-Change Dir: /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
+Change Dir: /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b9caf/fast"
-make[3]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_b9caf.dir/build.make CMakeFiles/cmTC_b9caf.dir/build
-make[4]: Entering directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b9caf.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
-/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_b9caf.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
-Linking C executable cmTC_b9caf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9caf.dir/link.txt --verbose=1
-/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_b9caf.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTC_b9caf -rdynamic 
-make[4]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
-make[3]: Leaving directory '/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_220ae/fast"
+make[3]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_220ae.dir/build.make CMakeFiles/cmTC_220ae.dir/build
+make[4]: Entering directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_220ae.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/usr/bin/cc    -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE    -o CMakeFiles/cmTC_220ae.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTC_220ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_220ae.dir/link.txt --verbose=1
+/usr/bin/cc   -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -Wundef -fPIC -fstack-protector -D_GNU_SOURCE -D_LARGEFILE64_SOURCE     CMakeFiles/cmTC_220ae.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTC_220ae -rdynamic 
+make[4]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory '/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles/CMakeTmp'
 
 

@@ -46,15 +46,15 @@ stdint.h
 inttypes.h
 -
 
-/home/cc/local_build/zfp/tests/utils/stridedOperations.c
+/home/cc/local-build/zfp/tests/utils/stridedOperations.c
 string.h
 -
 stridedOperations.h
-/home/cc/local_build/zfp/tests/utils/stridedOperations.h
+/home/cc/local-build/zfp/tests/utils/stridedOperations.h
 
-/home/cc/local_build/zfp/tests/utils/stridedOperations.h
+/home/cc/local-build/zfp/tests/utils/stridedOperations.h
 stddef.h
 -
 zfp.h
-/home/cc/local_build/zfp/tests/utils/zfp.h
+/home/cc/local-build/zfp/tests/utils/zfp.h
 

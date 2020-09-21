@@ -20,10 +20,10 @@ tests/array/CMakeFiles/testArray3fPtrs.dir/testArray3fPtrs.cpp.o
  ../include/zfp/system.h
  ../include/zfp/types.h
  ../tests/constants/universalConsts.h
- /home/cc/local_build/zfp/tests/array/testArray3PtrsBase.cpp
- /home/cc/local_build/zfp/tests/array/testArray3fPtrs.cpp
- /home/cc/local_build/zfp/tests/array/testArrayPtrsBase.cpp
- /home/cc/local_build/zfp/tests/array/utils/gtest3fTest.h
+ /home/cc/local-build/zfp/tests/array/testArray3PtrsBase.cpp
+ /home/cc/local-build/zfp/tests/array/testArray3fPtrs.cpp
+ /home/cc/local-build/zfp/tests/array/testArrayPtrsBase.cpp
+ /home/cc/local-build/zfp/tests/array/utils/gtest3fTest.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/local_build/zfp/build_debug/cmocka-src/src
+# Install script for directory: /home/cc/local-build/zfp/build_debug/cmocka-src/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -54,9 +54,9 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/usr/local/lib" TYPE SHARED_LIBRARY FILES
-    "/home/cc/local_build/zfp/build_debug/cmocka-build/src/libcmocka.so.0.4.0"
-    "/home/cc/local_build/zfp/build_debug/cmocka-build/src/libcmocka.so.0"
-    "/home/cc/local_build/zfp/build_debug/cmocka-build/src/libcmocka.so"
+    "/home/cc/local-build/zfp/build_debug/cmocka-build/src/libcmocka.so.0.4.0"
+    "/home/cc/local-build/zfp/build_debug/cmocka-build/src/libcmocka.so.0"
+    "/home/cc/local-build/zfp/build_debug/cmocka-build/src/libcmocka.so"
     )
   foreach(file
       "$ENV{DESTDIR}/usr/local/lib/libcmocka.so.0.4.0"
@@ -81,6 +81,6 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "librari
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/lib" TYPE STATIC_LIBRARY FILES "/home/cc/local_build/zfp/build_debug/cmocka-build/src/libcmocka.a")
+file(INSTALL DESTINATION "/usr/local/lib" TYPE STATIC_LIBRARY FILES "/home/cc/local-build/zfp/build_debug/cmocka-build/src/libcmocka.a")
 endif()
 

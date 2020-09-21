@@ -29,4 +29,4 @@ tests/CMakeFiles/testzfp.dir/testzfp.cpp.o
  ../include/zfp.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/tests/testzfp.cpp
+ /home/cc/local-build/zfp/tests/testzfp.cpp

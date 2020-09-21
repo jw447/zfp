@@ -28,11 +28,11 @@ tests/array/CMakeFiles/testArray2fRefs.dir/testArray2fRefs.cpp.o
  ../tests/constants/universalConsts.h
  ../tests/utils/rand32.h
  ../tests/utils/zfpHash.h
- /home/cc/local_build/zfp/tests/array/testArray2RefsBase.cpp
- /home/cc/local_build/zfp/tests/array/testArray2fRefs.cpp
- /home/cc/local_build/zfp/tests/array/testArrayRefsBase.cpp
- /home/cc/local_build/zfp/tests/array/utils/gtest2fTest.h
- /home/cc/local_build/zfp/tests/array/utils/predicates.h
+ /home/cc/local-build/zfp/tests/array/testArray2RefsBase.cpp
+ /home/cc/local-build/zfp/tests/array/testArray2fRefs.cpp
+ /home/cc/local-build/zfp/tests/array/testArrayRefsBase.cpp
+ /home/cc/local-build/zfp/tests/array/utils/gtest2fTest.h
+ /home/cc/local-build/zfp/tests/array/utils/predicates.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

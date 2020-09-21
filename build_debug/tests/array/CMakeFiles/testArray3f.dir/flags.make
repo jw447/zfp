@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -fPIE   -Wno-unused-function -std=gnu++98
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/cc/local_build/zfp/build_debug/cmocka-src/include -I/home/cc/local_build/zfp -I/home/cc/local_build/zfp/include -I/home/cc/local_build/zfp/tests -isystem /home/cc/local_build/zfp/build_debug/googletest-src/googletest/include -isystem /home/cc/local_build/zfp/build_debug/googletest-src/googletest -I/home/cc/local_build/zfp/array 
+CXX_INCLUDES = -I/home/cc/local-build/zfp/build_debug/cmocka-src/include -I/home/cc/local-build/zfp -I/home/cc/local-build/zfp/include -I/home/cc/local-build/zfp/tests -isystem /home/cc/local-build/zfp/build_debug/googletest-src/googletest/include -isystem /home/cc/local-build/zfp/build_debug/googletest-src/googletest -I/home/cc/local-build/zfp/array 
 

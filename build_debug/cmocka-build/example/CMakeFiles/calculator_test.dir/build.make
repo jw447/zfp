@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug/cmocka-build
 
 # Include any dependencies generated for this target.
 include example/CMakeFiles/calculator_test.dir/depend.make
@@ -58,17 +58,17 @@ include example/CMakeFiles/calculator_test.dir/progress.make
 include example/CMakeFiles/calculator_test.dir/flags.make
 
 example/CMakeFiles/calculator_test.dir/calculator.c.o: example/CMakeFiles/calculator_test.dir/flags.make
-example/CMakeFiles/calculator_test.dir/calculator.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/CMakeFiles/calculator_test.dir/calculator.c.o"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/calculator_test.dir/calculator.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator.c
+example/CMakeFiles/calculator_test.dir/calculator.c.o: /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/CMakeFiles/calculator_test.dir/calculator.c.o"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/calculator_test.dir/calculator.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator.c
 
 example/CMakeFiles/calculator_test.dir/calculator.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/calculator_test.dir/calculator.c.i"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator.c > CMakeFiles/calculator_test.dir/calculator.c.i
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator.c > CMakeFiles/calculator_test.dir/calculator.c.i
 
 example/CMakeFiles/calculator_test.dir/calculator.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/calculator_test.dir/calculator.c.s"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator.c -o CMakeFiles/calculator_test.dir/calculator.c.s
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator.c -o CMakeFiles/calculator_test.dir/calculator.c.s
 
 example/CMakeFiles/calculator_test.dir/calculator.c.o.requires:
 
@@ -82,17 +82,17 @@ example/CMakeFiles/calculator_test.dir/calculator.c.o.provides.build: example/CM
 
 
 example/CMakeFiles/calculator_test.dir/calculator_test.c.o: example/CMakeFiles/calculator_test.dir/flags.make
-example/CMakeFiles/calculator_test.dir/calculator_test.c.o: /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/CMakeFiles/calculator_test.dir/calculator_test.c.o"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/calculator_test.dir/calculator_test.c.o   -c /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator_test.c
+example/CMakeFiles/calculator_test.dir/calculator_test.c.o: /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator_test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object example/CMakeFiles/calculator_test.dir/calculator_test.c.o"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/calculator_test.dir/calculator_test.c.o   -c /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator_test.c
 
 example/CMakeFiles/calculator_test.dir/calculator_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/calculator_test.dir/calculator_test.c.i"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator_test.c > CMakeFiles/calculator_test.dir/calculator_test.c.i
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator_test.c > CMakeFiles/calculator_test.dir/calculator_test.c.i
 
 example/CMakeFiles/calculator_test.dir/calculator_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/calculator_test.dir/calculator_test.c.s"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator_test.c -o CMakeFiles/calculator_test.dir/calculator_test.c.s
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator_test.c -o CMakeFiles/calculator_test.dir/calculator_test.c.s
 
 example/CMakeFiles/calculator_test.dir/calculator_test.c.o.requires:
 
@@ -118,8 +118,8 @@ example/calculator_test: example/CMakeFiles/calculator_test.dir/calculator_test.
 example/calculator_test: example/CMakeFiles/calculator_test.dir/build.make
 example/calculator_test: src/libcmocka.so.0.4.0
 example/calculator_test: example/CMakeFiles/calculator_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable calculator_test"
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/calculator_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local-build/zfp/build_debug/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable calculator_test"
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/calculator_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/CMakeFiles/calculator_test.dir/build: example/calculator_test
@@ -132,10 +132,10 @@ example/CMakeFiles/calculator_test.dir/requires: example/CMakeFiles/calculator_t
 .PHONY : example/CMakeFiles/calculator_test.dir/requires
 
 example/CMakeFiles/calculator_test.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -P CMakeFiles/calculator_test.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/example && $(CMAKE_COMMAND) -P CMakeFiles/calculator_test.dir/cmake_clean.cmake
 .PHONY : example/CMakeFiles/calculator_test.dir/clean
 
 example/CMakeFiles/calculator_test.dir/depend:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src /home/cc/local_build/zfp/build_debug/cmocka-src/example /home/cc/local_build/zfp/build_debug/cmocka-build /home/cc/local_build/zfp/build_debug/cmocka-build/example /home/cc/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/calculator_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp/build_debug/cmocka-src /home/cc/local-build/zfp/build_debug/cmocka-src/example /home/cc/local-build/zfp/build_debug/cmocka-build /home/cc/local-build/zfp/build_debug/cmocka-build/example /home/cc/local-build/zfp/build_debug/cmocka-build/example/CMakeFiles/calculator_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/CMakeFiles/calculator_test.dir/depend
 

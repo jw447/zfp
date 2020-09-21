@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/CMakeFiles/progress.marks
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles /home/cc/local-build/zfp/build_debug/tests/CMakeFiles/progress.marks
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/CMakeFiles/cmocka_cloned.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/cmocka_cloned.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/cmocka_cloned.dir/rule
 .PHONY : tests/CMakeFiles/cmocka_cloned.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ cmocka_cloned: tests/CMakeFiles/cmocka_cloned.dir/rule
 
 # fast build rule for target.
 cmocka_cloned/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/cmocka_cloned.dir/build.make tests/CMakeFiles/cmocka_cloned.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/cmocka_cloned.dir/build.make tests/CMakeFiles/cmocka_cloned.dir/build
 .PHONY : cmocka_cloned/fast
 
 # Convenience name for target.
 tests/CMakeFiles/testzfp.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/testzfp.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/testzfp.dir/rule
 .PHONY : tests/CMakeFiles/testzfp.dir/rule
 
 # Convenience name for target.
@@ -192,7 +192,7 @@ testzfp: tests/CMakeFiles/testzfp.dir/rule
 
 # fast build rule for target.
 testzfp/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/build
 .PHONY : testzfp/fast
 
 testzfp.o: testzfp.cpp.o
@@ -201,7 +201,7 @@ testzfp.o: testzfp.cpp.o
 
 # target to build an object file
 testzfp.cpp.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/testzfp.cpp.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/testzfp.cpp.o
 .PHONY : testzfp.cpp.o
 
 testzfp.i: testzfp.cpp.i
@@ -210,7 +210,7 @@ testzfp.i: testzfp.cpp.i
 
 # target to preprocess a source file
 testzfp.cpp.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/testzfp.cpp.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/testzfp.cpp.i
 .PHONY : testzfp.cpp.i
 
 testzfp.s: testzfp.cpp.s
@@ -219,7 +219,7 @@ testzfp.s: testzfp.cpp.s
 
 # target to generate assembly for a file
 testzfp.cpp.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/testzfp.cpp.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/CMakeFiles/testzfp.dir/build.make tests/CMakeFiles/testzfp.dir/testzfp.cpp.s
 .PHONY : testzfp.cpp.s
 
 # Help Target
@@ -251,6 +251,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

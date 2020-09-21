@@ -10,9 +10,9 @@
 stddef.h
 -
 
-/home/cc/local_build/zfp/tests/utils/zfpCompressionParams.c
+/home/cc/local-build/zfp/tests/utils/zfpCompressionParams.c
 math.h
 -
 utils/zfpCompressionParams.h
-/home/cc/local_build/zfp/tests/utils/utils/zfpCompressionParams.h
+/home/cc/local-build/zfp/tests/utils/utils/zfpCompressionParams.h
 

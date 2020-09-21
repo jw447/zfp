@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 # Include any dependencies generated for this target.
 include tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/depend.make
@@ -59,16 +59,16 @@ include tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/flags.m
 
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o: tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/flags.make
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o: ../tests/src/encode/testZfpEncodeBlockStrided4dFloat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/encode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o   -c /home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dFloat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o"
+	cd /home/cc/local-build/zfp/build_debug/tests/src/encode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o   -c /home/cc/local-build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dFloat.c
 
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.i"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/encode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dFloat.c > CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.i
+	cd /home/cc/local-build/zfp/build_debug/tests/src/encode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dFloat.c > CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.i
 
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.s"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/encode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dFloat.c -o CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.s
+	cd /home/cc/local-build/zfp/build_debug/tests/src/encode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dFloat.c -o CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.s
 
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/testZfpEncodeBlockStrided4dFloat.c.o.requires:
 
@@ -96,8 +96,8 @@ bin/testZfpEncodeBlockStrided4dFloat: lib/librand32Lib.so
 bin/testZfpEncodeBlockStrided4dFloat: lib/libzfpHashLib.so
 bin/testZfpEncodeBlockStrided4dFloat: lib/libzfpChecksumsLib.so
 bin/testZfpEncodeBlockStrided4dFloat: tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../../bin/testZfpEncodeBlockStrided4dFloat"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/encode && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../../bin/testZfpEncodeBlockStrided4dFloat"
+	cd /home/cc/local-build/zfp/build_debug/tests/src/encode && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/build: bin/testZfpEncodeBlockStrided4dFloat
@@ -109,10 +109,10 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/requires: tests
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/requires
 
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/tests/src/encode && $(CMAKE_COMMAND) -P CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/tests/src/encode && $(CMAKE_COMMAND) -P CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/cmake_clean.cmake
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/clean
 
 tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp /home/cc/local_build/zfp/tests/src/encode /home/cc/local_build/zfp/build_debug /home/cc/local_build/zfp/build_debug/tests/src/encode /home/cc/local_build/zfp/build_debug/tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp /home/cc/local-build/zfp/tests/src/encode /home/cc/local-build/zfp/build_debug /home/cc/local-build/zfp/build_debug/tests/src/encode /home/cc/local-build/zfp/build_debug/tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dFloat.dir/depend
 

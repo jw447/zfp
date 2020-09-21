@@ -190,7 +190,7 @@ stdint.h
 inttypes.h
 -
 
-/home/cc/local_build/zfp/tests/testzfp.cpp
+/home/cc/local-build/zfp/tests/testzfp.cpp
 algorithm
 -
 cmath
@@ -216,11 +216,11 @@ sstream
 string
 -
 zfp.h
-/home/cc/local_build/zfp/tests/zfp.h
+/home/cc/local-build/zfp/tests/zfp.h
 zfparray1.h
-/home/cc/local_build/zfp/tests/zfparray1.h
+/home/cc/local-build/zfp/tests/zfparray1.h
 zfparray2.h
-/home/cc/local_build/zfp/tests/zfparray2.h
+/home/cc/local-build/zfp/tests/zfparray2.h
 zfparray3.h
-/home/cc/local_build/zfp/tests/zfparray3.h
+/home/cc/local-build/zfp/tests/zfparray3.h
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/zfp.dir/depend.make
@@ -60,22 +60,22 @@ include src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o.depend
 src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o.cmake
 src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o: ../src/cuda_zfp/cuZFP.cu
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o"
-	cd /home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp && /usr/bin/cmake -E make_directory /home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/.
-	cd /home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/./zfp_generated_cuZFP.cu.o -D generated_cubin_file:STRING=/home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/./zfp_generated_cuZFP.cu.o.cubin.txt -P /home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o"
+	cd /home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp && /usr/bin/cmake -E make_directory /home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/.
+	cd /home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/./zfp_generated_cuZFP.cu.o -D generated_cubin_file:STRING=/home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/./zfp_generated_cuZFP.cu.o.cubin.txt -P /home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o.cmake
 
 src/CMakeFiles/zfp.dir/zfp.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/zfp.c.o: ../src/zfp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/zfp.dir/zfp.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/zfp.c.o   -c /home/cc/local_build/zfp/src/zfp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/zfp.dir/zfp.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/zfp.c.o   -c /home/cc/local-build/zfp/src/zfp.c
 
 src/CMakeFiles/zfp.dir/zfp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/zfp.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/zfp.c > CMakeFiles/zfp.dir/zfp.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/zfp.c > CMakeFiles/zfp.dir/zfp.c.i
 
 src/CMakeFiles/zfp.dir/zfp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/zfp.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/zfp.c -o CMakeFiles/zfp.dir/zfp.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/zfp.c -o CMakeFiles/zfp.dir/zfp.c.s
 
 src/CMakeFiles/zfp.dir/zfp.c.o.requires:
 
@@ -90,16 +90,16 @@ src/CMakeFiles/zfp.dir/zfp.c.o.provides.build: src/CMakeFiles/zfp.dir/zfp.c.o
 
 src/CMakeFiles/zfp.dir/bitstream.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/bitstream.c.o: ../src/bitstream.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/zfp.dir/bitstream.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/bitstream.c.o   -c /home/cc/local_build/zfp/src/bitstream.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/zfp.dir/bitstream.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/bitstream.c.o   -c /home/cc/local-build/zfp/src/bitstream.c
 
 src/CMakeFiles/zfp.dir/bitstream.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/bitstream.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/bitstream.c > CMakeFiles/zfp.dir/bitstream.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/bitstream.c > CMakeFiles/zfp.dir/bitstream.c.i
 
 src/CMakeFiles/zfp.dir/bitstream.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/bitstream.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/bitstream.c -o CMakeFiles/zfp.dir/bitstream.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/bitstream.c -o CMakeFiles/zfp.dir/bitstream.c.s
 
 src/CMakeFiles/zfp.dir/bitstream.c.o.requires:
 
@@ -114,16 +114,16 @@ src/CMakeFiles/zfp.dir/bitstream.c.o.provides.build: src/CMakeFiles/zfp.dir/bits
 
 src/CMakeFiles/zfp.dir/encode1f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode1f.c.o: ../src/encode1f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/zfp.dir/encode1f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1f.c.o   -c /home/cc/local_build/zfp/src/encode1f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/zfp.dir/encode1f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1f.c.o   -c /home/cc/local-build/zfp/src/encode1f.c
 
 src/CMakeFiles/zfp.dir/encode1f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode1f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode1f.c > CMakeFiles/zfp.dir/encode1f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode1f.c > CMakeFiles/zfp.dir/encode1f.c.i
 
 src/CMakeFiles/zfp.dir/encode1f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode1f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode1f.c -o CMakeFiles/zfp.dir/encode1f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode1f.c -o CMakeFiles/zfp.dir/encode1f.c.s
 
 src/CMakeFiles/zfp.dir/encode1f.c.o.requires:
 
@@ -138,16 +138,16 @@ src/CMakeFiles/zfp.dir/encode1f.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode1d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode1d.c.o: ../src/encode1d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/zfp.dir/encode1d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1d.c.o   -c /home/cc/local_build/zfp/src/encode1d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/zfp.dir/encode1d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1d.c.o   -c /home/cc/local-build/zfp/src/encode1d.c
 
 src/CMakeFiles/zfp.dir/encode1d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode1d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode1d.c > CMakeFiles/zfp.dir/encode1d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode1d.c > CMakeFiles/zfp.dir/encode1d.c.i
 
 src/CMakeFiles/zfp.dir/encode1d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode1d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode1d.c -o CMakeFiles/zfp.dir/encode1d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode1d.c -o CMakeFiles/zfp.dir/encode1d.c.s
 
 src/CMakeFiles/zfp.dir/encode1d.c.o.requires:
 
@@ -162,16 +162,16 @@ src/CMakeFiles/zfp.dir/encode1d.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode1i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode1i.c.o: ../src/encode1i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/zfp.dir/encode1i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1i.c.o   -c /home/cc/local_build/zfp/src/encode1i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/zfp.dir/encode1i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1i.c.o   -c /home/cc/local-build/zfp/src/encode1i.c
 
 src/CMakeFiles/zfp.dir/encode1i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode1i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode1i.c > CMakeFiles/zfp.dir/encode1i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode1i.c > CMakeFiles/zfp.dir/encode1i.c.i
 
 src/CMakeFiles/zfp.dir/encode1i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode1i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode1i.c -o CMakeFiles/zfp.dir/encode1i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode1i.c -o CMakeFiles/zfp.dir/encode1i.c.s
 
 src/CMakeFiles/zfp.dir/encode1i.c.o.requires:
 
@@ -186,16 +186,16 @@ src/CMakeFiles/zfp.dir/encode1i.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode1l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode1l.c.o: ../src/encode1l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/CMakeFiles/zfp.dir/encode1l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1l.c.o   -c /home/cc/local_build/zfp/src/encode1l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/CMakeFiles/zfp.dir/encode1l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode1l.c.o   -c /home/cc/local-build/zfp/src/encode1l.c
 
 src/CMakeFiles/zfp.dir/encode1l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode1l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode1l.c > CMakeFiles/zfp.dir/encode1l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode1l.c > CMakeFiles/zfp.dir/encode1l.c.i
 
 src/CMakeFiles/zfp.dir/encode1l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode1l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode1l.c -o CMakeFiles/zfp.dir/encode1l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode1l.c -o CMakeFiles/zfp.dir/encode1l.c.s
 
 src/CMakeFiles/zfp.dir/encode1l.c.o.requires:
 
@@ -210,16 +210,16 @@ src/CMakeFiles/zfp.dir/encode1l.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/decode1f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode1f.c.o: ../src/decode1f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/CMakeFiles/zfp.dir/decode1f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1f.c.o   -c /home/cc/local_build/zfp/src/decode1f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/CMakeFiles/zfp.dir/decode1f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1f.c.o   -c /home/cc/local-build/zfp/src/decode1f.c
 
 src/CMakeFiles/zfp.dir/decode1f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode1f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode1f.c > CMakeFiles/zfp.dir/decode1f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode1f.c > CMakeFiles/zfp.dir/decode1f.c.i
 
 src/CMakeFiles/zfp.dir/decode1f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode1f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode1f.c -o CMakeFiles/zfp.dir/decode1f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode1f.c -o CMakeFiles/zfp.dir/decode1f.c.s
 
 src/CMakeFiles/zfp.dir/decode1f.c.o.requires:
 
@@ -234,16 +234,16 @@ src/CMakeFiles/zfp.dir/decode1f.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode1d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode1d.c.o: ../src/decode1d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/CMakeFiles/zfp.dir/decode1d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1d.c.o   -c /home/cc/local_build/zfp/src/decode1d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/CMakeFiles/zfp.dir/decode1d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1d.c.o   -c /home/cc/local-build/zfp/src/decode1d.c
 
 src/CMakeFiles/zfp.dir/decode1d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode1d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode1d.c > CMakeFiles/zfp.dir/decode1d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode1d.c > CMakeFiles/zfp.dir/decode1d.c.i
 
 src/CMakeFiles/zfp.dir/decode1d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode1d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode1d.c -o CMakeFiles/zfp.dir/decode1d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode1d.c -o CMakeFiles/zfp.dir/decode1d.c.s
 
 src/CMakeFiles/zfp.dir/decode1d.c.o.requires:
 
@@ -258,16 +258,16 @@ src/CMakeFiles/zfp.dir/decode1d.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode1i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode1i.c.o: ../src/decode1i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/CMakeFiles/zfp.dir/decode1i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1i.c.o   -c /home/cc/local_build/zfp/src/decode1i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/CMakeFiles/zfp.dir/decode1i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1i.c.o   -c /home/cc/local-build/zfp/src/decode1i.c
 
 src/CMakeFiles/zfp.dir/decode1i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode1i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode1i.c > CMakeFiles/zfp.dir/decode1i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode1i.c > CMakeFiles/zfp.dir/decode1i.c.i
 
 src/CMakeFiles/zfp.dir/decode1i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode1i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode1i.c -o CMakeFiles/zfp.dir/decode1i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode1i.c -o CMakeFiles/zfp.dir/decode1i.c.s
 
 src/CMakeFiles/zfp.dir/decode1i.c.o.requires:
 
@@ -282,16 +282,16 @@ src/CMakeFiles/zfp.dir/decode1i.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode1l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode1l.c.o: ../src/decode1l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/CMakeFiles/zfp.dir/decode1l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1l.c.o   -c /home/cc/local_build/zfp/src/decode1l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/CMakeFiles/zfp.dir/decode1l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode1l.c.o   -c /home/cc/local-build/zfp/src/decode1l.c
 
 src/CMakeFiles/zfp.dir/decode1l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode1l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode1l.c > CMakeFiles/zfp.dir/decode1l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode1l.c > CMakeFiles/zfp.dir/decode1l.c.i
 
 src/CMakeFiles/zfp.dir/decode1l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode1l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode1l.c -o CMakeFiles/zfp.dir/decode1l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode1l.c -o CMakeFiles/zfp.dir/decode1l.c.s
 
 src/CMakeFiles/zfp.dir/decode1l.c.o.requires:
 
@@ -306,16 +306,16 @@ src/CMakeFiles/zfp.dir/decode1l.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/encode2f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode2f.c.o: ../src/encode2f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/CMakeFiles/zfp.dir/encode2f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2f.c.o   -c /home/cc/local_build/zfp/src/encode2f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/CMakeFiles/zfp.dir/encode2f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2f.c.o   -c /home/cc/local-build/zfp/src/encode2f.c
 
 src/CMakeFiles/zfp.dir/encode2f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode2f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode2f.c > CMakeFiles/zfp.dir/encode2f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode2f.c > CMakeFiles/zfp.dir/encode2f.c.i
 
 src/CMakeFiles/zfp.dir/encode2f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode2f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode2f.c -o CMakeFiles/zfp.dir/encode2f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode2f.c -o CMakeFiles/zfp.dir/encode2f.c.s
 
 src/CMakeFiles/zfp.dir/encode2f.c.o.requires:
 
@@ -330,16 +330,16 @@ src/CMakeFiles/zfp.dir/encode2f.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode2d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode2d.c.o: ../src/encode2d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object src/CMakeFiles/zfp.dir/encode2d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2d.c.o   -c /home/cc/local_build/zfp/src/encode2d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object src/CMakeFiles/zfp.dir/encode2d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2d.c.o   -c /home/cc/local-build/zfp/src/encode2d.c
 
 src/CMakeFiles/zfp.dir/encode2d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode2d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode2d.c > CMakeFiles/zfp.dir/encode2d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode2d.c > CMakeFiles/zfp.dir/encode2d.c.i
 
 src/CMakeFiles/zfp.dir/encode2d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode2d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode2d.c -o CMakeFiles/zfp.dir/encode2d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode2d.c -o CMakeFiles/zfp.dir/encode2d.c.s
 
 src/CMakeFiles/zfp.dir/encode2d.c.o.requires:
 
@@ -354,16 +354,16 @@ src/CMakeFiles/zfp.dir/encode2d.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode2i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode2i.c.o: ../src/encode2i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object src/CMakeFiles/zfp.dir/encode2i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2i.c.o   -c /home/cc/local_build/zfp/src/encode2i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object src/CMakeFiles/zfp.dir/encode2i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2i.c.o   -c /home/cc/local-build/zfp/src/encode2i.c
 
 src/CMakeFiles/zfp.dir/encode2i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode2i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode2i.c > CMakeFiles/zfp.dir/encode2i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode2i.c > CMakeFiles/zfp.dir/encode2i.c.i
 
 src/CMakeFiles/zfp.dir/encode2i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode2i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode2i.c -o CMakeFiles/zfp.dir/encode2i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode2i.c -o CMakeFiles/zfp.dir/encode2i.c.s
 
 src/CMakeFiles/zfp.dir/encode2i.c.o.requires:
 
@@ -378,16 +378,16 @@ src/CMakeFiles/zfp.dir/encode2i.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode2l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode2l.c.o: ../src/encode2l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object src/CMakeFiles/zfp.dir/encode2l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2l.c.o   -c /home/cc/local_build/zfp/src/encode2l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object src/CMakeFiles/zfp.dir/encode2l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode2l.c.o   -c /home/cc/local-build/zfp/src/encode2l.c
 
 src/CMakeFiles/zfp.dir/encode2l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode2l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode2l.c > CMakeFiles/zfp.dir/encode2l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode2l.c > CMakeFiles/zfp.dir/encode2l.c.i
 
 src/CMakeFiles/zfp.dir/encode2l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode2l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode2l.c -o CMakeFiles/zfp.dir/encode2l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode2l.c -o CMakeFiles/zfp.dir/encode2l.c.s
 
 src/CMakeFiles/zfp.dir/encode2l.c.o.requires:
 
@@ -402,16 +402,16 @@ src/CMakeFiles/zfp.dir/encode2l.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/decode2f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode2f.c.o: ../src/decode2f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object src/CMakeFiles/zfp.dir/decode2f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2f.c.o   -c /home/cc/local_build/zfp/src/decode2f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object src/CMakeFiles/zfp.dir/decode2f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2f.c.o   -c /home/cc/local-build/zfp/src/decode2f.c
 
 src/CMakeFiles/zfp.dir/decode2f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode2f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode2f.c > CMakeFiles/zfp.dir/decode2f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode2f.c > CMakeFiles/zfp.dir/decode2f.c.i
 
 src/CMakeFiles/zfp.dir/decode2f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode2f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode2f.c -o CMakeFiles/zfp.dir/decode2f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode2f.c -o CMakeFiles/zfp.dir/decode2f.c.s
 
 src/CMakeFiles/zfp.dir/decode2f.c.o.requires:
 
@@ -426,16 +426,16 @@ src/CMakeFiles/zfp.dir/decode2f.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode2d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode2d.c.o: ../src/decode2d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object src/CMakeFiles/zfp.dir/decode2d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2d.c.o   -c /home/cc/local_build/zfp/src/decode2d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object src/CMakeFiles/zfp.dir/decode2d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2d.c.o   -c /home/cc/local-build/zfp/src/decode2d.c
 
 src/CMakeFiles/zfp.dir/decode2d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode2d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode2d.c > CMakeFiles/zfp.dir/decode2d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode2d.c > CMakeFiles/zfp.dir/decode2d.c.i
 
 src/CMakeFiles/zfp.dir/decode2d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode2d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode2d.c -o CMakeFiles/zfp.dir/decode2d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode2d.c -o CMakeFiles/zfp.dir/decode2d.c.s
 
 src/CMakeFiles/zfp.dir/decode2d.c.o.requires:
 
@@ -450,16 +450,16 @@ src/CMakeFiles/zfp.dir/decode2d.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode2i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode2i.c.o: ../src/decode2i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object src/CMakeFiles/zfp.dir/decode2i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2i.c.o   -c /home/cc/local_build/zfp/src/decode2i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object src/CMakeFiles/zfp.dir/decode2i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2i.c.o   -c /home/cc/local-build/zfp/src/decode2i.c
 
 src/CMakeFiles/zfp.dir/decode2i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode2i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode2i.c > CMakeFiles/zfp.dir/decode2i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode2i.c > CMakeFiles/zfp.dir/decode2i.c.i
 
 src/CMakeFiles/zfp.dir/decode2i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode2i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode2i.c -o CMakeFiles/zfp.dir/decode2i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode2i.c -o CMakeFiles/zfp.dir/decode2i.c.s
 
 src/CMakeFiles/zfp.dir/decode2i.c.o.requires:
 
@@ -474,16 +474,16 @@ src/CMakeFiles/zfp.dir/decode2i.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode2l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode2l.c.o: ../src/decode2l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object src/CMakeFiles/zfp.dir/decode2l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2l.c.o   -c /home/cc/local_build/zfp/src/decode2l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object src/CMakeFiles/zfp.dir/decode2l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode2l.c.o   -c /home/cc/local-build/zfp/src/decode2l.c
 
 src/CMakeFiles/zfp.dir/decode2l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode2l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode2l.c > CMakeFiles/zfp.dir/decode2l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode2l.c > CMakeFiles/zfp.dir/decode2l.c.i
 
 src/CMakeFiles/zfp.dir/decode2l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode2l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode2l.c -o CMakeFiles/zfp.dir/decode2l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode2l.c -o CMakeFiles/zfp.dir/decode2l.c.s
 
 src/CMakeFiles/zfp.dir/decode2l.c.o.requires:
 
@@ -498,16 +498,16 @@ src/CMakeFiles/zfp.dir/decode2l.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/encode3f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode3f.c.o: ../src/encode3f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object src/CMakeFiles/zfp.dir/encode3f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3f.c.o   -c /home/cc/local_build/zfp/src/encode3f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object src/CMakeFiles/zfp.dir/encode3f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3f.c.o   -c /home/cc/local-build/zfp/src/encode3f.c
 
 src/CMakeFiles/zfp.dir/encode3f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode3f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode3f.c > CMakeFiles/zfp.dir/encode3f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode3f.c > CMakeFiles/zfp.dir/encode3f.c.i
 
 src/CMakeFiles/zfp.dir/encode3f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode3f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode3f.c -o CMakeFiles/zfp.dir/encode3f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode3f.c -o CMakeFiles/zfp.dir/encode3f.c.s
 
 src/CMakeFiles/zfp.dir/encode3f.c.o.requires:
 
@@ -522,16 +522,16 @@ src/CMakeFiles/zfp.dir/encode3f.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode3d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode3d.c.o: ../src/encode3d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object src/CMakeFiles/zfp.dir/encode3d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3d.c.o   -c /home/cc/local_build/zfp/src/encode3d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object src/CMakeFiles/zfp.dir/encode3d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3d.c.o   -c /home/cc/local-build/zfp/src/encode3d.c
 
 src/CMakeFiles/zfp.dir/encode3d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode3d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode3d.c > CMakeFiles/zfp.dir/encode3d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode3d.c > CMakeFiles/zfp.dir/encode3d.c.i
 
 src/CMakeFiles/zfp.dir/encode3d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode3d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode3d.c -o CMakeFiles/zfp.dir/encode3d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode3d.c -o CMakeFiles/zfp.dir/encode3d.c.s
 
 src/CMakeFiles/zfp.dir/encode3d.c.o.requires:
 
@@ -546,16 +546,16 @@ src/CMakeFiles/zfp.dir/encode3d.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode3i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode3i.c.o: ../src/encode3i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object src/CMakeFiles/zfp.dir/encode3i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3i.c.o   -c /home/cc/local_build/zfp/src/encode3i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object src/CMakeFiles/zfp.dir/encode3i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3i.c.o   -c /home/cc/local-build/zfp/src/encode3i.c
 
 src/CMakeFiles/zfp.dir/encode3i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode3i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode3i.c > CMakeFiles/zfp.dir/encode3i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode3i.c > CMakeFiles/zfp.dir/encode3i.c.i
 
 src/CMakeFiles/zfp.dir/encode3i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode3i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode3i.c -o CMakeFiles/zfp.dir/encode3i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode3i.c -o CMakeFiles/zfp.dir/encode3i.c.s
 
 src/CMakeFiles/zfp.dir/encode3i.c.o.requires:
 
@@ -570,16 +570,16 @@ src/CMakeFiles/zfp.dir/encode3i.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode3l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode3l.c.o: ../src/encode3l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object src/CMakeFiles/zfp.dir/encode3l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3l.c.o   -c /home/cc/local_build/zfp/src/encode3l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object src/CMakeFiles/zfp.dir/encode3l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode3l.c.o   -c /home/cc/local-build/zfp/src/encode3l.c
 
 src/CMakeFiles/zfp.dir/encode3l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode3l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode3l.c > CMakeFiles/zfp.dir/encode3l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode3l.c > CMakeFiles/zfp.dir/encode3l.c.i
 
 src/CMakeFiles/zfp.dir/encode3l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode3l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode3l.c -o CMakeFiles/zfp.dir/encode3l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode3l.c -o CMakeFiles/zfp.dir/encode3l.c.s
 
 src/CMakeFiles/zfp.dir/encode3l.c.o.requires:
 
@@ -594,16 +594,16 @@ src/CMakeFiles/zfp.dir/encode3l.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/decode3f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode3f.c.o: ../src/decode3f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object src/CMakeFiles/zfp.dir/decode3f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3f.c.o   -c /home/cc/local_build/zfp/src/decode3f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object src/CMakeFiles/zfp.dir/decode3f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3f.c.o   -c /home/cc/local-build/zfp/src/decode3f.c
 
 src/CMakeFiles/zfp.dir/decode3f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode3f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode3f.c > CMakeFiles/zfp.dir/decode3f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode3f.c > CMakeFiles/zfp.dir/decode3f.c.i
 
 src/CMakeFiles/zfp.dir/decode3f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode3f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode3f.c -o CMakeFiles/zfp.dir/decode3f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode3f.c -o CMakeFiles/zfp.dir/decode3f.c.s
 
 src/CMakeFiles/zfp.dir/decode3f.c.o.requires:
 
@@ -618,16 +618,16 @@ src/CMakeFiles/zfp.dir/decode3f.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode3d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode3d.c.o: ../src/decode3d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object src/CMakeFiles/zfp.dir/decode3d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3d.c.o   -c /home/cc/local_build/zfp/src/decode3d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object src/CMakeFiles/zfp.dir/decode3d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3d.c.o   -c /home/cc/local-build/zfp/src/decode3d.c
 
 src/CMakeFiles/zfp.dir/decode3d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode3d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode3d.c > CMakeFiles/zfp.dir/decode3d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode3d.c > CMakeFiles/zfp.dir/decode3d.c.i
 
 src/CMakeFiles/zfp.dir/decode3d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode3d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode3d.c -o CMakeFiles/zfp.dir/decode3d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode3d.c -o CMakeFiles/zfp.dir/decode3d.c.s
 
 src/CMakeFiles/zfp.dir/decode3d.c.o.requires:
 
@@ -642,16 +642,16 @@ src/CMakeFiles/zfp.dir/decode3d.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode3i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode3i.c.o: ../src/decode3i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object src/CMakeFiles/zfp.dir/decode3i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3i.c.o   -c /home/cc/local_build/zfp/src/decode3i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object src/CMakeFiles/zfp.dir/decode3i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3i.c.o   -c /home/cc/local-build/zfp/src/decode3i.c
 
 src/CMakeFiles/zfp.dir/decode3i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode3i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode3i.c > CMakeFiles/zfp.dir/decode3i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode3i.c > CMakeFiles/zfp.dir/decode3i.c.i
 
 src/CMakeFiles/zfp.dir/decode3i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode3i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode3i.c -o CMakeFiles/zfp.dir/decode3i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode3i.c -o CMakeFiles/zfp.dir/decode3i.c.s
 
 src/CMakeFiles/zfp.dir/decode3i.c.o.requires:
 
@@ -666,16 +666,16 @@ src/CMakeFiles/zfp.dir/decode3i.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode3l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode3l.c.o: ../src/decode3l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object src/CMakeFiles/zfp.dir/decode3l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3l.c.o   -c /home/cc/local_build/zfp/src/decode3l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object src/CMakeFiles/zfp.dir/decode3l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode3l.c.o   -c /home/cc/local-build/zfp/src/decode3l.c
 
 src/CMakeFiles/zfp.dir/decode3l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode3l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode3l.c > CMakeFiles/zfp.dir/decode3l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode3l.c > CMakeFiles/zfp.dir/decode3l.c.i
 
 src/CMakeFiles/zfp.dir/decode3l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode3l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode3l.c -o CMakeFiles/zfp.dir/decode3l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode3l.c -o CMakeFiles/zfp.dir/decode3l.c.s
 
 src/CMakeFiles/zfp.dir/decode3l.c.o.requires:
 
@@ -690,16 +690,16 @@ src/CMakeFiles/zfp.dir/decode3l.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/encode4f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode4f.c.o: ../src/encode4f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object src/CMakeFiles/zfp.dir/encode4f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4f.c.o   -c /home/cc/local_build/zfp/src/encode4f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object src/CMakeFiles/zfp.dir/encode4f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4f.c.o   -c /home/cc/local-build/zfp/src/encode4f.c
 
 src/CMakeFiles/zfp.dir/encode4f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode4f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode4f.c > CMakeFiles/zfp.dir/encode4f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode4f.c > CMakeFiles/zfp.dir/encode4f.c.i
 
 src/CMakeFiles/zfp.dir/encode4f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode4f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode4f.c -o CMakeFiles/zfp.dir/encode4f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode4f.c -o CMakeFiles/zfp.dir/encode4f.c.s
 
 src/CMakeFiles/zfp.dir/encode4f.c.o.requires:
 
@@ -714,16 +714,16 @@ src/CMakeFiles/zfp.dir/encode4f.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode4d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode4d.c.o: ../src/encode4d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object src/CMakeFiles/zfp.dir/encode4d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4d.c.o   -c /home/cc/local_build/zfp/src/encode4d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object src/CMakeFiles/zfp.dir/encode4d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4d.c.o   -c /home/cc/local-build/zfp/src/encode4d.c
 
 src/CMakeFiles/zfp.dir/encode4d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode4d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode4d.c > CMakeFiles/zfp.dir/encode4d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode4d.c > CMakeFiles/zfp.dir/encode4d.c.i
 
 src/CMakeFiles/zfp.dir/encode4d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode4d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode4d.c -o CMakeFiles/zfp.dir/encode4d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode4d.c -o CMakeFiles/zfp.dir/encode4d.c.s
 
 src/CMakeFiles/zfp.dir/encode4d.c.o.requires:
 
@@ -738,16 +738,16 @@ src/CMakeFiles/zfp.dir/encode4d.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode4i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode4i.c.o: ../src/encode4i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object src/CMakeFiles/zfp.dir/encode4i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4i.c.o   -c /home/cc/local_build/zfp/src/encode4i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object src/CMakeFiles/zfp.dir/encode4i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4i.c.o   -c /home/cc/local-build/zfp/src/encode4i.c
 
 src/CMakeFiles/zfp.dir/encode4i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode4i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode4i.c > CMakeFiles/zfp.dir/encode4i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode4i.c > CMakeFiles/zfp.dir/encode4i.c.i
 
 src/CMakeFiles/zfp.dir/encode4i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode4i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode4i.c -o CMakeFiles/zfp.dir/encode4i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode4i.c -o CMakeFiles/zfp.dir/encode4i.c.s
 
 src/CMakeFiles/zfp.dir/encode4i.c.o.requires:
 
@@ -762,16 +762,16 @@ src/CMakeFiles/zfp.dir/encode4i.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/encode4l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/encode4l.c.o: ../src/encode4l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object src/CMakeFiles/zfp.dir/encode4l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4l.c.o   -c /home/cc/local_build/zfp/src/encode4l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object src/CMakeFiles/zfp.dir/encode4l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/encode4l.c.o   -c /home/cc/local-build/zfp/src/encode4l.c
 
 src/CMakeFiles/zfp.dir/encode4l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/encode4l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/encode4l.c > CMakeFiles/zfp.dir/encode4l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/encode4l.c > CMakeFiles/zfp.dir/encode4l.c.i
 
 src/CMakeFiles/zfp.dir/encode4l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/encode4l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/encode4l.c -o CMakeFiles/zfp.dir/encode4l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/encode4l.c -o CMakeFiles/zfp.dir/encode4l.c.s
 
 src/CMakeFiles/zfp.dir/encode4l.c.o.requires:
 
@@ -786,16 +786,16 @@ src/CMakeFiles/zfp.dir/encode4l.c.o.provides.build: src/CMakeFiles/zfp.dir/encod
 
 src/CMakeFiles/zfp.dir/decode4f.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode4f.c.o: ../src/decode4f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object src/CMakeFiles/zfp.dir/decode4f.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4f.c.o   -c /home/cc/local_build/zfp/src/decode4f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object src/CMakeFiles/zfp.dir/decode4f.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4f.c.o   -c /home/cc/local-build/zfp/src/decode4f.c
 
 src/CMakeFiles/zfp.dir/decode4f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode4f.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode4f.c > CMakeFiles/zfp.dir/decode4f.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode4f.c > CMakeFiles/zfp.dir/decode4f.c.i
 
 src/CMakeFiles/zfp.dir/decode4f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode4f.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode4f.c -o CMakeFiles/zfp.dir/decode4f.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode4f.c -o CMakeFiles/zfp.dir/decode4f.c.s
 
 src/CMakeFiles/zfp.dir/decode4f.c.o.requires:
 
@@ -810,16 +810,16 @@ src/CMakeFiles/zfp.dir/decode4f.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode4d.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode4d.c.o: ../src/decode4d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object src/CMakeFiles/zfp.dir/decode4d.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4d.c.o   -c /home/cc/local_build/zfp/src/decode4d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object src/CMakeFiles/zfp.dir/decode4d.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4d.c.o   -c /home/cc/local-build/zfp/src/decode4d.c
 
 src/CMakeFiles/zfp.dir/decode4d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode4d.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode4d.c > CMakeFiles/zfp.dir/decode4d.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode4d.c > CMakeFiles/zfp.dir/decode4d.c.i
 
 src/CMakeFiles/zfp.dir/decode4d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode4d.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode4d.c -o CMakeFiles/zfp.dir/decode4d.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode4d.c -o CMakeFiles/zfp.dir/decode4d.c.s
 
 src/CMakeFiles/zfp.dir/decode4d.c.o.requires:
 
@@ -834,16 +834,16 @@ src/CMakeFiles/zfp.dir/decode4d.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode4i.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode4i.c.o: ../src/decode4i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object src/CMakeFiles/zfp.dir/decode4i.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4i.c.o   -c /home/cc/local_build/zfp/src/decode4i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object src/CMakeFiles/zfp.dir/decode4i.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4i.c.o   -c /home/cc/local-build/zfp/src/decode4i.c
 
 src/CMakeFiles/zfp.dir/decode4i.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode4i.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode4i.c > CMakeFiles/zfp.dir/decode4i.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode4i.c > CMakeFiles/zfp.dir/decode4i.c.i
 
 src/CMakeFiles/zfp.dir/decode4i.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode4i.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode4i.c -o CMakeFiles/zfp.dir/decode4i.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode4i.c -o CMakeFiles/zfp.dir/decode4i.c.s
 
 src/CMakeFiles/zfp.dir/decode4i.c.o.requires:
 
@@ -858,16 +858,16 @@ src/CMakeFiles/zfp.dir/decode4i.c.o.provides.build: src/CMakeFiles/zfp.dir/decod
 
 src/CMakeFiles/zfp.dir/decode4l.c.o: src/CMakeFiles/zfp.dir/flags.make
 src/CMakeFiles/zfp.dir/decode4l.c.o: ../src/decode4l.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object src/CMakeFiles/zfp.dir/decode4l.c.o"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4l.c.o   -c /home/cc/local_build/zfp/src/decode4l.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object src/CMakeFiles/zfp.dir/decode4l.c.o"
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/zfp.dir/decode4l.c.o   -c /home/cc/local-build/zfp/src/decode4l.c
 
 src/CMakeFiles/zfp.dir/decode4l.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/zfp.dir/decode4l.c.i"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/src/decode4l.c > CMakeFiles/zfp.dir/decode4l.c.i
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/src/decode4l.c > CMakeFiles/zfp.dir/decode4l.c.i
 
 src/CMakeFiles/zfp.dir/decode4l.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/zfp.dir/decode4l.c.s"
-	cd /home/cc/local_build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/src/decode4l.c -o CMakeFiles/zfp.dir/decode4l.c.s
+	cd /home/cc/local-build/zfp/build_debug/src && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/src/decode4l.c -o CMakeFiles/zfp.dir/decode4l.c.s
 
 src/CMakeFiles/zfp.dir/decode4l.c.o.requires:
 
@@ -919,7 +919,7 @@ zfp_OBJECTS = \
 
 # External object files for target zfp
 zfp_EXTERNAL_OBJECTS = \
-"/home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o"
+"/home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o"
 
 lib/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/zfp.c.o
 lib/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/bitstream.c.o
@@ -959,9 +959,9 @@ lib/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o
 lib/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/build.make
 lib/libzfp.so.0.5.5: /usr/local/cuda-10.1/lib64/libcudart.so
 lib/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking C shared library ../lib/libzfp.so"
-	cd /home/cc/local_build/zfp/build_debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/zfp.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/cc/local_build/zfp/build_debug/src && $(CMAKE_COMMAND) -E cmake_symlink_library ../lib/libzfp.so.0.5.5 ../lib/libzfp.so.0 ../lib/libzfp.so
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking C shared library ../lib/libzfp.so"
+	cd /home/cc/local-build/zfp/build_debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/zfp.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/cc/local-build/zfp/build_debug/src && $(CMAKE_COMMAND) -E cmake_symlink_library ../lib/libzfp.so.0.5.5 ../lib/libzfp.so.0 ../lib/libzfp.so
 
 lib/libzfp.so.0: lib/libzfp.so.0.5.5
 	@$(CMAKE_COMMAND) -E touch_nocreate lib/libzfp.so.0
@@ -1012,10 +1012,10 @@ src/CMakeFiles/zfp.dir/requires: src/CMakeFiles/zfp.dir/decode4l.c.o.requires
 .PHONY : src/CMakeFiles/zfp.dir/requires
 
 src/CMakeFiles/zfp.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/src && $(CMAKE_COMMAND) -P CMakeFiles/zfp.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/src && $(CMAKE_COMMAND) -P CMakeFiles/zfp.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/zfp.dir/clean
 
 src/CMakeFiles/zfp.dir/depend: src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp /home/cc/local_build/zfp/src /home/cc/local_build/zfp/build_debug /home/cc/local_build/zfp/build_debug/src /home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp /home/cc/local-build/zfp/src /home/cc/local-build/zfp/build_debug /home/cc/local-build/zfp/build_debug/src /home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/zfp.dir/depend
 

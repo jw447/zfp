@@ -46,9 +46,9 @@ stdint.h
 inttypes.h
 -
 
-/home/cc/local_build/zfp/tests/src/execPolicy/testCuda.c
+/home/cc/local-build/zfp/tests/src/execPolicy/testCuda.c
 zfp.h
-/home/cc/local_build/zfp/tests/src/execPolicy/zfp.h
+/home/cc/local-build/zfp/tests/src/execPolicy/zfp.h
 stdarg.h
 -
 stddef.h

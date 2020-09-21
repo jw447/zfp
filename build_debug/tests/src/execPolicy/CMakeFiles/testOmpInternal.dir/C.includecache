@@ -52,13 +52,13 @@ stdint.h
 inttypes.h
 -
 
-/home/cc/local_build/zfp/tests/src/execPolicy/testOmpInternal.c
+/home/cc/local-build/zfp/tests/src/execPolicy/testOmpInternal.c
 zfp.h
-/home/cc/local_build/zfp/tests/src/execPolicy/zfp.h
+/home/cc/local-build/zfp/tests/src/execPolicy/zfp.h
 zfp/macros.h
-/home/cc/local_build/zfp/tests/src/execPolicy/zfp/macros.h
+/home/cc/local-build/zfp/tests/src/execPolicy/zfp/macros.h
 src/share/omp.c
-/home/cc/local_build/zfp/tests/src/execPolicy/src/share/omp.c
+/home/cc/local-build/zfp/tests/src/execPolicy/src/share/omp.c
 stdarg.h
 -
 stddef.h

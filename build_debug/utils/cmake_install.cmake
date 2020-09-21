@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/local_build/zfp/utils
+# Install script for directory: /home/cc/local-build/zfp/utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
