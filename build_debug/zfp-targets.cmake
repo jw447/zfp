@@ -42,13 +42,13 @@ unset(_expectedTargets)
 add_library(zfp::zfp SHARED IMPORTED)
 
 set_target_properties(zfp::zfp PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/cc/local_build/zfp/include;/home/cc/local_build/zfp/array"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/cc/local-build/zfp/include;/home/cc/local-build/zfp/array"
 )
 
 # Import target "zfp::zfp" for configuration "Release"
 set_property(TARGET zfp::zfp APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(zfp::zfp PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/cc/local_build/zfp/build_debug/lib/libzfp.so.0.5.5"
+  IMPORTED_LOCATION_RELEASE "/home/cc/local-build/zfp/build_debug/lib/libzfp.so.0.5.5"
   IMPORTED_SONAME_RELEASE "libzfp.so.0"
   )
 

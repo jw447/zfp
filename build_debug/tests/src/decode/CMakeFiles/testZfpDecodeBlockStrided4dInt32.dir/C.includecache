@@ -144,23 +144,23 @@ stddef.h
 include/zfp/types.h
 ../tests/utils/include/zfp/types.h
 
-/home/cc/local_build/zfp/tests/src/decode/testZfpDecodeBlockStrided4dInt32.c
+/home/cc/local-build/zfp/tests/src/decode/testZfpDecodeBlockStrided4dInt32.c
 src/decode4i.c
-/home/cc/local_build/zfp/tests/src/decode/src/decode4i.c
+/home/cc/local-build/zfp/tests/src/decode/src/decode4i.c
 constants/4dInt32.h
-/home/cc/local_build/zfp/tests/src/decode/constants/4dInt32.h
+/home/cc/local-build/zfp/tests/src/decode/constants/4dInt32.h
 utils/rand32.h
-/home/cc/local_build/zfp/tests/src/decode/utils/rand32.h
+/home/cc/local-build/zfp/tests/src/decode/utils/rand32.h
 zfpDecodeBlockStridedBase.c
-/home/cc/local_build/zfp/tests/src/decode/zfpDecodeBlockStridedBase.c
+/home/cc/local-build/zfp/tests/src/decode/zfpDecodeBlockStridedBase.c
 testcases/blockStrided.c
-/home/cc/local_build/zfp/tests/src/decode/testcases/blockStrided.c
+/home/cc/local-build/zfp/tests/src/decode/testcases/blockStrided.c
 
-/home/cc/local_build/zfp/tests/src/decode/testcases/blockStrided.c
+/home/cc/local-build/zfp/tests/src/decode/testcases/blockStrided.c
 utils/testMacros.h
-/home/cc/local_build/zfp/tests/src/decode/testcases/utils/testMacros.h
+/home/cc/local-build/zfp/tests/src/decode/testcases/utils/testMacros.h
 
-/home/cc/local_build/zfp/tests/src/decode/zfpDecodeBlockStridedBase.c
+/home/cc/local-build/zfp/tests/src/decode/zfpDecodeBlockStridedBase.c
 stdarg.h
 -
 stddef.h
@@ -172,11 +172,11 @@ cmocka.h
 stdlib.h
 -
 utils/testMacros.h
-/home/cc/local_build/zfp/tests/src/decode/utils/testMacros.h
+/home/cc/local-build/zfp/tests/src/decode/utils/testMacros.h
 utils/zfpChecksums.h
-/home/cc/local_build/zfp/tests/src/decode/utils/zfpChecksums.h
+/home/cc/local-build/zfp/tests/src/decode/utils/zfpChecksums.h
 utils/zfpHash.h
-/home/cc/local_build/zfp/tests/src/decode/utils/zfpHash.h
+/home/cc/local-build/zfp/tests/src/decode/utils/zfpHash.h
 
 cmocka-src/include/cmocka.h
 

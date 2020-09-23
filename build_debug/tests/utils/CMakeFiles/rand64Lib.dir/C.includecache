@@ -12,13 +12,13 @@ stdint.h
 inttypes.h
 -
 
-/home/cc/local_build/zfp/tests/utils/rand64.c
+/home/cc/local-build/zfp/tests/utils/rand64.c
 math.h
 -
 rand64.h
-/home/cc/local_build/zfp/tests/utils/rand64.h
+/home/cc/local-build/zfp/tests/utils/rand64.h
 
-/home/cc/local_build/zfp/tests/utils/rand64.h
+/home/cc/local-build/zfp/tests/utils/rand64.h
 include/zfp/types.h
-/home/cc/local_build/zfp/tests/utils/include/zfp/types.h
+/home/cc/local-build/zfp/tests/utils/include/zfp/types.h
 

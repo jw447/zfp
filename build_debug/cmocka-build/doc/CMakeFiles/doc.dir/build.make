@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp/build_debug/cmocka-src
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp/build_debug/cmocka-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug/cmocka-build
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug/cmocka-build
 
 # Utility rule file for doc.
 
@@ -63,10 +63,10 @@ doc/CMakeFiles/doc.dir/build: doc
 .PHONY : doc/CMakeFiles/doc.dir/build
 
 doc/CMakeFiles/doc.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build/doc && $(CMAKE_COMMAND) -P CMakeFiles/doc.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build/doc && $(CMAKE_COMMAND) -P CMakeFiles/doc.dir/cmake_clean.cmake
 .PHONY : doc/CMakeFiles/doc.dir/clean
 
 doc/CMakeFiles/doc.dir/depend:
-	cd /home/cc/local_build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp/build_debug/cmocka-src /home/cc/local_build/zfp/build_debug/cmocka-src/doc /home/cc/local_build/zfp/build_debug/cmocka-build /home/cc/local_build/zfp/build_debug/cmocka-build/doc /home/cc/local_build/zfp/build_debug/cmocka-build/doc/CMakeFiles/doc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp/build_debug/cmocka-src /home/cc/local-build/zfp/build_debug/cmocka-src/doc /home/cc/local-build/zfp/build_debug/cmocka-build /home/cc/local-build/zfp/build_debug/cmocka-build/doc /home/cc/local-build/zfp/build_debug/cmocka-build/doc/CMakeFiles/doc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : doc/CMakeFiles/doc.dir/depend
 

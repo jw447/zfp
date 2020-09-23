@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 # Include any dependencies generated for this target.
 include tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/depend.make
@@ -59,16 +59,16 @@ include tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/flags.m
 
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.o: tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/flags.make
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.o: ../tests/src/decode/testZfpDecodeBlockStrided2dInt64.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.o"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/decode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.o   -c /home/cc/local_build/zfp/tests/src/decode/testZfpDecodeBlockStrided2dInt64.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.o"
+	cd /home/cc/local-build/zfp/build_debug/tests/src/decode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.o   -c /home/cc/local-build/zfp/tests/src/decode/testZfpDecodeBlockStrided2dInt64.c
 
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.i"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/decode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local_build/zfp/tests/src/decode/testZfpDecodeBlockStrided2dInt64.c > CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.i
+	cd /home/cc/local-build/zfp/build_debug/tests/src/decode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cc/local-build/zfp/tests/src/decode/testZfpDecodeBlockStrided2dInt64.c > CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.i
 
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.s"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/decode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local_build/zfp/tests/src/decode/testZfpDecodeBlockStrided2dInt64.c -o CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.s
+	cd /home/cc/local-build/zfp/build_debug/tests/src/decode && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cc/local-build/zfp/tests/src/decode/testZfpDecodeBlockStrided2dInt64.c -o CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.s
 
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/testZfpDecodeBlockStrided2dInt64.c.o.requires:
 
@@ -96,8 +96,8 @@ bin/testZfpDecodeBlockStrided2dInt64: lib/librand64Lib.so
 bin/testZfpDecodeBlockStrided2dInt64: lib/libzfpHashLib.so
 bin/testZfpDecodeBlockStrided2dInt64: lib/libzfpChecksumsLib.so
 bin/testZfpDecodeBlockStrided2dInt64: tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local_build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../../bin/testZfpDecodeBlockStrided2dInt64"
-	cd /home/cc/local_build/zfp/build_debug/tests/src/decode && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../../bin/testZfpDecodeBlockStrided2dInt64"
+	cd /home/cc/local-build/zfp/build_debug/tests/src/decode && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/build: bin/testZfpDecodeBlockStrided2dInt64
@@ -109,10 +109,10 @@ tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/requires: tests
 .PHONY : tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/requires
 
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/clean:
-	cd /home/cc/local_build/zfp/build_debug/tests/src/decode && $(CMAKE_COMMAND) -P CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/cmake_clean.cmake
+	cd /home/cc/local-build/zfp/build_debug/tests/src/decode && $(CMAKE_COMMAND) -P CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/cmake_clean.cmake
 .PHONY : tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/clean
 
 tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local_build/zfp /home/cc/local_build/zfp/tests/src/decode /home/cc/local_build/zfp/build_debug /home/cc/local_build/zfp/build_debug/tests/src/decode /home/cc/local_build/zfp/build_debug/tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/local-build/zfp /home/cc/local-build/zfp/tests/src/decode /home/cc/local-build/zfp/build_debug /home/cc/local-build/zfp/build_debug/tests/src/decode /home/cc/local-build/zfp/build_debug/tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/src/decode/CMakeFiles/testZfpDecodeBlockStrided2dInt64.dir/depend
 

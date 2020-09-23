@@ -6,5 +6,5 @@ C_FLAGS = -O3 -DNDEBUG -fPIE   -Wno-unused-function -fopenmp -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/cc/local_build/zfp/build_debug/cmocka-src/include -I/home/cc/local_build/zfp -I/home/cc/local_build/zfp/include -I/home/cc/local_build/zfp/tests -I/home/cc/local_build/zfp/array 
+C_INCLUDES = -I/home/cc/local-build/zfp/build_debug/cmocka-src/include -I/home/cc/local-build/zfp -I/home/cc/local-build/zfp/include -I/home/cc/local-build/zfp/tests -I/home/cc/local-build/zfp/array 
 

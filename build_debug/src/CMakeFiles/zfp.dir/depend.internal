@@ -6,677 +6,677 @@ src/CMakeFiles/zfp.dir/bitstream.c.o
  ../include/zfp.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/bitstream.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/bitstream.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
 src/CMakeFiles/zfp.dir/decode1d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/decode1d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode1.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode1.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/decode1d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode1.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode1.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/decode1f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/decode1f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode1.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode1.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/decode1f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode1.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode1.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/decode1i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/decode1i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode1.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode1.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/decode1i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode1.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode1.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/decode1l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/decode1l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode1.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode1.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/decode1l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode1.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode1.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/decode2d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/decode2d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode2.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode2.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/decode2d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode2.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode2.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/decode2f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/decode2f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode2.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode2.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/decode2f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode2.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode2.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/decode2i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/decode2i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode2.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode2.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/decode2i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode2.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode2.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/decode2l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/decode2l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode2.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode2.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/decode2l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode2.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode2.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/decode3d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/decode3d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode3.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode3.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/decode3d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode3.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode3.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/decode3f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/decode3f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode3.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode3.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/decode3f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode3.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode3.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/decode3i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/decode3i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode3.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode3.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/decode3i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode3.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode3.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/decode3l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/decode3l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode3.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode3.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/decode3l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode3.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode3.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/decode4d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/decode4d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode4.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode4.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/decode4d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode4.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode4.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/decode4f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/decode4f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode4.c
- /home/cc/local_build/zfp/src/template/decodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode4.c
- /home/cc/local_build/zfp/src/template/revdecodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/decode4f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode4.c
+ /home/cc/local-build/zfp/src/template/decodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode4.c
+ /home/cc/local-build/zfp/src/template/revdecodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/decode4i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/decode4i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode4.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode4.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/decode4i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode4.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode4.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/decode4l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/decode4l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/decode.c
- /home/cc/local_build/zfp/src/template/decode4.c
- /home/cc/local_build/zfp/src/template/decodei.c
- /home/cc/local_build/zfp/src/template/revdecode.c
- /home/cc/local_build/zfp/src/template/revdecode4.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/decode4l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/decode.c
+ /home/cc/local-build/zfp/src/template/decode4.c
+ /home/cc/local-build/zfp/src/template/decodei.c
+ /home/cc/local-build/zfp/src/template/revdecode.c
+ /home/cc/local-build/zfp/src/template/revdecode4.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/encode1d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/encode1d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode1.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode1.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/encode1d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode1.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode1.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/encode1f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/encode1f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode1.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode1.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/encode1f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode1.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode1.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/encode1i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/encode1i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode1.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode1.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/encode1i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode1.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode1.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/encode1l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block1.h
- /home/cc/local_build/zfp/src/encode1l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec1.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode1.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode1.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block1.h
+ /home/cc/local-build/zfp/src/encode1l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec1.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode1.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode1.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/encode2d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/encode2d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode2.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode2.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/encode2d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode2.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode2.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/encode2f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/encode2f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode2.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode2.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/encode2f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode2.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode2.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/encode2i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/encode2i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode2.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode2.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/encode2i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode2.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode2.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/encode2l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block2.h
- /home/cc/local_build/zfp/src/encode2l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec2.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode2.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode2.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block2.h
+ /home/cc/local-build/zfp/src/encode2l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec2.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode2.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode2.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/encode3d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/encode3d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode3.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode3.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/encode3d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode3.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode3.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/encode3f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/encode3f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode3.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode3.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/encode3f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode3.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode3.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/encode3i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/encode3i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode3.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode3.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/encode3i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode3.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode3.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/encode3l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block3.h
- /home/cc/local_build/zfp/src/encode3l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec3.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode3.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode3.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block3.h
+ /home/cc/local-build/zfp/src/encode3l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec3.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode3.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode3.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/encode4d.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/encode4d.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode4.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode4.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsd.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/encode4d.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode4.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode4.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsd.h
 src/CMakeFiles/zfp.dir/encode4f.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/encode4f.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/codecf.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode4.c
- /home/cc/local_build/zfp/src/template/encodef.c
- /home/cc/local_build/zfp/src/template/revcodecf.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode4.c
- /home/cc/local_build/zfp/src/template/revencodef.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsf.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/encode4f.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/codecf.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode4.c
+ /home/cc/local-build/zfp/src/template/encodef.c
+ /home/cc/local-build/zfp/src/template/revcodecf.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode4.c
+ /home/cc/local-build/zfp/src/template/revencodef.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsf.h
 src/CMakeFiles/zfp.dir/encode4i.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/encode4i.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode4.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode4.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsi.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/encode4i.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode4.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode4.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsi.h
 src/CMakeFiles/zfp.dir/encode4l.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/block4.h
- /home/cc/local_build/zfp/src/encode4l.c
- /home/cc/local_build/zfp/src/inline/bitstream.c
- /home/cc/local_build/zfp/src/inline/inline.h
- /home/cc/local_build/zfp/src/template/codec.h
- /home/cc/local_build/zfp/src/template/codec4.c
- /home/cc/local_build/zfp/src/template/encode.c
- /home/cc/local_build/zfp/src/template/encode4.c
- /home/cc/local_build/zfp/src/template/encodei.c
- /home/cc/local_build/zfp/src/template/revencode.c
- /home/cc/local_build/zfp/src/template/revencode4.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/traitsl.h
+ /home/cc/local-build/zfp/src/block4.h
+ /home/cc/local-build/zfp/src/encode4l.c
+ /home/cc/local-build/zfp/src/inline/bitstream.c
+ /home/cc/local-build/zfp/src/inline/inline.h
+ /home/cc/local-build/zfp/src/template/codec.h
+ /home/cc/local-build/zfp/src/template/codec4.c
+ /home/cc/local-build/zfp/src/template/encode.c
+ /home/cc/local-build/zfp/src/template/encode4.c
+ /home/cc/local-build/zfp/src/template/encodei.c
+ /home/cc/local-build/zfp/src/template/revencode.c
+ /home/cc/local-build/zfp/src/template/revencode4.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/traitsl.h
 src/CMakeFiles/zfp.dir/zfp.c.o
  ../include/bitstream.h
  ../include/zfp.h
  ../include/zfp/macros.h
  ../include/zfp/system.h
  ../include/zfp/types.h
- /home/cc/local_build/zfp/src/cuda_zfp/cuZFP.h
- /home/cc/local_build/zfp/src/share/omp.c
- /home/cc/local_build/zfp/src/share/parallel.c
- /home/cc/local_build/zfp/src/template/compress.c
- /home/cc/local_build/zfp/src/template/cudacompress.c
- /home/cc/local_build/zfp/src/template/cudadecompress.c
- /home/cc/local_build/zfp/src/template/decompress.c
- /home/cc/local_build/zfp/src/template/ompcompress.c
- /home/cc/local_build/zfp/src/template/template.h
- /home/cc/local_build/zfp/src/zfp.c
+ /home/cc/local-build/zfp/src/cuda_zfp/cuZFP.h
+ /home/cc/local-build/zfp/src/share/omp.c
+ /home/cc/local-build/zfp/src/share/parallel.c
+ /home/cc/local-build/zfp/src/template/compress.c
+ /home/cc/local-build/zfp/src/template/cudacompress.c
+ /home/cc/local-build/zfp/src/template/cudadecompress.c
+ /home/cc/local-build/zfp/src/template/decompress.c
+ /home/cc/local-build/zfp/src/template/ompcompress.c
+ /home/cc/local-build/zfp/src/template/template.h
+ /home/cc/local-build/zfp/src/zfp.c

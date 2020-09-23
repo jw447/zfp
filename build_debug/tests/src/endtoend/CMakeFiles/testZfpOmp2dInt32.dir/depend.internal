@@ -31,8 +31,8 @@ tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.o
  ../tests/utils/zfpCompressionParams.h
  ../tests/utils/zfpHash.h
  ../tests/utils/zfpTimer.h
- /home/cc/local_build/zfp/tests/src/endtoend/ompExecBase.c
- /home/cc/local_build/zfp/tests/src/endtoend/testZfpOmp2dInt32.c
- /home/cc/local_build/zfp/tests/src/endtoend/testcases/omp.c
- /home/cc/local_build/zfp/tests/src/endtoend/zfpEndtoendBase.c
+ /home/cc/local-build/zfp/tests/src/endtoend/ompExecBase.c
+ /home/cc/local-build/zfp/tests/src/endtoend/testZfpOmp2dInt32.c
+ /home/cc/local-build/zfp/tests/src/endtoend/testcases/omp.c
+ /home/cc/local-build/zfp/tests/src/endtoend/zfpEndtoendBase.c
  cmocka-src/include/cmocka.h

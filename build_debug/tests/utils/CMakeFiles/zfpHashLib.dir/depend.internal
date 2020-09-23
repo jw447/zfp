@@ -3,5 +3,5 @@
 
 tests/utils/CMakeFiles/zfpHashLib.dir/zfpHash.c.o
  ..//include/zfp/types.h
- /home/cc/local_build/zfp/tests/utils/zfpHash.c
- /home/cc/local_build/zfp/tests/utils/zfpHash.h
+ /home/cc/local-build/zfp/tests/utils/zfpHash.c
+ /home/cc/local-build/zfp/tests/utils/zfpHash.h

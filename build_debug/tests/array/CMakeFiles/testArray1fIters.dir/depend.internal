@@ -20,10 +20,10 @@ tests/array/CMakeFiles/testArray1fIters.dir/testArray1fIters.cpp.o
  ../include/zfp/system.h
  ../include/zfp/types.h
  ../tests/constants/universalConsts.h
- /home/cc/local_build/zfp/tests/array/testArray1ItersBase.cpp
- /home/cc/local_build/zfp/tests/array/testArray1fIters.cpp
- /home/cc/local_build/zfp/tests/array/testArrayItersBase.cpp
- /home/cc/local_build/zfp/tests/array/utils/gtest1fTest.h
+ /home/cc/local-build/zfp/tests/array/testArray1ItersBase.cpp
+ /home/cc/local-build/zfp/tests/array/testArray1fIters.cpp
+ /home/cc/local-build/zfp/tests/array/testArrayItersBase.cpp
+ /home/cc/local-build/zfp/tests/array/utils/gtest1fTest.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-message.h
  googletest-src/googletest/include/gtest/gtest-param-test.h

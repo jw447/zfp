@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator.c
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator.c
 config.h
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/config.h
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/config.h
 assert.h
 -
 malloc.h
@@ -20,7 +20,7 @@ stdlib.h
 string.h
 -
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/calculator_test.c
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/calculator_test.c
 stdarg.h
 -
 stddef.h
@@ -28,11 +28,11 @@ stddef.h
 setjmp.h
 -
 cmocka.h
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/cmocka.h
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/cmocka.h
 stdio.h
 -
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/cc/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
 
 config.h
 

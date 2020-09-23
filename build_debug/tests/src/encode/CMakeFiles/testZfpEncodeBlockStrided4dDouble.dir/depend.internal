@@ -31,7 +31,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlockStrided4dDouble.dir/testZfpEncodeB
  ../tests/utils/testMacros.h
  ../tests/utils/zfpChecksums.h
  ../tests/utils/zfpHash.h
- /home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dDouble.c
- /home/cc/local_build/zfp/tests/src/encode/testcases/blockStrided.c
- /home/cc/local_build/zfp/tests/src/encode/zfpEncodeBlockStridedBase.c
+ /home/cc/local-build/zfp/tests/src/encode/testZfpEncodeBlockStrided4dDouble.c
+ /home/cc/local-build/zfp/tests/src/encode/testcases/blockStrided.c
+ /home/cc/local-build/zfp/tests/src/encode/zfpEncodeBlockStridedBase.c
  cmocka-src/include/cmocka.h

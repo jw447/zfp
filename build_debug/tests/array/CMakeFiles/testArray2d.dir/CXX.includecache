@@ -224,65 +224,65 @@ stddef.h
 include/zfp/types.h
 ../tests/utils/include/zfp/types.h
 
-/home/cc/local_build/zfp/tests/array/testArray2Base.cpp
+/home/cc/local-build/zfp/tests/array/testArray2Base.cpp
 
-/home/cc/local_build/zfp/tests/array/testArray2d.cpp
+/home/cc/local-build/zfp/tests/array/testArray2d.cpp
 array/zfparray2.h
-/home/cc/local_build/zfp/tests/array/array/zfparray2.h
+/home/cc/local-build/zfp/tests/array/array/zfparray2.h
 array/zfparray3.h
-/home/cc/local_build/zfp/tests/array/array/zfparray3.h
+/home/cc/local-build/zfp/tests/array/array/zfparray3.h
 array/zfpfactory.h
-/home/cc/local_build/zfp/tests/array/array/zfpfactory.h
+/home/cc/local-build/zfp/tests/array/array/zfpfactory.h
 constants/2dDouble.h
-/home/cc/local_build/zfp/tests/array/constants/2dDouble.h
+/home/cc/local-build/zfp/tests/array/constants/2dDouble.h
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/gtest/gtest.h
 utils/gtestDoubleEnv.h
-/home/cc/local_build/zfp/tests/array/utils/gtestDoubleEnv.h
+/home/cc/local-build/zfp/tests/array/utils/gtestDoubleEnv.h
 utils/gtestBaseFixture.h
-/home/cc/local_build/zfp/tests/array/utils/gtestBaseFixture.h
+/home/cc/local-build/zfp/tests/array/utils/gtestBaseFixture.h
 utils/predicates.h
-/home/cc/local_build/zfp/tests/array/utils/predicates.h
+/home/cc/local-build/zfp/tests/array/utils/predicates.h
 testArrayBase.cpp
-/home/cc/local_build/zfp/tests/array/testArrayBase.cpp
+/home/cc/local-build/zfp/tests/array/testArrayBase.cpp
 testArray2Base.cpp
-/home/cc/local_build/zfp/tests/array/testArray2Base.cpp
+/home/cc/local-build/zfp/tests/array/testArray2Base.cpp
 
-/home/cc/local_build/zfp/tests/array/testArrayBase.cpp
+/home/cc/local-build/zfp/tests/array/testArrayBase.cpp
 utils/testMacros.h
-/home/cc/local_build/zfp/tests/array/utils/testMacros.h
+/home/cc/local-build/zfp/tests/array/utils/testMacros.h
 utils/zfpChecksums.h
-/home/cc/local_build/zfp/tests/array/utils/zfpChecksums.h
+/home/cc/local-build/zfp/tests/array/utils/zfpChecksums.h
 utils/zfpHash.h
-/home/cc/local_build/zfp/tests/array/utils/zfpHash.h
+/home/cc/local-build/zfp/tests/array/utils/zfpHash.h
 cstring
 -
 sstream
 -
 
-/home/cc/local_build/zfp/tests/array/utils/commonMacros.h
+/home/cc/local-build/zfp/tests/array/utils/commonMacros.h
 zfp.h
-/home/cc/local_build/zfp/tests/array/utils/zfp.h
+/home/cc/local-build/zfp/tests/array/utils/zfp.h
 
-/home/cc/local_build/zfp/tests/array/utils/gtestBaseFixture.h
+/home/cc/local-build/zfp/tests/array/utils/gtestBaseFixture.h
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest/gtest.h
 
-/home/cc/local_build/zfp/tests/array/utils/gtestDoubleEnv.h
+/home/cc/local-build/zfp/tests/array/utils/gtestDoubleEnv.h
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest/gtest.h
 zfp.h
-/home/cc/local_build/zfp/tests/array/utils/zfp.h
+/home/cc/local-build/zfp/tests/array/utils/zfp.h
 commonMacros.h
-/home/cc/local_build/zfp/tests/array/utils/commonMacros.h
+/home/cc/local-build/zfp/tests/array/utils/commonMacros.h
 utils/genSmoothRandNums.h
-/home/cc/local_build/zfp/tests/array/utils/utils/genSmoothRandNums.h
+/home/cc/local-build/zfp/tests/array/utils/utils/genSmoothRandNums.h
 
-/home/cc/local_build/zfp/tests/array/utils/predicates.h
+/home/cc/local-build/zfp/tests/array/utils/predicates.h
 array/zfparray1.h
-/home/cc/local_build/zfp/tests/array/utils/array/zfparray1.h
+/home/cc/local-build/zfp/tests/array/utils/array/zfparray1.h
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest/gtest.h
 
 googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

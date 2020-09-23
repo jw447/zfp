@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/example/simple_test.c
+/home/cc/local-build/zfp/build_debug/cmocka-src/example/simple_test.c
 stdarg.h
 -
 stddef.h
@@ -16,5 +16,5 @@ setjmp.h
 cmocka.h
 -
 
-/home/cc/local_build/zfp/build_debug/cmocka-src/include/cmocka.h
+/home/cc/local-build/zfp/build_debug/cmocka-src/include/cmocka.h
 

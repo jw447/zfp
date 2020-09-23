@@ -6,5 +6,5 @@ C_FLAGS =  -std=gnu99 -pedantic -pedantic-errors -Wall -Wextra -Wshadow -Wmissin
 
 C_DEFINES = -DCMOCKA_EXPORTS -DHAVE_CONFIG_H=1
 
-C_INCLUDES = -I/home/cc/local_build/zfp/build_debug/cmocka-build/src -I/home/cc/local_build/zfp/build_debug/cmocka-src/src -I/home/cc/local_build/zfp/build_debug/cmocka-src/include -I/home/cc/local_build/zfp/build_debug/cmocka-build 
+C_INCLUDES = -I/home/cc/local-build/zfp/build_debug/cmocka-build/src -I/home/cc/local-build/zfp/build_debug/cmocka-src/src -I/home/cc/local-build/zfp/build_debug/cmocka-src/include -I/home/cc/local-build/zfp/build_debug/cmocka-build 
 

@@ -28,7 +28,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlock4dInt64.dir/testZfpEncodeBlock4dIn
  ../tests/utils/testMacros.h
  ../tests/utils/zfpChecksums.h
  ../tests/utils/zfpHash.h
- /home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlock4dInt64.c
- /home/cc/local_build/zfp/tests/src/encode/testcases/block.c
- /home/cc/local_build/zfp/tests/src/encode/zfpEncodeBlockBase.c
+ /home/cc/local-build/zfp/tests/src/encode/testZfpEncodeBlock4dInt64.c
+ /home/cc/local-build/zfp/tests/src/encode/testcases/block.c
+ /home/cc/local-build/zfp/tests/src/encode/zfpEncodeBlockBase.c
  cmocka-src/include/cmocka.h

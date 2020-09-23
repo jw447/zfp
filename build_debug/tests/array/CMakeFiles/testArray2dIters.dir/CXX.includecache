@@ -132,27 +132,27 @@ inttypes.h
 
 ../tests/constants/universalConsts.h
 
-/home/cc/local_build/zfp/tests/array/testArray2ItersBase.cpp
+/home/cc/local-build/zfp/tests/array/testArray2ItersBase.cpp
 
-/home/cc/local_build/zfp/tests/array/testArray2dIters.cpp
+/home/cc/local-build/zfp/tests/array/testArray2dIters.cpp
 array/zfparray2.h
-/home/cc/local_build/zfp/tests/array/array/zfparray2.h
+/home/cc/local-build/zfp/tests/array/array/zfparray2.h
 utils/gtest2dTest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest2dTest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest2dTest.h
 testArrayItersBase.cpp
-/home/cc/local_build/zfp/tests/array/testArrayItersBase.cpp
+/home/cc/local-build/zfp/tests/array/testArrayItersBase.cpp
 testArray2ItersBase.cpp
-/home/cc/local_build/zfp/tests/array/testArray2ItersBase.cpp
+/home/cc/local-build/zfp/tests/array/testArray2ItersBase.cpp
 
-/home/cc/local_build/zfp/tests/array/testArrayItersBase.cpp
+/home/cc/local-build/zfp/tests/array/testArrayItersBase.cpp
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/gtest/gtest.h
 
-/home/cc/local_build/zfp/tests/array/utils/gtest2dTest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest2dTest.h
 gtest/gtest.h
-/home/cc/local_build/zfp/tests/array/utils/gtest/gtest.h
+/home/cc/local-build/zfp/tests/array/utils/gtest/gtest.h
 constants/universalConsts.h
-/home/cc/local_build/zfp/tests/array/utils/constants/universalConsts.h
+/home/cc/local-build/zfp/tests/array/utils/constants/universalConsts.h
 
 googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/src/execPolicy/CMakeFiles/progress.marks
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles /home/cc/local-build/zfp/build_debug/tests/src/execPolicy/CMakeFiles/progress.marks
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/clean
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/src/execPolicy/CMakeFiles/testOmp.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/CMakeFiles/testOmp.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/CMakeFiles/testOmp.dir/rule
 .PHONY : tests/src/execPolicy/CMakeFiles/testOmp.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ testOmp: tests/src/execPolicy/CMakeFiles/testOmp.dir/rule
 
 # fast build rule for target.
 testOmp/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/build
 .PHONY : testOmp/fast
 
 # Convenience name for target.
 tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule
 .PHONY : tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ testOmpInternal: tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule
 
 # fast build rule for target.
 testOmpInternal/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build
 .PHONY : testOmpInternal/fast
 
 # Convenience name for target.
 tests/src/execPolicy/CMakeFiles/testCuda.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/CMakeFiles/testCuda.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/CMakeFiles/testCuda.dir/rule
 .PHONY : tests/src/execPolicy/CMakeFiles/testCuda.dir/rule
 
 # Convenience name for target.
@@ -207,7 +207,7 @@ testCuda: tests/src/execPolicy/CMakeFiles/testCuda.dir/rule
 
 # fast build rule for target.
 testCuda/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/build
 .PHONY : testCuda/fast
 
 testCuda.o: testCuda.c.o
@@ -216,7 +216,7 @@ testCuda.o: testCuda.c.o
 
 # target to build an object file
 testCuda.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/testCuda.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/testCuda.c.o
 .PHONY : testCuda.c.o
 
 testCuda.i: testCuda.c.i
@@ -225,7 +225,7 @@ testCuda.i: testCuda.c.i
 
 # target to preprocess a source file
 testCuda.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/testCuda.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/testCuda.c.i
 .PHONY : testCuda.c.i
 
 testCuda.s: testCuda.c.s
@@ -234,7 +234,7 @@ testCuda.s: testCuda.c.s
 
 # target to generate assembly for a file
 testCuda.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/testCuda.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/testCuda.c.s
 .PHONY : testCuda.c.s
 
 testOmp.o: testOmp.c.o
@@ -243,7 +243,7 @@ testOmp.o: testOmp.c.o
 
 # target to build an object file
 testOmp.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.o
 .PHONY : testOmp.c.o
 
 testOmp.i: testOmp.c.i
@@ -252,7 +252,7 @@ testOmp.i: testOmp.c.i
 
 # target to preprocess a source file
 testOmp.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.i
 .PHONY : testOmp.c.i
 
 testOmp.s: testOmp.c.s
@@ -261,7 +261,7 @@ testOmp.s: testOmp.c.s
 
 # target to generate assembly for a file
 testOmp.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.s
 .PHONY : testOmp.c.s
 
 testOmpInternal.o: testOmpInternal.c.o
@@ -270,7 +270,7 @@ testOmpInternal.o: testOmpInternal.c.o
 
 # target to build an object file
 testOmpInternal.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.o
 .PHONY : testOmpInternal.c.o
 
 testOmpInternal.i: testOmpInternal.c.i
@@ -279,7 +279,7 @@ testOmpInternal.i: testOmpInternal.c.i
 
 # target to preprocess a source file
 testOmpInternal.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.i
 .PHONY : testOmpInternal.c.i
 
 testOmpInternal.s: testOmpInternal.c.s
@@ -288,7 +288,7 @@ testOmpInternal.s: testOmpInternal.c.s
 
 # target to generate assembly for a file
 testOmpInternal.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.s
 .PHONY : testOmpInternal.c.s
 
 # Help Target
@@ -327,6 +327,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

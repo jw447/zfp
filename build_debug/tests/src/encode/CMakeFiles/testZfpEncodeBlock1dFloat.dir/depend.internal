@@ -31,7 +31,7 @@ tests/src/encode/CMakeFiles/testZfpEncodeBlock1dFloat.dir/testZfpEncodeBlock1dFl
  ../tests/utils/testMacros.h
  ../tests/utils/zfpChecksums.h
  ../tests/utils/zfpHash.h
- /home/cc/local_build/zfp/tests/src/encode/testZfpEncodeBlock1dFloat.c
- /home/cc/local_build/zfp/tests/src/encode/testcases/block.c
- /home/cc/local_build/zfp/tests/src/encode/zfpEncodeBlockBase.c
+ /home/cc/local-build/zfp/tests/src/encode/testZfpEncodeBlock1dFloat.c
+ /home/cc/local-build/zfp/tests/src/encode/testcases/block.c
+ /home/cc/local-build/zfp/tests/src/encode/zfpEncodeBlockBase.c
  cmocka-src/include/cmocka.h

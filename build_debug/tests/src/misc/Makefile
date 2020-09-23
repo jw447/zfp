@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/src/misc/CMakeFiles/progress.marks
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles /home/cc/local-build/zfp/build_debug/tests/src/misc/CMakeFiles/progress.marks
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/clean
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/src/misc/CMakeFiles/testZfpHeader.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/CMakeFiles/testZfpHeader.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/CMakeFiles/testZfpHeader.dir/rule
 .PHONY : tests/src/misc/CMakeFiles/testZfpHeader.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ testZfpHeader: tests/src/misc/CMakeFiles/testZfpHeader.dir/rule
 
 # fast build rule for target.
 testZfpHeader/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/build
 .PHONY : testZfpHeader/fast
 
 # Convenience name for target.
 tests/src/misc/CMakeFiles/testZfpStream.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/CMakeFiles/testZfpStream.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/misc/CMakeFiles/testZfpStream.dir/rule
 .PHONY : tests/src/misc/CMakeFiles/testZfpStream.dir/rule
 
 # Convenience name for target.
@@ -192,7 +192,7 @@ testZfpStream: tests/src/misc/CMakeFiles/testZfpStream.dir/rule
 
 # fast build rule for target.
 testZfpStream/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/build
 .PHONY : testZfpStream/fast
 
 testZfpHeader.o: testZfpHeader.c.o
@@ -201,7 +201,7 @@ testZfpHeader.o: testZfpHeader.c.o
 
 # target to build an object file
 testZfpHeader.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.o
 .PHONY : testZfpHeader.c.o
 
 testZfpHeader.i: testZfpHeader.c.i
@@ -210,7 +210,7 @@ testZfpHeader.i: testZfpHeader.c.i
 
 # target to preprocess a source file
 testZfpHeader.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.i
 .PHONY : testZfpHeader.c.i
 
 testZfpHeader.s: testZfpHeader.c.s
@@ -219,7 +219,7 @@ testZfpHeader.s: testZfpHeader.c.s
 
 # target to generate assembly for a file
 testZfpHeader.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpHeader.dir/build.make tests/src/misc/CMakeFiles/testZfpHeader.dir/testZfpHeader.c.s
 .PHONY : testZfpHeader.c.s
 
 testZfpStream.o: testZfpStream.c.o
@@ -228,7 +228,7 @@ testZfpStream.o: testZfpStream.c.o
 
 # target to build an object file
 testZfpStream.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/testZfpStream.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/testZfpStream.c.o
 .PHONY : testZfpStream.c.o
 
 testZfpStream.i: testZfpStream.c.i
@@ -237,7 +237,7 @@ testZfpStream.i: testZfpStream.c.i
 
 # target to preprocess a source file
 testZfpStream.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/testZfpStream.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/testZfpStream.c.i
 .PHONY : testZfpStream.c.i
 
 testZfpStream.s: testZfpStream.c.s
@@ -246,7 +246,7 @@ testZfpStream.s: testZfpStream.c.s
 
 # target to generate assembly for a file
 testZfpStream.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/testZfpStream.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/misc/CMakeFiles/testZfpStream.dir/build.make tests/src/misc/CMakeFiles/testZfpStream.dir/testZfpStream.c.s
 .PHONY : testZfpStream.c.s
 
 # Help Target
@@ -281,6 +281,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

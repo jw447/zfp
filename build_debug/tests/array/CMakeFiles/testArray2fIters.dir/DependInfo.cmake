@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cc/local_build/zfp/tests/array/testArray2fIters.cpp" "/home/cc/local_build/zfp/build_debug/tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.o"
+  "/home/cc/local-build/zfp/tests/array/testArray2fIters.cpp" "/home/cc/local-build/zfp/build_debug/tests/array/CMakeFiles/testArray2fIters.dir/testArray2fIters.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,9 +21,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/cc/local_build/zfp/build_debug/googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-  "/home/cc/local_build/zfp/build_debug/src/CMakeFiles/zfp.dir/DependInfo.cmake"
-  "/home/cc/local_build/zfp/build_debug/googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/cc/local-build/zfp/build_debug/googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/home/cc/local-build/zfp/build_debug/src/CMakeFiles/zfp.dir/DependInfo.cmake"
+  "/home/cc/local-build/zfp/build_debug/googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -48,7 +48,7 @@ stdint.h
 inttypes.h
 -
 
-/home/cc/local_build/zfp/utils/zfp.c
+/home/cc/local-build/zfp/utils/zfp.c
 float.h
 -
 limits.h
@@ -62,7 +62,7 @@ stdlib.h
 string.h
 -
 zfp.h
-/home/cc/local_build/zfp/utils/zfp.h
+/home/cc/local-build/zfp/utils/zfp.h
 zfp/macros.h
-/home/cc/local_build/zfp/utils/zfp/macros.h
+/home/cc/local-build/zfp/utils/zfp/macros.h
 

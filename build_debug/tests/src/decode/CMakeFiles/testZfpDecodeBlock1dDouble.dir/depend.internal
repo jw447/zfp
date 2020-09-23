@@ -31,7 +31,7 @@ tests/src/decode/CMakeFiles/testZfpDecodeBlock1dDouble.dir/testZfpDecodeBlock1dD
  ../tests/utils/testMacros.h
  ../tests/utils/zfpChecksums.h
  ../tests/utils/zfpHash.h
- /home/cc/local_build/zfp/tests/src/decode/testZfpDecodeBlock1dDouble.c
- /home/cc/local_build/zfp/tests/src/decode/testcases/block.c
- /home/cc/local_build/zfp/tests/src/decode/zfpDecodeBlockBase.c
+ /home/cc/local-build/zfp/tests/src/decode/testZfpDecodeBlock1dDouble.c
+ /home/cc/local-build/zfp/tests/src/decode/testcases/block.c
+ /home/cc/local-build/zfp/tests/src/decode/zfpDecodeBlockBase.c
  cmocka-src/include/cmocka.h

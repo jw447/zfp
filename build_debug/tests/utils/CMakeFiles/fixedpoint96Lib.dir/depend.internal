@@ -3,5 +3,5 @@
 
 tests/utils/CMakeFiles/fixedpoint96Lib.dir/fixedpoint96.c.o
  ..//include/zfp/types.h
- /home/cc/local_build/zfp/tests/utils/fixedpoint96.c
- /home/cc/local_build/zfp/tests/utils/fixedpoint96.h
+ /home/cc/local-build/zfp/tests/utils/fixedpoint96.c
+ /home/cc/local-build/zfp/tests/utils/fixedpoint96.h

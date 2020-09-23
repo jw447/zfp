@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/local_build/zfp
+CMAKE_SOURCE_DIR = /home/cc/local-build/zfp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/local_build/zfp/build_debug
+CMAKE_BINARY_DIR = /home/cc/local-build/zfp/build_debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles /home/cc/local_build/zfp/build_debug/tests/src/inline/CMakeFiles/progress.marks
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local_build/zfp/build_debug/CMakeFiles 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles /home/cc/local-build/zfp/build_debug/tests/src/inline/CMakeFiles/progress.marks
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/local-build/zfp/build_debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/clean
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/preinstall
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/src/inline/CMakeFiles/testBitstream.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/CMakeFiles/testBitstream.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/CMakeFiles/testBitstream.dir/rule
 .PHONY : tests/src/inline/CMakeFiles/testBitstream.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ testBitstream: tests/src/inline/CMakeFiles/testBitstream.dir/rule
 
 # fast build rule for target.
 testBitstream/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/build
 .PHONY : testBitstream/fast
 
 # Convenience name for target.
 tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/rule
 .PHONY : tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ testBitstreamSmallWsize: tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir
 
 # fast build rule for target.
 testBitstreamSmallWsize/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build
 .PHONY : testBitstreamSmallWsize/fast
 
 # Convenience name for target.
 tests/src/inline/CMakeFiles/testBitstreamStrided.dir/rule:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/CMakeFiles/testBitstreamStrided.dir/rule
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/inline/CMakeFiles/testBitstreamStrided.dir/rule
 .PHONY : tests/src/inline/CMakeFiles/testBitstreamStrided.dir/rule
 
 # Convenience name for target.
@@ -207,7 +207,7 @@ testBitstreamStrided: tests/src/inline/CMakeFiles/testBitstreamStrided.dir/rule
 
 # fast build rule for target.
 testBitstreamStrided/fast:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build
 .PHONY : testBitstreamStrided/fast
 
 testBitstream.o: testBitstream.c.o
@@ -216,7 +216,7 @@ testBitstream.o: testBitstream.c.o
 
 # target to build an object file
 testBitstream.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.o
 .PHONY : testBitstream.c.o
 
 testBitstream.i: testBitstream.c.i
@@ -225,7 +225,7 @@ testBitstream.i: testBitstream.c.i
 
 # target to preprocess a source file
 testBitstream.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.i
 .PHONY : testBitstream.c.i
 
 testBitstream.s: testBitstream.c.s
@@ -234,7 +234,7 @@ testBitstream.s: testBitstream.c.s
 
 # target to generate assembly for a file
 testBitstream.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstream.dir/build.make tests/src/inline/CMakeFiles/testBitstream.dir/testBitstream.c.s
 .PHONY : testBitstream.c.s
 
 testBitstreamSmallWsize.o: testBitstreamSmallWsize.c.o
@@ -243,7 +243,7 @@ testBitstreamSmallWsize.o: testBitstreamSmallWsize.c.o
 
 # target to build an object file
 testBitstreamSmallWsize.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/testBitstreamSmallWsize.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/testBitstreamSmallWsize.c.o
 .PHONY : testBitstreamSmallWsize.c.o
 
 testBitstreamSmallWsize.i: testBitstreamSmallWsize.c.i
@@ -252,7 +252,7 @@ testBitstreamSmallWsize.i: testBitstreamSmallWsize.c.i
 
 # target to preprocess a source file
 testBitstreamSmallWsize.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/testBitstreamSmallWsize.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/testBitstreamSmallWsize.c.i
 .PHONY : testBitstreamSmallWsize.c.i
 
 testBitstreamSmallWsize.s: testBitstreamSmallWsize.c.s
@@ -261,7 +261,7 @@ testBitstreamSmallWsize.s: testBitstreamSmallWsize.c.s
 
 # target to generate assembly for a file
 testBitstreamSmallWsize.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/testBitstreamSmallWsize.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/build.make tests/src/inline/CMakeFiles/testBitstreamSmallWsize.dir/testBitstreamSmallWsize.c.s
 .PHONY : testBitstreamSmallWsize.c.s
 
 testBitstreamStrided.o: testBitstreamStrided.c.o
@@ -270,7 +270,7 @@ testBitstreamStrided.o: testBitstreamStrided.c.o
 
 # target to build an object file
 testBitstreamStrided.c.o:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.o
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.o
 .PHONY : testBitstreamStrided.c.o
 
 testBitstreamStrided.i: testBitstreamStrided.c.i
@@ -279,7 +279,7 @@ testBitstreamStrided.i: testBitstreamStrided.c.i
 
 # target to preprocess a source file
 testBitstreamStrided.c.i:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.i
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.i
 .PHONY : testBitstreamStrided.c.i
 
 testBitstreamStrided.s: testBitstreamStrided.c.s
@@ -288,7 +288,7 @@ testBitstreamStrided.s: testBitstreamStrided.c.s
 
 # target to generate assembly for a file
 testBitstreamStrided.c.s:
-	cd /home/cc/local_build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.s
+	cd /home/cc/local-build/zfp/build_debug && $(MAKE) -f tests/src/inline/CMakeFiles/testBitstreamStrided.dir/build.make tests/src/inline/CMakeFiles/testBitstreamStrided.dir/testBitstreamStrided.c.s
 .PHONY : testBitstreamStrided.c.s
 
 # Help Target
@@ -327,6 +327,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/local_build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/local-build/zfp/build_debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -4,22 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/cc/local_build/zfp/build_debug/cmocka-src/example/assert_module.c" "/home/cc/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o"
-  "/home/cc/local_build/zfp/build_debug/cmocka-src/example/assert_module_test.c" "/home/cc/local_build/zfp/build_debug/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o"
+  "/home/cc/local-build/zfp/build_debug/cmocka-src/example/assert_module.c" "/home/cc/local-build/zfp/build_debug/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o"
+  "/home/cc/local-build/zfp/build_debug/cmocka-src/example/assert_module_test.c" "/home/cc/local-build/zfp/build_debug/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "example"
-  "/home/cc/local_build/zfp/build_debug/cmocka-src/example"
+  "/home/cc/local-build/zfp/build_debug/cmocka-src/example"
   "."
-  "/home/cc/local_build/zfp/build_debug/cmocka-src/include"
+  "/home/cc/local-build/zfp/build_debug/cmocka-src/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/cc/local_build/zfp/build_debug/cmocka-build/src/CMakeFiles/cmocka_shared.dir/DependInfo.cmake"
+  "/home/cc/local-build/zfp/build_debug/cmocka-build/src/CMakeFiles/cmocka_shared.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

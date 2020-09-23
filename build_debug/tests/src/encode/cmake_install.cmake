@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/local_build/zfp/tests/src/encode
+# Install script for directory: /home/cc/local-build/zfp/tests/src/encode
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

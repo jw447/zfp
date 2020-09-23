@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/local_build/zfp/tests/array
+# Install script for directory: /home/cc/local-build/zfp/tests/array
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/cc/local_build/zfp/build_debug/tests/array/zfp/cmake_install.cmake")
+  include("/home/cc/local-build/zfp/build_debug/tests/array/zfp/cmake_install.cmake")
 
 endif()
 

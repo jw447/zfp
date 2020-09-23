@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/cc/local_build/zfp
-BuildDirectory: /home/cc/local_build/zfp/build_debug
+SourceDirectory: /home/cc/local-build/zfp
+BuildDirectory: /home/cc/local-build/zfp/build_debug
 
 # Where to place the cost data store
 CostDataFile: 
@@ -33,7 +33,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 01:00:00 UTC
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/cc/local_build/zfp"
+ConfigureCommand: "/usr/bin/cmake" "/home/cc/local-build/zfp"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
