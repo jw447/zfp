@@ -1046,11 +1046,19 @@ size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
     return 0;
 
   /* compress field and align bit stream on word boundary */
+  struct timeval totalCostS;
+  struct timeval totalCostE;
+
+  gettimeofday(&totalCostS, NULL);
   compress(zfp, field); 
+  gettimeofday(&totalCostE, NULL);
   stream_flush(zfp->stream);
 
   size_t outputsize = stream_size(zfp->stream);
   printf("compressed size=%lu\n", outputsize);
+  
+  float totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+  printf("compression time=%f\n", totalCost);
   return outputsize;
 }
 
