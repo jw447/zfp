@@ -9,30 +9,33 @@ struct timeval ecost1 = {0};
 struct timeval ecost2 = {0};
 struct timeval ecostE = {0};
 
+struct timeval zcostS = {0};
+struct timeval zcostE = {0};
+
 struct timeval mcostS = {0};
 struct timeval mcost1 = {0};
-# 778 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 781 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval mcost2 = {0};
-# 778 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 781 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval mcost3 = {0};
 struct timeval mcostE = {0};
 
 struct timeval embedS = {0};
 struct timeval xformS = {0};
-# 782 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 785 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval xformE = {0};
 struct timeval orderS = {0};
-# 783 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 786 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval orderE = {0};
 struct timeval reorderS = {0};
-# 784 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 787 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval reorderE = {0};
 struct timeval bpS = {0};
-# 785 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 788 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval bpE = {0};
-# 785 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 788 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval stepS = {0};
-# 785 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
+# 788 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
 struct timeval stepE = {0};
 struct timeval embedE = {0};
 

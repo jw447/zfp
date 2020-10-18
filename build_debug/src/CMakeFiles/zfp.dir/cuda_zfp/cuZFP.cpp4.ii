@@ -16328,6 +16328,9 @@ struct timeval ecostS;
 struct timeval ecost1, ecost2;
 struct timeval ecostE;
 
+struct timeval zcostS;
+struct timeval zcostE;
+
 struct timeval mcostS;
 struct timeval mcost1, mcost2, mcost3;
 struct timeval mcostE;
@@ -16374,6 +16377,7 @@ typedef struct {
   float totalCost;
 
   float ecost_time;
+  float zero_block_time;
   float max_exp_time;
   float precision_time;
   float emax_time;

@@ -118,13 +118,16 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
   
   else {
     /* write single zero-bit to indicate that all values are zero */
+    gettimeofday(&zcostS, NULL);
     stream_write_bit(zfp->stream, 0);
     if (zfp->minbits > bits) {
       stream_pad(zfp->stream, zfp->minbits - bits);
       bits = zfp->minbits;
+    gettimeofday(&zcostE, NULL);
     }
   }
   (*cpu_timing).ecost_time += ((ecostE.tv_sec*1000000+ecostE.tv_usec)-(ecostS.tv_sec*1000000+ecostS.tv_usec))/1000000.0;
+  (*cpu_timing).zero_block_time += ((zcostE.tv_sec*1000000+zcostE.tv_usec)-(zcostS.tv_sec*1000000+zcostS.tv_usec))/1000000.0;
   (*cpu_timing).max_exp_time += ((ecost1.tv_sec*1000000+ecost1.tv_usec)-(ecostS.tv_sec*1000000+ecostS.tv_usec))/1000000.0;
   (*cpu_timing).precision_time += ((ecost2.tv_sec*1000000+ecost2.tv_usec)-(ecost1.tv_sec*1000000+ecost1.tv_usec))/1000000.0;
   (*cpu_timing).emax_time += ((ecostE.tv_sec*1000000+ecostE.tv_usec)-(ecost2.tv_sec*1000000+ecost2.tv_usec))/1000000.0;
