@@ -142,7 +142,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
     for (; n < size && bits && (bits--, stream_write_bit(&s, !!x)); x >>= 1, n++)
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
 	;
-    //printf("bpbp=%u\n", (cbits -bits));
+    printf("bpbp=%u\n", (cbits -bits));
     //printf("%u,%d\n", nn, (cbits-bits));
   }
   //printf("bp---\n");
