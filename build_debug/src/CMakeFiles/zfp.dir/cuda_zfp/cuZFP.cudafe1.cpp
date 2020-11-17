@@ -17064,6 +17064,26 @@ void zfp_demote_int32_to_int16(int16 * oblock, const int32 * iblock, uint dims);
 void zfp_demote_int32_to_uint16(uint16 * oblock, const int32 * iblock, uint dims); 
 # 764
 }
+# 770
+timeval expCostS; 
+# 771
+timeval expCostE; 
+# 772
+timeval mCostS; 
+# 773
+timeval mCostE; 
+# 774
+timeval xCostS; 
+# 775
+timeval xCostE; 
+# 776
+timeval oCostS; 
+# 777
+timeval oCostE; 
+# 778
+timeval enCostS; 
+# 779
+timeval enCostE; 
 # 7 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.h"
 extern "C" {
 # 9

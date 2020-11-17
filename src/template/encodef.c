@@ -63,8 +63,9 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock)
   /* compute maximum exponent */
   int emax = _t1(exponent_block, Scalar)(fblock, BLOCK_SIZE);
   int maxprec = precision(emax, zfp->maxprec, zfp->minexp, DIMS);
-  
+
   uint e = maxprec ? emax + EBIAS : 0;
+  
   //printf("e=%u\n", e); 
   /* encode block only if biased exponent is nonzero */
   if (e) {

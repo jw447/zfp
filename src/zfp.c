@@ -1055,10 +1055,10 @@ size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
   stream_flush(zfp->stream);
 
   size_t outputsize = stream_size(zfp->stream);
-  //printf("compressed size=%lu\n", outputsize);
+  printf("compressed size=%lu\n", outputsize);
   
   float totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
-  //printf("compression time=%f\n", totalCost);
+  printf("compression time=%f\n", totalCost);
   return outputsize;
 }
 

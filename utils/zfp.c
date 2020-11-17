@@ -640,7 +640,7 @@ int main(int argc, char* argv[])
   if (!quiet) {
     const char* type_name[] = { "int32", "int64", "float", "double" };
     //printf("type=%s nx=%u ny=%u nz=%u nw=%u ", type_name[type - zfp_type_int32], nx, ny, nz, nw);
-    //printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, CHAR_BIT * (double)zfpsize / count);
+    //printf("raw=%lu zfp=%lu ratio=%.3g rate=%.4g\n", (unsigned long)rawsize, (unsigned long)zfpsize, (double)rawsize / zfpsize, (double)zfpsize / count);
     if (stats)
       print_error(fi, fo, type, count);
   }
