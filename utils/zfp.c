@@ -556,9 +556,9 @@ int main(int argc, char* argv[])
     memset(cpu_timing, 0, sizeof(CPU_timing));
     memset(gpu_timing_h, 0, sizeof(GPU_timing));
     
-    zfpsize = zfp_compress1(zfp, field, cpu_timing, gpu_timing_h);
-
-    printf("totalCost=%f\n", (*cpu_timing).totalCost);
+    //zfpsize = zfp_compress1(zfp, field, cpu_timing, gpu_timing_h);
+    zfpsize = zfp_compress(zfp, field);
+    //printf("totalCost=%f\n", (*cpu_timing).totalCost);
     // cuda
     /*printf("warmup_time=%f\n", (*cpu_timing).warmup_time);
     printf("cuda_Setup_time=%f\n", (*cpu_timing).cuda_Setup_time);
@@ -599,19 +599,19 @@ int main(int argc, char* argv[])
     printf("stream_bytes=%u\n", (*cpu_timing).stream_bytes); 
     */
     // serial
-    printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
-    printf("zcost_time=%f\n", (*cpu_timing).zero_block_time);
+    //printf("ecost_time=%f\n", (*cpu_timing).ecost_time);
+    //printf("zcost_time=%f\n", (*cpu_timing).zero_block_time);
     //printf("precision_time=%f\n", (*cpu_timing).precision_time);
     //printf("max_exp_time=%f\n", (*cpu_timing).max_exp_time);
     //printf("emax_time=%f\n", (*cpu_timing).emax_time);
-    printf("mcost_time=%f\n", (*cpu_timing).mcost_time);
+    //printf("mcost_time=%f\n", (*cpu_timing).mcost_time);
     //printf("quantize_factor_time=%f\n", (*cpu_timing).quantize_factor_time);
     //printf("cast_loop_time=%f\n", (*cpu_timing).cast_loop_time); 
     //printf("embed_time=%f\n", (*cpu_timing).embed_time);
-    printf("xform_time=%f\n", (*cpu_timing).xform_time);
-    printf("order_time=%f\n", (*cpu_timing).order_time);
+    //printf("xform_time=%f\n", (*cpu_timing).xform_time);
+    //printf("order_time=%f\n", (*cpu_timing).order_time);
     //printf("order_loop_time=%f\n", (*cpu_timing).order_loop_time);
-    printf("bp_time=%f\n", (*cpu_timing).bp_time);
+    //printf("bp_time=%f\n", (*cpu_timing).bp_time);
     //printf("step1=%f\n", (*cpu_timing).step1);
     //printf("step2=%f\n", (*cpu_timing).step2);
     //printf("step3=%f\n", (*cpu_timing).step3);

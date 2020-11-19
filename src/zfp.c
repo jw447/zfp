@@ -1034,9 +1034,11 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
       (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
     }
   }
-  stream_flush(zfp->stream);
-
-  return stream_size(zfp->stream);
+  //stream_flush(zfp->stream);
+  size_t outputsize = stream_size(zfp->stream);
+  printf("compressed size=%lu\n", outputsize);
+  //return stream_size(zfp->stream);
+  return outputsize;
 }
 
 /* public functions: compression and decompression --------------------------*/
@@ -1109,6 +1111,7 @@ size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
   stream_flush(zfp->stream);
 
   int outputsize = stream_size(zfp->stream);
+  printf("compressed size=%lu\n", outputsize);
   return outputsize;
 }
 
