@@ -1,15 +1,4 @@
 # 1 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.cu"
-# 770 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/include/zfp.h"
-struct timeval expCostS = {0};
-struct timeval expCostE = {0};
-struct timeval mCostS = {0};
-struct timeval mCostE = {0};
-struct timeval xCostS = {0};
-struct timeval xCostE = {0};
-struct timeval oCostS = {0};
-struct timeval oCostE = {0};
-struct timeval enCostS = {0};
-struct timeval enCostE = {0};
 # 178 "/usr/include/c++/4.8.2/bits/basic_string.h" 3
 extern _ZNSs9size_typeE _ZNSs4_Rep20_S_empty_rep_storageE[] __attribute__((visibility("default")));
 # 61 "/usr/include/c++/4.8.2/iostream" 3

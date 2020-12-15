@@ -18162,21 +18162,6 @@ void zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims);
 
 
 }
-
-
-
-
-
-struct timeval expCostS;
-struct timeval expCostE;
-struct timeval mCostS;
-struct timeval mCostE;
-struct timeval xCostS;
-struct timeval xCostE;
-struct timeval oCostS;
-struct timeval oCostE;
-struct timeval enCostS;
-struct timeval enCostE;
 # 5 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.h" 2
 
 
