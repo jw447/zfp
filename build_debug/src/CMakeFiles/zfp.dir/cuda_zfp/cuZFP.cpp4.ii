@@ -15746,8 +15746,8 @@ node qremove(HuffmanTree *huffmanTree);
 void build_code(HuffmanTree *huffmanTree, node n, int len, unsigned long out1, unsigned long out2);
 void init(HuffmanTree *huffmanTree, int *s, size_t length);
 void init_static(HuffmanTree *huffmanTree, int *s, size_t length);
-void encode(HuffmanTree *huffmanTree, int *s, size_t length, unsigned char *out, size_t *outSize);
 
+void encode(HuffmanTree *huffmanTree, int *s, size_t length);
 
 void decode(unsigned char *s, size_t targetLength, node t, int *out);
 void decode_MSST19(unsigned char *s, size_t targetLength, node t, int *out, int maxBits);
@@ -15761,8 +15761,8 @@ void unpad_tree_ushort(HuffmanTree* huffmanTree, unsigned short* L, unsigned sho
 void unpad_tree_uint(HuffmanTree* huffmanTree, unsigned int* L, unsigned int* R, unsigned int* C, unsigned char* t, unsigned int i, node root);
 node reconstruct_HuffTree_from_bytes_anyStates(HuffmanTree *huffmanTree, unsigned char* bytes, int nodeCount);
 
-void encode_withTree(HuffmanTree* huffmanTree, int *s, size_t length, unsigned char **out, size_t *outSize);
 
+void encode_withTree(HuffmanTree* huffmanTree, int *s, size_t length);
 int encode_withTree_MSST19(HuffmanTree* huffmanTree, int *s, size_t length, unsigned char **out, size_t *outSize);
 void decode_withTree(HuffmanTree* huffmanTree, unsigned char *s, size_t targetLength, int *out);
 void decode_withTree_MSST19(HuffmanTree* huffmanTree, unsigned char *s, size_t targetLength, int *out, int maxBits);
@@ -16467,7 +16467,7 @@ void zfp_demote_int32_to_uint8(uint8* oblock, const int32* iblock, uint dims);
 void zfp_demote_int32_to_int16(int16* oblock, const int32* iblock, uint dims);
 void zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims);
 
-int rle(uint* s, size_t len, int* elem, int* count);
+int rle(uint64* s, size_t len, int* elem, int* count);
 
 
 }

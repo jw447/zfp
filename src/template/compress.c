@@ -8,72 +8,106 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;
   uint mx = nx & ~3u;
-  uint x;
-  
-  long int outputsize_bit = 0;
-
-  for (x = 0; x < mx; x += 4, data += 4)
-    outputsize_bit += _t2(zfp_encode_block, Scalar, 1)(stream, data); // return bits of each block
-  if (x < nx)
-    _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
-
-  printf("outputsize_bits=%ld\n", outputsize_bit);
+  uint64 x;
+  uint bits = 0;
+  uint outputsize_bit = 0;
+  printf("mx=%u, nx=%u\n", mx, nx); 
+  //for (x = 0; x < mx; x += 4, data += 4)
+  //{
+  //  bits = _t2(zfp_encode_block, Scalar, 1)(stream, data); // return bits of each block
+  //  outputsize_bit = outputsize_bit + bits;
+  //}
+  //printf("outputsize_bits=%u\n", outputsize_bit);
+  //if (x < nx)
+  //  _t2(zfp_encode_partial_block_strided, Scalar, 1)(stream, data, nx - x, 1);
 
   /* Single huffman tree to encode the transform coefficients */
-  //Int* idata; // store the transformed coefficients.
-  //idata = (Int *)malloc(sizeof(Int) * nx);
-  //memset(idata, 0, sizeof(Int) * nx);
+  #define Int int64
+  #define EBITS 11
+  #define UInt uint64
+  #define EBIAS ((1 << (EBITS - 1)) - 1) /* exponent bias */
+  #define BLOCK_SIZE 4
+  #define FABS(x) fabs(x)
+  #define FREXP(x, e) frexp(x, e)
+  #define LDEXP(x, e) ldexp(x, e)
+  #define NBMASK UINT64C(0xaaaaaaaaaaaaaaaa)
 
-  ///* jwang: until DCT */
-  //for (x = 0; x < mx; x += 4, data += 4, idata += 4){
-  //  //for(int i = 0; i < BLOCK_SIZE; i++) printf("fblock=%d\n", data[i]);
-  //  int emax = _t1(exponent_block, Scalar)(data, BLOCK_SIZE);
-  //  //printf("emax=%d\n", emax);
-  //  int maxprec = precision(emax, stream->maxprec, stream->minexp, 1);
-  //  //printf("maxprec=%d\n", maxprec);
-  //  uint e = maxprec ? emax + EBIAS : 0; 
-  //  //printf("e=%u\n", e);
-  //  
-  //  if (e) {
-  //    cache_align_(Int iblock[BLOCK_SIZE]);
-  //    /* perform forward block-floating-point transform */
-  //    _t1(fwd_cast, Scalar)(iblock, data, BLOCK_SIZE, emax); // get mantisa.
+  cache_align_(static const uchar perm_1[4]) = { 0, 1, 2, 3};
 
-  //    /* perform decorrelating transform */
-  //    _t2(fwd_xform, Int, 1)(iblock);
-  //    for(int i = 0; i < BLOCK_SIZE; i++){
-  //      idata[i] = iblock[i];
-  //    }
-  //    //for(int i = 0; i < BLOCK_SIZE; i++) printf("idata=%lld ", idata[i]);
-  //    //printf("\n");
-  //  }
-  //}
-  ////printf("mx = %d\n", mx);
-  //idata -= mx;
-  ////printf("%lld, %lld, %lld, %lld\n", idata[0], idata[1], idata[2], idata[3]);
+  int ebitsize = 0;
+  int n;
+  int e;
+  int emax;
+  double max;
+  double f;
+  int maxprec;
+  double s;
+  int index = 0;
+  UInt* idata; // store the bit planes.
+  idata = (Int *)malloc(sizeof(Int) * nx/4*32); // test with double data
+  memset(idata, 0, (long)(sizeof(Int) * nx/4 * 32));
+  printf("num of bit plane at most: %ld\n",(long)(nx/4 * 32));
 
-  ////printf("%d\n", sizeof(Int));
-  ///* huffman encoding */
-  //int stateNum = 1; 
-  //for (int i = 1; i < nx; i++){
-  //  int j = 0;
-  //  for (j = 0; j < i; j++){
-  //    if(idata[i] == idata[j])
-  //      break;
-  //  }
-  //  if (i == j) stateNum++;
-  //}
+  for (int i = 0; i < mx; i += 4, data += 4){
+    n = 0;
+    while(n<4){
+      f = FABS(data[n]);
+      if (max < f)
+        max = f;
+      n++;
+    }
+    if (max > 0){
+      FREXP(max, &e);
+      emax = MAX(e, 1 - EBIAS);  
+    }
+    else{
+      emax = -EBIAS;
+    }
 
-  //printf("nx = %d, stateNum = %d\n", nx, stateNum);
-  //int stateNum = 65536;
-  //unsigned char* typeArray;
-  //*typeArray = (unsigned char *)malloc(nx/4);
-  //size_t typeArray_size = 0;
+    //int maxprec = precision(emax, stream->maxprec, stream->minexp, 1);
+    maxprec = MIN(stream->maxprec, (uint)MAX(0, emax - stream->minexp + 2 * (1 + 1)));
+    e = maxprec ? emax + EBIAS : 0; 
+    if (e) {
+      cache_align_(Int iblock[BLOCK_SIZE]);
+      cache_align_(UInt ublock[BLOCK_SIZE]);
+      ebitsize += EBITS;
+      /* perform forward block-floating-point transform */
+      //_t1(fwd_cast, Scalar)(iblock, data, BLOCK_SIZE, emax); // get mantisa.
+      s = LDEXP(1, (CHAR_BIT * (int)sizeof(Scalar) - 2) - emax);
+      n = 0;
+      while(n<4){
+        iblock[n] = (Int)(s * data[n]);
+        n++;
+      }
+      /* perform decorrelating transform */
+      _t2(fwd_xform, Int, 1)(iblock);
+      //_t1(fwd_order, Int)(ublock, iblock, perm_1, BLOCK_SIZE);
+      n = 0;
+      while(n<4){
+        UInt temp = ((UInt)iblock[n] + NBMASK) ^ NBMASK;
+        ublock[n] = temp;
+        n++;
+      }
+
+      uint intprec = CHAR_BIT * (uint)sizeof(UInt);
+      uint kmin = intprec > maxprec ? intprec - maxprec : 0;
+      for(int k = intprec; k-- > kmin;){
+        x = 0;
+        for (int i = 0; i< BLOCK_SIZE; i++)
+          x += (uint64)((ublock[i] >> k) & 1u) << i;
+        //printf("%lu\n", x);
+        idata[index] = x;
+        index++;
+      }
+    }
+  } // end of for-loop that goes over the entire dataet
+  //for(int i = 0; i< 64; i++) printf("%lu ", idata[i]); // 4 block each with 8 bit planes 
   
-  //HuffmanTree* huffmanTree = createHuffmanTree(stateNum);
-  //encode_withTree(huffmanTree, idata, nx, &typeArray, &typeArray_size);
-  //SZ_ReleaseHuffman(huffmanTree);
-  //printf("typeArray_size=%u\n", typeArray_size);
+  HuffmanTree* huffmanTree = createHuffmanTree(65536);
+  //printf("tree created\n");
+  encode_withTree(huffmanTree, idata, nx/4*32);
+  SZ_ReleaseHuffman(huffmanTree);
+  //printf("done\n");
 }
 
 /* compress 1d strided array */

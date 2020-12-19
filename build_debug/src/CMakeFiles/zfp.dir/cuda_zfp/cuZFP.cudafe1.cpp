@@ -16694,8 +16694,8 @@ void build_code(HuffmanTree * huffmanTree, node n, int len, unsigned long out1, 
 void init(HuffmanTree * huffmanTree, int * s, size_t length); 
 # 50
 void init_static(HuffmanTree * huffmanTree, int * s, size_t length); 
-# 51
-void encode(HuffmanTree * huffmanTree, int * s, size_t length, unsigned char * out, size_t * outSize); 
+# 52
+void encode(HuffmanTree * huffmanTree, int * s, size_t length); 
 # 54
 void decode(unsigned char * s, size_t targetLength, node t, int * out); 
 # 55
@@ -16716,8 +16716,8 @@ void unpad_tree_ushort(HuffmanTree * huffmanTree, unsigned short * L, unsigned s
 void unpad_tree_uint(HuffmanTree * huffmanTree, unsigned * L, unsigned * R, unsigned * C, unsigned char * t, unsigned i, node root); 
 # 64
 node reconstruct_HuffTree_from_bytes_anyStates(HuffmanTree * huffmanTree, unsigned char * bytes, int nodeCount); 
-# 66
-void encode_withTree(HuffmanTree * huffmanTree, int * s, size_t length, unsigned char ** out, size_t * outSize); 
+# 67
+void encode_withTree(HuffmanTree * huffmanTree, int * s, size_t length); 
 # 68
 int encode_withTree_MSST19(HuffmanTree * huffmanTree, int * s, size_t length, unsigned char ** out, size_t * outSize); 
 # 69
@@ -17247,7 +17247,7 @@ void zfp_demote_int32_to_int16(int16 * oblock, const int32 * iblock, uint dims);
 # 763
 void zfp_demote_int32_to_uint16(uint16 * oblock, const int32 * iblock, uint dims); 
 # 765
-int rle(uint * s, size_t len, int * elem, int * count); 
+int rle(uint64 * s, size_t len, int * elem, int * count); 
 # 768
 }
 # 7 "/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/src/cuda_zfp/cuZFP.h"

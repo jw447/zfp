@@ -68,7 +68,6 @@ _t1(fwd_order, Int)(UInt* ublock, const Int* iblock, const uchar* perm, uint n)
   while (--n);
 }
 
-
 /* compress sequence of size unsigned integers */
 static uint
 _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, const UInt* restrict_ data, uint size)
@@ -82,46 +81,68 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   uint i, k, m, n, nn;
   uint64 x;
 
-  /* block-wise RLE encoding */
+  //printf("kmin=%u,intprec=%u,  maxprec=%u, maxbits=%u\n", kmin, intprec, maxprec, maxbits);
+
+  ///* block-wise RLE encoding */
   //int elem[size];
   //int count[size];
-  //int index = rle(&data, size, elem, count);
-  //int outputsize_rle = sizeof(int)*(index)*2;
-  ////printf("indexnum=%d, rle_size=%d ", index, outputsize_rle);
+  ///* encode one bit plane at a time from MSB to LSB */
+  //uint64 BP[maxprec];
+  //for (k = intprec, n = 0; bits && k-- > kmin;) {
+  //  /* step 1: extract bit plane #k to x */
+  //  x = 0;
+  //  for (i = 0; i < size; i++)
+  //    x += (uint64)((data[i] >> k) & 1u) << i;
+  //  BP[k-kmin]=x ;
+  //}
+  ///* definition of rle function */
+  ////int rle(uint64* s, size_t len, int* elem, int* count){
+  //size_t count_;
+  //int index = 0;
+  //for (i = 0; i < maxprec; i++){
+  //  count_ = 1;
+  //  while (i < maxprec-1 && BP[i] == BP[i+1]){
+  //    count_++;
+  //    i++;
+  //  }
+  //  
+  //  index++;
+  //  }
+  ////printf("index=%d\n", index);
+  //return (uint)(index*8); // bytes
+  //
+  // -------------------------------------------------
+  ///* huffman encoding approach */
+  //int bpNum = intprec - kmin;
+  //int type[bpNum];
+  //for (k = intprec; k > kmin; k--){
+  //    x = 0;
+  //    for (i = 0; i < size; i++)
+  //    x += (uint64)((data[i] >> k) & 1u) << i; 
+  //    type[intprec - k] = (int)x;
+  //}
+  //
+  //int stateNum = size; // at most 4 unique values for 1d. 0 - 3.
 
-  //return outputsize_rle; // bytes
+  //TightDataPointStorageD* tdps;
+  //tdps = (TightDataPointStorageD*)malloc(sizeof(TightDataPointStorageD));
+  //tdps->allSameData = 0;
+  //tdps->realPrecision = 0.0;
+  //tdps->medianValue = 0.0;
+  //tdps->reqLength = 0;
+  //
+  //tdps->dataSeriesLength = 0;
+  //tdps->exactDataNum = 0;
+  //
+  //tdps->rtypeArray = NULL;
+  //tdps->rtypeArray_size = 0;
 
-  /* huffman encoding approach */
-  int bpNum = intprec - kmin;
-  int type[bpNum];
-  for (k = intprec; k > kmin; k--){
-      x = 0;
-      for (i = 0; i < size; i++)
-      x += (uint64)((data[i] >> k) & 1u) << i; 
-      type[intprec - k] = (int)x;
-  }
-  
-  int stateNum = size; // at most 4 unique values for 1d. 0 - 3.
+  //HuffmanTree* huffmanTree = createHuffmanTree(stateNum);
+  //encode_withTree(huffmanTree, type, bpNum, &tdps->typeArray, &tdps->typeArray_size);
+  //SZ_ReleaseHuffman(huffmanTree);
 
-  TightDataPointStorageD* tdps;
-  tdps = (TightDataPointStorageD*)malloc(sizeof(TightDataPointStorageD));
-  tdps->allSameData = 0;
-  tdps->realPrecision = 0.0;
-  tdps->medianValue = 0.0;
-  tdps->reqLength = 0;
-  
-  tdps->dataSeriesLength = 0;
-  tdps->exactDataNum = 0;
-  
-  tdps->rtypeArray = NULL;
-  tdps->rtypeArray_size = 0;
-
-  HuffmanTree* huffmanTree = createHuffmanTree(stateNum);
-  encode_withTree(huffmanTree, type, bpNum, &tdps->typeArray, &tdps->typeArray_size);
-  SZ_ReleaseHuffman(huffmanTree);
-
-  //printf("typeArray_size=%u\n", tdps->typeArray_size);
-  return tdps->typeArray_size;
+  ////printf("typeArray_size=%u\n", tdps->typeArray_size);
+  //return tdps->typeArray_size;
 
   ///* encode one bit plane at a time from MSB to LSB */
   //for (k = intprec, n = 0; bits && k-- > kmin;) {
@@ -144,7 +165,7 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
   //      ;
   //}
   //*stream = s;
-
+  return 1;
 }
 
 /* compress sequence of size > 64 unsigned integers */

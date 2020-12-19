@@ -762,7 +762,7 @@ void zfp_demote_int32_to_uint8(uint8* oblock, const int32* iblock, uint dims);
 void zfp_demote_int32_to_int16(int16* oblock, const int32* iblock, uint dims);
 void zfp_demote_int32_to_uint16(uint16* oblock, const int32* iblock, uint dims);
 
-int rle(uint* s, size_t len, int* elem, int* count);
+int rle(uint64* s, size_t len, int* elem, int* count);
 
 #ifdef __cplusplus
 }

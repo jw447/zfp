@@ -1118,8 +1118,7 @@ size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
   uint strided = zfp_field_stride(field, NULL);
   uint dims = zfp_field_dimensionality(field);
   uint type = field->type;
-
-  void (*compress)(zfp_stream*, const zfp_field*);
+  void (*compress)(zfp_stream*, zfp_field*);
 
   switch (type) {
     case zfp_type_int32:
@@ -1279,20 +1278,4 @@ zfp_read_header(zfp_stream* zfp, zfp_field* field, uint mask)
   return bits;
 }
 
-/* definition of rle function */
-int rle(uint* s, size_t len, int* elem, int* count){
-    size_t i, count_;
-    int index = 0;
-    for (i = 0; i < len; i++){
-        count_ = 1;
-        while (i < len-1 && s[i] == s[i+1]){
-            count_++;
-            i++;
-        }
 
-        count[index] = count_;
-        elem[index] = s[i];
-        index++;
-    }
-    return index;
-}

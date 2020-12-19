@@ -550,7 +550,7 @@ int main(int argc, char* argv[])
     zfpsize = zfp_compress(zfp, field);
 
     if (zfpsize == 0) {
-      fprintf(stderr, "compression failed\n");
+      //fprintf(stderr, "compression failed\n");
       return EXIT_FAILURE;
     }
 
