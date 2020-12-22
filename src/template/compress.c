@@ -5,6 +5,7 @@ static void
 _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
 {
   //jwang
+  // printf("compress1\n");
   FuncName;
   const Scalar* data = (const Scalar*)field->data;
   uint nx = field->nx;

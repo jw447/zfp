@@ -143,9 +143,10 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
 	;
     // printf("bpbp=%u\n", (cbits -bits));
-    printf("%lu,%u\n", xx, (cbits-bits));
+    // printf("%lu,%u\n", xx, (cbits-bits));
+    // printf("%lu ", xx);
   }
-  //printf("bp---\n");
+  // printf("\n");
   *stream = s;
   return maxbits - bits;
 }

@@ -1042,6 +1042,7 @@ size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
 
   /* return 0 if compression mode is not supported */
   compress = ftable[exec][strided][dims - 1][type - zfp_type_int32];
+  // printf("debug\n");
   if (!compress)
     return 0;
 
@@ -1049,16 +1050,18 @@ size_t zfp_compress(zfp_stream* zfp, const zfp_field* field)
   struct timeval totalCostS;
   struct timeval totalCostE;
 
+  // printf("debug\n");
   gettimeofday(&totalCostS, NULL);
   compress(zfp, field); 
   gettimeofday(&totalCostE, NULL);
+  // printf("debug\n");
   stream_flush(zfp->stream);
 
   size_t outputsize = stream_size(zfp->stream);
-  //printf("compressed size=%lu\n", outputsize);
+  printf("compressed size=%lu\n", outputsize);
   
   float totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
-  //printf("compression time=%f\n", totalCost);
+  printf("compression time=%f\n", totalCost);
   return outputsize;
 }
 
