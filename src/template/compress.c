@@ -6,8 +6,10 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   //jwang
   FuncName;
   const Scalar* data = (const Scalar*)field->data;
-  uint nx = field->nx;
-  uint mx = nx & ~3u;
+  //uint nx = field->nx;
+  //uint mx = nx & ~3u;
+  long int nx = field->nx;
+  long int mx = nx & ~3u;
   uint64 x;
   uint bits = 0;
   uint outputsize_bit = 0;
@@ -42,13 +44,14 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
   double f;
   int maxprec;
   double s;
-  int index = 0;
+  long int index = 0;
   UInt* idata; // store the bit planes.
-  idata = (Int *)malloc(sizeof(Int) * nx/4*32); // test with double data
-  memset(idata, 0, (long)(sizeof(Int) * nx/4 * 32));
+  idata = (UInt *)malloc((long)(sizeof(UInt) * nx/4*32)); // test with double data
+  memset(idata, 0, (long)(sizeof(UInt) * nx/4 * 32));
   printf("num of bit plane at most: %ld\n",(long)(nx/4 * 32));
 
-  for (int i = 0; i < mx; i += 4, data += 4){
+  long int i = 0;
+  for (i = 0; i < mx; i += 4, data += 4){
     n = 0;
     while(n<4){
       f = FABS(data[n]);
@@ -101,6 +104,8 @@ _t2(compress, Scalar, 1)(zfp_stream* stream, const zfp_field* field)
       }
     }
   } // end of for-loop that goes over the entire dataet
+  printf("imax=%ld\n", i);
+  printf("index=%ld\n", index);
   //for(int i = 0; i< 64; i++) printf("%lu ", idata[i]); // 4 block each with 8 bit planes 
   
   HuffmanTree* huffmanTree = createHuffmanTree(65536);

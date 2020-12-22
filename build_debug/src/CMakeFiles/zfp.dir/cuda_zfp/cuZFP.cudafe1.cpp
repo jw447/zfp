@@ -16691,7 +16691,7 @@ node qremove(HuffmanTree * huffmanTree);
 # 48
 void build_code(HuffmanTree * huffmanTree, node n, int len, unsigned long out1, unsigned long out2); 
 # 49
-void init(HuffmanTree * huffmanTree, int * s, size_t length); 
+void init(HuffmanTree * huffmanTree, unsigned long * s, long length); 
 # 50
 void init_static(HuffmanTree * huffmanTree, int * s, size_t length); 
 # 52
@@ -16717,7 +16717,7 @@ void unpad_tree_uint(HuffmanTree * huffmanTree, unsigned * L, unsigned * R, unsi
 # 64
 node reconstruct_HuffTree_from_bytes_anyStates(HuffmanTree * huffmanTree, unsigned char * bytes, int nodeCount); 
 # 67
-void encode_withTree(HuffmanTree * huffmanTree, int * s, size_t length); 
+void encode_withTree(HuffmanTree * huffmanTree, unsigned long * s, long length); 
 # 68
 int encode_withTree_MSST19(HuffmanTree * huffmanTree, int * s, size_t length, unsigned char ** out, size_t * outSize); 
 # 69

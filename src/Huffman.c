@@ -150,13 +150,13 @@ void build_code(HuffmanTree *huffmanTree, node n, int len, unsigned long out1, u
  * @param int *s (input)
  * @param size_t length (input)
  * */
-void init(HuffmanTree* huffmanTree, int *s, size_t length)
+void init(HuffmanTree* huffmanTree, long unsigned *s, long length)
 {
 	FuncName;
-	size_t i, index;
-	size_t jj;
-	size_t *freq = (size_t *)malloc(huffmanTree->allNodes*sizeof(size_t));
-	memset(freq, 0, huffmanTree->allNodes*sizeof(size_t));
+	long i, index;
+	long jj;
+	long *freq = (long *)malloc(huffmanTree->allNodes*sizeof(long));
+	memset(freq, 0, huffmanTree->allNodes*sizeof(long));
 	
 	for(i = 0;i < length;i++)
 	{
@@ -810,7 +810,7 @@ node reconstruct_HuffTree_from_bytes_anyStates(HuffmanTree *huffmanTree, unsigne
 	}
 }
 
-void encode_withTree(HuffmanTree* huffmanTree, int *s, size_t length)
+void encode_withTree(HuffmanTree* huffmanTree, long unsigned *s, long length)
 {
 	FuncName;
 	size_t i; 
@@ -823,7 +823,7 @@ void encode_withTree(HuffmanTree* huffmanTree, int *s, size_t length)
 	for (i = 0; i < huffmanTree->stateNum; i++){
 		if (huffmanTree->code[i]) nodeCount++;
         }	
-	//printf("v=%d\n", nodeCount);
+	printf("qf=%d\n", nodeCount);
 	nodeCount = nodeCount*2-1;
 	
 	unsigned int treeByteSize = convert_HuffTree_to_bytes_anyStates(huffmanTree,nodeCount, &treeBytes);
