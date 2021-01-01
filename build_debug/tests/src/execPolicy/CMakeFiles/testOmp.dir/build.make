@@ -81,8 +81,6 @@ bin/testOmp: tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.o
 bin/testOmp: tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make
 bin/testOmp: cmocka-build/src/libcmocka.a
 bin/testOmp: lib64/libzfp.so.0.5.5
-bin/testOmp: /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/libgomp.so
-bin/testOmp: /usr/lib64/libpthread.so
 bin/testOmp: tests/src/execPolicy/CMakeFiles/testOmp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../../bin/testOmp"
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/tests/src/execPolicy && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testOmp.dir/link.txt --verbose=$(VERBOSE)

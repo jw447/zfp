@@ -1010,13 +1010,14 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
       compress_double_1(zfp, field, cpu_timing);
       gettimeofday(&totalCostE, NULL);
       (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
-      //printf("totalcost=%f\n", (*cpu_timing).totalCost);
+      printf("totalcost=%f\n", (*cpu_timing).totalCost);
     }
     if(type == 3){ // float
       gettimeofday(&totalCostS, NULL);
       compress_float_1(zfp, field, cpu_timing); 
       gettimeofday(&totalCostE, NULL);
       (*cpu_timing).totalCost = ((totalCostE.tv_sec*1000000+totalCostE.tv_usec)-(totalCostS.tv_sec*1000000+totalCostS.tv_usec))/1000000.0;
+      printf("totalcost=%f\n", (*cpu_timing).totalCost);
     }
   }
   else if(exec == 2)
@@ -1036,7 +1037,7 @@ size_t zfp_compress1(zfp_stream* zfp, const zfp_field* field, CPU_timing* cpu_ti
   }
   //stream_flush(zfp->stream);
   size_t outputsize = stream_size(zfp->stream);
-  printf("compressed size=%lu\n", outputsize);
+  printf("compressed size=%u\n", outputsize);
   //return stream_size(zfp->stream);
   return outputsize;
 }

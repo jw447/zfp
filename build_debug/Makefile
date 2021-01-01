@@ -1598,108 +1598,134 @@ testZfpDecodeBlock2dFloat/fast:
 .PHONY : testZfpDecodeBlock2dFloat/fast
 
 #=============================================================================
-# Target rules for targets named testZfpOmp4dInt64
+# Target rules for targets named testZfpSerial4dFloat
 
 # Build rule for target.
-testZfpOmp4dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp4dInt64
-.PHONY : testZfpOmp4dInt64
+testZfpSerial4dFloat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dFloat
+.PHONY : testZfpSerial4dFloat
 
 # fast build rule for target.
-testZfpOmp4dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build
-.PHONY : testZfpOmp4dInt64/fast
+testZfpSerial4dFloat/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build
+.PHONY : testZfpSerial4dFloat/fast
 
 #=============================================================================
-# Target rules for targets named testZfpSerial2dDouble
+# Target rules for targets named testZfpSerial3dDouble
 
 # Build rule for target.
-testZfpSerial2dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial2dDouble
-.PHONY : testZfpSerial2dDouble
+testZfpSerial3dDouble: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial3dDouble
+.PHONY : testZfpSerial3dDouble
 
 # fast build rule for target.
-testZfpSerial2dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build
-.PHONY : testZfpSerial2dDouble/fast
+testZfpSerial3dDouble/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build
+.PHONY : testZfpSerial3dDouble/fast
 
 #=============================================================================
-# Target rules for targets named testZfpSerial4dInt64
+# Target rules for targets named testZfpSerial4dDouble
 
 # Build rule for target.
-testZfpSerial4dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dInt64
-.PHONY : testZfpSerial4dInt64
+testZfpSerial4dDouble: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dDouble
+.PHONY : testZfpSerial4dDouble
 
 # fast build rule for target.
-testZfpSerial4dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build
-.PHONY : testZfpSerial4dInt64/fast
+testZfpSerial4dDouble/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build
+.PHONY : testZfpSerial4dDouble/fast
 
 #=============================================================================
-# Target rules for targets named testZfpOmp3dInt32
+# Target rules for targets named testZfpCuda3dDouble
 
 # Build rule for target.
-testZfpOmp3dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp3dInt32
-.PHONY : testZfpOmp3dInt32
+testZfpCuda3dDouble: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda3dDouble
+.PHONY : testZfpCuda3dDouble
 
 # fast build rule for target.
-testZfpOmp3dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build
-.PHONY : testZfpOmp3dInt32/fast
+testZfpCuda3dDouble/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build
+.PHONY : testZfpCuda3dDouble/fast
 
 #=============================================================================
-# Target rules for targets named testZfpOmp3dInt64
+# Target rules for targets named testZfpCuda3dFloat
 
 # Build rule for target.
-testZfpOmp3dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp3dInt64
-.PHONY : testZfpOmp3dInt64
+testZfpCuda3dFloat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda3dFloat
+.PHONY : testZfpCuda3dFloat
 
 # fast build rule for target.
-testZfpOmp3dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build
-.PHONY : testZfpOmp3dInt64/fast
+testZfpCuda3dFloat/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build
+.PHONY : testZfpCuda3dFloat/fast
 
 #=============================================================================
-# Target rules for targets named testZfpOmp2dInt64
+# Target rules for targets named testZfpSerial3dFloat
 
 # Build rule for target.
-testZfpOmp2dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp2dInt64
-.PHONY : testZfpOmp2dInt64
+testZfpSerial3dFloat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial3dFloat
+.PHONY : testZfpSerial3dFloat
 
 # fast build rule for target.
-testZfpOmp2dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build
-.PHONY : testZfpOmp2dInt64/fast
+testZfpSerial3dFloat/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build
+.PHONY : testZfpSerial3dFloat/fast
 
 #=============================================================================
-# Target rules for targets named testZfpSerial4dInt32
+# Target rules for targets named testZfpSerial3dInt32
 
 # Build rule for target.
-testZfpSerial4dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dInt32
-.PHONY : testZfpSerial4dInt32
+testZfpSerial3dInt32: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial3dInt32
+.PHONY : testZfpSerial3dInt32
 
 # fast build rule for target.
-testZfpSerial4dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build
-.PHONY : testZfpSerial4dInt32/fast
+testZfpSerial3dInt32/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build
+.PHONY : testZfpSerial3dInt32/fast
 
 #=============================================================================
-# Target rules for targets named testZfpOmp4dInt32
+# Target rules for targets named testZfpSerial1dFloat
 
 # Build rule for target.
-testZfpOmp4dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp4dInt32
-.PHONY : testZfpOmp4dInt32
+testZfpSerial1dFloat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dFloat
+.PHONY : testZfpSerial1dFloat
 
 # fast build rule for target.
-testZfpOmp4dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build
-.PHONY : testZfpOmp4dInt32/fast
+testZfpSerial1dFloat/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build
+.PHONY : testZfpSerial1dFloat/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda1dInt64
+
+# Build rule for target.
+testZfpCuda1dInt64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dInt64
+.PHONY : testZfpCuda1dInt64
+
+# fast build rule for target.
+testZfpCuda1dInt64/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build
+.PHONY : testZfpCuda1dInt64/fast
+
+#=============================================================================
+# Target rules for targets named testZfpSerial2dInt32
+
+# Build rule for target.
+testZfpSerial2dInt32: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial2dInt32
+.PHONY : testZfpSerial2dInt32
+
+# fast build rule for target.
+testZfpSerial2dInt32/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build
+.PHONY : testZfpSerial2dInt32/fast
 
 #=============================================================================
 # Target rules for targets named testZfpSerial3dInt64
@@ -1715,17 +1741,199 @@ testZfpSerial3dInt64/fast:
 .PHONY : testZfpSerial3dInt64/fast
 
 #=============================================================================
-# Target rules for targets named testZfpSerial2dInt32
+# Target rules for targets named testZfpSerial1dInt64
 
 # Build rule for target.
-testZfpSerial2dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial2dInt32
-.PHONY : testZfpSerial2dInt32
+testZfpSerial1dInt64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dInt64
+.PHONY : testZfpSerial1dInt64
 
 # fast build rule for target.
-testZfpSerial2dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build
-.PHONY : testZfpSerial2dInt32/fast
+testZfpSerial1dInt64/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build
+.PHONY : testZfpSerial1dInt64/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda1dInt32
+
+# Build rule for target.
+testZfpCuda1dInt32: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dInt32
+.PHONY : testZfpCuda1dInt32
+
+# fast build rule for target.
+testZfpCuda1dInt32/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build
+.PHONY : testZfpCuda1dInt32/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda2dInt32
+
+# Build rule for target.
+testZfpCuda2dInt32: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dInt32
+.PHONY : testZfpCuda2dInt32
+
+# fast build rule for target.
+testZfpCuda2dInt32/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build
+.PHONY : testZfpCuda2dInt32/fast
+
+#=============================================================================
+# Target rules for targets named testZfpSerial2dInt64
+
+# Build rule for target.
+testZfpSerial2dInt64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial2dInt64
+.PHONY : testZfpSerial2dInt64
+
+# fast build rule for target.
+testZfpSerial2dInt64/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build
+.PHONY : testZfpSerial2dInt64/fast
+
+#=============================================================================
+# Target rules for targets named testZfpSerial1dInt32
+
+# Build rule for target.
+testZfpSerial1dInt32: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dInt32
+.PHONY : testZfpSerial1dInt32
+
+# fast build rule for target.
+testZfpSerial1dInt32/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build
+.PHONY : testZfpSerial1dInt32/fast
+
+#=============================================================================
+# Target rules for targets named testZfpSerial2dDouble
+
+# Build rule for target.
+testZfpSerial2dDouble: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial2dDouble
+.PHONY : testZfpSerial2dDouble
+
+# fast build rule for target.
+testZfpSerial2dDouble/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build
+.PHONY : testZfpSerial2dDouble/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda3dInt64
+
+# Build rule for target.
+testZfpCuda3dInt64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda3dInt64
+.PHONY : testZfpCuda3dInt64
+
+# fast build rule for target.
+testZfpCuda3dInt64/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build
+.PHONY : testZfpCuda3dInt64/fast
+
+#=============================================================================
+# Target rules for targets named testZfpSerial4dInt32
+
+# Build rule for target.
+testZfpSerial4dInt32: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dInt32
+.PHONY : testZfpSerial4dInt32
+
+# fast build rule for target.
+testZfpSerial4dInt32/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build
+.PHONY : testZfpSerial4dInt32/fast
+
+#=============================================================================
+# Target rules for targets named testZfpSerial4dInt64
+
+# Build rule for target.
+testZfpSerial4dInt64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dInt64
+.PHONY : testZfpSerial4dInt64
+
+# fast build rule for target.
+testZfpSerial4dInt64/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build
+.PHONY : testZfpSerial4dInt64/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda1dFloat
+
+# Build rule for target.
+testZfpCuda1dFloat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dFloat
+.PHONY : testZfpCuda1dFloat
+
+# fast build rule for target.
+testZfpCuda1dFloat/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build
+.PHONY : testZfpCuda1dFloat/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda2dFloat
+
+# Build rule for target.
+testZfpCuda2dFloat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dFloat
+.PHONY : testZfpCuda2dFloat
+
+# fast build rule for target.
+testZfpCuda2dFloat/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build
+.PHONY : testZfpCuda2dFloat/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda2dDouble
+
+# Build rule for target.
+testZfpCuda2dDouble: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dDouble
+.PHONY : testZfpCuda2dDouble
+
+# fast build rule for target.
+testZfpCuda2dDouble/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build
+.PHONY : testZfpCuda2dDouble/fast
+
+#=============================================================================
+# Target rules for targets named testZfpSerial1dDouble
+
+# Build rule for target.
+testZfpSerial1dDouble: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dDouble
+.PHONY : testZfpSerial1dDouble
+
+# fast build rule for target.
+testZfpSerial1dDouble/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build
+.PHONY : testZfpSerial1dDouble/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda2dInt64
+
+# Build rule for target.
+testZfpCuda2dInt64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dInt64
+.PHONY : testZfpCuda2dInt64
+
+# fast build rule for target.
+testZfpCuda2dInt64/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build
+.PHONY : testZfpCuda2dInt64/fast
+
+#=============================================================================
+# Target rules for targets named testZfpCuda1dDouble
+
+# Build rule for target.
+testZfpCuda1dDouble: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dDouble
+.PHONY : testZfpCuda1dDouble
+
+# fast build rule for target.
+testZfpCuda1dDouble/fast:
+	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build
+.PHONY : testZfpCuda1dDouble/fast
 
 #=============================================================================
 # Target rules for targets named testZfpCuda3dInt32
@@ -1754,422 +1962,6 @@ testZfpSerial2dFloat/fast:
 .PHONY : testZfpSerial2dFloat/fast
 
 #=============================================================================
-# Target rules for targets named testZfpCuda3dInt64
-
-# Build rule for target.
-testZfpCuda3dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda3dInt64
-.PHONY : testZfpCuda3dInt64
-
-# fast build rule for target.
-testZfpCuda3dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build
-.PHONY : testZfpCuda3dInt64/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda2dInt64
-
-# Build rule for target.
-testZfpCuda2dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dInt64
-.PHONY : testZfpCuda2dInt64
-
-# fast build rule for target.
-testZfpCuda2dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build
-.PHONY : testZfpCuda2dInt64/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp2dInt32
-
-# Build rule for target.
-testZfpOmp2dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp2dInt32
-.PHONY : testZfpOmp2dInt32
-
-# fast build rule for target.
-testZfpOmp2dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build
-.PHONY : testZfpOmp2dInt32/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda1dDouble
-
-# Build rule for target.
-testZfpCuda1dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dDouble
-.PHONY : testZfpCuda1dDouble
-
-# fast build rule for target.
-testZfpCuda1dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build
-.PHONY : testZfpCuda1dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp1dInt32
-
-# Build rule for target.
-testZfpOmp1dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp1dInt32
-.PHONY : testZfpOmp1dInt32
-
-# fast build rule for target.
-testZfpOmp1dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build
-.PHONY : testZfpOmp1dInt32/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp2dDouble
-
-# Build rule for target.
-testZfpOmp2dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp2dDouble
-.PHONY : testZfpOmp2dDouble
-
-# fast build rule for target.
-testZfpOmp2dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build
-.PHONY : testZfpOmp2dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial3dInt32
-
-# Build rule for target.
-testZfpSerial3dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial3dInt32
-.PHONY : testZfpSerial3dInt32
-
-# fast build rule for target.
-testZfpSerial3dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build
-.PHONY : testZfpSerial3dInt32/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial1dInt32
-
-# Build rule for target.
-testZfpSerial1dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dInt32
-.PHONY : testZfpSerial1dInt32
-
-# fast build rule for target.
-testZfpSerial1dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build
-.PHONY : testZfpSerial1dInt32/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial2dInt64
-
-# Build rule for target.
-testZfpSerial2dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial2dInt64
-.PHONY : testZfpSerial2dInt64
-
-# fast build rule for target.
-testZfpSerial2dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build
-.PHONY : testZfpSerial2dInt64/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda2dInt32
-
-# Build rule for target.
-testZfpCuda2dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dInt32
-.PHONY : testZfpCuda2dInt32
-
-# fast build rule for target.
-testZfpCuda2dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build
-.PHONY : testZfpCuda2dInt32/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda1dInt32
-
-# Build rule for target.
-testZfpCuda1dInt32: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dInt32
-.PHONY : testZfpCuda1dInt32
-
-# fast build rule for target.
-testZfpCuda1dInt32/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build
-.PHONY : testZfpCuda1dInt32/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial1dInt64
-
-# Build rule for target.
-testZfpSerial1dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dInt64
-.PHONY : testZfpSerial1dInt64
-
-# fast build rule for target.
-testZfpSerial1dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build
-.PHONY : testZfpSerial1dInt64/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda1dInt64
-
-# Build rule for target.
-testZfpCuda1dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dInt64
-.PHONY : testZfpCuda1dInt64
-
-# fast build rule for target.
-testZfpCuda1dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build
-.PHONY : testZfpCuda1dInt64/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial1dFloat
-
-# Build rule for target.
-testZfpSerial1dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dFloat
-.PHONY : testZfpSerial1dFloat
-
-# fast build rule for target.
-testZfpSerial1dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build
-.PHONY : testZfpSerial1dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp1dFloat
-
-# Build rule for target.
-testZfpOmp1dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp1dFloat
-.PHONY : testZfpOmp1dFloat
-
-# fast build rule for target.
-testZfpOmp1dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build
-.PHONY : testZfpOmp1dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda2dFloat
-
-# Build rule for target.
-testZfpCuda2dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dFloat
-.PHONY : testZfpCuda2dFloat
-
-# fast build rule for target.
-testZfpCuda2dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build
-.PHONY : testZfpCuda2dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda1dFloat
-
-# Build rule for target.
-testZfpCuda1dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda1dFloat
-.PHONY : testZfpCuda1dFloat
-
-# fast build rule for target.
-testZfpCuda1dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build
-.PHONY : testZfpCuda1dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial1dDouble
-
-# Build rule for target.
-testZfpSerial1dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial1dDouble
-.PHONY : testZfpSerial1dDouble
-
-# fast build rule for target.
-testZfpSerial1dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build
-.PHONY : testZfpSerial1dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp1dDouble
-
-# Build rule for target.
-testZfpOmp1dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp1dDouble
-.PHONY : testZfpOmp1dDouble
-
-# fast build rule for target.
-testZfpOmp1dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build
-.PHONY : testZfpOmp1dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp1dInt64
-
-# Build rule for target.
-testZfpOmp1dInt64: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp1dInt64
-.PHONY : testZfpOmp1dInt64
-
-# fast build rule for target.
-testZfpOmp1dInt64/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build
-.PHONY : testZfpOmp1dInt64/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp3dFloat
-
-# Build rule for target.
-testZfpOmp3dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp3dFloat
-.PHONY : testZfpOmp3dFloat
-
-# fast build rule for target.
-testZfpOmp3dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build
-.PHONY : testZfpOmp3dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp4dFloat
-
-# Build rule for target.
-testZfpOmp4dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp4dFloat
-.PHONY : testZfpOmp4dFloat
-
-# fast build rule for target.
-testZfpOmp4dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build
-.PHONY : testZfpOmp4dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial3dFloat
-
-# Build rule for target.
-testZfpSerial3dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial3dFloat
-.PHONY : testZfpSerial3dFloat
-
-# fast build rule for target.
-testZfpSerial3dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build
-.PHONY : testZfpSerial3dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda3dFloat
-
-# Build rule for target.
-testZfpCuda3dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda3dFloat
-.PHONY : testZfpCuda3dFloat
-
-# fast build rule for target.
-testZfpCuda3dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build
-.PHONY : testZfpCuda3dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda3dDouble
-
-# Build rule for target.
-testZfpCuda3dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda3dDouble
-.PHONY : testZfpCuda3dDouble
-
-# fast build rule for target.
-testZfpCuda3dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build
-.PHONY : testZfpCuda3dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial4dDouble
-
-# Build rule for target.
-testZfpSerial4dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dDouble
-.PHONY : testZfpSerial4dDouble
-
-# fast build rule for target.
-testZfpSerial4dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build
-.PHONY : testZfpSerial4dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial3dDouble
-
-# Build rule for target.
-testZfpSerial3dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial3dDouble
-.PHONY : testZfpSerial3dDouble
-
-# fast build rule for target.
-testZfpSerial3dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build
-.PHONY : testZfpSerial3dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp2dFloat
-
-# Build rule for target.
-testZfpOmp2dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp2dFloat
-.PHONY : testZfpOmp2dFloat
-
-# fast build rule for target.
-testZfpOmp2dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build
-.PHONY : testZfpOmp2dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp3dDouble
-
-# Build rule for target.
-testZfpOmp3dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp3dDouble
-.PHONY : testZfpOmp3dDouble
-
-# fast build rule for target.
-testZfpOmp3dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build
-.PHONY : testZfpOmp3dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpSerial4dFloat
-
-# Build rule for target.
-testZfpSerial4dFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpSerial4dFloat
-.PHONY : testZfpSerial4dFloat
-
-# fast build rule for target.
-testZfpSerial4dFloat/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build
-.PHONY : testZfpSerial4dFloat/fast
-
-#=============================================================================
-# Target rules for targets named testZfpOmp4dDouble
-
-# Build rule for target.
-testZfpOmp4dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpOmp4dDouble
-.PHONY : testZfpOmp4dDouble
-
-# fast build rule for target.
-testZfpOmp4dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build
-.PHONY : testZfpOmp4dDouble/fast
-
-#=============================================================================
-# Target rules for targets named testZfpCuda2dDouble
-
-# Build rule for target.
-testZfpCuda2dDouble: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testZfpCuda2dDouble
-.PHONY : testZfpCuda2dDouble
-
-# fast build rule for target.
-testZfpCuda2dDouble/fast:
-	$(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build
-.PHONY : testZfpCuda2dDouble/fast
-
-#=============================================================================
 # Target rules for targets named testCuda
 
 # Build rule for target.
@@ -2181,19 +1973,6 @@ testCuda: cmake_check_build_system
 testCuda/fast:
 	$(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/build
 .PHONY : testCuda/fast
-
-#=============================================================================
-# Target rules for targets named testOmpInternal
-
-# Build rule for target.
-testOmpInternal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testOmpInternal
-.PHONY : testOmpInternal
-
-# fast build rule for target.
-testOmpInternal/fast:
-	$(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build
-.PHONY : testOmpInternal/fast
 
 #=============================================================================
 # Target rules for targets named testOmp
@@ -2786,52 +2565,35 @@ help:
 	@echo "... testZfpDecodeBlock1dFloat"
 	@echo "... testZfpDecodeBlock1dDouble"
 	@echo "... testZfpDecodeBlock2dFloat"
-	@echo "... testZfpOmp4dInt64"
-	@echo "... testZfpSerial2dDouble"
-	@echo "... testZfpSerial4dInt64"
-	@echo "... testZfpOmp3dInt32"
-	@echo "... testZfpOmp3dInt64"
-	@echo "... testZfpOmp2dInt64"
-	@echo "... testZfpSerial4dInt32"
-	@echo "... testZfpOmp4dInt32"
-	@echo "... testZfpSerial3dInt64"
+	@echo "... testZfpSerial4dFloat"
+	@echo "... testZfpSerial3dDouble"
+	@echo "... testZfpSerial4dDouble"
+	@echo "... testZfpCuda3dDouble"
+	@echo "... testZfpCuda3dFloat"
+	@echo "... testZfpSerial3dFloat"
+	@echo "... testZfpSerial3dInt32"
+	@echo "... testZfpSerial1dFloat"
+	@echo "... testZfpCuda1dInt64"
 	@echo "... testZfpSerial2dInt32"
+	@echo "... testZfpSerial3dInt64"
+	@echo "... testZfpSerial1dInt64"
+	@echo "... testZfpCuda1dInt32"
+	@echo "... testZfpCuda2dInt32"
+	@echo "... testZfpSerial2dInt64"
+	@echo "... testZfpSerial1dInt32"
+	@echo "... testZfpSerial2dDouble"
+	@echo "... testZfpCuda3dInt64"
+	@echo "... testZfpSerial4dInt32"
+	@echo "... testZfpSerial4dInt64"
+	@echo "... testZfpCuda1dFloat"
+	@echo "... testZfpCuda2dFloat"
+	@echo "... testZfpCuda2dDouble"
+	@echo "... testZfpSerial1dDouble"
+	@echo "... testZfpCuda2dInt64"
+	@echo "... testZfpCuda1dDouble"
 	@echo "... testZfpCuda3dInt32"
 	@echo "... testZfpSerial2dFloat"
-	@echo "... testZfpCuda3dInt64"
-	@echo "... testZfpCuda2dInt64"
-	@echo "... testZfpOmp2dInt32"
-	@echo "... testZfpCuda1dDouble"
-	@echo "... testZfpOmp1dInt32"
-	@echo "... testZfpOmp2dDouble"
-	@echo "... testZfpSerial3dInt32"
-	@echo "... testZfpSerial1dInt32"
-	@echo "... testZfpSerial2dInt64"
-	@echo "... testZfpCuda2dInt32"
-	@echo "... testZfpCuda1dInt32"
-	@echo "... testZfpSerial1dInt64"
-	@echo "... testZfpCuda1dInt64"
-	@echo "... testZfpSerial1dFloat"
-	@echo "... testZfpOmp1dFloat"
-	@echo "... testZfpCuda2dFloat"
-	@echo "... testZfpCuda1dFloat"
-	@echo "... testZfpSerial1dDouble"
-	@echo "... testZfpOmp1dDouble"
-	@echo "... testZfpOmp1dInt64"
-	@echo "... testZfpOmp3dFloat"
-	@echo "... testZfpOmp4dFloat"
-	@echo "... testZfpSerial3dFloat"
-	@echo "... testZfpCuda3dFloat"
-	@echo "... testZfpCuda3dDouble"
-	@echo "... testZfpSerial4dDouble"
-	@echo "... testZfpSerial3dDouble"
-	@echo "... testZfpOmp2dFloat"
-	@echo "... testZfpOmp3dDouble"
-	@echo "... testZfpSerial4dFloat"
-	@echo "... testZfpOmp4dDouble"
-	@echo "... testZfpCuda2dDouble"
 	@echo "... testCuda"
-	@echo "... testOmpInternal"
 	@echo "... testOmp"
 	@echo "... gmock_main"
 	@echo "... gmock"

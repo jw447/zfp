@@ -70,12 +70,10 @@ static void
 _t1(fwd_order, Int)(UInt* ublock, const Int* iblock, const uchar* perm, uint n, CPU_timing* cpu_timing)
 {
   //jwang
-  gettimeofday(&reorderS, NULL);
   do
     *ublock++ = _t1(int2uint, Int)(iblock[*perm++]);
   while (--n);
   gettimeofday(&reorderE, NULL);
-  (*cpu_timing).order_loop_time += ((reorderE.tv_sec*1000000+reorderE.tv_usec)-(reorderS.tv_sec*1000000+reorderS.tv_usec))/1000000.0;
 }
 
 /* compress sequence of size unsigned integers */
@@ -108,7 +106,6 @@ _t1(encode_ints, UInt)(bitstream* restrict_ stream, uint maxbits, uint maxprec, 
     for (; n < size && bits && (bits--, stream_write_bit(&s, !!x)); x >>= 1, n++)
       for (; n < size - 1 && bits && (bits--, !stream_write_bit(&s, x & 1u)); x >>= 1, n++)
 	;
-    //gettimeofday(&stepE, NULL);
   }
   *stream = s;
   return maxbits - bits;
@@ -159,21 +156,21 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
   cache_align_(UInt ublock[BLOCK_SIZE]);
 
   /* perform decorrelating transform */
-  //gettimeofday(&xformS, NULL);
+  gettimeofday(&xformS, NULL);
   _t2(fwd_xform, Int, DIMS)(iblock, cpu_timing);
-  //gettimeofday(&xformE, NULL);
+  gettimeofday(&xformE, NULL);
 
   /* reorder signed coefficients and convert to unsigned integer */
-  //gettimeofday(&orderS, NULL);
+  gettimeofday(&orderS, NULL);
   _t1(fwd_order, Int)(ublock, iblock, PERM, BLOCK_SIZE, cpu_timing);
-  //gettimeofday(&orderE, NULL);
+  gettimeofday(&orderE, NULL);
 
   /* encode integer coefficients */
   if (BLOCK_SIZE <= 64)
   {
-    //gettimeofday(&bpS, NULL);
+    gettimeofday(&bpS, NULL);
     bits = _t1(encode_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE, cpu_timing);
-    //gettimeofday(&bpE, NULL);
+    gettimeofday(&bpE, NULL);
   }
   else
     bits = _t1(encode_many_ints, UInt)(stream, maxbits, maxprec, ublock, BLOCK_SIZE);
@@ -182,9 +179,9 @@ _t2(encode_block, Int, DIMS)(bitstream* stream, int minbits, int maxbits, int ma
     stream_pad(stream, minbits - bits);
     bits = minbits;
   }
-  //(*cpu_timing).xform_time += ((xformE.tv_sec*1000000+xformE.tv_usec)-(xformS.tv_sec*1000000+xformS.tv_usec))/1000000.0;
-  //(*cpu_timing).order_time += ((orderE.tv_sec*1000000+orderE.tv_usec)-(orderS.tv_sec*1000000+orderS.tv_usec))/1000000.0;
-  //(*cpu_timing).bp_time    += ((bpE.tv_sec*1000000+bpE.tv_usec)-(bpS.tv_sec*1000000+bpS.tv_usec))/1000000.0;
+  (*cpu_timing).xform_time += ((xformE.tv_sec*1000000+xformE.tv_usec)-(xformS.tv_sec*1000000+xformS.tv_usec))/1000000.0;
+  (*cpu_timing).order_time += ((orderE.tv_sec*1000000+orderE.tv_usec)-(orderS.tv_sec*1000000+orderS.tv_usec))/1000000.0;
+  (*cpu_timing).bp_time    += ((bpE.tv_sec*1000000+bpE.tv_usec)-(bpS.tv_sec*1000000+bpS.tv_usec))/1000000.0;
 
   return bits;
 }

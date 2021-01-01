@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_d
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -67,18 +79,6 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -101,17 +101,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,16 +123,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,124 +168,154 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
 
 # Convenience name for target.
-testZfpOmp4dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/rule
+testZfpSerial4dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
 
-.PHONY : testZfpOmp4dInt64
+.PHONY : testZfpSerial4dFloat
 
 # fast build rule for target.
-testZfpOmp4dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build
-.PHONY : testZfpOmp4dInt64/fast
+testZfpSerial4dFloat/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build
+.PHONY : testZfpSerial4dFloat/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
 
 # Convenience name for target.
-testZfpSerial2dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
+testZfpSerial3dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
 
-.PHONY : testZfpSerial2dDouble
+.PHONY : testZfpSerial3dDouble
 
 # fast build rule for target.
-testZfpSerial2dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build
-.PHONY : testZfpSerial2dDouble/fast
+testZfpSerial3dDouble/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build
+.PHONY : testZfpSerial3dDouble/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
 
 # Convenience name for target.
-testZfpSerial4dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
+testZfpSerial4dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
 
-.PHONY : testZfpSerial4dInt64
+.PHONY : testZfpSerial4dDouble
 
 # fast build rule for target.
-testZfpSerial4dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build
-.PHONY : testZfpSerial4dInt64/fast
+testZfpSerial4dDouble/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build
+.PHONY : testZfpSerial4dDouble/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
 
 # Convenience name for target.
-testZfpOmp3dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/rule
+testZfpCuda3dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
 
-.PHONY : testZfpOmp3dInt32
+.PHONY : testZfpCuda3dDouble
 
 # fast build rule for target.
-testZfpOmp3dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build
-.PHONY : testZfpOmp3dInt32/fast
+testZfpCuda3dDouble/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build
+.PHONY : testZfpCuda3dDouble/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
 
 # Convenience name for target.
-testZfpOmp3dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/rule
+testZfpCuda3dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
 
-.PHONY : testZfpOmp3dInt64
+.PHONY : testZfpCuda3dFloat
 
 # fast build rule for target.
-testZfpOmp3dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build
-.PHONY : testZfpOmp3dInt64/fast
+testZfpCuda3dFloat/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build
+.PHONY : testZfpCuda3dFloat/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
 
 # Convenience name for target.
-testZfpOmp2dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/rule
+testZfpSerial3dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
 
-.PHONY : testZfpOmp2dInt64
+.PHONY : testZfpSerial3dFloat
 
 # fast build rule for target.
-testZfpOmp2dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build
-.PHONY : testZfpOmp2dInt64/fast
+testZfpSerial3dFloat/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build
+.PHONY : testZfpSerial3dFloat/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
 
 # Convenience name for target.
-testZfpSerial4dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
+testZfpSerial3dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
 
-.PHONY : testZfpSerial4dInt32
+.PHONY : testZfpSerial3dInt32
 
 # fast build rule for target.
-testZfpSerial4dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build
-.PHONY : testZfpSerial4dInt32/fast
+testZfpSerial3dInt32/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build
+.PHONY : testZfpSerial3dInt32/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
 
 # Convenience name for target.
-testZfpOmp4dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/rule
+testZfpSerial1dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
 
-.PHONY : testZfpOmp4dInt32
+.PHONY : testZfpSerial1dFloat
 
 # fast build rule for target.
-testZfpOmp4dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build
-.PHONY : testZfpOmp4dInt32/fast
+testZfpSerial1dFloat/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build
+.PHONY : testZfpSerial1dFloat/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
+
+# Convenience name for target.
+testZfpCuda1dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
+
+.PHONY : testZfpCuda1dInt64
+
+# fast build rule for target.
+testZfpCuda1dInt64/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build
+.PHONY : testZfpCuda1dInt64/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
+
+# Convenience name for target.
+testZfpSerial2dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
+
+.PHONY : testZfpSerial2dInt32
+
+# fast build rule for target.
+testZfpSerial2dInt32/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build
+.PHONY : testZfpSerial2dInt32/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt64.dir/rule:
@@ -303,19 +333,229 @@ testZfpSerial3dInt64/fast:
 .PHONY : testZfpSerial3dInt64/fast
 
 # Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
+tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
 
 # Convenience name for target.
-testZfpSerial2dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/rule
+testZfpSerial1dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
 
-.PHONY : testZfpSerial2dInt32
+.PHONY : testZfpSerial1dInt64
 
 # fast build rule for target.
-testZfpSerial2dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt32.dir/build
-.PHONY : testZfpSerial2dInt32/fast
+testZfpSerial1dInt64/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build
+.PHONY : testZfpSerial1dInt64/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
+
+# Convenience name for target.
+testZfpCuda1dInt32: tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
+
+.PHONY : testZfpCuda1dInt32
+
+# fast build rule for target.
+testZfpCuda1dInt32/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build
+.PHONY : testZfpCuda1dInt32/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
+
+# Convenience name for target.
+testZfpCuda2dInt32: tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
+
+.PHONY : testZfpCuda2dInt32
+
+# fast build rule for target.
+testZfpCuda2dInt32/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build
+.PHONY : testZfpCuda2dInt32/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
+
+# Convenience name for target.
+testZfpSerial2dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
+
+.PHONY : testZfpSerial2dInt64
+
+# fast build rule for target.
+testZfpSerial2dInt64/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build
+.PHONY : testZfpSerial2dInt64/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
+
+# Convenience name for target.
+testZfpSerial1dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
+
+.PHONY : testZfpSerial1dInt32
+
+# fast build rule for target.
+testZfpSerial1dInt32/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build
+.PHONY : testZfpSerial1dInt32/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
+
+# Convenience name for target.
+testZfpSerial2dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/rule
+
+.PHONY : testZfpSerial2dDouble
+
+# fast build rule for target.
+testZfpSerial2dDouble/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dDouble.dir/build
+.PHONY : testZfpSerial2dDouble/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
+
+# Convenience name for target.
+testZfpCuda3dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
+
+.PHONY : testZfpCuda3dInt64
+
+# fast build rule for target.
+testZfpCuda3dInt64/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build
+.PHONY : testZfpCuda3dInt64/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
+
+# Convenience name for target.
+testZfpSerial4dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/rule
+
+.PHONY : testZfpSerial4dInt32
+
+# fast build rule for target.
+testZfpSerial4dInt32/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt32.dir/build
+.PHONY : testZfpSerial4dInt32/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
+
+# Convenience name for target.
+testZfpSerial4dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/rule
+
+.PHONY : testZfpSerial4dInt64
+
+# fast build rule for target.
+testZfpSerial4dInt64/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dInt64.dir/build
+.PHONY : testZfpSerial4dInt64/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
+
+# Convenience name for target.
+testZfpCuda1dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
+
+.PHONY : testZfpCuda1dFloat
+
+# fast build rule for target.
+testZfpCuda1dFloat/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build
+.PHONY : testZfpCuda1dFloat/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
+
+# Convenience name for target.
+testZfpCuda2dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
+
+.PHONY : testZfpCuda2dFloat
+
+# fast build rule for target.
+testZfpCuda2dFloat/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build
+.PHONY : testZfpCuda2dFloat/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
+
+# Convenience name for target.
+testZfpCuda2dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
+
+.PHONY : testZfpCuda2dDouble
+
+# fast build rule for target.
+testZfpCuda2dDouble/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build
+.PHONY : testZfpCuda2dDouble/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
+
+# Convenience name for target.
+testZfpSerial1dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
+
+.PHONY : testZfpSerial1dDouble
+
+# fast build rule for target.
+testZfpSerial1dDouble/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build
+.PHONY : testZfpSerial1dDouble/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
+
+# Convenience name for target.
+testZfpCuda2dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
+
+.PHONY : testZfpCuda2dInt64
+
+# fast build rule for target.
+testZfpCuda2dInt64/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build
+.PHONY : testZfpCuda2dInt64/fast
+
+# Convenience name for target.
+tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
+.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
+
+# Convenience name for target.
+testZfpCuda1dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
+
+.PHONY : testZfpCuda1dDouble
+
+# fast build rule for target.
+testZfpCuda1dDouble/fast:
+	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build
+.PHONY : testZfpCuda1dDouble/fast
 
 # Convenience name for target.
 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt32.dir/rule:
@@ -346,486 +586,6 @@ testZfpSerial2dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/rul
 testZfpSerial2dFloat/fast:
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dFloat.dir/build
 .PHONY : testZfpSerial2dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
-
-# Convenience name for target.
-testZfpCuda3dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/rule
-
-.PHONY : testZfpCuda3dInt64
-
-# fast build rule for target.
-testZfpCuda3dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build
-.PHONY : testZfpCuda3dInt64/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
-
-# Convenience name for target.
-testZfpCuda2dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/rule
-
-.PHONY : testZfpCuda2dInt64
-
-# fast build rule for target.
-testZfpCuda2dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt64.dir/build
-.PHONY : testZfpCuda2dInt64/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule
-
-# Convenience name for target.
-testZfpOmp2dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/rule
-
-.PHONY : testZfpOmp2dInt32
-
-# fast build rule for target.
-testZfpOmp2dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build
-.PHONY : testZfpOmp2dInt32/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
-
-# Convenience name for target.
-testZfpCuda1dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/rule
-
-.PHONY : testZfpCuda1dDouble
-
-# fast build rule for target.
-testZfpCuda1dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dDouble.dir/build
-.PHONY : testZfpCuda1dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule
-
-# Convenience name for target.
-testZfpOmp1dInt32: tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/rule
-
-.PHONY : testZfpOmp1dInt32
-
-# fast build rule for target.
-testZfpOmp1dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build
-.PHONY : testZfpOmp1dInt32/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule
-
-# Convenience name for target.
-testZfpOmp2dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/rule
-
-.PHONY : testZfpOmp2dDouble
-
-# fast build rule for target.
-testZfpOmp2dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build
-.PHONY : testZfpOmp2dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
-
-# Convenience name for target.
-testZfpSerial3dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/rule
-
-.PHONY : testZfpSerial3dInt32
-
-# fast build rule for target.
-testZfpSerial3dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dInt32.dir/build
-.PHONY : testZfpSerial3dInt32/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
-
-# Convenience name for target.
-testZfpSerial1dInt32: tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/rule
-
-.PHONY : testZfpSerial1dInt32
-
-# fast build rule for target.
-testZfpSerial1dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt32.dir/build
-.PHONY : testZfpSerial1dInt32/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
-
-# Convenience name for target.
-testZfpSerial2dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/rule
-
-.PHONY : testZfpSerial2dInt64
-
-# fast build rule for target.
-testZfpSerial2dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial2dInt64.dir/build
-.PHONY : testZfpSerial2dInt64/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
-
-# Convenience name for target.
-testZfpCuda2dInt32: tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/rule
-
-.PHONY : testZfpCuda2dInt32
-
-# fast build rule for target.
-testZfpCuda2dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dInt32.dir/build
-.PHONY : testZfpCuda2dInt32/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
-
-# Convenience name for target.
-testZfpCuda1dInt32: tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/rule
-
-.PHONY : testZfpCuda1dInt32
-
-# fast build rule for target.
-testZfpCuda1dInt32/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt32.dir/build
-.PHONY : testZfpCuda1dInt32/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
-
-# Convenience name for target.
-testZfpSerial1dInt64: tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/rule
-
-.PHONY : testZfpSerial1dInt64
-
-# fast build rule for target.
-testZfpSerial1dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dInt64.dir/build
-.PHONY : testZfpSerial1dInt64/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
-
-# Convenience name for target.
-testZfpCuda1dInt64: tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/rule
-
-.PHONY : testZfpCuda1dInt64
-
-# fast build rule for target.
-testZfpCuda1dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dInt64.dir/build
-.PHONY : testZfpCuda1dInt64/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
-
-# Convenience name for target.
-testZfpSerial1dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/rule
-
-.PHONY : testZfpSerial1dFloat
-
-# fast build rule for target.
-testZfpSerial1dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dFloat.dir/build
-.PHONY : testZfpSerial1dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule
-
-# Convenience name for target.
-testZfpOmp1dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/rule
-
-.PHONY : testZfpOmp1dFloat
-
-# fast build rule for target.
-testZfpOmp1dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build
-.PHONY : testZfpOmp1dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
-
-# Convenience name for target.
-testZfpCuda2dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/rule
-
-.PHONY : testZfpCuda2dFloat
-
-# fast build rule for target.
-testZfpCuda2dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dFloat.dir/build
-.PHONY : testZfpCuda2dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
-
-# Convenience name for target.
-testZfpCuda1dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/rule
-
-.PHONY : testZfpCuda1dFloat
-
-# fast build rule for target.
-testZfpCuda1dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda1dFloat.dir/build
-.PHONY : testZfpCuda1dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
-
-# Convenience name for target.
-testZfpSerial1dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/rule
-
-.PHONY : testZfpSerial1dDouble
-
-# fast build rule for target.
-testZfpSerial1dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial1dDouble.dir/build
-.PHONY : testZfpSerial1dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule
-
-# Convenience name for target.
-testZfpOmp1dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/rule
-
-.PHONY : testZfpOmp1dDouble
-
-# fast build rule for target.
-testZfpOmp1dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build
-.PHONY : testZfpOmp1dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule
-
-# Convenience name for target.
-testZfpOmp1dInt64: tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/rule
-
-.PHONY : testZfpOmp1dInt64
-
-# fast build rule for target.
-testZfpOmp1dInt64/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build
-.PHONY : testZfpOmp1dInt64/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule
-
-# Convenience name for target.
-testZfpOmp3dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/rule
-
-.PHONY : testZfpOmp3dFloat
-
-# fast build rule for target.
-testZfpOmp3dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build
-.PHONY : testZfpOmp3dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule
-
-# Convenience name for target.
-testZfpOmp4dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/rule
-
-.PHONY : testZfpOmp4dFloat
-
-# fast build rule for target.
-testZfpOmp4dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build
-.PHONY : testZfpOmp4dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
-
-# Convenience name for target.
-testZfpSerial3dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/rule
-
-.PHONY : testZfpSerial3dFloat
-
-# fast build rule for target.
-testZfpSerial3dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dFloat.dir/build
-.PHONY : testZfpSerial3dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
-
-# Convenience name for target.
-testZfpCuda3dFloat: tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/rule
-
-.PHONY : testZfpCuda3dFloat
-
-# fast build rule for target.
-testZfpCuda3dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dFloat.dir/build
-.PHONY : testZfpCuda3dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
-
-# Convenience name for target.
-testZfpCuda3dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/rule
-
-.PHONY : testZfpCuda3dDouble
-
-# fast build rule for target.
-testZfpCuda3dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dDouble.dir/build
-.PHONY : testZfpCuda3dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
-
-# Convenience name for target.
-testZfpSerial4dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/rule
-
-.PHONY : testZfpSerial4dDouble
-
-# fast build rule for target.
-testZfpSerial4dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dDouble.dir/build
-.PHONY : testZfpSerial4dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
-
-# Convenience name for target.
-testZfpSerial3dDouble: tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/rule
-
-.PHONY : testZfpSerial3dDouble
-
-# fast build rule for target.
-testZfpSerial3dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial3dDouble.dir/build
-.PHONY : testZfpSerial3dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule
-
-# Convenience name for target.
-testZfpOmp2dFloat: tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/rule
-
-.PHONY : testZfpOmp2dFloat
-
-# fast build rule for target.
-testZfpOmp2dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build
-.PHONY : testZfpOmp2dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule
-
-# Convenience name for target.
-testZfpOmp3dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/rule
-
-.PHONY : testZfpOmp3dDouble
-
-# fast build rule for target.
-testZfpOmp3dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build
-.PHONY : testZfpOmp3dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
-
-# Convenience name for target.
-testZfpSerial4dFloat: tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/rule
-
-.PHONY : testZfpSerial4dFloat
-
-# fast build rule for target.
-testZfpSerial4dFloat/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpSerial4dFloat.dir/build
-.PHONY : testZfpSerial4dFloat/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule
-
-# Convenience name for target.
-testZfpOmp4dDouble: tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/rule
-
-.PHONY : testZfpOmp4dDouble
-
-# fast build rule for target.
-testZfpOmp4dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build
-.PHONY : testZfpOmp4dDouble/fast
-
-# Convenience name for target.
-tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
-.PHONY : tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
-
-# Convenience name for target.
-testZfpCuda2dDouble: tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/rule
-
-.PHONY : testZfpCuda2dDouble
-
-# fast build rule for target.
-testZfpCuda2dDouble/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda2dDouble.dir/build
-.PHONY : testZfpCuda2dDouble/fast
 
 testZfpCuda1dDouble.o: testZfpCuda1dDouble.c.o
 
@@ -1150,438 +910,6 @@ testZfpCuda3dInt64.s: testZfpCuda3dInt64.c.s
 testZfpCuda3dInt64.c.s:
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpCuda3dInt64.dir/testZfpCuda3dInt64.c.s
 .PHONY : testZfpCuda3dInt64.c.s
-
-testZfpOmp1dDouble.o: testZfpOmp1dDouble.c.o
-
-.PHONY : testZfpOmp1dDouble.o
-
-# target to build an object file
-testZfpOmp1dDouble.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.o
-.PHONY : testZfpOmp1dDouble.c.o
-
-testZfpOmp1dDouble.i: testZfpOmp1dDouble.c.i
-
-.PHONY : testZfpOmp1dDouble.i
-
-# target to preprocess a source file
-testZfpOmp1dDouble.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.i
-.PHONY : testZfpOmp1dDouble.c.i
-
-testZfpOmp1dDouble.s: testZfpOmp1dDouble.c.s
-
-.PHONY : testZfpOmp1dDouble.s
-
-# target to generate assembly for a file
-testZfpOmp1dDouble.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dDouble.dir/testZfpOmp1dDouble.c.s
-.PHONY : testZfpOmp1dDouble.c.s
-
-testZfpOmp1dFloat.o: testZfpOmp1dFloat.c.o
-
-.PHONY : testZfpOmp1dFloat.o
-
-# target to build an object file
-testZfpOmp1dFloat.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.o
-.PHONY : testZfpOmp1dFloat.c.o
-
-testZfpOmp1dFloat.i: testZfpOmp1dFloat.c.i
-
-.PHONY : testZfpOmp1dFloat.i
-
-# target to preprocess a source file
-testZfpOmp1dFloat.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.i
-.PHONY : testZfpOmp1dFloat.c.i
-
-testZfpOmp1dFloat.s: testZfpOmp1dFloat.c.s
-
-.PHONY : testZfpOmp1dFloat.s
-
-# target to generate assembly for a file
-testZfpOmp1dFloat.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dFloat.dir/testZfpOmp1dFloat.c.s
-.PHONY : testZfpOmp1dFloat.c.s
-
-testZfpOmp1dInt32.o: testZfpOmp1dInt32.c.o
-
-.PHONY : testZfpOmp1dInt32.o
-
-# target to build an object file
-testZfpOmp1dInt32.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.o
-.PHONY : testZfpOmp1dInt32.c.o
-
-testZfpOmp1dInt32.i: testZfpOmp1dInt32.c.i
-
-.PHONY : testZfpOmp1dInt32.i
-
-# target to preprocess a source file
-testZfpOmp1dInt32.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.i
-.PHONY : testZfpOmp1dInt32.c.i
-
-testZfpOmp1dInt32.s: testZfpOmp1dInt32.c.s
-
-.PHONY : testZfpOmp1dInt32.s
-
-# target to generate assembly for a file
-testZfpOmp1dInt32.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt32.dir/testZfpOmp1dInt32.c.s
-.PHONY : testZfpOmp1dInt32.c.s
-
-testZfpOmp1dInt64.o: testZfpOmp1dInt64.c.o
-
-.PHONY : testZfpOmp1dInt64.o
-
-# target to build an object file
-testZfpOmp1dInt64.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.o
-.PHONY : testZfpOmp1dInt64.c.o
-
-testZfpOmp1dInt64.i: testZfpOmp1dInt64.c.i
-
-.PHONY : testZfpOmp1dInt64.i
-
-# target to preprocess a source file
-testZfpOmp1dInt64.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.i
-.PHONY : testZfpOmp1dInt64.c.i
-
-testZfpOmp1dInt64.s: testZfpOmp1dInt64.c.s
-
-.PHONY : testZfpOmp1dInt64.s
-
-# target to generate assembly for a file
-testZfpOmp1dInt64.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp1dInt64.dir/testZfpOmp1dInt64.c.s
-.PHONY : testZfpOmp1dInt64.c.s
-
-testZfpOmp2dDouble.o: testZfpOmp2dDouble.c.o
-
-.PHONY : testZfpOmp2dDouble.o
-
-# target to build an object file
-testZfpOmp2dDouble.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.o
-.PHONY : testZfpOmp2dDouble.c.o
-
-testZfpOmp2dDouble.i: testZfpOmp2dDouble.c.i
-
-.PHONY : testZfpOmp2dDouble.i
-
-# target to preprocess a source file
-testZfpOmp2dDouble.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.i
-.PHONY : testZfpOmp2dDouble.c.i
-
-testZfpOmp2dDouble.s: testZfpOmp2dDouble.c.s
-
-.PHONY : testZfpOmp2dDouble.s
-
-# target to generate assembly for a file
-testZfpOmp2dDouble.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dDouble.dir/testZfpOmp2dDouble.c.s
-.PHONY : testZfpOmp2dDouble.c.s
-
-testZfpOmp2dFloat.o: testZfpOmp2dFloat.c.o
-
-.PHONY : testZfpOmp2dFloat.o
-
-# target to build an object file
-testZfpOmp2dFloat.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.o
-.PHONY : testZfpOmp2dFloat.c.o
-
-testZfpOmp2dFloat.i: testZfpOmp2dFloat.c.i
-
-.PHONY : testZfpOmp2dFloat.i
-
-# target to preprocess a source file
-testZfpOmp2dFloat.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.i
-.PHONY : testZfpOmp2dFloat.c.i
-
-testZfpOmp2dFloat.s: testZfpOmp2dFloat.c.s
-
-.PHONY : testZfpOmp2dFloat.s
-
-# target to generate assembly for a file
-testZfpOmp2dFloat.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dFloat.dir/testZfpOmp2dFloat.c.s
-.PHONY : testZfpOmp2dFloat.c.s
-
-testZfpOmp2dInt32.o: testZfpOmp2dInt32.c.o
-
-.PHONY : testZfpOmp2dInt32.o
-
-# target to build an object file
-testZfpOmp2dInt32.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.o
-.PHONY : testZfpOmp2dInt32.c.o
-
-testZfpOmp2dInt32.i: testZfpOmp2dInt32.c.i
-
-.PHONY : testZfpOmp2dInt32.i
-
-# target to preprocess a source file
-testZfpOmp2dInt32.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.i
-.PHONY : testZfpOmp2dInt32.c.i
-
-testZfpOmp2dInt32.s: testZfpOmp2dInt32.c.s
-
-.PHONY : testZfpOmp2dInt32.s
-
-# target to generate assembly for a file
-testZfpOmp2dInt32.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt32.dir/testZfpOmp2dInt32.c.s
-.PHONY : testZfpOmp2dInt32.c.s
-
-testZfpOmp2dInt64.o: testZfpOmp2dInt64.c.o
-
-.PHONY : testZfpOmp2dInt64.o
-
-# target to build an object file
-testZfpOmp2dInt64.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.o
-.PHONY : testZfpOmp2dInt64.c.o
-
-testZfpOmp2dInt64.i: testZfpOmp2dInt64.c.i
-
-.PHONY : testZfpOmp2dInt64.i
-
-# target to preprocess a source file
-testZfpOmp2dInt64.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.i
-.PHONY : testZfpOmp2dInt64.c.i
-
-testZfpOmp2dInt64.s: testZfpOmp2dInt64.c.s
-
-.PHONY : testZfpOmp2dInt64.s
-
-# target to generate assembly for a file
-testZfpOmp2dInt64.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp2dInt64.dir/testZfpOmp2dInt64.c.s
-.PHONY : testZfpOmp2dInt64.c.s
-
-testZfpOmp3dDouble.o: testZfpOmp3dDouble.c.o
-
-.PHONY : testZfpOmp3dDouble.o
-
-# target to build an object file
-testZfpOmp3dDouble.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.o
-.PHONY : testZfpOmp3dDouble.c.o
-
-testZfpOmp3dDouble.i: testZfpOmp3dDouble.c.i
-
-.PHONY : testZfpOmp3dDouble.i
-
-# target to preprocess a source file
-testZfpOmp3dDouble.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.i
-.PHONY : testZfpOmp3dDouble.c.i
-
-testZfpOmp3dDouble.s: testZfpOmp3dDouble.c.s
-
-.PHONY : testZfpOmp3dDouble.s
-
-# target to generate assembly for a file
-testZfpOmp3dDouble.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dDouble.dir/testZfpOmp3dDouble.c.s
-.PHONY : testZfpOmp3dDouble.c.s
-
-testZfpOmp3dFloat.o: testZfpOmp3dFloat.c.o
-
-.PHONY : testZfpOmp3dFloat.o
-
-# target to build an object file
-testZfpOmp3dFloat.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.o
-.PHONY : testZfpOmp3dFloat.c.o
-
-testZfpOmp3dFloat.i: testZfpOmp3dFloat.c.i
-
-.PHONY : testZfpOmp3dFloat.i
-
-# target to preprocess a source file
-testZfpOmp3dFloat.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.i
-.PHONY : testZfpOmp3dFloat.c.i
-
-testZfpOmp3dFloat.s: testZfpOmp3dFloat.c.s
-
-.PHONY : testZfpOmp3dFloat.s
-
-# target to generate assembly for a file
-testZfpOmp3dFloat.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dFloat.dir/testZfpOmp3dFloat.c.s
-.PHONY : testZfpOmp3dFloat.c.s
-
-testZfpOmp3dInt32.o: testZfpOmp3dInt32.c.o
-
-.PHONY : testZfpOmp3dInt32.o
-
-# target to build an object file
-testZfpOmp3dInt32.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.o
-.PHONY : testZfpOmp3dInt32.c.o
-
-testZfpOmp3dInt32.i: testZfpOmp3dInt32.c.i
-
-.PHONY : testZfpOmp3dInt32.i
-
-# target to preprocess a source file
-testZfpOmp3dInt32.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.i
-.PHONY : testZfpOmp3dInt32.c.i
-
-testZfpOmp3dInt32.s: testZfpOmp3dInt32.c.s
-
-.PHONY : testZfpOmp3dInt32.s
-
-# target to generate assembly for a file
-testZfpOmp3dInt32.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt32.dir/testZfpOmp3dInt32.c.s
-.PHONY : testZfpOmp3dInt32.c.s
-
-testZfpOmp3dInt64.o: testZfpOmp3dInt64.c.o
-
-.PHONY : testZfpOmp3dInt64.o
-
-# target to build an object file
-testZfpOmp3dInt64.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.o
-.PHONY : testZfpOmp3dInt64.c.o
-
-testZfpOmp3dInt64.i: testZfpOmp3dInt64.c.i
-
-.PHONY : testZfpOmp3dInt64.i
-
-# target to preprocess a source file
-testZfpOmp3dInt64.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.i
-.PHONY : testZfpOmp3dInt64.c.i
-
-testZfpOmp3dInt64.s: testZfpOmp3dInt64.c.s
-
-.PHONY : testZfpOmp3dInt64.s
-
-# target to generate assembly for a file
-testZfpOmp3dInt64.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp3dInt64.dir/testZfpOmp3dInt64.c.s
-.PHONY : testZfpOmp3dInt64.c.s
-
-testZfpOmp4dDouble.o: testZfpOmp4dDouble.c.o
-
-.PHONY : testZfpOmp4dDouble.o
-
-# target to build an object file
-testZfpOmp4dDouble.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.o
-.PHONY : testZfpOmp4dDouble.c.o
-
-testZfpOmp4dDouble.i: testZfpOmp4dDouble.c.i
-
-.PHONY : testZfpOmp4dDouble.i
-
-# target to preprocess a source file
-testZfpOmp4dDouble.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.i
-.PHONY : testZfpOmp4dDouble.c.i
-
-testZfpOmp4dDouble.s: testZfpOmp4dDouble.c.s
-
-.PHONY : testZfpOmp4dDouble.s
-
-# target to generate assembly for a file
-testZfpOmp4dDouble.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dDouble.dir/testZfpOmp4dDouble.c.s
-.PHONY : testZfpOmp4dDouble.c.s
-
-testZfpOmp4dFloat.o: testZfpOmp4dFloat.c.o
-
-.PHONY : testZfpOmp4dFloat.o
-
-# target to build an object file
-testZfpOmp4dFloat.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.o
-.PHONY : testZfpOmp4dFloat.c.o
-
-testZfpOmp4dFloat.i: testZfpOmp4dFloat.c.i
-
-.PHONY : testZfpOmp4dFloat.i
-
-# target to preprocess a source file
-testZfpOmp4dFloat.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.i
-.PHONY : testZfpOmp4dFloat.c.i
-
-testZfpOmp4dFloat.s: testZfpOmp4dFloat.c.s
-
-.PHONY : testZfpOmp4dFloat.s
-
-# target to generate assembly for a file
-testZfpOmp4dFloat.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dFloat.dir/testZfpOmp4dFloat.c.s
-.PHONY : testZfpOmp4dFloat.c.s
-
-testZfpOmp4dInt32.o: testZfpOmp4dInt32.c.o
-
-.PHONY : testZfpOmp4dInt32.o
-
-# target to build an object file
-testZfpOmp4dInt32.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.o
-.PHONY : testZfpOmp4dInt32.c.o
-
-testZfpOmp4dInt32.i: testZfpOmp4dInt32.c.i
-
-.PHONY : testZfpOmp4dInt32.i
-
-# target to preprocess a source file
-testZfpOmp4dInt32.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.i
-.PHONY : testZfpOmp4dInt32.c.i
-
-testZfpOmp4dInt32.s: testZfpOmp4dInt32.c.s
-
-.PHONY : testZfpOmp4dInt32.s
-
-# target to generate assembly for a file
-testZfpOmp4dInt32.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt32.dir/testZfpOmp4dInt32.c.s
-.PHONY : testZfpOmp4dInt32.c.s
-
-testZfpOmp4dInt64.o: testZfpOmp4dInt64.c.o
-
-.PHONY : testZfpOmp4dInt64.o
-
-# target to build an object file
-testZfpOmp4dInt64.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.o
-.PHONY : testZfpOmp4dInt64.c.o
-
-testZfpOmp4dInt64.i: testZfpOmp4dInt64.c.i
-
-.PHONY : testZfpOmp4dInt64.i
-
-# target to preprocess a source file
-testZfpOmp4dInt64.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.i
-.PHONY : testZfpOmp4dInt64.c.i
-
-testZfpOmp4dInt64.s: testZfpOmp4dInt64.c.s
-
-.PHONY : testZfpOmp4dInt64.s
-
-# target to generate assembly for a file
-testZfpOmp4dInt64.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/build.make tests/src/endtoend/CMakeFiles/testZfpOmp4dInt64.dir/testZfpOmp4dInt64.c.s
-.PHONY : testZfpOmp4dInt64.c.s
 
 testZfpSerial1dDouble.o: testZfpSerial1dDouble.c.o
 
@@ -2021,57 +1349,41 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... testZfpOmp4dInt64"
-	@echo "... testZfpSerial2dDouble"
-	@echo "... testZfpSerial4dInt64"
-	@echo "... testZfpOmp3dInt32"
-	@echo "... testZfpOmp3dInt64"
-	@echo "... testZfpOmp2dInt64"
-	@echo "... testZfpSerial4dInt32"
-	@echo "... testZfpOmp4dInt32"
-	@echo "... testZfpSerial3dInt64"
+	@echo "... test"
+	@echo "... testZfpSerial4dFloat"
+	@echo "... edit_cache"
+	@echo "... testZfpSerial3dDouble"
+	@echo "... testZfpSerial4dDouble"
+	@echo "... testZfpCuda3dDouble"
+	@echo "... testZfpCuda3dFloat"
+	@echo "... testZfpSerial3dFloat"
+	@echo "... testZfpSerial3dInt32"
+	@echo "... testZfpSerial1dFloat"
+	@echo "... install"
+	@echo "... testZfpCuda1dInt64"
 	@echo "... testZfpSerial2dInt32"
+	@echo "... testZfpSerial3dInt64"
+	@echo "... testZfpSerial1dInt64"
+	@echo "... testZfpCuda1dInt32"
+	@echo "... testZfpCuda2dInt32"
+	@echo "... testZfpSerial2dInt64"
+	@echo "... testZfpSerial1dInt32"
+	@echo "... testZfpSerial2dDouble"
+	@echo "... testZfpCuda3dInt64"
+	@echo "... testZfpSerial4dInt32"
+	@echo "... testZfpSerial4dInt64"
+	@echo "... testZfpCuda1dFloat"
+	@echo "... testZfpCuda2dFloat"
+	@echo "... testZfpCuda2dDouble"
+	@echo "... testZfpSerial1dDouble"
+	@echo "... testZfpCuda2dInt64"
+	@echo "... testZfpCuda1dDouble"
 	@echo "... testZfpCuda3dInt32"
 	@echo "... testZfpSerial2dFloat"
-	@echo "... testZfpCuda3dInt64"
-	@echo "... testZfpCuda2dInt64"
-	@echo "... testZfpOmp2dInt32"
-	@echo "... testZfpCuda1dDouble"
-	@echo "... testZfpOmp1dInt32"
-	@echo "... testZfpOmp2dDouble"
-	@echo "... testZfpSerial3dInt32"
-	@echo "... testZfpSerial1dInt32"
-	@echo "... testZfpSerial2dInt64"
-	@echo "... testZfpCuda2dInt32"
-	@echo "... testZfpCuda1dInt32"
-	@echo "... testZfpSerial1dInt64"
-	@echo "... install/strip"
-	@echo "... testZfpCuda1dInt64"
-	@echo "... testZfpSerial1dFloat"
-	@echo "... testZfpOmp1dFloat"
-	@echo "... testZfpCuda2dFloat"
-	@echo "... testZfpCuda1dFloat"
-	@echo "... testZfpSerial1dDouble"
-	@echo "... testZfpOmp1dDouble"
-	@echo "... testZfpOmp1dInt64"
-	@echo "... testZfpOmp3dFloat"
-	@echo "... testZfpOmp4dFloat"
-	@echo "... testZfpSerial3dFloat"
-	@echo "... testZfpCuda3dFloat"
-	@echo "... testZfpCuda3dDouble"
-	@echo "... testZfpSerial4dDouble"
-	@echo "... testZfpSerial3dDouble"
-	@echo "... edit_cache"
-	@echo "... testZfpOmp2dFloat"
-	@echo "... testZfpOmp3dDouble"
-	@echo "... testZfpSerial4dFloat"
-	@echo "... testZfpOmp4dDouble"
-	@echo "... testZfpCuda2dDouble"
-	@echo "... test"
 	@echo "... testZfpCuda1dDouble.o"
 	@echo "... testZfpCuda1dDouble.i"
 	@echo "... testZfpCuda1dDouble.s"
@@ -2108,54 +1420,6 @@ help:
 	@echo "... testZfpCuda3dInt64.o"
 	@echo "... testZfpCuda3dInt64.i"
 	@echo "... testZfpCuda3dInt64.s"
-	@echo "... testZfpOmp1dDouble.o"
-	@echo "... testZfpOmp1dDouble.i"
-	@echo "... testZfpOmp1dDouble.s"
-	@echo "... testZfpOmp1dFloat.o"
-	@echo "... testZfpOmp1dFloat.i"
-	@echo "... testZfpOmp1dFloat.s"
-	@echo "... testZfpOmp1dInt32.o"
-	@echo "... testZfpOmp1dInt32.i"
-	@echo "... testZfpOmp1dInt32.s"
-	@echo "... testZfpOmp1dInt64.o"
-	@echo "... testZfpOmp1dInt64.i"
-	@echo "... testZfpOmp1dInt64.s"
-	@echo "... testZfpOmp2dDouble.o"
-	@echo "... testZfpOmp2dDouble.i"
-	@echo "... testZfpOmp2dDouble.s"
-	@echo "... testZfpOmp2dFloat.o"
-	@echo "... testZfpOmp2dFloat.i"
-	@echo "... testZfpOmp2dFloat.s"
-	@echo "... testZfpOmp2dInt32.o"
-	@echo "... testZfpOmp2dInt32.i"
-	@echo "... testZfpOmp2dInt32.s"
-	@echo "... testZfpOmp2dInt64.o"
-	@echo "... testZfpOmp2dInt64.i"
-	@echo "... testZfpOmp2dInt64.s"
-	@echo "... testZfpOmp3dDouble.o"
-	@echo "... testZfpOmp3dDouble.i"
-	@echo "... testZfpOmp3dDouble.s"
-	@echo "... testZfpOmp3dFloat.o"
-	@echo "... testZfpOmp3dFloat.i"
-	@echo "... testZfpOmp3dFloat.s"
-	@echo "... testZfpOmp3dInt32.o"
-	@echo "... testZfpOmp3dInt32.i"
-	@echo "... testZfpOmp3dInt32.s"
-	@echo "... testZfpOmp3dInt64.o"
-	@echo "... testZfpOmp3dInt64.i"
-	@echo "... testZfpOmp3dInt64.s"
-	@echo "... testZfpOmp4dDouble.o"
-	@echo "... testZfpOmp4dDouble.i"
-	@echo "... testZfpOmp4dDouble.s"
-	@echo "... testZfpOmp4dFloat.o"
-	@echo "... testZfpOmp4dFloat.i"
-	@echo "... testZfpOmp4dFloat.s"
-	@echo "... testZfpOmp4dInt32.o"
-	@echo "... testZfpOmp4dInt32.i"
-	@echo "... testZfpOmp4dInt32.s"
-	@echo "... testZfpOmp4dInt64.o"
-	@echo "... testZfpOmp4dInt64.i"
-	@echo "... testZfpOmp4dInt64.s"
 	@echo "... testZfpSerial1dDouble.o"
 	@echo "... testZfpSerial1dDouble.i"
 	@echo "... testZfpSerial1dDouble.s"

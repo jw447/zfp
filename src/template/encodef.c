@@ -58,11 +58,11 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
   uint bits = 1;
 
   /* compute maximum exponent */
-  //gettimeofday(&ecostS, NULL);
+  gettimeofday(&ecostS, NULL);
   int emax = _t1(exponent_block, Scalar)(fblock, BLOCK_SIZE);
   int maxprec = precision(emax, zfp->maxprec, zfp->minexp, DIMS);
   uint e = maxprec ? emax + EBIAS : 0;
-  //gettimeofday(&ecostE, NULL);
+  gettimeofday(&ecostE, NULL);
   
   /* encode block only if biased exponent is nonzero */
   if (e) {
@@ -72,14 +72,14 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
     stream_write_bits(zfp->stream, 2 * e + 1, bits);
 
     /* perform forward block-floating-point transform */    
-    //gettimeofday(&mcostS, NULL);
+    gettimeofday(&mcostS, NULL);
     _t1(fwd_cast, Scalar)(iblock, fblock, BLOCK_SIZE, emax, cpu_timing); // get mantisa.
-    //gettimeofday(&mcostE, NULL);
+    gettimeofday(&mcostE, NULL);
 
     /* encode integer block */
-    //gettimeofday(&embedS, NULL);
+    gettimeofday(&embedS, NULL);
     bits += _t2(encode_block, Int, DIMS)(zfp->stream, zfp->minbits - bits, zfp->maxbits - bits, maxprec, iblock, cpu_timing);
-    //gettimeofday(&embedE, NULL);
+    gettimeofday(&embedE, NULL);
   }
   
   else {
@@ -90,9 +90,9 @@ _t2(encode_block, Scalar, DIMS)(zfp_stream* zfp, const Scalar* fblock, CPU_timin
       bits = zfp->minbits;
     }
   }
-  //(*cpu_timing).ecost_time += ((ecostE.tv_sec*1000000+ecostE.tv_usec)-(ecostS.tv_sec*1000000+ecostS.tv_usec))/1000000.0;
-  //(*cpu_timing).mcost_time += ((mcostE.tv_sec*1000000+mcostE.tv_usec)-(mcostS.tv_sec*1000000+mcostS.tv_usec))/1000000.0;
-  //(*cpu_timing).embed_time += ((embedE.tv_sec*1000000+embedE.tv_usec)-(embedS.tv_sec*1000000+embedS.tv_usec))/1000000.0;
+  (*cpu_timing).ecost_time += ((ecostE.tv_sec*1000000+ecostE.tv_usec)-(ecostS.tv_sec*1000000+ecostS.tv_usec))/1000000.0;
+  (*cpu_timing).mcost_time += ((mcostE.tv_sec*1000000+mcostE.tv_usec)-(mcostS.tv_sec*1000000+mcostS.tv_usec))/1000000.0;
+  (*cpu_timing).embed_time += ((embedE.tv_sec*1000000+embedE.tv_usec)-(embedS.tv_sec*1000000+embedS.tv_usec))/1000000.0;
    
   return bits;
 }

@@ -793,8 +793,6 @@ lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode4i.c.o
 lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/decode4l.c.o
 lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/cuda_zfp/zfp_generated_cuZFP.cu.o
 lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/build.make
-lib64/libzfp.so.0.5.5: /usr/lib/gcc/ppc64le-redhat-linux/4.8.5/libgomp.so
-lib64/libzfp.so.0.5.5: /usr/lib64/libpthread.so
 lib64/libzfp.so.0.5.5: /sw/summit/cuda/10.1.168/lib64/libcudart.so
 lib64/libzfp.so.0.5.5: src/CMakeFiles/zfp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking C shared library ../lib64/libzfp.so"

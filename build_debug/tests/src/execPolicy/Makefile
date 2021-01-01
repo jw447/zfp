@@ -113,17 +113,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -134,6 +123,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/autofs/nccs-svm1_sw/summit/.swci/0-core/opt/spack/20180914/linux-rhel7-ppc64le/gcc-4.8.5/cmake-3.15.2-xit2o3iepxvqbyku77lwcugufilztu7t/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,21 +181,6 @@ testCuda: tests/src/execPolicy/CMakeFiles/testCuda.dir/rule
 testCuda/fast:
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testCuda.dir/build.make tests/src/execPolicy/CMakeFiles/testCuda.dir/build
 .PHONY : testCuda/fast
-
-# Convenience name for target.
-tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f CMakeFiles/Makefile2 tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule
-.PHONY : tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule
-
-# Convenience name for target.
-testOmpInternal: tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/rule
-
-.PHONY : testOmpInternal
-
-# fast build rule for target.
-testOmpInternal/fast:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build
-.PHONY : testOmpInternal/fast
 
 # Convenience name for target.
 tests/src/execPolicy/CMakeFiles/testOmp.dir/rule:
@@ -266,33 +251,6 @@ testOmp.c.s:
 	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmp.dir/build.make tests/src/execPolicy/CMakeFiles/testOmp.dir/testOmp.c.s
 .PHONY : testOmp.c.s
 
-testOmpInternal.o: testOmpInternal.c.o
-
-.PHONY : testOmpInternal.o
-
-# target to build an object file
-testOmpInternal.c.o:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.o
-.PHONY : testOmpInternal.c.o
-
-testOmpInternal.i: testOmpInternal.c.i
-
-.PHONY : testOmpInternal.i
-
-# target to preprocess a source file
-testOmpInternal.c.i:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.i
-.PHONY : testOmpInternal.c.i
-
-testOmpInternal.s: testOmpInternal.c.s
-
-.PHONY : testOmpInternal.s
-
-# target to generate assembly for a file
-testOmpInternal.c.s:
-	cd /gpfs/alpine/proj-shared/csc143/jwang/local-build/zfp/build_debug && $(MAKE) -f tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/build.make tests/src/execPolicy/CMakeFiles/testOmpInternal.dir/testOmpInternal.c.s
-.PHONY : testOmpInternal.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -304,10 +262,9 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... rebuild_cache"
 	@echo "... testCuda"
-	@echo "... test"
-	@echo "... testOmpInternal"
 	@echo "... testOmp"
 	@echo "... testCuda.o"
 	@echo "... testCuda.i"
@@ -315,9 +272,6 @@ help:
 	@echo "... testOmp.o"
 	@echo "... testOmp.i"
 	@echo "... testOmp.s"
-	@echo "... testOmpInternal.o"
-	@echo "... testOmpInternal.i"
-	@echo "... testOmpInternal.s"
 .PHONY : help
 
 

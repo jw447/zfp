@@ -555,7 +555,7 @@ ZFP_WITH_CACHE_TWOWAY:BOOL=OFF
 ZFP_WITH_CUDA:BOOL=ON
 
 //Enable OpenMP parallel compression
-ZFP_WITH_OPENMP:BOOL=ON
+ZFP_WITH_OPENMP:BOOL=OFF
 
 //Dependencies for the target
 genSmoothRandNumsLib_LIB_DEPENDS:STATIC=general;rand64Lib;general;fixedpoint96Lib;general;m;
@@ -619,7 +619,7 @@ stridedOperationsLib_LIB_DEPENDS:STATIC=general;zfp;
 zfpCompressionParamsLib_LIB_DEPENDS:STATIC=general;m;
 
 //Dependencies for the target
-zfp_LIB_DEPENDS:STATIC=general;/usr/lib/gcc/ppc64le-redhat-linux/4.8.5/libgomp.so;general;/usr/lib64/libpthread.so;general;m;general;/sw/summit/cuda/10.1.168/lib64/libcudart.so;general;stdc++;
+zfp_LIB_DEPENDS:STATIC=general;m;general;/sw/summit/cuda/10.1.168/lib64/libcudart.so;general;stdc++;
 
 
 ########################
